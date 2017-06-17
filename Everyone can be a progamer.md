@@ -60,6 +60,7 @@
 
 ![image](images/the map of skill.jpeg)
 
+
 *图片来源 http://skill-map.stuq.org/*
 
 最后我整理了一个流行编程语言和用途的表，能在选择时有所帮助
