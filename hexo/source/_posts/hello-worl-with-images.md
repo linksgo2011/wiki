@@ -6,4 +6,3 @@ title: Hello word with images!
 
 
 [测试连接](hello-world.md)
-
