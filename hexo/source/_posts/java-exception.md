@@ -51,7 +51,7 @@ Exception：它指出了合理的应用程序想要捕获的条件。Exception�
 比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他
 IOException的异常
 
-```
+``` java
 public void readFile() {
     BufferedReader reader = null;
     try {
@@ -79,7 +79,7 @@ public void readFile() {
 
 c.initCause(e);
 
-```
+``` java
 public class NeverCaught {
     static void f() throws ExceptionB{
         throw new ExceptionB("exception b");

@@ -1,0 +1,2 @@
+cd hexo
+hexo g
