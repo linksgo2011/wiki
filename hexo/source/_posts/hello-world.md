@@ -1,39 +1,29 @@
 ---
-title: Hello World
+title: Hello wiki
 categories: "写作"
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Welcome to ! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
 
-### Create a new post
 
-``` bash
-$ hexo new "My New Post"
-```
+#### about hexo
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+本wiki的思路为使用github作为文档、代码的版本管理,使用hexo来生成静态网站。摒弃了博客的写作方式,使用了markdown和wiki的方式,
+从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。
 
-### Run server
+#### 更多资料
 
-``` bash
-$ hexo server
-```
+[Hexo](https://hexo.io/)
+[Github](https://github.com)
 
-More info: [Server](https://hexo.io/docs/server.html)
+#### 怎么使用
 
-### Generate static files
 
-``` bash
-$ hexo generate
-```
+#### 图片插件
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问
 
-### Deploy to remote sites
+![](hello-worl-with-images/05a4c81a-8793-4baa-92a1-94b28aece873.jpg)
 
-``` bash
-$ hexo deploy
-```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+[测试连接](hello-world.md)
