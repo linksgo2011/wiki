@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[Java object clone]]></title>
+      <url>/java/java-object-clone/</url>
+      <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p>
+<ul>
+<li>shallow 赋值</li>
+<li>深拷贝</li>
+<li>克隆</li>
+</ul>
+<h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Object obj1 = <span class="keyword">new</span> Object();</div><div class="line">Object obj2 = obj1;</div></pre></td></tr></table></figure>
+<p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Object obj1 = <span class="keyword">new</span> Object();</div><div class="line">obj1.a = <span class="number">1</span>;</div><div class="line"></div><div class="line">Object obj2 = <span class="keyword">new</span> Object();</div><div class="line">obj2.a = obj1.a;</div></pre></td></tr></table></figure>
+<h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</div><div class="line">Person p1 = (Person) p.clone();</div><div class="line"></div><div class="line">System.out.println(p);</div><div class="line">System.out.println(p1);</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[理解 java exception]]></title>
       <url>/java/java-exception/</url>
       <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p>
