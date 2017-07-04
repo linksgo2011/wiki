@@ -23,7 +23,7 @@ Welcome to ! This is your very first post. Check [documentation](https://hexo.io
 
 创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问
 
-![](hello-worl-with-images/05a4c81a-8793-4baa-92a1-94b28aece873.jpg)
+![](hello-world/05a4c81a-8793-4baa-92a1-94b28aece873.jpg)
 
 
 [测试连接](hello-world.md)
