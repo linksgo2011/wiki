@@ -37,6 +37,8 @@ obj2.a = obj1.a;
 
 #### 对象克隆
 
+使用对象的clone方法
+
 ``` Java
 
 Person p = new Person(23, "zhang");
