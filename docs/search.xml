@@ -3,6 +3,61 @@
   
     
     <entry>
+      <title><![CDATA[一个好的项目需要哪些周边生态?]]></title>
+      <url>/agile/ecosystem-for-project/</url>
+      <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了<br>一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p>
+<h4 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h4><ol>
+<li>Check style - 代码风格检查</li>
+<li>Test coverage - 测试覆盖率</li>
+<li>fortify - Java代码静态分析</li>
+<li>TDD - 测试驱动开发</li>
+<li>Eslint - 前端代码检查</li>
+</ol>
+<h4 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h4><ol>
+<li>Penetration - 渗透测试</li>
+</ol>
+<h4 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h4><ol>
+<li>CI/CD 持续部署</li>
+<li>Git Flow - 基于git的团队协作方式</li>
+<li>Retro - 敏捷中反思项目的会议</li>
+</ol>
+<h4 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h4><ol>
+<li>monitoring<ul>
+<li>Ahportal - 一种监控的实现方式</li>
+</ul>
+</li>
+<li>DR - 灾难恢复方案</li>
+</ol>
+<h4 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h4><ol>
+<li>CPU、内存、磁盘使用率</li>
+<li>Max request量</li>
+<li>AB 测试</li>
+</ol>
+<h4 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h4><ol>
+<li>infrastructure as code - 根据项目代码创建基础设施</li>
+<li>immutable infrastructure - 每次部署创建新的服务器</li>
+<li>DB migration</li>
+</ol>
+<h4 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h4><ol>
+<li>micro-service 微服务</li>
+<li>SPA Project - 前后端分离</li>
+</ol>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><ol>
+<li>Blue-Green - 蓝绿部署</li>
+<li>Gray - 灰度发布</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> agile </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java object clone]]></title>
       <url>/java/java-object-clone/</url>
       <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p>
