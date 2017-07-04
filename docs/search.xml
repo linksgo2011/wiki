@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Java web project 概览]]></title>
-      <url>/java/java-web-project-overview/</url>
+      <url>/java/java/java-web-project-overview/</url>
       <content type="html"><![CDATA[<ol>
 <li><p>Java 基础重点回顾</p>
 <ul>
@@ -148,7 +148,7 @@
     
     <entry>
       <title><![CDATA[Java object clone]]></title>
-      <url>/java/java-object-clone/</url>
+      <url>/java/java/java-object-clone/</url>
       <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p>
 <ul>
 <li>shallow 赋值</li>
@@ -175,7 +175,7 @@
     
     <entry>
       <title><![CDATA[理解 java exception]]></title>
-      <url>/java/java-exception/</url>
+      <url>/java/java/java-exception/</url>
       <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p>
 <p>异常(exception)的例子:</p>
 <ul>

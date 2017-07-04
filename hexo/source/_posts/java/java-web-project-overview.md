@@ -1,6 +1,6 @@
 ---
 title: Java web project 概览
-categories: java
+categories: "java"
 ---
 
   1. Java 基础重点回顾
