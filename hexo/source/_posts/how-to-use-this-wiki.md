@@ -1,6 +1,6 @@
 ---
-title: Hello wiki
-categories: "写作"
+title: How to use this wiki!
+categories: "help"
 ---
 Welcome to ! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -23,7 +23,7 @@ Welcome to ! This is your very first post. Check [documentation](https://hexo.io
 
 创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问
 
-![](hello-world/05a4c81a-8793-4baa-92a1-94b28aece873.jpg)
+![](how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg)
 
 
 [测试连接](hello-world.md)
