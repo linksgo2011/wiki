@@ -20,7 +20,7 @@
 }
 
 .panel-group .panel{
-  width: calc(50% - 10px);
+  width: calc(50% - 5px);
   margin-bottom:10px;
   float: left;
 }
