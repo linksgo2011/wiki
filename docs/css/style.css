@@ -207,7 +207,8 @@ header h1{
   position: absolute;
   font-size: 0.7em;
   color: #555;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: initial;
+  font-weight: lighter;
 }
 
 h1{
