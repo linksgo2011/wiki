@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>cAWS Certificate Manager 常见问题 | Programming Wiki</title>
+  <title>AWS Certificate Manager 常见问题 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
   <meta name="description" content="一般性问题问：什么是 AWS Certificate Manager (ACM)？
@@ -12,7 +12,7 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="cAWS Certificate Manager 常见问题"/>
+  <meta property="og:title" content="AWS Certificate Manager 常见问题"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -46,7 +46,7 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">cAWS Certificate Manager 常见问题</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-05</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">AWS Certificate Manager 常见问题</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-05</span></h1>
 </div>		
 
 <div class="row page">
@@ -94,7 +94,7 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>是。<br>问：我是否可以在 Amazon EC2 实例或自己的服务器上使用证书？</p>
 <p>不可以。目前，ACM 提供的证书只能用于特定 AWS 服务。请参阅我可以将 ACM 提供的证书用于哪些 AWS 服务？</p>
 <p>问：我能够通过 ACM 预置的证书数量是否有限制？</p>
-<p>默认情况下，您可以在每个区域中为每个账户预置多达 100 个证书。通过 ACM 预置的每个证书最多可以拥有 10 个完全限定域名。您可以访问 AWS Support 中心请求增加上限。有关更多详细信息，请参阅 AWS 文档。<br>回到顶部</p>
+<p>默认情况下，您可以在每个区域中为每个账户预置多达 100 个证书。通过 ACM 预置的每个证书最多可以拥有 10 个完全限定域名。您可以访问 AWS Support 中心请求增加上限。有关更多详细信息，请参阅 AWS 文档。</p>
 <h3 id="预置证书"><a href="#预置证书" class="headerlink" title="预置证书"></a>预置证书</h3><p>问：如何预置 ACM 提供的证书？</p>
 <p>您可以使用 AWS 管理控制台、AWS CLI 或 ACM API/SDK 进行预置。要使用 AWS 管理控制台，请导航到控制台的 ACM 部分，选择“Request a Certificate”，输入站点的域名，然后按照屏幕上的说明完成请求。如果用户可以通过其他名称访问您的站点，则可以在请求中添加其他域名。域的所有者会收到一封关于请求批准颁发证书的电子邮件。在请求中的所有域名获得域所有者的批准后，系统将颁发证书并准备好预置证书以用于其他 AWS 服务，如 Elastic Load Balancing 或 Amazon CloudFront。有关详细信息，请参阅 ACM 文档。<br>问：颁发证书需要多长时间？</p>
 <p>获得域的所有者或域所有者授权代表的批准后，系统通常会在几分钟内颁发证书，但也可能需要更长时间。有关更多详细信息，请参阅如何预置 ACM 提供的证书？<br>问：请求证书时会发生什么情况？</p>
@@ -114,8 +114,7 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>如果 ACM 证书请求在 72 小时内没有接受验证，则被视为超时。有关故障排除建议，请参阅 ACM 用户指南。</p>
 <p>问：是否有其他方法来验证域或审批支持的证书？</p>
 <p>目前没有。</p>
-<pre><code>回到顶部 &gt;&gt;
-</code></pre><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>问：浏览器、操作系统和移动设备是否信任 ACM 提供的证书？</p>
+<h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>问：浏览器、操作系统和移动设备是否信任 ACM 提供的证书？</p>
 <p>目前的绝大部分浏览器、操作系统和移动设备都信任 ACM 提供的证书。ACM 提供的证书在浏览器和操作系统中的普及率高达 99%，包括 Windows XP SP3 和 Java 6 及更高版本。</p>
 <p>问：如何确认我的浏览器是否信任 ACM 提供的证书？</p>
 <p>信任 ACM 提供的证书的浏览器会显示一个锁形图标，并且在连接到使用 ACM 基于 SSL/TLS 提供的证书 (例如使用 HTTPS) 的站点时会显示不要颁发证书的警告。</p>
@@ -143,16 +142,15 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>您可以访问 AWS Support 中心并创建案例，以请求 ACM 撤销证书。 </p>
 <p>问：如果证书中的信息发生更改，我该如何通知 AWS？</p>
 <p>您可以发送电子邮件至 validation-questions[at]amazon.com，通知 AWS。</p>
-<p> 回到顶部 &gt;&gt;</p>
+<p> </p>
 <h3 id="私有密钥保护"><a href="#私有密钥保护" class="headerlink" title="私有密钥保护"></a>私有密钥保护</h3><p>问：ACM 提供的证书的私有密钥是如何管理的？</p>
 <p>系统会为 ACM 提供的每个证书创建一个键前缀。AWS Certificate Manager 可保护并管理用于 SSL/TLS 证书的私有密钥。ACM 会运用强加密和密钥管理最佳实践来保护并存储私有密钥。</p>
 <p>问：ACM 是否可以跨 AWS 区域复制证书？</p>
 <p>不可以。每个 ACM 证书私有密钥均存储在您请求该证书的区域。例如，当您在弗吉尼亚北部区域获得新的证书后，ACM 会将私有密钥存储在弗吉尼亚北部区域。仅当 ACM 证书与 CloudFront 分配关联时，该证书才能跨区域复制。在这种情况下，CloudFront 会将 ACM 证书分配到为您的分配配置的地理位置。</p>
 <p>问：我是否可以对证书私有密钥的使用进行审核？</p>
-<p>可以。您可以使用 AWS CloudTrail 查看日志，从而了解证书私有密钥的使用时间。<br>回到顶部 &gt;&gt;</p>
+<p>可以。您可以使用 AWS CloudTrail 查看日志，从而了解证书私有密钥的使用时间。</p>
 <h3 id="记账功能"><a href="#记账功能" class="headerlink" title="记账功能"></a>记账功能</h3><p>问：ACM 证书的使用如何收费和计费？</p>
 <p>通过 AWS Certificate Manager 预置、管理和部署的 SSL/TLS 证书可免费使用。您只需针对为运行应用程序而创建的 AWS 资源付费，例如 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配。</p>
-<p>回到顶部 &gt;&gt;</p>
 <h3 id="详细信息"><a href="#详细信息" class="headerlink" title="详细信息"></a>详细信息</h3><p>问：我是否可以将同一证书用于多个 Elastic Load Balancing 负载均衡器和多个 CloudFront 分配？</p>
 <p>可以。</p>
 <p>问：我是否可以将证书用于没有公共 Internet 访问权限的内部 Elastic Load Balancing 负载均衡器？</p>
@@ -176,7 +174,7 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>问：亚马逊是否允许将其商标或徽标用作证书徽章、站点签章或信任徽标？</p>
 <p>不允许。此类签章和徽章可复制到不使用 ACM 服务的站点，但不能假借亚马逊名号建立信任。为保护我们的客户和亚马逊的声誉，我们不允许以这种方式使用我们的徽标。</p>
 <h3 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h3><p>问：AWS CloudTrail 提供哪些日志记录信息？</p>
-<p>您可以确定哪些用户和账户为支持 AWS CloudTrail 的服务调用了 AWS API、发出调用的源 IP 地址以及调用发生的时间。例如，您可以确定哪些用户为关联 ACM 提供的证书与 Elastic Load Balancer 调用了 API，以及 Elastic Load Balancing 服务使用 KMS API 调用加密密钥的时间。<br>回到顶部 &gt;&gt;</p>
+<p>您可以确定哪些用户和账户为支持 AWS CloudTrail 的服务调用了 AWS API、发出调用的源 IP 地址以及调用发生的时间。例如，您可以确定哪些用户为关联 ACM 提供的证书与 Elastic Load Balancer 调用了 API，以及 Elastic Load Balancing 服务使用 KMS API 调用加密密钥的时间。</p>
 <h3 id="托管更新与部署"><a href="#托管更新与部署" class="headerlink" title="托管更新与部署"></a>托管更新与部署</h3><p>问：什么是 ACM 托管更新与部署？</p>
 <p>ACM 托管更新与部署可以管理由 ACM 提供的 SSL/TLS 证书的更新流程并部署更新后的证书。</p>
 <p>问：使用 ACM 托管更新与部署有哪些优势？</p>
