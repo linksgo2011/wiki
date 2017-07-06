@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[Tips to upgrade the relationship with colleagues]]></title>
+      <url>/method/Way%20of%20working%20for%20team%20building/</url>
+      <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul>
+<li>关注人的感受, 多表达感谢, 不要直接批评</li>
+</ul>
+<h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul>
+<li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p>
+</li>
+<li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> method </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Handover tips]]></title>
+      <url>/method/Way%20of%20working%20for%20handover/</url>
+      <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul>
+<li>整理一个清单</li>
+<li>建立一个文档去跟踪</li>
+<li>安排一些conversation去移交</li>
+<li>review 那些东西已经被确认接受</li>
+<li>角色对角色, QA、DEV、BA分别处理</li>
+<li>定义移交scope</li>
+<li>定义deadline</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> method </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[AWS Certificate Manager 常见问题]]></title>
       <url>/aws/aws-certificate-manager-faqs/</url>
       <content type="html"><![CDATA[<h3 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h3><p>问：什么是 AWS Certificate Manager (ACM)？</p>

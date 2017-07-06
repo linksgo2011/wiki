@@ -226,13 +226,11 @@ h1,h2,h3,h4,h5,h6{
 h2{
   margin: 0.83em 0;
   color: green;
-  border-bottom: 2px #ccc solid;
   padding-top: 40px;
   margin-top: -45px;
 }
 
 h3 {
-  border-bottom: 1.5px solid #dcdce9;
   margin-top: -5px;
   color: #9C4C17;
 }
