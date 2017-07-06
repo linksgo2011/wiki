@@ -77,7 +77,37 @@ AWS Certificate Manager is a service that lets you easily provision, manage, and
 <li>Free for the Certificates</li>
 </ul>
 <h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><ul>
-<li>if support session stick</li>
+<li>if support session stick answer:</li>
+</ul>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>ACM 支持从AWS上请求一个由Amazon的证书和自己上传的证书。</p>
+<h3 id="使用Amazon的证书"><a href="#使用Amazon的证书" class="headerlink" title="使用Amazon的证书"></a>使用Amazon的证书</h3><p>Pros</p>
+<ul>
+<li>免费</li>
+<li>支持自动续期</li>
+<li>支持绝大多客户端</li>
+<li>使用HTTPS协议,因此可以stick session</li>
+<li>自动续期</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>需要validate domain的拥有者,因此不能在内网中使用</li>
+<li>只能在ELB中使用不能在EC2中</li>
+<li>数量受限</li>
+</ul>
+<h3 id="使用导入自有证书"><a href="#使用导入自有证书" class="headerlink" title="使用导入自有证书"></a>使用导入自有证书</h3><p>Pros</p>
+<ul>
+<li>可以使用自定义证书</li>
+<li>数量不受限</li>
+<li>可以在内网使用</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>需要自己管理续期问题</li>
+<li>需要使用API更新证书</li>
+</ul>
+<h2 id="更新ELB证书的方法"><a href="#更新ELB证书的方法" class="headerlink" title="更新ELB证书的方法"></a>更新ELB证书的方法</h2><ul>
+<li>使用AWS API或者命令行</li>
+<li>使用ansible的一些role来执行 <a href="http://docs.ansible.com/ansible/ec2_elb_lb_module.html#options" target="_blank" rel="external">http://docs.ansible.com/ansible/ec2_elb_lb_module.html#options</a></li>
 </ul>
 	  
 

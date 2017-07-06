@@ -17,4 +17,42 @@ AWS Certificate Manager is a service that lets you easily provision, manage, and
 
 ## Questions ##
 
-- if support session stick
+- if support session stick answer:
+
+## Options ##
+
+ACM 支持从AWS上请求一个由Amazon的证书和自己上传的证书。
+
+### 使用Amazon的证书
+
+Pros
+
+- 免费
+- 支持自动续期
+- 支持绝大多客户端
+- 使用HTTPS协议,因此可以stick session
+- 自动续期
+
+Cons
+
+- 需要validate domain的拥有者,因此不能在内网中使用
+- 只能在ELB中使用不能在EC2中
+- 数量受限
+
+### 使用导入自有证书
+
+Pros
+
+- 可以使用自定义证书
+- 数量不受限
+- 可以在内网使用
+
+Cons
+
+- 需要自己管理续期问题
+- 需要使用API更新证书
+
+## 更新ELB证书的方法 ##
+
+- 使用AWS API或者命令行
+- 使用ansible的一些role来执行 http://docs.ansible.com/ansible/ec2_elb_lb_module.html#options
