@@ -1,7 +1,7 @@
-===
+---
 title: QA in agile
 categories: qa
-===
+---
 
 ## 常用QA概念 ##
 
@@ -23,6 +23,12 @@ A test case, is a set of test inputs, execution conditions, and expected results
 - Causal Diagram 因果图
 - Decision Table 判定表
 
+### Common Methods - White box
+
+- Logical coverage
+    - statement coverage
+    - Branch coverage
+    - Path coverage
 
 
 
