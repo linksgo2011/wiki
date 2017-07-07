@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title><![CDATA[Java 学习教程资源收集]]></title>
+      <url>/java/Java%20tutorial%20collection/</url>
+      <content type="html"><![CDATA[<p>下列顺序可以作为学习路线图</p>
+<ul>
+<li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="external">http://www.runoob.com/java/java-tutorial.html</a></li>
+<li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="external">http://www.runoob.com/servlet/servlet-tutorial.html</a></li>
+<li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="external">http://www.runoob.com/jsp/jsp-tutorial.html</a></li>
+<li>Spring mvc<ul>
+<li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="external">http://jinnianshilongnian.iteye.com/category/231099</a></li>
+<li>传智播客视屏教程</li>
+</ul>
+</li>
+<li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="external">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p>
+</li>
+<li><p>Mybatis</p>
+</li>
+<li>Hibernate</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Tips to upgrade the relationship with colleagues]]></title>
       <url>/method/Way%20of%20working%20for%20team%20building/</url>
       <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul>
