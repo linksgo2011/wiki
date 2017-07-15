@@ -7,5 +7,5 @@ hexo g
 cd ..
 cp CNAME docs/CNAME
 git add -A
-git commit -m 'generate website'
+git commit -m 'generate website on `date +%y%m%d`'
 git push
