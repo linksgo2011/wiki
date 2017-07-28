@@ -21,11 +21,14 @@ LoadModule php5_module libexec/apache2/libphp5.so
 
 为了方便测试，在此目录下新建一个test.php文件，并输入
 
+`
 <?php
 
 phpinfo();
 
  ?>
+
+`
 
 然后访问localhost/test.php，会直接打印出phpinfo中的各种信息
 
@@ -39,7 +42,6 @@ sudo cp /etc/php.ini.default php.ini
 
 sudo chmod +w php.ini
 
-进行配置php.ini
 
 找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可
 
