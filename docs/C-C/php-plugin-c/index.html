@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>一个好的项目需要哪些周边生态? | Programming Wiki</title>
+  <title>使用C/C++编写PHP插件 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD
-质量内建
-Check style - 代码风格检查
-Test coverage - 测试覆盖率
-fortify - Java代码静态分析
-TDD - 测试驱动开发
-">
+  <meta name="description" content="BackgroundPHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。
+相关资料
+PHP 源码解读和插件编写基本知识 http://www.php-intern">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="一个好的项目需要哪些周边生态?"/>
+  <meta property="og:title" content="使用C/C++编写PHP插件"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -51,7 +47,7 @@ TDD - 测试驱动开发
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">一个好的项目需要哪些周边生态?</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-04</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">使用C/C++编写PHP插件</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -73,47 +69,12 @@ TDD - 测试驱动开发
 	
 
 	  <!-- content -->
-	  <p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p>
-<h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol>
-<li>Check style - 代码风格检查</li>
-<li>Test coverage - 测试覆盖率</li>
-<li>fortify - Java代码静态分析</li>
-<li>TDD - 测试驱动开发</li>
-<li>Eslint - 前端代码检查</li>
-</ol>
-<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol>
-<li>Penetration - 渗透测试</li>
-</ol>
-<h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol>
-<li>CI/CD 持续部署</li>
-<li>Git Flow - 基于git的团队协作方式</li>
-<li>Retro - 敏捷中反思项目的会议</li>
-</ol>
-<h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol>
-<li>monitoring<ul>
-<li>Ahportal - 一种监控的实现方式</li>
+	  <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="external">http://www.php-internals.com/</a></li>
+<li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="external">https://github.com/rioderelfte/php-cpp-extension</a></li>
+<li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="external">https://github.com/phpv8/v8js</a></li>
 </ul>
-</li>
-<li>DR - 灾难恢复方案</li>
-</ol>
-<h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol>
-<li>CPU、内存、磁盘使用率</li>
-<li>Max request量</li>
-<li>AB 测试</li>
-</ol>
-<h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol>
-<li>infrastructure as code - 根据项目代码创建基础设施</li>
-<li>immutable infrastructure - 每次部署创建新的服务器</li>
-<li>DB migration</li>
-</ol>
-<h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol>
-<li>micro-service 微服务</li>
-<li>SPA Project - 前后端分离</li>
-</ol>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol>
-<li>Blue-Green - 蓝绿部署</li>
-<li>Gray - 灰度发布</li>
-</ol>
 	  
 
 	  <div>
@@ -127,32 +88,32 @@ TDD - 测试驱动开发
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		

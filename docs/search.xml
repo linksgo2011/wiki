@@ -3,9 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[使用C/C++编写PHP插件]]></title>
+      <url>/C-C/php-plugin-c/</url>
+      <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="external">http://www.php-internals.com/</a></li>
+<li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="external">https://github.com/rioderelfte/php-cpp-extension</a></li>
+<li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="external">https://github.com/phpv8/v8js</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> C/C++ </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSP 浏览器内存安全策略]]></title>
       <url>/security/csp-in-browser/</url>
-      <content type="html"><![CDATA[<h2 id="什么是"><a href="#什么是" class="headerlink" title="什么是?"></a>什么是?</h2><p>这里一段定义是来自于MDN社区</p>
+      <content type="html"><![CDATA[<h2 id="什么是CSP"><a href="#什么是CSP" class="headerlink" title="什么是CSP?"></a>什么是CSP?</h2><p>这里一段定义是来自于MDN社区</p>
 <blockquote>
 <p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware.</p>
 </blockquote>
