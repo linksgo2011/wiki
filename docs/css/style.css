@@ -19,17 +19,17 @@
   border-radius: 6px;
 }
 
-.panel-group .panel{
+.panel-group .category{
   width: calc(50% - 5px);
   margin-bottom:10px;
   float: left;
 }
 
-.panel-group .panel+.panel{
+.panel-group .category+.category{
   margin-top:0;
 }
 
-.panel-group .panel.right{
+.panel-group .category.right{
   margin-left: 10px;
 }
 

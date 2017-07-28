@@ -13,7 +13,7 @@
 
 		<div class="panel-group">
 			<% site.categories.sort('name').each(function(cat,index){ %>
-			<div class="panel panel-default <%=(index%2)?"right":""%>">
+			<div class="category <%=(index%2)?"right":""%>">
 				<div class="panel-heading">
 				    <%= cat.name.toLocaleUpperCase() %>
 				</div>
