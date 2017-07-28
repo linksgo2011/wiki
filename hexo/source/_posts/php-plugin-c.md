@@ -1,5 +1,5 @@
 ---
-title: 使用C/C++编写PHP插件
+title: PHP拓展和使用C编写自定义拓展
 categories: C/C++
 toc: true
 ---
@@ -13,3 +13,5 @@ PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性
 - PHP 源码解读和插件编写基本知识 http://www.php-internals.com/
 - C++库用于简化插件编写 https://github.com/rioderelfte/php-cpp-extension
 - V8引擎插件 https://github.com/phpv8/v8js
+- 基于php-cpp的Qr code插件 https://github.com/Leon2012/phpqrencode
+- PHP MVC框架的拓展实现 https://github.com/phalcon/cphalcon 
