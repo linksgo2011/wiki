@@ -6,8 +6,12 @@
       <title><![CDATA[语义化版本管理]]></title>
       <url>/se/semantic-version/</url>
       <content type="html"><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范</p>
-<p>搬运 <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">http://semver.org/lang/zh-CN/</a> 网站上的一些资料</p>
-<p>github: <a href="https://github.com/mojombo/semver" target="_blank" rel="external">https://github.com/mojombo/semver</a></p>
+<p><strong>资料来源</strong></p>
+<p>网站: <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">http://semver.org/lang/zh-CN/</a><br>Github: <a href="https://github.com/mojombo/semver" target="_blank" rel="external">https://github.com/mojombo/semver</a></p>
+<p><strong>一些工具检查或生成</strong></p>
+<ul>
+<li>semantic-release - <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="external">https://github.com/semantic-release/semantic-release</a></li>
+</ul>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
 <ol>
 <li>MAJOR version when you make incompatible API changes,</li>
@@ -44,68 +48,7 @@
 <li><p>Precedence refers to how versions are compared to each other when ordered.<br>Precedence MUST be calculated by separating the version into major, minor, patch<br>and pre-release identifiers in that order (Build metadata does not figure<br>into precedence). Precedence is determined by the first difference when<br>comparing each of these identifiers from left to right as follows: Major, minor,<br>and patch versions are always compared numerically. Example: 1.0.0 &lt; 2.0.0 &lt;<br>2.1.0 &lt; 2.1.1. When major, minor, and patch are equal, a pre-release version has<br>lower precedence than a normal version. Example: 1.0.0-alpha &lt; 1.0.0. Precedence<br>for two pre-release versions with the same major, minor, and patch version MUST<br>be determined by comparing each dot separated identifier from left to right<br>until a difference is found as follows: identifiers consisting of only digits<br>are compared numerically and identifiers with letters or hyphens are compared<br>lexically in ASCII sort order. Numeric identifiers always have lower precedence<br>than non-numeric identifiers. A larger set of pre-release fields has a higher<br>precedence than a smaller set, if all of the preceding identifiers are equal.<br>Example: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt;<br>1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.</p>
 </li>
 </ol>
-<h2 id="Backus–Naur-Form-Grammar-for-Valid-SemVer-Versions"><a href="#Backus–Naur-Form-Grammar-for-Valid-SemVer-Versions" class="headerlink" title="Backus–Naur Form Grammar for Valid SemVer Versions"></a>Backus–Naur Form Grammar for Valid SemVer Versions</h2><pre><code>&lt;valid semver&gt; ::= &lt;version core&gt;
-                 | &lt;version core&gt; &quot;-&quot; &lt;pre-release&gt;
-                 | &lt;version core&gt; &quot;+&quot; &lt;build&gt;
-                 | &lt;version core&gt; &quot;-&quot; &lt;pre-release&gt; &quot;+&quot; &lt;build&gt;
-
-&lt;version core&gt; ::= &lt;major&gt; &quot;.&quot; &lt;minor&gt; &quot;.&quot; &lt;patch&gt;
-
-&lt;major&gt; ::= &lt;numeric identifier&gt;
-
-&lt;minor&gt; ::= &lt;numeric identifier&gt;
-
-&lt;patch&gt; ::= &lt;numeric identifier&gt;
-
-&lt;pre-release&gt; ::= &lt;dot-separated pre-release identifiers&gt;
-
-&lt;dot-separated pre-release identifiers&gt; ::= &lt;pre-release identifier&gt;
-                                          | &lt;pre-release identifier&gt; &quot;.&quot; &lt;dot-separated pre-release identifiers&gt;
-
-&lt;build&gt; ::= &lt;dot-separated build identifiers&gt;
-
-&lt;dot-separated build identifiers&gt; ::= &lt;build identifier&gt;
-                                    | &lt;build identifier&gt; &quot;.&quot; &lt;dot-separated build identifiers&gt;
-
-&lt;pre-release identifier&gt; ::= &lt;alphanumeric identifier&gt;
-                           | &lt;numeric identifier&gt;
-
-&lt;build identifier&gt; ::= &lt;alphanumeric identifier&gt;
-                     | &lt;digits&gt;
-
-&lt;alphanumeric identifier&gt; ::= &lt;non-digit&gt;
-                            | &lt;non-digit&gt; &lt;identifier characters&gt;
-                            | &lt;identifier characters&gt; &lt;non-digit&gt;
-                            | &lt;identifier characters&gt; &lt;non-digit&gt; &lt;identifier characters&gt;
-
-&lt;numeric identifier&gt; ::= &quot;0&quot;
-                       | &lt;positive digit&gt;
-                       | &lt;positive digit&gt; &lt;digits&gt;
-
-&lt;identifier characters&gt; ::= &lt;identifier character&gt;
-                          | &lt;identifier character&gt; &lt;identifier characters&gt;
-
-&lt;identifier character&gt; ::= &lt;digit&gt;
-                         | &lt;non-digit&gt;
-
-&lt;non-digit&gt; ::= &lt;letter&gt;
-              | &quot;-&quot;
-
-&lt;digits&gt; ::= &lt;digit&gt;
-           | &lt;digit&gt; &lt;digits&gt;
-
-&lt;digit&gt; ::= &quot;0&quot;
-          | &lt;positive digit&gt;
-
-&lt;positive digit&gt; ::= &quot;1&quot; | &quot;2&quot; | &quot;3&quot; | &quot;4&quot; | &quot;5&quot; | &quot;6&quot; | &quot;7&quot; | &quot;8&quot; | &quot;9&quot;
-
-&lt;letter&gt; ::= &quot;A&quot; | &quot;B&quot; | &quot;C&quot; | &quot;D&quot; | &quot;E&quot; | &quot;F&quot; | &quot;G&quot; | &quot;H&quot; | &quot;I&quot; | &quot;J&quot;
-           | &quot;K&quot; | &quot;L&quot; | &quot;M&quot; | &quot;N&quot; | &quot;O&quot; | &quot;P&quot; | &quot;Q&quot; | &quot;R&quot; | &quot;S&quot; | &quot;T&quot;
-           | &quot;U&quot; | &quot;V&quot; | &quot;W&quot; | &quot;X&quot; | &quot;Y&quot; | &quot;Z&quot; | &quot;a&quot; | &quot;b&quot; | &quot;c&quot; | &quot;d&quot;
-           | &quot;e&quot; | &quot;f&quot; | &quot;g&quot; | &quot;h&quot; | &quot;i&quot; | &quot;j&quot; | &quot;k&quot; | &quot;l&quot; | &quot;m&quot; | &quot;n&quot;
-           | &quot;o&quot; | &quot;p&quot; | &quot;q&quot; | &quot;r&quot; | &quot;s&quot; | &quot;t&quot; | &quot;u&quot; | &quot;v&quot; | &quot;w&quot; | &quot;x&quot;
-           | &quot;y&quot; | &quot;z&quot;
-</code></pre><h2 id="Why-Use-Semantic-Versioning"><a href="#Why-Use-Semantic-Versioning" class="headerlink" title="Why Use Semantic Versioning?"></a>Why Use Semantic Versioning?</h2><p>This is not a new or revolutionary idea. In fact, you probably do something<br>close to this already. The problem is that “close” isn’t good enough. Without<br>compliance to some sort of formal specification, version numbers are<br>essentially useless for dependency management. By giving a name and clear<br>definition to the above ideas, it becomes easy to communicate your intentions<br>to the users of your software. Once these intentions are clear, flexible (but<br>not too flexible) dependency specifications can finally be made.</p>
+<h2 id="Why-Use-Semantic-Versioning"><a href="#Why-Use-Semantic-Versioning" class="headerlink" title="Why Use Semantic Versioning?"></a>Why Use Semantic Versioning?</h2><p>This is not a new or revolutionary idea. In fact, you probably do something<br>close to this already. The problem is that “close” isn’t good enough. Without<br>compliance to some sort of formal specification, version numbers are<br>essentially useless for dependency management. By giving a name and clear<br>definition to the above ideas, it becomes easy to communicate your intentions<br>to the users of your software. Once these intentions are clear, flexible (but<br>not too flexible) dependency specifications can finally be made.</p>
 <p>A simple example will demonstrate how Semantic Versioning can make dependency<br>hell a thing of the past. Consider a library called “Firetruck.” It requires a<br>Semantically Versioned package named “Ladder.” At the time that Firetruck is<br>created, Ladder is at version 3.1.0. Since Firetruck uses some functionality<br>that was first introduced in 3.1.0, you can safely specify the Ladder<br>dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when<br>Ladder version 3.1.1 and 3.2.0 become available, you can release them to your<br>package management system and know that they will be compatible with existing<br>dependent software.</p>
 <p>As a responsible developer you will, of course, want to verify that any<br>package upgrades function as advertised. The real world is a messy place;<br>there’s nothing we can do about that but be vigilant. What you can do is let<br>Semantic Versioning provide you with a sane way to release and upgrade<br>packages without having to roll new versions of dependent packages, saving you<br>time and hassle.</p>
 <p>If all of this sounds desirable, all you need to do to start using Semantic<br>Versioning is to declare that you are doing so and then follow the rules. Link<br>to this website from your README so others know the rules and can benefit from<br>them.</p>
@@ -189,10 +132,7 @@
 <p>2、测试</p>
 <p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p>
 <p>为了方便测试，在此目录下新建一个test.php文件，并输入</p>
-<p>`<br>&lt;?php</p>
-<p>phpinfo();</p>
-<p> ?&gt;</p>
-<p>`</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line">phpinfo();</div><div class="line"></div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p>
 <p>3、PHP配置</p>
 <p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p>

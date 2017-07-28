@@ -7,9 +7,16 @@ toc: true
 ## background ##
 如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范
 
-搬运 http://semver.org/lang/zh-CN/ 网站上的一些资料
+**资料来源**
 
-github: https://github.com/mojombo/semver
+网站: http://semver.org/lang/zh-CN/
+Github: https://github.com/mojombo/semver
+
+**一些工具检查或生成**
+
+- semantic-release - https://github.com/semantic-release/semantic-release
+
+
 
 Summary
 -------
@@ -137,72 +144,6 @@ than non-numeric identifiers. A larger set of pre-release fields has a higher
 precedence than a smaller set, if all of the preceding identifiers are equal.
 Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
-
-Backus–Naur Form Grammar for Valid SemVer Versions
---------------------------------------------------
-
-    <valid semver> ::= <version core>
-                     | <version core> "-" <pre-release>
-                     | <version core> "+" <build>
-                     | <version core> "-" <pre-release> "+" <build>
-
-    <version core> ::= <major> "." <minor> "." <patch>
-
-    <major> ::= <numeric identifier>
-
-    <minor> ::= <numeric identifier>
-
-    <patch> ::= <numeric identifier>
-
-    <pre-release> ::= <dot-separated pre-release identifiers>
-
-    <dot-separated pre-release identifiers> ::= <pre-release identifier>
-                                              | <pre-release identifier> "." <dot-separated pre-release identifiers>
-
-    <build> ::= <dot-separated build identifiers>
-
-    <dot-separated build identifiers> ::= <build identifier>
-                                        | <build identifier> "." <dot-separated build identifiers>
-
-    <pre-release identifier> ::= <alphanumeric identifier>
-                               | <numeric identifier>
-
-    <build identifier> ::= <alphanumeric identifier>
-                         | <digits>
-
-    <alphanumeric identifier> ::= <non-digit>
-                                | <non-digit> <identifier characters>
-                                | <identifier characters> <non-digit>
-                                | <identifier characters> <non-digit> <identifier characters>
-
-    <numeric identifier> ::= "0"
-                           | <positive digit>
-                           | <positive digit> <digits>
-
-    <identifier characters> ::= <identifier character>
-                              | <identifier character> <identifier characters>
-
-    <identifier character> ::= <digit>
-                             | <non-digit>
-
-    <non-digit> ::= <letter>
-                  | "-"
-
-    <digits> ::= <digit>
-               | <digit> <digits>
-
-    <digit> ::= "0"
-              | <positive digit>
-
-    <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-
-    <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
-               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
-               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
-               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
-               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
-               | "y" | "z"
-
 
 Why Use Semantic Versioning?
 ----------------------------

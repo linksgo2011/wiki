@@ -21,14 +21,14 @@ LoadModule php5_module libexec/apache2/libphp5.so
 
 为了方便测试，在此目录下新建一个test.php文件，并输入
 
-`
+``` php
 <?php
 
 phpinfo();
 
  ?>
 
-`
+```
 
 然后访问localhost/test.php，会直接打印出phpinfo中的各种信息
 
