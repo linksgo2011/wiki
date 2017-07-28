@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java 学习教程资源收集 | Programming Wiki</title>
+  <title>PHP环境in Mac | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="教程列表下列顺序可以作为学习路线图
-
-入门教程 http://www.runoob.com/java/java-tutorial.html
-Servlet http://www.runoob.com/servlet/servlet-tutorial.html
-JSP http://www.runoo">
+  <meta name="description" content="实际上Mac系统自带了PHP和Apache的开发环境
+1、Apache相关
+Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可
+sudo vim /etc/apache2/httpd.conf
+打开对PHP的支持,第169行左右
+LoadModule php5_module ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java 学习教程资源收集"/>
+  <meta property="og:title" content="PHP环境in Mac"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -49,7 +50,7 @@ JSP http://www.runoo">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Java 学习教程资源收集</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-07</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">PHP环境in Mac</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-26</span></h1>
 </div>		
 
 <div class="row page">
@@ -62,25 +63,28 @@ JSP http://www.runoo">
 	  
 
 	  <!-- content -->
-	  <h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p>
-<ul>
-<li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="external">http://www.runoob.com/java/java-tutorial.html</a></li>
-<li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="external">http://www.runoob.com/servlet/servlet-tutorial.html</a></li>
-<li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="external">http://www.runoob.com/jsp/jsp-tutorial.html</a></li>
-<li>Spring mvc<ul>
-<li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="external">http://jinnianshilongnian.iteye.com/category/231099</a></li>
-<li>传智播客视屏教程</li>
-</ul>
-</li>
-<li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="external">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p>
-</li>
-<li><p>Mybatis</p>
-</li>
-<li>Hibernate</li>
-</ul>
-<h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul>
-<li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="external">http://www.runoob.com/java/java-examples.html</a></li>
-</ul>
+	  <p>实际上Mac系统自带了PHP和Apache的开发环境</p>
+<p>1、Apache相关</p>
+<p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p>
+<p>sudo vim /etc/apache2/httpd.conf</p>
+<p>打开对PHP的支持,第169行左右</p>
+<p>LoadModule php5_module libexec/apache2/libphp5.so</p>
+<p>2、测试</p>
+<p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p>
+<p>为了方便测试，在此目录下新建一个test.php文件，并输入</p>
+<p>&lt;?php</p>
+<p>phpinfo();</p>
+<p> ?&gt;</p>
+<p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p>
+<p>3、PHP配置</p>
+<p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p>
+<p>sudo cp /etc/php.ini.default php.ini</p>
+<p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p>
+<p>sudo chmod +w php.ini</p>
+<p>进行配置php.ini</p>
+<p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p>
+<p>4、测试</p>
+<p>再次访问localhost/test.php，date扩展就OK了！</p>
 	  
 
 	  <div>
@@ -96,12 +100,6 @@ JSP http://www.runoo">
 		
 	
 		
-	
-		
-	
-		
-	
-		
 			
 			
 		
@@ -113,17 +111,17 @@ JSP http://www.runoo">
 		
 	
 		
-			
-			
-			
+	
 		
 	
 		
-			
+	
 		
 	
 		
-			
+	
+		
+	
 		
 	
 		
@@ -134,7 +132,7 @@ JSP http://www.runoo">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/java-web-project-overview/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
