@@ -1,5 +1,5 @@
 ---
-title:Jeeweb - SpringMVC+Spring+Hibernate 项目模板
+title: Jeeweb - SpringMVC+Spring+Hibernate 项目模板
 categories: java
 ---
 
