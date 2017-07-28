@@ -29,7 +29,7 @@
   margin-top:0;
 }
 
-.panel-group .panel:nth-child(even){
+.panel-group .panel.right{
   margin-left: 10px;
 }
 
