@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title><![CDATA[最实用的Linux命令]]></title>
+      <url>/linux/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>打包备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zcvf &quot;jiaonuobg_assets_$(date &quot;+%Y%m%d&quot;).tar.gz&quot; jiaonuobg/assets</div></pre></td></tr></table></figure>
+<p>备份nodejs+mysql项目</p>
+]]></content>
+      
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[语义化版本管理]]></title>
       <url>/se/semantic-version/</url>
       <content type="html"><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范</p>
