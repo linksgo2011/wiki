@@ -5,9 +5,43 @@
     <entry>
       <title><![CDATA[最实用的Linux命令]]></title>
       <url>/linux/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>打包备份</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zcvf &quot;jiaonuobg_assets_$(date &quot;+%Y%m%d&quot;).tar.gz&quot; jiaonuobg/assets</div></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<p>查看操作系统信息</p>
+<blockquote>
+<p>head -n 1 /etc/issue</p>
+</blockquote>
+<p>install JDK8 in ubuntu 14.04</p>
+<p>Add the webupd8 ppa, and install from that -</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:webupd8team/java</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install oracle-java8-installer</p>
+</blockquote>
+<p>Then</p>
+<blockquote>
+<p>java -version</p>
+</blockquote>
+<p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p>
+<blockquote>
+<p>sudo update-java-alternatives -s java-8-oracle</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>sudo update-java-alternatives -s java-7-oracle</p>
+</blockquote>
+<p>As appropriate.</p>
+<p>Got the error: apt-get-repository Command is Missing</p>
+<p>fixed by</p>
+<blockquote>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install software-properties-common</p>
+</blockquote>
+<p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="external">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p>
+<p>打包备份</p>
+<blockquote>
+<p>tar -zcvf “jiaonuobg<em>assets</em>$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p>
+</blockquote>
 <p>备份nodejs+mysql项目</p>
+<p>TBC</p>
 ]]></content>
       
         <categories>
