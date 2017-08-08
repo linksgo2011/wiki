@@ -52,3 +52,6 @@ https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04
 
 TBC
 
+Maven wrapper 生成
+
+> mvn -N io.takari:maven:wrapper
