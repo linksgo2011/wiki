@@ -3,6 +3,63 @@
   
     
     <entry>
+      <title><![CDATA[React 资源收集]]></title>
+      <url>/React-js/React%20recource/</url>
+      <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="external">https://marmelab.com/admin-on-rest/Admin.html</a></p>
+<p>React 测试工具</p>
+<p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="external">https://github.com/airbnb/enzyme</a></p>
+<p>React 状态管理库</p>
+<p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="external">https://github.com/reactjs/react-redux</a></p>
+<p>React 脚手架</p>
+<p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external">https://github.com/facebookincubator/create-react-app</a></p>
+<p>React 组件库(无UI)</p>
+<p>rc-*</p>
+<p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="external">http://react-component.github.io/badgeboard/</a></p>
+<p>React UI和组件库</p>
+<ul>
+<li><a href="https://ant.design/" target="_blank" rel="external">https://ant.design/</a></li>
+<li><a href="http://amazeui.org/" target="_blank" rel="external">http://amazeui.org/</a></li>
+<li><a href="https://onsen.io/react/" target="_blank" rel="external">https://onsen.io/react/</a></li>
+</ul>
+<p>React boilerplate</p>
+]]></content>
+      
+        <categories>
+            
+            <category> React.js </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[React Native 资源收集]]></title>
+      <url>/React-Native/React%20native%20resource/</url>
+      <content type="html"><![CDATA[<p>官网</p>
+<p><a href="https://facebook.github.io/react-native/" target="_blank" rel="external">https://facebook.github.io/react-native/</a></p>
+<p>React Native 开发工具</p>
+<p><a href="https://expo.io/" target="_blank" rel="external">https://expo.io/</a></p>
+<p>React Native 组件</p>
+<p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="external">https://react-native-training.github.io/react-native-elements/</a></p>
+<p>React Native 脚手架</p>
+<p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="external">https://github.com/react-community/create-react-native-app</a></p>
+<p>React Native 项目案例</p>
+<ul>
+<li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="external">https://github.com/soliury/noder-react-native</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> React Native </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[免费的CI/CD 工具]]></title>
       <url>/CI/CI-free-tools/</url>
       <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p>
