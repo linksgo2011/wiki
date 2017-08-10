@@ -48,3 +48,12 @@ sudo chmod +w php.ini
 4、测试
 
 再次访问localhost/test.php，date扩展就OK了！
+
+使用自带的Apache
+
+sudo apachectl start
+
+sudo apachectl stop
+
+sudo apachectl restart
+
