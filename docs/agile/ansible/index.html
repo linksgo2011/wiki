@@ -3,19 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>PHP 包管理工具 | Programming Wiki</title>
+  <title>Ansible 入门和使用 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="PHP中可以使用的包管理工具为 composer官网:https://getcomposer.org
-安装:https://getcomposer.org/download/
-安装composer
-
-php -r “copy(‘https://getcomposer.org/installer‘, ">
+  <meta name="description" content="官网: https://www.ansible.com/get-started工作原理:https://www.ansible.com/how-ansible-works下载和安装:http://docs.ansible.com/ansible/latest/intro_installation.h">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="PHP 包管理工具"/>
+  <meta property="og:title" content="Ansible 入门和使用"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -49,7 +45,7 @@ php -r “copy(‘https://getcomposer.org/installer‘, ">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">PHP 包管理工具</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-08-09</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Ansible 入门和使用</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-08-11</span></h1>
 </div>		
 
 <div class="row page">
@@ -71,23 +67,8 @@ php -r “copy(‘https://getcomposer.org/installer‘, ">
 	
 
 	  <!-- content -->
-	  <p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="external">https://getcomposer.org</a></p>
-<p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="external">https://getcomposer.org/download/</a></p>
-<p>安装composer</p>
-<blockquote>
-<p>php -r “copy(‘<a href="https://getcomposer.org/installer" target="_blank" rel="external">https://getcomposer.org/installer</a>‘, ‘composer-setup.php’);”</p>
-<p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p>
-<p>php composer-setup.php</p>
-<p>php -r “unlink(‘composer-setup.php’);”</p>
-</blockquote>
-<p>浏览PHP包:</p>
-<p><a href="http://packagist.org" target="_blank" rel="external">http://packagist.org</a></p>
-<p>使用composer</p>
-<p>在工作目录下添加composer.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,</div><div class="line">    &quot;require&quot;: &#123;</div><div class="line">        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;config&quot;: &#123;</div><div class="line">        &quot;vendor-dir&quot;: &quot;Vendor/&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>php composer.phar install</p>
-</blockquote>
+	  <p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="external">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="external">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="external">https://github.com/ansible/ansible-examples</a></p>
+<p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="external">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p>
 	  
 
 	  <div>
@@ -101,16 +82,6 @@ php -r “copy(‘https://getcomposer.org/installer‘, ">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
 		
@@ -157,6 +128,18 @@ php -r “copy(‘https://getcomposer.org/installer‘, ">
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
 		
 	
 		
@@ -169,7 +152,7 @@ php -r “copy(‘https://getcomposer.org/installer‘, ">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/agile/ecosystem-for-project/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
