@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title><![CDATA[常用开源项目收集]]></title>
+      <url>/collection/common%20tools/</url>
+      <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="external">http://veyon.io/#</a></p>
+<p>非常不错的开源教学软件</p>
+<p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> collection </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Mac 环境下使用MAMP安装PHP环境]]></title>
       <url>/php/php-mamp/</url>
       <content type="html"><![CDATA[<p>下载安装MAMP</p>
