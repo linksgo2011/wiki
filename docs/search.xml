@@ -3,10 +3,65 @@
   
     
     <entry>
+      <title><![CDATA[必背的常用VIM命令]]></title>
+      <url>/collection/common-vim-commands/</url>
+      <content type="html"><![CDATA[<p>通常来讲,我们不需要使用VIM做开发,但是需要掌握基本的VIM命令,因为需要在服务器上使用。<br>网上的VIM命令表太长,整理一个基本的命令表</p>
+<p>【按下Esc后的命令模式执行</p>
+<hr>
+<pre><code>a       插入字母后
+i       插入当前光标
+</code></pre><hr>
+<pre><code>dd       删除当前行
+yy       复制当前行
+</code></pre><hr>
+<pre><code>         v       选择
+         d       剪切
+         y       复制
+         p       粘贴在当前光标处上面
+         P       粘贴在当前光标处下面
+shift+p       在当前行前粘贴
+</code></pre><hr>
+<pre><code>       u       撤销操作
+ctrl+r       重复操作
+</code></pre><hr>
+<pre><code>          ^       移动到本行第一个非空白字符上
+0(数字0)      移动到本行第一个字符上,
+          $       移动到行尾
+        3$       移动到下面3行的行尾
+   ctrl+f       跳转下一页
+  ctrl+b       跳转上一页
+    [[/gg       文件头
+     ]]/G       文件尾
+</code></pre><hr>
+<pre><code>:set nu       显示行号
+    :100       跳转到100位置
+</code></pre><hr>
+<pre><code>:q!       不保存退出
+ :w       保存
+  :x       保存退出
+</code></pre><hr>
+<pre><code>/xxx       向后查找xxx
+?xxx       向上查找xxx
+     n       继续查找下一个
+</code></pre><h2 id="set-nohlsearch-关闭高亮搜索显示"><a href="#set-nohlsearch-关闭高亮搜索显示" class="headerlink" title="   :set nohlsearch       关闭高亮搜索显示"></a>   :set nohlsearch       关闭高亮搜索显示</h2><p>  :%s/abc/123/gc       将abc替换成123</p>
+]]></content>
+      
+        <categories>
+            
+            <category> collection </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ansible 入门和使用]]></title>
       <url>/agile/ansible/</url>
       <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="external">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="external">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="external">https://github.com/ansible/ansible-examples</a></p>
 <p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="external">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p>
+<p>我的常用脚本仓库</p>
+<p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="external">https://github.com/linksgo2011/deployment-automation</a></p>
 ]]></content>
       
         <categories>
