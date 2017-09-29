@@ -4,7 +4,7 @@ categories: communication
 toc: true
 ---
 
-# Get your email opened 邮件标题的拟定
+# 邮件标题
 
 推荐使用动词、正面的词语
 
@@ -74,6 +74,7 @@ the fundamentals of Email
 
 - mark text as bold?
 - directly or indirectly
+
 
 
 
