@@ -3,6 +3,69 @@
   
     
     <entry>
+      <title><![CDATA[英文邮件写作]]></title>
+      <url>/communication/write%20better%20email/</url>
+      <content type="html"><![CDATA[<h1 id="Get-your-email-opened-邮件标题的拟定"><a href="#Get-your-email-opened-邮件标题的拟定" class="headerlink" title="Get your email opened 邮件标题的拟定"></a>Get your email opened 邮件标题的拟定</h1><p>推荐使用动词、正面的词语</p>
+<p>Not good:</p>
+<blockquote>
+<p>Could you review the pull request?</p>
+</blockquote>
+<p>Bat good:</p>
+<blockquote>
+<p>Approval for pull request</p>
+</blockquote>
+<h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p>
+<h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p>
+<ol>
+<li>开始直接表明来意， I am writing to xxx</li>
+<li>意图明显，比如是为了report或者寻求帮助</li>
+<li>结束方法：<ol>
+<li>寻求更多communication</li>
+<li>寻求Feedback</li>
+<li>感谢</li>
+<li>offer potential help</li>
+</ol>
+</li>
+</ol>
+<h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p>
+<h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p>
+<ul>
+<li>Subject - catching attention in a positive way</li>
+<li>Greeting - appropriate</li>
+<li>Purpose - state it at the beginning </li>
+<li>Request - Be noticeable,clear and flexible</li>
+<li>Ending - invite communication and off help </li>
+<li>Sign-off - professional</li>
+</ul>
+<h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul>
+<li>Need to record for future reference</li>
+<li>Communication to multiple </li>
+<li>The different time zone </li>
+<li>Need someone take time to deal with</li>
+<li>Report</li>
+</ul>
+<h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul>
+<li>Urgent things </li>
+<li>negative staff</li>
+<li>complicated situation</li>
+</ul>
+<h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul>
+<li>mark text as bold?</li>
+<li>directly or indirectly</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> communication </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSS样式框架选型]]></title>
       <url>/collection/frontend%20boilderplate/</url>
       <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="external">http://necolas.github.io/normalize.css/</a></p>
@@ -90,6 +153,11 @@ ctrl+r       重复操作
 <p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="external">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p>
 <p>我的常用脚本仓库</p>
 <p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="external">https://github.com/linksgo2011/deployment-automation</a></p>
+<h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p>
+<p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ansible-playbook foo.yml --check</div></pre></td></tr></table></figure>
+<h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="external">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>
 ]]></content>
       
         <categories>
@@ -319,6 +387,7 @@ ctrl+r       重复操作
 </ul>
 <p>React Native boilerplate</p>
 <p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="external">https://github.com/linksgo2011/react-native-ts-most</a></p>
+<p>React Native project deployment</p>
 ]]></content>
       
         <categories>
