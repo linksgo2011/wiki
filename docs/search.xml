@@ -3,6 +3,47 @@
   
     
     <entry>
+      <title><![CDATA[How to end a meeting?]]></title>
+      <url>/english/How%20to%20wrap%20up/</url>
+      <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul>
+<li>“any questions”</li>
+<li>“any comments”</li>
+<li>“any other updates”</li>
+</ul>
+<h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul>
+<li>“Today we have covered”</li>
+<li>“in this meeting we have discussed”</li>
+<li>“The main points that I’d like to sum up are”</li>
+<li>“To summarize today’s meeting”</li>
+<li>“Let me summarize what we have talked about today before we finish”</li>
+</ul>
+<h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul>
+<li>Sum up 口语上的summarize</li>
+<li>Recap 复盘，重述</li>
+</ul>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p>
+<ul>
+<li>it seems as though we’ve run out of time for today</li>
+<li>Unfortunately we are out of time </li>
+</ul>
+<p>express to close a meeting </p>
+<ul>
+<li>Let’s call a day</li>
+<li>Let’s wrap up</li>
+<li>that’s all for our meeting</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> english </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python 入门]]></title>
       <url>/python/python%20basic/</url>
       <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="external">http://www.runoob.com/python/python-tutorial.html</a></p>
@@ -78,6 +119,7 @@
 <li>C#</li>
 </ul>
 <p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p>
+<p>## </p>
 ]]></content>
       
         <categories>
