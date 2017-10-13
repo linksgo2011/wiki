@@ -3,6 +3,93 @@
   
     
     <entry>
+      <title><![CDATA[Python 入门]]></title>
+      <url>/python/python%20basic/</url>
+      <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="external">http://www.runoob.com/python/python-tutorial.html</a></p>
+<h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p>
+<ul>
+<li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li>
+<li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li>
+<li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li>
+<li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li>
+</ul>
+<h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="external">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p>
+<h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>
+<p>## </p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[怎么样快速入门/学习一项技术]]></title>
+      <url>/method/How%20to%20learn%20something%20quickly/</url>
+      <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol>
+<li>回答几个问题<ul>
+<li>这项技术是什么？</li>
+<li>这项技术的意义？</li>
+<li>这项技术的定位？</li>
+<li>为什么需要学习这项技术  </li>
+</ul>
+</li>
+<li>收集入门教程</li>
+<li>阅读入门教程产出笔记或者思维导图</li>
+<li>使用小项目练习</li>
+<li>阅读官方文档了解更多</li>
+<li>搞懂原理（可选）</li>
+</ol>
+<h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul>
+<li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li>
+<li>阅读速度不宜过快，安排大块时间。step by step</li>
+<li>一定要有产出</li>
+<li>可以编写一些例子和demo放到wiki中</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> method </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Lambda 入门]]></title>
+      <url>/aws/aws%20lambda/</url>
+      <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="external">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p>
+<p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="external">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p>
+<h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p>
+<h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p>
+<h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p>
+<h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p>
+<h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p>
+<ul>
+<li>Nodejs</li>
+<li>Java</li>
+<li>Python</li>
+<li>C#</li>
+</ul>
+<p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> aws </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[英文邮件写作]]></title>
       <url>/communication/write%20better%20email/</url>
       <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p>
