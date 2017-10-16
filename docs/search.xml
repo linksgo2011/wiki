@@ -3,6 +3,28 @@
   
     
     <entry>
+      <title><![CDATA[Java CMS 选型]]></title>
+      <url>/java/cms%20in%20java/</url>
+      <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p>
+<h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul>
+<li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="external">https://github.com/white-cat/jeeweb</a></li>
+<li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="external">https://github.com/kanwangzjm/funiture</a></li>
+</ul>
+<h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul>
+<li><a href="http://www.tjpcms.com" target="_blank" rel="external">http://www.tjpcms.com</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[How to end a meeting?]]></title>
       <url>/english/How%20to%20wrap%20up/</url>
       <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul>
