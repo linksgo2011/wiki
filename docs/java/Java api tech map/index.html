@@ -3,23 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>How to end a meeting? | Programming Wiki</title>
+  <title>使用Java构建API的知识体系 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="some of usages
-“any questions”
-“any comments”
-“any other updates”
+  <meta name="description" content="API基本概念及资源的定义
+RESTful架构风格与成熟度模型
+规范化接口定义与设计
+JSON API Spec
+初始化项目环境并启动一个API Demo
 
-Summarize
-“Today we have covered”
-“in this meeting we have discussed”
-“The main poi">
+用Spring Boot快速构建项目
+
+Swagger UI对API文档化
+搭建多个不同业务的APIs
+API升级及版本控制策略
+
+API的认">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="How to end a meeting?"/>
+  <meta property="og:title" content="使用Java构建API的知识体系"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -53,54 +57,61 @@ Summarize
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">How to end a meeting?</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-10-13</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">使用Java构建API的知识体系</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-10-17</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
-  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
-	<!-- toc -->
-<script type="text/javascript">
-		jQuery(document).ready(function() {
- 		   generateWikiTOC('.note', '.toc',  2 , 2 );
-		});
-</script>
-  </div><!-- col-md-3 -->
-  
   
 
   
-  <div class="col-xs-12 col-sm-9 col-md-9 note">
-	
+	<div class="col-md-12">
+	  
 
 	  <!-- content -->
-	  <h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul>
-<li>“any questions”</li>
-<li>“any comments”</li>
-<li>“any other updates”</li>
-</ul>
-<h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul>
-<li>“Today we have covered”</li>
-<li>“in this meeting we have discussed”</li>
-<li>“The main points that I’d like to sum up are”</li>
-<li>“To summarize today’s meeting”</li>
-<li>“Let me summarize what we have talked about today before we finish”</li>
-</ul>
-<h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul>
-<li>Sum up 口语上的summarize</li>
-<li>Recap 复盘，重述</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p>
-<ul>
-<li>it seems as though we’ve run out of time for today</li>
-<li>Unfortunately we are out of time </li>
-</ul>
-<p>express to close a meeting </p>
-<ul>
-<li>Let’s call a day</li>
-<li>Let’s wrap up</li>
-<li>that’s all for our meeting</li>
+	  <ul>
+<li>API基本概念及资源的定义</li>
+<li>RESTful架构风格与成熟度模型</li>
+<li>规范化接口定义与设计</li>
+<li>JSON API Spec</li>
+<li><p>初始化项目环境并启动一个API Demo</p>
+</li>
+<li><p>用Spring Boot快速构建项目</p>
+</li>
+<li>Swagger UI对API文档化</li>
+<li>搭建多个不同业务的APIs</li>
+<li><p>API升级及版本控制策略</p>
+</li>
+<li><p>API的认证与授权（常用的API认证方法及安全问题）</p>
+</li>
+<li>Axway网关集成及流量控制</li>
+<li><p>服务负载均衡ELB/F5</p>
+</li>
+<li><p>Hyxtrix故障熔断器，阻止故障雪崩</p>
+</li>
+<li>API中使用RxJava进行响应式编程</li>
+<li><p>最佳实践及总结</p>
+</li>
+<li><p>日志监控与错误追踪</p>
+</li>
+<li>调用链跟踪和性能面板</li>
+<li>Dynatrace &amp; Zipkin</li>
+<li><p>AH Portal &amp; Splunk</p>
+</li>
+<li><p>什么是消费者契约测试？</p>
+</li>
+<li>契约测试工具Pact的使用</li>
+<li>Spring Cloud Contract的使用？</li>
+<li><p>API测试工具的使用（SoapUI/Postman/自动化测试）</p>
+</li>
+<li><p>Spring Cloud 理念</p>
+</li>
+<li>配置服务器应用</li>
+<li>API服务注册与发现</li>
+<li>GraphQL?</li>
+<li>遗留系统向微服务架构迁移</li>
+<li>最佳实践</li>
 </ul>
 	  
 
@@ -115,16 +126,14 @@ Summarize
 	
 	
 		
-	
-		
-	
-		
 			
 			
 		
 	
 		
-	
+			
+			
+			
 		
 	
 		
@@ -180,7 +189,11 @@ Summarize
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -190,7 +203,17 @@ Summarize
 		
 	
 		
+			
+		
 	
+		
+	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -201,7 +224,7 @@ Summarize
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/java/cms in java/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
