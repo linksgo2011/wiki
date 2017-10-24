@@ -55,3 +55,9 @@ TBC
 Maven wrapper 生成
 
 > mvn -N io.takari:maven:wrapper
+
+
+根据端口查询Linux PID
+
+> netstat -apn | grap $port
+
