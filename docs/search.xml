@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[Manage your meeting?]]></title>
+      <url>/method/Manage%20your%20meeting/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> method </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在Ubuntu上通过apt-get搭建tomcat？]]></title>
       <url>/java/Java%20environment%20in%20linux/</url>
       <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="external">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p>
@@ -58,38 +72,26 @@
 <li>RESTful架构风格与成熟度模型</li>
 <li>规范化接口定义与设计</li>
 <li>JSON API Spec</li>
-<li><p>初始化项目环境并启动一个API Demo</p>
-</li>
-<li><p>用Spring Boot快速构建项目</p>
-</li>
+<li>初始化项目环境并启动一个API Demo</li>
+<li>用Spring Boot快速构建项目</li>
 <li>Swagger UI对API文档化</li>
 <li>搭建多个不同业务的APIs</li>
-<li><p>API升级及版本控制策略</p>
-</li>
-<li><p>API的认证与授权（常用的API认证方法及安全问题）</p>
-</li>
+<li>API升级及版本控制策略</li>
+<li>API的认证与授权（常用的API认证方法及安全问题）</li>
 <li>Axway网关集成及流量控制</li>
-<li><p>服务负载均衡ELB/F5</p>
-</li>
-<li><p>Hyxtrix故障熔断器，阻止故障雪崩</p>
-</li>
+<li>服务负载均衡ELB/F5</li>
+<li>Hyxtrix故障熔断器，阻止故障雪崩</li>
 <li>API中使用RxJava进行响应式编程</li>
-<li><p>最佳实践及总结</p>
-</li>
-<li><p>日志监控与错误追踪</p>
-</li>
+<li>最佳实践及总结</li>
+<li>日志监控与错误追踪</li>
 <li>调用链跟踪和性能面板</li>
 <li>Dynatrace &amp; Zipkin</li>
-<li><p>AH Portal &amp; Splunk</p>
-</li>
-<li><p>什么是消费者契约测试？</p>
-</li>
+<li>AH Portal &amp; Splunk</li>
+<li>什么是消费者契约测试？</li>
 <li>契约测试工具Pact的使用</li>
 <li>Spring Cloud Contract的使用？</li>
-<li><p>API测试工具的使用（SoapUI/Postman/自动化测试）</p>
-</li>
-<li><p>Spring Cloud 理念</p>
-</li>
+<li>API测试工具的使用（SoapUI/Postman/自动化测试）</li>
+<li>Spring Cloud 理念</li>
 <li>配置服务器应用</li>
 <li>API服务注册与发现</li>
 <li>GraphQL?</li>
