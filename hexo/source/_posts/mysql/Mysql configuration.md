@@ -5,8 +5,6 @@ toc: true
 ---
 
 
-
-
 ## 首先检查系统中是否已经安装了MySQL
 
 在终端里面输入 sudo netstat -tap | grep mysql
@@ -37,9 +35,9 @@ toc: true
 
 ## MySQL的一些简单管理：
 
-启动MySQL服务： sudo start mysql
+启动MySQL服务： ssudo /etc/init.d/mysql start
 
-停止MySQL服务： sudo stop mysql
+停止MySQL服务： sudo /etc/init.d/mysql stop
 
 修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword
 
@@ -47,7 +45,7 @@ toc: true
 
 听需要修改 my.cnf 文件：)：
 
-sudo vi /etc/mysql/my.cnf
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 
 bind-address = 127.0.0.1 //找到此内容并且注释
 
