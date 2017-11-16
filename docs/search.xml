@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title><![CDATA[API的contract测试之Pact]]></title>
+      <url>/test/test/Contract%20testing%20&amp;%20PACT/</url>
+      <content type="html"><![CDATA[<h2 id="why"><a href="#why" class="headerlink" title="why?"></a>why?</h2><p>当我们构建API的时候，需要保证API输出稳定，因此我们可以使用契约测试。<br>我们可以定义一个契约文件，然后消费者和API提供者并行开发，最终进行集成测试。</p>
+<h2 id="pact-和-contact的区别"><a href="#pact-和-contact的区别" class="headerlink" title="pact 和 contact的区别"></a>pact 和 contact的区别</h2><p>pact 是contact测试的一个实现</p>
+<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul>
+<li>pact文档 <a href="https://docs.pact.io/" target="_blank" rel="external">https://docs.pact.io/</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> test </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Mysql 基本管理命令]]></title>
       <url>/mysql/mysql/Mysql%20baisc%20operation/</url>
       <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p>
