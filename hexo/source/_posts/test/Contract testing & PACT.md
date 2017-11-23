@@ -14,4 +14,5 @@ pact 是contact测试的一个实现
 
 ## 一些资源
 
-- pact文档 https://docs.pact.io/
+- pact文档 https://docs.pact.io
+- Java 例子 https://github.com/DiUS/pact-workshop-jvm

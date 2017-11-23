@@ -3,12 +3,80 @@
   
     
     <entry>
+      <title><![CDATA[Mock工具 wiremock]]></title>
+      <url>/java/java/Wiremock%20for%20java/</url>
+      <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p>
+<h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@Rule</span></div><div class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</div></pre></td></tr></table></figure>
+<h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p>
+<blockquote>
+<p>java -jar wiremock-standalone-2.11.0.jar</p>
+</blockquote>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol>
+<li>可以使用录制模式来获取以后Mock的数据</li>
+<li>如果遇到HTTPS需要配置certificate</li>
+<li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="external">http://wiremock.org/docs/</a></li>
+</ol>
+<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p>
+<p><a href="http://wiremock.org/" target="_blank" rel="external">http://wiremock.org/</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Gradle 使用基础]]></title>
+      <url>/java/java/Gradle%20basic/</url>
+      <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p>
+<p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p>
+<p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p>
+<p>version = ‘0.0.1-SNAPSHOT’<br>sourceCompatibility = 1.8</p>
+<p>repositories {<br>    mavenCentral()<br>}</p>
+<p>dependencies {</p>
+<pre><code>compile(&apos;org.springframework.boot:spring-boot-starter-web&apos;)
+compile group: &apos;org.springframework.boot&apos;, name: &apos;spring-boot-starter-data-jpa&apos;, version: &apos;1.5.3.RELEASE&apos;
+compile group: &apos;javax.servlet.jsp.jstl&apos;, name: &apos;javax.servlet.jsp.jstl-api&apos;, version: &apos;1.2.1&apos;
+compile group: &apos;org.apache.tomcat.embed&apos;, name: &apos;tomcat-embed-jasper&apos;, version: &apos;9.0.0.M25&apos;
+compile group: &apos;javax.servlet&apos;, name: &apos;jstl&apos;, version: &apos;1.2&apos;
+compile group: &apos;org.glassfish&apos;, name: &apos;javax.el&apos;, version: &apos;3.0.0&apos;
+compile group: &apos;org.apache.commons&apos;, name: &apos;commons-lang3&apos;, version: &apos;3.0&apos;
+
+runtime(&apos;mysql:mysql-connector-java&apos;)
+
+testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
+</code></pre><p>}</p>
+<p>`</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看所有的任务列表</p>
+<blockquote>
+<p>gradle tasks –all</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[API的contract测试之Pact]]></title>
       <url>/test/test/Contract%20testing%20&amp;%20PACT/</url>
       <content type="html"><![CDATA[<h2 id="why"><a href="#why" class="headerlink" title="why?"></a>why?</h2><p>当我们构建API的时候，需要保证API输出稳定，因此我们可以使用契约测试。<br>我们可以定义一个契约文件，然后消费者和API提供者并行开发，最终进行集成测试。</p>
 <h2 id="pact-和-contact的区别"><a href="#pact-和-contact的区别" class="headerlink" title="pact 和 contact的区别"></a>pact 和 contact的区别</h2><p>pact 是contact测试的一个实现</p>
 <h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul>
-<li>pact文档 <a href="https://docs.pact.io/" target="_blank" rel="external">https://docs.pact.io/</a></li>
+<li>pact文档 <a href="https://docs.pact.io" target="_blank" rel="external">https://docs.pact.io</a></li>
+<li>Java 例子 <a href="https://github.com/DiUS/pact-workshop-jvm" target="_blank" rel="external">https://github.com/DiUS/pact-workshop-jvm</a></li>
 </ul>
 ]]></content>
       

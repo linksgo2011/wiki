@@ -3,37 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java web project 概览 | Programming Wiki</title>
+  <title>Gradle 使用基础 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="Java 基础重点回顾
-
-注解
-异常
-
-
-J2EE 开发常用版本
-
-Jar 引入Tomcat的J2EE的实现
-J2EE 1.7
-JDK 8
-Tomcat 1.7
-
-
-Spring framework
-
-Beans
-周边生态
-项目配置 web.xml
-页面渲染
-JSP
-Velocity
-FreeMak">
+  <meta name="description" content="介绍Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等
+基本原理Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的
+常用配置`
+buildscript {    ext {        ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java web project 概览"/>
+  <meta property="og:title" content="Gradle 使用基础"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -67,7 +48,7 @@ FreeMak">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Java web project 概览</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-04</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Gradle 使用基础</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-11-17</span></h1>
 </div>		
 
 <div class="row page">
@@ -80,81 +61,31 @@ FreeMak">
 	  
 
 	  <!-- content -->
-	  <ol>
-<li><p>Java 基础重点回顾</p>
-<ul>
-<li>注解</li>
-<li>异常</li>
-</ul>
-</li>
-<li><p>J2EE 开发常用版本</p>
-<ul>
-<li>Jar 引入Tomcat的J2EE的实现</li>
-<li>J2EE 1.7</li>
-<li>JDK 8</li>
-<li>Tomcat 1.7</li>
-</ul>
-</li>
-<li><p>Spring framework</p>
-<ul>
-<li>Beans</li>
-<li>周边生态</li>
-<li>项目配置 web.xml</li>
-<li>页面渲染<ul>
-<li>JSP</li>
-<li>Velocity</li>
-<li>FreeMaker</li>
-<li>themleaf</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ORM</p>
-<ul>
-<li>Mybatis<ul>
-<li>DAO 接口<ol>
-<li>DTO</li>
-<li>PO</li>
-</ol>
-</li>
-<li>Domain 或者 Model  实体类和数据库对应</li>
-<li>Mapper 使用xml实现和数据库</li>
-</ul>
-</li>
-<li>Hibernate</li>
-</ul>
-</li>
-<li><p>Validation</p>
-<ul>
-<li>Hibernate Validation 实现</li>
-<li>Java EE Validation 实现</li>
-</ul>
-</li>
-<li><p>授权验证/登录</p>
-<ol>
-<li>intercept 实现</li>
-<li>sharon</li>
-<li>Spring security</li>
-</ol>
-</li>
-<li><p>部署</p>
-<ol>
-<li>tomcat 1.7</li>
-</ol>
-</li>
-<li><p>日志</p>
-<ol>
-<li>log4J</li>
-<li>self4J</li>
-</ol>
-</li>
-<li><p>构建工具</p>
-<ol>
-<li>Maven</li>
-<li>Gradle</li>
-</ol>
-</li>
-</ol>
+	  <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p>
+<p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p>
+<p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p>
+<p>version = ‘0.0.1-SNAPSHOT’<br>sourceCompatibility = 1.8</p>
+<p>repositories {<br>    mavenCentral()<br>}</p>
+<p>dependencies {</p>
+<pre><code>compile(&apos;org.springframework.boot:spring-boot-starter-web&apos;)
+compile group: &apos;org.springframework.boot&apos;, name: &apos;spring-boot-starter-data-jpa&apos;, version: &apos;1.5.3.RELEASE&apos;
+compile group: &apos;javax.servlet.jsp.jstl&apos;, name: &apos;javax.servlet.jsp.jstl-api&apos;, version: &apos;1.2.1&apos;
+compile group: &apos;org.apache.tomcat.embed&apos;, name: &apos;tomcat-embed-jasper&apos;, version: &apos;9.0.0.M25&apos;
+compile group: &apos;javax.servlet&apos;, name: &apos;jstl&apos;, version: &apos;1.2&apos;
+compile group: &apos;org.glassfish&apos;, name: &apos;javax.el&apos;, version: &apos;3.0.0&apos;
+compile group: &apos;org.apache.commons&apos;, name: &apos;commons-lang3&apos;, version: &apos;3.0&apos;
+
+runtime(&apos;mysql:mysql-connector-java&apos;)
+
+testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
+</code></pre><p>}</p>
+<p>`</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看所有的任务列表</p>
+<blockquote>
+<p>gradle tasks –all</p>
+</blockquote>
 	  
 
 	  <div>
@@ -173,6 +104,73 @@ FreeMak">
 	
 		
 			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -192,59 +190,13 @@ FreeMak">
 		
 	
 		
+	
+		
+	
+		
+	
+		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -259,34 +211,13 @@ FreeMak">
 	
 		
 	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
 	
 	
-	
-		<li class="prev"><a href="/java/Jeeweb - Java boilerplate/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/java/java/Wiremock for java/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/java-object-clone/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/java/Java environment in linux/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
