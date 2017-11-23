@@ -1,5 +1,5 @@
 ---
-title: 在Ubuntu上通过apt-get搭建tomcat？
+title: 在Ubuntu上通过apt-get搭建tomcat
 categories: java 
 toc: true
 ---

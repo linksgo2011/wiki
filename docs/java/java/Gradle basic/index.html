@@ -7,9 +7,9 @@
   <meta name="author" content="cn.printf">
   
   <meta name="description" content="介绍Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等
-基本原理Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的
+基本原理``Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的
 常用配置`
-buildscript {    ext {        ">
+buildscript {    ext {      ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -62,7 +62,7 @@ buildscript {    ext {        ">
 
 	  <!-- content -->
 	  <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p>
-<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理``"></a>基本原理``</h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p>
 <h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p>
 <p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p>
 <p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p>
@@ -99,8 +99,6 @@ testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
 	
 	
 		
-			
-		
 	
 		
 			
@@ -213,7 +211,7 @@ testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
 	
 	
 	
-		<li class="prev"><a href="/java/java/Wiremock for java/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	

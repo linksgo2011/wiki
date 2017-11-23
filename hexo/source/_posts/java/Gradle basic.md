@@ -8,7 +8,7 @@ categories: java
 Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等
 
 
-## 基本原理
+## 基本原理``
 
 Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的
 

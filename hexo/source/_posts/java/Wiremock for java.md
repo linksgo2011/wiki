@@ -1,6 +1,6 @@
 ---
 title: Mock工具 wiremock
-categories: java
+categories: test
 ---
 
 Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。
@@ -10,7 +10,6 @@ Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测�
 在JUnit4中可以使用Rule的注解，来直接启动
 
 ```java
-
 
 @Rule
 public WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));
