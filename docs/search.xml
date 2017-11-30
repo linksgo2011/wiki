@@ -3,6 +3,61 @@
   
     
     <entry>
+      <title><![CDATA[前端面试tips]]></title>
+      <url>/interview/frontend/Interview%20for%20frontend/</url>
+      <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul>
+<li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li>
+<li>实际动手写代码的速度，比如敲代码过程中是否流畅</li>
+<li>Code Smell的识别与重构能力</li>
+<li>对于软件设计的理解深度</li>
+<li>对遇到问题的解决思路以及反应速度</li>
+<li>对新需求的反应和理解速度</li>
+<li>对新事物的态度和学习能力，比如新IDE，TDD等</li>
+<li>沟通交流、协作能力</li>
+<li>对待Feedback的态度</li>
+</ul>
+<h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol>
+<li>作业查看</li>
+<li>收集上一轮面试反馈</li>
+<li>关键信息收集<ul>
+<li>姓名</li>
+<li>技术栈</li>
+<li>工作年限</li>
+<li>项目经历</li>
+<li>毕业院校</li>
+</ul>
+</li>
+</ol>
+<h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol>
+<li>理论基础</li>
+<li>常用编程技巧是否熟练</li>
+<li>接受Feedback和沟通是否顺畅</li>
+<li>学习能力</li>
+<li>发现问题能力</li>
+<li>工程设计能力</li>
+<li>细节和质量控制能力</li>
+</ol>
+<h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol>
+<li>工作中是否使用了ES6那些语法特性?</li>
+<li>了解哪些前端框架和库，他们的特点是什么？</li>
+<li>你觉得这里用xxx是不是好一些？</li>
+<li>如果你拿到一个新的框架，会怎么去快速上手？</li>
+<li>对于你的代码，你觉得哪些点还可以提升？</li>
+<li>这些逻辑是不是可以抽象出来？</li>
+<li>怎么写单元测试？</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> interview </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Mock工具 wiremock]]></title>
       <url>/test/java/Wiremock%20for%20java/</url>
       <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p>
