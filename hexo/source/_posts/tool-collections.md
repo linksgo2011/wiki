@@ -1,6 +1,6 @@
 ---
 title: 超实用的工具和网站收集
-categories: "collections"
+categories: collection
 ---
 
 ## 流程图、思维导图 ##

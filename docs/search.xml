@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title><![CDATA[Circle CI 基本使用]]></title>
+      <url>/CI-CD/circleci%20basic/</url>
+      <content type="html"><![CDATA[<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网：<a href="https://circleci.com" target="_blank" rel="external">https://circleci.com</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> CI&amp;CD </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[前端面试tips]]></title>
       <url>/interview/frontend/Interview%20for%20frontend/</url>
       <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul>
@@ -1210,12 +1225,12 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[超实用的工具和网站收集]]></title>
-      <url>/collections/tool-collections/</url>
+      <url>/collection/tool-collections/</url>
       <content type="html"><![CDATA[<h2 id="流程图、思维导图"><a href="#流程图、思维导图" class="headerlink" title="流程图、思维导图"></a>流程图、思维导图</h2><p><a href="https://www.processon.com" target="_blank" rel="external">https://www.processon.com</a></p>
 <p>可以绘制思维导图、流程图、ER图等</p>
 <p><a href="https://coggle.it/" target="_blank" rel="external">https://coggle.it/</a></p>
 <p>超漂亮的思维导图工具</p>
-<p><img src="/collections/tool-collections/coggle.png" alt=""></p>
+<p><img src="/collection/tool-collections/coggle.png" alt=""></p>
 <p><a href="http://naotu.baidu.com/" target="_blank" rel="external">http://naotu.baidu.com/</a></p>
 <p>百度脑图</p>
 <h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><p><a href="https://octodex.github.com/" target="_blank" rel="external">https://octodex.github.com/</a></p>
@@ -1224,7 +1239,7 @@ ctrl+r       重复操作
       
         <categories>
             
-            <category> collections </category>
+            <category> collection </category>
             
         </categories>
         
