@@ -939,7 +939,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[React 资源收集]]></title>
-      <url>/React-js/React%20recource/</url>
+      <url>/React/React%20recource/</url>
       <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="external">https://marmelab.com/admin-on-rest/Admin.html</a></p>
 <p>React 测试工具</p>
 <p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="external">https://github.com/airbnb/enzyme</a></p>
@@ -964,7 +964,7 @@ ctrl+r       重复操作
       
         <categories>
             
-            <category> React.js </category>
+            <category> React </category>
             
         </categories>
         

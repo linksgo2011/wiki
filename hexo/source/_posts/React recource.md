@@ -1,6 +1,6 @@
 ---
 title: React 资源收集
-categories: React.js
+categories: React
 ---
 
 React js 后端界面
