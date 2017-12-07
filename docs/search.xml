@@ -3,6 +3,109 @@
   
     
     <entry>
+      <title><![CDATA[Java web工程师知识图谱]]></title>
+      <url>/java/java/Java%20kills%20map/</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>Java基础</p>
+</li>
+<li><p>Web开发基础知识</p>
+<ul>
+<li>浏览器工作原理</li>
+<li>Servlet和JSP</li>
+<li>HTTP协议</li>
+<li>DNS解析原理</li>
+<li>HTML、CSS、JS</li>
+</ul>
+</li>
+<li><p>Java框架</p>
+<ul>
+<li>Spring、Spring MVC</li>
+<li>Mybatis</li>
+<li>Hibernate</li>
+<li>Shiro\Spring security</li>
+<li>Spring boot</li>
+<li>JWT token认证方案</li>
+</ul>
+</li>
+<li><p>常用library</p>
+<ul>
+<li>Google guava集合处理和常用工具</li>
+<li>Apache commons api</li>
+<li>Quartz计划任务处理</li>
+<li>Jackson json处理</li>
+<li>Selflog 日志生成</li>
+<li>freemarker模板引擎</li>
+<li>Apache httpcomponent HTTP client工具</li>
+<li></li>
+</ul>
+</li>
+<li><p>数据库</p>
+<ul>
+<li>Mysql</li>
+<li>MongoDB</li>
+<li>Redis</li>
+</ul>
+</li>
+<li><p>架构设计</p>
+<ul>
+<li>OAuth</li>
+<li>Restful API设计</li>
+<li>SSO单点登录</li>
+<li>分布式框架Dubbo</li>
+<li>微服务框架Spring cloud</li>
+</ul>
+</li>
+<li><p>工程化</p>
+<ul>
+<li>Gradle\Maven构建工具</li>
+<li>Jenkins</li>
+<li>Circleci PaaS平台的CI</li>
+<li>Checkstyle代码质量检测</li>
+<li>FindBugs代码检测</li>
+<li>Swagger文档管理</li>
+<li>Axway webgate网关方案</li>
+</ul>
+</li>
+<li><p>测试</p>
+<ul>
+<li>Contract 测试Pact</li>
+<li>Junit</li>
+<li>Assertj断言库</li>
+<li>mockito 单元测试Mock工具</li>
+<li>WireMock数据拦截和模拟</li>
+</ul>
+</li>
+<li><p>部署和监控</p>
+<ul>
+<li>Linux</li>
+<li>Tomcat web服务器</li>
+<li>Nginx负载均衡</li>
+<li>Splunk日志管理</li>
+<li>Dynatrace</li>
+<li>ELK(ElasticSearch+Logstash+ Kibana)</li>
+<li>Spring boot admin监控</li>
+</ul>
+</li>
+<li><p>项目管理</p>
+<ul>
+<li>禅道管理平台</li>
+<li>Trello看板管理</li>
+<li>Confluence文档管理</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[React学习体系]]></title>
       <url>/react/React%20crouse%20map/</url>
       <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul>
