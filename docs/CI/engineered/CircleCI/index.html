@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mock工具 wiremock | Programming Wiki</title>
+  <title>CircleCI 基础 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。
-The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
-123@Rulepublic WireMockRule wireMockRule = new WireMockRul">
+  <meta name="description" content="CircleCI是什么CircleCI is a continuous integration engine offered as SaaS and on premise.
+CircleCI特点有用的资源
+官网：https://circleci.com/
+文档：https://circleci.co">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Mock工具 wiremock"/>
+  <meta property="og:title" content="CircleCI 基础"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -47,7 +48,7 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Mock工具 wiremock</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-11-23</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">CircleCI 基础</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-12-08</span></h1>
 </div>		
 
 <div class="row page">
@@ -60,20 +61,11 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	  
 
 	  <!-- content -->
-	  <p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p>
-<h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">@Rule</span></div><div class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</div></pre></td></tr></table></figure>
-<h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p>
-<blockquote>
-<p>java -jar wiremock-standalone-2.11.0.jar</p>
-</blockquote>
-<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol>
-<li>可以使用录制模式来获取以后Mock的数据</li>
-<li>如果遇到HTTPS需要配置certificate</li>
-<li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="external">http://wiremock.org/docs/</a></li>
-</ol>
-<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p>
-<p><a href="http://wiremock.org/" target="_blank" rel="external">http://wiremock.org/</a></p>
+	  <h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p>
+<h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul>
+<li>官网：<a href="https://circleci.com/" target="_blank" rel="external">https://circleci.com/</a></li>
+<li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="external">https://circleci.com/docs/</a></li>
+</ul>
 	  
 
 	  <div>
@@ -87,24 +79,6 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-			
 			
 			
 		
@@ -153,6 +127,24 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
 		
 	
 		
@@ -199,7 +191,7 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/test/test/Contract testing & PACT/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/CI/engineered/CI-free-tools/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

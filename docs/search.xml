@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title><![CDATA[CircleCI 基础]]></title>
+      <url>/CI/engineered/CircleCI/</url>
+      <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p>
+<h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul>
+<li>官网：<a href="https://circleci.com/" target="_blank" rel="external">https://circleci.com/</a></li>
+<li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="external">https://circleci.com/docs/</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> CI </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java web工程师知识图谱]]></title>
       <url>/java/java/Java%20kills%20map/</url>
       <content type="html"><![CDATA[<ol>
@@ -1105,7 +1124,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[免费的CI/CD 工具]]></title>
-      <url>/CI/CI-free-tools/</url>
+      <url>/CI/engineered/CI-free-tools/</url>
       <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p>
 <h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="external">https://github.com/marketplace/category/continuous-integration</a></p>
 <p>Travis CI<br>CircleCI 推荐使用</p>
