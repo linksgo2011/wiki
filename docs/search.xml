@@ -1205,7 +1205,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[最实用的Linux命令]]></title>
-      <url>/linux/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
+      <url>/devops/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>查看操作系统信息</p>
 <blockquote>
 <p>head -n 1 /etc/issue</p>
@@ -1255,7 +1255,7 @@ ctrl+r       重复操作
       
         <categories>
             
-            <category> linux </category>
+            <category> devops </category>
             
         </categories>
         

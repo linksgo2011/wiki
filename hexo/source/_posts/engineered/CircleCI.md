@@ -12,7 +12,6 @@ CircleCI is a continuous integration engine offered as SaaS and on premise.
 ## CircleCI特点
 
 
-
 ## 有用的资源
 
 - 官网：https://circleci.com/
