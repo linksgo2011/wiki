@@ -61,3 +61,19 @@ Maven wrapper 生成
 
 > netstat -apn | grap $port
 
+从字符串中提取数字，例如PID
+
+> output=$( netstat -apn | grep 8086 | grep LISTEN) && read num1 num2 num3 num4 num5  <<<${output//[^0-9]/ } 
+> echo $num5
+
+让进程在后台执行
+
+> java -jar package.jar &
+
+执行一段Linux命令并给变量赋值
+
+> output=$(netstat -apn | grep 8086 | sed 's/[0-9]*//g')
+> echo $output
+
+
+

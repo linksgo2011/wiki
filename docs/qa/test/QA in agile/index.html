@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Circle CI 基本使用 | Programming Wiki</title>
+  <title>QA in agile | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="一些资源官网：https://circleci.com">
+  <meta name="description" content="常用QA概念探索性测试:同时设计测试和执行测试。探索性测试有时候会与即兴测试（ad hoc testing）混淆。即兴测试通常是指临时准备的、即兴的Bug搜索测试过程。从定义可以看出，谁都可以做即兴测试。由Cem Kaner提出的探索性测试，相比即兴测试是一种精致的、有思想的过程。
+测试金字塔: u">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Circle CI 基本使用"/>
+  <meta property="og:title" content="QA in agile"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -45,7 +46,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Circle CI 基本使用</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-12-02</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">QA in agile</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-07</span></h1>
 </div>		
 
 <div class="row page">
@@ -58,7 +59,26 @@
 	  
 
 	  <!-- content -->
-	  <h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网：<a href="https://circleci.com" target="_blank" rel="external">https://circleci.com</a></p>
+	  <h2 id="常用QA概念"><a href="#常用QA概念" class="headerlink" title="常用QA概念"></a>常用QA概念</h2><p>探索性测试:同时设计测试和执行测试。探索性测试有时候会与即兴测试（ad hoc testing）混淆。即兴测试通常是指临时准备的、即兴的Bug搜索测试过程。从定义可以看出，谁都可以做即兴测试。由Cem Kaner提出的探索性测试，相比即兴测试是一种精致的、有思想的过程。</p>
+<p>测试金字塔: unit-&gt;service-&gt;UI, 伴随测试成本投入,收益减少。unit为测试性价比最高的方式<br>冒烟测试: sanity测试,快速验证应用是否能工作。<br>BDD测试: 基于业务的测试思想。<br>E2E测试: 端对端测试。<br>集成测试:<br>Functional: E2E测试。</p>
+<h2 id="常用测试工具"><a href="#常用测试工具" class="headerlink" title="常用测试工具"></a>常用测试工具</h2><ul>
+<li>selenium 可以驱动浏览器，模拟真实用户<br>-</li>
+</ul>
+<h2 id="Case-设计"><a href="#Case-设计" class="headerlink" title="Case 设计"></a>Case 设计</h2><p>A test case, is a set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirement.</p>
+<h3 id="Common-Methods-Black-box"><a href="#Common-Methods-Black-box" class="headerlink" title="Common Methods - Black box"></a>Common Methods - Black box</h3><ul>
+<li>Boundary Value Analysis 边界值分析</li>
+<li>Equivalence Partitioning 等价划分</li>
+<li>Causal Diagram 因果图</li>
+<li>Decision Table 判定表</li>
+</ul>
+<h3 id="Common-Methods-White-box"><a href="#Common-Methods-White-box" class="headerlink" title="Common Methods - White box"></a>Common Methods - White box</h3><ul>
+<li>Logical coverage<ul>
+<li>statement coverage</li>
+<li>Branch coverage</li>
+<li>Path coverage</li>
+</ul>
+</li>
+</ul>
 	  
 
 	  <div>
@@ -78,82 +98,84 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		

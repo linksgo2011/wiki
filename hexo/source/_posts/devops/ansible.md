@@ -1,6 +1,6 @@
 ---
 title: Ansible 入门和使用
-categories: agile
+categories: devops
 toc: true
 ---
 

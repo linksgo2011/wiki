@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Circle CI 基本使用 | Programming Wiki</title>
+  <meta name="author" content="cn.printf">
+  
+  <meta name="description" content="一些资源官网：https://circleci.com
+一个构建java并部署的例子123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Circle CI 基本使用"/>
+  <meta property="og:site_name" content="Programming Wiki"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Programming Wiki" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Circle CI 基本使用</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-12-02</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网：<a href="https://circleci.com" target="_blank" rel="external">https://circleci.com</a></p>
+<h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attr">version:</span> <span class="number">2</span></div><div class="line"><span class="attr">jobs:</span></div><div class="line"><span class="attr">  build:</span></div><div class="line"><span class="attr">    machine:</span></div><div class="line"><span class="attr">      java:</span></div><div class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></div><div class="line"></div><div class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></div><div class="line"></div><div class="line"><span class="attr">    steps:</span></div><div class="line"></div><div class="line"><span class="bullet">      -</span> <span class="string">checkout</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></div><div class="line"></div><div class="line"><span class="attr">      - store_artifacts:</span></div><div class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></div><div class="line"></div><div class="line"><span class="attr">  deploy:</span></div><div class="line"><span class="attr">    machine:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></div><div class="line"><span class="attr">    steps:</span></div><div class="line"></div><div class="line"><span class="bullet">      -</span> <span class="string">checkout</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></div><div class="line"><span class="attr">          command:</span> <span class="string">pwd</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></div><div class="line"><span class="attr">          command:</span> <span class="string">env</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></div><div class="line"><span class="attr">          command:</span> <span class="string">|</span></div><div class="line"></div><div class="line">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</div><div class="line"></div><div class="line">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</div><div class="line"></div><div class="line">            &lt;artifacts.txt xargs -P4 -I % wget %</div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></div><div class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></div><div class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></div><div class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></div><div class="line"><span class="attr">          command:</span> <span class="string">|</span></div><div class="line"></div><div class="line">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</div><div class="line">            cd workspace</div><div class="line">            #kill old instance</div><div class="line">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</div><div class="line"></div><div class="line">            # todo start new instance</div><div class="line">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</div><div class="line"></div><div class="line">            # test if it has been started</div><div class="line">            netstat -apn | grep 8086'</div><div class="line"></div><div class="line"><span class="attr">      - run:</span></div><div class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></div><div class="line"><span class="attr">          command:</span> <span class="string">pwd</span></div><div class="line"></div><div class="line"><span class="comment">#      - run:</span></div><div class="line"><span class="comment">#          name: kill ssh process</span></div><div class="line"><span class="comment">#          command: |</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></div><div class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></div><div class="line"></div><div class="line"><span class="attr">workflows:</span></div><div class="line"><span class="attr">  version:</span> <span class="number">2</span></div><div class="line"><span class="attr">  build-deploy:</span></div><div class="line"><span class="attr">    jobs:</span></div><div class="line"><span class="bullet">      -</span> <span class="string">build</span></div><div class="line"><span class="attr">      - deploy:</span></div><div class="line"><span class="attr">          requires:</span></div><div class="line"><span class="bullet">            -</span> <span class="string">build</span></div><div class="line"><span class="attr">          filters:</span></div><div class="line"><span class="attr">            branches:</span></div><div class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></div></pre></td></tr></table></figure>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+    
+      &copy; 2017 cn.printf
+      
+      <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
