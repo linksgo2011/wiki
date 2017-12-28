@@ -75,5 +75,12 @@ Maven wrapper 生成
 > output=$(netstat -apn | grep 8086 | sed 's/[0-9]*//g')
 > echo $output
 
+查看服务器内存用量
+
+> sudo free
+
+查看服务器磁盘用量
+
+> sudo df -h
 
 
