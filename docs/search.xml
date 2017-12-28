@@ -3,11 +3,45 @@
   
     
     <entry>
+      <title><![CDATA[Spring boot 学习指南]]></title>
+      <url>/Java/java/Spring%20boot%20Basic/</url>
+      <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p>
+<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul>
+<li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="external">http://blog.csdn.net/liaokailin/article/category/5765237</a></li>
+</ul>
+<h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul>
+<li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li>
+<li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[大型系统架构设计]]></title>
       <url>/architecture/architecture/large%20websites%20architecture/</url>
       <content type="html"><![CDATA[<h2 id="技术选型清单"><a href="#技术选型清单" class="headerlink" title="技术选型清单"></a>技术选型清单</h2><ul>
 <li>Java</li>
 <li>JWT</li>
+<li>RabbitMQ</li>
+<li>Redis</li>
+<li>Linux </li>
+<li>Ngnix</li>
+<li>Mybatis </li>
+<li>React</li>
+<li>Swagger</li>
+<li>Splunk </li>
+<li>Pack testing </li>
+<li>OAuth2/SSO</li>
+<li>CDN </li>
+<li>Mysql </li>
 </ul>
 <h2 id="分布式架构设计图"><a href="#分布式架构设计图" class="headerlink" title="分布式架构设计图"></a>分布式架构设计图</h2>]]></content>
       

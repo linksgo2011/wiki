@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java CMS 选型 | Programming Wiki</title>
+  <title>Spring boot 学习指南 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="技术要求SpringMVC+Mybatis+freemarker/JSP
-通用后台快速开发方案
-https://github.com/white-cat/jeeweb
-https://github.com/kanwangzjm/funiture
-
-成品CMS方案
-http://www.tjpcms.">
+  <meta name="description" content="什么是Spring bootSpring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。
+一些资源
+Spring boot原理：http://blog.csdn.net/liaokailin/article/category/57">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java CMS 选型"/>
+  <meta property="og:title" content="Spring boot 学习指南"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -51,35 +47,26 @@ http://www.tjpcms.">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Java CMS 选型</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-10-16</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Spring boot 学习指南</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-12-28</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
-  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
-	<!-- toc -->
-<script type="text/javascript">
-		jQuery(document).ready(function() {
- 		   generateWikiTOC('.note', '.toc',  2 , 2 );
-		});
-</script>
-  </div><!-- col-md-3 -->
-  
   
 
   
-  <div class="col-xs-12 col-sm-9 col-md-9 note">
-	
+	<div class="col-md-12">
+	  
 
 	  <!-- content -->
-	  <h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p>
-<h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul>
-<li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="external">https://github.com/white-cat/jeeweb</a></li>
-<li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="external">https://github.com/kanwangzjm/funiture</a></li>
+	  <h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p>
+<h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul>
+<li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="external">http://blog.csdn.net/liaokailin/article/category/5765237</a></li>
 </ul>
-<h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul>
-<li><a href="http://www.tjpcms.com" target="_blank" rel="external">http://www.tjpcms.com</a></li>
+<h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul>
+<li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li>
+<li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li>
 </ul>
 	  
 
@@ -94,44 +81,6 @@ http://www.tjpcms.">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
 			
 			
 		
@@ -191,11 +140,13 @@ http://www.tjpcms.">
 		
 	
 		
-			
-			
-			
+	
 		
-			
+	
+		
+	
+		
+	
 		
 	
 		
@@ -205,28 +156,46 @@ http://www.tjpcms.">
 		
 	
 		
-			
+	
+		
+	
 		
 	
 		
 	
 		
-			
-		
 	
-		
-			
 		
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/java/Java api tech map/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/Java tutorial collection/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

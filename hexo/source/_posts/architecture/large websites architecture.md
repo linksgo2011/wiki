@@ -8,6 +8,20 @@ categories: architecture
 
 - Java
 - JWT
+- RabbitMQ
+- Redis
+- Linux 
+- Ngnix
+- Mybatis 
+- React
+- Swagger
+- Splunk 
+- Pack testing 
+- OAuth2/SSO
+- CDN 
+- Mysql 
+
+
 
 ## 分布式架构设计图
 
