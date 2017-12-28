@@ -3,6 +3,24 @@
   
     
     <entry>
+      <title><![CDATA[大型系统架构设计]]></title>
+      <url>/architecture/architecture/large%20websites%20architecture/</url>
+      <content type="html"><![CDATA[<h2 id="技术选型清单"><a href="#技术选型清单" class="headerlink" title="技术选型清单"></a>技术选型清单</h2><ul>
+<li>Java</li>
+<li>JWT</li>
+</ul>
+<h2 id="分布式架构设计图"><a href="#分布式架构设计图" class="headerlink" title="分布式架构设计图"></a>分布式架构设计图</h2>]]></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用SSH实现自动化部署]]></title>
       <url>/aws/devops/auto%20deployment%20with%20ssh/</url>
       <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p>
