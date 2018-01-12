@@ -3,6 +3,43 @@
   
     
     <entry>
+      <title><![CDATA[常用的GIT命令]]></title>
+      <url>/devops/devops/Git%20commands/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> devops </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[敏捷开发 Way of working]]></title>
+      <url>/agile/agile/Way%20of%20working/</url>
+      <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p>
+<h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p>
+<h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p>
+<h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p>
+<p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p>
+<h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p>
+<h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p>
+<h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>
+]]></content>
+      
+        <categories>
+            
+            <category> agile </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Spring boot 学习指南]]></title>
       <url>/Java/java/Spring%20boot%20Basic/</url>
       <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p>
@@ -649,7 +686,7 @@ testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
     
     <entry>
       <title><![CDATA[Java CMS 选型]]></title>
-      <url>/java/cms%20in%20java/</url>
+      <url>/java/java/cms%20in%20java/</url>
       <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p>
 <h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul>
 <li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="external">https://github.com/white-cat/jeeweb</a></li>
@@ -1940,7 +1977,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[一个好的项目需要哪些周边生态?]]></title>
-      <url>/agile/ecosystem-for-project/</url>
+      <url>/agile/agile/ecosystem-for-project/</url>
       <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p>
 <h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol>
 <li>Check style - 代码风格检查</li>

@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>一个好的项目需要哪些周边生态? | Programming Wiki</title>
+  <title>敏捷开发 Way of working | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD
-质量内建
-Check style - 代码风格检查
-Test coverage - 测试覆盖率
-fortify - Java代码静态分析
-TDD - 测试驱动开发
-">
+  <meta name="description" content="Summary敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum
+建卡BA负责建story卡，如果其他人需要建立卡片，需要告知BA
+three amigosBA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代
+estimationBA发起全员来进行估算工作量">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="一个好的项目需要哪些周边生态?"/>
+  <meta property="og:title" content="敏捷开发 Way of working"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -51,7 +48,7 @@ TDD - 测试驱动开发
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">一个好的项目需要哪些周边生态?</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-04</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">敏捷开发 Way of working</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-01-04</span></h1>
 </div>		
 
 <div class="row page">
@@ -73,47 +70,15 @@ TDD - 测试驱动开发
 	
 
 	  <!-- content -->
-	  <p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p>
-<h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol>
-<li>Check style - 代码风格检查</li>
-<li>Test coverage - 测试覆盖率</li>
-<li>fortify - Java代码静态分析</li>
-<li>TDD - 测试驱动开发</li>
-<li>Eslint - 前端代码检查</li>
-</ol>
-<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol>
-<li>Penetration - 渗透测试</li>
-</ol>
-<h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol>
-<li>CI/CD 持续部署</li>
-<li>Git Flow - 基于git的团队协作方式</li>
-<li>Retro - 敏捷中反思项目的会议</li>
-</ol>
-<h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol>
-<li>monitoring<ul>
-<li>Ahportal - 一种监控的实现方式</li>
-</ul>
-</li>
-<li>DR - 灾难恢复方案</li>
-</ol>
-<h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol>
-<li>CPU、内存、磁盘使用率</li>
-<li>Max request量</li>
-<li>AB 测试</li>
-</ol>
-<h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol>
-<li>infrastructure as code - 根据项目代码创建基础设施</li>
-<li>immutable infrastructure - 每次部署创建新的服务器</li>
-<li>DB migration</li>
-</ol>
-<h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol>
-<li>micro-service 微服务</li>
-<li>SPA Project - 前后端分离</li>
-</ol>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol>
-<li>Blue-Green - 蓝绿部署</li>
-<li>Gray - 灰度发布</li>
-</ol>
+	  <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p>
+<h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p>
+<h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p>
+<h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p>
+<p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p>
+<h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p>
+<h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p>
+<h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>
 	  
 
 	  <div>
@@ -129,6 +94,13 @@ TDD - 测试驱动开发
 		
 	
 		
+			
+			
+		
+	
+		
+	
+		
 	
 		
 	
@@ -227,8 +199,7 @@ TDD - 测试驱动开发
 		
 			
 			
-		
-	
+			
 		
 	
 		
@@ -241,7 +212,7 @@ TDD - 测试驱动开发
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/agile/agile/ecosystem-for-project/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
