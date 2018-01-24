@@ -24,6 +24,12 @@ toc: true
 - vuex
 - mint-ui
 
+
+### Jquery技术方案
+
+- mui
+- zepto.js or jquery.js
+
 参考案例
 
 - vue购物车 https://github.com/liu-zhuang/Vue-Demo

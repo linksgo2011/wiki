@@ -20,6 +20,10 @@
 <li>vuex</li>
 <li>mint-ui</li>
 </ul>
+<h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul>
+<li>mui</li>
+<li>zepto.js or jquery.js</li>
+</ul>
 <p>参考案例</p>
 <ul>
 <li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="external">https://github.com/liu-zhuang/Vue-Demo</a></li>
