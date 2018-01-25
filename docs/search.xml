@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title><![CDATA[H5 app开发经验]]></title>
+      <url>/h5/h5/h5%20app/</url>
+      <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="external">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="external">https://www.jianshu.com/p/665c1d67adde</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> h5 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[H5 webapp技术选型]]></title>
       <url>/h5/h5/H5%20webapp%20tech%20stack/</url>
       <content type="html"><![CDATA[<h2 id="开发方案"><a href="#开发方案" class="headerlink" title="开发方案"></a>开发方案</h2><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul>
