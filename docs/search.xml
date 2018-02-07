@@ -3,6 +3,54 @@
   
     
     <entry>
+      <title><![CDATA[大型系统的网站架构概览]]></title>
+      <url>/architecture/architecture/architecture%20overview/</url>
+      <content type="html"><![CDATA[<p>技术点</p>
+<ul>
+<li>单点登录</li>
+<li>API gateway</li>
+<li>文件存储系统</li>
+<li>批量任务执行</li>
+<li>日志搜索</li>
+<li>分布式调用</li>
+<li>前端</li>
+<li>移动前端</li>
+<li>移动端</li>
+<li>小程序</li>
+<li>微信公共平台</li>
+<li>支付系统</li>
+<li>部署</li>
+<li>CI/CD</li>
+<li>数据库集群和读写分离</li>
+<li>CMS系统</li>
+<li>数据备份</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[单点登录技术方案]]></title>
+      <url>/architecture/architecture/SSO/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[实用的SQL语句技巧]]></title>
       <url>/mysql/mysql/Useful%20mysql%20statement/</url>
       <content type="html"><![CDATA[<p>使用SQL完成文本替换操作</p>
