@@ -6,3 +6,6 @@ categories: mysql
 
 > update typecho_contents set text=REPLACE (addr,'http://bcs.duapp.com/helpjs','http://helpjs.bj.bcebos.com/')
 > 
+ git clone https://github.com/linksgo2011/tinda_app_cordova.git
+ cd tinda_app_cordova
+ git pull 

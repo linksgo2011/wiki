@@ -4,6 +4,13 @@ categories: h5
 toc: true
 ---
 
+### HBuilder方案
+
+- mui
+- Hbuilder
+
+成本低廉，开发方面，原生的webview API和切换性能也可
+参考案例：https://github.com/linksgo2011/tinda_app_cordova/
 
 ## 开发方案
 
