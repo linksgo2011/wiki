@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[一段简单的PHP 日志代码]]></title>
+      <url>/php/php/A%20simple%20log%20feature/</url>
+      <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</div><div class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</div><div class="line"></div><div class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</div><div class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</div><div class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</div><div class="line">    FILE_APPEND</div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">// 转存日志文件</span></div><div class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</div><div class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</div><div class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> php </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[桌面应用开发方案]]></title>
       <url>/desktop/desktop/Desktopapp%20tech%20stack/</url>
       <content type="html"><![CDATA[<h3 id="Web混合开发方案"><a href="#Web混合开发方案" class="headerlink" title="Web混合开发方案"></a>Web混合开发方案</h3><ul>
