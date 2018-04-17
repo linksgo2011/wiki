@@ -1531,7 +1531,7 @@ body .markdown-body
     
     <entry>
       <title><![CDATA[React学习体系]]></title>
-      <url>/react/React%20crouse%20map/</url>
+      <url>/react/react/React%20crouse%20map/</url>
       <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul>
 <li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="external">http://www.zhufengpeixun.cn/react/index.html</a> </li>
 <li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="external">http://www.jikexueyuan.com/course/reactjs/</a></li>
@@ -1901,7 +1901,7 @@ testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
     
     <entry>
       <title><![CDATA[在Ubuntu上通过apt-get搭建tomcat]]></title>
-      <url>/java/Java%20environment%20in%20linux/</url>
+      <url>/java/java/Java%20environment%20in%20linux/</url>
       <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="external">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p>
 <h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p>
 <p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p>
@@ -1949,7 +1949,7 @@ testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
     
     <entry>
       <title><![CDATA[使用Java构建API的知识体系]]></title>
-      <url>/java/Java%20api%20tech%20map/</url>
+      <url>/java/java/Java%20api%20tech%20map/</url>
       <content type="html"><![CDATA[<ul>
 <li>API基本概念及资源的定义</li>
 <li>RESTful架构风格与成熟度模型</li>
@@ -2322,7 +2322,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[Mac 环境下使用MAMP安装PHP环境]]></title>
-      <url>/php/php-mamp/</url>
+      <url>/php/php/php-mamp/</url>
       <content type="html"><![CDATA[<p>下载安装MAMP</p>
 <p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="external">https://www.mamp.info/en/mamp-pro/</a></p>
 <p>设置默认的PHP为MAMP</p>
@@ -2348,7 +2348,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[PHP拓展Linux/unix 下的编译安装]]></title>
-      <url>/php/PHP%20extension/</url>
+      <url>/php/php/PHP%20extension/</url>
       <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p>
 <p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p>
 <p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p>
@@ -2405,7 +2405,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[CakePHP 脚手架和命令行工具]]></title>
-      <url>/php/cakephp%20scaffold/</url>
+      <url>/php/php/cakephp%20scaffold/</url>
       <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>
 ]]></content>
       
@@ -2420,7 +2420,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[PHP 包管理工具]]></title>
-      <url>/PHP/PHP%20package%20manager/</url>
+      <url>/php/php/PHP%20package%20manager/</url>
       <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="external">https://getcomposer.org</a></p>
 <p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="external">https://getcomposer.org/download/</a></p>
 <p>安装composer</p>
@@ -2442,7 +2442,7 @@ ctrl+r       重复操作
       
         <categories>
             
-            <category> PHP </category>
+            <category> php </category>
             
         </categories>
         
@@ -2451,7 +2451,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[CakePHP 资源收集]]></title>
-      <url>/php/cakephp%20resource/</url>
+      <url>/php/php/cakephp%20resource/</url>
       <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p>
 <p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="external">http://cakefoundation.org/</a></p>
 <p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="external">http://www.cakephp.org</a></p>
@@ -2475,7 +2475,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[React 资源收集]]></title>
-      <url>/React/React%20recource/</url>
+      <url>/React/react/React%20recource/</url>
       <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="external">https://marmelab.com/admin-on-rest/Admin.html</a></p>
 <p>React 测试工具</p>
 <p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="external">https://github.com/airbnb/enzyme</a></p>
@@ -2509,7 +2509,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[React Native 资源收集]]></title>
-      <url>/React-Native/React%20native%20resource/</url>
+      <url>/React-Native/react/React%20native%20resource/</url>
       <content type="html"><![CDATA[<p>官网</p>
 <p><a href="https://facebook.github.io/react-native/" target="_blank" rel="external">https://facebook.github.io/react-native/</a></p>
 <p>React Native 开发工具</p>
@@ -2574,7 +2574,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[React router 登录验证方案]]></title>
-      <url>/react/React+Redux+React%20router%20authentication/</url>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
       <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="external">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">router.js</div><div class="line"></div><div class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</div><div class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</div><div class="line"></div><div class="line">export default(</div><div class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</div><div class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</div><div class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</div><div class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">);</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</div><div class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</div><div class="line"></div><div class="line">export function requireAuthentication(Component) &#123;</div><div class="line"></div><div class="line">    class AuthenticatedComponent extends React.Component &#123;</div><div class="line"></div><div class="line">        componentWillMount() &#123;</div><div class="line">            this.checkAuth();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        componentWillReceiveProps(nextProps) &#123;</div><div class="line">            this.checkAuth();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        checkAuth() &#123;</div><div class="line">            if (!this.props.isAuthenticated) &#123;</div><div class="line">                let redirectAfterLogin = this.props.location.pathname;</div><div class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        render() &#123;</div><div class="line">            return (</div><div class="line">                &lt;div&gt;</div><div class="line">                    &#123;this.props.isAuthenticated === true</div><div class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</div><div class="line">                        : null</div><div class="line">                    &#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    const mapStateToProps = (state) =&gt; (&#123;</div><div class="line">        token: state.auth.token,</div><div class="line">        userName: state.auth.userName,</div><div class="line">        isAuthenticated: state.auth.isAuthenticated</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
@@ -2605,7 +2605,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[React 答疑]]></title>
-      <url>/react/React%20QAs/</url>
+      <url>/react/react/React%20QAs/</url>
       <content type="html"></content>
       
         <categories>
@@ -2773,7 +2773,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[PHP拓展和使用C编写自定义拓展]]></title>
-      <url>/C-C/php-plugin-c/</url>
+      <url>/C-C/php/php-plugin-c/</url>
       <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p>
 <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
 <li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="external">http://www.php-internals.com/</a></li>
@@ -2816,7 +2816,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[PHP环境in Mac]]></title>
-      <url>/php/php-environment-in-mac/</url>
+      <url>/php/php/php-environment-in-mac/</url>
       <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p>
 <p>1、Apache相关</p>
 <p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p>
@@ -2910,7 +2910,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[Java 学习教程资源收集]]></title>
-      <url>/java/Java%20tutorial%20collection/</url>
+      <url>/java/java/Java%20tutorial%20collection/</url>
       <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p>
 <ul>
 <li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="external">http://www.runoob.com/java/java-tutorial.html</a></li>
@@ -2943,7 +2943,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[Jeeweb - SpringMVC+Spring+Hibernate 项目模板]]></title>
-      <url>/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
       <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p>
 <p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="external">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="external">https://github.com/white-cat/jeeweb</a></p>
 <p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p>
@@ -3196,7 +3196,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[Java web project 概览]]></title>
-      <url>/java/java-web-project-overview/</url>
+      <url>/java/java/java-web-project-overview/</url>
       <content type="html"><![CDATA[<ol>
 <li><p>Java 基础重点回顾</p>
 <ul>
@@ -3340,7 +3340,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[Java object clone]]></title>
-      <url>/java/java-object-clone/</url>
+      <url>/java/java/java-object-clone/</url>
       <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p>
 <ul>
 <li>shallow 赋值</li>
@@ -3367,7 +3367,7 @@ ctrl+r       重复操作
     
     <entry>
       <title><![CDATA[理解 java exception]]></title>
-      <url>/java/java-exception/</url>
+      <url>/java/java/java-exception/</url>
       <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p>
 <p>异常(exception)的例子:</p>
 <ul>

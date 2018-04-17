@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在Ubuntu上通过apt-get搭建tomcat | Programming Wiki</title>
+  <meta name="author" content="cn.printf">
+  
+  <meta name="description" content="参考博客：https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get翻译版：http://www.linfuyan.com/how-to-ins">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="在Ubuntu上通过apt-get搭建tomcat"/>
+  <meta property="og:site_name" content="Programming Wiki"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Programming Wiki" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">在Ubuntu上通过apt-get搭建tomcat</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-10-24</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="external">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p>
+<h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p>
+<p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p>
+<p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p>
+<p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p>
+<h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p>
+<h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+<p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p>
+<blockquote>
+<p>sudo apt-get install tomcat7</p>
+</blockquote>
+<p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p>
+<p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p>
+<blockquote>
+<p><a href="http://your_ip_address:8080" target="_blank" rel="external">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p>
+</blockquote>
+<h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p>
+<p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p>
+<blockquote>
+<p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p>
+</blockquote>
+<h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p>
+<blockquote>
+<p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;tomcat-users&gt;</div><div class="line">&lt;/tomcat-users&gt;</div></pre></td></tr></table></figure>
+<p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;tomcat-users&gt;</div><div class="line">	&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</div><div class="line">&lt;/tomcat-users&gt;</div></pre></td></tr></table></figure></p>
+<p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p>
+<blockquote>
+<p>sudo service tomcat7 restart</p>
+</blockquote>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/java/java/Gradle basic/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/java/java/Java api tech map/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+    
+      &copy; 2018 cn.printf
+      
+      <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
