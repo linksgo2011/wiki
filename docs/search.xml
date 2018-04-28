@@ -3,6 +3,107 @@
   
     
     <entry>
+      <title><![CDATA[常用翻译词汇定义]]></title>
+      <url>/translation/translation/vocabulary/</url>
+      <content type="html"><![CDATA[<ul>
+<li>observation 数据采样</li>
+<li>target vector ⽬标向量</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> translation </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> reading&amp;writing </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> reading&amp;writing </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Model Evaluation]]></title>
+      <url>/translation/translation/Model%20Evaluation/</url>
+      <content type="html"><![CDATA[<h2 id="11-0-Introduction"><a href="#11-0-Introduction" class="headerlink" title="11.0 Introduction"></a>11.0 Introduction</h2><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>In this chapter we will examine strategies for evaluating the quality of models created<br>through our learning algorithms. It might appear strange to discuss model evaluation<br>before discussing how to create them, but there is a method to our madness. Models<br>are only as useful as the quality of their predictions, and thus fundamentally our goal<br>is not to create models (which is easy) but to create high-quality models (which is<br>hard). Therefore, before we explore the myriad learning algorithms, we first set up<br>how we can evaluate the models they produce.</p>
+<p>在这一章中，我们要来探讨评估策略，以此筛选通过我们学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。</p>
+<h2 id="11-1-Cross-Validating-Models"><a href="#11-1-Cross-Validating-Models" class="headerlink" title="11.1 Cross-Validating Models"></a>11.1 Cross-Validating Models</h2><h2 id="11-1-交互验证模型"><a href="#11-1-交互验证模型" class="headerlink" title="11.1 交互验证模型"></a>11.1 交互验证模型</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>You want to evaluate how well your model will work in the real world.</p>
+<p>你想要在真实世界中验证你的模型工作的足够好。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>Create a pipeline that preprocesses the data, trains the model, and then evaluates it<br>using cross-validation:</p>
+<p>创建一个预处理数据的流水线，然后训练这个模型，最后使用交互验证来评估：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Load libraries</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</div><div class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</div><div class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</div><div class="line"><span class="comment"># Load digits dataset</span></div><div class="line"></div><div class="line">digits = datasets.load_digits()</div><div class="line"><span class="comment"># Create features matrix</span></div><div class="line">features = digits.data</div><div class="line"><span class="comment"># Create target vector</span></div><div class="line">target = digits.target</div><div class="line"><span class="comment"># Create standardizer</span></div><div class="line">standardizer = StandardScaler()</div><div class="line"><span class="comment"># Create logistic regression object</span></div><div class="line">logit = LogisticRegression()</div><div class="line"><span class="comment"># Create a pipeline that standardizes, then runs logistic regression</span></div><div class="line">pipeline = make_pipeline(standardizer, logit)</div><div class="line"><span class="comment"># Create k-Fold cross-validation</span></div><div class="line">kf = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">1</span>)</div><div class="line"><span class="comment"># Conduct k-fold cross-validation</span></div><div class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></div><div class="line"> features, <span class="comment"># Feature matrix</span></div><div class="line"> target, <span class="comment"># Target vector</span></div><div class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></div><div class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></div><div class="line"> n_jobs=<span class="number">-1</span>) <span class="comment"># Use all CPU scores</span></div><div class="line"><span class="comment"># Calculate mean</span></div><div class="line">cv_results.mean()</div><div class="line"><span class="number">0.96493171942892597</span></div></pre></td></tr></table></figure>
+<h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>At first consideration, evaluating supervised-learning models might appear straight‐<br>forward: train a model and then calculate how well it did using some performance<br>metric (accuracy, squared errors, etc.). However, this approach is fundamentally<br>flawed. If we train a model using our data, and then evaluate how well it did on that<br>data, we are not achieving our desired goal. Our goal is not to evaluate how well the<br>model does on our training data, but how well it does on data it has never seen before<br>(e.g., a new customer, a new crime, a new image). For this reason, our method of<br>evaluation should help us understand how well models are able to make predictions<br>from data they have never seen before.</p>
+<p>第一个考虑，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的期望目标。我们的目标不是在我们的训练数据上评估模型，而应该是是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知的数据中去做出预测。</p>
+<p>One strategy might be to hold off a slice of data for testing. This is called validation<br>(or hold-out). In validation our observations (features and targets) are split into two<br>sets, traditionally called the training set and the test set. We take the test set and put it<br>off to the side, pretending that we have never seen it before. Next we train our model<br>using our training set, using the features and target vector to teach the model how to make the best prediction. Finally, we simulate having never before seen external data<br>by evaluating how our model trained on our training set performs on our test set.<br>However, the validation approach has two major weaknesses. First, the performance<br>of the model can be highly dependent on which few observations were selected for<br>the test set. Second, the model is not being trained using all the available data, and<br>not being evaluated on all the available data.</p>
+<p>一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验（或者叫留出法）。在实际验证中，我们把处理的对象数据（特征或者目标）分割成两部分，传统上被称作训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出的少量测试数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。</p>
+<p>A better strategy, which overcomes these weaknesses, is called k-fold cross-validation<br>(KFCV). In KFCV, we split the data into k parts called “folds.” The model is then<br>trained using k – 1 folds—combined into one training set—and then the last fold is<br>used as a test set. We repeat this k times, each time using a different fold as the test<br>set. The performance on the model for each of the k iterations is then averaged to<br>produce an overall measurement.<br>In our solution, we conducted k-fold cross-validation using 10 folds and outputted<br>the evaluation scores to cv_results: </p>
+<p>一个被称作k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为”叠”。然后使用k-1叠数据来训练模型，然后用最后一叠数据校验。然后我们重复K次，每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。</p>
+<p>在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量cv_results：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># View score for all 10 folds</span></div><div class="line">cv_results</div><div class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</div><div class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</div></pre></td></tr></table></figure>
+<p>There are three important points to consider when we are using KFCV. First, KFCV<br>assumes that each observation was created independent from the other (i.e., the data<br>is independent identically distributed [IID]). If the data is IID, it is a good idea to<br>shuffle observations when assigning to folds. In scikit-learn we can set shuffle=True<br>to perform shuffling.</p>
+<p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV数据采样是被独立创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，，我们可以设置变量shuffle为true来进行打乱操作。</p>
+<p>Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have<br>folds containing roughly the same percentage of observations from each of the differ‐<br>ent target classes (called stratied k-fold). For example, if our target vector contained<br>gender and 80% of the observations were male, then each fold would contain 80%<br>male and 20% female observations. In scikit-learn, we can conduct stratified k-fold<br>cross-validation by replacing the KFold class with StratifiedKFold.<br>Finally, when we are using validation sets or cross-validation, it is important to pre‐<br>process data based on the training set and then apply those transformations to both<br>the training and test set. For example, when we fit our standardization object, stand<br>ardizer, we calculate the mean and variance of only the training set. Then we apply<br>that transformation (using transform) to both the training and test sets:</p>
+<p>其次，当我们使用KFCV来评估一个分类器时，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Import library</span></div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"><span class="comment"># Create training and test sets</span></div><div class="line">features_train, features_test, target_train, target_test = train_test_split(</div><div class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</div><div class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></div><div class="line"><span class="comment"># Fit standardizer to training set</span></div><div class="line">standardizer.fit(features_train)</div><div class="line"><span class="comment"># Apply to both training and test sets</span></div><div class="line">features_train_std = standardizer.transform(features_train)</div><div class="line">features_test_std = standardizer.transform(features_test)</div></pre></td></tr></table></figure>
+<p>The reason for this is because we are pretending that the test set is unknown data. If<br>we fit both our preprocessors using observations from both training and test sets,<br>some of the information from the test set leaks into our training set. This rule applies<br>for any preprocessing step such as feature selection.<br>scikit-learn’s pipeline package makes this easy to do while using cross-validation tech‐<br>niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and<br>then trains a model (logistic regression, logit):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Create a pipeline</span></div><div class="line">pipeline = make_pipeline(standardizer, logit)</div><div class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</div><div class="line"><span class="comment"># Do k-fold cross-validation</span></div><div class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></div><div class="line"> features, <span class="comment"># Feature matrix</span></div><div class="line"> target, <span class="comment"># Target vector</span></div><div class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></div><div class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></div></pre></td></tr></table></figure>
+<p>cross_val_score comes with three parameters that we have not discussed that are<br>worth noting. cv determines our cross-validation technique. K-fold is the most com‐<br>mon by far, but there are others, like leave-one-out-cross-validation where the num‐<br>ber of folds k equals the number of observations. The scoring parameter defines our<br>metric for success, a number of which are discussed in other recipes in this chapter.<br>Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, if your<br>computer has four cores (a common number for laptops), then scikit-learn will use<br>all four cores at once to speed up the operation.</p>
+<h3 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h3><ul>
+<li>Why every statistician should know about cross-validation (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="external">http://bit.ly/2Fzhz6X</a>)</li>
+<li>Cross-Validation Gone Wrong (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="external">http://bit.ly/2FzfIiw</a>)</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> translation </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OAuth2 架构设计]]></title>
+      <url>/architecture/architecture/OAuth2/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[暗时间摘录]]></title>
       <url>/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>这本书讲时间管理,讲方法论,讲逻辑和认知,但这是一本洗脑书,或者是一本宁愿被洗脑却值得一看的书.</p>
@@ -291,6 +392,31 @@
     </entry>
     
     <entry>
+      <title><![CDATA[DDD (Domain-Driven Design) 领域驱动设计]]></title>
+      <url>/architecture/architecture/Domain%20Driven%20Design/</url>
+      <content type="html"><![CDATA[<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>DDD是一套综合软件系统分析和设计的面向对象建模方法，与此相似的工程方法还有RUP（统一建模语言）。DDD解决的问题是应用复杂问题下的建模问题。</p>
+<h1 id="DDD的实践"><a href="#DDD的实践" class="headerlink" title="DDD的实践"></a>DDD的实践</h1><ul>
+<li>边界上下文</li>
+<li></li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li>DDD 有什么标准和产出</li>
+<li>Domain模型发生变化如何处理？</li>
+<li>服务之间的事务如何处理？</li>
+<li>服务之间通信认证方式</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[大型系统的网站架构概览]]></title>
       <url>/architecture/architecture/architecture%20overview/</url>
       <content type="html"><![CDATA[<p>技术点</p>
@@ -330,7 +456,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[单点登录技术方案]]></title>
+      <title><![CDATA[Single sign-on (SSO) 单点登录技术方案]]></title>
       <url>/architecture/architecture/SSO/</url>
       <content type="html"></content>
       
@@ -1889,6 +2015,10 @@ ctrl+r       重复操作
 <p>查看服务器磁盘用量</p>
 <blockquote>
 <p>sudo df -h</p>
+</blockquote>
+<p>Git 增加文件执行权限</p>
+<blockquote>
+<p>git update-index –chmod=+x $script</p>
 </blockquote>
 ]]></content>
       

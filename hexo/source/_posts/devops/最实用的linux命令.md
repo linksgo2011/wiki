@@ -83,5 +83,9 @@ Maven wrapper 生成
 
 > sudo df -h
 
+Git 增加文件执行权限
+
+> git update-index --chmod=+x $script
+
 
 

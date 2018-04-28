@@ -1,4 +1,4 @@
 ---
-title: 单点登录技术方案
+title: Single sign-on (SSO) 单点登录技术方案
 categories: architecture
 ---
