@@ -5,3 +5,11 @@ categories: translation
 
 - observation 数据采样
 - target vector ⽬标向量
+- pipeline 流水线
+- preprocesses 预处理
+- logistic regression 逻辑回归
+
+## 不翻译
+
+- standardizer
+- 

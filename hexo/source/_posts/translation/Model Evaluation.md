@@ -138,7 +138,7 @@ to perform shuffling.
 
 Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have
 folds containing roughly the same percentage of observations from each of the differ‐
-ent target classes (called stratied k-fold). For example, if our target vector contained
+ent target classes (called stratied k-fold). For example, if our target vector contained
 gender and 80% of the observations were male, then each fold would contain 80%
 male and 20% female observations. In scikit-learn, we can conduct stratified k-fold
 cross-validation by replacing the KFold class with StratifiedKFold.
@@ -148,7 +148,8 @@ the training and test set. For example, when we fit our standardization object, 
 ardizer, we calculate the mean and variance of only the training set. Then we apply
 that transformation (using transform) to both the training and test sets:
 
-其次，当我们使用KFCV来评估一个分类器时，
+其次，当我们使用KFCV来评估一个分类器时，它的优势在于粗略的对研究对象按照不同目标类以相同比例来划分 "叠"（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的研究对象是男性，然后每个 "叠"应该包含80%男性和20%的女性研究对象。
+在scikit-learn框架中，我们能通过使用StratifiedKFold类替换KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用fit操作我们的standardization对象和standardizer时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform方法）对训练集和测试集进行处理：
 
 ```python
 
@@ -174,6 +175,8 @@ scikit-learn’s pipeline package makes this easy to do while using cross-valida
 niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and
 then trains a model (logistic regression, logit):
 
+这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的研究对象对我们的预处理器fit操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术的时，scikit-learn的pipeline包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:
+
 
 ```python
 
@@ -198,8 +201,15 @@ Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, 
 computer has four cores (a common number for laptops), then scikit-learn will use
 all four cores at once to speed up the operation.
 
+cross_val_score 方法需要我们没有讨论但是值得一提的三个参数，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和调查对象个数相同"叠"的leave-one-out-cross-validation。scoring参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1是告诉scikit-learn去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。
+
 ### See Also
 
 - Why every statistician should know about cross-validation (http://bit.ly/2Fzhz6X)
 - Cross-Validation Gone Wrong (http://bit.ly/2FzfIiw)
+
+### 参考链接
+
+- 为什么数据科学家都应该知道交叉验证 (http://bit.ly/2Fzhz6X)
+- 交叉验证走在错误的道路上 (http://bit.ly/2FzfIiw)
 

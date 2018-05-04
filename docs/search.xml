@@ -8,6 +8,13 @@
       <content type="html"><![CDATA[<ul>
 <li>observation 数据采样</li>
 <li>target vector ⽬标向量</li>
+<li>pipeline 流水线</li>
+<li>preprocesses 预处理</li>
+<li>logistic regression 逻辑回归</li>
+</ul>
+<h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul>
+<li>standardizer</li>
+<li></li>
 </ul>
 ]]></content>
       
@@ -21,8 +28,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
       <content type="html"></content>
       
         <categories>
@@ -35,8 +42,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
       <content type="html"></content>
       
         <categories>
@@ -68,15 +75,21 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># View score for all 10 folds</span></div><div class="line">cv_results</div><div class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</div><div class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</div></pre></td></tr></table></figure>
 <p>There are three important points to consider when we are using KFCV. First, KFCV<br>assumes that each observation was created independent from the other (i.e., the data<br>is independent identically distributed [IID]). If the data is IID, it is a good idea to<br>shuffle observations when assigning to folds. In scikit-learn we can set shuffle=True<br>to perform shuffling.</p>
 <p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV数据采样是被独立创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，，我们可以设置变量shuffle为true来进行打乱操作。</p>
-<p>Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have<br>folds containing roughly the same percentage of observations from each of the differ‐<br>ent target classes (called stratied k-fold). For example, if our target vector contained<br>gender and 80% of the observations were male, then each fold would contain 80%<br>male and 20% female observations. In scikit-learn, we can conduct stratified k-fold<br>cross-validation by replacing the KFold class with StratifiedKFold.<br>Finally, when we are using validation sets or cross-validation, it is important to pre‐<br>process data based on the training set and then apply those transformations to both<br>the training and test set. For example, when we fit our standardization object, stand<br>ardizer, we calculate the mean and variance of only the training set. Then we apply<br>that transformation (using transform) to both the training and test sets:</p>
-<p>其次，当我们使用KFCV来评估一个分类器时，</p>
+<p>Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have<br>folds containing roughly the same percentage of observations from each of the differ‐<br>ent target classes (called stratied k-fold). For example, if our target vector contained<br>gender and 80% of the observations were male, then each fold would contain 80%<br>male and 20% female observations. In scikit-learn, we can conduct stratified k-fold<br>cross-validation by replacing the KFold class with StratifiedKFold.<br>Finally, when we are using validation sets or cross-validation, it is important to pre‐<br>process data based on the training set and then apply those transformations to both<br>the training and test set. For example, when we fit our standardization object, stand<br>ardizer, we calculate the mean and variance of only the training set. Then we apply<br>that transformation (using transform) to both the training and test sets:</p>
+<p>其次，当我们使用KFCV来评估一个分类器时，它的优势在于粗略的对研究对象按照不同目标类以相同比例来划分 “叠”（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的研究对象是男性，然后每个 “叠”应该包含80%男性和20%的女性研究对象。<br>在scikit-learn框架中，我们能通过使用StratifiedKFold类替换KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用fit操作我们的standardization对象和standardizer时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform方法）对训练集和测试集进行处理：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Import library</span></div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"><span class="comment"># Create training and test sets</span></div><div class="line">features_train, features_test, target_train, target_test = train_test_split(</div><div class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</div><div class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></div><div class="line"><span class="comment"># Fit standardizer to training set</span></div><div class="line">standardizer.fit(features_train)</div><div class="line"><span class="comment"># Apply to both training and test sets</span></div><div class="line">features_train_std = standardizer.transform(features_train)</div><div class="line">features_test_std = standardizer.transform(features_test)</div></pre></td></tr></table></figure>
 <p>The reason for this is because we are pretending that the test set is unknown data. If<br>we fit both our preprocessors using observations from both training and test sets,<br>some of the information from the test set leaks into our training set. This rule applies<br>for any preprocessing step such as feature selection.<br>scikit-learn’s pipeline package makes this easy to do while using cross-validation tech‐<br>niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and<br>then trains a model (logistic regression, logit):</p>
+<p>这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的研究对象对我们的预处理器fit操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术的时，scikit-learn的pipeline包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Create a pipeline</span></div><div class="line">pipeline = make_pipeline(standardizer, logit)</div><div class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</div><div class="line"><span class="comment"># Do k-fold cross-validation</span></div><div class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></div><div class="line"> features, <span class="comment"># Feature matrix</span></div><div class="line"> target, <span class="comment"># Target vector</span></div><div class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></div><div class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></div></pre></td></tr></table></figure>
 <p>cross_val_score comes with three parameters that we have not discussed that are<br>worth noting. cv determines our cross-validation technique. K-fold is the most com‐<br>mon by far, but there are others, like leave-one-out-cross-validation where the num‐<br>ber of folds k equals the number of observations. The scoring parameter defines our<br>metric for success, a number of which are discussed in other recipes in this chapter.<br>Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, if your<br>computer has four cores (a common number for laptops), then scikit-learn will use<br>all four cores at once to speed up the operation.</p>
+<p>cross_val_score 方法需要我们没有讨论但是值得一提的三个参数，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和调查对象个数相同”叠”的leave-one-out-cross-validation。scoring参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1是告诉scikit-learn去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。</p>
 <h3 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h3><ul>
 <li>Why every statistician should know about cross-validation (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="external">http://bit.ly/2Fzhz6X</a>)</li>
 <li>Cross-Validation Gone Wrong (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="external">http://bit.ly/2FzfIiw</a>)</li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li>为什么数据科学家都应该知道交叉验证 (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="external">http://bit.ly/2Fzhz6X</a>)</li>
+<li>交叉验证走在错误的道路上 (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="external">http://bit.ly/2FzfIiw</a>)</li>
 </ul>
 ]]></content>
       
