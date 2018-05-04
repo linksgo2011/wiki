@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Creating a Baseline Regression Model | Programming Wiki</title>
+  <meta name="author" content="cn.printf">
+  
+  <meta name="description" content="11.2 Creating a Baseline Regression Model11.2 创建一个基线回归模型ProblemYou want a simple baseline regression model to compare against your model
+你需要创建一个基线回归模型">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Creating a Baseline Regression Model"/>
+  <meta property="og:site_name" content="Programming Wiki"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Programming Wiki" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Creating a Baseline Regression Model</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-05-04</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="11-2-Creating-a-Baseline-Regression-Model"><a href="#11-2-Creating-a-Baseline-Regression-Model" class="headerlink" title="11.2 Creating a Baseline Regression Model"></a>11.2 Creating a Baseline Regression Model</h2><h2 id="11-2-创建一个基线回归模型"><a href="#11-2-创建一个基线回归模型" class="headerlink" title="11.2 创建一个基线回归模型"></a>11.2 创建一个基线回归模型</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline regression model to compare against your model</p>
+<p>你需要创建一个基线回归模型来和你的模型对比</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyRegressor to create a simple model to use as a baseline</p>
+<p>使用 scikit-learn 的 DummyRegressor 来创建一个简单模型作为基准对比使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Load libraries</span></div><div class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</div><div class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyRegressor</div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"><span class="comment"># Load data</span></div><div class="line">boston = load_boston()</div><div class="line"><span class="comment"># Create features</span></div><div class="line">features, target = boston.data, boston.target</div><div class="line"><span class="comment"># Make test and training split</span></div><div class="line">features_train, features_test, target_train, target_test = train_test_split(</div><div class="line"> features, target, random_state=<span class="number">0</span>)</div><div class="line"><span class="comment"># Create a dummy regressor</span></div><div class="line">dummy = DummyRegressor(strategy=<span class="string">'mean'</span>)</div><div class="line"><span class="comment"># "Train" dummy regressor</span></div><div class="line">dummy.fit(features_train, target_train)</div><div class="line"><span class="comment"># Get R-squared score</span></div><div class="line">dummy.score(features_test, target_test)</div><div class="line"><span class="number">-0.0011193592039553391</span></div></pre></td></tr></table></figure>
+<p>To compare, we train our model and evaluate the performance score:<br>来对比，我们训练我们的模型然后进行性能评分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Load library</span></div><div class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</div><div class="line"><span class="comment"># Train simple linear regression model</span></div><div class="line">ols = LinearRegression()</div><div class="line">ols.fit(features_train, target_train)</div><div class="line"><span class="comment"># Get R-squared score</span></div><div class="line">ols.score(features_test, target_test)</div><div class="line"><span class="number">0.63536207866746675</span></div></pre></td></tr></table></figure>
+<h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>DummyRegressor allows us to create a very simple model that we can use as a baseline<br>to compare against our actual model. This can often be useful to simulate a “naive”<br>existing prediction process in a product or system. For example, a product might<br>have been originally hardcoded to assume that all new users will spend $100 in the<br>first month, regardless of their features. If we encode that assumption into a baseline<br>model, we are able to concretely state the benefits of using a machine learning<br>approach.</p>
+<p>DummyRegressor 允许我们的创建一个非常简单的模型，用来作为基线参考，从而可以和我们的真实模型作为对比。它是非常有用的，在系统或者产品中，去模拟一个原始存在的预测处理机制。举例来说，一个产品可能原始的硬编码了一些逻辑，更具用户特性，所有的用户将要在第一个月花费100美元。如果我们编码这些逻辑进入一个基线模型，我们从这些逻辑基础上来结合机器学习的优势。</p>
+<p>DummyRegressor uses the strategy parameter to set the method of making predic‐<br>tions, including the mean or median value in the training set. Furthermore, if we set<br>strategy to constant and use the constant parameter, we can set the dummy<br>regressor to predict some constant value for every observation:</p>
+<p>DummyRegressor 使用 strategy 参数去设置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Create dummy regressor that predicts 20's for everything</span></div><div class="line">clf = DummyRegressor(strategy=<span class="string">'constant'</span>, constant=<span class="number">20</span>)</div><div class="line">clf.fit(features_train, target_train)</div><div class="line"><span class="comment"># Evaluate score</span></div><div class="line">clf.score(features_test, target_test)</div><div class="line"><span class="number">-0.065105020293257265</span></div></pre></td></tr></table></figure>
+<p>One small note regarding score. By default, score returns the coefficient of determi‐<br>nation (R-squared, R<br>2<br>) score:</p>
+<p>where yi<br> is the true value of the target observation, yi<br> is the predicted value, and ȳ is<br>the mean value for the target vector.<br>The closer R<br>2<br>is to 1, the more of the variance in the target vector that is explained by<br>the features.</p>
+<h2 id="11-3-Creating-a-Baseline-Classification-Model"><a href="#11-3-Creating-a-Baseline-Classification-Model" class="headerlink" title="11.3 Creating a Baseline Classification Model"></a>11.3 Creating a Baseline Classification Model</h2><h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline classifier to compare against your model.</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyClassifier:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Load libraries</span></div><div class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</div><div class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyClassifier</div><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"><span class="comment"># Load data</span></div><div class="line">iris = load_iris()</div><div class="line"><span class="comment"># Create target vector and feature matrix</span></div><div class="line">features, target = iris.data, iris.target</div><div class="line"><span class="comment"># Split into training and test set</span></div><div class="line">features_train, features_test, target_train, target_test = train_test_split(</div><div class="line">features, target, random_state=<span class="number">0</span>)</div><div class="line"><span class="comment"># Create dummy classifier</span></div><div class="line">dummy = DummyClassifier(strategy=<span class="string">'uniform'</span>, random_state=<span class="number">1</span>)</div><div class="line"><span class="comment"># "Train" model</span></div><div class="line">dummy.fit(features_train, target_train)</div><div class="line"><span class="comment"># Get accuracy score</span></div><div class="line">dummy.score(features_test, target_test)</div><div class="line"><span class="number">0.42105263157894735</span></div></pre></td></tr></table></figure>
+<p>By comparing the baseline classifier to our trained classifier, we can see the improve‐<br>ment:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Load library</span></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"><span class="comment"># Create classifier</span></div><div class="line">classifier = RandomForestClassifier()</div><div class="line"><span class="comment"># Train model</span></div><div class="line">classifier.fit(features_train, target_train)</div><div class="line"><span class="comment"># Get accuracy score</span></div><div class="line">classifier.score(features_test, target_test)</div><div class="line"><span class="number">0.94736842105263153</span></div></pre></td></tr></table></figure>
+<h3 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h3><p>A common measure of a classifier’s performance is how much better it is than ran‐<br>dom guessing. scikit-learn’s DummyClassifier makes this comparison easy. The strat<br>egy parameter gives us a number of options for generating values. There are two par‐<br>ticularly useful strategies. First, stratified makes predictions that are proportional<br>to the training set’s target vector’s class proportions (i.e., if 20% of the observations in<br>the training data are women, then DummyClassifier will predict women 20% of the<br>11.3 Creating a Baseline Classification Model | 185<br>time). Second, uniform will generate predictions uniformly at random between the<br>different classes. For example, if 20% of observations are women and 80% are men,<br>uniform will produce predictions that are 50% women and 50% men.</p>
+<h3 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h3><ul>
+<li>scikit-learn documentation: DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="external">http://bit.ly/2Fr178G</a>)</li>
+</ul>
+<h2 id="11-4-Evaluating-Binary-Classifier-Predictions"><a href="#11-4-Evaluating-Binary-Classifier-Predictions" class="headerlink" title="11.4 Evaluating Binary Classifier Predictions"></a>11.4 Evaluating Binary Classifier Predictions</h2><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem"></a>Problem</h3><p>Given a trained classification model, you want to evaluate its quality.</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s cross_val_score to conduct cross-validation while using the scor<br>ing parameter to define one of a number of performance metrics, including accuracy,<br>precision, recall, and F1<br>.<br>Accuracy is a common performance metric. It is simply the proportion of observa‐<br>tions predicted correctly:</p>
+<p>{公式}</p>
+<p>where:</p>
+<ul>
+<li>TP is the number of true positives. Observations that are part of the positive class<br>(has the disease, purchased the product, etc.) and that we predicted correctly.</li>
+<li>TN is the number of true negatives. Observations that are part of the negative<br>class (does not have the disease, did not purchase the product, etc.) and that we<br>predicted correctly.</li>
+<li>FP is the number of false positives. Also called a Type I error. Observations pre‐<br>dicted to be part of the positive class that are actually part of the negative class.</li>
+<li>FN is the number of false negatives. Also called a Type II error. Observations pre‐<br>dicted to be part of the negative class that are actually part of the positive class.</li>
+</ul>
+<p>We can measure accuracy in three-fold (the default number of folds) cross-validation<br>by setting scoring=”accuracy”:</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/translation/translation/vocabulary/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+    
+      &copy; 2018 cn.printf
+      
+      <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

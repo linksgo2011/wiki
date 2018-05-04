@@ -8,6 +8,7 @@ categories: translation
 - pipeline 流水线
 - preprocesses 预处理
 - logistic regression 逻辑回归
+- baseline 基线
 
 ## 不翻译
 
