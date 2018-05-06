@@ -112,8 +112,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
       <content type="html"></content>
       
         <categories>
@@ -126,8 +126,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
       <content type="html"></content>
       
         <categories>
