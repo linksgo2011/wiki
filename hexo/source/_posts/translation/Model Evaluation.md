@@ -16,7 +16,7 @@ hard). Therefore, before we explore the myriad learning algorithms, we first set
 how we can evaluate the models they produce.
 
 
-在这一章中，我们要来探讨评估策略，以此筛选通过我们学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。
+在这一章中，我们将探讨评估策略，以此筛选通过我们学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。
 
 ## 11.1 Cross-Validating Models
 
@@ -35,7 +35,7 @@ You want to evaluate how well your model will work in the real world.
 Create a pipeline that preprocesses the data, trains the model, and then evaluates it
 using cross-validation:
 
-创建一个预处理数据的流水线，然后训练这个模型，最后使用交互验证来评估：
+创建一个预处理数据的流水线，训练这个模型，然后使用交互验证来评估：
 
 ```python
 
@@ -88,7 +88,7 @@ evaluation should help us understand how well models are able to make prediction
 from data they have never seen before.
 
 
-第一个考虑，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的期望目标。我们的目标不是在我们的训练数据上评估模型，而应该是是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知的数据中去做出预测。
+首先要考虑一点，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的验证目标。我们的目标不是在我们的训练数据上评估模型，而应该是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知数据中去做出预测。
 
 
 One strategy might be to hold off a slice of data for testing. This is called validation
@@ -102,7 +102,7 @@ of the model can be highly dependent on which few observations were selected for
 the test set. Second, the model is not being trained using all the available data, and
 not being evaluated on all the available data.
 
-一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验（或者叫留出法）。在实际验证中，我们把处理的对象数据（特征或者目标）分割成两部分，传统上被称作训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出的少量测试数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。
+其中一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验（或者叫留出法）。在实际验证中，我们把我们的采样数据（特征或者目标）分割成两部分，传统上我们叫它们训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出来作为测试集的采样数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。
 
 
 A better strategy, which overcomes these weaknesses, is called k-fold cross-validation
@@ -114,9 +114,9 @@ produce an overall measurement.
 In our solution, we conducted k-fold cross-validation using 10 folds and outputted
 the evaluation scores to cv_results: 
 
-一个被称作k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为"叠"。然后使用k-1叠数据来训练模型，然后用最后一叠数据校验。然后我们重复K次，每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。
+一个更好的策略，被称作 k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为"叠"。然后使用k-1叠数据来训练模型，然后用最后一叠做数据校验。我们通过重复K次，使得每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。
 
-在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量cv_results：
+在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量 cv_results 中：
 
 ```python
 
@@ -133,7 +133,7 @@ is independent identically distributed [IID]). If the data is IID, it is a good 
 shuffle observations when assigning to folds. In scikit-learn we can set shuffle=True
 to perform shuffling.
 
-当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV数据采样是被独立创建的（例如，数据是独立同分布的[IID]）.
+当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV假定每个采样数据是独立于其它采样创建的（例如，数据是独立同分布的[IID]）.
 如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，，我们可以设置变量shuffle为true来进行打乱操作。
 
 Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have
@@ -148,8 +148,8 @@ the training and test set. For example, when we fit our standardization object, 
 ardizer, we calculate the mean and variance of only the training set. Then we apply
 that transformation (using transform) to both the training and test sets:
 
-其次，当我们使用KFCV来评估一个分类器时，它的优势在于粗略的对研究对象按照不同目标类以相同比例来划分 "叠"（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的研究对象是男性，然后每个 "叠"应该包含80%男性和20%的女性研究对象。
-在scikit-learn框架中，我们能通过使用StratifiedKFold类替换KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用fit操作我们的standardization对象和standardizer时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform方法）对训练集和测试集进行处理：
+其次，当我们使用 KFCV 来评估一个分类器时，它的优势在于粗略的对采样数据按照不同目标类以相同比例来划分 "叠"（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的采样数据是男性，那么每个"叠"应该包含80%男性和20%的女性采样数据。
+在 scikit-learn 框架中，我们能通过使用 StratifiedKFold 类替换 KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用 fit 操作我们的 standardization 对象和 standardizer 时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform 方法）对训练集和测试集都进行处理：
 
 ```python
 
@@ -175,7 +175,7 @@ scikit-learn’s pipeline package makes this easy to do while using cross-valida
 niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and
 then trains a model (logistic regression, logit):
 
-这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的研究对象对我们的预处理器fit操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术的时，scikit-learn的pipeline包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:
+这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的采样数据对我们的预处理器 fit 操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术时，scikit-learn 的 pipeline 包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:
 
 
 ```python
@@ -201,14 +201,14 @@ Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, 
 computer has four cores (a common number for laptops), then scikit-learn will use
 all four cores at once to speed up the operation.
 
-cross_val_score 方法需要我们没有讨论但是值得一提的三个参数，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和调查对象个数相同"叠"的leave-one-out-cross-validation。scoring参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1是告诉scikit-learn去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。
+cross_val_score 方法需要三个参数，我们没有讨论但是这里值得一提，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和采样数据个数相同"叠"的 leave-one-out-cross-validation 。scoring 参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1 是告诉 scikit-learn 去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。
 
 ### See Also
 
 - Why every statistician should know about cross-validation (http://bit.ly/2Fzhz6X)
 - Cross-Validation Gone Wrong (http://bit.ly/2FzfIiw)
 
-### 参考链接
+### 查看更多
 
 - 为什么数据科学家都应该知道交叉验证 (http://bit.ly/2Fzhz6X)
 - 交叉验证走在错误的道路上 (http://bit.ly/2FzfIiw)
