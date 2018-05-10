@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[PHP 不同场景下技术选型的讨论]]></title>
+      <url>/php/php/lightweight%20php%20api/</url>
+      <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul>
+<li>Composer 包管理工具</li>
+<li>ToroPHP PHP路由框架</li>
+<li>Medoo PHP数据库ORM框架</li>
+<li>Monolog 日志框架</li>
+<li>JWT token消费和验证</li>
+</ul>
+<h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="external">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p>
+<h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>
+]]></content>
+      
+        <categories>
+            
+            <category> php </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[技术书单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list%20for%20it/</url>
+      <content type="html"><![CDATA[<ul>
+<li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="external">Domain Driven Design Quickly</a></li>
+<li>《领域驱动设计》</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> reading&amp;writing </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Model Evaluation]]></title>
       <url>/translation/translation/Model%20Evaluation/</url>
       <content type="html"><![CDATA[<h2 id="11-0-Introduction"><a href="#11-0-Introduction" class="headerlink" title="11.0 Introduction"></a>11.0 Introduction</h2><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>In this chapter we will examine strategies for evaluating the quality of models created<br>through our learning algorithms. It might appear strange to discuss model evaluation<br>before discussing how to create them, but there is a method to our madness. Models<br>are only as useful as the quality of their predictions, and thus fundamentally our goal<br>is not to create models (which is easy) but to create high-quality models (which is<br>hard). Therefore, before we explore the myriad learning algorithms, we first set up<br>how we can evaluate the models they produce.</p>
@@ -217,9 +259,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
-      <content type="html"></content>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
+]]></content>
       
         <categories>
             
@@ -231,8 +274,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
       <content type="html"></content>
       
         <categories>
