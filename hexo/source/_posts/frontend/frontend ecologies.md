@@ -1,5 +1,5 @@
 ---
-title: 前端生态
+title: 前端生态图谱
 categories: fronted
 toc: true
 ---
@@ -53,18 +53,21 @@ toc: true
         - gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程
         - webpack 资源的load和打包，webpack主要对单页面应用开发使用
             - 通过loader的思想，对前端资源进行管理和打包操作
+            - Babel
+            - Es6
+            - Eslint
          
 - React 生态
- - Reactjs
- - React-router
- - Redux
- - React form 
- - axios
- - 工具
-    - lodash
-    - moment
- - webpack 配置
- - 组件库 http://ant.design/
+     - Reactjs
+     - React-router
+     - Redux
+     - React form 
+     - axios
+     - 工具
+        - lodash
+        - moment
+     - webpack 配置
+     - 组件库 http://ant.design/
  
 - Vue 生态
 

@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[前端生态]]></title>
+      <title><![CDATA[前端生态图谱]]></title>
       <url>/fronted/frontend/frontend%20ecologies/</url>
       <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul>
 <li>开发模式<ul>
@@ -75,6 +75,9 @@
 </li>
 <li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul>
 <li>通过loader的思想，对前端资源进行管理和打包操作</li>
+<li>Babel</li>
+<li>Es6</li>
+<li>Eslint</li>
 </ul>
 </li>
 </ul>
