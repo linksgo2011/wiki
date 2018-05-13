@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[开发工具图谱]]></title>
+      <url>/development/tool-collections/development%20tool/</url>
+      <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul>
+<li><p>编辑器</p>
+<ul>
+<li>VIM </li>
+<li>Sublime </li>
+</ul>
+</li>
+<li><p>VCS </p>
+<ul>
+<li>SVN </li>
+<li>GIT</li>
+</ul>
+</li>
+<li><p>IDE</p>
+<ul>
+<li>IntelliJ IDEA</li>
+</ul>
+</li>
+<li><p>抓包工具</p>
+<ul>
+<li>Httpwatch</li>
+<li>Wireshark</li>
+<li>fiddler</li>
+</ul>
+</li>
+<li><p>性能分析工具</p>
+<ul>
+<li>AB测试</li>
+<li>网页性能分析</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> development </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[前端生态图谱]]></title>
       <url>/fronted/frontend/frontend%20ecologies/</url>
       <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul>
@@ -416,10 +462,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
-      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
-]]></content>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <content type="html"></content>
       
         <categories>
             
@@ -431,9 +476,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
-      <content type="html"></content>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
+]]></content>
       
         <categories>
             
