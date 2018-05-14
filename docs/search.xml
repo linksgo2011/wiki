@@ -3,6 +3,38 @@
   
     
     <entry>
+      <title><![CDATA[代码审查的注意事项]]></title>
+      <url>/engineered/engineered/code%20review%20tips/</url>
+      <content type="html"><![CDATA[<h2 id="通用-TIPS"><a href="#通用-TIPS" class="headerlink" title="通用 TIPS"></a>通用 TIPS</h2><ul>
+<li>Naming should be correct and abide by the convention</li>
+<li>Hard code string should be refactored as constant </li>
+<li>Keep all environment consistent </li>
+<li>Should not expose password and private key</li>
+<li>Remove useless comment and useless console statement </li>
+<li>Remove any sensitive information in PROD</li>
+<li>Remove useless file and method </li>
+</ul>
+<h2 id="Review-Java"><a href="#Review-Java" class="headerlink" title="Review Java"></a>Review Java</h2><ul>
+<li>Should not use snapshot version </li>
+<li>Null should be check when try to access attribute of it</li>
+<li>Comparision should be use ‘equal’ instead of ‘==’</li>
+<li>Util methods  should be static</li>
+</ul>
+<h2 id="Review-JS"><a href="#Review-JS" class="headerlink" title="Review JS"></a>Review JS</h2><ul>
+<li>Eslint should be turned on </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> engineered </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[开发工具图谱]]></title>
       <url>/development/tool-collections/development%20tool/</url>
       <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul>

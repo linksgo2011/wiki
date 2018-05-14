@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>React Native 资源收集 | Programming Wiki</title>
+  <title>代码审查的注意事项 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="官网
-https://facebook.github.io/react-native/
-React Native 开发工具
-https://expo.io/
-React Native 组件
-https://react-native-training.github.io/react-native-el">
+  <meta name="description" content="通用 TIPS
+Naming should be correct and abide by the convention
+Hard code string should be refactored as constant 
+Keep all environment consistent 
+Shoul">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="React Native 资源收集"/>
+  <meta property="og:title" content="代码审查的注意事项"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -50,7 +49,7 @@ https://react-native-training.github.io/react-native-el">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">React Native 资源收集</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-08-09</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">代码审查的注意事项</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-05-14</span></h1>
 </div>		
 
 <div class="row page">
@@ -63,21 +62,24 @@ https://react-native-training.github.io/react-native-el">
 	  
 
 	  <!-- content -->
-	  <p>官网</p>
-<p><a href="https://facebook.github.io/react-native/" target="_blank" rel="external">https://facebook.github.io/react-native/</a></p>
-<p>React Native 开发工具</p>
-<p><a href="https://expo.io/" target="_blank" rel="external">https://expo.io/</a></p>
-<p>React Native 组件</p>
-<p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="external">https://react-native-training.github.io/react-native-elements/</a></p>
-<p>React Native 脚手架</p>
-<p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="external">https://github.com/react-community/create-react-native-app</a></p>
-<p>React Native 项目案例</p>
-<ul>
-<li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="external">https://github.com/soliury/noder-react-native</a></li>
+	  <h2 id="通用-TIPS"><a href="#通用-TIPS" class="headerlink" title="通用 TIPS"></a>通用 TIPS</h2><ul>
+<li>Naming should be correct and abide by the convention</li>
+<li>Hard code string should be refactored as constant </li>
+<li>Keep all environment consistent </li>
+<li>Should not expose password and private key</li>
+<li>Remove useless comment and useless console statement </li>
+<li>Remove any sensitive information in PROD</li>
+<li>Remove useless file and method </li>
 </ul>
-<p>React Native boilerplate</p>
-<p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="external">https://github.com/linksgo2011/react-native-ts-most</a></p>
-<p>React Native project deployment</p>
+<h2 id="Review-Java"><a href="#Review-Java" class="headerlink" title="Review Java"></a>Review Java</h2><ul>
+<li>Should not use snapshot version </li>
+<li>Null should be check when try to access attribute of it</li>
+<li>Comparision should be use ‘equal’ instead of ‘==’</li>
+<li>Util methods  should be static</li>
+</ul>
+<h2 id="Review-JS"><a href="#Review-JS" class="headerlink" title="Review JS"></a>Review JS</h2><ul>
+<li>Eslint should be turned on </li>
+</ul>
 	  
 
 	  <div>
@@ -91,126 +93,126 @@ https://react-native-training.github.io/react-native-el">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
