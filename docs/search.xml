@@ -457,8 +457,8 @@
       <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cwiki.apachecn.org/" target="_blank" rel="external">http://cwiki.apachecn.org/</a></p>
 <p>## </p>
 <ul>
-<li>fold 叠 有些翻译为折叠</li>
-<li>observation 采样数据</li>
+<li>fold 叠 有些翻译为折</li>
+<li>observation 采样数据，样本</li>
 <li>hold-out 留出法</li>
 <li>training set 训练集</li>
 <li>Test set 测试集</li>
@@ -477,10 +477,11 @@
 <li>mean value  均值 一组数据的总和除以这组数据个数所得到</li>
 <li>median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据</li>
 <li>squared errors 均方误差</li>
+<li>fit 拟合</li>
 </ul>
 <h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul>
 <li>standardizer</li>
-<li></li>
+<li>n</li>
 </ul>
 ]]></content>
       

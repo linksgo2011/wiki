@@ -9,8 +9,8 @@ http://cwiki.apachecn.org/
 
 
 ## 
-- fold 叠 有些翻译为折叠
-- observation 采样数据
+- fold 叠 有些翻译为折
+- observation 采样数据，样本
 - hold-out 留出法
 - training set 训练集
 - Test set 测试集
@@ -29,8 +29,9 @@ http://cwiki.apachecn.org/
 - mean value  均值 一组数据的总和除以这组数据个数所得到
 - median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据
 - squared errors 均方误差
+- fit 拟合
 
 
 ## 不翻译
 - standardizer
-- 
+- n

@@ -1,6 +1,7 @@
 ---
 title: 代码审查的注意事项
 categories: engineered
+toc: true
 ---
 
 ## 通用 TIPS
