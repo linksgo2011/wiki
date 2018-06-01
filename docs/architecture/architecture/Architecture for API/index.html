@@ -3,19 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>代码审查的注意事项 | Programming Wiki</title>
+  <title>API设计要点 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="通用 TIPS
-Naming should be correct and abide by the convention
-Hard code string should be refactored as constant 
-Keep all environment consistent 
-Shoul">
+  <meta name="description" content="Catlog
+
+痛点分析
+Restful标准
+标准解读
+payload
+数据类型
+分页
+links
+错误信息
+生产环境屏蔽信息
+
+
+
+
+
+
+文档
+
+swagger 
+apidoc 
+
+
+版本策略
+
+prefix version endpoint 
+header parameter 
+
+
+认证和授权
+">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="代码审查的注意事项"/>
+  <meta property="og:title" content="API设计要点"/>
   <meta property="og:site_name" content="Programming Wiki"/>
 
   
@@ -49,7 +75,7 @@ Shoul">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">代码审查的注意事项</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-05-14</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">API设计要点</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-06-01</span></h1>
 </div>		
 
 <div class="row page">
@@ -71,24 +97,82 @@ Shoul">
 	
 
 	  <!-- content -->
-	  <h2 id="通用-TIPS"><a href="#通用-TIPS" class="headerlink" title="通用 TIPS"></a>通用 TIPS</h2><ul>
-<li>Naming should be correct and abide by the convention</li>
-<li>Hard code string should be refactored as constant </li>
-<li>Keep all environment consistent </li>
-<li>Should not expose password and private key</li>
-<li>Remove useless comment and useless console statement </li>
-<li>Remove any sensitive information in PROD</li>
-<li>Remove useless file and method </li>
+	  <p>Catlog</p>
+<ol>
+<li>痛点分析</li>
+<li>Restful标准<ul>
+<li>标准解读</li>
+<li>payload<ul>
+<li>数据类型</li>
+<li>分页</li>
+<li>links</li>
+<li>错误信息<ul>
+<li>生产环境屏蔽信息</li>
 </ul>
-<h2 id="Review-Java"><a href="#Review-Java" class="headerlink" title="Review Java"></a>Review Java</h2><ul>
-<li>Should not use snapshot version </li>
-<li>Null should be check when try to access attribute of it</li>
-<li>Comparision should be use ‘equal’ instead of ‘==’</li>
-<li>Util methods  should be static</li>
+</li>
 </ul>
-<h2 id="Review-JS"><a href="#Review-JS" class="headerlink" title="Review JS"></a>Review JS</h2><ul>
-<li>Eslint should be turned on </li>
+</li>
 </ul>
+</li>
+<li><p>文档</p>
+<ul>
+<li>swagger </li>
+<li>apidoc </li>
+</ul>
+</li>
+<li><p>版本策略</p>
+<ul>
+<li>prefix version endpoint </li>
+<li>header parameter </li>
+</ul>
+</li>
+<li>认证和授权<ul>
+<li>API和WEB的认证异同</li>
+<li>JWT</li>
+<li>OAuth</li>
+<li>终极方案，签名</li>
+</ul>
+</li>
+<li>性能<ul>
+<li>数据节流</li>
+<li>负载均衡<ul>
+<li>AWS ELB </li>
+<li>Ngnix</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安全<ul>
+<li>stateless CSRF</li>
+<li>DDOS </li>
+<li></li>
+</ul>
+</li>
+<li>监控<ul>
+<li>dynatrace </li>
+<li>splunk</li>
+</ul>
+</li>
+<li>API测试<ul>
+<li>PostMan</li>
+<li>自动化测试<ul>
+<li>curl</li>
+<li>Python pycurl</li>
+<li>newman+postman</li>
+</ul>
+</li>
+<li>性能测试<ul>
+<li>AB</li>
+</ul>
+</li>
+<li>契约测试 Pact</li>
+</ul>
+</li>
+<li>API gateway<ul>
+<li>kong</li>
+</ul>
+</li>
+</ol>
 	  
 
 	  <div>
@@ -102,10 +186,6 @@ Shoul">
 	
 	
 		
-	
-		
-	
-		
 			
 			
 		
@@ -135,7 +215,29 @@ Shoul">
 		
 	
 		
+			
+			
+			
+		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -157,15 +259,7 @@ Shoul">
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -276,7 +370,7 @@ Shoul">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/architecture/architecture/OAuth2/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

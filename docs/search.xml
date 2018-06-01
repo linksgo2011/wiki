@@ -3,6 +3,113 @@
   
     
     <entry>
+      <title><![CDATA[API设计要点]]></title>
+      <url>/architecture/architecture/Architecture%20for%20API/</url>
+      <content type="html"><![CDATA[<p>Catlog</p>
+<ol>
+<li>痛点分析</li>
+<li>Restful标准<ul>
+<li>标准解读</li>
+<li>payload<ul>
+<li>数据类型</li>
+<li>分页</li>
+<li>links</li>
+<li>错误信息<ul>
+<li>生产环境屏蔽信息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文档</p>
+<ul>
+<li>swagger </li>
+<li>apidoc </li>
+</ul>
+</li>
+<li><p>版本策略</p>
+<ul>
+<li>prefix version endpoint </li>
+<li>header parameter </li>
+</ul>
+</li>
+<li>认证和授权<ul>
+<li>API和WEB的认证异同</li>
+<li>JWT</li>
+<li>OAuth</li>
+<li>终极方案，签名</li>
+</ul>
+</li>
+<li>性能<ul>
+<li>数据节流</li>
+<li>负载均衡<ul>
+<li>AWS ELB </li>
+<li>Ngnix</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安全<ul>
+<li>stateless CSRF</li>
+<li>DDOS </li>
+<li></li>
+</ul>
+</li>
+<li>监控<ul>
+<li>dynatrace </li>
+<li>splunk</li>
+</ul>
+</li>
+<li>API测试<ul>
+<li>PostMan</li>
+<li>自动化测试<ul>
+<li>curl</li>
+<li>Python pycurl</li>
+<li>newman+postman</li>
+</ul>
+</li>
+<li>性能测试<ul>
+<li>AB</li>
+</ul>
+</li>
+<li>契约测试 Pact</li>
+</ul>
+</li>
+<li>API gateway<ul>
+<li>kong</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> architecture </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[系统监控和维护]]></title>
+      <url>/devops/devops/monitors%20for%20website/</url>
+      <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令2
+    - cat
+    - 
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> devops </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[代码审查的注意事项]]></title>
       <url>/engineered/engineered/code%20review%20tips/</url>
       <content type="html"><![CDATA[<h2 id="通用-TIPS"><a href="#通用-TIPS" class="headerlink" title="通用 TIPS"></a>通用 TIPS</h2><ul>
@@ -495,9 +602,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
-      <content type="html"></content>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
+]]></content>
       
         <categories>
             
@@ -509,10 +617,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
-      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
-]]></content>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <content type="html"></content>
       
         <categories>
             
