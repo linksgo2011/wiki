@@ -18,6 +18,7 @@ Catlog
   3. 文档
       - swagger 
       - apidoc 
+      - parade 中心化API文档管理工具
       
   4. 版本策略
       - prefix version endpoint 
