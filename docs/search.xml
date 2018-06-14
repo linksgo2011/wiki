@@ -96,9 +96,14 @@
     <entry>
       <title><![CDATA[系统监控和维护]]></title>
       <url>/devops/devops/monitors%20for%20website/</url>
-      <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令2
-    - cat
-    - 
+      <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令
+    - cat 快速显示文件
+    - more less 分页查找
+    - tail 显示文件尾
+    - head 显示文件头
+    - sort 内容排序
+    - wc 字符统计 wc 为Word count的缩写
+    - uniq 去重连续的重复行 
 </code></pre>]]></content>
       
         <categories>
@@ -603,10 +608,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
-      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
-]]></content>
+      <title><![CDATA[电影清单]]></title>
+      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
+      <content type="html"></content>
       
         <categories>
             
@@ -618,9 +622,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[电影清单]]></title>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
-      <content type="html"></content>
+      <title><![CDATA[读书清单]]></title>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>
+]]></content>
       
         <categories>
             
