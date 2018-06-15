@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title><![CDATA[PMP talking]]></title>
+      <url>/management/management/PMP%20talking/</url>
+      <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>
+]]></content>
+      
+        <categories>
+            
+            <category> management </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[API设计要点]]></title>
       <url>/architecture/architecture/Architecture%20for%20API/</url>
       <content type="html"><![CDATA[<p>Catlog</p>
@@ -2566,6 +2581,10 @@ ctrl+r       重复操作
 <p>Git 增加文件执行权限</p>
 <blockquote>
 <p>git update-index –chmod=+x $script</p>
+</blockquote>
+<p>查看sudo 环境下有哪些可用的权限</p>
+<blockquote>
+<p>sudo -l</p>
 </blockquote>
 ]]></content>
       

@@ -88,4 +88,6 @@ Git 增加文件执行权限
 > git update-index --chmod=+x $script
 
 
+查看sudo 环境下有哪些可用的权限
 
+> sudo -l
