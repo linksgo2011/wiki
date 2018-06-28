@@ -67,7 +67,8 @@
 <li>header parameter </li>
 </ul>
 </li>
-<li>认证和授权<ul>
+<li><p>认证和授权</p>
+<ul>
 <li>API和WEB的认证异同</li>
 <li>JWT</li>
 <li>OAuth</li>
@@ -83,19 +84,22 @@
 </li>
 </ul>
 </li>
-<li>安全<ul>
+<li><p>安全</p>
+<ul>
 <li>幂等性下的数据一致性 </li>
 <li>stateless CSRF</li>
-<li>DDOS </li>
-<li></li>
+<li>重放工具 DDOS</li>
+<li>恶意调用</li>
 </ul>
 </li>
-<li>监控<ul>
+<li><p>监控和日志</p>
+<ul>
 <li>dynatrace </li>
 <li>splunk</li>
 </ul>
 </li>
-<li>API测试<ul>
+<li><p>API测试</p>
+<ul>
 <li>PostMan</li>
 <li>自动化测试<ul>
 <li>curl</li>
@@ -232,7 +236,7 @@ error:null
 <h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><p>在文档中还定义了分页、过滤、包含等更多内容，请移步文档：</p>
 <pre><code>- 英文版：http://jsonapi.org/format/
 - 中文版：http://jsonapi.org.cn/format/ （PS：中文版更新不及时，请以英文文档为准）
-</code></pre><h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>即使是Ajax时代，实践前后端分离最痛苦的一件事就是怎么让前后端很好的合作。我经历某些项目中甚至没有文档，前后端开发者坐到一起口口相传，后来当调用第三方API的时候用word来编写API文档。这样的方式在编写和更新的时候带来巨大的工作量，并且人工处理非常容易出错。</p>
+</code></pre><h2 id="API文档和Mock"><a href="#API文档和Mock" class="headerlink" title="API文档和Mock"></a>API文档和Mock</h2><p>即使是Ajax时代，实践前后端分离最痛苦的一件事就是怎么让前后端很好的合作。我经历某些项目中甚至没有文档，前后端开发者坐到一起口口相传，后来当调用第三方API的时候用word来编写API文档。这样的方式在编写和更新的时候带来巨大的工作量，并且人工处理非常容易出错。</p>
 <p>在工作中先后尝试使用过apidocjs、swagger等工具来实现API文档输出、Mock server、文档共享等功能。</p>
 <h3 id="apidocjs"><a href="#apidocjs" class="headerlink" title="apidocjs"></a>apidocjs</h3><p>apidocjs是生成文档最轻量的一种方式，apidocjs作为npm包发布，运行在nodejs平台上。原理为解析方法前面的注释，使用方法非常类似javadoc等程序接口文档生成工具，配置和使用都非常简单。因为只是解析代码注释部分，理论上和编程语言无关。</p>
 <p>安装：</p>
@@ -282,7 +286,81 @@ public String custom() {
 </code></pre><p>}</p>
 <p>``</p>
 <p>然后访问你的context下的/context/swagger-ui.html页面，你会看到一个非常简单API文档<br>{配图<a href="http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}" target="_blank" rel="external">http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}</a></p>
-<h2 id="讨论下-RAML"><a href="#讨论下-RAML" class="headerlink" title="讨论下 RAML"></a>讨论下 RAML</h2>]]></content>
+<h2 id="使用swagger前后端协作"><a href="#使用swagger前后端协作" class="headerlink" title="使用swagger前后端协作"></a>使用swagger前后端协作</h2><p>在过去的开发中，往往是后端开发者占主导，在前后端分离后让合作方式发生了变化。传统的方式往往是服务器开发者完成了API开发之后，前端开发者再开始共工作，在项目管理中这样产生时间线的依赖。理想的情况下，在需求明确的情况下，架构师设计，前后端应该能各自独立工作，并在最后进行集成测试即可。</p>
+<p>前面提到了Swagger Editor，使用这个工具可以通过编写API定义文件（Yaml格式），它提供线上版本，也可以本地使用。通过生成API定义文件，就可以完成诸如生成HTML静态文档、模拟API数据等操作。</p>
+<p>前端开发者可以通过swagger的node版本swagger-node自带的mock模式启动一个Mock server，然后根据约定模拟自己想要的数据。<br>关于在前端使用的mock server，实在太多，而且各有优劣，在附录中有一个清单。 </p>
+<p>{}</p>
+<p>后端开发者可以根据文档实现接口，最后按照文档联合调试即可。那么怎么自动化的验证我们后端的API实现是符合一定要求的呢，我会在后面的API测试部分中讲到一个叫做契约测试的方法，来保证服务器输出的API符合文档要求。</p>
+<p>{TODO: 使用swagger的一个工作流图}</p>
+<h3 id="中心文档"><a href="#中心文档" class="headerlink" title="中心文档"></a>中心文档</h3><p>在一个大型的团队中，可能会有几十个以上的项目同时提供了API，这种情况下如果每个应用都各自提供API文档就会变得很难管理，如果API文档绑定到应用服务上会带来一些无意义的损耗。</p>
+<p>可以使用一个集中地服务来存放这些文档，类似于github的私有仓库，swagger同样也提供了类似的服务 - swaggerhub.com。</p>
+<h2 id="附录：API文档和Mock工具清单"><a href="#附录：API文档和Mock工具清单" class="headerlink" title="附录：API文档和Mock工具清单"></a>附录：API文档和Mock工具清单</h2><p>使用或调研过的，API 文档生成工具</p>
+<ul>
+<li>apidoc</li>
+<li>swagger </li>
+<li>blue sprint</li>
+<li>RAML</li>
+</ul>
+<p>使用或调研过得Mock工具清单</p>
+<ul>
+<li>wiremock </li>
+<li>json-server</li>
+<li>node-mock-server</li>
+<li>node-mocks-http</li>
+</ul>
+<p>HTTP请求拦截器</p>
+<ul>
+<li>axios-mock-adapter</li>
+<li>jquery-mockjax </li>
+</ul>
+<h2 id="认证-authentication-和授权-authorization"><a href="#认证-authentication-和授权-authorization" class="headerlink" title="认证 (authentication) 和授权 (authorization)"></a>认证 (authentication) 和授权 (authorization)</h2><p>首先，认证和授权是两个不同的概念，为了让我们的API更加安全和具有清晰地权限，理解认证和授权的不同就非常有必要了。<br>认证和授权在英文中同样是不同的单词。</p>
+<p>认证是authentication，指的是当前用户的身份，当用户登陆过后系统便能追踪到他的身份（cookie或token）做出符合相应业务逻辑的操作。即使用户没有登录，大多数系统也会追踪他的身份，只是当做来宾或者匿名用户来处理。</p>
+<p>授权则不同，授权指的是什么样的身份被允许访问某些资源，在获取到用户身份后继续检查用户的权限。主流的系统中通常采用基于用户组或者基于角色的策略来设计的。</p>
+<h2 id="API和WEB的认证异同"><a href="#API和WEB的认证异同" class="headerlink" title="API和WEB的认证异同"></a>API和WEB的认证异同</h2><p>在构建API时，开发者会发现我们的认证方式和网页应用有一些不同，除了像ajax这种结合了web的技术外，我们总是强调我们的API是无状态的，Cookie便不被推荐使用。</p>
+<p>使用Cookie的本质是用户第一次访问时服务器会分配一个Session ID，后面的请求中客户端都会带上这个ID作为当前用户的标志，因为HTTP本身是无状态的，Cookie属于一种构建于浏览器中实现状态的方式。上面我们说到API的设计是用来给客户端使用的，如果强行要求API的调用者管理Cookie也可以完成任务，但是毫无意义。</p>
+<p>总而言之，web世界里认证的方式原理就是服务器存储一个key或者token来标识客户端每一次请求，现实中我们会见到各种自定义的实现，下面会介绍几种业界常见的做法。</p>
+<h3 id="HTTP-Basic-Authentication"><a href="#HTTP-Basic-Authentication" class="headerlink" title="HTTP Basic Authentication"></a>HTTP Basic Authentication</h3><p>你一定用过这种方式，但不一定知道它是什么，在不久之前，当你访问一台家用路由器的管理界面，你会看到一个浏览器弹出表单，要求你输入用户密码。</p>
+<p>在这背后，当用户输入完用户名密码后，浏览器帮你做了一个非常简单的操作</p>
+<ul>
+<li>组合用户名和密码然后Base64编码</li>
+<li>给编码后的字符串添加Basic 前缀，然后设置名称为Authorization的header头部</li>
+</ul>
+<p>如果API提供HTTP Basic Authentication认证方式，那么客户端可以很简单传输用户名和密码</p>
+<p>``java</p>
+<p>String usernamePassword = “username:password”;<br>String base64Credentials = new String(Base64.encodeBase64(usernamePassword.getBytes()));</p>
+<p>``</p>
+<p>这种方式实现起来非常简单，仍然有大量公司在一些不敏感的场景下使用，缺点也很明显。大家会觉得，Base64只能称为编码方式，而不是加密，实际上无需配置密匙的客户端并没有任何可靠地加密方式，我们都依赖SSL协议。这种方式的致命弱点是密码不会过期，一旦被盗用只能通过修改密码的方式。</p>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>鉴于上面每次请求都会带上用户名密码的做法会带来风险，并且本地会保存用户密码，通常使用另外一种做法就是签发token。</p>
+<p>客户端操作</p>
+<ul>
+<li>用户登录时，带上用户名和密码调用登录接口获取token</li>
+<li>每一次业务请求的API都带上token，如果服务器返回token无效或者过期，要求用户重新登录</li>
+</ul>
+<p>服务器</p>
+<ul>
+<li>处理用户登录请求时，生成token并存储到数据库或缓存（推荐使用缓存，高速且自动过期）</li>
+<li>处理用户业务请求时，查询token获取用户身份信息</li>
+</ul>
+<p>通常来说这是一种折中的方法，在大量项目中被实践，并且各种语言提供了非常成熟的生成token的库，当我们发现用户身份异常时可以主动撤销</p>
+<h3 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h3><p>上面说到token只是一段无意义的字符串，并不包含用户信息，并且每次都需要从外部存储中查找。因此有人对token做了进一步优化，设计了一种自包含令牌 - 令牌签发后无需从服务器存储中检查是否合法，通过解析令牌就能获取令牌的过期、有效等信息。<br>这就是JWT JSON Web Token</p>
+<p>简而言之，一个基本的JWT令牌为一段点分3段式结构。</p>
+<p>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</p>
+<p>解密后像这样</p>
+<p>{<br>  ‘typ’: ‘JWT’,<br>  ‘alg’: ‘HS256’<br>}<br>{<br>  “sub”: “1234567890”,<br>  “name”: “John Doe”,<br>  “admin”: true<br>}</p>
+<p>生成JWT 令牌的流程为</p>
+<ul>
+<li>第一部分json base64编码</li>
+<li>第一部分json base64编码</li>
+</ul>
+<p>[json1 base64加密].[json2 base64加密].[(json1加密后+json2加密后+secret) sha256加密]</p>
+<h4 id="撤销JWT令牌"><a href="#撤销JWT令牌" class="headerlink" title="撤销JWT令牌"></a>撤销JWT令牌</h4><h3 id="access-key"><a href="#access-key" class="headerlink" title="access key"></a>access key</h3><p>在服务器调用API的场景下，很多服务提供了另外一种模式，对于特定的API，它的调用者可能是另外一台服务器，这就需要认证信息需要很稳定，也极少存在key丢失的情况。例如在微信公众号的开发中，应用服务器需要保存认证信息并和微信服务器进行对接。</p>
+<p>这种情况下，API提供者可以在用户的管理dashboard中生成一个key，并且只显示一次，如果失效或丢失重新生成即可，API提供者只需要每次请求中取出key，然后在数据库或缓存中对比即可。</p>
+<p>这种认证方式非常简单，只需要保证生成key的方式，防止撞库（Hash算法的特性，不同的输入可能产生相同的hash值）的发生就能保证安全。</p>
+<h3 id="AK-SK-加密认证"><a href="#AK-SK-加密认证" class="headerlink" title="AK/SK 加密认证"></a>AK/SK 加密认证</h3><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ul>
+<li>DDOS</li>
+<li>重放攻击</li>
+</ul>
+]]></content>
       
         <categories>
             
