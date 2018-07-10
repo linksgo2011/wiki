@@ -226,22 +226,13 @@ error:null
 <h2 id="Json-API"><a href="#Json-API" class="headerlink" title="Json API"></a>Json API</h2><p>因为Restful风格仅仅规定了URL和HTTP Method的使用，这个时候你一定想问，我们怎么定义请求或者返回对象的结构，以及该如何针对不同的情况返回不同的HTTP 状态码。同样的，这个世界上已经有人注意到这个问题，有一份开源规范文档叫做jsonapi被编写出来尝试解决这个问题，jsonapi最早来源于Ember Data（Ember是一个JavaScript前端框架，在框架中定义了一个通用的数据格式，后来被广泛认可）。</p>
 <p>JSON已经是最主流的网络传输格式，因此本文默认JSON作为传输格式来讨论后面的话题。</p>
 <p>jsonapi尝试去提供一个非常通用的描述数据资源的格式，关于记录的创建、更新和删除，因此要求在前后端均容易实现，并包含了基本的关系类型。个人理解，它的设计非常接近数据库ORM输出的数据类型，和一些Nosql（例如MongoDB）的数据结构也很像，从而对前端开发者来说拥有操作数据库或数据集合的体验。另外一个使用这个规范的好处是，已经有大量的库和框架做了相关实现，例如，backbone-jsonapi ，json-patch。</p>
-<p>这里我先给出一个使用 JSON API 发送响应（response）的示例，然后会重点介绍几个规范的要点：</p>
-<p>``</p>
-<p>{<br>  “links”: {<br>    “posts.author”: {<br>      “href”: “<a href="http://example.com/people/{posts.author}" target="_blank" rel="external">http://example.com/people/{posts.author}</a>“,<br>      “type”: “people”<br>    },<br>    “posts.comments”: {<br>      “href”: “<a href="http://example.com/comments/{posts.comments}" target="_blank" rel="external">http://example.com/comments/{posts.comments}</a>“,<br>      “type”: “comments”<br>    }<br>  },<br>  “posts”: [{<br>    “id”: “1”,<br>    “title”: “Rails is Omakase”,<br>    “links”: {<br>      “author”: “9”,<br>      “comments”: [ “5”, “12”, “17”, “20” ]<br>    }<br>  }]<br>}</p>
 <p>``</p>
 <h2 id="MIME-类型"><a href="#MIME-类型" class="headerlink" title="MIME 类型"></a>MIME 类型</h2><p>JSON API数据格式已经被IANA机构接受了注册，因此必须使用application/vnd.api+json类型。客户端请求头中Content-Type应该为application/vnd.api+json，并且在Accept中也必须包含application/vnd.api+json。如果指定错误服务器应该返回415或406状态码。</p>
 <h2 id="JSON文档结构"><a href="#JSON文档结构" class="headerlink" title="JSON文档结构"></a>JSON文档结构</h2><p>在顶级节点使用data、errors、meta，来描述数据、错误信息、元信息，注意data和errors应该互斥，不能再一个文档中同时存在。</p>
-<p>``</p>
-<h1 id="TODO-制图"><a href="#TODO-制图" class="headerlink" title="TODO 制图"></a>TODO 制图</h1><p>{<br>  “data”: {<br>    “type”: “product”,<br>    “id”: “1”<br>  }<br>}</p>
-<p>{<br>    “errors”: [<br>        {<br>                “id””:1,<br>                “title”:”Product not found”,<br>                “detail”: “”</p>
-<pre><code>        }
-]
-</code></pre><p>}</p>
+<p>{<br>  “links”: {<br>    “self”: “<a href="http://example.com/articles" target="_blank" rel="external">http://example.com/articles</a>“,<br>    “next”: “<a href="http://example.com/articles?page[offset]=2" target="_blank" rel="external">http://example.com/articles?page[offset]=2</a>“,<br>    “last”: “<a href="http://example.com/articles?page[offset]=10" target="_blank" rel="external">http://example.com/articles?page[offset]=10</a>“<br>  },<br>  “data”: [{<br>    “type”: “articles”,<br>    “id”: “1”,<br>    “attributes”: {<br>      “title”: “JSON API paints my bikeshed!”<br>    },<br>    “relationships”: {<br>     …<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/articles/1" target="_blank" rel="external">http://example.com/articles/1</a>“<br>    }<br>  }],<br>  “included”: [],<br>  “meta”: {<br>    “version”: “1.0”,<br>    “copyright”: “Copyright 2015 Example Corp.”,<br>  }<br>}</p>
 <p>``</p>
 <h3 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h3><p>一个典型的data的对象格式</p>
-<p>``</p>
-<p>{<br>  “type”: “articles”,<br>  “id”: “1”,<br>  “attributes”: {<br>    “title”: “Rails is Omakase”<br>  },<br>  “relationships”: {<br>    “author”: {<br>      “links”: {<br>        “self”: “/articles/1/relationships/author”,<br>        “related”: “/articles/1/author”<br>      },<br>      “data”: { “type”: “people”, “id”: “9” }<br>    }<br>  }<br>}</p>
+<p>`{<br>     “type”: “articles”,<br>     “id”: “1”,<br>     “attributes”: {<br>         “title”: “Title for article”<br>          …<br>     },<br>     “relationships”: {},<br>     “links”: {<br>         “self”: “<a href="http://example.com/articles/1" target="_blank" rel="external">http://example.com/articles/1</a>“<br>     }<br> }</p>
 <p>``</p>
 <ul>
 <li>id显而易见为唯一标识，可以为数字也可以为hash字符串，取决于后端实现</li>
@@ -250,7 +241,8 @@ error:null
 <li>relationships、links为可选属性，用来放置关联数据和资源地址等数据</li>
 </ul>
 <h3 id="errors-属性"><a href="#errors-属性" class="headerlink" title="errors 属性"></a>errors 属性</h3><p>这里的errors和data有一点不同，一般来说返回值中errors作为列表存在，因为针对每个资源可能出现多个错误信息。最典型的例子为，我们请求的对象中某些字段不符合验证要求，这里需要返回验证信息，但是HTTP状态码会使用一个通用的401，然后把具体的验证信息在errors给出来。</p>
-<p>``<br>{<br>    “errors”:[<br>        {<br>            “code”:10011,<br>            “title”: “Name can’t be null”<br>        }，<br>        {<br>            “code”:10011,<br>            “title”: “Content can’t be null”,<br>            “detail”: “”<br>        }，<br>    ]<br>}</p>
+<p>``</p>
+<p>{<br>    “errors”: [<br>        {<br>            “code”: 10011,<br>            “title”: “Name can’t be null”<br>        },<br>        {<br>            “code”: 10011,<br>            “title”: “Content can’t be null”,<br>            “detail”: “”<br>        }<br>    ]<br>}</p>
 <p>``</p>
 <p>我们可以在title字段中给出错误信息，然后在detail中给出程序堆栈信息，这让调试更为方便。需要注意的一点是，我们在生产环节需要屏蔽部分敏感信息，因此我们在生产环境屏蔽了堆栈等其它敏感的错误信息。</p>
 <h3 id="常用的返回码"><a href="#常用的返回码" class="headerlink" title="常用的返回码"></a>常用的返回码</h3><p>返回码这部分是我开始设计API最感到迷惑的地方，如果你去查看HTTP协议文档，哪里有大量的状态码让你无从下手。实际上我们能在真实环境中用到的并不多，这里会介绍几个典型的场景。</p>
@@ -261,7 +253,7 @@ error:null
 <p>下面是一个HTTP的返回例子：</p>
 <p>``</p>
 <p>HTTP/1.1 201 Created<br>Location: <a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="external">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a><br>Content-Type: application/vnd.api+json</p>
-<p>{<br>  “data”: {<br>    “type”: “photos”,<br>    “id”: “550e8400-e29b-41d4-a716-446655440000”,<br>    “attributes”: {<br>      “title”: “Ember Hamster”,<br>      “src”: “<a href="http://example.com/images/productivity.png" target="_blank" rel="external">http://example.com/images/productivity.png</a>“<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="external">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a>“<br>    }<br>  }<br>}</p>
+<p>{<br>  “data”: {<br>    “type”: “photos”,<br>    “id”: “550e8400-e29b-41d4-a716-446655440000”,<br>    “attributes”: {<br>      “title”: “Example for relationships and links”,<br>      “src”: “<a href="http://example.com/images/productivity.png" target="_blank" rel="external">http://example.com/images/productivity.png</a>“<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="external">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a>“<br>    }<br>  }<br>}</p>
 <p>``</p>
 <p>在HTTP协议中，2XX的状态码都表示成功，还有202、204等用的较少，就不做过多介绍了，4XX返回客户端错误，会重点介绍。</p>
 <ul>
@@ -405,16 +397,21 @@ public String custom() {
 <p>{<br>  ‘typ’: ‘JWT’,<br>  ‘alg’: ‘HS256’<br>}<br>{<br>  “sub”: “1234567890”,<br>  “name”: “John Doe”,<br>  “admin”: true<br>}</p>
 <p>生成JWT 令牌的流程为</p>
 <ul>
-<li>第一部分json base64编码</li>
-<li>第一部分json base64编码</li>
+<li>第一部分json base64编码为令牌第一部分</li>
+<li>第二部分json base64编码为令牌第二部分</li>
+<li>拼装第一、第二部分编码后的json以及secret进行sha256加密为令牌的第三部分</li>
 </ul>
-<p>[json1 base64加密].[json2 base64加密].[(json1加密后+json2加密后+secret) sha256加密]</p>
-<h4 id="撤销JWT令牌"><a href="#撤销JWT令牌" class="headerlink" title="撤销JWT令牌"></a>撤销JWT令牌</h4><h3 id="access-key"><a href="#access-key" class="headerlink" title="access key"></a>access key</h3><p>在服务器调用API的场景下，很多服务提供了另外一种模式，对于特定的API，它的调用者可能是另外一台服务器，这就需要认证信息需要很稳定，也极少存在key丢失的情况。例如在微信公众号的开发中，应用服务器需要保存认证信息并和微信服务器进行对接。</p>
+<p>因此只需要加密的secret就能解开JWT令牌，如果在数据中加入用户ID、过期信息就可以实现验证令牌是否有效、过期了。</p>
+<h4 id="撤销JWT令牌"><a href="#撤销JWT令牌" class="headerlink" title="撤销JWT令牌"></a>撤销JWT令牌</h4><p>因为JWT是自包含令牌，不需要存储到数据库/缓存中，因此在使用过程中不得不考虑的一个特性就是无法被撤回。如果在某些场合使用了JWTtoken但是考虑到需要撤回，可以自己实现这部分逻辑。</p>
+<p>目前业界最好的方案是采用一个高速key/value数据库，例如Redis，我们可以保存需要撤回的JWT token，当请求发生时，系统只在Redis中查询有效期内的令牌。因为撤回的JWT令牌只占所有的签发的令牌一小部分，以及Redis高效的索引机制，一般不会有性能上的问题。</p>
+<h3 id="access-key"><a href="#access-key" class="headerlink" title="access key"></a>access key</h3><p>在服务器调用API的场景下，很多服务提供了另外一种模式，对于特定的API，它的调用者可能是另外一台服务器，这就需要认证信息需要很稳定，也极少存在key丢失的情况。例如在微信公众号的开发中，应用服务器需要保存认证信息并和微信服务器进行对接。</p>
 <p>这种情况下，API提供者可以在用户的管理dashboard中生成一个key，并且只显示一次，如果失效或丢失重新生成即可，API提供者只需要每次请求中取出key，然后在数据库或缓存中对比即可。</p>
 <p>这种认证方式非常简单，只需要保证生成key的方式，防止撞库（Hash算法的特性，不同的输入可能产生相同的hash值）的发生就能保证安全。</p>
-<h3 id="AK-SK-加密认证"><a href="#AK-SK-加密认证" class="headerlink" title="AK/SK 加密认证"></a>AK/SK 加密认证</h3><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ul>
+<h3 id="AK-SK-参数签名认证"><a href="#AK-SK-参数签名认证" class="headerlink" title="AK/SK 参数签名认证"></a>AK/SK 参数签名认证</h3><p>ak=aknumber&amp;home=world&amp;name=hello&amp;work=java&amp;timestamp=now&amp;nonce=random”</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ul>
 <li>DDOS</li>
 <li>重放攻击</li>
+<li>csrf攻击</li>
 </ul>
 	  
 
@@ -430,6 +427,8 @@ public String custom() {
 	
 		
 			
+		
+	
 		
 	
 		

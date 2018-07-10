@@ -167,31 +167,6 @@ JSON已经是最主流的网络传输格式，因此本文默认JSON作为传输
 
 jsonapi尝试去提供一个非常通用的描述数据资源的格式，关于记录的创建、更新和删除，因此要求在前后端均容易实现，并包含了基本的关系类型。个人理解，它的设计非常接近数据库ORM输出的数据类型，和一些Nosql（例如MongoDB）的数据结构也很像，从而对前端开发者来说拥有操作数据库或数据集合的体验。另外一个使用这个规范的好处是，已经有大量的库和框架做了相关实现，例如，backbone-jsonapi ，json-patch。
 
-这里我先给出一个使用 JSON API 发送响应（response）的示例，然后会重点介绍几个规范的要点：
-
-``
-
-{
-  "links": {
-    "posts.author": {
-      "href": "http://example.com/people/{posts.author}",
-      "type": "people"
-    },
-    "posts.comments": {
-      "href": "http://example.com/comments/{posts.comments}",
-      "type": "comments"
-    }
-  },
-  "posts": [{
-    "id": "1",
-    "title": "Rails is Omakase",
-    "links": {
-      "author": "9",
-      "comments": [ "5", "12", "17", "20" ]
-    }
-  }]
-}
-
 ``
 
 ## MIME 类型
@@ -204,24 +179,30 @@ JSON API数据格式已经被IANA机构接受了注册，因此必须使用appli
 
 在顶级节点使用data、errors、meta，来描述数据、错误信息、元信息，注意data和errors应该互斥，不能再一个文档中同时存在。
 
-``
-# TODO 制图
 {
-  "data": {
-    "type": "product",
-    "id": "1"
+  "links": {
+    "self": "http://example.com/articles",
+    "next": "http://example.com/articles?page[offset]=2",
+    "last": "http://example.com/articles?page[offset]=10"
+  },
+  "data": [{
+    "type": "articles",
+    "id": "1",
+    "attributes": {
+      "title": "JSON API paints my bikeshed!"
+    },
+    "relationships": {
+     ...
+    },
+    "links": {
+      "self": "http://example.com/articles/1"
+    }
+  }],
+  "included": [],
+  "meta": {
+    "version": "1.0",
+    "copyright": "Copyright 2015 Example Corp.",
   }
-}
-
-{
-    "errors": [
-        {
-                "id"":1,
-                "title":"Product not found",
-                "detail": ""
-             
-            }
-    ]
 }
 
 ``
@@ -230,24 +211,18 @@ JSON API数据格式已经被IANA机构接受了注册，因此必须使用appli
 
 一个典型的data的对象格式
 
-``
-
-{
-  "type": "articles",
-  "id": "1",
-  "attributes": {
-    "title": "Rails is Omakase"
-  },
-  "relationships": {
-    "author": {
-      "links": {
-        "self": "/articles/1/relationships/author",
-        "related": "/articles/1/author"
-      },
-      "data": { "type": "people", "id": "9" }
-    }
-  }
-}
+`{
+     "type": "articles",
+     "id": "1",
+     "attributes": {
+         "title": "Title for article"
+      	...
+     },
+     "relationships": {},
+     "links": {
+         "self": "http://example.com/articles/1"
+     }
+ }
 
 ``
 
@@ -261,17 +236,18 @@ JSON API数据格式已经被IANA机构接受了注册，因此必须使用appli
 这里的errors和data有一点不同，一般来说返回值中errors作为列表存在，因为针对每个资源可能出现多个错误信息。最典型的例子为，我们请求的对象中某些字段不符合验证要求，这里需要返回验证信息，但是HTTP状态码会使用一个通用的401，然后把具体的验证信息在errors给出来。
 
 ``
+
 {
-    "errors":[
+    "errors": [
         {
-            "code":10011,
-            "title": "Name can't be null" 
-        }，
+            "code": 10011,
+            "title": "Name can't be null"
+        },
         {
-            "code":10011,
+            "code": 10011,
             "title": "Content can't be null",
-            "detail": "" 
-        }，
+            "detail": ""
+        }
     ]
 }
 
@@ -307,7 +283,7 @@ Content-Type: application/vnd.api+json
     "type": "photos",
     "id": "550e8400-e29b-41d4-a716-446655440000",
     "attributes": {
-      "title": "Ember Hamster",
+      "title": "Example for relationships and links",
       "src": "http://example.com/images/productivity.png"
     },
     "links": {
@@ -622,19 +598,18 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 生成JWT 令牌的流程为
 
-- 第一部分json base64编码
-- 第一部分json base64编码
+- 第一部分json base64编码为令牌第一部分
+- 第二部分json base64编码为令牌第二部分
+- 拼装第一、第二部分编码后的json以及secret进行sha256加密为令牌的第三部分
 
-
-[json1 base64加密].[json2 base64加密].[(json1加密后+json2加密后+secret) sha256加密]
-
-
-
-
+因此只需要加密的secret就能解开JWT令牌，如果在数据中加入用户ID、过期信息就可以实现验证令牌是否有效、过期了。
 
 
 #### 撤销JWT令牌
 
+因为JWT是自包含令牌，不需要存储到数据库/缓存中，因此在使用过程中不得不考虑的一个特性就是无法被撤回。如果在某些场合使用了JWTtoken但是考虑到需要撤回，可以自己实现这部分逻辑。
+
+目前业界最好的方案是采用一个高速key/value数据库，例如Redis，我们可以保存需要撤回的JWT token，当请求发生时，系统只在Redis中查询有效期内的令牌。因为撤回的JWT令牌只占所有的签发的令牌一小部分，以及Redis高效的索引机制，一般不会有性能上的问题。
 
 
 ### access key
@@ -647,15 +622,16 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 
 
-### AK/SK 加密认证
+### AK/SK 参数签名认证
 
-
-
+ak=aknumber&home=world&name=hello&work=java&timestamp=now&nonce=random"
 
 
 ## 安全
 
 - DDOS
 - 重放攻击
+- csrf攻击
+
 
 
