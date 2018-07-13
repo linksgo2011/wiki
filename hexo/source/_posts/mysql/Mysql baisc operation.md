@@ -102,7 +102,9 @@ SOURCE ./mysql.sql;
 
 --------------------------------------------------------------------------------
 
-四、数据库权限操作SQL语句 1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan
+四、数据库权限操作SQL语句 
+
+1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan
 
 GRANT ALL PRIVILEGES ON *.* TO sina@% IDENTIFIED BY zhangyan;
 
