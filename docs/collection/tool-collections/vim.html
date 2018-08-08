@@ -1,0 +1,29 @@
+<hr>
+<p>title: 必须学会的VIM命令</p>
+<h2 id="categories-tool"><a href="#categories-tool" class="headerlink" title="categories: tool"></a>categories: tool</h2><p>VIM中有大量命令其实用不到，并且可以用更为简单的方式实现，例如打开文件的各种参数、重命名文件可以用Linux命令代替，因此为了便于记忆，这里罗列了最基本但能实现几乎所有功能的命令。</p>
+<h2 id="Vim的几种模式"><a href="#Vim的几种模式" class="headerlink" title="Vim的几种模式"></a>Vim的几种模式</h2><p>正常模式：可以使用快捷键命令，或按:输入命令行。<br>插入模式：可以输入文本，在正常模式下，按i、a、o等都可以进入插入模式。<br>可视模式：正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按V进入可视行模式， 总是整行整行的选中。ctrl+v进入可视块模式。<br>替换模式：正常模式下，按R进入。</p>
+<h2 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h2><blockquote>
+<p>vim filename</p>
+</blockquote>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><p>ESC 退出到正常模式</p>
+<blockquote>
+<p>:wq</p>
+</blockquote>
+<h2 id="强制退出"><a href="#强制退出" class="headerlink" title="强制退出"></a>强制退出</h2><blockquote>
+<p>:q!</p>
+</blockquote>
+<h2 id="移动方向为控制模式"><a href="#移动方向为控制模式" class="headerlink" title="移动方向为控制模式"></a>移动方向为控制模式</h2><p> K<br>H L<br> J</p>
+<p>0 移动到行首<br>$ 移动到行位，类似正则表达式<br>gg 文件头部<br>G 文件底部</p>
+<p>L 移动到当前屏幕的第一行</p>
+<p>标记不好用，略过</p>
+<p>翻页推荐使用半屏，命令也好记，up&amp;down<br>ctrl+d: 下翻半屏。<br>ctrl+u: 上翻半屏。</p>
+<p>当前光标插入</p>
+<p>a</p>
+<p>新建一行插入<br>o</p>
+<h2 id="复制和粘贴"><a href="#复制和粘贴" class="headerlink" title="复制和粘贴"></a>复制和粘贴</h2><p>[n] dd: 删除（剪切）1(n)行,这个特别好用</p>
+<p>p 在光标之后粘贴<br>y 复制选中字符</p>
+<p>查找和替换</p>
+<p>/something: 在后面的文本中查找something。<br>?something: 在前面的文本中查找something。</p>
+<p>:s/old/new - 用new替换当前行第一个old。<br>:s/old/new/g - 用new替换当前行所有的old。</p>
+<p> 改变大小写<br>~: 反转光标所在字符的大小写。<br>可视模式下的U或u：把选中的文本变为大写或小写。</p>
+<p>另外推荐教程：<br><a href="http://vimcasts.org/">http://vimcasts.org/</a><br><a href="https://coolshell.cn/articles/5426.html">https://coolshell.cn/articles/5426.html</a></p>

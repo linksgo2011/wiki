@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>必须学会的VIM命令 | Programming Wiki</title>
+  <meta name="author" content="cn.printf">
+  
+  <meta name="description" content="VIM中有大量命令其实用不到，并且可以用更为简单的方式实现，例如打开文件的各种参数、重命名文件可以用Linux命令代替，因此为了便于记忆，这里罗列了最基本但能实现几乎所有功能的命令。
+Vim的几种模式正常模式：可以使用快捷键命令，或按:输入命令行。插入模式：可以输入文本，在正常模式下，按i、a、o等">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="必须学会的VIM命令"/>
+  <meta property="og:site_name" content="Programming Wiki"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Programming Wiki" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">必须学会的VIM命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-10</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <p>VIM中有大量命令其实用不到，并且可以用更为简单的方式实现，例如打开文件的各种参数、重命名文件可以用Linux命令代替，因此为了便于记忆，这里罗列了最基本但能实现几乎所有功能的命令。</p>
+<h2 id="Vim的几种模式"><a href="#Vim的几种模式" class="headerlink" title="Vim的几种模式"></a>Vim的几种模式</h2><p>正常模式：可以使用快捷键命令，或按:输入命令行。<br>插入模式：可以输入文本，在正常模式下，按i、a、o等都可以进入插入模式。<br>可视模式：正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按V进入可视行模式， 总是整行整行的选中。ctrl+v进入可视块模式。<br>替换模式：正常模式下，按R进入。</p>
+<h2 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h2><blockquote>
+<p>vim filename</p>
+</blockquote>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><p>ESC 退出到正常模式</p>
+<blockquote>
+<p>:wq</p>
+</blockquote>
+<h2 id="强制退出"><a href="#强制退出" class="headerlink" title="强制退出"></a>强制退出</h2><blockquote>
+<p>:q!</p>
+</blockquote>
+<h2 id="移动方向为控制模式"><a href="#移动方向为控制模式" class="headerlink" title="移动方向为控制模式"></a>移动方向为控制模式</h2><p> K<br>H L<br> J</p>
+<p>0 移动到行首<br>$ 移动到行位，类似正则表达式<br>gg 文件头部<br>G 文件底部</p>
+<p>L 移动到当前屏幕的第一行</p>
+<p>标记不好用，略过</p>
+<p>翻页推荐使用半屏，命令也好记，up&amp;down<br>ctrl+d: 下翻半屏。<br>ctrl+u: 上翻半屏。</p>
+<p>当前光标插入</p>
+<p>a</p>
+<p>新建一行插入<br>o</p>
+<h2 id="复制和粘贴"><a href="#复制和粘贴" class="headerlink" title="复制和粘贴"></a>复制和粘贴</h2><p>[n] dd: 删除（剪切）1(n)行,这个特别好用</p>
+<p>p 在光标之后粘贴<br>y 复制选中字符</p>
+<p>查找和替换</p>
+<p>/something: 在后面的文本中查找something。<br>?something: 在前面的文本中查找something。</p>
+<p>:s/old/new - 用new替换当前行第一个old。<br>:s/old/new/g - 用new替换当前行所有的old。</p>
+<p> 改变大小写<br>~: 反转光标所在字符的大小写。<br>可视模式下的U或u：把选中的文本变为大写或小写。</p>
+<p>另外推荐教程：<br><a href="http://vimcasts.org/" target="_blank" rel="external">http://vimcasts.org/</a><br><a href="https://coolshell.cn/articles/5426.html" target="_blank" rel="external">https://coolshell.cn/articles/5426.html</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+    
+      &copy; 2018 cn.printf
+      
+      <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
