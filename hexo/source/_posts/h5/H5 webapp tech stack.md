@@ -5,12 +5,37 @@ toc: true
 ---
 
 
-### VUE技术方案
+### VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)
 
 - vuejs2.0
 - vue-router
 - vuex
 - mint-ui
+- Jest
+
+
+常用lib信息
+
+| 包名   |      用途      |
+|----------|:-------------:|
+| Vue | VUE视图 | 
+| Vue-router | 路由 |
+| Typescript | 静态类型 |
+| vuex | 状态管理 |
+| mint-ui | ui框架 |
+| Jest | 测试框架 |
+| axios | HTTP库 |
+| immutable | immutable 工具 |
+| moment | 时间处理库 |
+| vue-class-component | vue 的面向对象形式 |
+| vue-property-decorator | vue 装饰器 |
+| vuex-class | vuex的面向对象形式|
+| vconsole | 手机网页调试工具 |
+
+参考资料:
+
+- https://segmentfault.com/a/1190000013676663 VUE + TS的项目搭建
+
 
 
 ### HBuilder方案
