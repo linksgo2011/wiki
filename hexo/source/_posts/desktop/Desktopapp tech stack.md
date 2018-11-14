@@ -4,6 +4,13 @@ categories: desktop
 toc: true
 ---
 
+### Python 开发方案 (快速高效、跨平台，推荐)
+
+- Python 
+- Wxpython 
+- Pycharm 
+- Pyinstaller 
+
 ### Web混合开发方案
 
 - Electron

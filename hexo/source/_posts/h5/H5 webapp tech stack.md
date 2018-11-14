@@ -4,6 +4,15 @@ categories: h5
 toc: true
 ---
 
+
+### VUE技术方案
+
+- vuejs2.0
+- vue-router
+- vuex
+- mint-ui
+
+
 ### HBuilder方案
 
 - mui
@@ -23,13 +32,6 @@ toc: true
 参考案例
 
 - cnode 客户端方案可以构建出web、mobile各种平台
-
-### VUE技术方案
-
-- vuejs2.0
-- vue-router
-- vuex
-- mint-ui
 
 
 ### Jquery技术方案
