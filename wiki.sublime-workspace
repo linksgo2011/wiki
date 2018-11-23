@@ -1,0 +1,242 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Advanced Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nlin/www/wiki"
+	],
+	"file_history":
+	[
+		"/Users/nlin/www/blog-printf-cn/printf.sublime-project",
+		"/Users/nlin/www/blog-printf-cn/product/shell/lnmp.sh",
+		"/Users/nlin/www/blog-printf-cn/product/urlpublik.html",
+		"/Users/nlin/www/blog-printf-cn/product/resume-mobile.html",
+		"/Users/nlin/www/blog-printf-cn/product/linne/readmine.md",
+		"/Users/nlin/www/blog-printf-cn/product/node_webchat/package.json",
+		"/Users/nlin/www/blog-printf-cn/product/node_webchat/views/layout.ejs",
+		"/Users/nlin/www/blog-printf-cn/product/codegeneration/index.html",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/index.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/functions.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/sidebar.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/header.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/archive.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/page.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/comments.php",
+		"/Users/nlin/www/blog-printf-cn/usr/themes/portal/post.php",
+		"/Users/nlin/www/tw-homework/README.md",
+		"/Users/nlin/www/tw-homework/package.json",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/app/src/utils/eventBus.js",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/app/src/utils/index.js",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/app/src/views/profile.vue",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/app/src/views/Help.vue",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/mock-server/README.md",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/readme.txt",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/startApp_dev.cmd",
+		"/Users/nlin/www/ThoughtWorks_homeWork_毛瑞/app/src/registerServiceWorker.js",
+		"/Users/nlin/www/tw-homework/src/components/agent/AgentItem.vue",
+		"/Users/nlin/www/tw-homework/src/api/agents.js",
+		"/Users/nlin/www/tw-homework/src/index.less",
+		"/Users/nlin/www/tw-homework/src/config/index.js",
+		"/Users/nlin/www/tw-homework/src/components/layout/Footer.vue",
+		"/Users/nlin/www/tw-homework/src/libs/api.request.js",
+		"/Users/nlin/www/tw-homework/src/libs/axios.js",
+		"/Users/nlin/www/tw-homework/src/App.vue",
+		"/Users/nlin/www/tw-homework/tests/unit/common.spec.js",
+		"/Users/nlin/www/tw-homework/src/components/common/AppButton.vue",
+		"/Users/nlin/www/tw-homework/src/components/common/AppInput.vue",
+		"/Users/nlin/www/tw-homework/package-lock.json",
+		"/Users/nlin/www/cruise-page/src/views/main/article/agent/Navbar.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/footer/FooterContents.vue",
+		"/Users/nlin/www/cruise-page/src/components/common/Popup.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/aside/History.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/article/Agent.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/article/agent/Overview.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/article/agent/ServerList.vue",
+		"/Users/nlin/www/cruise-page/src/http/index.js",
+		"/Users/nlin/www/cruise-page/src/App.vue",
+		"/Users/nlin/www/cruise-page/src/main.js",
+		"/Users/nlin/www/cruise-page/src/views/Main.vue",
+		"/Users/nlin/www/cruise-page/src/views/main/header/HeaderContents.vue",
+		"/Users/nlin/www/cruise-page/index.html",
+		"/Users/nlin/www/cruise-page/package.json",
+		"/Users/nlin/www/cruise-page/config/dev.env.js",
+		"/Users/nlin/www/cruise-page/README.md",
+		"/Users/nlin/www/info.php",
+		"/Users/nlin/www/static-templates/index.html",
+		"/Users/nlin/www/static-templates/info-compose-mobile/compose.html",
+		"/Users/nlin/www/static-templates/info-compose-mobile/detail.html",
+		"/Users/nlin/www/static-templates/info-compose-mobile/index.html",
+		"/Users/nlin/www/static-templates/info-compose-mobile/latest.html",
+		"/Users/nlin/www/static-templates/info-compose-mobile/my_info.html"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "wiki.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"/agents",
+				"src/api/agents.js"
+			],
+			[
+				"pop",
+				"src/components/common/Popup.vue"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 292.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

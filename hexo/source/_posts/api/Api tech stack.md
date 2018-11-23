@@ -21,15 +21,14 @@ toc: true
 
 | 包名   |      用途      |  环境 |
 |----------|:-------------:|------:|
-| Spring boot | 开发框架 | dev |
-
-
-
-作者：cxuan
-链接：https://www.jianshu.com/p/7a655e5345b2
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
-
+| Spring boot | 开发框架 | prod |
+| Gradle | 构建工具 | dev |
+| H2 | 内存数据库 | dev |
+| JWT | TOKEN认证 | dev |
+| GO | 持续集成平台 | dev |
+| Hibernate | 数据库ORM | dev |
+| Groovy | 测试工具 | dev |
+| Spring contract | 契约测试 | dev |
 
 
 ###  Nodejs

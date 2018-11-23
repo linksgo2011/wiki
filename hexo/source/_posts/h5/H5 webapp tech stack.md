@@ -4,7 +4,6 @@ categories: h5
 toc: true
 ---
 
-
 ### VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)
 
 - vuejs2.0
@@ -34,8 +33,8 @@ toc: true
 
 参考资料:
 
+- vue官方脚手架 (支持 TS、Babel、Vuex、SASS): https://www.npmjs.com/package/vue-cli
 - https://segmentfault.com/a/1190000013676663 VUE + TS的项目搭建
-
 
 
 ### HBuilder方案
@@ -46,7 +45,13 @@ toc: true
 成本低廉，开发方面，原生的webview API和切换性能也可
 参考案例：https://github.com/linksgo2011/tinda_app_cordova/
 
-## 开发方案
+注意事项
+
+- 每个页面为一个独立的窗口
+- 返回会有数据刷新问题
+- 窗口内如果发生页面跳转，会造成路由不一致
+- 尽量使用页面 + API的方式快速开发
+
 
 ### React技术选型
 
