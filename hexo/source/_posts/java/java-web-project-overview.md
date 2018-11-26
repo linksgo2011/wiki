@@ -32,6 +32,7 @@ categories: "java"
           - Domain 或者 Model  实体类和数据库对应
           - Mapper 使用xml实现和数据库
       - Hibernate
+      - Querydsl ORM增强查询工具
 
   5. Validation
       - Hibernate Validation 实现
@@ -52,3 +53,15 @@ categories: "java"
   9. 构建工具
       1. Maven
       2. Gradle
+
+  10. mapping 工具
+      1. orika
+      2. object mapper
+
+  11. 其他工具库
+      1. poi 微软文档API
+      2. guava Google工具库
+      3. commons-lang apache 字符串工具
+  12. Restful
+      1. hateoas
+      2. jersey 
