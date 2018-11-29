@@ -28,7 +28,6 @@ categories: java
     - Selflog 日志生成
     - freemarker模板引擎
     - Apache httpcomponent HTTP client工具
-    - 
 
 5. 数据库
     - Mysql
