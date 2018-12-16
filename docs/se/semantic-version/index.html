@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>语义化版本管理 | Programming Wiki</title>
@@ -13,11 +13,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="语义化版本管理"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="语义化版本管理">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -42,12 +42,12 @@
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">语义化版本管理</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-28</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">语义化版本管理</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -71,10 +71,10 @@
 	  <!-- content -->
 	  <h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范</p>
 <p><strong>资料来源</strong></p>
-<p>网站: <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">http://semver.org/lang/zh-CN/</a><br>Github: <a href="https://github.com/mojombo/semver" target="_blank" rel="external">https://github.com/mojombo/semver</a></p>
+<p>网站: <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="noopener">http://semver.org/lang/zh-CN/</a><br>Github: <a href="https://github.com/mojombo/semver" target="_blank" rel="noopener">https://github.com/mojombo/semver</a></p>
 <p><strong>一些工具检查或生成</strong></p>
 <ul>
-<li>semantic-release - <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="external">https://github.com/semantic-release/semantic-release</a></li>
+<li>semantic-release - <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener">https://github.com/semantic-release/semantic-release</a></li>
 </ul>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
 <ol>
@@ -87,7 +87,7 @@
 <p>In systems with many dependencies, releasing new package versions can quickly<br>become a nightmare. If the dependency specifications are too tight, you are in<br>danger of version lock (the inability to upgrade a package without having to<br>release new versions of every dependent package). If dependencies are<br>specified too loosely, you will inevitably be bitten by version promiscuity<br>(assuming compatibility with more future versions than is reasonable).<br>Dependency hell is where you are when version lock and/or version promiscuity<br>prevent you from easily and safely moving your project forward.</p>
 <p>As a solution to this problem, I propose a simple set of rules and<br>requirements that dictate how version numbers are assigned and incremented.<br>These rules are based on but not necessarily limited to pre-existing<br>widespread common practices in use in both closed and open-source software.<br>For this system to work, you first need to declare a public API. This may<br>consist of documentation or be enforced by the code itself. Regardless, it is<br>important that this API be clear and precise. Once you identify your public<br>API, you communicate changes to it with specific increments to your version<br>number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not<br>affecting the API increment the patch version, backwards compatible API<br>additions/changes increment the minor version, and backwards incompatible API<br>changes increment the major version.</p>
 <p>I call this system “Semantic Versioning.” Under this scheme, version numbers<br>and the way they change convey meaning about the underlying code and what has<br>been modified from one version to the next.</p>
-<h2 id="Semantic-Versioning-Specification-SemVer"><a href="#Semantic-Versioning-Specification-SemVer" class="headerlink" title="Semantic Versioning Specification (SemVer)"></a>Semantic Versioning Specification (SemVer)</h2><p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,<br>“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be<br>interpreted as described in <a href="http://tools.ietf.org/html/rfc2119" target="_blank" rel="external">RFC 2119</a>.</p>
+<h2 id="Semantic-Versioning-Specification-SemVer"><a href="#Semantic-Versioning-Specification-SemVer" class="headerlink" title="Semantic Versioning Specification (SemVer)"></a>Semantic Versioning Specification (SemVer)</h2><p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,<br>“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be<br>interpreted as described in <a href="http://tools.ietf.org/html/rfc2119" target="_blank" rel="noopener">RFC 2119</a>.</p>
 <ol>
 <li><p>Software using Semantic Versioning MUST declare a public API. This API<br>could be declared in the code itself or exist strictly in documentation.<br>However it is done, it SHOULD be precise and comprehensive.</p>
 </li>
@@ -127,9 +127,9 @@
 <h3 id="How-should-I-handle-deprecating-functionality"><a href="#How-should-I-handle-deprecating-functionality" class="headerlink" title="How should I handle deprecating functionality?"></a>How should I handle deprecating functionality?</h3><p>Deprecating existing functionality is a normal part of software development and<br>is often required to make forward progress. When you deprecate part of your<br>public API, you should do two things: (1) update your documentation to let<br>users know about the change, (2) issue a new minor release with the deprecation<br>in place. Before you completely remove the functionality in a new major release<br>there should be at least one minor release that contains the deprecation so<br>that users can smoothly transition to the new API.</p>
 <h3 id="Does-SemVer-have-a-size-limit-on-the-version-string"><a href="#Does-SemVer-have-a-size-limit-on-the-version-string" class="headerlink" title="Does SemVer have a size limit on the version string?"></a>Does SemVer have a size limit on the version string?</h3><p>No, but use good judgment. A 255 character version string is probably overkill,<br>for example. Also, specific systems may impose their own limits on the size of<br>the string.</p>
 <h3 id="Is-“v1-2-3”-a-semantic-version"><a href="#Is-“v1-2-3”-a-semantic-version" class="headerlink" title="Is “v1.2.3” a semantic version?"></a>Is “v1.2.3” a semantic version?</h3><p>No, “v1.2.3” is not a semantic version. However, prefixing a semantic version<br>with a “v” is a common way (in English) to indicate it is a version number.<br>Abbreviating “version” as “v” is often seen with version control. Example:<br><code>git tag v1.2.3 -m &quot;Release version 1.2.3&quot;</code>, in which case “v1.2.3” is a tag<br>name and the semantic version is “1.2.3”.</p>
-<h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>The Semantic Versioning specification is authored by <a href="http://tom.preston-werner.com" target="_blank" rel="external">Tom<br>Preston-Werner</a>, inventor of Gravatar and<br>cofounder of GitHub.</p>
-<p>If you’d like to leave feedback, please <a href="https://github.com/mojombo/semver/issues" target="_blank" rel="external">open an issue on<br>GitHub</a>.</p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Creative Commons - CC BY 3.0<br><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="external">http://creativecommons.org/licenses/by/3.0/</a></p>
+<h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>The Semantic Versioning specification is authored by <a href="http://tom.preston-werner.com" target="_blank" rel="noopener">Tom<br>Preston-Werner</a>, inventor of Gravatar and<br>cofounder of GitHub.</p>
+<p>If you’d like to leave feedback, please <a href="https://github.com/mojombo/semver/issues" target="_blank" rel="noopener">open an issue on<br>GitHub</a>.</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Creative Commons - CC BY 3.0<br><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">http://creativecommons.org/licenses/by/3.0/</a></p>
 	  
 
 	  <div>
@@ -175,124 +175,134 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		

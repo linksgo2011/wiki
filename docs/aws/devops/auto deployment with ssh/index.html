@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>使用SSH实现自动化部署 | Programming Wiki</title>
@@ -16,11 +16,11 @@ Java和前端等项目可以使用包管理来发布
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="使用SSH实现自动化部署"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="使用SSH实现自动化部署">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -45,12 +45,12 @@ Java和前端等项目可以使用包管理来发布
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">使用SSH实现自动化部署</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-12-25</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">使用SSH实现自动化部署</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -79,12 +79,12 @@ Java和前端等项目可以使用包管理来发布
 </ul>
 <h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p>
 <p>SCP jar文件到远程服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">scp -i "./.circleci/aws.pem" whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">scp -i "./.circleci/aws.pem" whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
 <p>kill原来的端口，然后启动新的进程</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</div><div class="line">            cd workspace</div><div class="line">            #kill old instance</div><div class="line">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</div><div class="line"></div><div class="line">            # todo start new instance</div><div class="line">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</div><div class="line"></div><div class="line">            # test if it has been started</div><div class="line">            netstat -apn | grep 8086'</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span><br><span class="line">            cd workspace</span><br><span class="line">            #kill old instance</span><br><span class="line">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span><br><span class="line"></span><br><span class="line">            # todo start new instance</span><br><span class="line">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">            # test if it has been started</span><br><span class="line">            netstat -apn | grep 8086'</span><br></pre></td></tr></table></figure>
 <p>清理本地SSH链接</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</div><div class="line">leep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</div></pre></td></tr></table></figure>
-<p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="external">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span><br><span class="line">leep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span><br></pre></td></tr></table></figure>
+<p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>
 	  
 
 	  <div>
@@ -176,9 +176,6 @@ Java和前端等项目可以使用包管理来发布
 		
 	
 		
-			
-			
-		
 	
 		
 	
@@ -190,32 +187,6 @@ Java和前端等项目可以使用包管理来发布
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
 		
 	
 		
@@ -274,6 +245,45 @@ Java和前端等项目可以使用包管理来发布
 	
 		
 			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		

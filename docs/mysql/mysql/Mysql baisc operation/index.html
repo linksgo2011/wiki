@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Mysql 基本管理命令 | Programming Wiki</title>
@@ -14,11 +14,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Mysql 基本管理命令"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="Mysql 基本管理命令">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -43,12 +43,12 @@
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Mysql 基本管理命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-11-07</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Mysql 基本管理命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -122,13 +122,13 @@
 <p>四、数据库权限操作SQL语句 </p>
 <p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p>
 <p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p>
-<p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.<em>*</em>登录的用户sina，密码为zhangyan</p>
+<p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p>
 <p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p>
 <p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p>
-<p><em>.</em> TO sina@192.168.1.% IDENTIFIED BY zhangyan;</p>
+<p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p>
 <p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p>
 <p>sina，密码为zhangyan</p>
-<p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO sina@192.168.1.24 IDENTIFIED BY</p>
+<p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p>
 <p>zhangyan;</p>
 <p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p>
 <p>zhangyan</p>
@@ -214,24 +214,6 @@
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -253,11 +235,23 @@
 	
 		
 			
-			
 		
 	
 		
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 			
 		
@@ -344,13 +338,29 @@
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/mysql/mysql/Useful mysql statement/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/mysql/mysql/Mysql configuration/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/mysql/mysql/Mysql configuration/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

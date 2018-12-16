@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>AWS Certificate Manager 常见问题 | Programming Wiki</title>
@@ -12,11 +12,11 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="AWS Certificate Manager 常见问题"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="AWS Certificate Manager 常见问题">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -41,12 +41,12 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">AWS Certificate Manager 常见问题</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-07-05</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">AWS Certificate Manager 常见问题</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -98,10 +98,10 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <h3 id="预置证书"><a href="#预置证书" class="headerlink" title="预置证书"></a>预置证书</h3><p>问：如何预置 ACM 提供的证书？</p>
 <p>您可以使用 AWS 管理控制台、AWS CLI 或 ACM API/SDK 进行预置。要使用 AWS 管理控制台，请导航到控制台的 ACM 部分，选择“Request a Certificate”，输入站点的域名，然后按照屏幕上的说明完成请求。如果用户可以通过其他名称访问您的站点，则可以在请求中添加其他域名。域的所有者会收到一封关于请求批准颁发证书的电子邮件。在请求中的所有域名获得域所有者的批准后，系统将颁发证书并准备好预置证书以用于其他 AWS 服务，如 Elastic Load Balancing 或 Amazon CloudFront。有关详细信息，请参阅 ACM 文档。<br>问：颁发证书需要多长时间？</p>
 <p>获得域的所有者或域所有者授权代表的批准后，系统通常会在几分钟内颁发证书，但也可能需要更长时间。有关更多详细信息，请参阅如何预置 ACM 提供的证书？<br>问：请求证书时会发生什么情况？</p>
-<p>为了验证您对请求的证书中包括的域名或名称的控制权，系统会针对证书请求中的每个域名向注册域的所有者发送电子邮件。在域的所有者或授权代表批准证书请求之前，证书请求将处于待验证状态。域的所有者或授权代表 (审批者) 可以按照电子邮件中的说明批准证书请求。说明将指引审批者导航到审批网站，单击电子邮件中的链接或将电子邮件中的链接粘贴到浏览器中，以导航到审批网站。审批者确认与证书请求相关的信息，如域名、证书 ID (ARN) 以及发出请求的 AWS 账户 ID，如果信息准确无误，则批准请求。在证书请求中的所有域名获得批准后，系统通常会在几分钟内颁发证书，届时证书请求的状态将变为已颁发。获得颁发的证书后，您便可以开始将其用于其他 AWS 服务。<br>问：审批请求要发送到哪个电子邮件地址？<br>当您请求证书时，系统会针对证书请求中的每个域名使用 WHOIS 查找来检索该域的联系人信息。电子邮件会发送至针对该域列出的域注册人、管理联系人和技术联系人。电子邮件还会同时发送至域的五个特定电子邮件地址，即在您请求的域名前加上 admin@、administrator@、hostmaster@、webmaster@ 和 postmaster@ 生成的五个地址。例如，如果您为 server.example.com 请求证书，系统将使用针对 example.com 域，外加 admin@server.example.com、administrator@server.example.com、hostmaster@server.example.com、postmaster@server.example.com 和 webmaster@server.example.com 的 WHOIS 查询返回的联系人信息将电子邮件发送至域注册人、技术联系人和管理联系人。</p>
-<p>针对以“www”开头的域名或以星号 (*) 开头的通配符名称，这五个特定电子邮件地址采用不同的构造方式。ACM 会删除前导的“www”或星号，而电子邮件则被发送到通过在域名其余部分之前加上 admin@、administrator@、hostmaster@、postmaster@ 和 webmaster@ 来构造的管理员地址。例如，如果您为 www.example.com 请求证书，则电子邮件被发送到 WHOIS 联系人 (如前所述) 以及 admin@example.com，而不是 admin@www.example.com。其余四个特定电子邮件地址也采用类似的方式构造。</p>
+<p>为了验证您对请求的证书中包括的域名或名称的控制权，系统会针对证书请求中的每个域名向注册域的所有者发送电子邮件。在域的所有者或授权代表批准证书请求之前，证书请求将处于待验证状态。域的所有者或授权代表 (审批者) 可以按照电子邮件中的说明批准证书请求。说明将指引审批者导航到审批网站，单击电子邮件中的链接或将电子邮件中的链接粘贴到浏览器中，以导航到审批网站。审批者确认与证书请求相关的信息，如域名、证书 ID (ARN) 以及发出请求的 AWS 账户 ID，如果信息准确无误，则批准请求。在证书请求中的所有域名获得批准后，系统通常会在几分钟内颁发证书，届时证书请求的状态将变为已颁发。获得颁发的证书后，您便可以开始将其用于其他 AWS 服务。<br>问：审批请求要发送到哪个电子邮件地址？<br>当您请求证书时，系统会针对证书请求中的每个域名使用 WHOIS 查找来检索该域的联系人信息。电子邮件会发送至针对该域列出的域注册人、管理联系人和技术联系人。电子邮件还会同时发送至域的五个特定电子邮件地址，即在您请求的域名前加上 admin@、administrator@、hostmaster@、webmaster@ 和 postmaster@ 生成的五个地址。例如，如果您为 server.example.com 请求证书，系统将使用针对 example.com 域，外加 <a href="mailto:admin@server.example.com" target="_blank" rel="noopener">admin@server.example.com</a>、<a href="mailto:administrator@server.example.com" target="_blank" rel="noopener">administrator@server.example.com</a>、<a href="mailto:hostmaster@server.example.com" target="_blank" rel="noopener">hostmaster@server.example.com</a>、<a href="mailto:postmaster@server.example.com" target="_blank" rel="noopener">postmaster@server.example.com</a> 和 <a href="mailto:webmaster@server.example.com" target="_blank" rel="noopener">webmaster@server.example.com</a> 的 WHOIS 查询返回的联系人信息将电子邮件发送至域注册人、技术联系人和管理联系人。</p>
+<p>针对以“www”开头的域名或以星号 (*) 开头的通配符名称，这五个特定电子邮件地址采用不同的构造方式。ACM 会删除前导的“www”或星号，而电子邮件则被发送到通过在域名其余部分之前加上 admin@、administrator@、hostmaster@、postmaster@ 和 webmaster@ 来构造的管理员地址。例如，如果您为 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 请求证书，则电子邮件被发送到 WHOIS 联系人 (如前所述) 以及 <a href="mailto:admin@example.com" target="_blank" rel="noopener">admin@example.com</a>，而不是 <a href="mailto:admin@www.example.com" target="_blank" rel="noopener">admin@www.example.com</a>。其余四个特定电子邮件地址也采用类似的方式构造。</p>
 <p>请求证书之后，您可以使用 ACM 控制台、AWS CLI 或 API 查看针对各个域发送的电子邮件的收件方电子邮件地址列表。<br>问：我是否可以配置接收证书审批请求的电子邮件地址？</p>
-<p>不可以，不过您可以配置用于接收验证电子邮件的基础域名。基础域名必须是证书请求中域名的超级域。例如，如果您想为 server.domain.example.com 请求证书，但希望将审批电子邮件发送至 admin@domain.example.com，则可以使用 AWS API 或 API 实现这一目的。有关更多详细信息，请参阅 ACM CLI 参考和 ACM API 参考。<br>问：我是否可以使用具有代理联系人信息 (例如 Privacy Guard 或 WhoisGuard) 的域？</p>
+<p>不可以，不过您可以配置用于接收验证电子邮件的基础域名。基础域名必须是证书请求中域名的超级域。例如，如果您想为 server.domain.example.com 请求证书，但希望将审批电子邮件发送至 <a href="mailto:admin@domain.example.com" target="_blank" rel="noopener">admin@domain.example.com</a>，则可以使用 AWS API 或 API 实现这一目的。有关更多详细信息，请参阅 ACM CLI 参考和 ACM API 参考。<br>问：我是否可以使用具有代理联系人信息 (例如 Privacy Guard 或 WhoisGuard) 的域？</p>
 <p>可以；不过，电子邮件的发送可能会因为代理而延迟。通过代理发送的电子邮件可能会进入您的垃圾邮件文件夹。有关故障排除建议，请参阅 ACM 用户指南。</p>
 <p>问：ACM 是否可以通过我的 AWS 账户的技术联系人验证我的身份？</p>
 <p>不可以。验证域所有者身份的流程和策略非常严格，并且由为公开可信的证书颁发机构设置策略标准的 CA/Browser Forum 决定。要了解详情，请参阅 Amazon Trust Services 存储库中最新的“Amazon Trust Services 认证规范声明”。<br>问：我的证书请求状态为什么是“待验证”？</p>
@@ -120,9 +120,9 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>信任 ACM 提供的证书的浏览器会显示一个锁形图标，并且在连接到使用 ACM 基于 SSL/TLS 提供的证书 (例如使用 HTTPS) 的站点时会显示不要颁发证书的警告。</p>
 <p>ACM 提供的证书由亚马逊的证书颁发机构 (CA) 进行验证。任何包含 Amazon Root CA 1、Starfield Services Root Certificate Authority – G2 或 Starfield Class 2 Certification Authority 的浏览器、应用程序和操作系统均会信任由 ACM 提供的证书。</p>
 <p>问：ACM 是否可以提供包括多个域名的证书？</p>
-<p>可以。每个证书必须包括至少一个域名，并且您可以根据需要在证书中添加更多域名。例如，您可以将域名“www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。</p>
+<p>可以。每个证书必须包括至少一个域名，并且您可以根据需要在证书中添加更多域名。例如，您可以将域名“<a href="http://www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。" target="_blank" rel="noopener">www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。</a></p>
 <p>问：什么是通配符域名？</p>
-<p>通配符域名匹配域中的所有第一级子域或主机名。第一级子域是一个不包含句号 (圆点) 的域名标签。例如，您可以使用名称“*.example.com”保护 www.example.com、images.example.com 以及以 .example.com 结尾的任何其他主机名或第一级子域。有关更多详细信息，请参阅 ACM 用户指南。</p>
+<p>通配符域名匹配域中的所有第一级子域或主机名。第一级子域是一个不包含句号 (圆点) 的域名标签。例如，您可以使用名称“*.example.com”保护 <a href="http://www.example.com、images.example.com" target="_blank" rel="noopener">www.example.com、images.example.com</a> 以及以 .example.com 结尾的任何其他主机名或第一级子域。有关更多详细信息，请参阅 ACM 用户指南。</p>
 <p>问：ACM 是否可以提供带有通配符域名的证书？</p>
 <p>可以。</p>
 <p>问：ACM 是否提供组织验证 (OV) 或扩展验证 (EV) 证书？</p>
@@ -155,14 +155,14 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 <p>可以。</p>
 <p>问：我是否可以将证书用于没有公共 Internet 访问权限的内部 Elastic Load Balancing 负载均衡器？</p>
 <p>可以。请参阅托管更新与部署，详细了解 ACM 如何处理无法通过公共 Internet 访问的证书的更新问题。</p>
-<p>问：用于 www.example.com 的证书是否也能用于 example.com？</p>
-<p>不可以。如果您希望自己的站点能够被两个域名 (www.example.com 和 example.com) 引用，则必须请求包含这两个名称的证书。</p>
+<p>问：用于 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 的证书是否也能用于 example.com？</p>
+<p>不可以。如果您希望自己的站点能够被两个域名 (<a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 和 example.com) 引用，则必须请求包含这两个名称的证书。</p>
 <p>问：我是否可以导入第三方证书并将其用于 AWS 服务？</p>
 <p>可以。如果想要将第三方证书与 Amazon CloudFront 或 Elastic Load Balancing 配合使用，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 将该证书导入 ACM。ACM 不会处理已导入证书的更新流程。您可以使用 AWS 管理控制台监控已导入证书的到期日期，并导入新的第三方证书以便替换即将过期的证书。</p>
 <p>问：ACM 提供的证书的有效期是多久？</p>
 <p>目前，ACM 提供的证书的有效期为 13 个月。</p>
 <p>问：ACM 如何帮助我的企业或组织满足合规性要求？</p>
-<p>使用 ACM 可以轻松确保连接的安全性 (这也是 PCI、 FedRAMP 以及 HIPAA 等众多合规性计划的共同要求)，从而帮助您遵守法规要求。有关合规性的具体信息，请参阅 <a href="http://aws.amazon.com/compliance。" target="_blank" rel="external">http://aws.amazon.com/compliance。</a></p>
+<p>使用 ACM 可以轻松确保连接的安全性 (这也是 PCI、 FedRAMP 以及 HIPAA 等众多合规性计划的共同要求)，从而帮助您遵守法规要求。有关合规性的具体信息，请参阅 <a href="http://aws.amazon.com/compliance。" target="_blank" rel="noopener">http://aws.amazon.com/compliance。</a></p>
 <p>问：ACM 是否有服务等级协议 (SLA)？</p>
 <p>目前没有。</p>
 <p>问：ACM 是否允许域名 (也称为国际化域名 (IDN)) 中包含本地语言字符？</p>
@@ -279,8 +279,6 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 		
 	
 		
-			
-		
 	
 		
 	
@@ -290,32 +288,6 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -376,7 +348,45 @@ AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理�
 	
 		
 			
+		
+	
+		
 			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		

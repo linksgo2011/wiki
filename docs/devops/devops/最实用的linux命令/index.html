@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>最实用的Linux命令 | Programming Wiki</title>
@@ -18,11 +18,11 @@ sudo add-apt-repository ppa:webupd8team/jav">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="最实用的Linux命令"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="最实用的Linux命令">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -47,12 +47,12 @@ sudo add-apt-repository ppa:webupd8team/jav">
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">最实用的Linux命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-08-01</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">最实用的Linux命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-12-05</span></h1>
 </div>		
 
 <div class="row page">
@@ -73,7 +73,11 @@ sudo add-apt-repository ppa:webupd8team/jav">
 <p>Add the webupd8 ppa, and install from that -</p>
 <blockquote>
 <p>sudo add-apt-repository ppa:webupd8team/java</p>
+</blockquote>
+<blockquote>
 <p>sudo apt-get update</p>
+</blockquote>
+<blockquote>
 <p>sudo apt-get install oracle-java8-installer</p>
 </blockquote>
 <p>Then</p>
@@ -93,12 +97,14 @@ sudo add-apt-repository ppa:webupd8team/jav">
 <p>fixed by</p>
 <blockquote>
 <p>sudo apt-get update</p>
+</blockquote>
+<blockquote>
 <p>sudo apt-get install software-properties-common</p>
 </blockquote>
-<p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="external">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p>
+<p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p>
 <p>打包备份</p>
 <blockquote>
-<p>tar -zcvf “jiaonuobg<em>assets</em>$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p>
+<p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p>
 </blockquote>
 <p>备份nodejs+mysql项目</p>
 <p>TBC</p>
@@ -138,6 +144,11 @@ sudo add-apt-repository ppa:webupd8team/jav">
 <blockquote>
 <p>sudo -l</p>
 </blockquote>
+<p>搜索文件相关</p>
+<p>当前文件目录下搜索</p>
+<blockquote>
+<p>grep -RI ‘keyword’  .  </p>
+</blockquote>
 	  
 
 	  <div>
@@ -155,20 +166,11 @@ sudo add-apt-repository ppa:webupd8team/jav">
 		
 	
 		
-			
-		
 	
 		
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
@@ -227,6 +229,110 @@ sudo add-apt-repository ppa:webupd8team/jav">
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
@@ -260,98 +366,13 @@ sudo add-apt-repository ppa:webupd8team/jav">
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 	
-	
-		<li class="prev"><a href="/devops/devops/ansible/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/devops/devops/monitors for website/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
