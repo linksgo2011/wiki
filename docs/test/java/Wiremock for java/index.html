@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Mock工具 wiremock | Programming Wiki</title>
@@ -13,11 +13,11 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Mock工具 wiremock"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="Mock工具 wiremock">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -42,12 +42,12 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Mock工具 wiremock</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-11-23</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Mock工具 wiremock</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -62,7 +62,7 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	  <!-- content -->
 	  <p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p>
 <h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">@Rule</span></div><div class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p>
 <blockquote>
 <p>java -jar wiremock-standalone-2.11.0.jar</p>
@@ -70,10 +70,10 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 <h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol>
 <li>可以使用录制模式来获取以后Mock的数据</li>
 <li>如果遇到HTTPS需要配置certificate</li>
-<li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="external">http://wiremock.org/docs/</a></li>
+<li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li>
 </ol>
 <h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p>
-<p><a href="http://wiremock.org/" target="_blank" rel="external">http://wiremock.org/</a></p>
+<p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>
 	  
 
 	  <div>
@@ -115,75 +115,6 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-			
-			
 			
 		
 	
@@ -264,6 +195,15 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 		
 	
 		
+			
+			
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -273,13 +213,83 @@ The JUnit 4.x Rule在JUnit4中可以使用Rule的注解，来直接启动
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/test/test/Contract testing & PACT/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/test/test/Contract testing & PACT/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

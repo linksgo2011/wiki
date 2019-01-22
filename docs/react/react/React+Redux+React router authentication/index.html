@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>React router 登录验证方案 | Programming Wiki</title>
@@ -12,11 +12,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="React router 登录验证方案"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="React router 登录验证方案">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -41,12 +41,12 @@
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">React router 登录验证方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-08-08</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">React router 登录验证方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -68,9 +68,9 @@
 	
 
 	  <!-- content -->
-	  <p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="external">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">router.js</div><div class="line"></div><div class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</div><div class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</div><div class="line"></div><div class="line">export default(</div><div class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</div><div class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</div><div class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</div><div class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</div><div class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</div><div class="line"></div><div class="line">export function requireAuthentication(Component) &#123;</div><div class="line"></div><div class="line">    class AuthenticatedComponent extends React.Component &#123;</div><div class="line"></div><div class="line">        componentWillMount() &#123;</div><div class="line">            this.checkAuth();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        componentWillReceiveProps(nextProps) &#123;</div><div class="line">            this.checkAuth();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        checkAuth() &#123;</div><div class="line">            if (!this.props.isAuthenticated) &#123;</div><div class="line">                let redirectAfterLogin = this.props.location.pathname;</div><div class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        render() &#123;</div><div class="line">            return (</div><div class="line">                &lt;div&gt;</div><div class="line">                    &#123;this.props.isAuthenticated === true</div><div class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</div><div class="line">                        : null</div><div class="line">                    &#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    const mapStateToProps = (state) =&gt; (&#123;</div><div class="line">        token: state.auth.token,</div><div class="line">        userName: state.auth.userName,</div><div class="line">        isAuthenticated: state.auth.isAuthenticated</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>	  
+	  <p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
 
 	  <div>
   		<center>
@@ -123,7 +123,8 @@
 		
 	
 		
-	
+			
+			
 		
 	
 		
@@ -135,33 +136,9 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
+			
+			
 		
 	
 		
@@ -225,16 +202,9 @@
 		
 	
 		
-			
-			
-		
 	
 		
 	
-		
-			
-			
-			
 		
 	
 		
@@ -271,13 +241,53 @@
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/react/react/React crouse map/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/react/react/React QAs/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/react/react/React crouse map/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

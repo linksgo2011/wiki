@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Nginx 常用操作 | Programming Wiki</title>
@@ -22,11 +22,11 @@ service nginx st">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Nginx 常用操作"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="Nginx 常用操作">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -51,12 +51,12 @@ service nginx st">
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Nginx 常用操作</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-06-15</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Nginx 常用操作</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -87,7 +87,7 @@ service nginx st">
 <p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p>
 <p>我们常用的站点信息配置在：</p>
 <p>/etc/nginx/sites-enabled/*;</p>
-<h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p>``<br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p>
+<h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p>
 <pre><code># 资源根目录
 root /var/www;
 
@@ -142,10 +142,12 @@ location ~ \.php$ {
 #    deny all;
 #}
 </code></pre><p>}</p>
-<p>``</p>
+<p><code></code></p>
 <h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p>
 <h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote>
 <p>mv default v-host</p>
+</blockquote>
+<blockquote>
 <p>vim v-host</p>
 </blockquote>
 <p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p>
@@ -171,75 +173,6 @@ location ~ \.php$ {
 		
 	
 		
-			
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -296,6 +229,101 @@ location ~ \.php$ {
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
 			
 		
 	
@@ -312,23 +340,7 @@ location ~ \.php$ {
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
 		
 	
 		
@@ -367,7 +379,7 @@ location ~ \.php$ {
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/devops/devops/monitors for website/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/devops/devops/ansible/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

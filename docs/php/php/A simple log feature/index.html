@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>一段简单的PHP 日志代码 | Programming Wiki</title>
@@ -11,11 +11,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="一段简单的PHP 日志代码"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="一段简单的PHP 日志代码">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -40,12 +40,12 @@
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">一段简单的PHP 日志代码</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-04-16</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">一段简单的PHP 日志代码</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -58,7 +58,7 @@
 	  
 
 	  <!-- content -->
-	  <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</div><div class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</div><div class="line"></div><div class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</div><div class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</div><div class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</div><div class="line">    FILE_APPEND</div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">// 转存日志文件</span></div><div class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</div><div class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</div><div class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>	  
+	  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</span><br><span class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</span><br><span class="line"></span><br><span class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</span><br><span class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</span><br><span class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</span><br><span class="line">    FILE_APPEND</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转存日志文件</span></span><br><span class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</span><br><span class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</span><br><span class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
 
 	  <div>
   		<center>
@@ -95,75 +95,6 @@
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -201,14 +132,10 @@
 	
 		
 			
-			
-			
-		
-			
 		
 	
 		
-			
+	
 		
 	
 		
@@ -220,23 +147,15 @@
 		
 	
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -250,6 +169,97 @@
 		
 	
 		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -271,11 +281,11 @@
 	
 	
 	
-		<li class="prev"><a href="/php/php/lightweight php api/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/php/php/PHP extension/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/php/php/php-mamp/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

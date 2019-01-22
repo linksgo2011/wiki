@@ -3,6 +3,26 @@
 	{
 		"selected_items":
 		[
+			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"border-c",
+				"border-color\tproperty"
+			],
+			[
+				"url",
+				"urldecode"
+			],
+			[
+				"base",
+				"base64_decode"
+			]
 		]
 	},
 	"buffers":
@@ -45,10 +65,54 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/nlin/www/wiki"
 	],
 	"file_history":
 	[
+		"/Users/nlin/www/wiki/demo/xss/plain.html",
+		"/Users/nlin/www/wiki/demo/xss/httponly.php",
+		"/Users/nlin/www/wiki/demo/xss/vue.php",
+		"/Users/nlin/www/wiki/demo/xss/vue2.php",
+		"/Users/nlin/www/wiki/demo/csrf/a.php",
+		"/Users/nlin/www/wiki/demo/csrf/b.php",
+		"/Users/nlin/www/info.php",
+		"/Users/nlin/www/wiki/demo/xss/plain_csp.php",
+		"/Users/nlin/www/wiki/hexo/source/_posts/devops/Git commands.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/tool-collections/vim.md",
+		"/Users/nlin/www/wiki/docs/collection/tool-collections/vim.html",
+		"/Users/nlin/www/wiki/hexo/source/_posts/devops/最实用的linux命令.md",
+		"/Users/nlin/www/bulgari_go_live/release/nginx.conf",
+		"/Users/nlin/www/bulgari_go_live/release-2018-12-10/Release Plan.txt",
+		"/Users/nlin/www/wiki/hexo/source/_posts/devops/ansible.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/storage/Redis foundation.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/mysql/Mysql configuration.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/java/Java kills map.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/java/Jeeweb - Java boilerplate.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/java/cms in java.md",
+		"/Users/nlin/www/wiki/demo/email.html",
+		"/Users/nlin/www/bulgari_go_live/release/Release Plan",
+		"/Users/nlin/www/interview/cruise/config/webpack.config.dev.js",
+		"/Users/nlin/www/bulgari_go_live/closeup/nginx.conf",
+		"/Users/nlin/www/wiki/hexo/source/_posts/tool-collections/development tool.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/frontend/vue.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/write better email.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/h5/h5 app.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/tool-collections/shortcut for mac.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/h5/Build package with Apache Cordova.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/h5/H5 webapp tech stack.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/frontend/frontend ecologies.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/frontend/Interview for frontend.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/frontend boilderplate.md",
+		"/Users/nlin/www/wiki/docs/h5/h5/H5 webapp tech stack/index.html",
+		"/Users/nlin/www/wiki/docs/fronted/frontend/frontend ecologies/index.html",
+		"/Users/nlin/www/wiki/demo/test.php",
+		"/Users/nlin/www/wiki/hexo/source/_posts/security/csp-in-browser.md",
+		"/Users/nlin/www/wiki/demo/httponly.php",
+		"/Users/nlin/www/wiki/hexo/source/_posts/management/Tech leader check list.md",
+		"/Users/nlin/www/wiki/demo/src/JavaExceptionDemo.java",
+		"/Users/nlin/www/wiki/hexo/source/_posts/java/java-web-project-overview.md",
+		"/Users/nlin/www/wiki/hexo/source/_posts/management/Team leader checklist.md",
+		"/Users/nlin/www/wiki/build.sh",
+		"/Users/nlin/www/wiki/wiki.sublime-project",
 		"/Users/nlin/www/blog-printf-cn/printf.sublime-project",
 		"/Users/nlin/www/blog-printf-cn/product/shell/lnmp.sh",
 		"/Users/nlin/www/blog-printf-cn/product/urlpublik.html",
@@ -103,7 +167,6 @@
 		"/Users/nlin/www/cruise-page/package.json",
 		"/Users/nlin/www/cruise-page/config/dev.env.js",
 		"/Users/nlin/www/cruise-page/README.md",
-		"/Users/nlin/www/info.php",
 		"/Users/nlin/www/static-templates/index.html",
 		"/Users/nlin/www/static-templates/info-compose-mobile/compose.html",
 		"/Users/nlin/www/static-templates/info-compose-mobile/detail.html",
@@ -113,13 +176,14 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
 		"height": 101.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -127,6 +191,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"撤",
+			"80",
+			"less",
+			"vue",
+			"customerMobile"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -197,6 +266,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"git.md",
+				"hexo/source/_posts/devops/Git commands.md"
+			],
+			[
+				"mysql",
+				"hexo/source/_posts/mysql/Mysql configuration.md"
+			],
+			[
+				"vim",
+				"hexo/source/_posts/tool-collections/vim.md"
+			],
+			[
+				"git",
+				"hexo/source/_posts/devops/Git commands.md"
+			],
+			[
+				"java",
+				"hexo/source/_posts/java/Java kills map.md"
+			],
+			[
+				"linux",
+				"hexo/source/_posts/devops/最实用的linux命令.md"
+			],
+			[
+				"frontend",
+				"hexo/source/_posts/frontend boilderplate.md"
+			],
 			[
 				"/agents",
 				"src/api/agents.js"
