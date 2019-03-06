@@ -6,6 +6,21 @@
   <title>常用的GIT命令 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
+  <meta name="description" content="配置全局邮箱和名字
+
+git config –global user.email “email”
+
+
+git config –global user.name “name”
+
+查看服务器和本地上分支
+
+git branch -a
+
+获取服务器分支并映射到本地
+
+git fetch origin 远程">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -43,7 +58,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">常用的GIT命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">常用的GIT命令</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-06</span></h1>
 </div>		
 
 <div class="row page">
@@ -65,7 +80,34 @@
 	
 
 	  <!-- content -->
-	  	  
+	  <p>配置全局邮箱和名字</p>
+<blockquote>
+<p>git config –global user.email “email”</p>
+</blockquote>
+<blockquote>
+<p>git config –global user.name “name”</p>
+</blockquote>
+<p>查看服务器和本地上分支</p>
+<blockquote>
+<p>git branch -a</p>
+</blockquote>
+<p>获取服务器分支并映射到本地</p>
+<blockquote>
+<p>git fetch origin 远程分支名x:本地分支名x</p>
+</blockquote>
+<p>设置pull  push映射</p>
+<blockquote>
+<p>git branch –set-upstream-to=origin/<branch> localBranchName</branch></p>
+</blockquote>
+<p>临时缓存本地更改并清空工作区</p>
+<blockquote>
+<p>git stash </p>
+</blockquote>
+<p>从 stash 中取出</p>
+<blockquote>
+<p>git stash pop</p>
+</blockquote>
+	  
 
 	  <div>
   		<center>
@@ -108,6 +150,27 @@
 		
 	
 		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -236,19 +299,6 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 			
 		
 	
@@ -282,13 +332,25 @@
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/devops/devops/ansible/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/devops/storage/Redis foundation/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/devops/devops/最实用的linux命令/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
@@ -305,7 +367,7 @@
   <div class="container-narrow">
 	<footer> <p>
     
-      &copy; 2018 cn.printf
+      &copy; 2019 cn.printf
       
       <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
 </p> </footer>

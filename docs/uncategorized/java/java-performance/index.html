@@ -3,13 +3,21 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>电影清单 | Programming Wiki</title>
+  <title>Programming Wiki</title>
   <meta name="author" content="cn.printf">
+  
+  <meta name="description" content="title: Java 性能调优categories: java
+toc: true参考资料-《Java性能权威指南》
+性能优化的一些原则
+性能优化需要注意性价比，避免过早优化
+找出性能瓶颈比优化更重要
+JVM性能优化只是非常小的一部分，更重要的是数据库和业务逻辑
+优化之前使用性能测试工具，进行基准">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="电影清单">
+  
   <meta property="og:site_name" content="Programming Wiki">
 
   
@@ -43,7 +51,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">电影清单</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title"></span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-06</span></h1>
 </div>		
 
 <div class="row page">
@@ -56,7 +64,31 @@
 	  
 
 	  <!-- content -->
-	  	  
+	  <hr>
+<p>title: Java 性能调优<br>categories: java</p>
+<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>-《Java性能权威指南》</p>
+<h1 id="性能优化的一些原则"><a href="#性能优化的一些原则" class="headerlink" title="性能优化的一些原则"></a>性能优化的一些原则</h1><ul>
+<li>性能优化需要注意性价比，避免过早优化</li>
+<li>找出性能瓶颈比优化更重要</li>
+<li>JVM性能优化只是非常小的一部分，更重要的是数据库和业务逻辑</li>
+<li>优化之前使用性能测试工具，进行基准测试</li>
+</ul>
+<h1 id="性能优化工具"><a href="#性能优化工具" class="headerlink" title="性能优化工具"></a>性能优化工具</h1><h2 id="操作系统工具"><a href="#操作系统工具" class="headerlink" title="操作系统工具"></a>操作系统工具</h2><ul>
+<li>vmstat 查看CPU利用率</li>
+<li>typeperf CPU运行队列</li>
+<li>iostat 磁盘IO使用率</li>
+<li>nicstat 网络使用率</li>
+</ul>
+<h2 id="Java-性能分析工具"><a href="#Java-性能分析工具" class="headerlink" title="Java 性能分析工具"></a>Java 性能分析工具</h2><ul>
+<li>jcmd 显示JVM 信息工具<ul>
+<li>jcmd jinfo 显示JVM运行参数</li>
+<li>jdcmd process_id 显示栈运行信息 </li>
+</ul>
+</li>
+<li>jsstack 显示栈运行信息</li>
+<li>jconsole 显示Java编译</li>
+</ul>
+	  
 
 	  <div>
   		<center>
@@ -69,65 +101,6 @@
 	
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-			
-		
 	
 		
 			
@@ -144,6 +117,71 @@
 		
 	
 		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -277,11 +315,11 @@
 	
 	
 	
-		<li class="prev"><a href="/reading-writing/reading&writing/极简欧洲史/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/uncategorized/others/regex-expressions/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/reading-writing/reading&writing/reading list/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
@@ -298,7 +336,7 @@
   <div class="container-narrow">
 	<footer> <p>
     
-      &copy; 2018 cn.printf
+      &copy; 2019 cn.printf
       
       <a href="http://www.printf.cn" target="_blank">www.printf.cn</a>
 </p> </footer>

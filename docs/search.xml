@@ -3,6 +3,249 @@
   
     
     <entry>
+      <title>Mac shortcuts</title>
+      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
+      <url>/development/tool-collections/shortcut%20for%20mac/</url>
+      
+        <content type="html"><![CDATA[<p>bulgari.{buildNumber}.zip</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> development </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/uncategorized/others/regex-expressions/"/>
+      <url>/uncategorized/others/regex-expressions/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ubuntu上的MySQL安装</title>
+      <link href="/mysql/mysql/Mysql%20configuration/"/>
+      <url>/mysql/mysql/Mysql%20configuration/</url>
+      
+        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>安全管理</title>
+      <link href="/security/security/security%20management/"/>
+      <url>/security/security/security%20management/</url>
+      
+        <content type="html"><![CDATA[<h2 id="网络威胁建模"><a href="#网络威胁建模" class="headerlink" title="网络威胁建模"></a>网络威胁建模</h2><p>微软的 Threat Modeling 是微软公司开发人员用于鉴别风险、并依据它作出更加设计、编码和测试决定的顶级安全分析方法学之一</p><p>Tool <a href="https://docs.microsoft.com/zh-cn/azure/security/azure-security-threat-modeling-tool-feature-overview" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/azure/security/azure-security-threat-modeling-tool-feature-overview</a></p><h2 id="跨功能安全需求"><a href="#跨功能安全需求" class="headerlink" title="跨功能安全需求"></a>跨功能安全需求</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> security </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Redis 基础</title>
+      <link href="/devops/storage/Redis%20foundation/"/>
+      <url>/devops/storage/Redis%20foundation/</url>
+      
+        <content type="html"><![CDATA[<p>官网: <a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a><br>基础教程：<a href="http://www.runoob.com/redis/redis-java.html" target="_blank" rel="noopener">http://www.runoob.com/redis/redis-java.html</a></p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。</p><h2 id="常用的数据结构"><a href="#常用的数据结构" class="headerlink" title="常用的数据结构"></a>常用的数据结构</h2><ul><li>String: 字符串</li><li>Hash: 散列</li><li>List: 列表</li><li>Set: 集合</li><li>Sorted Set: 有序集合</li></ul><h2 id="cli常用操作"><a href="#cli常用操作" class="headerlink" title="cli常用操作"></a>cli常用操作</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java CMS 选型</title>
+      <link href="/java/java/cms%20in%20java/"/>
+      <url>/java/java/cms%20in%20java/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 并发和多线程</title>
+      <link href="/java/java/java-cocurrent/"/>
+      <url>/java/java/java-cocurrent/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java-多线程的几种实现方式"><a href="#Java-多线程的几种实现方式" class="headerlink" title="Java 多线程的几种实现方式"></a>Java 多线程的几种实现方式</h2><h3 id="通过实现-Runnable-接口；"><a href="#通过实现-Runnable-接口；" class="headerlink" title="通过实现 Runnable 接口；"></a>通过实现 Runnable 接口；</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RunnableDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   RunnableDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">"Creating "</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Running "</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Thread: "</span> + threadName + <span class="string">", "</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">"Thread "</span> +  threadName + <span class="string">" interrupted."</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"Thread "</span> +  threadName + <span class="string">" exiting."</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Starting "</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="keyword">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> Thread (<span class="keyword">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      RunnableDemo R1 = <span class="keyword">new</span> RunnableDemo( <span class="string">"Thread-1"</span>);</span><br><span class="line">      R1.start();</span><br><span class="line">      </span><br><span class="line">      RunnableDemo R2 = <span class="keyword">new</span> RunnableDemo( <span class="string">"Thread-2"</span>);</span><br><span class="line">      R2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="通过继承Thread来创建线程"><a href="#通过继承Thread来创建线程" class="headerlink" title="通过继承Thread来创建线程"></a>通过继承Thread来创建线程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   ThreadDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">"Creating "</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Running "</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Thread: "</span> + threadName + <span class="string">", "</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">"Thread "</span> +  threadName + <span class="string">" interrupted."</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"Thread "</span> +  threadName + <span class="string">" exiting."</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Starting "</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="keyword">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> Thread (<span class="keyword">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      ThreadDemo T1 = <span class="keyword">new</span> ThreadDemo( <span class="string">"Thread-1"</span>);</span><br><span class="line">      T1.start();</span><br><span class="line">      </span><br><span class="line">      ThreadDemo T2 = <span class="keyword">new</span> ThreadDemo( <span class="string">"Thread-2"</span>);</span><br><span class="line">      T2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="通过-Callable-和-Future-创建线程"><a href="#通过-Callable-和-Future-创建线程" class="headerlink" title="通过 Callable 和 Future 创建线程"></a>通过 Callable 和 Future 创建线程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CallableThreadTest</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        CallableThreadTest ctt = <span class="keyword">new</span> CallableThreadTest();  </span><br><span class="line">        FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> FutureTask&lt;&gt;(ctt);  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100</span>;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">" 的循环变量i的值"</span>+i);  </span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">20</span>)  </span><br><span class="line">            &#123;  </span><br><span class="line">                <span class="keyword">new</span> Thread(ft,<span class="string">"有返回值的线程"</span>).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">try</span>  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(<span class="string">"子线程的返回值："</span>+ft.get());  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">for</span>(;i&lt;<span class="number">100</span>;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">" "</span>+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> i;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="创建线程的三种方式的对比"><a href="#创建线程的三种方式的对比" class="headerlink" title="创建线程的三种方式的对比"></a>创建线程的三种方式的对比</h3><ol><li>采用实现 Runnable、Callable 接口的方式创建多线程时，线程类只是实现了 Runnable 接口或 Callable 接口，还可以继承其他类。</li><li>使用继承 Thread 类的方式创建多线程时，编写简单，如果需要访问当前线程，则无需使用 Thread.currentThread() 方法，直接使用 this 即可获得当前线程。</li><li>推荐使用 Callbale 方式，因为可以得到线程中的返回值和异常</li></ol><h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>多线程代码中，变量会存在共享，但是如果操作不是原子性的，会造成一致性的问题。 在保证线程安全中Java提供了一些措施。</p><h3 id="同步操作和只读操作"><a href="#同步操作和只读操作" class="headerlink" title="同步操作和只读操作"></a>同步操作和只读操作</h3><p>1.方法的调用是在栈中完成的，因此方法的调用不会造成线程安全的问题。这也是为什么Spring 中使用Bean管理对象，每一次请求的操作可以视为同步行为，可以避免多线程问题。</p><p>2.Java中一些对象是线程安全的，是通过使用了只读操作完成的，例如每一个String都是新的对象，在解决线程安全问题的同时需要注意性能问题。</p><h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h3><p>Java语言提供了一种稍弱的同步机制，即volatile变量，用来确保将变量的更新操作通知到其他线程。当把变量声明为volatile类型后，编译器与运行时都会注意到这个变量是共享的，因此不会将该变量上的操作与其他内存操作一起重排序。volatile变量不会被缓存在寄存器或者对其他处理器不可见的地方，因此在读取volatile类型的变量时总会返回最新写入的值。</p><p>volatile 并不能解决线程安全问题，但是需要注意，赋值操作不是原子性的，因此需要使用volatile来保证变量的可见性。</p><h3 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h3><p>synchronized 有两种使用方法同步代码块和同步方法，同步代码块可以传入一个需要锁定的对象，通常是this，而同步方法可以用来修饰方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123; <span class="comment">/* body */</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123; <span class="keyword">synchronized</span>(<span class="keyword">this</span>) &#123; <span class="comment">/* body */</span> &#125; &#125;</span><br></pre></td></tr></table></figure><p>需要注意的是如果是类当中的静态变量 synchronized 并不会锁住</p><p>需要使用类名来锁</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123; <span class="comment">/* body */</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123; <span class="keyword">synchronized</span>(<span class="keyword">this</span>) &#123; <span class="comment">/* body */</span> &#125; &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/uncategorized/java/java-performance/"/>
+      <url>/uncategorized/java/java-performance/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: Java 性能调优<br>categories: java</p><h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>-《Java性能权威指南》</p><h1 id="性能优化的一些原则"><a href="#性能优化的一些原则" class="headerlink" title="性能优化的一些原则"></a>性能优化的一些原则</h1><ul><li>性能优化需要注意性价比，避免过早优化</li><li>找出性能瓶颈比优化更重要</li><li>JVM性能优化只是非常小的一部分，更重要的是数据库和业务逻辑</li><li>优化之前使用性能测试工具，进行基准测试</li></ul><h1 id="性能优化工具"><a href="#性能优化工具" class="headerlink" title="性能优化工具"></a>性能优化工具</h1><h2 id="操作系统工具"><a href="#操作系统工具" class="headerlink" title="操作系统工具"></a>操作系统工具</h2><ul><li>vmstat 查看CPU利用率</li><li>typeperf CPU运行队列</li><li>iostat 磁盘IO使用率</li><li>nicstat 网络使用率</li></ul><h2 id="Java-性能分析工具"><a href="#Java-性能分析工具" class="headerlink" title="Java 性能分析工具"></a>Java 性能分析工具</h2><ul><li>jcmd 显示JVM 信息工具<ul><li>jcmd jinfo 显示JVM运行参数</li><li>jdcmd process_id 显示栈运行信息 </li></ul></li><li>jsstack 显示栈运行信息</li><li>jconsole 显示Java编译</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>How to use this wiki!</title>
+      <link href="/help/how-to-use-this-wiki/"/>
+      <url>/help/how-to-use-this-wiki/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to ! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="about-hexo"><a href="#about-hexo" class="headerlink" title="about hexo"></a>about hexo</h2><p>本wiki的思路为使用github作为文档、代码的版本管理,使用hexo来生成静态网站。摒弃了博客的写作方式,使用了markdown和wiki的方式,<br>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><p>##更多资料</p><p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a><br><a href="https://github.com" target="_blank" rel="noopener">Github</a></p><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h2 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h2><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用markdown语法"><a href="#常用markdown语法" class="headerlink" title="常用markdown语法"></a>常用markdown语法</h2><p>标题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><p>列表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure><p>引用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用</span><br></pre></td></tr></table></figure><p>图片与链接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure><p>表格</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">|标题|标题|标题|</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|居左测试文本|居中测试文本|居右测试文本|</span><br><span class="line">|居左测试文本1|居中测试文本2|居右测试文本3|</span><br><span class="line">|居左测试文本11|居中测试文本22|居右测试文本33|</span><br><span class="line">|居左测试文本111|居中测试文本222|居右测试文本333|</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> help </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>前端代码的一些反模式</title>
+      <link href="/fronted/frontend/bad-example-in-codereview/"/>
+      <url>/fronted/frontend/bad-example-in-codereview/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> fronted </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>清理对象中的空值</title>
+      <link href="/fronted/frontend/clean-empty-attribute-in-object/"/>
+      <url>/fronted/frontend/clean-empty-attribute-in-object/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export function cleanNull(object)&#123;</span><br><span class="line">  const returnValue = &#123;&#125;</span><br><span class="line">  Object.keys(object).map((key)=&gt;&#123;</span><br><span class="line">    const value = object[key]</span><br><span class="line">    if (value === undefined || value === null || value === &apos;&apos;) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    returnValue[key] = value</span><br><span class="line">    return key</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  return returnValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> fronted </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>处理URL中path参数</title>
+      <link href="/fronted/frontend/path-parameter-in-uri/"/>
+      <url>/fronted/frontend/path-parameter-in-uri/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export function paramsPath(pathString, ...params) &#123;</span><br><span class="line">  let result = pathString</span><br><span class="line">  params.forEach((value) =&gt; &#123;</span><br><span class="line">    result = result.replace(/\:\w+/, value)</span><br><span class="line">  &#125;)</span><br><span class="line">  return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> fronted </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>C# ORM</title>
+      <link href="/C/C#/C#%20ORM/"/>
+      <url>/C/C#/C#%20ORM/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><ul><li>Dapper 轻量级SQL映射工具，对标mybatis</li><li>Entity Framework 重量级 对标hibernate</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> C# </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>C# 概览</title>
+      <link href="/C/C#/C#%20overview/"/>
+      <url>/C/C#/C#%20overview/</url>
+      
+        <content type="html"><![CDATA[<h2 id="语言层面"><a href="#语言层面" class="headerlink" title="语言层面"></a>语言层面</h2><h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><ul><li>NUGET</li></ul><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ul><li>.NET</li><li>.NET core</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> C# </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>常用的GIT命令</title>
+      <link href="/devops/devops/Git%20commands/"/>
+      <url>/devops/devops/Git%20commands/</url>
+      
+        <content type="html"><![CDATA[<p>配置全局邮箱和名字</p><blockquote><p>git config –global user.email “email”</p></blockquote><blockquote><p>git config –global user.name “name”</p></blockquote><p>查看服务器和本地上分支</p><blockquote><p>git branch -a</p></blockquote><p>获取服务器分支并映射到本地</p><blockquote><p>git fetch origin 远程分支名x:本地分支名x</p></blockquote><p>设置pull  push映射</p><blockquote><p>git branch –set-upstream-to=origin/<branch> localBranchName</branch></p></blockquote><p>临时缓存本地更改并清空工作区</p><blockquote><p>git stash </p></blockquote><p>从 stash 中取出</p><blockquote><p>git stash pop</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>一些写作技巧</title>
       <link href="/reading-writing/reading&amp;writing/writing%20skils/"/>
       <url>/reading-writing/reading&amp;writing/writing%20skils/</url>
@@ -13,23 +256,6 @@
       <categories>
           
           <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mac shortcuts</title>
-      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
-      <url>/development/tool-collections/shortcut%20for%20mac/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> development </category>
           
       </categories>
       
@@ -109,7 +335,7 @@
       <link href="/security/security/security-in-frontend/"/>
       <url>/security/security/security-in-frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="Sonarqube"><a href="#Sonarqube" class="headerlink" title="Sonarqube"></a>Sonarqube</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul><li>Sonarqube</li><li>Synk</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li>Npm audit </li><li>Retire.js</li></ul>]]></content>
       
       
       <categories>
@@ -360,45 +586,11 @@
     </entry>
     
     <entry>
-      <title>电影清单</title>
-      <link href="/reading-writing/reading&amp;writing/movie%20list/"/>
-      <url>/reading-writing/reading&amp;writing/movie%20list/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>读书清单</title>
       <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
       <url>/reading-writing/reading&amp;writing/reading%20list/</url>
       
-        <content type="html"><![CDATA[<p>-《经济学思维》<br>- </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>技术书单</title>
-      <link href="/reading-writing/reading&amp;writing/reading%20list%20for%20it/"/>
-      <url>/reading-writing/reading&amp;writing/reading%20list%20for%20it/</url>
-      
-        <content type="html"><![CDATA[<ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>-《经济学思维》</p><ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
       
       
       <categories>
@@ -421,6 +613,23 @@
       <categories>
           
           <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React 答疑</title>
+      <link href="/react/react/React%20QAs/"/>
+      <url>/react/react/React%20QAs/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
           
       </categories>
       
@@ -455,23 +664,6 @@
       <categories>
           
           <category> React Native </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 答疑</title>
-      <link href="/react/react/React%20QAs/"/>
-      <url>/react/react/React%20QAs/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
           
       </categories>
       
@@ -671,23 +863,6 @@
       <url>/mysql/mysql/Useful%20mysql%20statement/</url>
       
         <content type="html"><![CDATA[<p>使用SQL完成文本替换操作</p><blockquote><p>update typecho_contents set text=REPLACE (addr,’<a href="http://bcs.duapp.com/helpjs&#39;,&#39;http://helpjs.bj.bcebos.com/&#39;" target="_blank" rel="noopener">http://bcs.duapp.com/helpjs&#39;,&#39;http://helpjs.bj.bcebos.com/&#39;</a>)</p></blockquote><p> git clone <a href="https://github.com/linksgo2011/tinda_app_cordova.git" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova.git</a><br> cd tinda_app_cordova<br> git pull </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Ubuntu上的MySQL安装</title>
-      <link href="/mysql/mysql/Mysql%20configuration/"/>
-      <url>/mysql/mysql/Mysql%20configuration/</url>
-      
-        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><p>至此，Linux(Ubuntu)下的MyQL安装与配置全部完毕。</p>]]></content>
       
       
       <categories>
@@ -921,23 +1096,6 @@
     </entry>
     
     <entry>
-      <title>Java CMS 选型</title>
-      <link href="/java/java/cms%20in%20java/"/>
-      <url>/java/java/cms%20in%20java/</url>
-      
-        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Gradle 使用基础</title>
       <link href="/java/java/Gradle%20basic/"/>
       <url>/java/java/Gradle%20basic/</url>
@@ -989,23 +1147,6 @@
     </entry>
     
     <entry>
-      <title>How to use this wiki!</title>
-      <link href="/help/how-to-use-this-wiki/"/>
-      <url>/help/how-to-use-this-wiki/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to ! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h4 id="about-hexo"><a href="#about-hexo" class="headerlink" title="about hexo"></a>about hexo</h4><p>本wiki的思路为使用github作为文档、代码的版本管理,使用hexo来生成静态网站。摒弃了博客的写作方式,使用了markdown和wiki的方式,<br>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h4 id="更多资料"><a href="#更多资料" class="headerlink" title="更多资料"></a>更多资料</h4><p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a><br><a href="https://github.com" target="_blank" rel="noopener">Github</a></p><h4 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h4><h4 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h4><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> help </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端生态图谱</title>
       <link href="/fronted/frontend/frontend%20ecologies/"/>
       <url>/fronted/frontend/frontend%20ecologies/</url>
@@ -1023,11 +1164,11 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/h5/h5/H5%20webapp%20tech%20stack/"/>
-      <url>/h5/h5/H5%20webapp%20tech%20stack/</url>
+      <title>H5 app开发经验</title>
+      <link href="/h5/h5/h5%20app/"/>
+      <url>/h5/h5/h5%20app/</url>
       
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
       
       
       <categories>
@@ -1057,11 +1198,11 @@
     </entry>
     
     <entry>
-      <title>H5 app开发经验</title>
-      <link href="/h5/h5/h5%20app/"/>
-      <url>/h5/h5/h5%20app/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/h5/h5/H5%20webapp%20tech%20stack/"/>
+      <url>/h5/h5/H5%20webapp%20tech%20stack/</url>
       
-        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -1091,23 +1232,6 @@
     </entry>
     
     <entry>
-      <title>英语语法的内在逻辑</title>
-      <link href="/architecture/english/English%20grammar/"/>
-      <url>/architecture/english/English%20grammar/</url>
-      
-        <content type="html"><![CDATA[<p>在语言世界中，语法不是公式，而仅仅是规律。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>免费的CI/CD 工具</title>
       <link href="/CI/engineered/CI-free-tools/"/>
       <url>/CI/engineered/CI-free-tools/</url>
@@ -1125,16 +1249,16 @@
     </entry>
     
     <entry>
-      <title>前端面试tips</title>
-      <link href="/interview/frontend/Interview%20for%20frontend/"/>
-      <url>/interview/frontend/Interview%20for%20frontend/</url>
+      <title>英语语法的内在逻辑</title>
+      <link href="/architecture/english/English%20grammar/"/>
+      <url>/architecture/english/English%20grammar/</url>
       
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>在语言世界中，语法不是公式，而仅仅是规律。</p>]]></content>
       
       
       <categories>
           
-          <category> interview </category>
+          <category> architecture </category>
           
       </categories>
       
@@ -1159,16 +1283,16 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/CI-CD/devops/circleci%20basic/"/>
-      <url>/CI-CD/devops/circleci%20basic/</url>
+      <title>前端面试tips</title>
+      <link href="/interview/frontend/Interview%20for%20frontend/"/>
+      <url>/interview/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
           
-          <category> CI&amp;CD </category>
+          <category> interview </category>
           
       </categories>
       
@@ -1176,11 +1300,11 @@
     </entry>
     
     <entry>
-      <title>系统监控和维护</title>
-      <link href="/devops/devops/monitors%20for%20website/"/>
-      <url>/devops/devops/monitors%20for%20website/</url>
+      <title>Circle CI 基本使用</title>
+      <link href="/devops/devops/circleci%20basic/"/>
+      <url>/devops/devops/circleci%20basic/</url>
       
-        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1210,11 +1334,11 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/devops/devops/nginx%20usful%20command/"/>
-      <url>/devops/devops/nginx%20usful%20command/</url>
+      <title>系统监控和维护</title>
+      <link href="/devops/devops/monitors%20for%20website/"/>
+      <url>/devops/devops/monitors%20for%20website/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
       
       
       <categories>
@@ -1227,11 +1351,11 @@
     </entry>
     
     <entry>
-      <title>Ansible 入门和使用</title>
-      <link href="/devops/devops/ansible/"/>
-      <url>/devops/devops/ansible/</url>
+      <title>Nginx 常用操作</title>
+      <link href="/devops/devops/nginx%20usful%20command/"/>
+      <url>/devops/devops/nginx%20usful%20command/</url>
       
-        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
       
       
       <categories>
@@ -1254,6 +1378,23 @@
       <categories>
           
           <category> aws </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ansible 入门和使用</title>
+      <link href="/devops/devops/ansible/"/>
+      <url>/devops/devops/ansible/</url>
+      
+        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
           
       </categories>
       
@@ -1363,16 +1504,16 @@
     </entry>
     
     <entry>
-      <title>常用的GIT命令</title>
-      <link href="/devops/devops/Git%20commands/"/>
-      <url>/devops/devops/Git%20commands/</url>
+      <title>DDD (Domain-Driven Design) 领域驱动设计</title>
+      <link href="/architecture/architecture/Domain%20Driven%20Design/"/>
+      <url>/architecture/architecture/Domain%20Driven%20Design/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>DDD是一套综合软件系统分析和设计的面向对象建模方法，与此相似的工程方法还有RUP（统一建模语言）。DDD解决的问题是应用复杂问题下的建模问题。</p><h1 id="DDD的实践"><a href="#DDD的实践" class="headerlink" title="DDD的实践"></a>DDD的实践</h1><ul><li>边界上下文</li><li></li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul><li>DDD 有什么标准和产出</li><li>Domain模型发生变化如何处理？</li><li>服务之间的事务如何处理？</li><li>服务之间通信认证方式</li></ul>]]></content>
       
       
       <categories>
           
-          <category> devops </category>
+          <category> architecture </category>
           
       </categories>
       
@@ -1397,28 +1538,11 @@
     </entry>
     
     <entry>
-      <title>DDD (Domain-Driven Design) 领域驱动设计</title>
-      <link href="/architecture/architecture/Domain%20Driven%20Design/"/>
-      <url>/architecture/architecture/Domain%20Driven%20Design/</url>
-      
-        <content type="html"><![CDATA[<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>DDD是一套综合软件系统分析和设计的面向对象建模方法，与此相似的工程方法还有RUP（统一建模语言）。DDD解决的问题是应用复杂问题下的建模问题。</p><h1 id="DDD的实践"><a href="#DDD的实践" class="headerlink" title="DDD的实践"></a>DDD的实践</h1><ul><li>边界上下文</li><li></li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul><li>DDD 有什么标准和产出</li><li>Domain模型发生变化如何处理？</li><li>服务之间的事务如何处理？</li><li>服务之间通信认证方式</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Single sign-on (SSO) 单点登录技术方案</title>
       <link href="/architecture/architecture/SSO/"/>
       <url>/architecture/architecture/SSO/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li>OpenID 方案</li></ul>]]></content>
       
       
       <categories>
@@ -1482,11 +1606,11 @@
     </entry>
     
     <entry>
-      <title>敏捷开发 Way of working</title>
-      <link href="/agile/agile/Way%20of%20working/"/>
-      <url>/agile/agile/Way%20of%20working/</url>
+      <title>一个好的项目需要哪些周边生态?</title>
+      <link href="/agile/agile/ecosystem-for-project/"/>
+      <url>/agile/agile/ecosystem-for-project/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p><h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p><h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p><h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p><h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p><h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p><h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
       
       
       <categories>
@@ -1499,11 +1623,11 @@
     </entry>
     
     <entry>
-      <title>一个好的项目需要哪些周边生态?</title>
-      <link href="/agile/agile/ecosystem-for-project/"/>
-      <url>/agile/agile/ecosystem-for-project/</url>
+      <title>敏捷开发 Way of working</title>
+      <link href="/agile/agile/Way%20of%20working/"/>
+      <url>/agile/agile/Way%20of%20working/</url>
       
-        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p><h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p><h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p><h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p><h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p><h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p><h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>]]></content>
       
       
       <categories>
@@ -1567,11 +1691,11 @@
     </entry>
     
     <entry>
-      <title>Handover tips</title>
-      <link href="/method/Way%20of%20working%20for%20handover/"/>
-      <url>/method/Way%20of%20working%20for%20handover/</url>
+      <title>Tips to upgrade the relationship with colleagues</title>
+      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
+      <url>/method/Way%20of%20working%20for%20team%20building/</url>
       
-        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
       
       
       <categories>
@@ -1584,11 +1708,11 @@
     </entry>
     
     <entry>
-      <title>Tips to upgrade the relationship with colleagues</title>
-      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
-      <url>/method/Way%20of%20working%20for%20team%20building/</url>
+      <title>Handover tips</title>
+      <link href="/method/Way%20of%20working%20for%20handover/"/>
+      <url>/method/Way%20of%20working%20for%20handover/</url>
       
-        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
       
       
       <categories>
