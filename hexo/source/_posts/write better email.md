@@ -75,7 +75,3 @@ the fundamentals of Email
 - mark text as bold?
 - directly or indirectly
 - how to make a appropriate appreciation
-
-
-
-

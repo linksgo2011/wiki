@@ -3,23 +3,18 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>超实用的工具和网站收集 | Programming Wiki</title>
+  <title>FastDFS 分布式文件系统方案 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="流程图、思维导图https://www.processon.com
-可以绘制思维导图、流程图、ER图等
-https://coggle.it/
-超漂亮的思维导图工具
+  <meta name="description" content="简介FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。
+基本原理上传
 
-http://naotu.baidu.com/
-百度脑图
-网站https://octodex.github.com/
-github章鱼">
+client询问tracker上传到的storage，不">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="超实用的工具和网站收集">
+  <meta property="og:title" content="FastDFS 分布式文件系统方案">
   <meta property="og:site_name" content="Programming Wiki">
 
   
@@ -53,7 +48,7 @@ github章鱼">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">超实用的工具和网站收集</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-28</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">FastDFS 分布式文件系统方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-06</span></h1>
 </div>		
 
 <div class="row page">
@@ -66,15 +61,19 @@ github章鱼">
 	  
 
 	  <!-- content -->
-	  <h2 id="流程图、思维导图"><a href="#流程图、思维导图" class="headerlink" title="流程图、思维导图"></a>流程图、思维导图</h2><p><a href="https://www.processon.com" target="_blank" rel="noopener">https://www.processon.com</a></p>
-<p>可以绘制思维导图、流程图、ER图等</p>
-<p><a href="https://coggle.it/" target="_blank" rel="noopener">https://coggle.it/</a></p>
-<p>超漂亮的思维导图工具</p>
-<p><img src="/collection/tool-collections/coggle.png" alt=""></p>
-<p><a href="http://naotu.baidu.com/" target="_blank" rel="noopener">http://naotu.baidu.com/</a></p>
-<p>百度脑图</p>
-<h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><p><a href="https://octodex.github.com/" target="_blank" rel="noopener">https://octodex.github.com/</a></p>
-<p>github章鱼头像</p>
+	  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p>
+<ol>
+<li>client询问tracker上传到的storage，不需要附加参数；</li>
+<li>tracker返回一台可用的storage；</li>
+<li>client直接和storage通讯完成文件上传。</li>
+</ol>
+<p>下载</p>
+<ol>
+<li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li>
+<li>tracker返回一台可用的storage；</li>
+<li>client直接和storage通讯完成文件下载。</li>
+</ol>
 	  
 
 	  <div>
@@ -88,62 +87,6 @@ github章鱼">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
 		
@@ -237,6 +180,68 @@ github章鱼">
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 			
 			
@@ -263,6 +268,18 @@ github章鱼">
 		
 	
 		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
 	
 		
 			
@@ -275,17 +292,7 @@ github章鱼">
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -312,7 +319,7 @@ github章鱼">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/collection/frontend boilderplate/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/architecture/english/English grammar/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
