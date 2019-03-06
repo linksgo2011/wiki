@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title>API RESTful 风格</title>
+      <link href="/API-service/api/api-restful/"/>
+      <url>/API-service/api/api-restful/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> API&amp;service </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>API 文档和契约</title>
+      <link href="/API-service/api/api-document-and-contract/"/>
+      <url>/API-service/api/api-document-and-contract/</url>
+      
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> API&amp;service </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/security/security/Security-Development-Lifecycle/"/>
+      <url>/security/security/Security-Development-Lifecycle/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> security </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>FastDFS 分布式文件系统方案</title>
       <link href="/architecture/architecture/fastDFS/"/>
       <url>/architecture/architecture/fastDFS/</url>
@@ -586,23 +637,6 @@
     </entry>
     
     <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>读书清单</title>
       <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
       <url>/reading-writing/reading&amp;writing/reading%20list/</url>
@@ -613,6 +647,23 @@
       <categories>
           
           <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
           
       </categories>
       
@@ -790,11 +841,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
       
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -807,11 +858,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -1011,11 +1062,11 @@
     </entry>
     
     <entry>
-      <title>Java object clone</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
+      <title>理解 java exception</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
       
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">Object obj2 = obj1;</span><br></pre></td></tr></table></figure><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Object obj2 = <span class="keyword">new</span> Object();</span><br><span class="line">obj2.a = obj1.a;</span><br></pre></td></tr></table></figure><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</span><br><span class="line">Person p1 = (Person) p.clone();</span><br><span class="line"></span><br><span class="line">System.out.println(p);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(ints[<span class="number">4</span>]);</span><br><span class="line">    System.out.println(<span class="string">"是否还能执行"</span>);<span class="comment">// 发生异常以后，后面的代码不能被执行</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"数组越界错误"</span>);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"异常出现后"</span>);</span><br></pre></td></tr></table></figure></p><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                    <span class="keyword">new</span> FileInputStream(<span class="string">"file"</span>)));</span><br><span class="line">            <span class="comment">// do some other work</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// close reader</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            reader.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NeverCaught</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionB</span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ExceptionB(<span class="string">"exception b"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionC </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            f();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExceptionB e) &#123;</span><br><span class="line">            ExceptionC c = <span class="keyword">new</span> ExceptionC(<span class="string">"exception a"</span>);</span><br><span class="line">            <span class="comment">//异常连</span></span><br><span class="line">            c.initCause(e);</span><br><span class="line">            <span class="keyword">throw</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                g();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ExceptionC e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">exception.ExceptionC</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:12)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.main(NeverCaught.java:21)</span></span><br><span class="line"><span class="comment">Caused by: exception.ExceptionB</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.f(NeverCaught.java:5)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:10)</span></span><br><span class="line"><span class="comment">... 1 more</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
@@ -1028,11 +1079,11 @@
     </entry>
     
     <entry>
-      <title>理解 java exception</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
+      <title>Java object clone</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
       
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(ints[<span class="number">4</span>]);</span><br><span class="line">    System.out.println(<span class="string">"是否还能执行"</span>);<span class="comment">// 发生异常以后，后面的代码不能被执行</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"数组越界错误"</span>);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"异常出现后"</span>);</span><br></pre></td></tr></table></figure></p><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                    <span class="keyword">new</span> FileInputStream(<span class="string">"file"</span>)));</span><br><span class="line">            <span class="comment">// do some other work</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// close reader</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            reader.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NeverCaught</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionB</span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ExceptionB(<span class="string">"exception b"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionC </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            f();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExceptionB e) &#123;</span><br><span class="line">            ExceptionC c = <span class="keyword">new</span> ExceptionC(<span class="string">"exception a"</span>);</span><br><span class="line">            <span class="comment">//异常连</span></span><br><span class="line">            c.initCause(e);</span><br><span class="line">            <span class="keyword">throw</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                g();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ExceptionC e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">exception.ExceptionC</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:12)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.main(NeverCaught.java:21)</span></span><br><span class="line"><span class="comment">Caused by: exception.ExceptionB</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.f(NeverCaught.java:5)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:10)</span></span><br><span class="line"><span class="comment">... 1 more</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">Object obj2 = obj1;</span><br></pre></td></tr></table></figure><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Object obj2 = <span class="keyword">new</span> Object();</span><br><span class="line">obj2.a = obj1.a;</span><br></pre></td></tr></table></figure><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</span><br><span class="line">Person p1 = (Person) p.clone();</span><br><span class="line"></span><br><span class="line">System.out.println(p);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1283,23 +1334,6 @@
     </entry>
     
     <entry>
-      <title>英语语法的内在逻辑</title>
-      <link href="/architecture/english/English%20grammar/"/>
-      <url>/architecture/english/English%20grammar/</url>
-      
-        <content type="html"><![CDATA[<p>在语言世界中，语法不是公式，而仅仅是规律。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端面试tips</title>
       <link href="/interview/frontend/Interview%20for%20frontend/"/>
       <url>/interview/frontend/Interview%20for%20frontend/</url>
@@ -1310,6 +1344,23 @@
       <categories>
           
           <category> interview </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>英语语法的内在逻辑</title>
+      <link href="/architecture/english/English%20grammar/"/>
+      <url>/architecture/english/English%20grammar/</url>
+      
+        <content type="html"><![CDATA[<p>在语言世界中，语法不是公式，而仅仅是规律。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> architecture </category>
           
       </categories>
       
@@ -1385,23 +1436,6 @@
     </entry>
     
     <entry>
-      <title>Ansible 入门和使用</title>
-      <link href="/devops/devops/ansible/"/>
-      <url>/devops/devops/ansible/</url>
-      
-        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> devops </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>使用SSH实现自动化部署</title>
       <link href="/aws/devops/auto%20deployment%20with%20ssh/"/>
       <url>/aws/devops/auto%20deployment%20with%20ssh/</url>
@@ -1412,6 +1446,23 @@
       <categories>
           
           <category> aws </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ansible 入门和使用</title>
+      <link href="/devops/devops/ansible/"/>
+      <url>/devops/devops/ansible/</url>
+      
+        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
           
       </categories>
       
@@ -1623,11 +1674,11 @@
     </entry>
     
     <entry>
-      <title>敏捷开发 Way of working</title>
-      <link href="/agile/agile/Way%20of%20working/"/>
-      <url>/agile/agile/Way%20of%20working/</url>
+      <title>领域驱动设计</title>
+      <link href="/agile/agile/domain%20driven%20design/"/>
+      <url>/agile/agile/domain%20driven%20design/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p><h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p><h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p><h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p><h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p><h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p><h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="什么是领域驱动设计？"><a href="#什么是领域驱动设计？" class="headerlink" title="什么是领域驱动设计？"></a>什么是领域驱动设计？</h2><p>领域驱动设计是一种设计软件系统的方法。类似的方法有UML、ER图。</p><h2 id="资源推荐"><a href="#资源推荐" class="headerlink" title="资源推荐"></a>资源推荐</h2><ul><li>《》</li></ul>]]></content>
       
       
       <categories>
@@ -1640,11 +1691,11 @@
     </entry>
     
     <entry>
-      <title>领域驱动设计</title>
-      <link href="/agile/agile/domain%20driven%20design/"/>
-      <url>/agile/agile/domain%20driven%20design/</url>
+      <title>敏捷开发 Way of working</title>
+      <link href="/agile/agile/Way%20of%20working/"/>
+      <url>/agile/agile/Way%20of%20working/</url>
       
-        <content type="html"><![CDATA[<h2 id="什么是领域驱动设计？"><a href="#什么是领域驱动设计？" class="headerlink" title="什么是领域驱动设计？"></a>什么是领域驱动设计？</h2><p>领域驱动设计是一种设计软件系统的方法。类似的方法有UML、ER图。</p><h2 id="资源推荐"><a href="#资源推荐" class="headerlink" title="资源推荐"></a>资源推荐</h2><ul><li>《》</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA负责建story卡，如果其他人需要建立卡片，需要告知BA</p><h2 id="three-amigos"><a href="#three-amigos" class="headerlink" title="three amigos"></a>three amigos</h2><p>BA DEV QA 三方catchup，澄清卡的需求，然后BA移动到当前迭代</p><h2 id="estimation"><a href="#estimation" class="headerlink" title="estimation"></a>estimation</h2><p>BA发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过5个点的卡需要被拆分</p><h2 id="ready-for-dev"><a href="#ready-for-dev" class="headerlink" title="ready for dev"></a>ready for dev</h2><p>BA把卡移动到ready for dev，然后开发就可以开始工作</p><h2 id="development"><a href="#development" class="headerlink" title="development"></a>development</h2><p>Dev需要和BA、QA领卡，kick off然后开始工作，每个卡需要建立一个branch，完成工作后需要检查pipeline是否通过然后，创建Pull request，然后该卡可以移动到review</p><h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Review 环节需要找人approve PR</p><h2 id="Ready-for-test"><a href="#Ready-for-test" class="headerlink" title="Ready for test"></a>Ready for test</h2><p>合并代码到Master，和QA sign off后移动故事卡到Ready for test</p>]]></content>
       
       
       <categories>
