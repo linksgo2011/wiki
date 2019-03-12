@@ -1,6 +1,6 @@
 ---
 title: 前端代码的一些反模式
-categories: fronted
+categories: frontend
 toc: true
 ---
 

@@ -9,6 +9,7 @@ toc: true
 5个维度描述大数据，Volume（大量）、Velocity（高速）、Variety（多样）、Value（低价值密度）、Veracity（真实性）
 
 ## 相关技术
+
 - HDFS: Hadoop分布式文件系统(Distributed File System) － HDFS (Hadoop Distributed File System)
 - MapReduce：并行计算框架，0.20前使用 org.apache.hadoop.mapred 旧接口，0.20版本开始引入org.apache.hadoop.mapreduce的新API
 - HBase: 类似Google BigTable的分布式NoSQL列数据库。（HBase和Avro已经于2010年5月成为顶级 Apache 项目）

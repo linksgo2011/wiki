@@ -1,6 +1,6 @@
 ---
 title: 前端面试tips
-categories: interview
+categories: frontend
 toc: true
 ---
 

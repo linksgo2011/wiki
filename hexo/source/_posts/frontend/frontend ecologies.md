@@ -1,6 +1,6 @@
 ---
 title: 前端生态图谱
-categories: fronted
+categories: frontend
 toc: true
 ---
 

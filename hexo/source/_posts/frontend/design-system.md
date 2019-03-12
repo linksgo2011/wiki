@@ -1,6 +1,6 @@
 ---
 title: web 视觉设计系统
-categories: design-system
+categories: frontend
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 清理对象中的空值
-categories: fronted
+categories: frontend
 toc: true
 ---
 
