@@ -3,6 +3,8 @@ title: Event Storming 事件风暴
 categories: architecture
 ---
 
+摘自维基百科的解释：
+
 Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Comparing to other methods it is extremely lightweight and requires intentionally no support by a computer. The result is expressed in sticky notes on a wide wall. The business process is "stormed out" as a series of domain events which are denoted as orange stickies. It was invented by Alberto Brandolini in the context of domain-driven design. 
 
 事件风暴是一个快速发现软件系统中领域知识的工作坊方法。这种工作坊通过粘贴卡片的方式来整理团队思绪，实践中可以使用不同的报事贴代表不同的对象。
