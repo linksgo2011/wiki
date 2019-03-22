@@ -19,9 +19,8 @@ categories: architecture
 - Pack testing 
 - OAuth2/SSO
 - CDN 
-- Mysql 
-
-
+- Mysql
+- zookeeper
 
 ## 分布式架构设计图
 
