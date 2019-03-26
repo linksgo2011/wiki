@@ -5,3 +5,4 @@ categories: architecture
 
 
 - OpenID 方案
+- CAS 方案
