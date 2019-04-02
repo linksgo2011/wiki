@@ -8,6 +8,33 @@ toc: true
 
 5个维度描述大数据，Volume（大量）、Velocity（高速）、Variety（多样）、Value（低价值密度）、Veracity（真实性）
 
+## 程序员掌握的4个维度
+
+- A AI
+- B Big data 
+- C coding 
+- D Devops
+
+## 概念
+
+- 分布式存储 区别于传统的数据存储方式，由单机变成计算机集群来处理数据
+- 大数据相关职位
+  - 数据分析师
+  - 数据科学家
+  - 数据工程师
+- 数据工程的特征
+  - 拓展性
+  - 容错性
+  - 弹性
+  - 可调式性
+  - 可维护性
+- 数据分区  将数据分散到多台机器上处理
+- 数据映射 数据流和结构化数据之间的关系
+- 排序
+- 真实数据源
+- 推与拉
+  
+
 ## 相关技术
 
 - HDFS: Hadoop分布式文件系统(Distributed File System) － HDFS (Hadoop Distributed File System)
@@ -19,3 +46,4 @@ toc: true
 - Pig: 大数据分析平台，为用户提供多种接口。
 - Ambari：Hadoop管理工具，可以快捷的监控、部署、管理集群。
 - Sqoop：于在HADOOP与传统的数据库间进行数据的传递。
+- Spark 
