@@ -46,8 +46,8 @@ toc: true
 - Pig: 大数据分析平台，为用户提供多种接口。
 - Ambari：Hadoop管理工具，可以快捷的监控、部署、管理集群。
 - Sqoop：于在HADOOP与传统的数据库间进行数据的传递。
-- Spark: 用来做数据查询
-- CDH： 企业级的部署工具
+- Spark: 用来做数据流处理
+- CDH： 企业级的部署工具 Cloud Distribution Hadoop
 
 
 ## 数据工程的4层架构
@@ -76,3 +76,7 @@ toc: true
   - Apache zookeeper
   - Apache Ambari
   - Talend
+
+
+## 最小工具集
+
