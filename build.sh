@@ -4,8 +4,8 @@ git status
 
 ## generate wiki
 cd hexo
-hexo clean
-hexo g
+npm run clean
+npm run g
 
 
 ## commit to git
