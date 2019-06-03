@@ -3,21 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Tips to upgrade the relationship with colleagues | Programming Wiki</title>
+  <title>JPA 批量插入数据 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="一些tips
-关注人的感受, 多表达感谢, 不要直接批评
-
-从Thoughtworks学到的
-Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。
-
-Feedback m">
+  <meta name="description" content="1234567891011121314151617181920@Override    @Transactional    public &amp;lt;S extends T&amp;gt; Iterable&amp;lt;S&amp;gt; batchSave(Iterable&amp;lt;S&amp;gt; var1) &amp;#123;   ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Tips to upgrade the relationship with colleagues">
+  <meta property="og:title" content="JPA 批量插入数据">
   <meta property="og:site_name" content="Programming Wiki">
 
   
@@ -51,7 +45,7 @@ Feedback m">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Tips to upgrade the relationship with colleagues</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">JPA 批量插入数据</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-06-03</span></h1>
 </div>		
 
 <div class="row page">
@@ -64,16 +58,7 @@ Feedback m">
 	  
 
 	  <!-- content -->
-	  <h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul>
-<li>关注人的感受, 多表达感谢, 不要直接批评</li>
-</ul>
-<h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul>
-<li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p>
-</li>
-<li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p>
-</li>
-</ul>
-	  
+	  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@Override</span><br><span class="line">    @Transactional</span><br><span class="line">    public &lt;S extends T&gt; Iterable&lt;S&gt; batchSave(Iterable&lt;S&gt; var1) &#123;</span><br><span class="line">        Iterator&lt;S&gt; iterator = var1.iterator();</span><br><span class="line">        int index = 0;</span><br><span class="line">        while (iterator.hasNext())&#123;</span><br><span class="line">            em.persist(iterator.next());</span><br><span class="line">            index++;</span><br><span class="line">            if (index % BATCH_SIZE == 0)&#123;</span><br><span class="line">                em.flush();</span><br><span class="line">                em.clear();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (index % BATCH_SIZE != 0)&#123;</span><br><span class="line">            em.flush();</span><br><span class="line">            em.clear();</span><br><span class="line">        &#125;</span><br><span class="line">        return var1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>	  
 
 	  <div>
   		<center>
@@ -86,177 +71,28 @@ Feedback m">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
+			
 		
 	
 		
-	
+			
+			
+			
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
@@ -276,15 +112,15 @@ Feedback m">
 		
 	
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
-	
+			
 		
 	
 		
@@ -381,19 +217,202 @@ Feedback m">
 	
 		
 			
-			
-		
-	
-		
-			
-			
-			
 		
 	
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 	
@@ -402,7 +421,7 @@ Feedback m">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/method/Way of working for handover/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/java/java/spring-async/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
