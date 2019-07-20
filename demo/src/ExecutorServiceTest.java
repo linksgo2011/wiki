@@ -8,19 +8,8 @@ import java.util.concurrent.Executors;
 public class ExecutorServiceTest {
     public static void main(String []args) {
 
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 30; i++) {
-            int finalI = i;
-            executorService.execute(new Runnable() {
-                public void run() {
-                    try {
-                        Thread.sleep(20000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("Asynchronous task " + finalI);
-                }
-            });
+        for (int i = 0; i < 3; i++) {
+            createPool(i);
         }
 
         while (true){
@@ -29,6 +18,23 @@ public class ExecutorServiceTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private static void createPool(int poolId) {
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        for (int i = 0; i < 20; i++) {
+            int finalI = i;
+            executorService.execute(new Runnable() {
+                public void run() {
+                    try {
+                        Thread.sleep(20000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Asynchronous task " + poolId + finalI);
+                }
+            });
         }
     }
 }
