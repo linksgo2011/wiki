@@ -3,33 +3,16 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Java web工程师知识图谱 | Programming Wiki</title>
+  <title>Jmeter 性能测试 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="Java基础
-
-Web开发基础知识
-
-浏览器工作原理
-Servlet和JSP
-HTTP协议
-DNS解析原理
-HTML、CSS、JS
-
-
-Java框架
-
-Spring、Spring MVC
-Mybatis
-Hibernate
-Shiro\Spring security
-Spring boot
-JWT ">
+  <meta name="description" content="Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。
+安装方式Jmeter 使用 Jar 发布，需要 java 运行环境，无需专门安装。下载地址">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java web工程师知识图谱">
+  <meta property="og:title" content="Jmeter 性能测试">
   <meta property="og:site_name" content="Programming Wiki">
 
   
@@ -63,7 +46,7 @@ JWT ">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Java web工程师知识图谱</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">Jmeter 性能测试</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-07-20</span></h1>
 </div>		
 
 <div class="row page">
@@ -76,94 +59,19 @@ JWT ">
 	  
 
 	  <!-- content -->
-	  <ol>
-<li><p>Java基础</p>
-</li>
-<li><p>Web开发基础知识</p>
-<ul>
-<li>浏览器工作原理</li>
-<li>Servlet和JSP</li>
-<li>HTTP协议</li>
-<li>DNS解析原理</li>
-<li>HTML、CSS、JS</li>
-</ul>
-</li>
-<li><p>Java框架</p>
-<ul>
-<li>Spring、Spring MVC</li>
-<li>Mybatis</li>
-<li>Hibernate</li>
-<li>Shiro\Spring security</li>
-<li>Spring boot</li>
-<li>JWT token认证方案</li>
-</ul>
-</li>
-<li><p>常用library</p>
-<ul>
-<li>Google guava集合处理和常用工具</li>
-<li>Apache commons api</li>
-<li>Quartz计划任务处理</li>
-<li>Jackson json处理</li>
-<li>Selflog 日志生成</li>
-<li>freemarker模板引擎</li>
-<li>Apache httpcomponent HTTP client工具</li>
-</ul>
-</li>
-<li><p>数据库</p>
-<ul>
-<li>Mysql</li>
-<li>MongoDB</li>
-<li>Redis</li>
-</ul>
-</li>
-<li><p>架构设计</p>
-<ul>
-<li>OAuth</li>
-<li>Restful API设计</li>
-<li>SSO单点登录</li>
-<li>分布式框架Dubbo</li>
-<li>微服务框架Spring cloud</li>
-</ul>
-</li>
-<li><p>工程化</p>
-<ul>
-<li>Gradle\Maven构建工具</li>
-<li>Jenkins</li>
-<li>Circleci PaaS平台的CI</li>
-<li>Checkstyle代码质量检测</li>
-<li>FindBugs代码检测</li>
-<li>Swagger文档管理</li>
-<li>Axway webgate网关方案</li>
-</ul>
-</li>
-<li><p>测试</p>
-<ul>
-<li>Contract 测试Pact</li>
-<li>Junit</li>
-<li>Assertj断言库</li>
-<li>mockito 单元测试Mock工具</li>
-<li>WireMock数据拦截和模拟</li>
-</ul>
-</li>
-<li><p>部署和监控</p>
-<ul>
-<li>Linux</li>
-<li>Tomcat web服务器</li>
-<li>Nginx负载均衡</li>
-<li>Splunk日志管理</li>
-<li>Dynatrace</li>
-<li>ELK(ElasticSearch+Logstash+ Kibana)</li>
-<li>Spring boot admin监控</li>
-</ul>
-</li>
-<li><p>项目管理</p>
-<ul>
-<li>禅道管理平台</li>
-<li>Trello看板管理</li>
-<li>Confluence文档管理</li>
-</ul>
-</li>
+	  <p>Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。</p>
+<h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><p>Jmeter 使用 Jar 发布，需要 java 运行环境，无需专门安装。<br>下载地址：<a href="http://jmeter.apache.org/download_jmeter.cgi" target="_blank" rel="noopener">http://jmeter.apache.org/download_jmeter.cgi</a></p>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>下面是一个测试 web 访问的基本例子：</p>
+<ol>
+<li>“测试计划” -&gt; “添加” -&gt; “Threads(Users)” -&gt; “线程组”，配置线程数量、时长、循环次数等。</li>
+<li>“线程组” -&gt; “添加” -&gt; “Sampler” -&gt; “HTTP请求”  创建一个HTTP请求的示例</li>
+<li>“线程组” -&gt; “添加” -&gt; “监听器” -&gt; “察看结果树” 创建一个查看结果的方式，可以选择图形、断言等其他方式</li>
+<li>运行测试</li>
 </ol>
+<p>Jmeter还可以创建变量等更高级的方式。</p>
+<ul>
+<li>介绍文档 <a href="https://blog.csdn.net/u012111923/article/details/80705141" target="_blank" rel="noopener">https://blog.csdn.net/u012111923/article/details/80705141</a></li>
+</ul>
 	  
 
 	  <div>
@@ -177,70 +85,7 @@ JWT ">
 	
 	
 		
-	
-		
 			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
 			
 		
 	
@@ -334,10 +179,6 @@ JWT ">
 	
 		
 	
-		
-	
-		
-			
 		
 	
 		
@@ -422,55 +263,6 @@ JWT ">
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
 			
 			
 		
@@ -534,16 +326,94 @@ JWT ">
 		
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
 	
 	
-		<li class="prev"><a href="/java/java/Java api tech map/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/java/Gradle basic/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/test/test/Contract testing & PACT/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
