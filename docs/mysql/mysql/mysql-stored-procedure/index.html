@@ -3,18 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>web 视觉设计系统 | Programming Wiki</title>
+  <title>mysql 存储过程编写示例 | Programming Wiki</title>
   <meta name="author" content="cn.printf">
   
-  <meta name="description" content="在做前端开发和设计时，遇到的一个问题是如何像让每个颜色、尺寸、组件全局统一，因此我们需要前端开发者和UX有一个统一的设计。
-从而演化出自己的一套设计系统框架和项目模板，类似于 bootstrap和Foundation 
-开源项目
-css 设计系统汇总 https://github.com/topic">
+  <meta name="description" content="一个创建模拟数据的存储过程1234567891011121314151617181920DROP PROCEDURE IF EXISTS `insertStubData`;DELIMITER $$CREATE PROCEDURE `insertStubData`()BEGIN    DECLARE ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="web 视觉设计系统">
+  <meta property="og:title" content="mysql 存储过程编写示例">
   <meta property="og:site_name" content="Programming Wiki">
 
   
@@ -48,7 +45,7 @@ css 设计系统汇总 https://github.com/topic">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">web 视觉设计系统</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-08</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">mysql 存储过程编写示例</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-07-26</span></h1>
 </div>		
 
 <div class="row page">
@@ -70,17 +67,13 @@ css 设计系统汇总 https://github.com/topic">
 	
 
 	  <!-- content -->
-	  <p>在做前端开发和设计时，遇到的一个问题是如何像让每个颜色、尺寸、组件全局统一，因此我们需要前端开发者和UX有一个统一的设计。</p>
-<p>从而演化出自己的一套设计系统框架和项目模板，类似于 bootstrap和Foundation </p>
-<h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul>
-<li>css 设计系统汇总 <a href="https://github.com/topics/design-system?l=css" target="_blank" rel="noopener">https://github.com/topics/design-system?l=css</a></li>
-<li>primer css <a href="https://github.com/primer/css" target="_blank" rel="noopener">https://github.com/primer/css</a></li>
-<li>codyhouse framework <a href="https://github.com/CodyHouse/codyhouse-framework" target="_blank" rel="noopener">https://github.com/CodyHouse/codyhouse-framework</a></li>
+	  <h2 id="一个创建模拟数据的存储过程"><a href="#一个创建模拟数据的存储过程" class="headerlink" title="一个创建模拟数据的存储过程"></a>一个创建模拟数据的存储过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">DROP PROCEDURE IF EXISTS `insertStubData`;</span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE PROCEDURE `insertStubData`()</span><br><span class="line">BEGIN</span><br><span class="line">    DECLARE i int unsigned DEFAULT 0;</span><br><span class="line">    WHILE i &lt; 30000 DO</span><br><span class="line">		SET i = i+1;</span><br><span class="line">		INSERT INTO `sso_login`(`id`,</span><br><span class="line">		`phone_nbr`,</span><br><span class="line">		`open_id`,</span><br><span class="line">		`project_from`,</span><br><span class="line">		`task_id`)</span><br><span class="line">		VALUES</span><br><span class="line">		(null,CONCAT(&quot;133&quot;,i),i,&quot;TW&quot;,10);</span><br><span class="line">    END WHILE;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER ;</span><br><span class="line"></span><br><span class="line">CALL insertStubData();</span><br></pre></td></tr></table></figure>
+<h2 id="编写-mysql-存储过程的基础"><a href="#编写-mysql-存储过程的基础" class="headerlink" title="编写 mysql 存储过程的基础"></a>编写 mysql 存储过程的基础</h2><ul>
+<li>基本教程 <a href="https://www.runoob.com/w3cnote/mysql-stored-procedure.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/mysql-stored-procedure.html</a></li>
 </ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>Design Systems: Building for the Future <a href="https://css-tricks.com/design-systems-building-future/" target="_blank" rel="noopener">https://css-tricks.com/design-systems-building-future/</a></li>
-<li>Salesforce 提供的一套轻量级设计系统方案 <a href="https://www.lightningdesignsystem.com/utilities/alignment/" target="_blank" rel="noopener">https://www.lightningdesignsystem.com/utilities/alignment/</a></li>
-<li>视频课程 <a href="https://www.lynda.com/CSS-tutorials/CSS-Design-Systems-Architectures/688549-2.html" target="_blank" rel="noopener">https://www.lynda.com/CSS-tutorials/CSS-Design-Systems-Architectures/688549-2.html</a></li>
+<h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><ul>
+<li>定义变量需要和SQL保持一致</li>
+<li>使用 SET 为变量赋值</li>
 </ul>
 	  
 
@@ -95,110 +88,6 @@ css 设计系统汇总 https://github.com/topic">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
@@ -234,11 +123,23 @@ css 设计系统汇总 https://github.com/topic">
 		
 	
 		
-			
-			
-			
+	
 		
-			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -258,7 +159,47 @@ css 设计系统汇总 https://github.com/topic">
 		
 	
 		
-			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -369,6 +310,12 @@ css 设计系统汇总 https://github.com/topic">
 	
 		
 			
+			
+			
+		
+	
+		
+	
 		
 	
 		
@@ -427,13 +374,53 @@ css 设计系统汇总 https://github.com/topic">
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/frontend/frontend/micro-format/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/mysql/mysql/Useful mysql statement/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/frontend/frontend/clean-empty-attribute-in-object/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/mysql/mysql/Mysql configuration/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

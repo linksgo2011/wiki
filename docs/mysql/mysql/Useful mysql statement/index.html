@@ -10,7 +10,7 @@
 
 update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&amp;#39;,&amp;#39;http://helpjs.bj.bcebos.com/&amp;#39;)
 
- git clone ht">
+表之间复制数据,可以使用 ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -49,7 +49,7 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">实用的SQL语句技巧</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+  <h1><a class="brand" href="/">Programming Wiki</a><span class="split"></span><span class="title">实用的SQL语句技巧</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-07-26</span></h1>
 </div>		
 
 <div class="row page">
@@ -66,7 +66,10 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
 <blockquote>
 <p>update typecho_contents set text=REPLACE (addr,’<a href="http://bcs.duapp.com/helpjs&#39;,&#39;http://helpjs.bj.bcebos.com/&#39;" target="_blank" rel="noopener">http://bcs.duapp.com/helpjs&#39;,&#39;http://helpjs.bj.bcebos.com/&#39;</a>)</p>
 </blockquote>
-<p> git clone <a href="https://github.com/linksgo2011/tinda_app_cordova.git" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova.git</a><br> cd tinda_app_cordova<br> git pull </p>
+<p>表之间复制数据,可以使用 select into table1(field1,field2) select (value1,value2) from table2</p>
+<blockquote>
+<p> insert into user_temp(id,phone_nbr,open_id,project_from,task_id)<br>           select id,phone_nbr,open_id,project_from,task_id from user where task_id=#{taskId}</p>
+</blockquote>
 	  
 
 	  <div>
@@ -80,6 +83,15 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
 	
 	
 		
+			
+			
+		
+	
+		
+			
+			
+			
+		
 	
 		
 	
@@ -296,17 +308,6 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
 		
 	
 		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -314,8 +315,6 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
 	
 		
 			
-			
-			
 		
 	
 		
@@ -402,13 +401,21 @@ update typecho_contents set text=REPLACE (addr,’http://bcs.duapp.com/helpjs&am
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/mysql/mysql/Mysql configuration/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/mysql/mysql/Mysql baisc operation/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/mysql/mysql/mysql-stored-procedure/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
