@@ -31,3 +31,32 @@ categories: reading&writing
 - 文章的骨骼是结构
 - 文章的案例和陈述是肉
 - 文章的格式和错误是皮
+
+## 文体分类
+    
+目前文体分类不是特别严格，并且争议比较大。但是对文体进行分类对写作的特征更有帮助。
+
+- 议论文
+    - 用来表达观点，应使用强有力的论据和逻辑支撑。毛主席的《实践论》，这种文章很容易具有煽动性。
+    - 参考文章
+        - 《超越云计算：对数据库管理系统未来的思考》https://www.infoq.cn/article/MrCVHNFtHqt-VXYWisEd
+        - 《你要专业》 https://mp.weixin.qq.com/s/JwDKYOW4XRwQZa4ybEwOFA
+- 应用文
+    - 书信等
+- 说明文
+    - 陈述技术方案，IT行业最常见的写作问题。写作手法主要是 what why how。标题往往是对xxx的介绍。
+    - 参考文章
+        - 《可视化架构设计——C4介绍》https://mp.weixin.qq.com/s/cy-b_Vu9oBz7TrOIaJTADg
+        - 《坐看云起时，谈笑无还期》https://mp.weixin.qq.com/s/QCnclsGw-FCaXPMH7QcgcQ
+        - 《为什么都2019年了大家还喜欢用 TypeScript》https://mp.weixin.qq.com/s/edt5QplvGxqfGl-oDC5m3g
+- 教程
+    - 教授一个明确的内容, 例如《Java 8 中的 Streams API 详解》 https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/
+- 杂文
+
+## 写作手法
+
+- 讲故事
+- 引用数据
+- 介绍案例
+- 引用名言
+ 
