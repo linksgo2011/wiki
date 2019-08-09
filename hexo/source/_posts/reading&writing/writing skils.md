@@ -41,6 +41,7 @@ categories: reading&writing
     - 参考文章
         - 《超越云计算：对数据库管理系统未来的思考》https://www.infoq.cn/article/MrCVHNFtHqt-VXYWisEd
         - 《你要专业》 https://mp.weixin.qq.com/s/JwDKYOW4XRwQZa4ybEwOFA
+        - 《香港问题的终极归因》https://mp.weixin.qq.com/s/J8xzOwrezz6NHCVGvROvTQ
 - 应用文
     - 书信等
 - 说明文
@@ -59,4 +60,9 @@ categories: reading&writing
 - 引用数据
 - 介绍案例
 - 引用名言
+
+## 写作的本质
+
+写作的本质是逻辑+表达。文艺作品表达生动具体，文章的可读性和吸引力强，但是逻辑不明显或者不强。程序员写东西反过来了,程序员的文章往往具有很强的结构性和逻辑性，但是不够具体和生动，表达不是特别专业。
+
  
