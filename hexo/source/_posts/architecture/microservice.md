@@ -10,6 +10,8 @@ categories: architecture
 - https://gitee.com/peter.e.king/goodeen 基于springboot微服务的maven项目，技术栈是 Mybatis + shiro + spring aop事务
 - https://gitee.com/yu120/neural 并发控制、限流、熔断
 - https://gitee.com/log4j/pig 微服务权限管理
+- https://github.com/joecao/qbike A demo of share bike using DDD, MicroService and Spring Cloud
+- 
 
 ## 参考资料
 

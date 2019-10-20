@@ -15,4 +15,3 @@ categories: architecture
 ## 参考资源
 
 - http://dockone.io/article/2991  云原生架构概述****
-
