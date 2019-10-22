@@ -35,4 +35,10 @@ toc: true
 
 > git stash pop
 
+## 资源
+
+- http://onlywei.github.io/explain-git-with-d3/#branch  Explain Git with D3
+- https://learngitbranching.js.org/ Learn Git Branching
+- https://github.com/Gazler/githug Lean git by game 
+
 

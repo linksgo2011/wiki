@@ -6,4 +6,4 @@ $url = 'aHR0cHM6Ly9kMjR1a280dnFscHg4bi5jbG91ZGZyb250Lm5ldC9tZWRpYS8xODUvMTg1LzIw
 
 echo base64_decode(str_replace(" ","+",$url));
 
- ?>
+?>
