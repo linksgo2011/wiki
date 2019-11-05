@@ -3,11 +3,73 @@
   
     
     <entry>
-      <title>一些演讲技巧</title>
+      <title></title>
+      <link href="/uncategorized/devops/vagrant/"/>
+      <url>/uncategorized/devops/vagrant/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: Vagrant<br>categories: devops</p><h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><h3 id="虚拟机管理工具"><a href="#虚拟机管理工具" class="headerlink" title="虚拟机管理工具"></a>虚拟机管理工具</h3><p>安装步骤</p><ol><li>安装 VisualBox</li><li>安装 Vagrant</li><li>安装 Vagrant 封装好的镜像</li><li>启动 </li></ol><p>安装方法：</p><p><a href="https://blog.csdn.net/yanyan42/article/details/79697659" target="_blank" rel="noopener">https://blog.csdn.net/yanyan42/article/details/79697659</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Swarm</title>
+      <link href="/devops/devops/swarm/"/>
+      <url>/devops/devops/swarm/</url>
+      
+        <content type="html"><![CDATA[<p>Docker 官方容器编排工具。</p><p>Docker 编排的几种模式</p><ul><li>Docker for desktop </li><li>Swarm 官方的编排工具</li><li>K8s 社区最火的编排工具</li></ul><h2 id="Swarm-相关概念"><a href="#Swarm-相关概念" class="headerlink" title="Swarm 相关概念"></a>Swarm 相关概念</h2><h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack 指一个应用需要的一整套容器，例如前端、后端API、BFF等，由多个 service 构成。</p><h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>一个 Service 指一个 docker compose运行后的一个服务，可以存在多个容器的副本</p><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p>一个Docker镜像</p><h3 id="network"><a href="#network" class="headerlink" title="network"></a>network</h3><p>容器分配的IP地址</p><p>TODO Docker 的概念</p><h3 id="Volumes"><a href="#Volumes" class="headerlink" title="Volumes"></a>Volumes</h3><p>容器运行需要的存储空间。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://docs.docker.com/v17.09/engine/swarm/" target="_blank" rel="noopener">https://docs.docker.com/v17.09/engine/swarm/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>QA in agile</title>
+      <link href="/qa/test/QA%20in%20agile/"/>
+      <url>/qa/test/QA%20in%20agile/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常用QA概念"><a href="#常用QA概念" class="headerlink" title="常用QA概念"></a>常用QA概念</h2><p>探索性测试:同时设计测试和执行测试。探索性测试有时候会与即兴测试（ad hoc testing）混淆。即兴测试通常是指临时准备的、即兴的Bug搜索测试过程。从定义可以看出，谁都可以做即兴测试。由Cem Kaner提出的探索性测试，相比即兴测试是一种精致的、有思想的过程。</p><p>测试金字塔: unit-&gt;service-&gt;UI, 伴随测试成本投入,收益减少。unit为测试性价比最高的方式<br>冒烟测试: sanity测试,快速验证应用是否能工作。<br>BDD测试: 基于业务的测试思想。<br>E2E测试: 端对端测试。<br>集成测试:<br>Functional: E2E测试。<br>渗透测试：破坏性的测试，测试系统安全性<br>架构测试：测试架构是否被破坏</p><h2 id="常用测试工具"><a href="#常用测试工具" class="headerlink" title="常用测试工具"></a>常用测试工具</h2><ul><li>selenium 可以驱动浏览器，模拟真实用户</li><li>jemeter 性能测试工具</li><li>archunit 架构测试工具</li></ul><h2 id="Case-设计"><a href="#Case-设计" class="headerlink" title="Case 设计"></a>Case 设计</h2><p>A test case, is a set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirement.</p><h3 id="Common-Methods-Black-box"><a href="#Common-Methods-Black-box" class="headerlink" title="Common Methods - Black box"></a>Common Methods - Black box</h3><ul><li>Boundary Value Analysis 边界值分析</li><li>Equivalence Partitioning 等价划分</li><li>Causal Diagram 因果图</li><li>Decision Table 判定表</li></ul><h3 id="Common-Methods-White-box"><a href="#Common-Methods-White-box" class="headerlink" title="Common Methods - White box"></a>Common Methods - White box</h3><ul><li>Logical coverage<ul><li>statement coverage</li><li>Branch coverage</li><li>Path coverage</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> qa </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>测试策略</title>
+      <link href="/qa/test/testing-strategy/"/>
+      <url>/qa/test/testing-strategy/</url>
+      
+        <content type="html"><![CDATA[<p>一个项目需要做多少测试，做到什么程度，这属于测试策略的范畴。</p><h2 id="重-API-的测试策略"><a href="#重-API-的测试策略" class="headerlink" title="重 API 的测试策略"></a>重 API 的测试策略</h2><p>只做 API 测试，使用 user journey 测试方法，覆盖所有场景，本质上是一种集成测试方法。</p><p>断言各司其职，例如创建用户的测试需要断言创建后的信息，但是编辑的时候直接使用创建用户的场景，但不对用户创建再次断言。</p><h2 id="重-service-层-unit-测试"><a href="#重-service-层-unit-测试" class="headerlink" title="重 service 层 unit 测试"></a>重 service 层 unit 测试</h2><p>主要做service测试，controller 测试辅助</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> qa </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>演讲技巧</title>
       <link href="/others/others/speach-skill/"/>
       <url>/others/others/speach-skill/</url>
       
-        <content type="html"><![CDATA[<h2 id="开场姿态调整训练"><a href="#开场姿态调整训练" class="headerlink" title="开场姿态调整训练"></a>开场姿态调整训练</h2><p>立 站立挺拔。使用9点站立法，通过靠墙站的方法训练站姿。开放、走动、位置<br>顿 三次心跳。上场后停顿三秒，和听众眼神交互3秒。标点、段落和情绪<br>眼 眼观六路。和所有观众，360度眼神接触，对视、情感、语言<br>声 共鸣。 音量大、声音满、富有能量，对话、互动、兼顾<br>情 杜兴笑容。充满感情，眼声一致。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="开场姿态调整训练"><a href="#开场姿态调整训练" class="headerlink" title="开场姿态调整训练"></a>开场姿态调整训练</h2><p>立 站立挺拔。使用9点站立法，通过靠墙站的方法训练站姿。开放、走动、位置</p><p>顿 三次心跳。上场后停顿三秒，和听众眼神交互3秒。标点、段落和情绪</p><p>眼 眼观六路。和所有观众，360度眼神接触，对视、情感、语言</p><p>声 共鸣。 音量大、声音满、富有能量，对话、互动、兼顾</p><p>情 杜兴笑容。充满感情，眼声一致。</p>]]></content>
       
       
       <categories>
@@ -1140,23 +1202,6 @@
     </entry>
     
     <entry>
-      <title>前端项目安全扫描</title>
-      <link href="/security/security/security-in-frontend/"/>
-      <url>/security/security/security-in-frontend/</url>
-      
-        <content type="html"><![CDATA[<h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul><li>Sonarqube</li><li>Synk</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li>Npm audit </li><li>Retire.js</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> security </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>英文邮件写作</title>
       <link href="/communication/write%20better%20email/"/>
       <url>/communication/write%20better%20email/</url>
@@ -1174,11 +1219,11 @@
     </entry>
     
     <entry>
-      <title>微软SDL( Security Development Lifecycle)流程</title>
-      <link href="/security/security/Security-Development-Lifecycle/"/>
-      <url>/security/security/Security-Development-Lifecycle/</url>
+      <title>前端项目安全扫描</title>
+      <link href="/security/security/security-in-frontend/"/>
+      <url>/security/security/security-in-frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul><li>Sonarqube</li><li>Synk</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li>Npm audit </li><li>Retire.js</li></ul>]]></content>
       
       
       <categories>
@@ -1191,16 +1236,16 @@
     </entry>
     
     <entry>
-      <title>读书清单</title>
-      <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      <title>Circle CI 基本使用</title>
+      <link href="/devops/devops/circleci%20basic/"/>
+      <url>/devops/devops/circleci%20basic/</url>
       
-        <content type="html"><![CDATA[<p>-《经济学思维》</p><ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
-          <category> reading&amp;writing </category>
+          <category> devops </category>
           
       </categories>
       
@@ -1225,16 +1270,33 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/devops/devops/circleci%20basic/"/>
-      <url>/devops/devops/circleci%20basic/</url>
+      <title>读书清单</title>
+      <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
       
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>-《经济学思维》</p><ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
       
       
       <categories>
           
-          <category> devops </category>
+          <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/security/security/Security-Development-Lifecycle/"/>
+      <url>/security/security/Security-Development-Lifecycle/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> security </category>
           
       </categories>
       
@@ -1542,23 +1604,6 @@
     </entry>
     
     <entry>
-      <title>开发工具图谱</title>
-      <link href="/development/tool-collections/development%20tool/"/>
-      <url>/development/tool-collections/development%20tool/</url>
-      
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li><p>编辑器</p><ul><li>VIM </li><li>Sublime </li></ul></li><li><p>VCS </p><ul><li>SVN </li><li>GIT</li></ul></li><li><p>IDE</p><ul><li>IntelliJ IDEA</li></ul></li><li><p>抓包工具</p><ul><li>Httpwatch</li><li>Wireshark</li><li>fiddler</li></ul></li><li><p>性能分析工具</p><ul><li>AB测试</li><li>网页性能分析</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> development </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>常用翻译词汇定义</title>
       <link href="/translation/translation/vocabulary/"/>
       <url>/translation/translation/vocabulary/</url>
@@ -1610,6 +1655,23 @@
     </entry>
     
     <entry>
+      <title>开发工具图谱</title>
+      <link href="/development/tool-collections/development%20tool/"/>
+      <url>/development/tool-collections/development%20tool/</url>
+      
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li><p>编辑器</p><ul><li>VIM </li><li>Sublime </li></ul></li><li><p>VCS </p><ul><li>SVN </li><li>GIT</li></ul></li><li><p>IDE</p><ul><li>IntelliJ IDEA</li></ul></li><li><p>抓包工具</p><ul><li>Httpwatch</li><li>Wireshark</li><li>fiddler</li></ul></li><li><p>性能分析工具</p><ul><li>AB测试</li><li>网页性能分析</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> development </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Model Evaluation</title>
       <link href="/translation/translation/Model%20Evaluation/"/>
       <url>/translation/translation/Model%20Evaluation/</url>
@@ -1644,33 +1706,16 @@
     </entry>
     
     <entry>
-      <title>语义化版本管理</title>
-      <link href="/se/semantic-version/"/>
-      <url>/se/semantic-version/</url>
+      <title>极简欧洲史</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
       
-        <content type="html"><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范</p><p><strong>资料来源</strong></p><p>网站: <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="noopener">http://semver.org/lang/zh-CN/</a><br>Github: <a href="https://github.com/mojombo/semver" target="_blank" rel="noopener">https://github.com/mojombo/semver</a></p><p><strong>一些工具检查或生成</strong></p><ul><li>semantic-release - <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener">https://github.com/semantic-release/semantic-release</a></li></ul><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p><ol><li>MAJOR version when you make incompatible API changes,</li><li>MINOR version when you add functionality in a backwards-compatible<br>manner, and</li><li>PATCH version when you make backwards-compatible bug fixes.</li></ol><p>Additional labels for pre-release and build metadata are available as extensions<br>to the MAJOR.MINOR.PATCH format.</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the world of software management there exists a dreaded place called<br>“dependency hell.” The bigger your system grows and the more packages you<br>integrate into your software, the more likely you are to find yourself, one<br>day, in this pit of despair.</p><p>In systems with many dependencies, releasing new package versions can quickly<br>become a nightmare. If the dependency specifications are too tight, you are in<br>danger of version lock (the inability to upgrade a package without having to<br>release new versions of every dependent package). If dependencies are<br>specified too loosely, you will inevitably be bitten by version promiscuity<br>(assuming compatibility with more future versions than is reasonable).<br>Dependency hell is where you are when version lock and/or version promiscuity<br>prevent you from easily and safely moving your project forward.</p><p>As a solution to this problem, I propose a simple set of rules and<br>requirements that dictate how version numbers are assigned and incremented.<br>These rules are based on but not necessarily limited to pre-existing<br>widespread common practices in use in both closed and open-source software.<br>For this system to work, you first need to declare a public API. This may<br>consist of documentation or be enforced by the code itself. Regardless, it is<br>important that this API be clear and precise. Once you identify your public<br>API, you communicate changes to it with specific increments to your version<br>number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not<br>affecting the API increment the patch version, backwards compatible API<br>additions/changes increment the minor version, and backwards incompatible API<br>changes increment the major version.</p><p>I call this system “Semantic Versioning.” Under this scheme, version numbers<br>and the way they change convey meaning about the underlying code and what has<br>been modified from one version to the next.</p><h2 id="Semantic-Versioning-Specification-SemVer"><a href="#Semantic-Versioning-Specification-SemVer" class="headerlink" title="Semantic Versioning Specification (SemVer)"></a>Semantic Versioning Specification (SemVer)</h2><p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,<br>“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be<br>interpreted as described in <a href="http://tools.ietf.org/html/rfc2119" target="_blank" rel="noopener">RFC 2119</a>.</p><ol><li><p>Software using Semantic Versioning MUST declare a public API. This API<br>could be declared in the code itself or exist strictly in documentation.<br>However it is done, it SHOULD be precise and comprehensive.</p></li><li><p>A normal version number MUST take the form X.Y.Z where X, Y, and Z are<br>non-negative integers, and MUST NOT contain leading zeroes. X is the<br>major version, Y is the minor version, and Z is the patch version.<br>Each element MUST increase numerically. For instance: 1.9.0 -&gt; 1.10.0 -&gt; 1.11.0.</p></li><li><p>Once a versioned package has been released, the contents of that version<br>MUST NOT be modified. Any modifications MUST be released as a new version.</p></li><li><p>Major version zero (0.y.z) is for initial development. Anything MAY change<br>at any time. The public API SHOULD NOT be considered stable.</p></li><li><p>Version 1.0.0 defines the public API. The way in which the version number<br>is incremented after this release is dependent on this public API and how it<br>changes.</p></li><li><p>Patch version Z (x.y.Z | x &gt; 0) MUST be incremented if only backwards<br>compatible bug fixes are introduced. A bug fix is defined as an internal<br>change that fixes incorrect behavior.</p></li><li><p>Minor version Y (x.Y.z | x &gt; 0) MUST be incremented if new, backwards<br>compatible functionality is introduced to the public API. It MUST be<br>incremented if any public API functionality is marked as deprecated. It MAY be<br>incremented if substantial new functionality or improvements are introduced<br>within the private code. It MAY include patch level changes. Patch version<br>MUST be reset to 0 when minor version is incremented.</p></li><li><p>Major version X (X.y.z | X &gt; 0) MUST be incremented if any backwards<br>incompatible changes are introduced to the public API. It MAY also include minor<br>and patch level changes. Patch and minor version MUST be reset to 0 when major<br>version is incremented.</p></li><li><p>A pre-release version MAY be denoted by appending a hyphen and a<br>series of dot separated identifiers immediately following the patch<br>version. Identifiers MUST comprise only ASCII alphanumerics and hyphen<br>[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST<br>NOT include leading zeroes. Pre-release versions have a lower<br>precedence than the associated normal version. A pre-release version<br>indicates that the version is unstable and might not satisfy the<br>intended compatibility requirements as denoted by its associated<br>normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,<br>1.0.0-x.7.z.92.</p></li><li><p>Build metadata MAY be denoted by appending a plus sign and a series of dot<br>separated identifiers immediately following the patch or pre-release version.<br>Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].<br>Identifiers MUST NOT be empty. Build metadata MUST be ignored when determining<br>version precedence. Thus two versions that differ only in the build metadata,<br>have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,<br>1.0.0-beta+exp.sha.5114f85.</p></li><li><p>Precedence refers to how versions are compared to each other when ordered.<br>Precedence MUST be calculated by separating the version into major, minor, patch<br>and pre-release identifiers in that order (Build metadata does not figure<br>into precedence). Precedence is determined by the first difference when<br>comparing each of these identifiers from left to right as follows: Major, minor,<br>and patch versions are always compared numerically. Example: 1.0.0 &lt; 2.0.0 &lt;<br>2.1.0 &lt; 2.1.1. When major, minor, and patch are equal, a pre-release version has<br>lower precedence than a normal version. Example: 1.0.0-alpha &lt; 1.0.0. Precedence<br>for two pre-release versions with the same major, minor, and patch version MUST<br>be determined by comparing each dot separated identifier from left to right<br>until a difference is found as follows: identifiers consisting of only digits<br>are compared numerically and identifiers with letters or hyphens are compared<br>lexically in ASCII sort order. Numeric identifiers always have lower precedence<br>than non-numeric identifiers. A larger set of pre-release fields has a higher<br>precedence than a smaller set, if all of the preceding identifiers are equal.<br>Example: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt;<br>1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.</p></li></ol><h2 id="Why-Use-Semantic-Versioning"><a href="#Why-Use-Semantic-Versioning" class="headerlink" title="Why Use Semantic Versioning?"></a>Why Use Semantic Versioning?</h2><p>This is not a new or revolutionary idea. In fact, you probably do something<br>close to this already. The problem is that “close” isn’t good enough. Without<br>compliance to some sort of formal specification, version numbers are<br>essentially useless for dependency management. By giving a name and clear<br>definition to the above ideas, it becomes easy to communicate your intentions<br>to the users of your software. Once these intentions are clear, flexible (but<br>not too flexible) dependency specifications can finally be made.</p><p>A simple example will demonstrate how Semantic Versioning can make dependency<br>hell a thing of the past. Consider a library called “Firetruck.” It requires a<br>Semantically Versioned package named “Ladder.” At the time that Firetruck is<br>created, Ladder is at version 3.1.0. Since Firetruck uses some functionality<br>that was first introduced in 3.1.0, you can safely specify the Ladder<br>dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when<br>Ladder version 3.1.1 and 3.2.0 become available, you can release them to your<br>package management system and know that they will be compatible with existing<br>dependent software.</p><p>As a responsible developer you will, of course, want to verify that any<br>package upgrades function as advertised. The real world is a messy place;<br>there’s nothing we can do about that but be vigilant. What you can do is let<br>Semantic Versioning provide you with a sane way to release and upgrade<br>packages without having to roll new versions of dependent packages, saving you<br>time and hassle.</p><p>If all of this sounds desirable, all you need to do to start using Semantic<br>Versioning is to declare that you are doing so and then follow the rules. Link<br>to this website from your README so others know the rules and can benefit from<br>them.</p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="How-should-I-deal-with-revisions-in-the-0-y-z-initial-development-phase"><a href="#How-should-I-deal-with-revisions-in-the-0-y-z-initial-development-phase" class="headerlink" title="How should I deal with revisions in the 0.y.z initial development phase?"></a>How should I deal with revisions in the 0.y.z initial development phase?</h3><p>The simplest thing to do is start your initial development release at 0.1.0<br>and then increment the minor version for each subsequent release.</p><h3 id="How-do-I-know-when-to-release-1-0-0"><a href="#How-do-I-know-when-to-release-1-0-0" class="headerlink" title="How do I know when to release 1.0.0?"></a>How do I know when to release 1.0.0?</h3><p>If your software is being used in production, it should probably already be<br>1.0.0. If you have a stable API on which users have come to depend, you should<br>be 1.0.0. If you’re worrying a lot about backwards compatibility, you should<br>probably already be 1.0.0.</p><h3 id="Doesn’t-this-discourage-rapid-development-and-fast-iteration"><a href="#Doesn’t-this-discourage-rapid-development-and-fast-iteration" class="headerlink" title="Doesn’t this discourage rapid development and fast iteration?"></a>Doesn’t this discourage rapid development and fast iteration?</h3><p>Major version zero is all about rapid development. If you’re changing the API<br>every day you should either still be in version 0.y.z or on a separate<br>development branch working on the next major version.</p><h3 id="If-even-the-tiniest-backwards-incompatible-changes-to-the-public-API-require-a-major-version-bump-won’t-I-end-up-at-version-42-0-0-very-rapidly"><a href="#If-even-the-tiniest-backwards-incompatible-changes-to-the-public-API-require-a-major-version-bump-won’t-I-end-up-at-version-42-0-0-very-rapidly" class="headerlink" title="If even the tiniest backwards incompatible changes to the public API require a major version bump, won’t I end up at version 42.0.0 very rapidly?"></a>If even the tiniest backwards incompatible changes to the public API require a major version bump, won’t I end up at version 42.0.0 very rapidly?</h3><p>This is a question of responsible development and foresight. Incompatible<br>changes should not be introduced lightly to software that has a lot of<br>dependent code. The cost that must be incurred to upgrade can be significant.<br>Having to bump major versions to release incompatible changes means you’ll<br>think through the impact of your changes, and evaluate the cost/benefit ratio<br>involved.</p><h3 id="Documenting-the-entire-public-API-is-too-much-work"><a href="#Documenting-the-entire-public-API-is-too-much-work" class="headerlink" title="Documenting the entire public API is too much work!"></a>Documenting the entire public API is too much work!</h3><p>It is your responsibility as a professional developer to properly document<br>software that is intended for use by others. Managing software complexity is a<br>hugely important part of keeping a project efficient, and that’s hard to do if<br>nobody knows how to use your software, or what methods are safe to call. In<br>the long run, Semantic Versioning, and the insistence on a well defined public<br>API can keep everyone and everything running smoothly.</p><h3 id="What-do-I-do-if-I-accidentally-release-a-backwards-incompatible-change-as-a-minor-version"><a href="#What-do-I-do-if-I-accidentally-release-a-backwards-incompatible-change-as-a-minor-version" class="headerlink" title="What do I do if I accidentally release a backwards incompatible change as a minor version?"></a>What do I do if I accidentally release a backwards incompatible change as a minor version?</h3><p>As soon as you realize that you’ve broken the Semantic Versioning spec, fix<br>the problem and release a new minor version that corrects the problem and<br>restores backwards compatibility. Even under this circumstance, it is<br>unacceptable to modify versioned releases. If it’s appropriate,<br>document the offending version and inform your users of the problem so that<br>they are aware of the offending version.</p><h3 id="What-should-I-do-if-I-update-my-own-dependencies-without-changing-the-public-API"><a href="#What-should-I-do-if-I-update-my-own-dependencies-without-changing-the-public-API" class="headerlink" title="What should I do if I update my own dependencies without changing the public API?"></a>What should I do if I update my own dependencies without changing the public API?</h3><p>That would be considered compatible since it does not affect the public API.<br>Software that explicitly depends on the same dependencies as your package<br>should have their own dependency specifications and the author will notice any<br>conflicts. Determining whether the change is a patch level or minor level<br>modification depends on whether you updated your dependencies in order to fix<br>a bug or introduce new functionality. I would usually expect additional code<br>for the latter instance, in which case it’s obviously a minor level increment.</p><h3 id="What-if-I-inadvertently-alter-the-public-API-in-a-way-that-is-not-compliant-with-the-version-number-change-i-e-the-code-incorrectly-introduces-a-major-breaking-change-in-a-patch-release"><a href="#What-if-I-inadvertently-alter-the-public-API-in-a-way-that-is-not-compliant-with-the-version-number-change-i-e-the-code-incorrectly-introduces-a-major-breaking-change-in-a-patch-release" class="headerlink" title="What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?"></a>What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?</h3><p>Use your best judgment. If you have a huge audience that will be drastically<br>impacted by changing the behavior back to what the public API intended, then<br>it may be best to perform a major version release, even though the fix could<br>strictly be considered a patch release. Remember, Semantic Versioning is all<br>about conveying meaning by how the version number changes. If these changes<br>are important to your users, use the version number to inform them.</p><h3 id="How-should-I-handle-deprecating-functionality"><a href="#How-should-I-handle-deprecating-functionality" class="headerlink" title="How should I handle deprecating functionality?"></a>How should I handle deprecating functionality?</h3><p>Deprecating existing functionality is a normal part of software development and<br>is often required to make forward progress. When you deprecate part of your<br>public API, you should do two things: (1) update your documentation to let<br>users know about the change, (2) issue a new minor release with the deprecation<br>in place. Before you completely remove the functionality in a new major release<br>there should be at least one minor release that contains the deprecation so<br>that users can smoothly transition to the new API.</p><h3 id="Does-SemVer-have-a-size-limit-on-the-version-string"><a href="#Does-SemVer-have-a-size-limit-on-the-version-string" class="headerlink" title="Does SemVer have a size limit on the version string?"></a>Does SemVer have a size limit on the version string?</h3><p>No, but use good judgment. A 255 character version string is probably overkill,<br>for example. Also, specific systems may impose their own limits on the size of<br>the string.</p><h3 id="Is-“v1-2-3”-a-semantic-version"><a href="#Is-“v1-2-3”-a-semantic-version" class="headerlink" title="Is “v1.2.3” a semantic version?"></a>Is “v1.2.3” a semantic version?</h3><p>No, “v1.2.3” is not a semantic version. However, prefixing a semantic version<br>with a “v” is a common way (in English) to indicate it is a version number.<br>Abbreviating “version” as “v” is often seen with version control. Example:<br><code>git tag v1.2.3 -m &quot;Release version 1.2.3&quot;</code>, in which case “v1.2.3” is a tag<br>name and the semantic version is “1.2.3”.</p><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>The Semantic Versioning specification is authored by <a href="http://tom.preston-werner.com" target="_blank" rel="noopener">Tom<br>Preston-Werner</a>, inventor of Gravatar and<br>cofounder of GitHub.</p><p>If you’d like to leave feedback, please <a href="https://github.com/mojombo/semver/issues" target="_blank" rel="noopener">open an issue on<br>GitHub</a>.</p><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Creative Commons - CC BY 3.0<br><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">http://creativecommons.org/licenses/by/3.0/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> se </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>QA in agile</title>
-      <link href="/qa/test/QA%20in%20agile/"/>
-      <url>/qa/test/QA%20in%20agile/</url>
-      
-        <content type="html"><![CDATA[<h2 id="常用QA概念"><a href="#常用QA概念" class="headerlink" title="常用QA概念"></a>常用QA概念</h2><p>探索性测试:同时设计测试和执行测试。探索性测试有时候会与即兴测试（ad hoc testing）混淆。即兴测试通常是指临时准备的、即兴的Bug搜索测试过程。从定义可以看出，谁都可以做即兴测试。由Cem Kaner提出的探索性测试，相比即兴测试是一种精致的、有思想的过程。</p><p>测试金字塔: unit-&gt;service-&gt;UI, 伴随测试成本投入,收益减少。unit为测试性价比最高的方式<br>冒烟测试: sanity测试,快速验证应用是否能工作。<br>BDD测试: 基于业务的测试思想。<br>E2E测试: 端对端测试。<br>集成测试:<br>Functional: E2E测试。</p><h2 id="常用测试工具"><a href="#常用测试工具" class="headerlink" title="常用测试工具"></a>常用测试工具</h2><ul><li>selenium 可以驱动浏览器，模拟真实用户<br>-</li></ul><h2 id="Case-设计"><a href="#Case-设计" class="headerlink" title="Case 设计"></a>Case 设计</h2><p>A test case, is a set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirement.</p><h3 id="Common-Methods-Black-box"><a href="#Common-Methods-Black-box" class="headerlink" title="Common Methods - Black box"></a>Common Methods - Black box</h3><ul><li>Boundary Value Analysis 边界值分析</li><li>Equivalence Partitioning 等价划分</li><li>Causal Diagram 因果图</li><li>Decision Table 判定表</li></ul><h3 id="Common-Methods-White-box"><a href="#Common-Methods-White-box" class="headerlink" title="Common Methods - White box"></a>Common Methods - White box</h3><ul><li>Logical coverage<ul><li>statement coverage</li><li>Branch coverage</li><li>Path coverage</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
       
       
       <categories>
           
-          <category> qa </category>
+          <category> reading&amp;writing </category>
           
       </categories>
       
@@ -1695,11 +1740,28 @@
     </entry>
     
     <entry>
-      <title>极简欧洲史</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
+      <title>语义化版本管理</title>
+      <link href="/se/semantic-version/"/>
+      <url>/se/semantic-version/</url>
       
-        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>如果不是在一个非常规范的公司,有时候甚至没有软件发布包版本管理这件事,对于很多语言来说,并没有提供包管理的相关特性,比如PHP,从事PHP多年,但是我们再发布的时候流程并不是非常规范。版本之间的依赖也比较混乱,于是有人提出了语义化版本管理的规范</p><p><strong>资料来源</strong></p><p>网站: <a href="http://semver.org/lang/zh-CN/" target="_blank" rel="noopener">http://semver.org/lang/zh-CN/</a><br>Github: <a href="https://github.com/mojombo/semver" target="_blank" rel="noopener">https://github.com/mojombo/semver</a></p><p><strong>一些工具检查或生成</strong></p><ul><li>semantic-release - <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener">https://github.com/semantic-release/semantic-release</a></li></ul><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p><ol><li>MAJOR version when you make incompatible API changes,</li><li>MINOR version when you add functionality in a backwards-compatible<br>manner, and</li><li>PATCH version when you make backwards-compatible bug fixes.</li></ol><p>Additional labels for pre-release and build metadata are available as extensions<br>to the MAJOR.MINOR.PATCH format.</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the world of software management there exists a dreaded place called<br>“dependency hell.” The bigger your system grows and the more packages you<br>integrate into your software, the more likely you are to find yourself, one<br>day, in this pit of despair.</p><p>In systems with many dependencies, releasing new package versions can quickly<br>become a nightmare. If the dependency specifications are too tight, you are in<br>danger of version lock (the inability to upgrade a package without having to<br>release new versions of every dependent package). If dependencies are<br>specified too loosely, you will inevitably be bitten by version promiscuity<br>(assuming compatibility with more future versions than is reasonable).<br>Dependency hell is where you are when version lock and/or version promiscuity<br>prevent you from easily and safely moving your project forward.</p><p>As a solution to this problem, I propose a simple set of rules and<br>requirements that dictate how version numbers are assigned and incremented.<br>These rules are based on but not necessarily limited to pre-existing<br>widespread common practices in use in both closed and open-source software.<br>For this system to work, you first need to declare a public API. This may<br>consist of documentation or be enforced by the code itself. Regardless, it is<br>important that this API be clear and precise. Once you identify your public<br>API, you communicate changes to it with specific increments to your version<br>number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not<br>affecting the API increment the patch version, backwards compatible API<br>additions/changes increment the minor version, and backwards incompatible API<br>changes increment the major version.</p><p>I call this system “Semantic Versioning.” Under this scheme, version numbers<br>and the way they change convey meaning about the underlying code and what has<br>been modified from one version to the next.</p><h2 id="Semantic-Versioning-Specification-SemVer"><a href="#Semantic-Versioning-Specification-SemVer" class="headerlink" title="Semantic Versioning Specification (SemVer)"></a>Semantic Versioning Specification (SemVer)</h2><p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,<br>“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be<br>interpreted as described in <a href="http://tools.ietf.org/html/rfc2119" target="_blank" rel="noopener">RFC 2119</a>.</p><ol><li><p>Software using Semantic Versioning MUST declare a public API. This API<br>could be declared in the code itself or exist strictly in documentation.<br>However it is done, it SHOULD be precise and comprehensive.</p></li><li><p>A normal version number MUST take the form X.Y.Z where X, Y, and Z are<br>non-negative integers, and MUST NOT contain leading zeroes. X is the<br>major version, Y is the minor version, and Z is the patch version.<br>Each element MUST increase numerically. For instance: 1.9.0 -&gt; 1.10.0 -&gt; 1.11.0.</p></li><li><p>Once a versioned package has been released, the contents of that version<br>MUST NOT be modified. Any modifications MUST be released as a new version.</p></li><li><p>Major version zero (0.y.z) is for initial development. Anything MAY change<br>at any time. The public API SHOULD NOT be considered stable.</p></li><li><p>Version 1.0.0 defines the public API. The way in which the version number<br>is incremented after this release is dependent on this public API and how it<br>changes.</p></li><li><p>Patch version Z (x.y.Z | x &gt; 0) MUST be incremented if only backwards<br>compatible bug fixes are introduced. A bug fix is defined as an internal<br>change that fixes incorrect behavior.</p></li><li><p>Minor version Y (x.Y.z | x &gt; 0) MUST be incremented if new, backwards<br>compatible functionality is introduced to the public API. It MUST be<br>incremented if any public API functionality is marked as deprecated. It MAY be<br>incremented if substantial new functionality or improvements are introduced<br>within the private code. It MAY include patch level changes. Patch version<br>MUST be reset to 0 when minor version is incremented.</p></li><li><p>Major version X (X.y.z | X &gt; 0) MUST be incremented if any backwards<br>incompatible changes are introduced to the public API. It MAY also include minor<br>and patch level changes. Patch and minor version MUST be reset to 0 when major<br>version is incremented.</p></li><li><p>A pre-release version MAY be denoted by appending a hyphen and a<br>series of dot separated identifiers immediately following the patch<br>version. Identifiers MUST comprise only ASCII alphanumerics and hyphen<br>[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST<br>NOT include leading zeroes. Pre-release versions have a lower<br>precedence than the associated normal version. A pre-release version<br>indicates that the version is unstable and might not satisfy the<br>intended compatibility requirements as denoted by its associated<br>normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,<br>1.0.0-x.7.z.92.</p></li><li><p>Build metadata MAY be denoted by appending a plus sign and a series of dot<br>separated identifiers immediately following the patch or pre-release version.<br>Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].<br>Identifiers MUST NOT be empty. Build metadata MUST be ignored when determining<br>version precedence. Thus two versions that differ only in the build metadata,<br>have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,<br>1.0.0-beta+exp.sha.5114f85.</p></li><li><p>Precedence refers to how versions are compared to each other when ordered.<br>Precedence MUST be calculated by separating the version into major, minor, patch<br>and pre-release identifiers in that order (Build metadata does not figure<br>into precedence). Precedence is determined by the first difference when<br>comparing each of these identifiers from left to right as follows: Major, minor,<br>and patch versions are always compared numerically. Example: 1.0.0 &lt; 2.0.0 &lt;<br>2.1.0 &lt; 2.1.1. When major, minor, and patch are equal, a pre-release version has<br>lower precedence than a normal version. Example: 1.0.0-alpha &lt; 1.0.0. Precedence<br>for two pre-release versions with the same major, minor, and patch version MUST<br>be determined by comparing each dot separated identifier from left to right<br>until a difference is found as follows: identifiers consisting of only digits<br>are compared numerically and identifiers with letters or hyphens are compared<br>lexically in ASCII sort order. Numeric identifiers always have lower precedence<br>than non-numeric identifiers. A larger set of pre-release fields has a higher<br>precedence than a smaller set, if all of the preceding identifiers are equal.<br>Example: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt;<br>1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.</p></li></ol><h2 id="Why-Use-Semantic-Versioning"><a href="#Why-Use-Semantic-Versioning" class="headerlink" title="Why Use Semantic Versioning?"></a>Why Use Semantic Versioning?</h2><p>This is not a new or revolutionary idea. In fact, you probably do something<br>close to this already. The problem is that “close” isn’t good enough. Without<br>compliance to some sort of formal specification, version numbers are<br>essentially useless for dependency management. By giving a name and clear<br>definition to the above ideas, it becomes easy to communicate your intentions<br>to the users of your software. Once these intentions are clear, flexible (but<br>not too flexible) dependency specifications can finally be made.</p><p>A simple example will demonstrate how Semantic Versioning can make dependency<br>hell a thing of the past. Consider a library called “Firetruck.” It requires a<br>Semantically Versioned package named “Ladder.” At the time that Firetruck is<br>created, Ladder is at version 3.1.0. Since Firetruck uses some functionality<br>that was first introduced in 3.1.0, you can safely specify the Ladder<br>dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when<br>Ladder version 3.1.1 and 3.2.0 become available, you can release them to your<br>package management system and know that they will be compatible with existing<br>dependent software.</p><p>As a responsible developer you will, of course, want to verify that any<br>package upgrades function as advertised. The real world is a messy place;<br>there’s nothing we can do about that but be vigilant. What you can do is let<br>Semantic Versioning provide you with a sane way to release and upgrade<br>packages without having to roll new versions of dependent packages, saving you<br>time and hassle.</p><p>If all of this sounds desirable, all you need to do to start using Semantic<br>Versioning is to declare that you are doing so and then follow the rules. Link<br>to this website from your README so others know the rules and can benefit from<br>them.</p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="How-should-I-deal-with-revisions-in-the-0-y-z-initial-development-phase"><a href="#How-should-I-deal-with-revisions-in-the-0-y-z-initial-development-phase" class="headerlink" title="How should I deal with revisions in the 0.y.z initial development phase?"></a>How should I deal with revisions in the 0.y.z initial development phase?</h3><p>The simplest thing to do is start your initial development release at 0.1.0<br>and then increment the minor version for each subsequent release.</p><h3 id="How-do-I-know-when-to-release-1-0-0"><a href="#How-do-I-know-when-to-release-1-0-0" class="headerlink" title="How do I know when to release 1.0.0?"></a>How do I know when to release 1.0.0?</h3><p>If your software is being used in production, it should probably already be<br>1.0.0. If you have a stable API on which users have come to depend, you should<br>be 1.0.0. If you’re worrying a lot about backwards compatibility, you should<br>probably already be 1.0.0.</p><h3 id="Doesn’t-this-discourage-rapid-development-and-fast-iteration"><a href="#Doesn’t-this-discourage-rapid-development-and-fast-iteration" class="headerlink" title="Doesn’t this discourage rapid development and fast iteration?"></a>Doesn’t this discourage rapid development and fast iteration?</h3><p>Major version zero is all about rapid development. If you’re changing the API<br>every day you should either still be in version 0.y.z or on a separate<br>development branch working on the next major version.</p><h3 id="If-even-the-tiniest-backwards-incompatible-changes-to-the-public-API-require-a-major-version-bump-won’t-I-end-up-at-version-42-0-0-very-rapidly"><a href="#If-even-the-tiniest-backwards-incompatible-changes-to-the-public-API-require-a-major-version-bump-won’t-I-end-up-at-version-42-0-0-very-rapidly" class="headerlink" title="If even the tiniest backwards incompatible changes to the public API require a major version bump, won’t I end up at version 42.0.0 very rapidly?"></a>If even the tiniest backwards incompatible changes to the public API require a major version bump, won’t I end up at version 42.0.0 very rapidly?</h3><p>This is a question of responsible development and foresight. Incompatible<br>changes should not be introduced lightly to software that has a lot of<br>dependent code. The cost that must be incurred to upgrade can be significant.<br>Having to bump major versions to release incompatible changes means you’ll<br>think through the impact of your changes, and evaluate the cost/benefit ratio<br>involved.</p><h3 id="Documenting-the-entire-public-API-is-too-much-work"><a href="#Documenting-the-entire-public-API-is-too-much-work" class="headerlink" title="Documenting the entire public API is too much work!"></a>Documenting the entire public API is too much work!</h3><p>It is your responsibility as a professional developer to properly document<br>software that is intended for use by others. Managing software complexity is a<br>hugely important part of keeping a project efficient, and that’s hard to do if<br>nobody knows how to use your software, or what methods are safe to call. In<br>the long run, Semantic Versioning, and the insistence on a well defined public<br>API can keep everyone and everything running smoothly.</p><h3 id="What-do-I-do-if-I-accidentally-release-a-backwards-incompatible-change-as-a-minor-version"><a href="#What-do-I-do-if-I-accidentally-release-a-backwards-incompatible-change-as-a-minor-version" class="headerlink" title="What do I do if I accidentally release a backwards incompatible change as a minor version?"></a>What do I do if I accidentally release a backwards incompatible change as a minor version?</h3><p>As soon as you realize that you’ve broken the Semantic Versioning spec, fix<br>the problem and release a new minor version that corrects the problem and<br>restores backwards compatibility. Even under this circumstance, it is<br>unacceptable to modify versioned releases. If it’s appropriate,<br>document the offending version and inform your users of the problem so that<br>they are aware of the offending version.</p><h3 id="What-should-I-do-if-I-update-my-own-dependencies-without-changing-the-public-API"><a href="#What-should-I-do-if-I-update-my-own-dependencies-without-changing-the-public-API" class="headerlink" title="What should I do if I update my own dependencies without changing the public API?"></a>What should I do if I update my own dependencies without changing the public API?</h3><p>That would be considered compatible since it does not affect the public API.<br>Software that explicitly depends on the same dependencies as your package<br>should have their own dependency specifications and the author will notice any<br>conflicts. Determining whether the change is a patch level or minor level<br>modification depends on whether you updated your dependencies in order to fix<br>a bug or introduce new functionality. I would usually expect additional code<br>for the latter instance, in which case it’s obviously a minor level increment.</p><h3 id="What-if-I-inadvertently-alter-the-public-API-in-a-way-that-is-not-compliant-with-the-version-number-change-i-e-the-code-incorrectly-introduces-a-major-breaking-change-in-a-patch-release"><a href="#What-if-I-inadvertently-alter-the-public-API-in-a-way-that-is-not-compliant-with-the-version-number-change-i-e-the-code-incorrectly-introduces-a-major-breaking-change-in-a-patch-release" class="headerlink" title="What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?"></a>What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?</h3><p>Use your best judgment. If you have a huge audience that will be drastically<br>impacted by changing the behavior back to what the public API intended, then<br>it may be best to perform a major version release, even though the fix could<br>strictly be considered a patch release. Remember, Semantic Versioning is all<br>about conveying meaning by how the version number changes. If these changes<br>are important to your users, use the version number to inform them.</p><h3 id="How-should-I-handle-deprecating-functionality"><a href="#How-should-I-handle-deprecating-functionality" class="headerlink" title="How should I handle deprecating functionality?"></a>How should I handle deprecating functionality?</h3><p>Deprecating existing functionality is a normal part of software development and<br>is often required to make forward progress. When you deprecate part of your<br>public API, you should do two things: (1) update your documentation to let<br>users know about the change, (2) issue a new minor release with the deprecation<br>in place. Before you completely remove the functionality in a new major release<br>there should be at least one minor release that contains the deprecation so<br>that users can smoothly transition to the new API.</p><h3 id="Does-SemVer-have-a-size-limit-on-the-version-string"><a href="#Does-SemVer-have-a-size-limit-on-the-version-string" class="headerlink" title="Does SemVer have a size limit on the version string?"></a>Does SemVer have a size limit on the version string?</h3><p>No, but use good judgment. A 255 character version string is probably overkill,<br>for example. Also, specific systems may impose their own limits on the size of<br>the string.</p><h3 id="Is-“v1-2-3”-a-semantic-version"><a href="#Is-“v1-2-3”-a-semantic-version" class="headerlink" title="Is “v1.2.3” a semantic version?"></a>Is “v1.2.3” a semantic version?</h3><p>No, “v1.2.3” is not a semantic version. However, prefixing a semantic version<br>with a “v” is a common way (in English) to indicate it is a version number.<br>Abbreviating “version” as “v” is often seen with version control. Example:<br><code>git tag v1.2.3 -m &quot;Release version 1.2.3&quot;</code>, in which case “v1.2.3” is a tag<br>name and the semantic version is “1.2.3”.</p><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>The Semantic Versioning specification is authored by <a href="http://tom.preston-werner.com" target="_blank" rel="noopener">Tom<br>Preston-Werner</a>, inventor of Gravatar and<br>cofounder of GitHub.</p><p>If you’d like to leave feedback, please <a href="https://github.com/mojombo/semver/issues" target="_blank" rel="noopener">open an issue on<br>GitHub</a>.</p><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Creative Commons - CC BY 3.0<br><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">http://creativecommons.org/licenses/by/3.0/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> se </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>暗时间摘录</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>这本书讲时间管理,讲方法论,讲逻辑和认知,但这是一本洗脑书,或者是一本宁愿被洗脑却值得一看的书.</p><p>1,暗时间：习惯将问题放入大脑的潜意识思考  (厕所也许是个好位置)<br>2, 习惯于专注所带来的成就感    (专注的力量很大,这是对于提高效率来说,但是做到集中精神却很难)<br>3,设计自己的目标进度条，不要过早地退出尝试的循环。原始的大脑常常使我们高估失败带来的损失和困难产生的心理障碍。 (step by step 即使很慢,至少有成果)<br>4, 学习时，因为作者习惯的文法和自己习惯的文法不尽相同，所以（1）应当用自己的话将学到的知识重复一遍，加强记忆与大脑熟悉数据的强联系。（2）将知识抽象，使得这种强联系的范围更广，试用性更广。<br>5,学习新知识时的三个问题（1）它的本质（2）第一原则（3）知识结构；<br>6,乘着对一件事有热情，一股脑把往事开头难的那个阶段跨过<br>7,todo list 是个必备的东西<br>8,制定简要的阅读计划，阅读分类<br>9,总结很重要,看了的东西还是原作者的,总结会让它变成自己的<br>10,看一个人，要看他的朋友和兴趣，他的阅读和他见的人<br>11,本能仅仅是原始大脑没有进化完全的结果<br>12,困难的路越走越容易，容易的路越走越困难。<br>13,直接问到问题的答案同时意味着你永远倒要靠别人的大脑来获得答案。<br>14,生活就像一条漫长的跑道，在你遇到障碍的时候，如果你总是屈从于大脑的低级模块，选择绕过，那么你最终将越来越发现只能绕过障碍，而无力半开。如果你大多数时候选择搬开障碍，虽然从表面上看，跟那些绕过障碍的人相比，你的速度慢了很多，但随着你越来越熟练地解决障碍，最终你的速冻将远远超过总是“抄近道”的。   </p>]]></content>
       
       
       <categories>
@@ -1729,28 +1791,11 @@
     </entry>
     
     <entry>
-      <title>暗时间摘录</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/</url>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
       
-        <content type="html"><![CDATA[<p>这本书讲时间管理,讲方法论,讲逻辑和认知,但这是一本洗脑书,或者是一本宁愿被洗脑却值得一看的书.</p><p>1,暗时间：习惯将问题放入大脑的潜意识思考  (厕所也许是个好位置)<br>2, 习惯于专注所带来的成就感    (专注的力量很大,这是对于提高效率来说,但是做到集中精神却很难)<br>3,设计自己的目标进度条，不要过早地退出尝试的循环。原始的大脑常常使我们高估失败带来的损失和困难产生的心理障碍。 (step by step 即使很慢,至少有成果)<br>4, 学习时，因为作者习惯的文法和自己习惯的文法不尽相同，所以（1）应当用自己的话将学到的知识重复一遍，加强记忆与大脑熟悉数据的强联系。（2）将知识抽象，使得这种强联系的范围更广，试用性更广。<br>5,学习新知识时的三个问题（1）它的本质（2）第一原则（3）知识结构；<br>6,乘着对一件事有热情，一股脑把往事开头难的那个阶段跨过<br>7,todo list 是个必备的东西<br>8,制定简要的阅读计划，阅读分类<br>9,总结很重要,看了的东西还是原作者的,总结会让它变成自己的<br>10,看一个人，要看他的朋友和兴趣，他的阅读和他见的人<br>11,本能仅仅是原始大脑没有进化完全的结果<br>12,困难的路越走越容易，容易的路越走越困难。<br>13,直接问到问题的答案同时意味着你永远倒要靠别人的大脑来获得答案。<br>14,生活就像一条漫长的跑道，在你遇到障碍的时候，如果你总是屈从于大脑的低级模块，选择绕过，那么你最终将越来越发现只能绕过障碍，而无力半开。如果你大多数时候选择搬开障碍，虽然从表面上看，跟那些绕过障碍的人相比，你的速度慢了很多，但随着你越来越熟练地解决障碍，最终你的速冻将远远超过总是“抄近道”的。   </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React学习体系</title>
-      <link href="/react/react/React%20crouse%20map/"/>
-      <url>/react/react/React%20crouse%20map/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1780,23 +1825,6 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python%20basic/"/>
-      <url>/python/python%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>PHP拓展和使用C编写自定义拓展</title>
       <link href="/C-C/php/php-plugin-c/"/>
       <url>/C-C/php/php-plugin-c/</url>
@@ -1814,16 +1842,16 @@
     </entry>
     
     <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      <title>Python 入门</title>
+      <link href="/python/python%20basic/"/>
+      <url>/python/python%20basic/</url>
       
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
       
       
       <categories>
           
-          <category> react </category>
+          <category> python </category>
           
       </categories>
       
@@ -1831,16 +1859,16 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React-Native/react/React%20native%20resource/"/>
-      <url>/React-Native/react/React%20native%20resource/</url>
+      <title>React学习体系</title>
+      <link href="/react/react/React%20crouse%20map/"/>
+      <url>/react/react/React%20crouse%20map/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
       
       
       <categories>
           
-          <category> React Native </category>
+          <category> react </category>
           
       </categories>
       
@@ -1858,6 +1886,23 @@
       <categories>
           
           <category> postgreSQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React-Native/react/React%20native%20resource/"/>
+      <url>/React-Native/react/React%20native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React Native </category>
           
       </categories>
       
@@ -1933,11 +1978,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -1950,11 +1995,11 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -1977,6 +2022,23 @@
       <categories>
           
           <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ubuntu上的MySQL安装</title>
+      <link href="/mysql/mysql/Mysql%20configuration/"/>
+      <url>/mysql/mysql/Mysql%20configuration/</url>
+      
+        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
           
       </categories>
       
@@ -2018,23 +2080,6 @@
     </entry>
     
     <entry>
-      <title>Ubuntu上的MySQL安装</title>
-      <link href="/mysql/mysql/Mysql%20configuration/"/>
-      <url>/mysql/mysql/Mysql%20configuration/</url>
-      
-        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Mysql 基本管理命令</title>
       <link href="/mysql/mysql/Mysql%20baisc%20operation/"/>
       <url>/mysql/mysql/Mysql%20baisc%20operation/</url>
@@ -2052,28 +2097,11 @@
     </entry>
     
     <entry>
-      <title>Java object clone</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
+      <title>PMP talking</title>
+      <link href="/management/management/PMP%20talking/"/>
+      <url>/management/management/PMP%20talking/</url>
       
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">Object obj2 = obj1;</span><br></pre></td></tr></table></figure><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Object obj2 = <span class="keyword">new</span> Object();</span><br><span class="line">obj2.a = obj1.a;</span><br></pre></td></tr></table></figure><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</span><br><span class="line">Person p1 = (Person) p.clone();</span><br><span class="line"></span><br><span class="line">System.out.println(p);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Team leader 能力模型案例解读</title>
-      <link href="/management/management/Team%20leader%20checklist/"/>
-      <url>/management/management/Team%20leader%20checklist/</url>
-      
-        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
       
       
       <categories>
@@ -2086,11 +2114,11 @@
     </entry>
     
     <entry>
-      <title>PMP talking</title>
-      <link href="/management/management/PMP%20talking/"/>
-      <url>/management/management/PMP%20talking/</url>
+      <title>Team leader 能力模型案例解读</title>
+      <link href="/management/management/Team%20leader%20checklist/"/>
+      <url>/management/management/Team%20leader%20checklist/</url>
       
-        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
+        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -2137,11 +2165,62 @@
     </entry>
     
     <entry>
+      <title>Java object clone</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
+      
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">Object obj2 = obj1;</span><br></pre></td></tr></table></figure><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Object obj2 = <span class="keyword">new</span> Object();</span><br><span class="line">obj2.a = obj1.a;</span><br></pre></td></tr></table></figure><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</span><br><span class="line">Person p1 = (Person) p.clone();</span><br><span class="line"></span><br><span class="line">System.out.println(p);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Mock工具 wiremock</title>
+      <link href="/test/java/Wiremock%20for%20java/"/>
+      <url>/test/java/Wiremock%20for%20java/</url>
+      
+        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</span><br></pre></td></tr></table></figure><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>理解 java exception</title>
       <link href="/java/java/java-exception/"/>
       <url>/java/java/java-exception/</url>
       
         <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(ints[<span class="number">4</span>]);</span><br><span class="line">    System.out.println(<span class="string">"是否还能执行"</span>);<span class="comment">// 发生异常以后，后面的代码不能被执行</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"数组越界错误"</span>);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"异常出现后"</span>);</span><br></pre></td></tr></table></figure></p><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                    <span class="keyword">new</span> FileInputStream(<span class="string">"file"</span>)));</span><br><span class="line">            <span class="comment">// do some other work</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// close reader</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            reader.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NeverCaught</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionB</span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ExceptionB(<span class="string">"exception b"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionC </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            f();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExceptionB e) &#123;</span><br><span class="line">            ExceptionC c = <span class="keyword">new</span> ExceptionC(<span class="string">"exception a"</span>);</span><br><span class="line">            <span class="comment">//异常连</span></span><br><span class="line">            c.initCause(e);</span><br><span class="line">            <span class="keyword">throw</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                g();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ExceptionC e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">exception.ExceptionC</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:12)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.main(NeverCaught.java:21)</span></span><br><span class="line"><span class="comment">Caused by: exception.ExceptionB</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.f(NeverCaught.java:5)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:10)</span></span><br><span class="line"><span class="comment">... 1 more</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
       
       
       <categories>
@@ -2188,45 +2267,11 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      <title>Gradle 使用基础</title>
+      <link href="/java/java/Gradle%20basic/"/>
+      <url>/java/java/Gradle%20basic/</url>
       
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mock工具 wiremock</title>
-      <link href="/test/java/Wiremock%20for%20java/"/>
-      <url>/test/java/Wiremock%20for%20java/</url>
-      
-        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</span><br></pre></td></tr></table></figure><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>使用Java构建API的知识体系</title>
-      <link href="/java/java/Java%20api%20tech%20map/"/>
-      <url>/java/java/Java%20api%20tech%20map/</url>
-      
-        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理<code></code></h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p><h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p><p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p><p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p><p>version = ‘0.0.1-SNAPSHOT’<br>sourceCompatibility = 1.8</p><p>repositories {<br>    mavenCentral()<br>}</p><p>dependencies {</p><pre><code>compile(&apos;org.springframework.boot:spring-boot-starter-web&apos;)compile group: &apos;org.springframework.boot&apos;, name: &apos;spring-boot-starter-data-jpa&apos;, version: &apos;1.5.3.RELEASE&apos;compile group: &apos;javax.servlet.jsp.jstl&apos;, name: &apos;javax.servlet.jsp.jstl-api&apos;, version: &apos;1.2.1&apos;compile group: &apos;org.apache.tomcat.embed&apos;, name: &apos;tomcat-embed-jasper&apos;, version: &apos;9.0.0.M25&apos;compile group: &apos;javax.servlet&apos;, name: &apos;jstl&apos;, version: &apos;1.2&apos;compile group: &apos;org.glassfish&apos;, name: &apos;javax.el&apos;, version: &apos;3.0.0&apos;compile group: &apos;org.apache.commons&apos;, name: &apos;commons-lang3&apos;, version: &apos;3.0&apos;runtime(&apos;mysql:mysql-connector-java&apos;)testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)</code></pre><p>}</p><p>`</p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看所有的任务列表</p><blockquote><p>gradle tasks –all</p></blockquote><p>生成 wrapper </p><blockquote><p>gradle wrapper</p></blockquote><p><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/gradle_wrapper.html</a></p>]]></content>
       
       
       <categories>
@@ -2273,6 +2318,23 @@
     </entry>
     
     <entry>
+      <title>使用Java构建API的知识体系</title>
+      <link href="/java/java/Java%20api%20tech%20map/"/>
+      <url>/java/java/Java%20api%20tech%20map/</url>
+      
+        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>在Ubuntu上通过apt-get搭建tomcat</title>
       <link href="/java/java/Java%20environment%20in%20linux/"/>
       <url>/java/java/Java%20environment%20in%20linux/</url>
@@ -2283,40 +2345,6 @@
       <categories>
           
           <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Gradle 使用基础</title>
-      <link href="/java/java/Gradle%20basic/"/>
-      <url>/java/java/Gradle%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理<code></code></h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p><h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p><p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p><p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p><p>version = ‘0.0.1-SNAPSHOT’<br>sourceCompatibility = 1.8</p><p>repositories {<br>    mavenCentral()<br>}</p><p>dependencies {</p><pre><code>compile(&apos;org.springframework.boot:spring-boot-starter-web&apos;)compile group: &apos;org.springframework.boot&apos;, name: &apos;spring-boot-starter-data-jpa&apos;, version: &apos;1.5.3.RELEASE&apos;compile group: &apos;javax.servlet.jsp.jstl&apos;, name: &apos;javax.servlet.jsp.jstl-api&apos;, version: &apos;1.2.1&apos;compile group: &apos;org.apache.tomcat.embed&apos;, name: &apos;tomcat-embed-jasper&apos;, version: &apos;9.0.0.M25&apos;compile group: &apos;javax.servlet&apos;, name: &apos;jstl&apos;, version: &apos;1.2&apos;compile group: &apos;org.glassfish&apos;, name: &apos;javax.el&apos;, version: &apos;3.0.0&apos;compile group: &apos;org.apache.commons&apos;, name: &apos;commons-lang3&apos;, version: &apos;3.0&apos;runtime(&apos;mysql:mysql-connector-java&apos;)testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)</code></pre><p>}</p><p>`</p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看所有的任务列表</p><blockquote><p>gradle tasks –all</p></blockquote><p>生成 wrapper </p><blockquote><p>gradle wrapper</p></blockquote><p><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/gradle_wrapper.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>H5 app开发经验</title>
-      <link href="/h5/h5/h5%20app/"/>
-      <url>/h5/h5/h5%20app/</url>
-      
-        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> h5 </category>
           
       </categories>
       
@@ -2341,11 +2369,11 @@
     </entry>
     
     <entry>
-      <title>H5 Cordova打包方案</title>
-      <link href="/h5/h5/Build%20package%20with%20Apache%20Cordova/"/>
-      <url>/h5/h5/Build%20package%20with%20Apache%20Cordova/</url>
+      <title>H5 app开发经验</title>
+      <link href="/h5/h5/h5%20app/"/>
+      <url>/h5/h5/h5%20app/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
       
       
       <categories>
@@ -2358,11 +2386,11 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/h5/h5/H5%20webapp%20tech%20stack/"/>
-      <url>/h5/h5/H5%20webapp%20tech%20stack/</url>
+      <title>H5 Cordova打包方案</title>
+      <link href="/h5/h5/Build%20package%20with%20Apache%20Cordova/"/>
+      <url>/h5/h5/Build%20package%20with%20Apache%20Cordova/</url>
       
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
       
       
       <categories>
@@ -2385,6 +2413,23 @@
       <categories>
           
           <category> frontend </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>H5 webapp技术选型</title>
+      <link href="/h5/h5/H5%20webapp%20tech%20stack/"/>
+      <url>/h5/h5/H5%20webapp%20tech%20stack/</url>
+      
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> h5 </category>
           
       </categories>
       
@@ -2443,23 +2488,6 @@
     </entry>
     
     <entry>
-      <title>免费的CI/CD 工具</title>
-      <link href="/CI/engineered/CI-free-tools/"/>
-      <url>/CI/engineered/CI-free-tools/</url>
-      
-        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> CI </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>最实用的Linux命令</title>
       <link href="/devops/devops/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/"/>
       <url>/devops/devops/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
@@ -2470,6 +2498,23 @@
       <categories>
           
           <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>免费的CI/CD 工具</title>
+      <link href="/CI/engineered/CI-free-tools/"/>
+      <url>/CI/engineered/CI-free-tools/</url>
+      
+        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> CI </category>
           
       </categories>
       
@@ -2545,6 +2590,23 @@
     </entry>
     
     <entry>
+      <title>Lambda 入门</title>
+      <link href="/aws/devops/aws%20lambda/"/>
+      <url>/aws/devops/aws%20lambda/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> aws </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>使用SSH实现自动化部署</title>
       <link href="/aws/devops/auto%20deployment%20with%20ssh/"/>
       <url>/aws/devops/auto%20deployment%20with%20ssh/</url>
@@ -2572,23 +2634,6 @@
       <categories>
           
           <category> devops </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Lambda 入门</title>
-      <link href="/aws/devops/aws%20lambda/"/>
-      <url>/aws/devops/aws%20lambda/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> aws </category>
           
       </categories>
       
@@ -2647,11 +2692,11 @@
     </entry>
     
     <entry>
-      <title>大型系统的网站架构概览</title>
-      <link href="/architecture/architecture/architecture%20overview/"/>
-      <url>/architecture/architecture/architecture%20overview/</url>
+      <title>OAuth2 架构设计</title>
+      <link href="/architecture/architecture/OAuth2/"/>
+      <url>/architecture/architecture/OAuth2/</url>
       
-        <content type="html"><![CDATA[<p>技术点</p><ul><li>单点登录</li><li>API gateway</li><li>文件存储系统</li><li>批量任务执行</li><li>日志搜索</li><li>分布式调用</li><li>前端</li><li>移动前端</li><li>移动端</li><li>小程序</li><li>微信公共平台</li><li>支付系统</li><li>部署</li><li>CI/CD</li><li>数据方案<ul><li>读写分离</li><li>大数据</li><li>数据库中间件 </li></ul></li><li>CMS系统</li><li>数据备份和运维</li></ul>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -2681,11 +2726,11 @@
     </entry>
     
     <entry>
-      <title>OAuth2 架构设计</title>
-      <link href="/architecture/architecture/OAuth2/"/>
-      <url>/architecture/architecture/OAuth2/</url>
+      <title>大型系统的网站架构概览</title>
+      <link href="/architecture/architecture/architecture%20overview/"/>
+      <url>/architecture/architecture/architecture%20overview/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>技术点</p><ul><li>单点登录</li><li>API gateway</li><li>文件存储系统</li><li>批量任务执行</li><li>日志搜索</li><li>分布式调用</li><li>前端</li><li>移动前端</li><li>移动端</li><li>小程序</li><li>微信公共平台</li><li>支付系统</li><li>部署</li><li>CI/CD</li><li>数据方案<ul><li>读写分离</li><li>大数据</li><li>数据库中间件 </li></ul></li><li>CMS系统</li><li>数据备份和运维</li></ul>]]></content>
       
       
       <categories>
@@ -2708,23 +2753,6 @@
       <categories>
           
           <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Handover tips</title>
-      <link href="/method/Way%20of%20working%20for%20handover/"/>
-      <url>/method/Way%20of%20working%20for%20handover/</url>
-      
-        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> method </category>
           
       </categories>
       
@@ -2771,6 +2799,23 @@
       <url>/method/Way%20of%20working%20for%20team%20building/</url>
       
         <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> method </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Handover tips</title>
+      <link href="/method/Way%20of%20working%20for%20handover/"/>
+      <url>/method/Way%20of%20working%20for%20handover/</url>
+      
+        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
       
       
       <categories>
