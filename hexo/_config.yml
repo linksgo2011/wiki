@@ -18,7 +18,7 @@ permalink: :category/:title/
 permalink_defaults:
 
 # Directory
-source_dir: source
+source_dir: ../source
 public_dir: ../docs
 tag_dir: tags
 archive_dir: archives
