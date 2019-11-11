@@ -1202,23 +1202,6 @@
     </entry>
     
     <entry>
-      <title>英文邮件写作</title>
-      <link href="/communication/write%20better%20email/"/>
-      <url>/communication/write%20better%20email/</url>
-      
-        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> communication </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端项目安全扫描</title>
       <link href="/security/security/security-in-frontend/"/>
       <url>/security/security/security-in-frontend/</url>
@@ -1236,6 +1219,23 @@
     </entry>
     
     <entry>
+      <title>英文邮件写作</title>
+      <link href="/communication/write%20better%20email/"/>
+      <url>/communication/write%20better%20email/</url>
+      
+        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> communication </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/security/security/Security-Development-Lifecycle/"/>
       <url>/security/security/Security-Development-Lifecycle/</url>
@@ -1246,23 +1246,6 @@
       <categories>
           
           <category> security </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>读书清单</title>
-      <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
-      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
-      
-        <content type="html"><![CDATA[<p>-《经济学思维》</p><ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
           
       </categories>
       
@@ -1304,6 +1287,23 @@
     </entry>
     
     <entry>
+      <title>读书清单</title>
+      <link href="/reading-writing/reading&amp;writing/reading%20list/"/>
+      <url>/reading-writing/reading&amp;writing/reading%20list/</url>
+      
+        <content type="html"><![CDATA[<p>-《经济学思维》</p><ul><li>DDD  <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank" rel="noopener">Domain Driven Design Quickly</a></li><li>《领域驱动设计》</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>DDD (Domain-Driven Design) 领域驱动设计</title>
       <link href="/architecture/architecture/Domain%20Driven%20Design/"/>
       <url>/architecture/architecture/Domain%20Driven%20Design/</url>
@@ -1338,11 +1338,11 @@
     </entry>
     
     <entry>
-      <title>API RESTful 风格</title>
-      <link href="/API-service/api/api-restful/"/>
-      <url>/API-service/api/api-restful/</url>
+      <title>API 文档和契约</title>
+      <link href="/API-service/api/api-document-and-contract/"/>
+      <url>/API-service/api/api-document-and-contract/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -1355,11 +1355,11 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API-service/api/api-document-and-contract/"/>
-      <url>/API-service/api/api-document-and-contract/</url>
+      <title>API RESTful 风格</title>
+      <link href="/API-service/api/api-restful/"/>
+      <url>/API-service/api/api-restful/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
       
       
       <categories>
@@ -1604,16 +1604,16 @@
     </entry>
     
     <entry>
-      <title>Model Evaluation</title>
-      <link href="/translation/translation/Model%20Evaluation/"/>
-      <url>/translation/translation/Model%20Evaluation/</url>
+      <title>Mac shortcuts</title>
+      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
+      <url>/development/tool-collections/shortcut%20for%20mac/</url>
       
-        <content type="html"><![CDATA[<h2 id="11-0-Introduction"><a href="#11-0-Introduction" class="headerlink" title="11.0 Introduction"></a>11.0 Introduction</h2><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>In this chapter we will examine strategies for evaluating the quality of models created<br>through our learning algorithms. It might appear strange to discuss model evaluation<br>before discussing how to create them, but there is a method to our madness. Models<br>are only as useful as the quality of their predictions, and thus fundamentally our goal<br>is not to create models (which is easy) but to create high-quality models (which is<br>hard). Therefore, before we explore the myriad learning algorithms, we first set up<br>how we can evaluate the models they produce.</p><p>在这一章中，我们将探讨评估策略，以此筛选通过我们学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。</p><h2 id="11-1-Cross-Validating-Models"><a href="#11-1-Cross-Validating-Models" class="headerlink" title="11.1 Cross-Validating Models"></a>11.1 Cross-Validating Models</h2><h2 id="11-1-交互验证模型"><a href="#11-1-交互验证模型" class="headerlink" title="11.1 交互验证模型"></a>11.1 交互验证模型</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>You want to evaluate how well your model will work in the real world.</p><p>你想要在真实世界中验证你的模型工作的足够好。</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>Create a pipeline that preprocesses the data, trains the model, and then evaluates it<br>using cross-validation:</p><p>创建一个预处理数据的流水线，训练这个模型，然后使用交互验证来评估：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment"># Load digits dataset</span></span><br><span class="line"></span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line"><span class="comment"># Create features matrix</span></span><br><span class="line">features = digits.data</span><br><span class="line"><span class="comment"># Create target vector</span></span><br><span class="line">target = digits.target</span><br><span class="line"><span class="comment"># Create standardizer</span></span><br><span class="line">standardizer = StandardScaler()</span><br><span class="line"><span class="comment"># Create logistic regression object</span></span><br><span class="line">logit = LogisticRegression()</span><br><span class="line"><span class="comment"># Create a pipeline that standardizes, then runs logistic regression</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line"><span class="comment"># Create k-Fold cross-validation</span></span><br><span class="line">kf = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Conduct k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br><span class="line"> n_jobs=<span class="number">-1</span>) <span class="comment"># Use all CPU scores</span></span><br><span class="line"><span class="comment"># Calculate mean</span></span><br><span class="line">cv_results.mean()</span><br><span class="line"><span class="number">0.96493171942892597</span></span><br></pre></td></tr></table></figure><h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>At first consideration, evaluating supervised-learning models might appear straight‐<br>forward: train a model and then calculate how well it did using some performance<br>metric (accuracy, squared errors, etc.). However, this approach is fundamentally<br>flawed. If we train a model using our data, and then evaluate how well it did on that<br>data, we are not achieving our desired goal. Our goal is not to evaluate how well the<br>model does on our training data, but how well it does on data it has never seen before<br>(e.g., a new customer, a new crime, a new image). For this reason, our method of<br>evaluation should help us understand how well models are able to make predictions<br>from data they have never seen before.</p><p>首先要考虑一点，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的验证目标。我们的目标不是在我们的训练数据上评估模型，而应该是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知数据中去做出预测。</p><p>One strategy might be to hold off a slice of data for testing. This is called validation<br>(or hold-out). In validation our observations (features and targets) are split into two<br>sets, traditionally called the training set and the test set. We take the test set and put it<br>off to the side, pretending that we have never seen it before. Next we train our model<br>using our training set, using the features and target vector to teach the model how to make the best prediction. Finally, we simulate having never before seen external data<br>by evaluating how our model trained on our training set performs on our test set.<br>However, the validation approach has two major weaknesses. First, the performance<br>of the model can be highly dependent on which few observations were selected for<br>the test set. Second, the model is not being trained using all the available data, and<br>not being evaluated on all the available data.</p><p>其中一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验（或者叫留出法）。在实际验证中，我们把我们的采样数据（特征或者目标）分割成两部分，传统上我们叫它们训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出来作为测试集的采样数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。</p><p>A better strategy, which overcomes these weaknesses, is called k-fold cross-validation<br>(KFCV). In KFCV, we split the data into k parts called “folds.” The model is then<br>trained using k – 1 folds—combined into one training set—and then the last fold is<br>used as a test set. We repeat this k times, each time using a different fold as the test<br>set. The performance on the model for each of the k iterations is then averaged to<br>produce an overall measurement.<br>In our solution, we conducted k-fold cross-validation using 10 folds and outputted<br>the evaluation scores to cv_results: </p><p>一个更好的策略，被称作 k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为”叠”。然后使用k-1叠数据来训练模型，然后用最后一叠做数据校验。我们通过重复K次，使得每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。</p><p>在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量 cv_results 中：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># View score for all 10 folds</span></span><br><span class="line">cv_results</span><br><span class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</span><br><span class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</span><br></pre></td></tr></table></figure><p>There are three important points to consider when we are using KFCV. First, KFCV<br>assumes that each observation was created independent from the other (i.e., the data<br>is independent identically distributed [IID]). If the data is IID, it is a good idea to<br>shuffle observations when assigning to folds. In scikit-learn we can set shuffle=True<br>to perform shuffling.</p><p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV假定每个采样数据是独立于其它采样创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，，我们可以设置变量shuffle为true来进行打乱操作。</p><p>Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have<br>folds containing roughly the same percentage of observations from each of the differ‐<br>ent target classes (called stratied k-fold). For example, if our target vector contained<br>gender and 80% of the observations were male, then each fold would contain 80%<br>male and 20% female observations. In scikit-learn, we can conduct stratified k-fold<br>cross-validation by replacing the KFold class with StratifiedKFold.<br>Finally, when we are using validation sets or cross-validation, it is important to pre‐<br>process data based on the training set and then apply those transformations to both<br>the training and test set. For example, when we fit our standardization object, stand<br>ardizer, we calculate the mean and variance of only the training set. Then we apply<br>that transformation (using transform) to both the training and test sets:</p><p>其次，当我们使用 KFCV 来评估一个分类器时，它的优势在于粗略的对采样数据按照不同目标类以相同比例来划分 “叠”（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的采样数据是男性，那么每个”叠”应该包含80%男性和20%的女性采样数据。<br>在 scikit-learn 框架中，我们能通过使用 StratifiedKFold 类替换 KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用 fit 操作我们的 standardization 对象和 standardizer 时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform 方法）对训练集和测试集都进行处理：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Import library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Create training and test sets</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></span><br><span class="line"><span class="comment"># Fit standardizer to training set</span></span><br><span class="line">standardizer.fit(features_train)</span><br><span class="line"><span class="comment"># Apply to both training and test sets</span></span><br><span class="line">features_train_std = standardizer.transform(features_train)</span><br><span class="line">features_test_std = standardizer.transform(features_test)</span><br></pre></td></tr></table></figure><p>The reason for this is because we are pretending that the test set is unknown data. If<br>we fit both our preprocessors using observations from both training and test sets,<br>some of the information from the test set leaks into our training set. This rule applies<br>for any preprocessing step such as feature selection.<br>scikit-learn’s pipeline package makes this easy to do while using cross-validation tech‐<br>niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and<br>then trains a model (logistic regression, logit):</p><p>这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的采样数据对我们的预处理器 fit 操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术时，scikit-learn 的 pipeline 包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</span><br><span class="line"><span class="comment"># Do k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br></pre></td></tr></table></figure><p>cross_val_score comes with three parameters that we have not discussed that are<br>worth noting. cv determines our cross-validation technique. K-fold is the most com‐<br>mon by far, but there are others, like leave-one-out-cross-validation where the num‐<br>ber of folds k equals the number of observations. The scoring parameter defines our<br>metric for success, a number of which are discussed in other recipes in this chapter.<br>Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, if your<br>computer has four cores (a common number for laptops), then scikit-learn will use<br>all four cores at once to speed up the operation.</p><p>cross_val_score 方法需要三个参数，我们没有讨论但是这里值得一提，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和采样数据个数相同”叠”的 leave-one-out-cross-validation 。scoring 参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1 是告诉 scikit-learn 去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。</p><h3 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h3><ul><li>Why every statistician should know about cross-validation (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>Cross-Validation Gone Wrong (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h3 id="查看更多"><a href="#查看更多" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>为什么数据科学家都应该知道交叉验证 (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>交叉验证走在错误的道路上 (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h2 id="11-2-Creating-a-Baseline-Regression-Model"><a href="#11-2-Creating-a-Baseline-Regression-Model" class="headerlink" title="11.2 Creating a Baseline Regression Model"></a>11.2 Creating a Baseline Regression Model</h2><h2 id="11-2-创建一个基线回归模型"><a href="#11-2-创建一个基线回归模型" class="headerlink" title="11.2 创建一个基线回归模型"></a>11.2 创建一个基线回归模型</h2><h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline regression model to compare against your model</p><p>你需要创建一个基线回归模型来和你的模型对比</p><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyRegressor to create a simple model to use as a baseline</p><p>使用 scikit-learn 的 DummyRegressor 来创建一个简单模型作为基准对比使用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">boston = load_boston()</span><br><span class="line"><span class="comment"># Create features</span></span><br><span class="line">features, target = boston.data, boston.target</span><br><span class="line"><span class="comment"># Make test and training split</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create a dummy regressor</span></span><br><span class="line">dummy = DummyRegressor(strategy=<span class="string">'mean'</span>)</span><br><span class="line"><span class="comment"># "Train" dummy regressor</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.0011193592039553391</span></span><br></pre></td></tr></table></figure><p>To compare, we train our model and evaluate the performance score:<br>来对比，我们训练我们的模型然后进行性能评分：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment"># Train simple linear regression model</span></span><br><span class="line">ols = LinearRegression()</span><br><span class="line">ols.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">ols.score(features_test, target_test)</span><br><span class="line"><span class="number">0.63536207866746675</span></span><br></pre></td></tr></table></figure><h3 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>DummyRegressor allows us to create a very simple model that we can use as a baseline<br>to compare against our actual model. This can often be useful to simulate a “naive”<br>existing prediction process in a product or system. For example, a product might<br>have been originally hardcoded to assume that all new users will spend $100 in the<br>first month, regardless of their features. If we encode that assumption into a baseline<br>model, we are able to concretely state the benefits of using a machine learning<br>approach.</p><p>DummyRegressor 允许我们的创建一个非常简单的模型，用来作为基线参考，从而可以和我们的真实模型作为对比。在一个系统或者产品中，它是非常有用的去模拟一个原始存在的预测处理机制。举例来说，一个软件产品可能通过传统的方式被硬编码的方式编写了一些程序逻辑，根据用户特性，假定所有的用户将要在第一个月花费100美元。如果我们编写这个假设进入一个基线模型，我们能实实在在的看到机器学习技术被加入到软件中的优势。</p><p>DummyRegressor uses the strategy parameter to set the method of making predic‐<br>tions, including the mean or median value in the training set. Furthermore, if we set<br>strategy to constant and use the constant parameter, we can set the dummy<br>regressor to predict some constant value for every observation:</p><p>DummyRegressor 使用 strategy 参数去设置做出预测的方法，包括在返回一个测试集中的均值或中值。此外，如果我们设置strategy参数为constant 并且使用 constant 参数，DummyRegressor 会固定返回传给 constant 参数的值。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create dummy regressor that predicts 20's for everything</span></span><br><span class="line">clf = DummyRegressor(strategy=<span class="string">'constant'</span>, constant=<span class="number">20</span>)</span><br><span class="line">clf.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Evaluate score</span></span><br><span class="line">clf.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.065105020293257265</span></span><br></pre></td></tr></table></figure><p>One small note regarding score. By default, score returns the coefficient of determi‐<br>nation (R-squared, R) score:</p><p>where yi is the true value of the target observation, yi is the predicted value, and ȳ is the mean value for the target vector. The closer R 2<br>is to 1, the more of the variance in the target vector that is explained by the features.</p><p>顺带提一下性能得分的计算方法，默认情况下，返回的分值为测定结果（R-squared, <code>$R^2$</code>）得分的系数：</p><p>这里的 <code>$y_i$</code> 是目标采样数据为真的值，<code>$\hat{y_i}$</code> 为预测值， <code>$\overline{y}$</code> 为目标向量的平均值。</p><p><code>$R^2$</code> 越是趋近于1，说明在目标矢量中越多的变化越能被特征解释。</p><p><code>$R^2 =  1-  \frac{ \sum(y_i-\hat{y_i}) }{\sum(y_i-\overline{y_i}) } $</code></p><h2 id="11-3-Creating-a-Baseline-Classification-Model"><a href="#11-3-Creating-a-Baseline-Classification-Model" class="headerlink" title="11.3 Creating a Baseline Classification Model"></a>11.3 Creating a Baseline Classification Model</h2><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline classifier to compare against your model.</p><p>你需要一个简单的基线分类器去对比你的模型</p><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyClassifier:</p><p>使用 scikit-learn 的 DummyClassifier</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">iris = load_iris()</span><br><span class="line"><span class="comment"># Create target vector and feature matrix</span></span><br><span class="line">features, target = iris.data, iris.target</span><br><span class="line"><span class="comment"># Split into training and test set</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line">features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create dummy classifier</span></span><br><span class="line">dummy = DummyClassifier(strategy=<span class="string">'uniform'</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># "Train" model</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">0.42105263157894735</span></span><br></pre></td></tr></table></figure><p>By comparing the baseline classifier to our trained classifier, we can see the improvement:</p><p>通过把训练后的分类器和基线分类器进行对比，我们能看到这些提升:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="comment"># Create classifier</span></span><br><span class="line">classifier = RandomForestClassifier()</span><br><span class="line"><span class="comment"># Train model</span></span><br><span class="line">classifier.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">classifier.score(features_test, target_test)</span><br><span class="line"><span class="number">0.94736842105263153</span></span><br></pre></td></tr></table></figure><h3 id="Discussion-2"><a href="#Discussion-2" class="headerlink" title="Discussion"></a>Discussion</h3><p>A common measure of a classifier’s performance is how much better it is than ran‐<br>dom guessing. scikit-learn’s DummyClassifier makes this comparison easy. The strat<br>egy parameter gives us a number of options for generating values. There are two par‐<br>ticularly useful strategies. First, stratified makes predictions that are proportional<br>to the training set’s target vector’s class proportions (i.e., if 20% of the observations in<br>the training data are women, then DummyClassifier will predict women 20% of the time).<br> Second, uniform will generate predictions uniformly at random between the<br>different classes. For example, if 20% of observations are women and 80% are men,<br>uniform will produce predictions that are 50% women and 50% men.</p><p>一个通常的做法去衡量分类器工作的有多好的方式是把它的结果和随机猜测对比。scikit-learn 的DummyClassifier让这项比较变得简单。</p><p>strategy 参数为我们生成值提供了大量选项。这里有两个特别有用的策略。 首先是 stratified 使做出的虚拟预测让目标矢量属性在训练集中成比例分布（例如，如果训练集中，20%的采样数据是女性，DummyClassifier 将当次预测出20%为女性。其次是 uniform，这种方式将生成预测均匀的在不同类中随机生成。举例来说，如果观察对象包含了20%的女性和80%的男性，uniform 将生成预测结果为50%的女性和50%的男性。</p><h3 id="See-Also-1"><a href="#See-Also-1" class="headerlink" title="See Also"></a>See Also</h3><h3 id="查看更多-1"><a href="#查看更多-1" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>scikit-learn documentation: DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li><li>scikit-learn 文档：DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li></ul><h2 id="11-4-Evaluating-Binary-Classifier-Predictions"><a href="#11-4-Evaluating-Binary-Classifier-Predictions" class="headerlink" title="11.4 Evaluating Binary Classifier Predictions"></a>11.4 Evaluating Binary Classifier Predictions</h2><h2 id="11-4-评估二元分类器预测"><a href="#11-4-评估二元分类器预测" class="headerlink" title="11.4 评估二元分类器预测"></a>11.4 评估二元分类器预测</h2><h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem"></a>Problem</h3><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>Given a trained classification model, you want to evaluate its quality.</p><p>给定一个训练后的分类器模型，你需要评估它的质量</p><h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>Use scikit-learn’s cross_val_score to conduct cross-validation while using the scor<br>ing parameter to define one of a number of performance metrics, including accuracy,<br>, recall, and F1.<br>Accuracy is a common performance metric. It is simply the proportion of observa‐<br>tions predicted correctly:</p><p>当使用 scoring 参数来定义大量性能指标中的一个时，使用 scikit-learn 的 cross_val_score 去实现交叉验证，包括准确率，精确率，召回率，F值。<br>准确率是一个常用性能指标。它是简单的计算正确预测的采样数据比值。</p><p><code>$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $</code></p><p>where:</p><ul><li>TP is the number of true positives. Observations that are part of the positive class<br>(has the disease, purchased the product, etc.) and that we predicted correctly.</li><li>TN is the number of true negatives. Observations that are part of the negative<br>class (does not have the disease, did not purchase the product, etc.) and that we<br>predicted correctly.</li><li>FP is the number of false positives. Also called a Type I error. Observations pre‐<br>dicted to be part of the positive class that are actually part of the negative class.</li><li>FN is the number of false negatives. Also called a Type II error. Observations pre‐<br>dicted to be part of the negative class that are actually part of the positive class.</li></ul><p>这里：</p><ul><li>TP是真阳性的采样数量，采样中具有正向类型的（患有疾病，购买了产品等等）并且我们的预测正确。</li><li>TN是真阴性的采样数量，采样中具有负向类型的（没有患有疾病，没有购买产品等等）并且我们预测正确。</li><li>FP是假阳性的采样数量，又被成为I型错误。采样中被预测为正向分类但是实际上为负向分类的。</li><li>FN是假阴性的采样数量，又被称为II型错误，采样中被预测为负向类型，但实际上为正向分类的。</li></ul><p>We can measure accuracy in three-fold (the default number of folds) cross-validation<br>by setting scoring=”accuracy”:</p><p>我们能通过设置scoring参数为accuracy来衡量accuracy在三个”叠”（默认数量）的交叉验证：</p>]]></content>
+        <content type="html"><![CDATA[<p>bulgari.{buildNumber}.zip</p>]]></content>
       
       
       <categories>
           
-          <category> translation </category>
+          <category> development </category>
           
       </categories>
       
@@ -1621,11 +1621,11 @@
     </entry>
     
     <entry>
-      <title>Mac shortcuts</title>
-      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
-      <url>/development/tool-collections/shortcut%20for%20mac/</url>
+      <title>开发工具图谱</title>
+      <link href="/development/tool-collections/development%20tool/"/>
+      <url>/development/tool-collections/development%20tool/</url>
       
-        <content type="html"><![CDATA[<p>bulgari.{buildNumber}.zip</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li><p>编辑器</p><ul><li>VIM </li><li>Sublime </li></ul></li><li><p>VCS </p><ul><li>SVN </li><li>GIT</li></ul></li><li><p>IDE</p><ul><li>IntelliJ IDEA</li></ul></li><li><p>抓包工具</p><ul><li>Httpwatch</li><li>Wireshark</li><li>fiddler</li></ul></li><li><p>性能分析工具</p><ul><li>AB测试</li><li>网页性能分析</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -1672,16 +1672,16 @@
     </entry>
     
     <entry>
-      <title>开发工具图谱</title>
-      <link href="/development/tool-collections/development%20tool/"/>
-      <url>/development/tool-collections/development%20tool/</url>
+      <title>Model Evaluation</title>
+      <link href="/translation/translation/Model%20Evaluation/"/>
+      <url>/translation/translation/Model%20Evaluation/</url>
       
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li><p>编辑器</p><ul><li>VIM </li><li>Sublime </li></ul></li><li><p>VCS </p><ul><li>SVN </li><li>GIT</li></ul></li><li><p>IDE</p><ul><li>IntelliJ IDEA</li></ul></li><li><p>抓包工具</p><ul><li>Httpwatch</li><li>Wireshark</li><li>fiddler</li></ul></li><li><p>性能分析工具</p><ul><li>AB测试</li><li>网页性能分析</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="11-0-Introduction"><a href="#11-0-Introduction" class="headerlink" title="11.0 Introduction"></a>11.0 Introduction</h2><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>In this chapter we will examine strategies for evaluating the quality of models created<br>through our learning algorithms. It might appear strange to discuss model evaluation<br>before discussing how to create them, but there is a method to our madness. Models<br>are only as useful as the quality of their predictions, and thus fundamentally our goal<br>is not to create models (which is easy) but to create high-quality models (which is<br>hard). Therefore, before we explore the myriad learning algorithms, we first set up<br>how we can evaluate the models they produce.</p><p>在这一章中，我们将探讨评估策略，以此筛选通过我们学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。</p><h2 id="11-1-Cross-Validating-Models"><a href="#11-1-Cross-Validating-Models" class="headerlink" title="11.1 Cross-Validating Models"></a>11.1 Cross-Validating Models</h2><h2 id="11-1-交互验证模型"><a href="#11-1-交互验证模型" class="headerlink" title="11.1 交互验证模型"></a>11.1 交互验证模型</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>You want to evaluate how well your model will work in the real world.</p><p>你想要在真实世界中验证你的模型工作的足够好。</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>Create a pipeline that preprocesses the data, trains the model, and then evaluates it<br>using cross-validation:</p><p>创建一个预处理数据的流水线，训练这个模型，然后使用交互验证来评估：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment"># Load digits dataset</span></span><br><span class="line"></span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line"><span class="comment"># Create features matrix</span></span><br><span class="line">features = digits.data</span><br><span class="line"><span class="comment"># Create target vector</span></span><br><span class="line">target = digits.target</span><br><span class="line"><span class="comment"># Create standardizer</span></span><br><span class="line">standardizer = StandardScaler()</span><br><span class="line"><span class="comment"># Create logistic regression object</span></span><br><span class="line">logit = LogisticRegression()</span><br><span class="line"><span class="comment"># Create a pipeline that standardizes, then runs logistic regression</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line"><span class="comment"># Create k-Fold cross-validation</span></span><br><span class="line">kf = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Conduct k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br><span class="line"> n_jobs=<span class="number">-1</span>) <span class="comment"># Use all CPU scores</span></span><br><span class="line"><span class="comment"># Calculate mean</span></span><br><span class="line">cv_results.mean()</span><br><span class="line"><span class="number">0.96493171942892597</span></span><br></pre></td></tr></table></figure><h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>At first consideration, evaluating supervised-learning models might appear straight‐<br>forward: train a model and then calculate how well it did using some performance<br>metric (accuracy, squared errors, etc.). However, this approach is fundamentally<br>flawed. If we train a model using our data, and then evaluate how well it did on that<br>data, we are not achieving our desired goal. Our goal is not to evaluate how well the<br>model does on our training data, but how well it does on data it has never seen before<br>(e.g., a new customer, a new crime, a new image). For this reason, our method of<br>evaluation should help us understand how well models are able to make predictions<br>from data they have never seen before.</p><p>首先要考虑一点，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的验证目标。我们的目标不是在我们的训练数据上评估模型，而应该是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知数据中去做出预测。</p><p>One strategy might be to hold off a slice of data for testing. This is called validation<br>(or hold-out). In validation our observations (features and targets) are split into two<br>sets, traditionally called the training set and the test set. We take the test set and put it<br>off to the side, pretending that we have never seen it before. Next we train our model<br>using our training set, using the features and target vector to teach the model how to make the best prediction. Finally, we simulate having never before seen external data<br>by evaluating how our model trained on our training set performs on our test set.<br>However, the validation approach has two major weaknesses. First, the performance<br>of the model can be highly dependent on which few observations were selected for<br>the test set. Second, the model is not being trained using all the available data, and<br>not being evaluated on all the available data.</p><p>其中一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验（或者叫留出法）。在实际验证中，我们把我们的采样数据（特征或者目标）分割成两部分，传统上我们叫它们训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出来作为测试集的采样数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。</p><p>A better strategy, which overcomes these weaknesses, is called k-fold cross-validation<br>(KFCV). In KFCV, we split the data into k parts called “folds.” The model is then<br>trained using k – 1 folds—combined into one training set—and then the last fold is<br>used as a test set. We repeat this k times, each time using a different fold as the test<br>set. The performance on the model for each of the k iterations is then averaged to<br>produce an overall measurement.<br>In our solution, we conducted k-fold cross-validation using 10 folds and outputted<br>the evaluation scores to cv_results: </p><p>一个更好的策略，被称作 k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为”叠”。然后使用k-1叠数据来训练模型，然后用最后一叠做数据校验。我们通过重复K次，使得每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。</p><p>在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量 cv_results 中：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># View score for all 10 folds</span></span><br><span class="line">cv_results</span><br><span class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</span><br><span class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</span><br></pre></td></tr></table></figure><p>There are three important points to consider when we are using KFCV. First, KFCV<br>assumes that each observation was created independent from the other (i.e., the data<br>is independent identically distributed [IID]). If the data is IID, it is a good idea to<br>shuffle observations when assigning to folds. In scikit-learn we can set shuffle=True<br>to perform shuffling.</p><p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV假定每个采样数据是独立于其它采样创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，，我们可以设置变量shuffle为true来进行打乱操作。</p><p>Second, when we are using KFCV to evaluate a classifier, it is often beneficial to have<br>folds containing roughly the same percentage of observations from each of the differ‐<br>ent target classes (called stratied k-fold). For example, if our target vector contained<br>gender and 80% of the observations were male, then each fold would contain 80%<br>male and 20% female observations. In scikit-learn, we can conduct stratified k-fold<br>cross-validation by replacing the KFold class with StratifiedKFold.<br>Finally, when we are using validation sets or cross-validation, it is important to pre‐<br>process data based on the training set and then apply those transformations to both<br>the training and test set. For example, when we fit our standardization object, stand<br>ardizer, we calculate the mean and variance of only the training set. Then we apply<br>that transformation (using transform) to both the training and test sets:</p><p>其次，当我们使用 KFCV 来评估一个分类器时，它的优势在于粗略的对采样数据按照不同目标类以相同比例来划分 “叠”（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的采样数据是男性，那么每个”叠”应该包含80%男性和20%的女性采样数据。<br>在 scikit-learn 框架中，我们能通过使用 StratifiedKFold 类替换 KFold，即可实现分层 k-fold 交叉验证。最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用 fit 操作我们的 standardization 对象和 standardizer 时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform 方法）对训练集和测试集都进行处理：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Import library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Create training and test sets</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></span><br><span class="line"><span class="comment"># Fit standardizer to training set</span></span><br><span class="line">standardizer.fit(features_train)</span><br><span class="line"><span class="comment"># Apply to both training and test sets</span></span><br><span class="line">features_train_std = standardizer.transform(features_train)</span><br><span class="line">features_test_std = standardizer.transform(features_test)</span><br></pre></td></tr></table></figure><p>The reason for this is because we are pretending that the test set is unknown data. If<br>we fit both our preprocessors using observations from both training and test sets,<br>some of the information from the test set leaks into our training set. This rule applies<br>for any preprocessing step such as feature selection.<br>scikit-learn’s pipeline package makes this easy to do while using cross-validation tech‐<br>niques. We first create a pipeline that preprocesses the data (e.g., standardizer) and<br>then trains a model (logistic regression, logit):</p><p>这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的采样数据对我们的预处理器 fit 操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。当使用交叉验证技术时，scikit-learn 的 pipeline 包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</span><br><span class="line"><span class="comment"># Do k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br></pre></td></tr></table></figure><p>cross_val_score comes with three parameters that we have not discussed that are<br>worth noting. cv determines our cross-validation technique. K-fold is the most com‐<br>mon by far, but there are others, like leave-one-out-cross-validation where the num‐<br>ber of folds k equals the number of observations. The scoring parameter defines our<br>metric for success, a number of which are discussed in other recipes in this chapter.<br>Finally, n_jobs=-1 tells scikit-learn to use every core available. For example, if your<br>computer has four cores (a common number for laptops), then scikit-learn will use<br>all four cores at once to speed up the operation.</p><p>cross_val_score 方法需要三个参数，我们没有讨论但是这里值得一提，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和采样数据个数相同”叠”的 leave-one-out-cross-validation 。scoring 参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1 是告诉 scikit-learn 去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。</p><h3 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h3><ul><li>Why every statistician should know about cross-validation (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>Cross-Validation Gone Wrong (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h3 id="查看更多"><a href="#查看更多" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>为什么数据科学家都应该知道交叉验证 (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>交叉验证走在错误的道路上 (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h2 id="11-2-Creating-a-Baseline-Regression-Model"><a href="#11-2-Creating-a-Baseline-Regression-Model" class="headerlink" title="11.2 Creating a Baseline Regression Model"></a>11.2 Creating a Baseline Regression Model</h2><h2 id="11-2-创建一个基线回归模型"><a href="#11-2-创建一个基线回归模型" class="headerlink" title="11.2 创建一个基线回归模型"></a>11.2 创建一个基线回归模型</h2><h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline regression model to compare against your model</p><p>你需要创建一个基线回归模型来和你的模型对比</p><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyRegressor to create a simple model to use as a baseline</p><p>使用 scikit-learn 的 DummyRegressor 来创建一个简单模型作为基准对比使用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">boston = load_boston()</span><br><span class="line"><span class="comment"># Create features</span></span><br><span class="line">features, target = boston.data, boston.target</span><br><span class="line"><span class="comment"># Make test and training split</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create a dummy regressor</span></span><br><span class="line">dummy = DummyRegressor(strategy=<span class="string">'mean'</span>)</span><br><span class="line"><span class="comment"># "Train" dummy regressor</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.0011193592039553391</span></span><br></pre></td></tr></table></figure><p>To compare, we train our model and evaluate the performance score:<br>来对比，我们训练我们的模型然后进行性能评分：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment"># Train simple linear regression model</span></span><br><span class="line">ols = LinearRegression()</span><br><span class="line">ols.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">ols.score(features_test, target_test)</span><br><span class="line"><span class="number">0.63536207866746675</span></span><br></pre></td></tr></table></figure><h3 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h3><h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>DummyRegressor allows us to create a very simple model that we can use as a baseline<br>to compare against our actual model. This can often be useful to simulate a “naive”<br>existing prediction process in a product or system. For example, a product might<br>have been originally hardcoded to assume that all new users will spend $100 in the<br>first month, regardless of their features. If we encode that assumption into a baseline<br>model, we are able to concretely state the benefits of using a machine learning<br>approach.</p><p>DummyRegressor 允许我们的创建一个非常简单的模型，用来作为基线参考，从而可以和我们的真实模型作为对比。在一个系统或者产品中，它是非常有用的去模拟一个原始存在的预测处理机制。举例来说，一个软件产品可能通过传统的方式被硬编码的方式编写了一些程序逻辑，根据用户特性，假定所有的用户将要在第一个月花费100美元。如果我们编写这个假设进入一个基线模型，我们能实实在在的看到机器学习技术被加入到软件中的优势。</p><p>DummyRegressor uses the strategy parameter to set the method of making predic‐<br>tions, including the mean or median value in the training set. Furthermore, if we set<br>strategy to constant and use the constant parameter, we can set the dummy<br>regressor to predict some constant value for every observation:</p><p>DummyRegressor 使用 strategy 参数去设置做出预测的方法，包括在返回一个测试集中的均值或中值。此外，如果我们设置strategy参数为constant 并且使用 constant 参数，DummyRegressor 会固定返回传给 constant 参数的值。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create dummy regressor that predicts 20's for everything</span></span><br><span class="line">clf = DummyRegressor(strategy=<span class="string">'constant'</span>, constant=<span class="number">20</span>)</span><br><span class="line">clf.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Evaluate score</span></span><br><span class="line">clf.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.065105020293257265</span></span><br></pre></td></tr></table></figure><p>One small note regarding score. By default, score returns the coefficient of determi‐<br>nation (R-squared, R) score:</p><p>where yi is the true value of the target observation, yi is the predicted value, and ȳ is the mean value for the target vector. The closer R 2<br>is to 1, the more of the variance in the target vector that is explained by the features.</p><p>顺带提一下性能得分的计算方法，默认情况下，返回的分值为测定结果（R-squared, <code>$R^2$</code>）得分的系数：</p><p>这里的 <code>$y_i$</code> 是目标采样数据为真的值，<code>$\hat{y_i}$</code> 为预测值， <code>$\overline{y}$</code> 为目标向量的平均值。</p><p><code>$R^2$</code> 越是趋近于1，说明在目标矢量中越多的变化越能被特征解释。</p><p><code>$R^2 =  1-  \frac{ \sum(y_i-\hat{y_i}) }{\sum(y_i-\overline{y_i}) } $</code></p><h2 id="11-3-Creating-a-Baseline-Classification-Model"><a href="#11-3-Creating-a-Baseline-Classification-Model" class="headerlink" title="11.3 Creating a Baseline Classification Model"></a>11.3 Creating a Baseline Classification Model</h2><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem"></a>Problem</h3><p>You want a simple baseline classifier to compare against your model.</p><p>你需要一个简单的基线分类器去对比你的模型</p><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>Use scikit-learn’s DummyClassifier:</p><p>使用 scikit-learn 的 DummyClassifier</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">iris = load_iris()</span><br><span class="line"><span class="comment"># Create target vector and feature matrix</span></span><br><span class="line">features, target = iris.data, iris.target</span><br><span class="line"><span class="comment"># Split into training and test set</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line">features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create dummy classifier</span></span><br><span class="line">dummy = DummyClassifier(strategy=<span class="string">'uniform'</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># "Train" model</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">0.42105263157894735</span></span><br></pre></td></tr></table></figure><p>By comparing the baseline classifier to our trained classifier, we can see the improvement:</p><p>通过把训练后的分类器和基线分类器进行对比，我们能看到这些提升:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="comment"># Create classifier</span></span><br><span class="line">classifier = RandomForestClassifier()</span><br><span class="line"><span class="comment"># Train model</span></span><br><span class="line">classifier.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">classifier.score(features_test, target_test)</span><br><span class="line"><span class="number">0.94736842105263153</span></span><br></pre></td></tr></table></figure><h3 id="Discussion-2"><a href="#Discussion-2" class="headerlink" title="Discussion"></a>Discussion</h3><p>A common measure of a classifier’s performance is how much better it is than ran‐<br>dom guessing. scikit-learn’s DummyClassifier makes this comparison easy. The strat<br>egy parameter gives us a number of options for generating values. There are two par‐<br>ticularly useful strategies. First, stratified makes predictions that are proportional<br>to the training set’s target vector’s class proportions (i.e., if 20% of the observations in<br>the training data are women, then DummyClassifier will predict women 20% of the time).<br> Second, uniform will generate predictions uniformly at random between the<br>different classes. For example, if 20% of observations are women and 80% are men,<br>uniform will produce predictions that are 50% women and 50% men.</p><p>一个通常的做法去衡量分类器工作的有多好的方式是把它的结果和随机猜测对比。scikit-learn 的DummyClassifier让这项比较变得简单。</p><p>strategy 参数为我们生成值提供了大量选项。这里有两个特别有用的策略。 首先是 stratified 使做出的虚拟预测让目标矢量属性在训练集中成比例分布（例如，如果训练集中，20%的采样数据是女性，DummyClassifier 将当次预测出20%为女性。其次是 uniform，这种方式将生成预测均匀的在不同类中随机生成。举例来说，如果观察对象包含了20%的女性和80%的男性，uniform 将生成预测结果为50%的女性和50%的男性。</p><h3 id="See-Also-1"><a href="#See-Also-1" class="headerlink" title="See Also"></a>See Also</h3><h3 id="查看更多-1"><a href="#查看更多-1" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>scikit-learn documentation: DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li><li>scikit-learn 文档：DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li></ul><h2 id="11-4-Evaluating-Binary-Classifier-Predictions"><a href="#11-4-Evaluating-Binary-Classifier-Predictions" class="headerlink" title="11.4 Evaluating Binary Classifier Predictions"></a>11.4 Evaluating Binary Classifier Predictions</h2><h2 id="11-4-评估二元分类器预测"><a href="#11-4-评估二元分类器预测" class="headerlink" title="11.4 评估二元分类器预测"></a>11.4 评估二元分类器预测</h2><h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem"></a>Problem</h3><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>Given a trained classification model, you want to evaluate its quality.</p><p>给定一个训练后的分类器模型，你需要评估它的质量</p><h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>Use scikit-learn’s cross_val_score to conduct cross-validation while using the scor<br>ing parameter to define one of a number of performance metrics, including accuracy,<br>, recall, and F1.<br>Accuracy is a common performance metric. It is simply the proportion of observa‐<br>tions predicted correctly:</p><p>当使用 scoring 参数来定义大量性能指标中的一个时，使用 scikit-learn 的 cross_val_score 去实现交叉验证，包括准确率，精确率，召回率，F值。<br>准确率是一个常用性能指标。它是简单的计算正确预测的采样数据比值。</p><p><code>$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $</code></p><p>where:</p><ul><li>TP is the number of true positives. Observations that are part of the positive class<br>(has the disease, purchased the product, etc.) and that we predicted correctly.</li><li>TN is the number of true negatives. Observations that are part of the negative<br>class (does not have the disease, did not purchase the product, etc.) and that we<br>predicted correctly.</li><li>FP is the number of false positives. Also called a Type I error. Observations pre‐<br>dicted to be part of the positive class that are actually part of the negative class.</li><li>FN is the number of false negatives. Also called a Type II error. Observations pre‐<br>dicted to be part of the negative class that are actually part of the positive class.</li></ul><p>这里：</p><ul><li>TP是真阳性的采样数量，采样中具有正向类型的（患有疾病，购买了产品等等）并且我们的预测正确。</li><li>TN是真阴性的采样数量，采样中具有负向类型的（没有患有疾病，没有购买产品等等）并且我们预测正确。</li><li>FP是假阳性的采样数量，又被成为I型错误。采样中被预测为正向分类但是实际上为负向分类的。</li><li>FN是假阴性的采样数量，又被称为II型错误，采样中被预测为负向类型，但实际上为正向分类的。</li></ul><p>We can measure accuracy in three-fold (the default number of folds) cross-validation<br>by setting scoring=”accuracy”:</p><p>我们能通过设置scoring参数为accuracy来衡量accuracy在三个”叠”（默认数量）的交叉验证：</p>]]></content>
       
       
       <categories>
           
-          <category> development </category>
+          <category> translation </category>
           
       </categories>
       
@@ -1723,23 +1723,6 @@
     </entry>
     
     <entry>
-      <title>极简欧洲史</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
-      
-        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>语义化版本管理</title>
       <link href="/se/semantic-version/"/>
       <url>/se/semantic-version/</url>
@@ -1750,6 +1733,23 @@
       <categories>
           
           <category> se </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>极简欧洲史</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
+      
+        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> reading&amp;writing </category>
           
       </categories>
       
@@ -1791,23 +1791,6 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python%20basic/"/>
-      <url>/python/python%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>PostgreSQL 入门使用</title>
       <link href="/postgreSQL/postgreSQL/get%20start/"/>
       <url>/postgreSQL/postgreSQL/get%20start/</url>
@@ -1842,16 +1825,16 @@
     </entry>
     
     <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/React%20recource/"/>
-      <url>/React/react/React%20recource/</url>
+      <title>React学习体系</title>
+      <link href="/react/react/React%20crouse%20map/"/>
+      <url>/react/react/React%20crouse%20map/</url>
       
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
       
       
       <categories>
           
-          <category> React </category>
+          <category> react </category>
           
       </categories>
       
@@ -1893,16 +1876,33 @@
     </entry>
     
     <entry>
-      <title>React学习体系</title>
-      <link href="/react/react/React%20crouse%20map/"/>
-      <url>/react/react/React%20crouse%20map/</url>
+      <title>React 资源收集</title>
+      <link href="/React/react/React%20recource/"/>
+      <url>/React/react/React%20recource/</url>
       
-        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
           
-          <category> react </category>
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Python 入门</title>
+      <link href="/python/python%20basic/"/>
+      <url>/python/python%20basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
           
       </categories>
       
@@ -1927,11 +1927,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -1961,11 +1961,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -1978,11 +1978,11 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
       
       
       <categories>
@@ -2029,16 +2029,16 @@
     </entry>
     
     <entry>
-      <title>一段简单的PHP 日志代码</title>
-      <link href="/php/php/A%20simple%20log%20feature/"/>
-      <url>/php/php/A%20simple%20log%20feature/</url>
+      <title>Ubuntu上的MySQL安装</title>
+      <link href="/mysql/mysql/Mysql%20configuration/"/>
+      <url>/mysql/mysql/Mysql%20configuration/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</span><br><span class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</span><br><span class="line"></span><br><span class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</span><br><span class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</span><br><span class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</span><br><span class="line">    FILE_APPEND</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转存日志文件</span></span><br><span class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</span><br><span class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</span><br><span class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> mysql </category>
           
       </categories>
       
@@ -2063,16 +2063,16 @@
     </entry>
     
     <entry>
-      <title>Ubuntu上的MySQL安装</title>
-      <link href="/mysql/mysql/Mysql%20configuration/"/>
-      <url>/mysql/mysql/Mysql%20configuration/</url>
+      <title>一段简单的PHP 日志代码</title>
+      <link href="/php/php/A%20simple%20log%20feature/"/>
+      <url>/php/php/A%20simple%20log%20feature/</url>
       
-        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</span><br><span class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</span><br><span class="line"></span><br><span class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</span><br><span class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</span><br><span class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</span><br><span class="line">    FILE_APPEND</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转存日志文件</span></span><br><span class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</span><br><span class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</span><br><span class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
-          <category> mysql </category>
+          <category> php </category>
           
       </categories>
       
@@ -2097,23 +2097,6 @@
     </entry>
     
     <entry>
-      <title>Team leader 能力模型案例解读</title>
-      <link href="/management/management/Team%20leader%20checklist/"/>
-      <url>/management/management/Team%20leader%20checklist/</url>
-      
-        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> management </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Java web project 概览</title>
       <link href="/java/java/java-web-project-overview/"/>
       <url>/java/java/java-web-project-overview/</url>
@@ -2124,23 +2107,6 @@
       <categories>
           
           <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>DDI管理培训总结</title>
-      <link href="/management/management/DDI%20training/"/>
-      <url>/management/management/DDI%20training/</url>
-      
-        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> management </category>
           
       </categories>
       
@@ -2165,6 +2131,40 @@
     </entry>
     
     <entry>
+      <title>Team leader 能力模型案例解读</title>
+      <link href="/management/management/Team%20leader%20checklist/"/>
+      <url>/management/management/Team%20leader%20checklist/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>DDI管理培训总结</title>
+      <link href="/management/management/DDI%20training/"/>
+      <url>/management/management/DDI%20training/</url>
+      
+        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PMP talking</title>
       <link href="/management/management/PMP%20talking/"/>
       <url>/management/management/PMP%20talking/</url>
@@ -2182,11 +2182,28 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      <title>Spring boot 学习指南</title>
+      <link href="/Java/java/Spring%20boot%20Basic/"/>
+      <url>/Java/java/Spring%20boot%20Basic/</url>
       
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java CMS 选型</title>
+      <link href="/java/java/cms%20in%20java/"/>
+      <url>/java/java/cms%20in%20java/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
       
       
       <categories>
@@ -2216,11 +2233,11 @@
     </entry>
     
     <entry>
-      <title>Java CMS 选型</title>
-      <link href="/java/java/cms%20in%20java/"/>
-      <url>/java/java/cms%20in%20java/</url>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
       
-        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
       
       
       <categories>
@@ -2250,16 +2267,16 @@
     </entry>
     
     <entry>
-      <title>Spring boot 学习指南</title>
-      <link href="/Java/java/Spring%20boot%20Basic/"/>
-      <url>/Java/java/Spring%20boot%20Basic/</url>
+      <title>在Ubuntu上通过apt-get搭建tomcat</title>
+      <link href="/java/java/Java%20environment%20in%20linux/"/>
+      <url>/java/java/Java%20environment%20in%20linux/</url>
       
-        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p><h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p><p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p><p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p><p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p><h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p><h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p><blockquote><p>sudo apt-get update</p></blockquote><p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p><blockquote><p>sudo apt-get install tomcat7</p></blockquote><p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p><p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p><blockquote><p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p></blockquote><h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p><p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p><blockquote><p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p></blockquote><h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p><blockquote><p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure><p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p><p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p><blockquote><p>sudo service tomcat7 restart</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> Java </category>
+          <category> java </category>
           
       </categories>
       
@@ -2272,57 +2289,6 @@
       <url>/java/java/Java%20api%20tech%20map/</url>
       
         <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
-      
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>在Ubuntu上通过apt-get搭建tomcat</title>
-      <link href="/java/java/Java%20environment%20in%20linux/"/>
-      <url>/java/java/Java%20environment%20in%20linux/</url>
-      
-        <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p><h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p><p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p><p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p><p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p><h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p><h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p><blockquote><p>sudo apt-get update</p></blockquote><p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p><blockquote><p>sudo apt-get install tomcat7</p></blockquote><p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p><p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p><blockquote><p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p></blockquote><h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p><p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p><blockquote><p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p></blockquote><h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p><blockquote><p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure><p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p><p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p><blockquote><p>sudo service tomcat7 restart</p></blockquote>]]></content>
       
       
       <categories>
@@ -2352,11 +2318,45 @@
     </entry>
     
     <entry>
-      <title>How to use this wiki!</title>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
+      
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>wiki 使用方法</title>
       <link href="/help/how-to-use-this-wiki/"/>
       <url>/help/how-to-use-this-wiki/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to ! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="about-hexo"><a href="#about-hexo" class="headerlink" title="about hexo"></a>about hexo</h2><p>本wiki的思路为使用github作为文档、代码的版本管理,使用hexo来生成静态网站。摒弃了博客的写作方式,使用了markdown和wiki的方式,<br>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><p>##更多资料</p><p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a><br><a href="https://github.com" target="_blank" rel="noopener">Github</a></p><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h2 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h2><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用markdown语法"><a href="#常用markdown语法" class="headerlink" title="常用markdown语法"></a>常用markdown语法</h2><p>标题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><p>列表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure><p>引用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用</span><br></pre></td></tr></table></figure><p>图片与链接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure><p>表格</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">|标题|标题|标题|</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|居左测试文本|居中测试文本|居右测试文本|</span><br><span class="line">|居左测试文本1|居中测试文本2|居右测试文本3|</span><br><span class="line">|居左测试文本11|居中测试文本22|居右测试文本33|</span><br><span class="line">|居左测试文本111|居中测试文本222|居右测试文本333|</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="关于-hexo"><a href="#关于-hexo" class="headerlink" title="关于 hexo"></a>关于 hexo</h2><p>本 wiki 的思路为使用github作为文档、代码的版本管理,使用 hexo 来生成静态网站。摒弃了博客的写作方式,使用了 markdown 和 wiki 的方式,</p><p>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h2 id="更多-Hexo-的资料"><a href="#更多-Hexo-的资料" class="headerlink" title="更多 Hexo 的资料"></a>更多 Hexo 的资料</h2><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li><li><a href="https://github.com" target="_blank" rel="noopener">Github</a></li></ul><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用</span><br></pre></td></tr></table></figure><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">| 标题            |      标题       |            标题 |</span><br><span class="line">| :-------------- | :-------------: | --------------: |</span><br><span class="line">| 居左测试文本    |  居中测试文本   |    居右测试文本 |</span><br><span class="line">| 居左测试文本1   |  居中测试文本2  |   居右测试文本3 |</span><br><span class="line">| 居左测试文本11  | 居中测试文本22  |  居右测试文本33 |</span><br><span class="line">| 居左测试文本111 | 居中测试文本222 | 居右测试文本333 |</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -2379,6 +2379,23 @@
       <categories>
           
           <category> h5 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>前端生态图谱</title>
+      <link href="/frontend/frontend/frontend%20ecologies/"/>
+      <url>/frontend/frontend/frontend%20ecologies/</url>
+      
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> frontend </category>
           
       </categories>
       
@@ -2420,11 +2437,11 @@
     </entry>
     
     <entry>
-      <title>前端生态图谱</title>
-      <link href="/frontend/frontend/frontend%20ecologies/"/>
-      <url>/frontend/frontend/frontend%20ecologies/</url>
+      <title>前端面试tips</title>
+      <link href="/frontend/frontend/Interview%20for%20frontend/"/>
+      <url>/frontend/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -2447,23 +2464,6 @@
       <categories>
           
           <category> collection </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>前端面试tips</title>
-      <link href="/frontend/frontend/Interview%20for%20frontend/"/>
-      <url>/frontend/frontend/Interview%20for%20frontend/</url>
-      
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> frontend </category>
           
       </categories>
       
@@ -2522,11 +2522,11 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/devops/devops/nginx%20usful%20command/"/>
-      <url>/devops/devops/nginx%20usful%20command/</url>
+      <title>Gradle 基本使用指南</title>
+      <link href="/devops/devops/gradle/"/>
+      <url>/devops/devops/gradle/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
+        <content type="html"><![CDATA[<p>命令行界面</p><p><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></p><p>生成 wrapper 文件</p><blockquote><p>gradle wrapper </p></blockquote>]]></content>
       
       
       <categories>
@@ -2556,11 +2556,11 @@
     </entry>
     
     <entry>
-      <title>Gradle 基本使用指南</title>
-      <link href="/devops/devops/gradle/"/>
-      <url>/devops/devops/gradle/</url>
+      <title>Nginx 常用操作</title>
+      <link href="/devops/devops/nginx%20usful%20command/"/>
+      <url>/devops/devops/nginx%20usful%20command/</url>
       
-        <content type="html"><![CDATA[<p>命令行界面</p><p><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></p><p>生成 wrapper 文件</p><blockquote><p>gradle wrapper </p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
       
       
       <categories>
@@ -2692,11 +2692,11 @@
     </entry>
     
     <entry>
-      <title>大型系统架构设计</title>
-      <link href="/architecture/architecture/large%20websites%20architecture/"/>
-      <url>/architecture/architecture/large%20websites%20architecture/</url>
+      <title>OAuth2 架构设计</title>
+      <link href="/architecture/architecture/OAuth2/"/>
+      <url>/architecture/architecture/OAuth2/</url>
       
-        <content type="html"><![CDATA[<h2 id="技术选型清单"><a href="#技术选型清单" class="headerlink" title="技术选型清单"></a>技术选型清单</h2><ul><li>Java</li><li>JWT</li><li>RabbitMQ</li><li>Redis</li><li>Linux </li><li>Ngnix</li><li>Mybatis </li><li>React</li><li>Swagger</li><li>Splunk </li><li>Pack testing </li><li>OAuth2/SSO</li><li>CDN </li><li>Mysql</li><li>zookeeper</li></ul><h2 id="分布式架构设计图"><a href="#分布式架构设计图" class="headerlink" title="分布式架构设计图"></a>分布式架构设计图</h2>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -2726,11 +2726,11 @@
     </entry>
     
     <entry>
-      <title>OAuth2 架构设计</title>
-      <link href="/architecture/architecture/OAuth2/"/>
-      <url>/architecture/architecture/OAuth2/</url>
+      <title>大型系统架构设计</title>
+      <link href="/architecture/architecture/large%20websites%20architecture/"/>
+      <url>/architecture/architecture/large%20websites%20architecture/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="技术选型清单"><a href="#技术选型清单" class="headerlink" title="技术选型清单"></a>技术选型清单</h2><ul><li>Java</li><li>JWT</li><li>RabbitMQ</li><li>Redis</li><li>Linux </li><li>Ngnix</li><li>Mybatis </li><li>React</li><li>Swagger</li><li>Splunk </li><li>Pack testing </li><li>OAuth2/SSO</li><li>CDN </li><li>Mysql</li><li>zookeeper</li></ul><h2 id="分布式架构设计图"><a href="#分布式架构设计图" class="headerlink" title="分布式架构设计图"></a>分布式架构设计图</h2>]]></content>
       
       
       <categories>
@@ -2794,23 +2794,6 @@
     </entry>
     
     <entry>
-      <title>Tips to upgrade the relationship with colleagues</title>
-      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
-      <url>/method/Way%20of%20working%20for%20team%20building/</url>
-      
-        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> method </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Handover tips</title>
       <link href="/method/Way%20of%20working%20for%20handover/"/>
       <url>/method/Way%20of%20working%20for%20handover/</url>
@@ -2828,16 +2811,33 @@
     </entry>
     
     <entry>
-      <title>How to end a meeting?</title>
-      <link href="/english/How%20to%20wrap%20up/"/>
-      <url>/english/How%20to%20wrap%20up/</url>
+      <title>Tips to upgrade the relationship with colleagues</title>
+      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
+      <url>/method/Way%20of%20working%20for%20team%20building/</url>
       
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> english </category>
+          <category> method </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>怎么样快速入门/学习一项技术</title>
+      <link href="/method/How%20to%20learn%20something%20quickly/"/>
+      <url>/method/How%20to%20learn%20something%20quickly/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>可以编写一些例子和demo放到wiki中</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> method </category>
           
       </categories>
       
@@ -2862,16 +2862,16 @@
     </entry>
     
     <entry>
-      <title>怎么样快速入门/学习一项技术</title>
-      <link href="/method/How%20to%20learn%20something%20quickly/"/>
-      <url>/method/How%20to%20learn%20something%20quickly/</url>
+      <title>How to end a meeting?</title>
+      <link href="/english/How%20to%20wrap%20up/"/>
+      <url>/english/How%20to%20wrap%20up/</url>
       
-        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>可以编写一些例子和demo放到wiki中</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
       
       
       <categories>
           
-          <category> method </category>
+          <category> english </category>
           
       </categories>
       
