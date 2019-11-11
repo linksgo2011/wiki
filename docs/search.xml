@@ -1236,40 +1236,6 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/devops/devops/circleci%20basic/"/>
-      <url>/devops/devops/circleci%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> devops </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>FastDFS 分布式文件系统方案</title>
-      <link href="/architecture/architecture/fastDFS/"/>
-      <url>/architecture/architecture/fastDFS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/security/security/Security-Development-Lifecycle/"/>
       <url>/security/security/Security-Development-Lifecycle/</url>
@@ -1297,6 +1263,40 @@
       <categories>
           
           <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Circle CI 基本使用</title>
+      <link href="/devops/devops/circleci%20basic/"/>
+      <url>/devops/devops/circleci%20basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>FastDFS 分布式文件系统方案</title>
+      <link href="/architecture/architecture/fastDFS/"/>
+      <url>/architecture/architecture/fastDFS/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> architecture </category>
           
       </categories>
       
@@ -1604,23 +1604,6 @@
     </entry>
     
     <entry>
-      <title>常用翻译词汇定义</title>
-      <link href="/translation/translation/vocabulary/"/>
-      <url>/translation/translation/vocabulary/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cwiki.apachecn.org/" target="_blank" rel="noopener">http://cwiki.apachecn.org/</a></p><p>## </p><ul><li>fold 叠 有些翻译为折</li><li>observation 采样数据，样本</li><li>hold-out 留出法</li><li>training set 训练集</li><li>Test set 测试集</li><li>target vector ⽬标向量</li><li>pipeline 流水线</li><li>preprocesses 预处理</li><li>logistic regression 逻辑回归</li><li>baseline 基线</li><li>See Also 查看更多</li><li>Accuracy 准确率 </li><li>Precision预测正率 </li><li>Recall 查对率</li><li>F1 F值</li><li>true positives 真正</li><li>true negatives 真负</li><li>mean value  均值 一组数据的总和除以这组数据个数所得到</li><li>median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据</li><li>squared errors 均方误差</li><li>fit 拟合</li></ul><h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul><li>standardizer</li><li>n</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> translation </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Model Evaluation</title>
       <link href="/translation/translation/Model%20Evaluation/"/>
       <url>/translation/translation/Model%20Evaluation/</url>
@@ -1648,6 +1631,23 @@
       <categories>
           
           <category> development </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>常用翻译词汇定义</title>
+      <link href="/translation/translation/vocabulary/"/>
+      <url>/translation/translation/vocabulary/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cwiki.apachecn.org/" target="_blank" rel="noopener">http://cwiki.apachecn.org/</a></p><p>## </p><ul><li>fold 叠 有些翻译为折</li><li>observation 采样数据，样本</li><li>hold-out 留出法</li><li>training set 训练集</li><li>Test set 测试集</li><li>target vector ⽬标向量</li><li>pipeline 流水线</li><li>preprocesses 预处理</li><li>logistic regression 逻辑回归</li><li>baseline 基线</li><li>See Also 查看更多</li><li>Accuracy 准确率 </li><li>Precision预测正率 </li><li>Recall 查对率</li><li>F1 F值</li><li>true positives 真正</li><li>true negatives 真负</li><li>mean value  均值 一组数据的总和除以这组数据个数所得到</li><li>median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据</li><li>squared errors 均方误差</li><li>fit 拟合</li></ul><h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul><li>standardizer</li><li>n</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> translation </category>
           
       </categories>
       
@@ -1723,6 +1723,23 @@
     </entry>
     
     <entry>
+      <title>极简欧洲史</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
+      
+        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> reading&amp;writing </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>语义化版本管理</title>
       <link href="/se/semantic-version/"/>
       <url>/se/semantic-version/</url>
@@ -1740,11 +1757,11 @@
     </entry>
     
     <entry>
-      <title>极简欧洲史</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
+      <title>暗时间摘录</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/</url>
       
-        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
+        <content type="html"><![CDATA[<p>这本书讲时间管理,讲方法论,讲逻辑和认知,但这是一本洗脑书,或者是一本宁愿被洗脑却值得一看的书.</p><p>1,暗时间：习惯将问题放入大脑的潜意识思考  (厕所也许是个好位置)<br>2, 习惯于专注所带来的成就感    (专注的力量很大,这是对于提高效率来说,但是做到集中精神却很难)<br>3,设计自己的目标进度条，不要过早地退出尝试的循环。原始的大脑常常使我们高估失败带来的损失和困难产生的心理障碍。 (step by step 即使很慢,至少有成果)<br>4, 学习时，因为作者习惯的文法和自己习惯的文法不尽相同，所以（1）应当用自己的话将学到的知识重复一遍，加强记忆与大脑熟悉数据的强联系。（2）将知识抽象，使得这种强联系的范围更广，试用性更广。<br>5,学习新知识时的三个问题（1）它的本质（2）第一原则（3）知识结构；<br>6,乘着对一件事有热情，一股脑把往事开头难的那个阶段跨过<br>7,todo list 是个必备的东西<br>8,制定简要的阅读计划，阅读分类<br>9,总结很重要,看了的东西还是原作者的,总结会让它变成自己的<br>10,看一个人，要看他的朋友和兴趣，他的阅读和他见的人<br>11,本能仅仅是原始大脑没有进化完全的结果<br>12,困难的路越走越容易，容易的路越走越困难。<br>13,直接问到问题的答案同时意味着你永远倒要靠别人的大脑来获得答案。<br>14,生活就像一条漫长的跑道，在你遇到障碍的时候，如果你总是屈从于大脑的低级模块，选择绕过，那么你最终将越来越发现只能绕过障碍，而无力半开。如果你大多数时候选择搬开障碍，虽然从表面上看，跟那些绕过障碍的人相比，你的速度慢了很多，但随着你越来越熟练地解决障碍，最终你的速冻将远远超过总是“抄近道”的。   </p>]]></content>
       
       
       <categories>
@@ -1774,23 +1791,6 @@
     </entry>
     
     <entry>
-      <title>暗时间摘录</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9A%97%E6%97%B6%E9%97%B4%E6%91%98%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<p>这本书讲时间管理,讲方法论,讲逻辑和认知,但这是一本洗脑书,或者是一本宁愿被洗脑却值得一看的书.</p><p>1,暗时间：习惯将问题放入大脑的潜意识思考  (厕所也许是个好位置)<br>2, 习惯于专注所带来的成就感    (专注的力量很大,这是对于提高效率来说,但是做到集中精神却很难)<br>3,设计自己的目标进度条，不要过早地退出尝试的循环。原始的大脑常常使我们高估失败带来的损失和困难产生的心理障碍。 (step by step 即使很慢,至少有成果)<br>4, 学习时，因为作者习惯的文法和自己习惯的文法不尽相同，所以（1）应当用自己的话将学到的知识重复一遍，加强记忆与大脑熟悉数据的强联系。（2）将知识抽象，使得这种强联系的范围更广，试用性更广。<br>5,学习新知识时的三个问题（1）它的本质（2）第一原则（3）知识结构；<br>6,乘着对一件事有热情，一股脑把往事开头难的那个阶段跨过<br>7,todo list 是个必备的东西<br>8,制定简要的阅读计划，阅读分类<br>9,总结很重要,看了的东西还是原作者的,总结会让它变成自己的<br>10,看一个人，要看他的朋友和兴趣，他的阅读和他见的人<br>11,本能仅仅是原始大脑没有进化完全的结果<br>12,困难的路越走越容易，容易的路越走越困难。<br>13,直接问到问题的答案同时意味着你永远倒要靠别人的大脑来获得答案。<br>14,生活就像一条漫长的跑道，在你遇到障碍的时候，如果你总是屈从于大脑的低级模块，选择绕过，那么你最终将越来越发现只能绕过障碍，而无力半开。如果你大多数时候选择搬开障碍，虽然从表面上看，跟那些绕过障碍的人相比，你的速度慢了很多，但随着你越来越熟练地解决障碍，最终你的速冻将远远超过总是“抄近道”的。   </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Python 入门</title>
       <link href="/python/python%20basic/"/>
       <url>/python/python%20basic/</url>
@@ -1801,57 +1801,6 @@
       <categories>
           
           <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/React%20recource/"/>
-      <url>/React/react/React%20recource/</url>
-      
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React-Native/react/React%20native%20resource/"/>
-      <url>/React-Native/react/React%20native%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React Native </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React学习体系</title>
-      <link href="/react/react/React%20crouse%20map/"/>
-      <url>/react/react/React%20crouse%20map/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
           
       </categories>
       
@@ -1893,6 +1842,23 @@
     </entry>
     
     <entry>
+      <title>React 资源收集</title>
+      <link href="/React/react/React%20recource/"/>
+      <url>/React/react/React%20recource/</url>
+      
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
@@ -1910,16 +1876,16 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>React Native 资源收集</title>
+      <link href="/React-Native/react/React%20native%20resource/"/>
+      <url>/React-Native/react/React%20native%20resource/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> React Native </category>
           
       </categories>
       
@@ -1927,16 +1893,16 @@
     </entry>
     
     <entry>
-      <title>PHP 包管理工具</title>
-      <link href="/php/php/PHP%20package%20manager/"/>
-      <url>/php/php/PHP%20package%20manager/</url>
+      <title>React学习体系</title>
+      <link href="/react/react/React%20crouse%20map/"/>
+      <url>/react/react/React%20crouse%20map/</url>
       
-        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;config&quot;: &#123;</span><br><span class="line">        &quot;vendor-dir&quot;: &quot;Vendor/&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>php composer.phar install</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> react </category>
           
       </categories>
       
@@ -1944,11 +1910,11 @@
     </entry>
     
     <entry>
-      <title>PHP环境in Mac</title>
-      <link href="/php/php/php-environment-in-mac/"/>
-      <url>/php/php/php-environment-in-mac/</url>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
       
-        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">phpinfo();</span><br><span class="line"></span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -1978,11 +1944,28 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>PHP环境in Mac</title>
+      <link href="/php/php/php-environment-in-mac/"/>
+      <url>/php/php/php-environment-in-mac/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">phpinfo();</span><br><span class="line"></span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
       
       
       <categories>
@@ -2012,16 +1995,33 @@
     </entry>
     
     <entry>
-      <title>投资理财产品</title>
-      <link href="/other/others/financing/"/>
-      <url>/other/others/financing/</url>
+      <title>PHP 包管理工具</title>
+      <link href="/php/php/PHP%20package%20manager/"/>
+      <url>/php/php/PHP%20package%20manager/</url>
       
-        <content type="html"><![CDATA[<p>## </p><ul><li>股票<ul><li>起步资金 1000</li></ul></li><li><p>基金</p><ul><li>归票</li><li>指数</li><li>混合</li><li>货币</li></ul></li><li><p>期货/合约</p></li><li><p>数字货币</p></li><li><p>货币/外汇</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;config&quot;: &#123;</span><br><span class="line">        &quot;vendor-dir&quot;: &quot;Vendor/&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>php composer.phar install</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> other </category>
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展Linux/unix 下的编译安装</title>
+      <link href="/php/php/PHP%20extension/"/>
+      <url>/php/php/PHP%20extension/</url>
+      
+        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/Downloads/mcrypt-2.5.8</span><br><span class="line">./configure --disable-posix-threads --enable-static</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Downloads/php-5.5.14/ext/mcrypt</span><br><span class="line">phpize</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">cd modules</span><br><span class="line">sudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212/</span><br><span class="line">//上面可以使用make install 代替</span><br></pre></td></tr></table></figure><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/php.ini</span><br></pre></td></tr></table></figure><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</span><br></pre></td></tr></table></figure><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make EXTENSION_DIR=&apos;/usr/local/lib/php/extensions&apos; install</span><br></pre></td></tr></table></figure></p><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/bin</span><br><span class="line">/sbin</span><br><span class="line">/usr</span><br><span class="line">/System</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/usr/local</span><br><span class="line">/Applications</span><br><span class="line">/Library</span><br><span class="line">~/Library</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
           
       </categories>
       
@@ -2046,16 +2046,16 @@
     </entry>
     
     <entry>
-      <title>PHP拓展Linux/unix 下的编译安装</title>
-      <link href="/php/php/PHP%20extension/"/>
-      <url>/php/php/PHP%20extension/</url>
+      <title>投资理财产品</title>
+      <link href="/other/others/financing/"/>
+      <url>/other/others/financing/</url>
       
-        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/Downloads/mcrypt-2.5.8</span><br><span class="line">./configure --disable-posix-threads --enable-static</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Downloads/php-5.5.14/ext/mcrypt</span><br><span class="line">phpize</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">cd modules</span><br><span class="line">sudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212/</span><br><span class="line">//上面可以使用make install 代替</span><br></pre></td></tr></table></figure><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/php.ini</span><br></pre></td></tr></table></figure><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</span><br></pre></td></tr></table></figure><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make EXTENSION_DIR=&apos;/usr/local/lib/php/extensions&apos; install</span><br></pre></td></tr></table></figure></p><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/bin</span><br><span class="line">/sbin</span><br><span class="line">/usr</span><br><span class="line">/System</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/usr/local</span><br><span class="line">/Applications</span><br><span class="line">/Library</span><br><span class="line">~/Library</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>## </p><ul><li>股票<ul><li>起步资金 1000</li></ul></li><li><p>基金</p><ul><li>归票</li><li>指数</li><li>混合</li><li>货币</li></ul></li><li><p>期货/合约</p></li><li><p>数字货币</p></li><li><p>货币/外汇</p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> other </category>
           
       </categories>
       
@@ -2097,23 +2097,6 @@
     </entry>
     
     <entry>
-      <title>Mysql 基本管理命令</title>
-      <link href="/mysql/mysql/Mysql%20baisc%20operation/"/>
-      <url>/mysql/mysql/Mysql%20baisc%20operation/</url>
-      
-        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Team leader 能力模型案例解读</title>
       <link href="/management/management/Team%20leader%20checklist/"/>
       <url>/management/management/Team%20leader%20checklist/</url>
@@ -2148,23 +2131,6 @@
     </entry>
     
     <entry>
-      <title>PMP talking</title>
-      <link href="/management/management/PMP%20talking/"/>
-      <url>/management/management/PMP%20talking/</url>
-      
-        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> management </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>DDI管理培训总结</title>
       <link href="/management/management/DDI%20training/"/>
       <url>/management/management/DDI%20training/</url>
@@ -2182,16 +2148,50 @@
     </entry>
     
     <entry>
-      <title>Spring boot 学习指南</title>
-      <link href="/Java/java/Spring%20boot%20Basic/"/>
-      <url>/Java/java/Spring%20boot%20Basic/</url>
+      <title>Mysql 基本管理命令</title>
+      <link href="/mysql/mysql/Mysql%20baisc%20operation/"/>
+      <url>/mysql/mysql/Mysql%20baisc%20operation/</url>
       
-        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
       
       
       <categories>
           
-          <category> Java </category>
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PMP talking</title>
+      <link href="/management/management/PMP%20talking/"/>
+      <url>/management/management/PMP%20talking/</url>
+      
+        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
           
       </categories>
       
@@ -2204,6 +2204,23 @@
       <url>/java/java/java-exception/</url>
       
         <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(ints[<span class="number">4</span>]);</span><br><span class="line">    System.out.println(<span class="string">"是否还能执行"</span>);<span class="comment">// 发生异常以后，后面的代码不能被执行</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"数组越界错误"</span>);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"异常出现后"</span>);</span><br></pre></td></tr></table></figure></p><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                    <span class="keyword">new</span> FileInputStream(<span class="string">"file"</span>)));</span><br><span class="line">            <span class="comment">// do some other work</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// close reader</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            reader.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NeverCaught</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionB</span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ExceptionB(<span class="string">"exception b"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> <span class="keyword">throws</span> ExceptionC </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            f();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExceptionB e) &#123;</span><br><span class="line">            ExceptionC c = <span class="keyword">new</span> ExceptionC(<span class="string">"exception a"</span>);</span><br><span class="line">            <span class="comment">//异常连</span></span><br><span class="line">            c.initCause(e);</span><br><span class="line">            <span class="keyword">throw</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                g();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ExceptionC e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">exception.ExceptionC</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:12)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.main(NeverCaught.java:21)</span></span><br><span class="line"><span class="comment">Caused by: exception.ExceptionB</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.f(NeverCaught.java:5)</span></span><br><span class="line"><span class="comment">at exception.NeverCaught.g(NeverCaught.java:10)</span></span><br><span class="line"><span class="comment">... 1 more</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java CMS 选型</title>
+      <link href="/java/java/cms%20in%20java/"/>
+      <url>/java/java/cms%20in%20java/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
       
       
       <categories>
@@ -2233,33 +2250,16 @@
     </entry>
     
     <entry>
-      <title>Java CMS 选型</title>
-      <link href="/java/java/cms%20in%20java/"/>
-      <url>/java/java/cms%20in%20java/</url>
+      <title>Spring boot 学习指南</title>
+      <link href="/Java/java/Spring%20boot%20Basic/"/>
+      <url>/Java/java/Spring%20boot%20Basic/</url>
       
-        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
-      
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> Java </category>
           
       </categories>
       
@@ -2301,11 +2301,11 @@
     </entry>
     
     <entry>
-      <title>在Ubuntu上通过apt-get搭建tomcat</title>
-      <link href="/java/java/Java%20environment%20in%20linux/"/>
-      <url>/java/java/Java%20environment%20in%20linux/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p><h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p><p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p><p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p><p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p><h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p><h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p><blockquote><p>sudo apt-get update</p></blockquote><p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p><blockquote><p>sudo apt-get install tomcat7</p></blockquote><p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p><p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p><blockquote><p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p></blockquote><h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p><p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p><blockquote><p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p></blockquote><h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p><blockquote><p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure><p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p><p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p><blockquote><p>sudo service tomcat7 restart</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -2318,11 +2318,11 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>在Ubuntu上通过apt-get搭建tomcat</title>
+      <link href="/java/java/Java%20environment%20in%20linux/"/>
+      <url>/java/java/Java%20environment%20in%20linux/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p><h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p><p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p><p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p><p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p><h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p><h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p><blockquote><p>sudo apt-get update</p></blockquote><p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p><blockquote><p>sudo apt-get install tomcat7</p></blockquote><p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p><p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p><blockquote><p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p></blockquote><h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p><p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p><blockquote><p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p></blockquote><h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p><blockquote><p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure><p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p><p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p><blockquote><p>sudo service tomcat7 restart</p></blockquote>]]></content>
       
       
       <categories>
@@ -2352,23 +2352,6 @@
     </entry>
     
     <entry>
-      <title>H5 app开发经验</title>
-      <link href="/h5/h5/h5%20app/"/>
-      <url>/h5/h5/h5%20app/</url>
-      
-        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> h5 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>How to use this wiki!</title>
       <link href="/help/how-to-use-this-wiki/"/>
       <url>/help/how-to-use-this-wiki/</url>
@@ -2379,6 +2362,23 @@
       <categories>
           
           <category> help </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>H5 app开发经验</title>
+      <link href="/h5/h5/h5%20app/"/>
+      <url>/h5/h5/h5%20app/</url>
+      
+        <content type="html"><![CDATA[<p>安装打包后的IPA文件到手机：<a href="http://blog.csdn.net/Qyee16/article/details/68083242" target="_blank" rel="noopener">http://blog.csdn.net/Qyee16/article/details/68083242</a><br>申请APP证书：<a href="https://www.jianshu.com/p/665c1d67adde" target="_blank" rel="noopener">https://www.jianshu.com/p/665c1d67adde</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> h5 </category>
           
       </categories>
       
@@ -2437,23 +2437,6 @@
     </entry>
     
     <entry>
-      <title>前端面试tips</title>
-      <link href="/frontend/frontend/Interview%20for%20frontend/"/>
-      <url>/frontend/frontend/Interview%20for%20frontend/</url>
-      
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> frontend </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>CSS样式框架选型</title>
       <link href="/collection/frontend%20boilderplate/"/>
       <url>/collection/frontend%20boilderplate/</url>
@@ -2464,6 +2447,23 @@
       <categories>
           
           <category> collection </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>前端面试tips</title>
+      <link href="/frontend/frontend/Interview%20for%20frontend/"/>
+      <url>/frontend/frontend/Interview%20for%20frontend/</url>
+      
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> frontend </category>
           
       </categories>
       
@@ -2488,23 +2488,6 @@
     </entry>
     
     <entry>
-      <title>免费的CI/CD 工具</title>
-      <link href="/CI/engineered/CI-free-tools/"/>
-      <url>/CI/engineered/CI-free-tools/</url>
-      
-        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> CI </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>最实用的Linux命令</title>
       <link href="/devops/devops/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/"/>
       <url>/devops/devops/%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/</url>
@@ -2522,16 +2505,16 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/devops/devops/nginx%20usful%20command/"/>
-      <url>/devops/devops/nginx%20usful%20command/</url>
+      <title>免费的CI/CD 工具</title>
+      <link href="/CI/engineered/CI-free-tools/"/>
+      <url>/CI/engineered/CI-free-tools/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
       
       
       <categories>
           
-          <category> devops </category>
+          <category> CI </category>
           
       </categories>
       
@@ -2539,11 +2522,11 @@
     </entry>
     
     <entry>
-      <title>Gradle 基本使用指南</title>
-      <link href="/devops/devops/gradle/"/>
-      <url>/devops/devops/gradle/</url>
+      <title>Nginx 常用操作</title>
+      <link href="/devops/devops/nginx%20usful%20command/"/>
+      <url>/devops/devops/nginx%20usful%20command/</url>
       
-        <content type="html"><![CDATA[<p>命令行界面</p><p><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></p><p>生成 wrapper 文件</p><blockquote><p>gradle wrapper </p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&apos;s document root# concurs with nginx&apos;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart<br>查看服务器装填<br>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>]]></content>
       
       
       <categories>
@@ -2573,16 +2556,16 @@
     </entry>
     
     <entry>
-      <title>AWS Certificate Manager 常见问题</title>
-      <link href="/aws/devops/aws-certificate-manager-faqs/"/>
-      <url>/aws/devops/aws-certificate-manager-faqs/</url>
+      <title>Gradle 基本使用指南</title>
+      <link href="/devops/devops/gradle/"/>
+      <url>/devops/devops/gradle/</url>
       
-        <content type="html"><![CDATA[<h3 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h3><p>问：什么是 AWS Certificate Manager (ACM)？</p><p>AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理和部署用于 AWS 服务的安全套接字层/传输层安全性 (SSL/TLS) 证书。SSL/TLS 证书用于保护网络通信的安全并确立网站在 Internet 上的身份。使用 AWS Certificate Manager，您无需再为购买、上传和更新 SSL/TLS 证书而经历耗时的手动流程。利用 AWS Certificate Manager，您可以快速请求证书，在 AWS 资源 (如 Amazon API Gateway 上的 Elastic Load Balancer、Amazon CloudFront 分配或 API) 上部署该证书，并让 AWS Certificate Manager 处理证书更新事宜。通过 AWS Certificate Manager 预置的 SSL/TLS 证书可免费使用。您只需为您创建的用于运行应用程序的 AWS 资源付费。</p><p>问：什么是 SSL/TLS 证书？</p><p>SSL/TLS 证书使 Web 浏览器能够标识使用安全套接字层/传输层安全性 (SSL/TLS) 协议的网站并与之建立加密的网络连接。证书在名为公有密钥基础设施 (PKI) 的加密系统中使用。通过 PKI，在双方都信任同一个第三方 (称为证书颁发机构) 的情况下，一方可以为使用证书的另一方确立身份。ACM 用户指南、概念和术语提供了其他背景信息和定义。</p><p>问：AWS Certificate Manager 有什么作用？</p><p>您可以请求并预置 SSL/TLS 证书，然后为使用 Elastic Load Balancing、Amazon CloudFront 或 Amazon API Gateway 的站点和应用程序部署这些证书。验证请求域的所有权并获得颁发的证书之后，您可以从 AWS 管理控制台的下拉列表中选择 SSL/TLS 证书并部署该证书。或者，您也可以使用 AWS 命令行界面 (CLI) 命令或 API 调用将 ACM 提供的证书部署到 AWS 资源。ACM 会为您管理证书更新和证书部署事宜。</p><p>问：使用 AWS Certificate Manager 有哪些优势？</p><p>借助 ACM，您可以更加轻松地为 AWS 平台上的网站或应用程序启用 SSL/TLS。ACM 免除了过去与使用 SSL/TLS 和管理 SSL/TLS 证书相关的大量手动流程。ACM 还可管理证书更新，从而帮助您避免因证书配置错误、撤销或过期而导致的停机。您可获得 SSL/TLS 保护并轻松管理证书。启用 SSL/TLS 有助于提高站点的搜索排名，并可帮助您满足传输数据加密的法规合规性要求。</p><p>当您使用 ACM 时，它会应用强加密和密钥管理最佳实践来确保证书私有密钥的安全。借助 ACM，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 集中管理 AWS Certificate Manager 在 AWS 区域内提供的所有 SSL/TLS 证书。AWS Certificate Manager 集成了其他 AWS 服务，因此您可以请求 SSL/TLS 证书，然后通过 AWS 管理控制台、AWS CLI 命令或 API 调用为 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配预置证书。</p><p>问：如何开始使用 ACM？</p><p>要开始使用 AWS Certificate Manager，请导航到 AWS 管理控制台中的“Certificate Manager”，然后使用向导输入站点的名称以请求 SSL/TLS 证书。您也可以使用 AWS CLI 或 API 请求证书。在 ACM 获得域所有者的批准并且系统颁发 SSL/TLS 证书后，您就可以将其用于与 ACM 集成的其他 AWS 资源了。您只需从 AWS 管理控制台的下拉列表中选择您要部署的 SSL/TLS 证书即可。或者，您也可以执行一个 AWS CLI 命令或调用一个 AWS API，将该证书与您的资源关联起来。AWS Certificate Manager 随后会将该证书部署到您选择的资源。有关请求和使用 AWS Certificate Manager 所提供证书的更多信息，请参阅《AWS Certificate Manager 用户指南》中的入门。</p><p>问：ACM 提供哪种类型的证书？</p><p>ACM 提供域验证 (DV) 证书，供终止 SSL/TLS 的网站和应用程序使用。有关 ACM 提供的证书的更多详细信息，请参阅证书特点。</p><p>问：我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>您可以将 ACM 用于以下 AWS 服务：<br>• Elastic Load Balancing – 请参阅 Elastic Load Balancing 文档<br>• Amazon CloudFront – 请参阅 CloudFront 文档<br>• Amazon API Gateway – 请参阅 API Gateway 文档<br>• AWS Elastic Beanstalk – 请参阅 AWS Elastic Beanstalk 文档<br>问：ACM 提供的证书是否适合政府部门？</p><p>ACM 证书可能适合部分政府部门，而并非对所有政府部门均适合。请查看当地法律、规则和法规，以确定某个 ACM 证书是否适合。如有任何疑问，请访问 AWS Support 中心并创建案例。</p><p>问：ACM 在哪些区域提供？</p><p>请访问 AWS 全球基础设施页面，了解目前提供 AWS 服务的区域。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请或导入该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：我是否可以在多个 AWS 区域使用同一证书？</p><p>这要取决于您目前使用的是 Elastic Load Balancing 还是 Amazon CloudFront。要在不同区域内针对同一站点 (具有相同的完全限定域名 (FQDN) 或 FQDN 集) 将某个证书与 Elastic Load Balancing 配合使用，您需要为计划使用证书的每个区域申请新证书。请注意，还需要针对新区域重新验证证书中的每个名称。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：是否可以在区域之间复制证书？</p><p>目前不可以。</p><p>问：如果同一域名我已拥有来自其他提供商的证书，我是否还能够使用 ACM 配置证书？</p><p>是。<br>问：我是否可以在 Amazon EC2 实例或自己的服务器上使用证书？</p><p>不可以。目前，ACM 提供的证书只能用于特定 AWS 服务。请参阅我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>问：我能够通过 ACM 预置的证书数量是否有限制？</p><p>默认情况下，您可以在每个区域中为每个账户预置多达 100 个证书。通过 ACM 预置的每个证书最多可以拥有 10 个完全限定域名。您可以访问 AWS Support 中心请求增加上限。有关更多详细信息，请参阅 AWS 文档。</p><h3 id="预置证书"><a href="#预置证书" class="headerlink" title="预置证书"></a>预置证书</h3><p>问：如何预置 ACM 提供的证书？</p><p>您可以使用 AWS 管理控制台、AWS CLI 或 ACM API/SDK 进行预置。要使用 AWS 管理控制台，请导航到控制台的 ACM 部分，选择“Request a Certificate”，输入站点的域名，然后按照屏幕上的说明完成请求。如果用户可以通过其他名称访问您的站点，则可以在请求中添加其他域名。域的所有者会收到一封关于请求批准颁发证书的电子邮件。在请求中的所有域名获得域所有者的批准后，系统将颁发证书并准备好预置证书以用于其他 AWS 服务，如 Elastic Load Balancing 或 Amazon CloudFront。有关详细信息，请参阅 ACM 文档。<br>问：颁发证书需要多长时间？</p><p>获得域的所有者或域所有者授权代表的批准后，系统通常会在几分钟内颁发证书，但也可能需要更长时间。有关更多详细信息，请参阅如何预置 ACM 提供的证书？<br>问：请求证书时会发生什么情况？</p><p>为了验证您对请求的证书中包括的域名或名称的控制权，系统会针对证书请求中的每个域名向注册域的所有者发送电子邮件。在域的所有者或授权代表批准证书请求之前，证书请求将处于待验证状态。域的所有者或授权代表 (审批者) 可以按照电子邮件中的说明批准证书请求。说明将指引审批者导航到审批网站，单击电子邮件中的链接或将电子邮件中的链接粘贴到浏览器中，以导航到审批网站。审批者确认与证书请求相关的信息，如域名、证书 ID (ARN) 以及发出请求的 AWS 账户 ID，如果信息准确无误，则批准请求。在证书请求中的所有域名获得批准后，系统通常会在几分钟内颁发证书，届时证书请求的状态将变为已颁发。获得颁发的证书后，您便可以开始将其用于其他 AWS 服务。<br>问：审批请求要发送到哪个电子邮件地址？<br>当您请求证书时，系统会针对证书请求中的每个域名使用 WHOIS 查找来检索该域的联系人信息。电子邮件会发送至针对该域列出的域注册人、管理联系人和技术联系人。电子邮件还会同时发送至域的五个特定电子邮件地址，即在您请求的域名前加上 admin@、administrator@、hostmaster@、webmaster@ 和 postmaster@ 生成的五个地址。例如，如果您为 server.example.com 请求证书，系统将使用针对 example.com 域，外加 <a href="mailto:admin@server.example.com" target="_blank" rel="noopener">admin@server.example.com</a>、<a href="mailto:administrator@server.example.com" target="_blank" rel="noopener">administrator@server.example.com</a>、<a href="mailto:hostmaster@server.example.com" target="_blank" rel="noopener">hostmaster@server.example.com</a>、<a href="mailto:postmaster@server.example.com" target="_blank" rel="noopener">postmaster@server.example.com</a> 和 <a href="mailto:webmaster@server.example.com" target="_blank" rel="noopener">webmaster@server.example.com</a> 的 WHOIS 查询返回的联系人信息将电子邮件发送至域注册人、技术联系人和管理联系人。</p><p>针对以“www”开头的域名或以星号 (*) 开头的通配符名称，这五个特定电子邮件地址采用不同的构造方式。ACM 会删除前导的“www”或星号，而电子邮件则被发送到通过在域名其余部分之前加上 admin@、administrator@、hostmaster@、postmaster@ 和 webmaster@ 来构造的管理员地址。例如，如果您为 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 请求证书，则电子邮件被发送到 WHOIS 联系人 (如前所述) 以及 <a href="mailto:admin@example.com" target="_blank" rel="noopener">admin@example.com</a>，而不是 <a href="mailto:admin@www.example.com" target="_blank" rel="noopener">admin@www.example.com</a>。其余四个特定电子邮件地址也采用类似的方式构造。</p><p>请求证书之后，您可以使用 ACM 控制台、AWS CLI 或 API 查看针对各个域发送的电子邮件的收件方电子邮件地址列表。<br>问：我是否可以配置接收证书审批请求的电子邮件地址？</p><p>不可以，不过您可以配置用于接收验证电子邮件的基础域名。基础域名必须是证书请求中域名的超级域。例如，如果您想为 server.domain.example.com 请求证书，但希望将审批电子邮件发送至 <a href="mailto:admin@domain.example.com" target="_blank" rel="noopener">admin@domain.example.com</a>，则可以使用 AWS API 或 API 实现这一目的。有关更多详细信息，请参阅 ACM CLI 参考和 ACM API 参考。<br>问：我是否可以使用具有代理联系人信息 (例如 Privacy Guard 或 WhoisGuard) 的域？</p><p>可以；不过，电子邮件的发送可能会因为代理而延迟。通过代理发送的电子邮件可能会进入您的垃圾邮件文件夹。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以通过我的 AWS 账户的技术联系人验证我的身份？</p><p>不可以。验证域所有者身份的流程和策略非常严格，并且由为公开可信的证书颁发机构设置策略标准的 CA/Browser Forum 决定。要了解详情，请参阅 Amazon Trust Services 存储库中最新的“Amazon Trust Services 认证规范声明”。<br>问：我的证书请求状态为什么是“待验证”？</p><p>已发出请求但未经过批准的证书的状态为待验证。域的所有者或授权代表必须批准证书请求，然后系统才能颁发证书。</p><p>问：如果我没有收到验证和批准电子邮件，该怎么做？</p><p>有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：我的证书请求状态为什么显示为“失败”？</p><p>有多种原因会导致域的验证控制流程失败，包括但不限于：网络资源的网址列表中包括的域被认定为包含恶意软件或欺诈性内容。要确定申请失败的原因，请访问 ACM 故障排除指南。</p><p>问：我的证书请求状态为什么显示为“验证超时”？</p><p>如果 ACM 证书请求在 72 小时内没有接受验证，则被视为超时。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：是否有其他方法来验证域或审批支持的证书？</p><p>目前没有。</p><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>问：浏览器、操作系统和移动设备是否信任 ACM 提供的证书？</p><p>目前的绝大部分浏览器、操作系统和移动设备都信任 ACM 提供的证书。ACM 提供的证书在浏览器和操作系统中的普及率高达 99%，包括 Windows XP SP3 和 Java 6 及更高版本。</p><p>问：如何确认我的浏览器是否信任 ACM 提供的证书？</p><p>信任 ACM 提供的证书的浏览器会显示一个锁形图标，并且在连接到使用 ACM 基于 SSL/TLS 提供的证书 (例如使用 HTTPS) 的站点时会显示不要颁发证书的警告。</p><p>ACM 提供的证书由亚马逊的证书颁发机构 (CA) 进行验证。任何包含 Amazon Root CA 1、Starfield Services Root Certificate Authority – G2 或 Starfield Class 2 Certification Authority 的浏览器、应用程序和操作系统均会信任由 ACM 提供的证书。</p><p>问：ACM 是否可以提供包括多个域名的证书？</p><p>可以。每个证书必须包括至少一个域名，并且您可以根据需要在证书中添加更多域名。例如，您可以将域名“<a href="http://www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。" target="_blank" rel="noopener">www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。</a></p><p>问：什么是通配符域名？</p><p>通配符域名匹配域中的所有第一级子域或主机名。第一级子域是一个不包含句号 (圆点) 的域名标签。例如，您可以使用名称“*.example.com”保护 <a href="http://www.example.com、images.example.com" target="_blank" rel="noopener">www.example.com、images.example.com</a> 以及以 .example.com 结尾的任何其他主机名或第一级子域。有关更多详细信息，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以提供带有通配符域名的证书？</p><p>可以。</p><p>问：ACM 是否提供组织验证 (OV) 或扩展验证 (EV) 证书？</p><p>目前不提供。</p><p>问：ACM 是否为网站提供除 SSL/TLS 以外的其他类型的证书？</p><p>目前不提供。</p><p>问：我是否可以使用 ACM 提供的证书进行代码签名或电子邮件加密？</p><p>不可以。</p><p>问：ACM 是否提供用于签名和加密电子邮件的证书 (S/MIME 证书) ？</p><p>目前不提供。</p><p>问：ACM 提供的证书使用哪些算法？</p><p>ACM 证书使用的是采用 2048 位模数和 SHA-256 的 RSA 密钥。</p><p>问：ACM 是否支持椭圆曲线 (ECDSA) 证书？</p><p>目前不支持。<br>问：亚马逊在哪里介绍其关于颁发证书的策略和规范？</p><p>“Amazon Trust Services 证书策略”和“Amazon Trust Services 证书规范声明”文档中提供了相关信息。有关最新版本，请参阅 Amazon Trust Services 存储库。</p><p>问：如何撤销证书？</p><p>您可以访问 AWS Support 中心并创建案例，以请求 ACM 撤销证书。 </p><p>问：如果证书中的信息发生更改，我该如何通知 AWS？</p><p>您可以发送电子邮件至 validation-questions[at]amazon.com，通知 AWS。</p><p> </p><h3 id="私有密钥保护"><a href="#私有密钥保护" class="headerlink" title="私有密钥保护"></a>私有密钥保护</h3><p>问：ACM 提供的证书的私有密钥是如何管理的？</p><p>系统会为 ACM 提供的每个证书创建一个键前缀。AWS Certificate Manager 可保护并管理用于 SSL/TLS 证书的私有密钥。ACM 会运用强加密和密钥管理最佳实践来保护并存储私有密钥。</p><p>问：ACM 是否可以跨 AWS 区域复制证书？</p><p>不可以。每个 ACM 证书私有密钥均存储在您请求该证书的区域。例如，当您在弗吉尼亚北部区域获得新的证书后，ACM 会将私有密钥存储在弗吉尼亚北部区域。仅当 ACM 证书与 CloudFront 分配关联时，该证书才能跨区域复制。在这种情况下，CloudFront 会将 ACM 证书分配到为您的分配配置的地理位置。</p><p>问：我是否可以对证书私有密钥的使用进行审核？</p><p>可以。您可以使用 AWS CloudTrail 查看日志，从而了解证书私有密钥的使用时间。</p><h3 id="记账功能"><a href="#记账功能" class="headerlink" title="记账功能"></a>记账功能</h3><p>问：ACM 证书的使用如何收费和计费？</p><p>通过 AWS Certificate Manager 预置、管理和部署的 SSL/TLS 证书可免费使用。您只需针对为运行应用程序而创建的 AWS 资源付费，例如 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配。</p><h3 id="详细信息"><a href="#详细信息" class="headerlink" title="详细信息"></a>详细信息</h3><p>问：我是否可以将同一证书用于多个 Elastic Load Balancing 负载均衡器和多个 CloudFront 分配？</p><p>可以。</p><p>问：我是否可以将证书用于没有公共 Internet 访问权限的内部 Elastic Load Balancing 负载均衡器？</p><p>可以。请参阅托管更新与部署，详细了解 ACM 如何处理无法通过公共 Internet 访问的证书的更新问题。</p><p>问：用于 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 的证书是否也能用于 example.com？</p><p>不可以。如果您希望自己的站点能够被两个域名 (<a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 和 example.com) 引用，则必须请求包含这两个名称的证书。</p><p>问：我是否可以导入第三方证书并将其用于 AWS 服务？</p><p>可以。如果想要将第三方证书与 Amazon CloudFront 或 Elastic Load Balancing 配合使用，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 将该证书导入 ACM。ACM 不会处理已导入证书的更新流程。您可以使用 AWS 管理控制台监控已导入证书的到期日期，并导入新的第三方证书以便替换即将过期的证书。</p><p>问：ACM 提供的证书的有效期是多久？</p><p>目前，ACM 提供的证书的有效期为 13 个月。</p><p>问：ACM 如何帮助我的企业或组织满足合规性要求？</p><p>使用 ACM 可以轻松确保连接的安全性 (这也是 PCI、 FedRAMP 以及 HIPAA 等众多合规性计划的共同要求)，从而帮助您遵守法规要求。有关合规性的具体信息，请参阅 <a href="http://aws.amazon.com/compliance。" target="_blank" rel="noopener">http://aws.amazon.com/compliance。</a></p><p>问：ACM 是否有服务等级协议 (SLA)？</p><p>目前没有。</p><p>问：ACM 是否允许域名 (也称为国际化域名 (IDN)) 中包含本地语言字符？</p><p>ACM 不支持采用 Unicode 编码的本地语言字符；不过，ACM 支持域名使用 ASCII 编码的本地语言字符。</p><p>问：ACM 支持哪些域名标签格式？</p><p>ACM 仅支持采用 UTF-8 编码的 ASCII 字符，包括包含“xn-”的标签 (通常称为域名的 Punycode)。ACM 不支持域名中使用 Unicode 输入 (Unicode 标签)。</p><p>问：ACM 是否会提供一个可以在我的网站上显示的安全站点签章或信任徽标？</p><p>不会。如果您想使用站点签章，您可以从第三方供应商处获得。我们建议选择可评估和维护您站点和/或业务实践的安全性的供应商。</p><p>问：亚马逊是否允许将其商标或徽标用作证书徽章、站点签章或信任徽标？</p><p>不允许。此类签章和徽章可复制到不使用 ACM 服务的站点，但不能假借亚马逊名号建立信任。为保护我们的客户和亚马逊的声誉，我们不允许以这种方式使用我们的徽标。</p><h3 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h3><p>问：AWS CloudTrail 提供哪些日志记录信息？</p><p>您可以确定哪些用户和账户为支持 AWS CloudTrail 的服务调用了 AWS API、发出调用的源 IP 地址以及调用发生的时间。例如，您可以确定哪些用户为关联 ACM 提供的证书与 Elastic Load Balancer 调用了 API，以及 Elastic Load Balancing 服务使用 KMS API 调用加密密钥的时间。</p><h3 id="托管更新与部署"><a href="#托管更新与部署" class="headerlink" title="托管更新与部署"></a>托管更新与部署</h3><p>问：什么是 ACM 托管更新与部署？</p><p>ACM 托管更新与部署可以管理由 ACM 提供的 SSL/TLS 证书的更新流程并部署更新后的证书。</p><p>问：使用 ACM 托管更新与部署有哪些优势？</p><p>ACM 可帮助您管理 SSL/TLS 证书的更新和部署。与容易出错的手动流程相比，ACM 能够让安全 Web 服务或应用程序的 SSL/TLS 配置和维护具有更高的操作可靠性。托管更新与部署有助于您避免因证书过期导致的停机。ACM 托管更新与部署不需要您在自己的站点安装或维护软件客户端或代理。ACM 会作为一种服务运行，并且与其他 AWS 服务集成。这意味着，您可以使用 AWS 管理控制台、AWS CLI 或 API 在 AWS 平台上集中管理和部署证书。</p><p>问：哪些证书可以自动更新和部署？</p><p>ACM 能够更新并部署 ACM 提供的证书，而无需域的所有者进行任何其他审批或介入。如果证书必须经过附加审批才能更新，ACM 会基于证书中的所有域名向相应域的所有者提出审批请求，以此管理更新流程。在证书中的所有域名均获得批准后，ACM 会更新证书并自动将其部署到您的 AWS 资源。如果域的所有者没有批准证书，我们会通知您 (AWS 账户所有者)。为了提高 ACM 自动更新和部署 ACM 提供的证书的能力，请确保证书正在使用，且证书中包括的所有域名均能解析至您的站点，并可通过 Internet 访问。<br>问：ACM 何时更新证书？</p><p>ACM 最早可在证书过期前 60 天开始执行更新流程。目前，ACM 提供的证书的验证期限是 13 个月。请参阅 ACM 用户指南，了解有关托管续订的更多信息。</p><p>问：在更新证书和部署新证书之前，我是否会收到通知？</p><p>不会。ACM 可能会在不提前通知的情况下更新证书或更新密钥，并更换旧的证书。</p><p>问：ACM 是否可以更新包含裸域 (也称为顶级域名，例如“example.com”) 的证书？</p><p>为了提高 ACM 自动更新和部署包含裸域的证书的能力，请确保裸域的 DNS 查找能够解析至与该证书关联的 AWS 资源。将裸域解析到 AWS 资源可能非常困难，除非您使用 Route 53 或支持别名资源记录 (或同类记录) 的其他 DNS 提供商，从而将裸域映射到 AWS 资源。有关更多信息，请参阅 Route 53 开发人员指南。</p><p>问：在 ACM 部署更新后的证书时，我的站点是否会断开现有连接？</p><p>不会。在部署新证书之后建立的连接将使用新证书，而现有连接不会受到影响。</p>]]></content>
+        <content type="html"><![CDATA[<p>命令行界面</p><p><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></p><p>生成 wrapper 文件</p><blockquote><p>gradle wrapper </p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> aws </category>
+          <category> devops </category>
           
       </categories>
       
@@ -2590,11 +2573,11 @@
     </entry>
     
     <entry>
-      <title>Lambda 入门</title>
-      <link href="/aws/devops/aws%20lambda/"/>
-      <url>/aws/devops/aws%20lambda/</url>
+      <title>AWS Certificate Manager 常见问题</title>
+      <link href="/aws/devops/aws-certificate-manager-faqs/"/>
+      <url>/aws/devops/aws-certificate-manager-faqs/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+        <content type="html"><![CDATA[<h3 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h3><p>问：什么是 AWS Certificate Manager (ACM)？</p><p>AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理和部署用于 AWS 服务的安全套接字层/传输层安全性 (SSL/TLS) 证书。SSL/TLS 证书用于保护网络通信的安全并确立网站在 Internet 上的身份。使用 AWS Certificate Manager，您无需再为购买、上传和更新 SSL/TLS 证书而经历耗时的手动流程。利用 AWS Certificate Manager，您可以快速请求证书，在 AWS 资源 (如 Amazon API Gateway 上的 Elastic Load Balancer、Amazon CloudFront 分配或 API) 上部署该证书，并让 AWS Certificate Manager 处理证书更新事宜。通过 AWS Certificate Manager 预置的 SSL/TLS 证书可免费使用。您只需为您创建的用于运行应用程序的 AWS 资源付费。</p><p>问：什么是 SSL/TLS 证书？</p><p>SSL/TLS 证书使 Web 浏览器能够标识使用安全套接字层/传输层安全性 (SSL/TLS) 协议的网站并与之建立加密的网络连接。证书在名为公有密钥基础设施 (PKI) 的加密系统中使用。通过 PKI，在双方都信任同一个第三方 (称为证书颁发机构) 的情况下，一方可以为使用证书的另一方确立身份。ACM 用户指南、概念和术语提供了其他背景信息和定义。</p><p>问：AWS Certificate Manager 有什么作用？</p><p>您可以请求并预置 SSL/TLS 证书，然后为使用 Elastic Load Balancing、Amazon CloudFront 或 Amazon API Gateway 的站点和应用程序部署这些证书。验证请求域的所有权并获得颁发的证书之后，您可以从 AWS 管理控制台的下拉列表中选择 SSL/TLS 证书并部署该证书。或者，您也可以使用 AWS 命令行界面 (CLI) 命令或 API 调用将 ACM 提供的证书部署到 AWS 资源。ACM 会为您管理证书更新和证书部署事宜。</p><p>问：使用 AWS Certificate Manager 有哪些优势？</p><p>借助 ACM，您可以更加轻松地为 AWS 平台上的网站或应用程序启用 SSL/TLS。ACM 免除了过去与使用 SSL/TLS 和管理 SSL/TLS 证书相关的大量手动流程。ACM 还可管理证书更新，从而帮助您避免因证书配置错误、撤销或过期而导致的停机。您可获得 SSL/TLS 保护并轻松管理证书。启用 SSL/TLS 有助于提高站点的搜索排名，并可帮助您满足传输数据加密的法规合规性要求。</p><p>当您使用 ACM 时，它会应用强加密和密钥管理最佳实践来确保证书私有密钥的安全。借助 ACM，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 集中管理 AWS Certificate Manager 在 AWS 区域内提供的所有 SSL/TLS 证书。AWS Certificate Manager 集成了其他 AWS 服务，因此您可以请求 SSL/TLS 证书，然后通过 AWS 管理控制台、AWS CLI 命令或 API 调用为 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配预置证书。</p><p>问：如何开始使用 ACM？</p><p>要开始使用 AWS Certificate Manager，请导航到 AWS 管理控制台中的“Certificate Manager”，然后使用向导输入站点的名称以请求 SSL/TLS 证书。您也可以使用 AWS CLI 或 API 请求证书。在 ACM 获得域所有者的批准并且系统颁发 SSL/TLS 证书后，您就可以将其用于与 ACM 集成的其他 AWS 资源了。您只需从 AWS 管理控制台的下拉列表中选择您要部署的 SSL/TLS 证书即可。或者，您也可以执行一个 AWS CLI 命令或调用一个 AWS API，将该证书与您的资源关联起来。AWS Certificate Manager 随后会将该证书部署到您选择的资源。有关请求和使用 AWS Certificate Manager 所提供证书的更多信息，请参阅《AWS Certificate Manager 用户指南》中的入门。</p><p>问：ACM 提供哪种类型的证书？</p><p>ACM 提供域验证 (DV) 证书，供终止 SSL/TLS 的网站和应用程序使用。有关 ACM 提供的证书的更多详细信息，请参阅证书特点。</p><p>问：我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>您可以将 ACM 用于以下 AWS 服务：<br>• Elastic Load Balancing – 请参阅 Elastic Load Balancing 文档<br>• Amazon CloudFront – 请参阅 CloudFront 文档<br>• Amazon API Gateway – 请参阅 API Gateway 文档<br>• AWS Elastic Beanstalk – 请参阅 AWS Elastic Beanstalk 文档<br>问：ACM 提供的证书是否适合政府部门？</p><p>ACM 证书可能适合部分政府部门，而并非对所有政府部门均适合。请查看当地法律、规则和法规，以确定某个 ACM 证书是否适合。如有任何疑问，请访问 AWS Support 中心并创建案例。</p><p>问：ACM 在哪些区域提供？</p><p>请访问 AWS 全球基础设施页面，了解目前提供 AWS 服务的区域。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请或导入该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：我是否可以在多个 AWS 区域使用同一证书？</p><p>这要取决于您目前使用的是 Elastic Load Balancing 还是 Amazon CloudFront。要在不同区域内针对同一站点 (具有相同的完全限定域名 (FQDN) 或 FQDN 集) 将某个证书与 Elastic Load Balancing 配合使用，您需要为计划使用证书的每个区域申请新证书。请注意，还需要针对新区域重新验证证书中的每个名称。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：是否可以在区域之间复制证书？</p><p>目前不可以。</p><p>问：如果同一域名我已拥有来自其他提供商的证书，我是否还能够使用 ACM 配置证书？</p><p>是。<br>问：我是否可以在 Amazon EC2 实例或自己的服务器上使用证书？</p><p>不可以。目前，ACM 提供的证书只能用于特定 AWS 服务。请参阅我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>问：我能够通过 ACM 预置的证书数量是否有限制？</p><p>默认情况下，您可以在每个区域中为每个账户预置多达 100 个证书。通过 ACM 预置的每个证书最多可以拥有 10 个完全限定域名。您可以访问 AWS Support 中心请求增加上限。有关更多详细信息，请参阅 AWS 文档。</p><h3 id="预置证书"><a href="#预置证书" class="headerlink" title="预置证书"></a>预置证书</h3><p>问：如何预置 ACM 提供的证书？</p><p>您可以使用 AWS 管理控制台、AWS CLI 或 ACM API/SDK 进行预置。要使用 AWS 管理控制台，请导航到控制台的 ACM 部分，选择“Request a Certificate”，输入站点的域名，然后按照屏幕上的说明完成请求。如果用户可以通过其他名称访问您的站点，则可以在请求中添加其他域名。域的所有者会收到一封关于请求批准颁发证书的电子邮件。在请求中的所有域名获得域所有者的批准后，系统将颁发证书并准备好预置证书以用于其他 AWS 服务，如 Elastic Load Balancing 或 Amazon CloudFront。有关详细信息，请参阅 ACM 文档。<br>问：颁发证书需要多长时间？</p><p>获得域的所有者或域所有者授权代表的批准后，系统通常会在几分钟内颁发证书，但也可能需要更长时间。有关更多详细信息，请参阅如何预置 ACM 提供的证书？<br>问：请求证书时会发生什么情况？</p><p>为了验证您对请求的证书中包括的域名或名称的控制权，系统会针对证书请求中的每个域名向注册域的所有者发送电子邮件。在域的所有者或授权代表批准证书请求之前，证书请求将处于待验证状态。域的所有者或授权代表 (审批者) 可以按照电子邮件中的说明批准证书请求。说明将指引审批者导航到审批网站，单击电子邮件中的链接或将电子邮件中的链接粘贴到浏览器中，以导航到审批网站。审批者确认与证书请求相关的信息，如域名、证书 ID (ARN) 以及发出请求的 AWS 账户 ID，如果信息准确无误，则批准请求。在证书请求中的所有域名获得批准后，系统通常会在几分钟内颁发证书，届时证书请求的状态将变为已颁发。获得颁发的证书后，您便可以开始将其用于其他 AWS 服务。<br>问：审批请求要发送到哪个电子邮件地址？<br>当您请求证书时，系统会针对证书请求中的每个域名使用 WHOIS 查找来检索该域的联系人信息。电子邮件会发送至针对该域列出的域注册人、管理联系人和技术联系人。电子邮件还会同时发送至域的五个特定电子邮件地址，即在您请求的域名前加上 admin@、administrator@、hostmaster@、webmaster@ 和 postmaster@ 生成的五个地址。例如，如果您为 server.example.com 请求证书，系统将使用针对 example.com 域，外加 <a href="mailto:admin@server.example.com" target="_blank" rel="noopener">admin@server.example.com</a>、<a href="mailto:administrator@server.example.com" target="_blank" rel="noopener">administrator@server.example.com</a>、<a href="mailto:hostmaster@server.example.com" target="_blank" rel="noopener">hostmaster@server.example.com</a>、<a href="mailto:postmaster@server.example.com" target="_blank" rel="noopener">postmaster@server.example.com</a> 和 <a href="mailto:webmaster@server.example.com" target="_blank" rel="noopener">webmaster@server.example.com</a> 的 WHOIS 查询返回的联系人信息将电子邮件发送至域注册人、技术联系人和管理联系人。</p><p>针对以“www”开头的域名或以星号 (*) 开头的通配符名称，这五个特定电子邮件地址采用不同的构造方式。ACM 会删除前导的“www”或星号，而电子邮件则被发送到通过在域名其余部分之前加上 admin@、administrator@、hostmaster@、postmaster@ 和 webmaster@ 来构造的管理员地址。例如，如果您为 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 请求证书，则电子邮件被发送到 WHOIS 联系人 (如前所述) 以及 <a href="mailto:admin@example.com" target="_blank" rel="noopener">admin@example.com</a>，而不是 <a href="mailto:admin@www.example.com" target="_blank" rel="noopener">admin@www.example.com</a>。其余四个特定电子邮件地址也采用类似的方式构造。</p><p>请求证书之后，您可以使用 ACM 控制台、AWS CLI 或 API 查看针对各个域发送的电子邮件的收件方电子邮件地址列表。<br>问：我是否可以配置接收证书审批请求的电子邮件地址？</p><p>不可以，不过您可以配置用于接收验证电子邮件的基础域名。基础域名必须是证书请求中域名的超级域。例如，如果您想为 server.domain.example.com 请求证书，但希望将审批电子邮件发送至 <a href="mailto:admin@domain.example.com" target="_blank" rel="noopener">admin@domain.example.com</a>，则可以使用 AWS API 或 API 实现这一目的。有关更多详细信息，请参阅 ACM CLI 参考和 ACM API 参考。<br>问：我是否可以使用具有代理联系人信息 (例如 Privacy Guard 或 WhoisGuard) 的域？</p><p>可以；不过，电子邮件的发送可能会因为代理而延迟。通过代理发送的电子邮件可能会进入您的垃圾邮件文件夹。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以通过我的 AWS 账户的技术联系人验证我的身份？</p><p>不可以。验证域所有者身份的流程和策略非常严格，并且由为公开可信的证书颁发机构设置策略标准的 CA/Browser Forum 决定。要了解详情，请参阅 Amazon Trust Services 存储库中最新的“Amazon Trust Services 认证规范声明”。<br>问：我的证书请求状态为什么是“待验证”？</p><p>已发出请求但未经过批准的证书的状态为待验证。域的所有者或授权代表必须批准证书请求，然后系统才能颁发证书。</p><p>问：如果我没有收到验证和批准电子邮件，该怎么做？</p><p>有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：我的证书请求状态为什么显示为“失败”？</p><p>有多种原因会导致域的验证控制流程失败，包括但不限于：网络资源的网址列表中包括的域被认定为包含恶意软件或欺诈性内容。要确定申请失败的原因，请访问 ACM 故障排除指南。</p><p>问：我的证书请求状态为什么显示为“验证超时”？</p><p>如果 ACM 证书请求在 72 小时内没有接受验证，则被视为超时。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：是否有其他方法来验证域或审批支持的证书？</p><p>目前没有。</p><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>问：浏览器、操作系统和移动设备是否信任 ACM 提供的证书？</p><p>目前的绝大部分浏览器、操作系统和移动设备都信任 ACM 提供的证书。ACM 提供的证书在浏览器和操作系统中的普及率高达 99%，包括 Windows XP SP3 和 Java 6 及更高版本。</p><p>问：如何确认我的浏览器是否信任 ACM 提供的证书？</p><p>信任 ACM 提供的证书的浏览器会显示一个锁形图标，并且在连接到使用 ACM 基于 SSL/TLS 提供的证书 (例如使用 HTTPS) 的站点时会显示不要颁发证书的警告。</p><p>ACM 提供的证书由亚马逊的证书颁发机构 (CA) 进行验证。任何包含 Amazon Root CA 1、Starfield Services Root Certificate Authority – G2 或 Starfield Class 2 Certification Authority 的浏览器、应用程序和操作系统均会信任由 ACM 提供的证书。</p><p>问：ACM 是否可以提供包括多个域名的证书？</p><p>可以。每个证书必须包括至少一个域名，并且您可以根据需要在证书中添加更多域名。例如，您可以将域名“<a href="http://www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。" target="_blank" rel="noopener">www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。</a></p><p>问：什么是通配符域名？</p><p>通配符域名匹配域中的所有第一级子域或主机名。第一级子域是一个不包含句号 (圆点) 的域名标签。例如，您可以使用名称“*.example.com”保护 <a href="http://www.example.com、images.example.com" target="_blank" rel="noopener">www.example.com、images.example.com</a> 以及以 .example.com 结尾的任何其他主机名或第一级子域。有关更多详细信息，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以提供带有通配符域名的证书？</p><p>可以。</p><p>问：ACM 是否提供组织验证 (OV) 或扩展验证 (EV) 证书？</p><p>目前不提供。</p><p>问：ACM 是否为网站提供除 SSL/TLS 以外的其他类型的证书？</p><p>目前不提供。</p><p>问：我是否可以使用 ACM 提供的证书进行代码签名或电子邮件加密？</p><p>不可以。</p><p>问：ACM 是否提供用于签名和加密电子邮件的证书 (S/MIME 证书) ？</p><p>目前不提供。</p><p>问：ACM 提供的证书使用哪些算法？</p><p>ACM 证书使用的是采用 2048 位模数和 SHA-256 的 RSA 密钥。</p><p>问：ACM 是否支持椭圆曲线 (ECDSA) 证书？</p><p>目前不支持。<br>问：亚马逊在哪里介绍其关于颁发证书的策略和规范？</p><p>“Amazon Trust Services 证书策略”和“Amazon Trust Services 证书规范声明”文档中提供了相关信息。有关最新版本，请参阅 Amazon Trust Services 存储库。</p><p>问：如何撤销证书？</p><p>您可以访问 AWS Support 中心并创建案例，以请求 ACM 撤销证书。 </p><p>问：如果证书中的信息发生更改，我该如何通知 AWS？</p><p>您可以发送电子邮件至 validation-questions[at]amazon.com，通知 AWS。</p><p> </p><h3 id="私有密钥保护"><a href="#私有密钥保护" class="headerlink" title="私有密钥保护"></a>私有密钥保护</h3><p>问：ACM 提供的证书的私有密钥是如何管理的？</p><p>系统会为 ACM 提供的每个证书创建一个键前缀。AWS Certificate Manager 可保护并管理用于 SSL/TLS 证书的私有密钥。ACM 会运用强加密和密钥管理最佳实践来保护并存储私有密钥。</p><p>问：ACM 是否可以跨 AWS 区域复制证书？</p><p>不可以。每个 ACM 证书私有密钥均存储在您请求该证书的区域。例如，当您在弗吉尼亚北部区域获得新的证书后，ACM 会将私有密钥存储在弗吉尼亚北部区域。仅当 ACM 证书与 CloudFront 分配关联时，该证书才能跨区域复制。在这种情况下，CloudFront 会将 ACM 证书分配到为您的分配配置的地理位置。</p><p>问：我是否可以对证书私有密钥的使用进行审核？</p><p>可以。您可以使用 AWS CloudTrail 查看日志，从而了解证书私有密钥的使用时间。</p><h3 id="记账功能"><a href="#记账功能" class="headerlink" title="记账功能"></a>记账功能</h3><p>问：ACM 证书的使用如何收费和计费？</p><p>通过 AWS Certificate Manager 预置、管理和部署的 SSL/TLS 证书可免费使用。您只需针对为运行应用程序而创建的 AWS 资源付费，例如 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配。</p><h3 id="详细信息"><a href="#详细信息" class="headerlink" title="详细信息"></a>详细信息</h3><p>问：我是否可以将同一证书用于多个 Elastic Load Balancing 负载均衡器和多个 CloudFront 分配？</p><p>可以。</p><p>问：我是否可以将证书用于没有公共 Internet 访问权限的内部 Elastic Load Balancing 负载均衡器？</p><p>可以。请参阅托管更新与部署，详细了解 ACM 如何处理无法通过公共 Internet 访问的证书的更新问题。</p><p>问：用于 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 的证书是否也能用于 example.com？</p><p>不可以。如果您希望自己的站点能够被两个域名 (<a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 和 example.com) 引用，则必须请求包含这两个名称的证书。</p><p>问：我是否可以导入第三方证书并将其用于 AWS 服务？</p><p>可以。如果想要将第三方证书与 Amazon CloudFront 或 Elastic Load Balancing 配合使用，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 将该证书导入 ACM。ACM 不会处理已导入证书的更新流程。您可以使用 AWS 管理控制台监控已导入证书的到期日期，并导入新的第三方证书以便替换即将过期的证书。</p><p>问：ACM 提供的证书的有效期是多久？</p><p>目前，ACM 提供的证书的有效期为 13 个月。</p><p>问：ACM 如何帮助我的企业或组织满足合规性要求？</p><p>使用 ACM 可以轻松确保连接的安全性 (这也是 PCI、 FedRAMP 以及 HIPAA 等众多合规性计划的共同要求)，从而帮助您遵守法规要求。有关合规性的具体信息，请参阅 <a href="http://aws.amazon.com/compliance。" target="_blank" rel="noopener">http://aws.amazon.com/compliance。</a></p><p>问：ACM 是否有服务等级协议 (SLA)？</p><p>目前没有。</p><p>问：ACM 是否允许域名 (也称为国际化域名 (IDN)) 中包含本地语言字符？</p><p>ACM 不支持采用 Unicode 编码的本地语言字符；不过，ACM 支持域名使用 ASCII 编码的本地语言字符。</p><p>问：ACM 支持哪些域名标签格式？</p><p>ACM 仅支持采用 UTF-8 编码的 ASCII 字符，包括包含“xn-”的标签 (通常称为域名的 Punycode)。ACM 不支持域名中使用 Unicode 输入 (Unicode 标签)。</p><p>问：ACM 是否会提供一个可以在我的网站上显示的安全站点签章或信任徽标？</p><p>不会。如果您想使用站点签章，您可以从第三方供应商处获得。我们建议选择可评估和维护您站点和/或业务实践的安全性的供应商。</p><p>问：亚马逊是否允许将其商标或徽标用作证书徽章、站点签章或信任徽标？</p><p>不允许。此类签章和徽章可复制到不使用 ACM 服务的站点，但不能假借亚马逊名号建立信任。为保护我们的客户和亚马逊的声誉，我们不允许以这种方式使用我们的徽标。</p><h3 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h3><p>问：AWS CloudTrail 提供哪些日志记录信息？</p><p>您可以确定哪些用户和账户为支持 AWS CloudTrail 的服务调用了 AWS API、发出调用的源 IP 地址以及调用发生的时间。例如，您可以确定哪些用户为关联 ACM 提供的证书与 Elastic Load Balancer 调用了 API，以及 Elastic Load Balancing 服务使用 KMS API 调用加密密钥的时间。</p><h3 id="托管更新与部署"><a href="#托管更新与部署" class="headerlink" title="托管更新与部署"></a>托管更新与部署</h3><p>问：什么是 ACM 托管更新与部署？</p><p>ACM 托管更新与部署可以管理由 ACM 提供的 SSL/TLS 证书的更新流程并部署更新后的证书。</p><p>问：使用 ACM 托管更新与部署有哪些优势？</p><p>ACM 可帮助您管理 SSL/TLS 证书的更新和部署。与容易出错的手动流程相比，ACM 能够让安全 Web 服务或应用程序的 SSL/TLS 配置和维护具有更高的操作可靠性。托管更新与部署有助于您避免因证书过期导致的停机。ACM 托管更新与部署不需要您在自己的站点安装或维护软件客户端或代理。ACM 会作为一种服务运行，并且与其他 AWS 服务集成。这意味着，您可以使用 AWS 管理控制台、AWS CLI 或 API 在 AWS 平台上集中管理和部署证书。</p><p>问：哪些证书可以自动更新和部署？</p><p>ACM 能够更新并部署 ACM 提供的证书，而无需域的所有者进行任何其他审批或介入。如果证书必须经过附加审批才能更新，ACM 会基于证书中的所有域名向相应域的所有者提出审批请求，以此管理更新流程。在证书中的所有域名均获得批准后，ACM 会更新证书并自动将其部署到您的 AWS 资源。如果域的所有者没有批准证书，我们会通知您 (AWS 账户所有者)。为了提高 ACM 自动更新和部署 ACM 提供的证书的能力，请确保证书正在使用，且证书中包括的所有域名均能解析至您的站点，并可通过 Internet 访问。<br>问：ACM 何时更新证书？</p><p>ACM 最早可在证书过期前 60 天开始执行更新流程。目前，ACM 提供的证书的验证期限是 13 个月。请参阅 ACM 用户指南，了解有关托管续订的更多信息。</p><p>问：在更新证书和部署新证书之前，我是否会收到通知？</p><p>不会。ACM 可能会在不提前通知的情况下更新证书或更新密钥，并更换旧的证书。</p><p>问：ACM 是否可以更新包含裸域 (也称为顶级域名，例如“example.com”) 的证书？</p><p>为了提高 ACM 自动更新和部署包含裸域的证书的能力，请确保裸域的 DNS 查找能够解析至与该证书关联的 AWS 资源。将裸域解析到 AWS 资源可能非常困难，除非您使用 Route 53 或支持别名资源记录 (或同类记录) 的其他 DNS 提供商，从而将裸域映射到 AWS 资源。有关更多信息，请参阅 Route 53 开发人员指南。</p><p>问：在 ACM 部署更新后的证书时，我的站点是否会断开现有连接？</p><p>不会。在部署新证书之后建立的连接将使用新证书，而现有连接不会受到影响。</p>]]></content>
       
       
       <categories>
@@ -2617,6 +2600,23 @@
       <categories>
           
           <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Lambda 入门</title>
+      <link href="/aws/devops/aws%20lambda/"/>
+      <url>/aws/devops/aws%20lambda/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> aws </category>
           
       </categories>
       
