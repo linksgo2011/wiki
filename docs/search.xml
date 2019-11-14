@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>防火墙暴露端口</title>
+      <link href="/linux/linux/linux-fire-wall/"/>
+      <url>/linux/linux/linux-fire-wall/</url>
+      
+        <content type="html"><![CDATA[<p>开启端口 </p><blockquote><p>sudo  firewall-cmd –zone=public –add-port=80/tcp –permanent</p></blockquote><p>命令含义：</p><p>–zone #作用域</p><p>–add-port=80/tcp  #添加端口，格式为：端口/通讯协议</p><p>–permanent  #永久生效，没有此参数重启后失效</p><p>重启防火墙 </p><blockquote><p>sudo firewall-cmd –reload</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>使用和生成 SSH key 登录 Linux 服务器</title>
       <link href="/linux/linux/linux-gen-ssh-key/"/>
       <url>/linux/linux/linux-gen-ssh-key/</url>
@@ -1253,40 +1270,6 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/devops/devops/circleci%20basic/"/>
-      <url>/devops/devops/circleci%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> devops </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>FastDFS 分布式文件系统方案</title>
-      <link href="/architecture/architecture/fastDFS/"/>
-      <url>/architecture/architecture/fastDFS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/security/security/Security-Development-Lifecycle/"/>
       <url>/security/security/Security-Development-Lifecycle/</url>
@@ -1321,16 +1304,33 @@
     </entry>
     
     <entry>
-      <title>DDD (Domain-Driven Design) 领域驱动设计</title>
-      <link href="/architecture/architecture/Domain%20Driven%20Design/"/>
-      <url>/architecture/architecture/Domain%20Driven%20Design/</url>
+      <title>FastDFS 分布式文件系统方案</title>
+      <link href="/architecture/architecture/fastDFS/"/>
+      <url>/architecture/architecture/fastDFS/</url>
       
-        <content type="html"><![CDATA[<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>DDD是一套综合软件系统分析和设计的面向对象建模方法，与此相似的工程方法还有 RUP（统一建模语言）。DDD解决的问题是应用复杂问题下的建模问题。</p><p>开发团队和领域专家（业务专家）一起通过通用语言(Ubiquitous Language)去理解和消化领域知识，从领域知识中提取和划分为一个一个的子领域（核心子域，通用子域，支撑子域），并在子领域上建立模型，再重复以上步骤，这样周而复始，构建出一套符合当前领域的模型。</p><p>在这个过程中有一个很重要的方法就是糊墙，又叫 EventStorming。</p><h2 id="统一语言"><a href="#统一语言" class="headerlink" title="统一语言"></a>统一语言</h2><p>通用语言是一个很泛的概念，它作为一种沟通工具，在开发团队内部，开发团队与领域专家之间使用。它包含了自然语言、文档和图表（不一定是标准的UML图，只要能表达出领域知识的都可以）等内容。对通用语言中名词，动词的使用需要认真考量，因为这些名词和动词会作为后面模型的指导命名。</p><p>统一语言本质上是在领域设计时候，预先定义下系统中出现的概念、名词以及解释。</p><p>例如在一个报销系统中，报销单据的提交前端和业务人员使用了ticket、后端应用使用了 bill，数据库如果也是用了其他的名词，在多团队、微服务设计下势必会造成混乱。</p><p>再比如在电商系统中，订单这个概念会指普通订单、支付订单、售后订单，如果只是使用 order 又会造成混乱，统一语言的目的是预先定义出领域概念。</p><ul><li>订单 order</li><li>支付单 payment</li><li>售后单 ticket</li></ul><p>解决统一语言的问题：</p><ul><li>在白板上表达您的业务领域</li><li>定义开发所有术语的词汇表</li><li>领域专家和开发人员可以使用Event Storming实现业务流程学习的快速循环</li></ul><h2 id="战略设计"><a href="#战略设计" class="headerlink" title="战略设计"></a>战略设计</h2><p>它也称为战略建模，它是DDD的支柱，其主要目标是与整个项目团队（领域专家和技术团队）一起定义有界上下文，统一的无所不在语言和上下文映射。</p><h3 id="有界上下文-限界上下文"><a href="#有界上下文-限界上下文" class="headerlink" title="有界上下文/限界上下文"></a>有界上下文/限界上下文</h3><p>有界上下文是DDD最重要的概念之一，我们可以说这是应用领域模型表达的概念上的限制。当您尝试为大型领域建模时，您将遇到很大的困难，因为不同的人群将使用稍微不同的术语和句子来表达这些领域知识和概念，使用有界上下文，可以让人们明白：在当前上下文之外使用相同的词汇表却可能意味着不同的东西。</p><p>我们可以说，有界上下文主要是语言划界，正如[ Vaughn Vernon ]在他的书中所说的那样。重要的是要理解每个有界上下文都有自己的无所不在语言。</p><p>随着模型的发展，您将感觉需要在有界上下文之间创建关系，为此我们将使用上下文映射。</p><h3 id="上下文映射​​​​​​​"><a href="#上下文映射​​​​​​​" class="headerlink" title="上下文映射​​​​​​​"></a>上下文映射​​​​​​​</h3><p>上下文映射有助于理解整个项目，能够显示不同的有界上下文之间的关系。理解有界上下文之间的关系非常重要，这样您就可以正确地构建域模型。</p><p>有几种方法可以关联有界上下文：</p><ul><li>共享内核：两个或多个团队之间的共享上下文，可减少代码重复，但是，任何更改都必须在团队之间进行组合和通知。</li><li>客户/供应商：它是客户端（下游）和服务器（上游）之间的关系，团队处于持续集成状态。</li><li>循规蹈矩Conformist：这是涉及上游和下游团队的情景，但在此模型中，上游团队没有动力满足下游团队的需求。</li><li>伙伴：这是团队依赖并需要建立合作关系的场景，以便他们能够满足两个系统的开发需求。</li><li>反腐败层：在这种情况下，客户端（下游）创建与上游上下文通信的中间层，以满足其自己的域模型。</li><li>还有其他集成模型，如开放主机服务Published Language，发布语言，分离方式Separate Ways。</li></ul><h2 id="战术设计"><a href="#战术设计" class="headerlink" title="战术设计"></a>战术设计</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><p>一个实体是一个潜在的可变对象，它具有一个唯一的标识符。实体在其域模型中具有自己的生命周期，这使您可以获取此实体的整个变化的历史记录。</p><h3 id="值对象"><a href="#值对象" class="headerlink" title="值对象"></a>值对象</h3><p>区分值对象与实体的区别在于，值对象是不可变的，并且没有唯一标识，仅由其属性的值定义。这种不变性的结果是，为了更新值对象，您必须创建一个新实例来替换旧实例。</p><h3 id="聚合Aggregates"><a href="#聚合Aggregates" class="headerlink" title="聚合Aggregates"></a>聚合Aggregates</h3><p>它是战术设计中最重要和最复杂的模式之一，聚合基于另外两个战术标准，即实体和值对象。聚合是一种或多种的群集实体，并且还可以包含值对象。此群集的父实体接收聚合根的名称。</p><h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><p>服务是无状态对象，它们执行一些不适合实体或值对象上的操作的逻辑。它们执行特定于域的操作，这可能涉及多个域对象。</p><h3 id="库Repository"><a href="#库Repository" class="headerlink" title="库Repository"></a>库Repository</h3><p>存储库主要用于处理存储，它们抽象了对数据存储的依赖担忧。他们负责持久聚合。</p><h3 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a>工厂</h3><p>工厂用于在构造Object时提供抽象，并且可以返回聚合根，实体或值对象。工厂是构建通过构造方法构建复杂的对象的替代方法。</p><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>事件表示域中发生的重大事件，需要向属于域的其他利益相关者报告。Aggregates通常发布事件。</p><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>开发人员很少提及模块，但是它们的使用非常有趣。模块帮助我们隔离概念，可以定义为Java包或C＃命名空间，并始终遵循泛在语言。</p><h2 id="Eventstorming"><a href="#Eventstorming" class="headerlink" title="Eventstorming"></a>Eventstorming</h2><h2 id="子域的种类"><a href="#子域的种类" class="headerlink" title="子域的种类"></a>子域的种类</h2><ul><li>核心子域</li><li>通用子域 （特殊的支撑子域）</li><li>支撑子域</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
       
       
       <categories>
           
           <category> architecture </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Circle CI 基本使用</title>
+      <link href="/devops/devops/circleci%20basic/"/>
+      <url>/devops/devops/circleci%20basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    machine:</span></span><br><span class="line"><span class="attr">      java:</span></span><br><span class="line"><span class="attr">        version:</span> <span class="string">oraclejdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span> <span class="string">./gradlew</span> <span class="string">clean</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - store_artifacts:</span></span><br><span class="line"><span class="attr">          path:</span> <span class="string">build/libs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    machine:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    working_directory:</span> <span class="string">~/whoisspy</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">      -</span> <span class="string">checkout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">current</span> <span class="string">position</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">those</span> <span class="string">variables</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">env</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Download</span> <span class="string">jar</span> <span class="string">file</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            export CIRCLE_TOKEN='?circle-token=93106a0b530273d9cb344ea608bc609490fdf202'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' &gt; artifacts.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;artifacts.txt xargs -P4 -I % wget %</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Display</span> <span class="string">whole</span> <span class="string">list</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">ls</span> <span class="bullet">-al</span> <span class="string">&amp;</span> <span class="string">aws</span> <span class="bullet">--version</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">Change</span> <span class="string">permission</span> <span class="string">for</span> <span class="string">aws.pem</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">chmod</span> <span class="number">0600</span> <span class="string">.circleci/aws.pem</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">SCP</span> <span class="string">file</span> <span class="string">to</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">scp</span> <span class="bullet">-i</span> <span class="string">"./.circleci/aws.pem"</span> <span class="string">whoisspy-0.0.1-SNAPSHOT.jar</span> <span class="string">ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">login</span> <span class="string">to</span> <span class="string">target</span> <span class="string">instance</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">|</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span></span><br><span class="line"><span class="string">            cd workspace</span></span><br><span class="line"><span class="string">            #kill old instance</span></span><br><span class="line"><span class="string">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # todo start new instance</span></span><br><span class="line"><span class="string">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            # test if it has been started</span></span><br><span class="line"><span class="string">            netstat -apn | grep 8086'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">      - run:</span></span><br><span class="line"><span class="attr">          name:</span> <span class="string">last</span> <span class="string">step</span></span><br><span class="line"><span class="attr">          command:</span> <span class="string">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#      - run:</span></span><br><span class="line"><span class="comment">#          name: kill ssh process</span></span><br><span class="line"><span class="comment">#          command: |</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#            pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span></span><br><span class="line"><span class="comment">#            sleep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  build-deploy:</span></span><br><span class="line"><span class="attr">    jobs:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">      - deploy:</span></span><br><span class="line"><span class="attr">          requires:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">build</span></span><br><span class="line"><span class="attr">          filters:</span></span><br><span class="line"><span class="attr">            branches:</span></span><br><span class="line"><span class="attr">              only:</span> <span class="string">set-ci</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
           
       </categories>
       
@@ -1355,16 +1355,16 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API-service/api/api-document-and-contract/"/>
-      <url>/API-service/api/api-document-and-contract/</url>
+      <title>DDD (Domain-Driven Design) 领域驱动设计</title>
+      <link href="/architecture/architecture/Domain%20Driven%20Design/"/>
+      <url>/architecture/architecture/Domain%20Driven%20Design/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>DDD是一套综合软件系统分析和设计的面向对象建模方法，与此相似的工程方法还有 RUP（统一建模语言）。DDD解决的问题是应用复杂问题下的建模问题。</p><p>开发团队和领域专家（业务专家）一起通过通用语言(Ubiquitous Language)去理解和消化领域知识，从领域知识中提取和划分为一个一个的子领域（核心子域，通用子域，支撑子域），并在子领域上建立模型，再重复以上步骤，这样周而复始，构建出一套符合当前领域的模型。</p><p>在这个过程中有一个很重要的方法就是糊墙，又叫 EventStorming。</p><h2 id="统一语言"><a href="#统一语言" class="headerlink" title="统一语言"></a>统一语言</h2><p>通用语言是一个很泛的概念，它作为一种沟通工具，在开发团队内部，开发团队与领域专家之间使用。它包含了自然语言、文档和图表（不一定是标准的UML图，只要能表达出领域知识的都可以）等内容。对通用语言中名词，动词的使用需要认真考量，因为这些名词和动词会作为后面模型的指导命名。</p><p>统一语言本质上是在领域设计时候，预先定义下系统中出现的概念、名词以及解释。</p><p>例如在一个报销系统中，报销单据的提交前端和业务人员使用了ticket、后端应用使用了 bill，数据库如果也是用了其他的名词，在多团队、微服务设计下势必会造成混乱。</p><p>再比如在电商系统中，订单这个概念会指普通订单、支付订单、售后订单，如果只是使用 order 又会造成混乱，统一语言的目的是预先定义出领域概念。</p><ul><li>订单 order</li><li>支付单 payment</li><li>售后单 ticket</li></ul><p>解决统一语言的问题：</p><ul><li>在白板上表达您的业务领域</li><li>定义开发所有术语的词汇表</li><li>领域专家和开发人员可以使用Event Storming实现业务流程学习的快速循环</li></ul><h2 id="战略设计"><a href="#战略设计" class="headerlink" title="战略设计"></a>战略设计</h2><p>它也称为战略建模，它是DDD的支柱，其主要目标是与整个项目团队（领域专家和技术团队）一起定义有界上下文，统一的无所不在语言和上下文映射。</p><h3 id="有界上下文-限界上下文"><a href="#有界上下文-限界上下文" class="headerlink" title="有界上下文/限界上下文"></a>有界上下文/限界上下文</h3><p>有界上下文是DDD最重要的概念之一，我们可以说这是应用领域模型表达的概念上的限制。当您尝试为大型领域建模时，您将遇到很大的困难，因为不同的人群将使用稍微不同的术语和句子来表达这些领域知识和概念，使用有界上下文，可以让人们明白：在当前上下文之外使用相同的词汇表却可能意味着不同的东西。</p><p>我们可以说，有界上下文主要是语言划界，正如[ Vaughn Vernon ]在他的书中所说的那样。重要的是要理解每个有界上下文都有自己的无所不在语言。</p><p>随着模型的发展，您将感觉需要在有界上下文之间创建关系，为此我们将使用上下文映射。</p><h3 id="上下文映射​​​​​​​"><a href="#上下文映射​​​​​​​" class="headerlink" title="上下文映射​​​​​​​"></a>上下文映射​​​​​​​</h3><p>上下文映射有助于理解整个项目，能够显示不同的有界上下文之间的关系。理解有界上下文之间的关系非常重要，这样您就可以正确地构建域模型。</p><p>有几种方法可以关联有界上下文：</p><ul><li>共享内核：两个或多个团队之间的共享上下文，可减少代码重复，但是，任何更改都必须在团队之间进行组合和通知。</li><li>客户/供应商：它是客户端（下游）和服务器（上游）之间的关系，团队处于持续集成状态。</li><li>循规蹈矩Conformist：这是涉及上游和下游团队的情景，但在此模型中，上游团队没有动力满足下游团队的需求。</li><li>伙伴：这是团队依赖并需要建立合作关系的场景，以便他们能够满足两个系统的开发需求。</li><li>反腐败层：在这种情况下，客户端（下游）创建与上游上下文通信的中间层，以满足其自己的域模型。</li><li>还有其他集成模型，如开放主机服务Published Language，发布语言，分离方式Separate Ways。</li></ul><h2 id="战术设计"><a href="#战术设计" class="headerlink" title="战术设计"></a>战术设计</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><p>一个实体是一个潜在的可变对象，它具有一个唯一的标识符。实体在其域模型中具有自己的生命周期，这使您可以获取此实体的整个变化的历史记录。</p><h3 id="值对象"><a href="#值对象" class="headerlink" title="值对象"></a>值对象</h3><p>区分值对象与实体的区别在于，值对象是不可变的，并且没有唯一标识，仅由其属性的值定义。这种不变性的结果是，为了更新值对象，您必须创建一个新实例来替换旧实例。</p><h3 id="聚合Aggregates"><a href="#聚合Aggregates" class="headerlink" title="聚合Aggregates"></a>聚合Aggregates</h3><p>它是战术设计中最重要和最复杂的模式之一，聚合基于另外两个战术标准，即实体和值对象。聚合是一种或多种的群集实体，并且还可以包含值对象。此群集的父实体接收聚合根的名称。</p><h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><p>服务是无状态对象，它们执行一些不适合实体或值对象上的操作的逻辑。它们执行特定于域的操作，这可能涉及多个域对象。</p><h3 id="库Repository"><a href="#库Repository" class="headerlink" title="库Repository"></a>库Repository</h3><p>存储库主要用于处理存储，它们抽象了对数据存储的依赖担忧。他们负责持久聚合。</p><h3 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a>工厂</h3><p>工厂用于在构造Object时提供抽象，并且可以返回聚合根，实体或值对象。工厂是构建通过构造方法构建复杂的对象的替代方法。</p><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>事件表示域中发生的重大事件，需要向属于域的其他利益相关者报告。Aggregates通常发布事件。</p><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>开发人员很少提及模块，但是它们的使用非常有趣。模块帮助我们隔离概念，可以定义为Java包或C＃命名空间，并始终遵循泛在语言。</p><h2 id="Eventstorming"><a href="#Eventstorming" class="headerlink" title="Eventstorming"></a>Eventstorming</h2><h2 id="子域的种类"><a href="#子域的种类" class="headerlink" title="子域的种类"></a>子域的种类</h2><ul><li>核心子域</li><li>通用子域 （特殊的支撑子域）</li><li>支撑子域</li></ul>]]></content>
       
       
       <categories>
           
-          <category> API&amp;service </category>
+          <category> architecture </category>
           
       </categories>
       
@@ -1377,6 +1377,23 @@
       <url>/API-service/api/api-restful/</url>
       
         <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> API&amp;service </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>API 文档和契约</title>
+      <link href="/API-service/api/api-document-and-contract/"/>
+      <url>/API-service/api/api-document-and-contract/</url>
+      
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -1621,23 +1638,6 @@
     </entry>
     
     <entry>
-      <title>Mac shortcuts</title>
-      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
-      <url>/development/tool-collections/shortcut%20for%20mac/</url>
-      
-        <content type="html"><![CDATA[<p>bulgari.{buildNumber}.zip</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> development </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>开发工具图谱</title>
       <link href="/development/tool-collections/development%20tool/"/>
       <url>/development/tool-collections/development%20tool/</url>
@@ -1655,11 +1655,11 @@
     </entry>
     
     <entry>
-      <title>模型评估</title>
-      <link href="/translation/translation/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"/>
-      <url>/translation/translation/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</url>
+      <title>常用翻译词汇定义</title>
+      <link href="/translation/translation/vocabulary/"/>
+      <url>/translation/translation/vocabulary/</url>
       
-        <content type="html"><![CDATA[<h2 id="11-0-简介"><a href="#11-0-简介" class="headerlink" title="11.0 简介"></a>11.0 简介</h2><p>在这一章中，我们将探讨评估策略，以此筛选通过我们机器学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的机器学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。</p><h2 id="11-1-交互验证模型"><a href="#11-1-交互验证模型" class="headerlink" title="11.1 交互验证模型"></a>11.1 交互验证模型</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>你想要在真实世界中验证你的模型是否工作的足够好。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>创建一个预处理数据的流水线，训练这个模型，然后使用交互验证来评估：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment"># Load digits dataset</span></span><br><span class="line"></span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line"><span class="comment"># Create features matrix</span></span><br><span class="line">features = digits.data</span><br><span class="line"><span class="comment"># Create target vector</span></span><br><span class="line">target = digits.target</span><br><span class="line"><span class="comment"># Create standardizer</span></span><br><span class="line">standardizer = StandardScaler()</span><br><span class="line"><span class="comment"># Create logistic regression object</span></span><br><span class="line">logit = LogisticRegression()</span><br><span class="line"><span class="comment"># Create a pipeline that standardizes, then runs logistic regression</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line"><span class="comment"># Create k-Fold cross-validation</span></span><br><span class="line">kf = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Conduct k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br><span class="line"> n_jobs=<span class="number">-1</span>) <span class="comment"># Use all CPU scores</span></span><br><span class="line"><span class="comment"># Calculate mean</span></span><br><span class="line">cv_results.mean()</span><br><span class="line"><span class="number">0.96493171942892597</span></span><br></pre></td></tr></table></figure><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>首先要考虑一点，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的验证目标。我们的目标不是在我们的训练数据上评估模型，而应该是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知数据中去做出预测。</p><p>其中一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验法（或者叫留出法）。在实际验证中，我们把我们的采样数据（特征或者目标）分割成两部分，传统上我们叫它们训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出来作为测试集的采样数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。</p><p>一个更好的策略，被称作 k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为叠。然后使用k-1叠数据来训练模型，然后用最后一叠做数据校验。我们通过重复K次，使得每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。</p><p>在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量 cv_results 中：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># View score for all 10 folds</span></span><br><span class="line">cv_results</span><br><span class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</span><br><span class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</span><br></pre></td></tr></table></figure><p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV假定每个采样数据是独立于其它采样创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，我们可以设置变量 shuffle 为 true 来进行打乱操作。</p><p>其次，当我们使用 KFCV 来评估一个分类器时，它的优势在于粗略的对采样数据按照不同目标类以相同比例来划分叠（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的采样数据是男性，那么每个叠应该包含80%男性和20%的女性采样数据。<br>在 scikit-learn 框架中，我们能通过使用 StratifiedKFold 类替换 KFold，即可实现分层 k-fold 交叉验证。</p><p>最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用 fit 操作我们的 standardization 对象和 standardizer 时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform 方法）对训练集和测试集都进行处理：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Import library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Create training and test sets</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></span><br><span class="line"><span class="comment"># Fit standardizer to training set</span></span><br><span class="line">standardizer.fit(features_train)</span><br><span class="line"><span class="comment"># Apply to both training and test sets</span></span><br><span class="line">features_train_std = standardizer.transform(features_train)</span><br><span class="line">features_test_std = standardizer.transform(features_test)</span><br></pre></td></tr></table></figure><p>这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的采样数据对我们的预处理器 fit 操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。</p><p>当使用交叉验证技术时，scikit-learn 的 pipeline 包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br></pre></td></tr></table></figure><p>然后我们通过流水线来运行 KFCV 并且 scikit 帮我们昨晚所有的工作</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</span><br><span class="line"><span class="comment"># Do k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br></pre></td></tr></table></figure><p>cross_val_score 方法需要三个参数，我们没有讨论但是这里值得一提，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和采样数据个数相同叠的 leave-one-out-cross-validation 。scoring 参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1 是告诉 scikit-learn 去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。</p><h3 id="查看更多"><a href="#查看更多" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>为什么数据科学家都应该知道交叉验证 (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>交叉验证走在错误的道路上 (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h2 id="11-2-创建一个基线回归模型"><a href="#11-2-创建一个基线回归模型" class="headerlink" title="11.2 创建一个基线回归模型"></a>11.2 创建一个基线回归模型</h2><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>你需要创建一个基线回归模型来和你的模型对比</p><h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用 scikit-learn 的 DummyRegressor 来创建一个简单模型作为基准对比使用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">boston = load_boston()</span><br><span class="line"><span class="comment"># Create features</span></span><br><span class="line">features, target = boston.data, boston.target</span><br><span class="line"><span class="comment"># Make test and training split</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create a dummy regressor</span></span><br><span class="line">dummy = DummyRegressor(strategy=<span class="string">'mean'</span>)</span><br><span class="line"><span class="comment"># "Train" dummy regressor</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.0011193592039553391</span></span><br></pre></td></tr></table></figure><p>来对比，我们训练我们的模型然后进行性能评分：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment"># Train simple linear regression model</span></span><br><span class="line">ols = LinearRegression()</span><br><span class="line">ols.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">ols.score(features_test, target_test)</span><br><span class="line"><span class="number">0.63536207866746675</span></span><br></pre></td></tr></table></figure><h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>DummyRegressor 允许我们的创建一个非常简单的模型，用来作为基线参考，从而可以和我们的真实模型作为对比。在一个系统或者产品中，它是非常有用的去模拟一个原始存在的预测处理机制。举例来说，一个软件产品可能通过传统的方式被硬编码的方式编写了一些程序逻辑，根据用户特性，假定所有的用户将要在第一个月花费100美元。如果我们编写这个假设进入一个基线模型，我们能实实在在的看到机器学习技术被加入到软件中的优势。</p><p>DummyRegressor 使用 strategy 参数去设置做出预测的方法，包括在返回一个测试集中的均值或中值。此外，如果我们设置 strategy 参数为 constant 并且使用 constant 参数，DummyRegressor 会固定返回传给 constant 参数的值：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create dummy regressor that predicts 20's for everything</span></span><br><span class="line">clf = DummyRegressor(strategy=<span class="string">'constant'</span>, constant=<span class="number">20</span>)</span><br><span class="line">clf.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Evaluate score</span></span><br><span class="line">clf.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.065105020293257265</span></span><br></pre></td></tr></table></figure><p>顺带提一下性能得分的计算方法，默认情况下，返回的分值为测定结果（R-squared, <code>$R^2$</code>）得分的系数：</p><p>这里的 <code>$y_i$</code> 是目标采样数据为真的值，<code>$\hat{y_i}$</code> 为预测值， <code>$\overline{y}$</code> 为目标向量的平均值。</p><p><code>$R^2$</code> 越是趋近于1，说明在目标矢量中越多的变化越能被特征很好的解释。</p><p><code>$R^2 =  1-  \frac{ \sum(y_i-\hat{y_i}) }{\sum(y_i-\overline{y_i}) } $</code></p><h2 id="11-3-创建一个基线分类模型"><a href="#11-3-创建一个基线分类模型" class="headerlink" title="11.3 创建一个基线分类模型"></a>11.3 创建一个基线分类模型</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>你需要一个简单的基线分类器去对比你的模型</p><h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用 scikit-learn 的 DummyClassifier</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">iris = load_iris()</span><br><span class="line"><span class="comment"># Create target vector and feature matrix</span></span><br><span class="line">features, target = iris.data, iris.target</span><br><span class="line"><span class="comment"># Split into training and test set</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line">features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create dummy classifier</span></span><br><span class="line">dummy = DummyClassifier(strategy=<span class="string">'uniform'</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># "Train" model</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">0.42105263157894735</span></span><br></pre></td></tr></table></figure><p>通过把训练后的分类器和基线分类器进行对比，我们能看到这些提升:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="comment"># Create classifier</span></span><br><span class="line">classifier = RandomForestClassifier()</span><br><span class="line"><span class="comment"># Train model</span></span><br><span class="line">classifier.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">classifier.score(features_test, target_test)</span><br><span class="line"><span class="number">0.94736842105263153</span></span><br></pre></td></tr></table></figure><h3 id="讨论-2"><a href="#讨论-2" class="headerlink" title="讨论"></a>讨论</h3><p>一个通常的做法去衡量分类器工作的有多好的方式是把它的结果和随机猜测对比。scikit-learn 的 DummyClassifier 让这项比较变得简单。</p><p>strategy 参数为我们生成值提供了大量选项。这里有两个特别有用的策略。 首先是 stratified 使做出的虚拟预测让目标矢量属性在训练集中成比例分布（例如，如果训练集中，20%的采样数据是女性，DummyClassifier 将当次预测出20%为女性。其次是 uniform，这种方式将生成预测均匀的在不同类中随机生成。举例来说，即使观察对象包含了20%的女性和80%的男性，uniform 将生成预测结果为50%的女性和50%的男性。</p><h3 id="查看更多-1"><a href="#查看更多-1" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>scikit-learn 文档：DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li></ul><h2 id="11-4-评估二元分类器预测"><a href="#11-4-评估二元分类器预测" class="headerlink" title="11.4 评估二元分类器预测"></a>11.4 评估二元分类器预测</h2><h3 id="问题-3"><a href="#问题-3" class="headerlink" title="问题"></a>问题</h3><p>给定一个训练后的分类器模型，你需要评估它的质量</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>当使用 scoring 参数来定义大量性能指标中的一个时，使用 scikit-learn 的 cross_val_score 去实现交叉验证，包括准确率，精确率，召回率，F值。</p><p>准确率是一个常用性能指标。它是简单的计算正确预测的采样数据比值。</p><p><code>$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $</code></p><p>条件：</p><ul><li>TP是真阳性的采样数量，采样中具有正向类型的（患有疾病，购买了产品等等）并且我们的预测正确。</li><li>TN是真阴性的采样数量，采样中具有负向类型的（没有患有疾病，没有购买产品等等）并且我们预测正确。</li><li>FP是假阳性的采样数量，又被成为I型错误。采样中被预测为正向分类但是实际上为负向分类的。</li><li>FN是假阴性的采样数量，又被称为II型错误，采样中被预测为负向类型，但实际上为正向分类的。</li></ul><p>我们能通过设置scoring参数为accuracy来衡量accuracy在三个叠（默认数量）的交叉验证：</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cwiki.apachecn.org/" target="_blank" rel="noopener">http://cwiki.apachecn.org/</a></p><p>## </p><ul><li>fold 叠 有些翻译为折</li><li>observation 采样数据，样本</li><li>hold-out 留出法</li><li>training set 训练集</li><li>Test set 测试集</li><li>target vector ⽬标向量</li><li>pipeline 流水线</li><li>preprocesses 预处理</li><li>logistic regression 逻辑回归</li><li>baseline 基线</li><li>See Also 查看更多</li><li>Accuracy 准确率 </li><li>Precision预测正率 </li><li>Recall 查对率</li><li>F1 F值</li><li>true positives 真正</li><li>true negatives 真负</li><li>mean value  均值 一组数据的总和除以这组数据个数所得到</li><li>median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据</li><li>squared errors 均方误差</li><li>fit 拟合</li></ul><h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul><li>standardizer</li><li>n</li></ul>]]></content>
       
       
       <categories>
@@ -1672,11 +1672,11 @@
     </entry>
     
     <entry>
-      <title>常用翻译词汇定义</title>
-      <link href="/translation/translation/vocabulary/"/>
-      <url>/translation/translation/vocabulary/</url>
+      <title>模型评估</title>
+      <link href="/translation/translation/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"/>
+      <url>/translation/translation/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</url>
       
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cwiki.apachecn.org/" target="_blank" rel="noopener">http://cwiki.apachecn.org/</a></p><p>## </p><ul><li>fold 叠 有些翻译为折</li><li>observation 采样数据，样本</li><li>hold-out 留出法</li><li>training set 训练集</li><li>Test set 测试集</li><li>target vector ⽬标向量</li><li>pipeline 流水线</li><li>preprocesses 预处理</li><li>logistic regression 逻辑回归</li><li>baseline 基线</li><li>See Also 查看更多</li><li>Accuracy 准确率 </li><li>Precision预测正率 </li><li>Recall 查对率</li><li>F1 F值</li><li>true positives 真正</li><li>true negatives 真负</li><li>mean value  均值 一组数据的总和除以这组数据个数所得到</li><li>median value 中值 将一组数据按大小顺序排列，处在最中间位置的一个数，左右各有50%数据</li><li>squared errors 均方误差</li><li>fit 拟合</li></ul><h2 id="不翻译"><a href="#不翻译" class="headerlink" title="不翻译"></a>不翻译</h2><ul><li>standardizer</li><li>n</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="11-0-简介"><a href="#11-0-简介" class="headerlink" title="11.0 简介"></a>11.0 简介</h2><p>在这一章中，我们将探讨评估策略，以此筛选通过我们机器学习算法创建的模型。在讨论怎么创建模型之前就讨论模型的评估，这看起来有点奇怪，但不失为一种大胆的方法。模型存在的意义是被用来做出高质量的预测，因此基本上来说，我们的目标不是创建模型（简单的），而是创建高质量的模型（困难的）。因此在我们毫无目标的在海量的机器学习算法中寻找之前，我们首先需要确定我们怎么去评估通过这些算法创建的模型。</p><h2 id="11-1-交互验证模型"><a href="#11-1-交互验证模型" class="headerlink" title="11.1 交互验证模型"></a>11.1 交互验证模型</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>你想要在真实世界中验证你的模型是否工作的足够好。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>创建一个预处理数据的流水线，训练这个模型，然后使用交互验证来评估：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment"># Load digits dataset</span></span><br><span class="line"></span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line"><span class="comment"># Create features matrix</span></span><br><span class="line">features = digits.data</span><br><span class="line"><span class="comment"># Create target vector</span></span><br><span class="line">target = digits.target</span><br><span class="line"><span class="comment"># Create standardizer</span></span><br><span class="line">standardizer = StandardScaler()</span><br><span class="line"><span class="comment"># Create logistic regression object</span></span><br><span class="line">logit = LogisticRegression()</span><br><span class="line"><span class="comment"># Create a pipeline that standardizes, then runs logistic regression</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line"><span class="comment"># Create k-Fold cross-validation</span></span><br><span class="line">kf = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Conduct k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br><span class="line"> n_jobs=<span class="number">-1</span>) <span class="comment"># Use all CPU scores</span></span><br><span class="line"><span class="comment"># Calculate mean</span></span><br><span class="line">cv_results.mean()</span><br><span class="line"><span class="number">0.96493171942892597</span></span><br></pre></td></tr></table></figure><h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>首先要考虑一点，评估监督学习模型可能表现的很直接：训练一个模型然后通过使用一些性能指标来计算它的表现（准确性、均方误差，等等）。然而这种方式有一个基本的缺陷。如果我们用我们的数据去训练一个模型，然后用同样的数据评估它的表现，这样达不到我们的验证目标。我们的目标不是在我们的训练数据上评估模型，而应该是用它从来没见过的数据来评估（比如，一个新的消费者、一次新的犯罪或者一张新的图片）。由于这些原因，我们的评估方法应该帮助我们去理解这些模型是否足够好的从未知数据中去做出预测。</p><p>其中一种策略可以是保留一部分数据用来测试模型。这种方法被称作校验法（或者叫留出法）。在实际验证中，我们把我们的采样数据（特征或者目标）分割成两部分，传统上我们叫它们训练集和测试集。我们取出测试集然后放到一边，假装我们从来没遇到过这些数据。下一步我们可以使用训练集来训练我们的模型，使用特征和目标向量来教会模型如何做出最好的预测。最终我们使用测试集来模拟从来没有遇到过的外部数据，来评估我们的模型训练结果。然而这种校验方法有两个主要的缺陷。首先，模型的性能高度依赖我们选出来作为测试集的采样数据。其次，模型没有被所有数据有效的训练，也没有被所有的有效数据校验。</p><p>一个更好的策略，被称作 k-fold 交叉验证（KFCV）的方法能够克服这些缺点。在KFCV中，我们分割这些数据为k组，我们叫它为叠。然后使用k-1叠数据来训练模型，然后用最后一叠做数据校验。我们通过重复K次，使得每一次都可以使用不同的叠作为测试数据来校验模型。我们取每一次模型被训练的结果来进行平均处理，然后得到一个整体的衡量结果。</p><p>在我们的方案中，应用KFCV思想，我们通过分割出10叠数据然后输出评估得分到变量 cv_results 中：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># View score for all 10 folds</span></span><br><span class="line">cv_results</span><br><span class="line">array([ <span class="number">0.97222222</span>, <span class="number">0.97777778</span>, <span class="number">0.95555556</span>, <span class="number">0.95</span> , <span class="number">0.95555556</span>,</span><br><span class="line"> <span class="number">0.98333333</span>, <span class="number">0.97777778</span>, <span class="number">0.96648045</span>, <span class="number">0.96089385</span>, <span class="number">0.94972067</span>])</span><br></pre></td></tr></table></figure><p>当我们使用KFCV思想来训练模型时，这里有三个重要的关键点。首先KFCV假定每个采样数据是独立于其它采样创建的（例如，数据是独立同分布的[IID]）.<br>如果数据是满足IID原则，那么拆分数据叠的时候，打乱叠的顺序会是一个好主意。在 scikit-learn 中，我们可以设置变量 shuffle 为 true 来进行打乱操作。</p><p>其次，当我们使用 KFCV 来评估一个分类器时，它的优势在于粗略的对采样数据按照不同目标类以相同比例来划分叠（被称作分层 k-fold）。举个例子，如果我们目标矢量包含了性别并且80%的采样数据是男性，那么每个叠应该包含80%男性和20%的女性采样数据。<br>在 scikit-learn 框架中，我们能通过使用 StratifiedKFold 类替换 KFold，即可实现分层 k-fold 交叉验证。</p><p>最终当我们使用验证数据集或者交叉验证，最重要的是根据训练集去预处理数据，然后应用这些同样的处理方式到训练集和测试集。举例来说，当我们用 fit 操作我们的 standardization 对象和 standardizer 时，我们仅对训练集来计算平方差和方差。然后我们应用这些变换（使用transform 方法）对训练集和测试集都进行处理：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Import library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Create training and test sets</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, test_size=<span class="number">0.1</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="number">11.1</span> Cross-Validating Models | <span class="number">181</span></span><br><span class="line"><span class="comment"># Fit standardizer to training set</span></span><br><span class="line">standardizer.fit(features_train)</span><br><span class="line"><span class="comment"># Apply to both training and test sets</span></span><br><span class="line">features_train_std = standardizer.transform(features_train)</span><br><span class="line">features_test_std = standardizer.transform(features_test)</span><br></pre></td></tr></table></figure><p>这么做的原因是我们假装测试数据是未知的。如果我们使用来自训练集和测试集的采样数据对我们的预处理器 fit 操作，那么一些信息就会从测试集泄露进训练集。这个规则应用于任何预处理流程，例如特性选择。</p><p>当使用交叉验证技术时，scikit-learn 的 pipeline 包让这些变得非常简单。我们首先创建一个流水线去预处理这些数据（例如，standardizer） 然后训练这些我们的模型（逻辑回归，logit算法）:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br></pre></td></tr></table></figure><p>然后我们通过流水线来运行 KFCV 并且 scikit 帮我们昨晚所有的工作</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create a pipeline</span></span><br><span class="line">pipeline = make_pipeline(standardizer, logit)</span><br><span class="line">Then we run KFCV using that pipeline <span class="keyword">and</span> scikit does all the work <span class="keyword">for</span> us:</span><br><span class="line"><span class="comment"># Do k-fold cross-validation</span></span><br><span class="line">cv_results = cross_val_score(pipeline, <span class="comment"># Pipeline</span></span><br><span class="line"> features, <span class="comment"># Feature matrix</span></span><br><span class="line"> target, <span class="comment"># Target vector</span></span><br><span class="line"> cv=kf, <span class="comment"># Cross-validation technique</span></span><br><span class="line"> scoring=<span class="string">"accuracy"</span>, <span class="comment"># Loss function</span></span><br></pre></td></tr></table></figure><p>cross_val_score 方法需要三个参数，我们没有讨论但是这里值得一提，cv 决定我们的交叉验证技术。K-fold 是目前最通用的技术，但是还是有一些其他技术可以选择，比如创建和采样数据个数相同叠的 leave-one-out-cross-validation 。scoring 参数定义了我们对成功的衡量标准，我们将会在本章中其他小节大量讨论。最后，n_jobs=-1 是告诉 scikit-learn 去使用每一个可用的CPU核心。举例来说，如果你的计算机有四个核心（笔记本通常的配置），然后 scikit-learn 将使用四个全部核心来加速运行。</p><h3 id="查看更多"><a href="#查看更多" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>为什么数据科学家都应该知道交叉验证 (<a href="http://bit.ly/2Fzhz6X" target="_blank" rel="noopener">http://bit.ly/2Fzhz6X</a>)</li><li>交叉验证走在错误的道路上 (<a href="http://bit.ly/2FzfIiw" target="_blank" rel="noopener">http://bit.ly/2FzfIiw</a>)</li></ul><h2 id="11-2-创建一个基线回归模型"><a href="#11-2-创建一个基线回归模型" class="headerlink" title="11.2 创建一个基线回归模型"></a>11.2 创建一个基线回归模型</h2><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>你需要创建一个基线回归模型来和你的模型对比</p><h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用 scikit-learn 的 DummyRegressor 来创建一个简单模型作为基准对比使用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">boston = load_boston()</span><br><span class="line"><span class="comment"># Create features</span></span><br><span class="line">features, target = boston.data, boston.target</span><br><span class="line"><span class="comment"># Make test and training split</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line"> features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create a dummy regressor</span></span><br><span class="line">dummy = DummyRegressor(strategy=<span class="string">'mean'</span>)</span><br><span class="line"><span class="comment"># "Train" dummy regressor</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.0011193592039553391</span></span><br></pre></td></tr></table></figure><p>来对比，我们训练我们的模型然后进行性能评分：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment"># Train simple linear regression model</span></span><br><span class="line">ols = LinearRegression()</span><br><span class="line">ols.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get R-squared score</span></span><br><span class="line">ols.score(features_test, target_test)</span><br><span class="line"><span class="number">0.63536207866746675</span></span><br></pre></td></tr></table></figure><h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>DummyRegressor 允许我们的创建一个非常简单的模型，用来作为基线参考，从而可以和我们的真实模型作为对比。在一个系统或者产品中，它是非常有用的去模拟一个原始存在的预测处理机制。举例来说，一个软件产品可能通过传统的方式被硬编码的方式编写了一些程序逻辑，根据用户特性，假定所有的用户将要在第一个月花费100美元。如果我们编写这个假设进入一个基线模型，我们能实实在在的看到机器学习技术被加入到软件中的优势。</p><p>DummyRegressor 使用 strategy 参数去设置做出预测的方法，包括在返回一个测试集中的均值或中值。此外，如果我们设置 strategy 参数为 constant 并且使用 constant 参数，DummyRegressor 会固定返回传给 constant 参数的值：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Create dummy regressor that predicts 20's for everything</span></span><br><span class="line">clf = DummyRegressor(strategy=<span class="string">'constant'</span>, constant=<span class="number">20</span>)</span><br><span class="line">clf.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Evaluate score</span></span><br><span class="line">clf.score(features_test, target_test)</span><br><span class="line"><span class="number">-0.065105020293257265</span></span><br></pre></td></tr></table></figure><p>顺带提一下性能得分的计算方法，默认情况下，返回的分值为测定结果（R-squared, <code>$R^2$</code>）得分的系数：</p><p>这里的 <code>$y_i$</code> 是目标采样数据为真的值，<code>$\hat{y_i}$</code> 为预测值， <code>$\overline{y}$</code> 为目标向量的平均值。</p><p><code>$R^2$</code> 越是趋近于1，说明在目标矢量中越多的变化越能被特征很好的解释。</p><p><code>$R^2 =  1-  \frac{ \sum(y_i-\hat{y_i}) }{\sum(y_i-\overline{y_i}) } $</code></p><h2 id="11-3-创建一个基线分类模型"><a href="#11-3-创建一个基线分类模型" class="headerlink" title="11.3 创建一个基线分类模型"></a>11.3 创建一个基线分类模型</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>你需要一个简单的基线分类器去对比你的模型</p><h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用 scikit-learn 的 DummyClassifier</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Load libraries</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.dummy <span class="keyword">import</span> DummyClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">iris = load_iris()</span><br><span class="line"><span class="comment"># Create target vector and feature matrix</span></span><br><span class="line">features, target = iris.data, iris.target</span><br><span class="line"><span class="comment"># Split into training and test set</span></span><br><span class="line">features_train, features_test, target_train, target_test = train_test_split(</span><br><span class="line">features, target, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># Create dummy classifier</span></span><br><span class="line">dummy = DummyClassifier(strategy=<span class="string">'uniform'</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># "Train" model</span></span><br><span class="line">dummy.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">dummy.score(features_test, target_test)</span><br><span class="line"><span class="number">0.42105263157894735</span></span><br></pre></td></tr></table></figure><p>通过把训练后的分类器和基线分类器进行对比，我们能看到这些提升:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Load library</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="comment"># Create classifier</span></span><br><span class="line">classifier = RandomForestClassifier()</span><br><span class="line"><span class="comment"># Train model</span></span><br><span class="line">classifier.fit(features_train, target_train)</span><br><span class="line"><span class="comment"># Get accuracy score</span></span><br><span class="line">classifier.score(features_test, target_test)</span><br><span class="line"><span class="number">0.94736842105263153</span></span><br></pre></td></tr></table></figure><h3 id="讨论-2"><a href="#讨论-2" class="headerlink" title="讨论"></a>讨论</h3><p>一个通常的做法去衡量分类器工作的有多好的方式是把它的结果和随机猜测对比。scikit-learn 的 DummyClassifier 让这项比较变得简单。</p><p>strategy 参数为我们生成值提供了大量选项。这里有两个特别有用的策略。 首先是 stratified 使做出的虚拟预测让目标矢量属性在训练集中成比例分布（例如，如果训练集中，20%的采样数据是女性，DummyClassifier 将当次预测出20%为女性。其次是 uniform，这种方式将生成预测均匀的在不同类中随机生成。举例来说，即使观察对象包含了20%的女性和80%的男性，uniform 将生成预测结果为50%的女性和50%的男性。</p><h3 id="查看更多-1"><a href="#查看更多-1" class="headerlink" title="查看更多"></a>查看更多</h3><ul><li>scikit-learn 文档：DummyClassifier (<a href="http://bit.ly/2Fr178G" target="_blank" rel="noopener">http://bit.ly/2Fr178G</a>)</li></ul><h2 id="11-4-评估二元分类器预测"><a href="#11-4-评估二元分类器预测" class="headerlink" title="11.4 评估二元分类器预测"></a>11.4 评估二元分类器预测</h2><h3 id="问题-3"><a href="#问题-3" class="headerlink" title="问题"></a>问题</h3><p>给定一个训练后的分类器模型，你需要评估它的质量</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>当使用 scoring 参数来定义大量性能指标中的一个时，使用 scikit-learn 的 cross_val_score 去实现交叉验证，包括准确率，精确率，召回率，F值。</p><p>准确率是一个常用性能指标。它是简单的计算正确预测的采样数据比值。</p><p><code>$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $</code></p><p>条件：</p><ul><li>TP是真阳性的采样数量，采样中具有正向类型的（患有疾病，购买了产品等等）并且我们的预测正确。</li><li>TN是真阴性的采样数量，采样中具有负向类型的（没有患有疾病，没有购买产品等等）并且我们预测正确。</li><li>FP是假阳性的采样数量，又被成为I型错误。采样中被预测为正向分类但是实际上为负向分类的。</li><li>FN是假阴性的采样数量，又被称为II型错误，采样中被预测为负向类型，但实际上为正向分类的。</li></ul><p>我们能通过设置scoring参数为accuracy来衡量accuracy在三个叠（默认数量）的交叉验证：</p>]]></content>
       
       
       <categories>
@@ -1706,6 +1706,23 @@
     </entry>
     
     <entry>
+      <title>Mac shortcuts</title>
+      <link href="/development/tool-collections/shortcut%20for%20mac/"/>
+      <url>/development/tool-collections/shortcut%20for%20mac/</url>
+      
+        <content type="html"><![CDATA[<p>bulgari.{buildNumber}.zip</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> development </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>超实用的工具和网站收集</title>
       <link href="/collection/tool-collections/"/>
       <url>/collection/tool-collections/</url>
@@ -1716,23 +1733,6 @@
       <categories>
           
           <category> collection </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>极简欧洲史</title>
-      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
-      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
-      
-        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> reading&amp;writing </category>
           
       </categories>
       
@@ -1767,6 +1767,23 @@
       <categories>
           
           <category> test </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>极简欧洲史</title>
+      <link href="/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/"/>
+      <url>/reading-writing/reading&amp;writing/%E6%9E%81%E7%AE%80%E6%AC%A7%E6%B4%B2%E5%8F%B2/</url>
+      
+        <content type="html"><![CDATA[<p>这是一本及其简单的书，即使想我这种历史文盲也一样能读懂，畅行无阻，可见是多么简单易学；这是一本及其有趣的书，从希腊出发讲到了罗马帝国的兴衰，跑到帝国的边际蛮荒处溜了一圈，又回到的希腊，述景抒情。这是一本简单，有趣，能从初读到初四的小册子，假如初中/高中历史像这样讲，倒也有趣。</p><p>童话和罗曼史总是喜欢讲国王、公主、王子的故事，对不起，希腊没有。直立人的出现是在非洲、亚洲和欧洲，但是文明却最先在欧洲和亚洲出现，用自由、勇敢和聪明来形容来希腊人一点儿也不过分。他们建立起一个一个由共同爱好和兴趣的城邦，学者从一个城邦穿梭到另外一个城邦，那里有苏格拉底、柏拉图、亚里士多德，还有建立数学几何的欧几里得。希腊有神，但是更加趋于理性，希腊人的自然科学的意识臻于完美。同中国东周的百家争鸣相比，就像是老子的理想国“小国寡民，老死不相往来”。</p><p>如果希腊的结局就是幸福而快乐的生活着，那么历史就不是历史，而像极了一部童话故事。而后希腊文明的几百年中，不断罗马人侵犯，希腊和罗马相比就像一个手无缚鸡之力的书生落在了草寇的手中。罗马人在希腊的地盘上建立了他的帝国，而被征服的希腊人，也还可有利用的地方，希腊人变成了，这个山寨土匪的管家，继续管理着这个国家。罗马人信仰基督，于是出现了神父。罗马帝国的建立，社会出现了3个阶层，负责打仗的贵族，主持教务的神父，辛苦劳作的平民。按照日后征服罗马的日耳曼蛮族的说法是，以流血而生的为荣，以流汗劳作为生的为耻。罗马按照流血和流汗的区分，划分了等级。</p><p>《三体3》讲的是黑暗森林的故事，在没有光线的黑暗森林中，暴露自己的个体最先被消灭，软弱的个体连进入的资格都没有。欧洲从希腊光明开始而后进入被征服和教会统治的黑暗中世纪，最终到了文艺复兴，科技革命，带动了整个世界。波兰、德国直到二战前都是世界的物理学中心。 </p><p>豆瓣观点<br>  1、预设立场，然后阉割历史，使其呈现出想象的样子。用这样的历史教育大众，使大众从历史的必然性不得不认可预设的立场，然后做事也就符合这样的历史规律，最终预设的立场变成了现实正在发生的历史。<br>    2、大陆历史教材也是逻辑推动的，只不过是政治逻辑…骂娘冲动+1<br>    3、历史是历史上的人想让我们知道的事，这本书不然。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> reading&amp;writing </category>
           
       </categories>
       
@@ -1825,40 +1842,6 @@
     </entry>
     
     <entry>
-      <title>React学习体系</title>
-      <link href="/react/react/React%20crouse%20map/"/>
-      <url>/react/react/React%20crouse%20map/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React 资源收集</title>
       <link href="/React/react/React%20recource/"/>
       <url>/React/react/React%20recource/</url>
@@ -1876,33 +1859,16 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React-Native/react/React%20native%20resource/"/>
-      <url>/React-Native/react/React%20native%20resource/</url>
+      <title>React学习体系</title>
+      <link href="/react/react/React%20crouse%20map/"/>
+      <url>/react/react/React%20crouse%20map/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React Native </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PostgreSQL 入门使用</title>
-      <link href="/postgreSQL/postgreSQL/get%20start/"/>
-      <url>/postgreSQL/postgreSQL/get%20start/</url>
-      
-        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
       
       
       <categories>
           
-          <category> postgreSQL </category>
+          <category> react </category>
           
       </categories>
       
@@ -1927,16 +1893,50 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>PostgreSQL 入门使用</title>
+      <link href="/postgreSQL/postgreSQL/get%20start/"/>
+      <url>/postgreSQL/postgreSQL/get%20start/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> postgreSQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React-Native/react/React%20native%20resource/"/>
+      <url>/React-Native/react/React%20native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React Native </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
           
       </categories>
       
@@ -1949,6 +1949,23 @@
       <url>/php/php/cakephp%20resource/</url>
       
         <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -1995,11 +2012,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -2097,23 +2114,6 @@
     </entry>
     
     <entry>
-      <title>PMP talking</title>
-      <link href="/management/management/PMP%20talking/"/>
-      <url>/management/management/PMP%20talking/</url>
-      
-        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> management </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Java object clone</title>
       <link href="/java/java/java-object-clone/"/>
       <url>/java/java/java-object-clone/</url>
@@ -2124,6 +2124,23 @@
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>DDI管理培训总结</title>
+      <link href="/management/management/DDI%20training/"/>
+      <url>/management/management/DDI%20training/</url>
+      
+        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
           
       </categories>
       
@@ -2148,11 +2165,11 @@
     </entry>
     
     <entry>
-      <title>DDI管理培训总结</title>
-      <link href="/management/management/DDI%20training/"/>
-      <url>/management/management/DDI%20training/</url>
+      <title>PMP talking</title>
+      <link href="/management/management/PMP%20talking/"/>
+      <url>/management/management/PMP%20talking/</url>
       
-        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>名词来源： Project Management Professional (PMP)</p>]]></content>
       
       
       <categories>
@@ -2199,6 +2216,23 @@
     </entry>
     
     <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Spring boot 学习指南</title>
       <link href="/Java/java/Spring%20boot%20Basic/"/>
       <url>/Java/java/Spring%20boot%20Basic/</url>
@@ -2216,45 +2250,11 @@
     </entry>
     
     <entry>
-      <title>Mock工具 wiremock</title>
-      <link href="/test/java/Wiremock%20for%20java/"/>
-      <url>/test/java/Wiremock%20for%20java/</url>
-      
-        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</span><br></pre></td></tr></table></figure><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Java CMS 选型</title>
       <link href="/java/java/cms%20in%20java/"/>
       <url>/java/java/cms%20in%20java/</url>
       
         <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/java/java/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/java/java/Jeeweb%20-%20Java%20boilerplate/</url>
-      
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
       
       
       <categories>
@@ -2284,45 +2284,28 @@
     </entry>
     
     <entry>
+      <title>Mock工具 wiremock</title>
+      <link href="/test/java/Wiremock%20for%20java/"/>
+      <url>/test/java/Wiremock%20for%20java/</url>
+      
+        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> WireMockRule wireMockRule = <span class="keyword">new</span> WireMockRule(options().port(<span class="number">8888</span>).httpsPort(<span class="number">8889</span>));</span><br></pre></td></tr></table></figure><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>在Ubuntu上通过apt-get搭建tomcat</title>
       <link href="/java/java/Java%20environment%20in%20linux/"/>
       <url>/java/java/Java%20environment%20in%20linux/</url>
       
         <content type="html"><![CDATA[<p>参考博客：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get</a><br>翻译版：<a href="http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/" target="_blank" rel="noopener">http://www.linfuyan.com/how-to-install-apache-tomcat7-on-ubuntu-14-04-via-apt-get/</a></p><h2 id="关于-Apache-Tomcat"><a href="#关于-Apache-Tomcat" class="headerlink" title="关于 Apache Tomcat"></a>关于 Apache Tomcat</h2><p>Apache Tomcat 是一个服务器应用，通常用来部署 Java 应用到 Web 。 Tomcat 是 Java Servlet 与 JSP 技术的一个开源实现，由 Apache 软件基金会发布。</p><p>这个教程涵盖了在 Ubuntu 14.04 上 Tomcat 7.0.x 版本的安装和基础配置。</p><p>有两种基本的途径来安装 Tomcat 到 Ubuntu 上：</p><p>通过 apt-get 工具来安装，这是最简单的方法。<br>从 Apache Tomcat 网站下载二进制发布包。本教程不涵盖这种方法。<br>在这个教程中，我们将使用最简单地方法： apt-get 。这将从官方的 Ubuntu 资源仓库安装最新的 Tomcat 发布包，这个包可能不是 Tomcat 的最新发布版本。如果你想要确保安装 Tomcat 的最新版，你可以下载最新的二进制发布包。</p><h2 id="步骤一-先决条件"><a href="#步骤一-先决条件" class="headerlink" title="步骤一 - 先决条件"></a>步骤一 - 先决条件</h2><p>在你开始这个向导之前，在你的服务器上需要配置一个独立的非 root 用户账号。你可以按照 Ubuntu 14.04 上搭建服务器中的 1-4 步来学习完成它。我们这里使用创建的 demo 用户来完成后续的教程。</p><h2 id="步骤二-安装-Tomcat"><a href="#步骤二-安装-Tomcat" class="headerlink" title="步骤二 - 安装 Tomcat"></a>步骤二 - 安装 Tomcat</h2><p>首先，你需要升级 apt-get 软件包列表：</p><blockquote><p>sudo apt-get update</p></blockquote><p>现在你已经准备好安装 Tomcat。运行以下命令，开始安装：</p><blockquote><p>sudo apt-get install tomcat7</p></blockquote><p>输入 yes 来安装 Tomcat 。这将同时安装 Tomcat 和它的依赖，例如 Java，同时，它将创建一个 tomcat7 用户，并以默认设置启动 Tomcat 。</p><p>这时候， Tomcat 并没有完全安装完成，但你可以通过在浏览器中输入本地域名或IP地址之后加 :8080 的方法来访问默认页面。</p><blockquote><p><a href="http://your_ip_address:8080" target="_blank" rel="noopener">http://your_ip_address:8080</a><br>你会看到一个闪屏页面，显示 “It works” ，和其他附加信息。现在，我们要深入到 Tomcat 的安装过程。</p></blockquote><h2 id="步骤三-安装额外软件包"><a href="#步骤三-安装额外软件包" class="headerlink" title="步骤三 - 安装额外软件包"></a>步骤三 - 安装额外软件包</h2><p>注意：如果你对 Tomcat 足够了解，且不需要 Web 管理接口，文档和示例，那这个章节不是必须的。如果你是第一次接触 Tomcat ，请继续。</p><p>通过以下代码，你将安装 Tomcat 的在线文档， Web接 口（管理 Web 应用），以及一些示例应用。</p><blockquote><p>sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples</p></blockquote><h2 id="步骤四-配置-Tomcat-Web-管理器"><a href="#步骤四-配置-Tomcat-Web-管理器" class="headerlink" title="步骤四 - 配置 Tomcat Web 管理器"></a>步骤四 - 配置 Tomcat Web 管理器</h2><p>想要使用步骤三中安装的 Web 应用管理器，需要先登录到 Tomcat 服务器。首先需要编辑修改 tomcat-users.xml ：</p><blockquote><p>sudo nano /etc/tomcat7/tomcat-users.xml<br>该文件充满了用于说明如何配置的注释。你需要删除下面两行之间的所有注释。如需要用作参考，则保留。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure><p>你需要添加一个用户，可以访问 manager-gui 和 admin-gui （我们在步骤三种安装的管理界面）。你可以通过如下的配置来定义一个用户。如果需要，确保修改用户名和密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot; /&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure></p><p>保存并退出 tomcat-users.xml 文件。重启 Tomcat 服务，以便修改配置生效。</p><blockquote><p>sudo service tomcat7 restart</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
-      
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -2352,6 +2335,40 @@
     </entry>
     
     <entry>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
+      
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Gradle 使用基础</title>
       <link href="/java/java/Gradle%20basic/"/>
       <url>/java/java/Gradle%20basic/</url>
@@ -2362,6 +2379,23 @@
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>wiki 使用方法</title>
+      <link href="/help/how-to-use-this-wiki/"/>
+      <url>/help/how-to-use-this-wiki/</url>
+      
+        <content type="html"><![CDATA[<h2 id="关于-hexo"><a href="#关于-hexo" class="headerlink" title="关于 hexo"></a>关于 hexo</h2><p>本 wiki 的思路为使用github作为文档、代码的版本管理,使用 hexo 来生成静态网站。摒弃了博客的写作方式,使用了 markdown 和 wiki 的方式,</p><p>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h2 id="更多-Hexo-的资料"><a href="#更多-Hexo-的资料" class="headerlink" title="更多 Hexo 的资料"></a>更多 Hexo 的资料</h2><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li><li><a href="https://github.com" target="_blank" rel="noopener">Github</a></li></ul><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用</span><br></pre></td></tr></table></figure><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">| 标题            |      标题       |            标题 |</span><br><span class="line">| :-------------- | :-------------: | --------------: |</span><br><span class="line">| 居左测试文本    |  居中测试文本   |    居右测试文本 |</span><br><span class="line">| 居左测试文本1   |  居中测试文本2  |   居右测试文本3 |</span><br><span class="line">| 居左测试文本11  | 居中测试文本22  |  居右测试文本33 |</span><br><span class="line">| 居左测试文本111 | 居中测试文本222 | 居右测试文本333 |</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> help </category>
           
       </categories>
       
@@ -2386,16 +2420,16 @@
     </entry>
     
     <entry>
-      <title>wiki 使用方法</title>
-      <link href="/help/how-to-use-this-wiki/"/>
-      <url>/help/how-to-use-this-wiki/</url>
+      <title>前端生态图谱</title>
+      <link href="/frontend/frontend/frontend%20ecologies/"/>
+      <url>/frontend/frontend/frontend%20ecologies/</url>
       
-        <content type="html"><![CDATA[<h2 id="关于-hexo"><a href="#关于-hexo" class="headerlink" title="关于 hexo"></a>关于 hexo</h2><p>本 wiki 的思路为使用github作为文档、代码的版本管理,使用 hexo 来生成静态网站。摒弃了博客的写作方式,使用了 markdown 和 wiki 的方式,</p><p>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h2 id="更多-Hexo-的资料"><a href="#更多-Hexo-的资料" class="headerlink" title="更多 Hexo 的资料"></a>更多 Hexo 的资料</h2><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li><li><a href="https://github.com" target="_blank" rel="noopener">Github</a></li></ul><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用</span><br></pre></td></tr></table></figure><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">| 标题            |      标题       |            标题 |</span><br><span class="line">| :-------------- | :-------------: | --------------: |</span><br><span class="line">| 居左测试文本    |  居中测试文本   |    居右测试文本 |</span><br><span class="line">| 居左测试文本1   |  居中测试文本2  |   居右测试文本3 |</span><br><span class="line">| 居左测试文本11  | 居中测试文本22  |  居右测试文本33 |</span><br><span class="line">| 居左测试文本111 | 居中测试文本222 | 居右测试文本333 |</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
       
       
       <categories>
           
-          <category> help </category>
+          <category> frontend </category>
           
       </categories>
       
@@ -2437,16 +2471,16 @@
     </entry>
     
     <entry>
-      <title>前端生态图谱</title>
-      <link href="/frontend/frontend/frontend%20ecologies/"/>
-      <url>/frontend/frontend/frontend%20ecologies/</url>
+      <title>CSS样式框架选型</title>
+      <link href="/collection/frontend%20boilderplate/"/>
+      <url>/collection/frontend%20boilderplate/</url>
       
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
       
       
       <categories>
           
-          <category> frontend </category>
+          <category> collection </category>
           
       </categories>
       
@@ -2471,23 +2505,6 @@
     </entry>
     
     <entry>
-      <title>CSS样式框架选型</title>
-      <link href="/collection/frontend%20boilderplate/"/>
-      <url>/collection/frontend%20boilderplate/</url>
-      
-        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> collection </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>英语语法的内在逻辑</title>
       <link href="/architecture/english/English%20grammar/"/>
       <url>/architecture/english/English%20grammar/</url>
@@ -2498,23 +2515,6 @@
       <categories>
           
           <category> architecture </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>免费的CI/CD 工具</title>
-      <link href="/CI/engineered/CI-free-tools/"/>
-      <url>/CI/engineered/CI-free-tools/</url>
-      
-        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> CI </category>
           
       </categories>
       
@@ -2539,16 +2539,16 @@
     </entry>
     
     <entry>
-      <title>系统监控和维护</title>
-      <link href="/devops/devops/monitors%20for%20website/"/>
-      <url>/devops/devops/monitors%20for%20website/</url>
+      <title>免费的CI/CD 工具</title>
+      <link href="/CI/engineered/CI-free-tools/"/>
+      <url>/CI/engineered/CI-free-tools/</url>
       
-        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
       
       
       <categories>
           
-          <category> devops </category>
+          <category> CI </category>
           
       </categories>
       
@@ -2590,6 +2590,23 @@
     </entry>
     
     <entry>
+      <title>系统监控和维护</title>
+      <link href="/devops/devops/monitors%20for%20website/"/>
+      <url>/devops/devops/monitors%20for%20website/</url>
+      
+        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> devops </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>AWS Certificate Manager 常见问题</title>
       <link href="/aws/devops/aws-certificate-manager-faqs/"/>
       <url>/aws/devops/aws-certificate-manager-faqs/</url>
@@ -2607,11 +2624,11 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/aws/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/aws/devops/auto%20deployment%20with%20ssh/</url>
+      <title>Lambda 入门</title>
+      <link href="/aws/devops/aws%20lambda/"/>
+      <url>/aws/devops/aws%20lambda/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">scp -i "./.circleci/aws.pem" whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure><p>kill原来的端口，然后启动新的进程</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span><br><span class="line">            cd workspace</span><br><span class="line">            #kill old instance</span><br><span class="line">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span><br><span class="line"></span><br><span class="line">            # todo start new instance</span><br><span class="line">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">            # test if it has been started</span><br><span class="line">            netstat -apn | grep 8086'</span><br></pre></td></tr></table></figure><p>清理本地SSH链接</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span><br><span class="line">leep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span><br></pre></td></tr></table></figure><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
       
       
       <categories>
@@ -2628,7 +2645,7 @@
       <link href="/devops/devops/ansible/"/>
       <url>/devops/devops/ansible/</url>
       
-        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
+        <content type="html"><![CDATA[<p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p><p>我的常用脚本仓库</p><p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p><h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
       
       
       <categories>
@@ -2641,11 +2658,11 @@
     </entry>
     
     <entry>
-      <title>Lambda 入门</title>
-      <link href="/aws/devops/aws%20lambda/"/>
-      <url>/aws/devops/aws%20lambda/</url>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/aws/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/aws/devops/auto%20deployment%20with%20ssh/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">scp -i "./.circleci/aws.pem" whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure><p>kill原来的端口，然后启动新的进程</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -i "./.circleci/aws.pem" ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com 'ls</span><br><span class="line">            cd workspace</span><br><span class="line">            #kill old instance</span><br><span class="line">            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;$&#123;output//[^0-9]/ &#125; &amp;&amp; kill -9 $num5 || pwd</span><br><span class="line"></span><br><span class="line">            # todo start new instance</span><br><span class="line">            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">            # test if it has been started</span><br><span class="line">            netstat -apn | grep 8086'</span><br></pre></td></tr></table></figure><p>清理本地SSH链接</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pid=$( ps aux | grep amazonaws | awk '&#123;print $2&#125;' | sort -n | head -n 1 )</span><br><span class="line">leep 5 &amp;&amp; kill $&#123;pid&#125; &amp;&amp; echo "ssh command is complete"</span><br></pre></td></tr></table></figure><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
       
       
       <categories>
@@ -2675,11 +2692,11 @@
     </entry>
     
     <entry>
-      <title>必背的常用VIM命令</title>
-      <link href="/collection/common-vim-commands/"/>
-      <url>/collection/common-vim-commands/</url>
+      <title>常用开源项目收集</title>
+      <link href="/collection/common%20tools/"/>
+      <url>/collection/common%20tools/</url>
       
-        <content type="html"><![CDATA[<p>通常来讲,我们不需要使用VIM做开发,但是需要掌握基本的VIM命令,因为需要在服务器上使用。<br>网上的VIM命令表太长,整理一个基本的命令表</p><p>【按下Esc后的命令模式执行</p><hr><pre><code>a       插入字母后i       插入当前光标</code></pre><hr><pre><code>dd       删除当前行yy       复制当前行</code></pre><hr><pre><code>         v       选择         d       剪切         y       复制         p       粘贴在当前光标处上面         P       粘贴在当前光标处下面shift+p       在当前行前粘贴</code></pre><hr><pre><code>       u       撤销操作ctrl+r       重复操作</code></pre><hr><pre><code>          ^       移动到本行第一个非空白字符上0(数字0)      移动到本行第一个字符上,          $       移动到行尾        3$       移动到下面3行的行尾   ctrl+f       跳转下一页  ctrl+b       跳转上一页    [[/gg       文件头     ]]/G       文件尾</code></pre><hr><pre><code>:set nu       显示行号    :100       跳转到100位置</code></pre><hr><pre><code>:q!       不保存退出 :w       保存  :x       保存退出</code></pre><hr><pre><code>/xxx       向后查找xxx?xxx       向上查找xxx     n       继续查找下一个</code></pre><h2 id="set-nohlsearch-关闭高亮搜索显示"><a href="#set-nohlsearch-关闭高亮搜索显示" class="headerlink" title="   :set nohlsearch       关闭高亮搜索显示"></a>   :set nohlsearch       关闭高亮搜索显示</h2><p>  :%s/abc/123/gc       将abc替换成123</p>]]></content>
+        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
       
       
       <categories>
@@ -2692,11 +2709,11 @@
     </entry>
     
     <entry>
-      <title>常用开源项目收集</title>
-      <link href="/collection/common%20tools/"/>
-      <url>/collection/common%20tools/</url>
+      <title>必背的常用VIM命令</title>
+      <link href="/collection/common-vim-commands/"/>
+      <url>/collection/common-vim-commands/</url>
       
-        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<p>通常来讲,我们不需要使用VIM做开发,但是需要掌握基本的VIM命令,因为需要在服务器上使用。<br>网上的VIM命令表太长,整理一个基本的命令表</p><p>【按下Esc后的命令模式执行</p><hr><pre><code>a       插入字母后i       插入当前光标</code></pre><hr><pre><code>dd       删除当前行yy       复制当前行</code></pre><hr><pre><code>         v       选择         d       剪切         y       复制         p       粘贴在当前光标处上面         P       粘贴在当前光标处下面shift+p       在当前行前粘贴</code></pre><hr><pre><code>       u       撤销操作ctrl+r       重复操作</code></pre><hr><pre><code>          ^       移动到本行第一个非空白字符上0(数字0)      移动到本行第一个字符上,          $       移动到行尾        3$       移动到下面3行的行尾   ctrl+f       跳转下一页  ctrl+b       跳转上一页    [[/gg       文件头     ]]/G       文件尾</code></pre><hr><pre><code>:set nu       显示行号    :100       跳转到100位置</code></pre><hr><pre><code>:q!       不保存退出 :w       保存  :x       保存退出</code></pre><hr><pre><code>/xxx       向后查找xxx?xxx       向上查找xxx     n       继续查找下一个</code></pre><h2 id="set-nohlsearch-关闭高亮搜索显示"><a href="#set-nohlsearch-关闭高亮搜索显示" class="headerlink" title="   :set nohlsearch       关闭高亮搜索显示"></a>   :set nohlsearch       关闭高亮搜索显示</h2><p>  :%s/abc/123/gc       将abc替换成123</p>]]></content>
       
       
       <categories>
@@ -2777,33 +2794,16 @@
     </entry>
     
     <entry>
-      <title>Tips to upgrade the relationship with colleagues</title>
-      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
-      <url>/method/Way%20of%20working%20for%20team%20building/</url>
+      <title>一个好的项目需要哪些周边生态?</title>
+      <link href="/agile/agile/ecosystem-for-project/"/>
+      <url>/agile/agile/ecosystem-for-project/</url>
       
-        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> method </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Handover tips</title>
-      <link href="/method/Way%20of%20working%20for%20handover/"/>
-      <url>/method/Way%20of%20working%20for%20handover/</url>
-      
-        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
       
       
       <categories>
           
-          <category> method </category>
+          <category> agile </category>
           
       </categories>
       
@@ -2828,16 +2828,16 @@
     </entry>
     
     <entry>
-      <title>一个好的项目需要哪些周边生态?</title>
-      <link href="/agile/agile/ecosystem-for-project/"/>
-      <url>/agile/agile/ecosystem-for-project/</url>
+      <title>Handover tips</title>
+      <link href="/method/Way%20of%20working%20for%20handover/"/>
+      <url>/method/Way%20of%20working%20for%20handover/</url>
       
-        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
       
       
       <categories>
           
-          <category> agile </category>
+          <category> method </category>
           
       </categories>
       
@@ -2845,16 +2845,16 @@
     </entry>
     
     <entry>
-      <title>How to end a meeting?</title>
-      <link href="/english/How%20to%20wrap%20up/"/>
-      <url>/english/How%20to%20wrap%20up/</url>
+      <title>Tips to upgrade the relationship with colleagues</title>
+      <link href="/method/Way%20of%20working%20for%20team%20building/"/>
+      <url>/method/Way%20of%20working%20for%20team%20building/</url>
       
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="一些tips"><a href="#一些tips" class="headerlink" title="一些tips"></a>一些tips</h3><ul><li>关注人的感受, 多表达感谢, 不要直接批评</li></ul><h3 id="从Thoughtworks学到的"><a href="#从Thoughtworks学到的" class="headerlink" title="从Thoughtworks学到的"></a>从Thoughtworks学到的</h3><ul><li><p>Retro 回顾一段时间里的感受,然后在团队里面头脑风暴,使用sticker写出每个人的想法。使用well、less well、suggestion来分类,最后总结出actions。</p></li><li><p>Feedback meeting 互相给每个人Feedback, 直到Team中每个人都能收到Feedback</p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> english </category>
+          <category> method </category>
           
       </categories>
       
@@ -2889,6 +2889,23 @@
       <categories>
           
           <category> javascript </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>How to end a meeting?</title>
+      <link href="/english/How%20to%20wrap%20up/"/>
+      <url>/english/How%20to%20wrap%20up/</url>
+      
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> english </category>
           
       </categories>
       

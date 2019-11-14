@@ -13,6 +13,9 @@ toc: true
 使用ansible playbook部署LAMP
 https://github.com/ansible/ansible-examples/tree/master/lamp_simple
 
+w3school 的一个教程 https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html
+
+
 我的常用脚本仓库
 
 https://github.com/linksgo2011/deployment-automation
