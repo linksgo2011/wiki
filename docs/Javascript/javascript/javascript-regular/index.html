@@ -3,16 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>架构师知识系统</title>
+  <title>Javascript 常用正则和方法 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="title: Javascript 常用正则和方法categories: Javascript 
-toc: true数字格式化（每三位加逗号）123export const toThousands = num =&amp;gt; &amp;#123;  return (num || 0).toString().re">
+  <meta name="description" content="数字格式化（每三位加逗号）123export const toThousands = num =&amp;gt; &amp;#123;  return (num || 0).toString().replace(/(\d)(?=(?:\d&amp;#123;3&amp;#125;)+$)/g, &amp;apos;$1,&amp;apos;)&amp;#">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Javascript 常用正则和方法">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -46,22 +45,29 @@ toc: true数字格式化（每三位加逗号）123export const toThousands = nu
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title"></span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-12</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Javascript 常用正则和方法</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-12</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
   
 
   
-	<div class="col-md-12">
-	  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
 
 	  <!-- content -->
-	  <hr>
-<p>title: Javascript 常用正则和方法<br>categories: Javascript </p>
-<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><h2 id="数字格式化（每三位加逗号）"><a href="#数字格式化（每三位加逗号）" class="headerlink" title="数字格式化（每三位加逗号）"></a>数字格式化（每三位加逗号）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export const toThousands = num =&gt; &#123;</span><br><span class="line">  return (num || 0).toString().replace(/(\d)(?=(?:\d&#123;3&#125;)+$)/g, &apos;$1,&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
+	  <h2 id="数字格式化（每三位加逗号）"><a href="#数字格式化（每三位加逗号）" class="headerlink" title="数字格式化（每三位加逗号）"></a>数字格式化（每三位加逗号）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export const toThousands = num =&gt; &#123;</span><br><span class="line">  return (num || 0).toString().replace(/(\d)(?=(?:\d&#123;3&#125;)+$)/g, &apos;$1,&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
 
 	  <div>
   		<center>
@@ -140,7 +146,11 @@ toc: true数字格式化（每三位加逗号）123export const toThousands = nu
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -149,7 +159,9 @@ toc: true数字格式化（每三位加逗号）123export const toThousands = nu
 		
 	
 		
-	
+			
+			
+			
 		
 	
 		
@@ -172,6 +184,8 @@ toc: true数字格式化（每三位加逗号）123export const toThousands = nu
 	
 		
 	
+		
+			
 		
 	
 		
@@ -294,11 +308,11 @@ toc: true数字格式化（每三位加逗号）123export const toThousands = nu
 	
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/Javascript/javascript/http-params-in-path/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/Javascript/vue/vue-move-component-to-body/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
