@@ -1,6 +1,6 @@
 ---
 title: CSP 浏览器内存安全策略
-categories: security
+categories: 安全
 toc: true
 ---
 

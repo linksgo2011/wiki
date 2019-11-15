@@ -1,6 +1,6 @@
 ---
 title:  nohup 后台运行Linux程序方法
-categories: devops
+categories: linux
 ---
 
 

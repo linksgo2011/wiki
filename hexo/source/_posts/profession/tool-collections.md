@@ -1,6 +1,6 @@
 ---
 title: 超实用的工具和网站收集
-categories: collection
+categories: 职业素质
 ---
 
 ## 流程图、思维导图 ##

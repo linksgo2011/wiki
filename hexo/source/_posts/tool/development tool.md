@@ -1,6 +1,6 @@
 ---
 title: 开发工具图谱
-categories: development
+categories: 开发工具
 toc: true
 ---
 

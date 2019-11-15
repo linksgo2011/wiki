@@ -1,6 +1,6 @@
 ---
-title: 清理对象中的空值
-categories: frontend
+title: Javascript 清理对象中的空值
+categories: Javascript
 toc: true
 ---
 

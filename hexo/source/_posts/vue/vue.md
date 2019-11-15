@@ -1,6 +1,6 @@
 ---
 title: Vue overview
-categories: frontend
+categories: vue
 toc: true
 ---
 

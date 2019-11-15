@@ -1,6 +1,6 @@
 ---
 title: kafka
-categories: infrastructure
+categories: Kafka
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 最实用的Linux命令
-categories: devops
+categories: linux
 ---
 
 查看操作系统信息

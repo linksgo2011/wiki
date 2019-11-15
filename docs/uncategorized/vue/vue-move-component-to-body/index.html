@@ -6,9 +6,9 @@
   <title>架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="title: 移动Vue组件挂载点到body上categories: frontend
+  <meta name="description" content="title: 移动Vue组件挂载点到body上categories: vue
 toc:true非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题
-123456789101112export const moveElementToBody = &amp;#123;  inser">
+123456789101112export const moveElementToBody = &amp;#123;  inserted(e">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -61,7 +61,7 @@ toc:true非常有用的一个指令，可以移动组件到 body上，解决定�
 
 	  <!-- content -->
 	  <hr>
-<p>title: 移动Vue组件挂载点到body上<br>categories: frontend</p>
+<p>title: 移动Vue组件挂载点到body上<br>categories: vue</p>
 <h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc:true"></a>toc:true</h2><p>非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export const moveElementToBody = &#123;</span><br><span class="line">  inserted(el) &#123;</span><br><span class="line">    if (el) &#123;</span><br><span class="line">      document.body.appendChild(el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  unbind(el) &#123;</span><br><span class="line">    if (el.parentNode) &#123;</span><br><span class="line">      el.parentNode.removeChild(el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
 
@@ -190,8 +190,6 @@ toc:true非常有用的一个指令，可以移动组件到 body上，解决定�
 			
 			
 			
-		
-	
 		
 	
 		

@@ -1,6 +1,6 @@
 ---
 title: 测试策略
-categories: qa
+categories: 质量保证
 ---
 
 一个项目需要做多少测试，做到什么程度，这属于测试策略的范畴。

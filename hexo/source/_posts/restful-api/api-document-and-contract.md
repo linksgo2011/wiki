@@ -1,6 +1,6 @@
 ---
 title: API 文档和契约
-categories: API&service
+categories: API设计
 toc: true
 ---
 

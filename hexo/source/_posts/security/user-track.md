@@ -1,6 +1,6 @@
 ---
 title: Web客户端追踪（cookie、浏览器指纹 ）
-categories: security
+categories: 安全
 toc: true
 ---
 

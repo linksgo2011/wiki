@@ -1,6 +1,6 @@
 ---
 title: React Native 资源收集
-categories: React Native
+categories: React
 ---
 
 官网

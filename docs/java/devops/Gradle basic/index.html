@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Gradle 使用基础 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="介绍Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等
+基本原理Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的
+常用配置`
+buildscript {    ext {        ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Gradle 使用基础">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Gradle 使用基础</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Gradle 是一个打包工具和Maven一样能构建java项目。和前端类比的打包工具是Grunt等</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理<code></code></h2><p>Gradle创建的工程由 Project和Tasks，Gradle所有的任务都是通过引入插件和编写task来实现的</p>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>`</p>
+<p>buildscript {<br>    ext {<br>        springBootVersion = ‘1.5.6.RELEASE’<br>    }<br>    repositories {<br>        mavenCentral()<br>    }<br>    dependencies {<br>        classpath(“org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}”)<br>    }<br>}</p>
+<p>apply plugin: ‘java’<br>apply plugin: ‘eclipse’<br>apply plugin: ‘org.springframework.boot’</p>
+<p>version = ‘0.0.1-SNAPSHOT’<br>sourceCompatibility = 1.8</p>
+<p>repositories {<br>    mavenCentral()<br>}</p>
+<p>dependencies {</p>
+<pre><code>compile(&apos;org.springframework.boot:spring-boot-starter-web&apos;)
+compile group: &apos;org.springframework.boot&apos;, name: &apos;spring-boot-starter-data-jpa&apos;, version: &apos;1.5.3.RELEASE&apos;
+compile group: &apos;javax.servlet.jsp.jstl&apos;, name: &apos;javax.servlet.jsp.jstl-api&apos;, version: &apos;1.2.1&apos;
+compile group: &apos;org.apache.tomcat.embed&apos;, name: &apos;tomcat-embed-jasper&apos;, version: &apos;9.0.0.M25&apos;
+compile group: &apos;javax.servlet&apos;, name: &apos;jstl&apos;, version: &apos;1.2&apos;
+compile group: &apos;org.glassfish&apos;, name: &apos;javax.el&apos;, version: &apos;3.0.0&apos;
+compile group: &apos;org.apache.commons&apos;, name: &apos;commons-lang3&apos;, version: &apos;3.0&apos;
+
+runtime(&apos;mysql:mysql-connector-java&apos;)
+
+testCompile(&apos;org.springframework.boot:spring-boot-starter-test&apos;)
+</code></pre><p>}</p>
+<p>`</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看所有的任务列表</p>
+<blockquote>
+<p>gradle tasks –all</p>
+</blockquote>
+<p>生成 wrapper </p>
+<blockquote>
+<p>gradle wrapper</p>
+</blockquote>
+<p><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/gradle_wrapper.html</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/java/java/java-exception/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/java/java/Java kills map/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

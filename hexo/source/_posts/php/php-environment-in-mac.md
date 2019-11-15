@@ -1,6 +1,6 @@
 ---
-title: PHP环境in Mac
-categories: "php"
+title: PHP环境 in Mac
+categories: php
 ---
 
 实际上Mac系统自带了PHP和Apache的开发环境

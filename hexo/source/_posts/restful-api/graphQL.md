@@ -1,6 +1,6 @@
 ---
 title: GraphQL
-categories: API&service
+categories: API设计
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 英文邮件写作
-categories: communication
+categories: 职业素质
 toc: true
 ---
 

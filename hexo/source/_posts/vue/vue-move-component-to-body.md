@@ -1,6 +1,6 @@
 ---
 title: 移动Vue组件挂载点到body上
-categories: frontend
+categories: vue
 toc:true
 --- 
 

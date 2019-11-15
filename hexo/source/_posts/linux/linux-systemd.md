@@ -1,6 +1,6 @@
 ---
 title: Systemd 常见用法
-categories: devops
+categories: linux
 ---
 
 Systemd 是一套用来管理系统服务的命令，Cent OS默认使用它管理系统服务。

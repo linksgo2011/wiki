@@ -1,6 +1,6 @@
 ---
-title: 常用正则和方法
-categories: frontend 
+title: Javascript 常用正则和方法
+categories: Javascript 
 toc:true
 --- 
 

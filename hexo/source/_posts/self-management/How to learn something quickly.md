@@ -1,6 +1,6 @@
 ---
 title: 怎么样快速入门/学习一项技术
-categories: method
+categories: 自我管理
 toc: true
 ---
 

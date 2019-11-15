@@ -1,6 +1,6 @@
 ---
-title: Vagrant 
-categories: devops
+title: Linux 虚拟机管理 Vagrant 
+categories: linux
 toc: true
 --
 

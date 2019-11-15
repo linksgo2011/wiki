@@ -1,6 +1,6 @@
 ---
 title: 安全管理
-categories: security
+categories: 安全
 toc: true
 ---
 

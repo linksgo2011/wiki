@@ -1,6 +1,6 @@
 ---
 title: 常用开源项目收集
-categories: collection
+categories:  自我管理
 toc: true
 ---
 

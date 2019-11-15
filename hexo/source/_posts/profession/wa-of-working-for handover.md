@@ -1,6 +1,6 @@
 ---
 title: 项目移交检查清单
-categories: method
+categories: 职业素质
 ---
 
 #### What we can do fo that?

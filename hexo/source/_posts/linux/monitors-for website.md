@@ -1,6 +1,6 @@
 ---
 title: 系统监控和维护
-categories: devops
+categories: linux
 toc: true
 ---
 

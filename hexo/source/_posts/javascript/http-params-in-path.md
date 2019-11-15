@@ -1,6 +1,6 @@
 ---
-title: URL中path参数绑定
-categories: frontend
+title: Javascript 对URL中path参数绑定
+categories: Javascript
 toc:true
 --- 
 

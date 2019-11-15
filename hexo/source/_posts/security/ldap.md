@@ -1,6 +1,6 @@
 ---
 title: ldap
-categories: security
+categories: 安全
 toc: true
 ---
 

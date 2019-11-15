@@ -1,6 +1,6 @@
 ---
 title: 必背的常用VIM命令
-categories: collection
+categories: 开发工具 
 toc: true
 ---
 

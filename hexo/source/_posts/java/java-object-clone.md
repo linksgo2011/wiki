@@ -1,6 +1,6 @@
 ---
-title: Java object clone
-categories: "java"
+title: Java 对象克隆
+categories: java
 ---
 
 Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,

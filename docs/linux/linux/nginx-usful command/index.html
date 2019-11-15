@@ -1,0 +1,471 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Nginx 常用操作 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="什么是NginxNginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 
+安装在Ubuntu的环境下，安装Nginx
+
+apt-get install nginx
+
+常用命令配置修改后不停服重载
+
+service nginx reload
+
+停服重启
+
+service nginx st">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Nginx 常用操作">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Nginx 常用操作</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p>
+<blockquote>
+<p>apt-get install nginx</p>
+</blockquote>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p>
+<blockquote>
+<p>service nginx reload</p>
+</blockquote>
+<p>停服重启</p>
+<blockquote>
+<p>service nginx start</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p>
+<p><code>/etc/nginx</code></p>
+<p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p>
+<p>我们常用的站点信息配置在：</p>
+<p>/etc/nginx/sites-enabled/*;</p>
+<h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p>
+<pre><code># 资源根目录
+root /var/www;
+
+# 主页
+index index.html index.htm index.php ;
+
+# Make site accessible from http://localhost/
+server_name localhost;
+
+location / {
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    try_files $uri $uri/ =404;
+    # Uncomment to enable naxsi on this location
+    # include /etc/nginx/naxsi.rules
+}
+
+# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; 
+# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
+#location /RequestDenied {
+#    proxy_pass http://127.0.0.1:8080;    
+#}
+
+#error_page 404 /404.html;
+
+# redirect server error pages to the static page /50x.html
+#
+#error_page 500 502 503 504 /50x.html;
+#location = /50x.html {
+#    root /usr/share/nginx/html;
+#}
+
+# 开启PHP 解析
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#
+location ~ \.php$ {
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
+
+    # With php5-cgi alone:
+    fastcgi_pass 127.0.0.1:9000;
+    # With php5-fpm:
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_index index.php;
+    include fastcgi_params;
+}
+
+# deny access to .htaccess files, if Apache&apos;s document root
+# concurs with nginx&apos;s one
+#
+#location ~ /\.ht {
+#    deny all;
+#}
+</code></pre><p>}</p>
+<p><code></code></p>
+<h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p>
+<h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote>
+<p>mv default v-host</p>
+</blockquote>
+<blockquote>
+<p>vim v-host</p>
+</blockquote>
+<p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p>
+<p>然后重在或者重启Nginx服务器 </p>
+<blockquote>
+<p>service nginx restart<br>查看服务器装填<br>service nginx status</p>
+</blockquote>
+<p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/linux/linux/monitors-for website/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

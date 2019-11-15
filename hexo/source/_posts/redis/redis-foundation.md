@@ -1,6 +1,6 @@
 ---
 title: Redis 基础
-categories: devops
+categories: Redis
 toc: true
 ---
 

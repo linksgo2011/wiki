@@ -1,6 +1,6 @@
 ---
 title: API的contract测试之Pact
-categories: test
+categories: 质量保证
 ---
 
 ## why?

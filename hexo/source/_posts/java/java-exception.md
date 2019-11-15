@@ -1,6 +1,6 @@
 ---
-title: 理解 java exception
-categories: "java"
+title: java 异常
+categories: java
 ---
 
 #### 什么是异常和错误

@@ -1,6 +1,6 @@
 ---
 title: Nginx 常用操作
-categories: devops
+categories: linux
 ---
 
 # 什么是Nginx

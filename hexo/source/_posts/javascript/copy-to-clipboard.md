@@ -1,6 +1,6 @@
 ---
-title: 复制到剪贴板
-categories: frontend
+title: Javascript 复制到剪贴板
+categories: Javascript
 toc:true
 --- 
 

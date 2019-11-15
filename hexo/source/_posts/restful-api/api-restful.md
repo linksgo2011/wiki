@@ -1,6 +1,6 @@
 ---
 title: API RESTful 风格
-categories: API&service
+categories: API设计
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 前端项目安全扫描
-categories: security
+categories: 安全
 toc: true
 ---
 

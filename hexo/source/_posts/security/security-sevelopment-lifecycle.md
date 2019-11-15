@@ -1,6 +1,6 @@
 ---
 title: 微软SDL( Security Development Lifecycle)流程
-categories: security
+categories: 安全
 toc: true
 ---
 
