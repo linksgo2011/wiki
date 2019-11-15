@@ -1,6 +1,6 @@
 ---
 title: Ansible 入门和使用
-categories: devops
+categories: 运维开发
 toc: true
 ---
 

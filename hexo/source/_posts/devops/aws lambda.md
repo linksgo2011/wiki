@@ -1,6 +1,6 @@
 ---
 title: Lambda 入门
-categories: aws
+categories: 运维开发
 toc: true
 ---
 

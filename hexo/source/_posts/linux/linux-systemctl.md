@@ -4,7 +4,13 @@ categories: linux
 toc: true
 ---
 
+
+## 基本原理
+
 systemctl 设计目标是为系统的启动和管理提供一套完整的解决方案。
+
+
+## 操作方法
 
 查看版本号 
 

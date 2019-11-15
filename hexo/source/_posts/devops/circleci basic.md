@@ -1,6 +1,6 @@
 ---
 title: Circle CI 基本使用
-categories: devops
+categories: 运维开发
 ---
 
 ## CircleCI是什么

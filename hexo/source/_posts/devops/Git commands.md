@@ -1,6 +1,6 @@
 ---
 title: 常用的GIT命令
-categories: devops
+categories: 运维开发
 toc: true
 ---
 

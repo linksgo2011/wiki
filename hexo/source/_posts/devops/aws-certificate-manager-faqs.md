@@ -1,6 +1,6 @@
 ---
 title: AWS Certificate Manager 常见问题
-categories: aws
+categories: 运维开发
 toc: true
 ---
 

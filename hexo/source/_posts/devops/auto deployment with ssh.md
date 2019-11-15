@@ -1,6 +1,6 @@
 ---
 title: 使用SSH实现自动化部署
-categories: aws
+categories: 运维开发
 toc: true
 ---
 
