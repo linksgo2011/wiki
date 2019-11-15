@@ -1,7 +1,7 @@
 ---
 title: Javascript 复制到剪贴板
 categories: Javascript
-toc:true
+toc: true
 --- 
 
 ```

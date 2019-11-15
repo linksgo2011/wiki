@@ -1,7 +1,7 @@
 ---
 title: Javascript 对URL中path参数绑定
 categories: Javascript
-toc:true
+toc: true
 --- 
 
 拼接URL在前端不是很好，例如 '/cate/'+ cateID +'/post/'+ postID

@@ -1,7 +1,7 @@
 ---
 title: 移动Vue组件挂载点到body上
 categories: vue
-toc:true
+toc: true
 --- 
 
 非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题
