@@ -1,6 +1,6 @@
 ---
 title: PHP拓展和使用C编写自定义拓展
-categories: PHP
+categories: php
 toc: true
 ---
 
