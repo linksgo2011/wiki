@@ -1,0 +1,352 @@
+/* =============================================================================
+   container
+   ========================================================================== */
+
+.container-narrow {
+  margin: 0 auto;
+  max-width:970px;
+}
+
+.container-narrow > footer {
+  margin-top: 20px;
+  text-align: center;
+}
+.container-narrow > footer p {
+  padding: 5px;
+  display: inline-block;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.panel-group .category{
+  width: calc(50% - 5px);
+  margin-bottom:10px;
+  float: left;
+}
+
+.panel-group .category+.category{
+  margin-top:0;
+}
+
+.panel-group .category.right{
+  margin-left: 10px;
+}
+
+
+/* =============================================================================
+   Body and structure
+   ========================================================================== */
+
+body {
+  position: relative;
+}
+
+#sidebar {
+  margin-left: 5px;
+  padding-left: 15px;
+  border-left: 1px solid #e0e0e0;
+  font-size: 0.9em;
+}
+
+/* =============================================================================
+   pagination
+   ========================================================================== */
+
+.pagination {
+  margin: 10px 0;
+}
+
+.pagination a{
+  color:#555;
+}
+
+
+/* =============================================================================
+   List
+   ========================================================================== */
+
+li i {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.listing-item {
+  line-height: 24px;
+}
+
+/* =============================================================================
+   hyper links
+   ========================================================================== */
+
+a{color:#1863a1}
+a:focus{color:#0181eb}
+a:hover{color:#0181eb}
+a:active{color:#01579f}
+
+a.label-anchor {
+  position: relative;
+  display: block;
+  text-align: right;
+  width: 200px;
+  left: -210px;
+  font-family: 'PT Sans', sans-serif;
+}
+a.label-anchor:target span {
+  background-color: #b94a48;
+}
+a.label-anchor:hover {
+  text-decoration: none;
+}
+a.label-anchor span {
+  font-weight: bold;
+  line-height: 0px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  background-color: #666;
+  padding: 1px 4px 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+a.inline-ref {
+  border-bottom: dotted 1px #333;
+  color: black;
+}
+a.inline-ref:hover {
+  text-decoration: none;
+  border-bottom: solid 1px #000;
+}
+
+/* =============================================================================
+  blockquote
+   ========================================================================== */
+
+blockquote {
+  border-left:5px solid #cccccc;
+  font-size: 1em;
+  background-color: #fff;
+  padding: 0px 20px;
+}
+
+blockquote p, blockquote ol, blockquote ul, blockquote li, .slogan{
+  font-family: 'Open Sans',"Helvetica Neue", '楷体', 'STKaiti', "Kai", "kaiti", Helvetica, "Segoe UI", Ubuntu, "Hiragino Sans GB";
+}
+
+/* =============================================================================
+   img, video
+   ========================================================================== */
+
+img, video {
+  max-width: 97.5%;
+  margin: 15px, auto;
+  display: block;
+  height: auto;
+}
+
+/* =============================================================================
+   scroll to top
+   ========================================================================== */
+
+#gotop{
+  display:block;
+  width:36px;
+  height:36px;
+  position:fixed;
+  bottom:40px;
+  right:30px;
+  border-radius:7px;
+  text-decoration:none;
+  display:none;
+  background-color:#999999;
+}
+#gotop span{
+  display:block;
+  color:#dddddd;
+}
+#gotop span:hover{
+  color:#cccccc;
+}
+#gotop span{
+  font-size:24px;
+  text-align:center;
+}
+
+/* =============================================================================
+   Headers
+   ========================================================================== */
+
+header h1{
+  font-weight:normal;
+  line-height:1.2em;
+  margin-bottom:0.6667em;
+
+}
+
+.slogan{
+  font-size:16px;
+  font-weight:lighter;
+  font-family:"STKaiti";
+}
+
+.page-header h1 span.split{
+  margin-left: 10px;
+  margin-right: 10px;
+  border-right: solid #333 2px;
+}
+
+.page-header h1 span.title{
+  font-weight:normal;
+  font-family: "Droid Serif", "Kai", "KaiTi";
+}
+
+.page-header h1 span.date{
+  display:inline;
+  position: absolute;
+  font-size: 0.7em;
+  color: #555;
+  font-family: initial;
+  font-weight: lighter;
+}
+
+h1{
+  font-size:2.6em;
+  line-height:1.2em;
+  margin-bottom:0.6667em;
+}
+
+h1,h2,h3,h4,h5,h6{
+  text-rendering:optimizelegibility;
+  font-weight:bold;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica","Microsoft YaHei", "WenQuanYi Micro Hei",Arial, sans-serif;
+}
+
+h2{
+  margin: 0.83em 0;
+  color: green;
+  padding-top: 40px;
+  margin-top: -45px;
+}
+
+h3 {
+  margin-top: -5px;
+  color: #9C4C17;
+}
+
+h4 {
+  color: #B94A48;
+}
+
+h2,section h1{font-size:1.5em}
+
+h3,section h2,section section h1{font-size:1.3em}
+
+h4,section h3,section section h2,section section section h1{font-size:1em}
+
+h5,section h4,section section h3{font-size:.9em}
+
+h6,section h5,section section h4,section section section h3{font-size:.8em}
+
+h2,h3{
+  margin: 0.5em 0px;
+}
+
+.page-header .brand{
+  color: #bbbbbb;
+  text-decoration: none;
+}
+
+.page-header .brand:hover {
+}
+
+/* =============================================================================
+   Codes
+   ========================================================================== */
+
+.line{
+  height: 20px;
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+th {
+  padding: 12px 10px 12px 10px;
+  border-bottom: 1px dashed #4088b8;
+}
+
+td {
+  padding: 7px 10px 7px 10px;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+
+/* =============================================================================
+   Local search
+   ========================================================================== */
+
+
+#local-search-result {
+  scroll:auto;
+  overflow:auto;
+  max-height:3in;
+  background-color: #fef;
+  margin-bottom: 10px;
+}
+
+ul.search-result-list {
+  padding-left: 10px;
+}
+
+a.search-result-title {
+  font-weight: bold;
+}
+
+p.search-result {
+  color=#555;
+}
+
+em.search-keyword {
+  border-bottom: 1px dashed #4088b8;
+  font-weight: bold;
+}
+
+
+/**
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+  content: ""; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}

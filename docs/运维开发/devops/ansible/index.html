@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Ansible 入门和使用 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="官网: https://www.ansible.com/get-started工作原理:https://www.ansible.com/how-ansible-works下载和安装:http://docs.ansible.com/ansible/latest/intro_installation.h">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Ansible 入门和使用">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Ansible 入门和使用</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-11-14</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a><br>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a><br>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a><br>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a><br>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p>
+<p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p>
+<p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p>
+<p>我的常用脚本仓库</p>
+<p><a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p>
+<h3 id="Check-Mode-“Dry-Run”"><a href="#Check-Mode-“Dry-Run”" class="headerlink" title="Check Mode (“Dry Run”)"></a>Check Mode (“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p>
+<p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ansible-playbook foo.yml --check</span><br></pre></td></tr></table></figure>
+<h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/运维开发/devops/auto deployment with ssh/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
