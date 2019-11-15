@@ -8,6 +8,6 @@ toc: true
 
 我们用工具 IntelliJ IDEA， 打开任意类，单击 Navigate → Type Hierarchy。然后我们会得到下面视图。
 
-![Hierarchy](./Intellij-skills/idea-hierarchy.png)
+![Hierarchy](intellij-skills/idea-hierarchy.png)
 
 使用 Hierarchy 对我们分析源码有非常大的帮助。
