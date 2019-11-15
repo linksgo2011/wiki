@@ -1,6 +1,6 @@
 ---
 title: Java unmodifiableMap
-categories: Java
+categories: java
 ---
 
 
