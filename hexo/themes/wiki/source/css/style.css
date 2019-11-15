@@ -142,7 +142,7 @@ blockquote p, blockquote ol, blockquote ul, blockquote li, .slogan{
 img, video {
   /* max-width: 97.5%; */
   max-width: 60%;
-  margin: 15px auto;
+  margin: 10px auto;
   display: block;
   height: auto;
 }
