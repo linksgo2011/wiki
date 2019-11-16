@@ -1,6 +1,7 @@
 ---
 title: Spring data JPA
 categories: Spring
+toc: true
 ---
 
 ## Spring、Spring data 和 Spring data JPA 的关系
