@@ -1,6 +1,7 @@
 ---
-title: rmp 和 yum 包管理器的使用
+title: rpm 和 yum 包管理器的使用
 categories: linux
+from: self
 ---
 
 ## 背景

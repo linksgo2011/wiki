@@ -6,7 +6,7 @@
   <title>Nginx 常用操作 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="什么是NginxNginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 
+  <meta name="description" content="什么是 NginxNginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 
 安装在Ubuntu的环境下，安装Nginx
 
 apt-get install nginx
@@ -17,7 +17,7 @@ service nginx reload
 
 停服重启
 
-service nginx st">
+service nginx s">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -69,7 +69,7 @@ service nginx st">
 	  
 
 	  <!-- content -->
-	  <h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p>
+	  <h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p>
 <blockquote>
 <p>apt-get install nginx</p>
@@ -143,7 +143,7 @@ location ~ \.php$ {
 #}
 </code></pre><p>}</p>
 <p><code></code></p>
-<h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面</p>
+<h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p>
 <h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote>
 <p>mv default v-host</p>
 </blockquote>
@@ -153,9 +153,13 @@ location ~ \.php$ {
 <p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p>
 <p>然后重在或者重启Nginx服务器 </p>
 <blockquote>
-<p>service nginx restart<br>查看服务器装填<br>service nginx status</p>
+<p>service nginx restart</p>
 </blockquote>
-<p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改</p>
+<p>查看服务器状态</p>
+<blockquote>
+<p>service nginx status</p>
+</blockquote>
+<p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>
 	  
 
 	  <div>
@@ -167,6 +171,10 @@ location ~ \.php$ {
 	
 	
 	
+	
+		
+			
+		
 	
 		
 			

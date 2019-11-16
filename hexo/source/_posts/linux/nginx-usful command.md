@@ -3,7 +3,7 @@ title: Nginx 常用操作
 categories: linux
 ---
 
-# 什么是Nginx
+# 什么是 Nginx
 
 Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 
 
@@ -101,7 +101,7 @@ server {
 
 ### Nginx 解析PHP的原理
 
-Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm作为后台服务解析PHP页面
+Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面
 
 ### Nginx 增加虚拟主机方法
 
@@ -114,9 +114,9 @@ Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HT
 然后重在或者重启Nginx服务器 
 
 > service nginx restart
-查看服务器装填
+
+查看服务器状态
+
 > service nginx status
 
-如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改
- 
-
+如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。
