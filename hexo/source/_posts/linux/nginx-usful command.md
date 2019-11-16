@@ -1,6 +1,7 @@
 ---
 title: Nginx 常用操作
 categories: linux
+toc: true
 ---
 
 # 什么是 Nginx

@@ -1,6 +1,7 @@
 ---
 title: Nginx 配置参数说明
 categories: linux
+toc: true
 ---
 
 ## 一份基本的 ngnix.conf 
