@@ -3,16 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>移动Vue组件挂载点到body上 | 架构师知识系统</title>
+  <title>CentOS 搭建 vsftp | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题
-123456789101112export const moveElementToBody = &amp;#123;  inserted(el) &amp;#123;    if (el) &amp;#123;      document.body.">
+  <meta name="description" content="安装和启动查看是否已经安装
+
+rpm -q vsftpd
+
+“package vsftpd is not installed” 说明没有安装。
+
+yum  install -y  vsftpd
+
+12345Installed: vsftpd.x86_64 0:3.0.2-25.el Complete">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="移动Vue组件挂载点到body上">
+  <meta property="og:title" content="CentOS 搭建 vsftp">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -46,7 +53,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">移动Vue组件挂载点到body上</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-12</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">CentOS 搭建 vsftp</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-17</span></h1>
 </div>		
 
 <div class="row page">
@@ -68,8 +75,46 @@
 	
 
 	  <!-- content -->
-	  <p>非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export const moveElementToBody = &#123;</span><br><span class="line">  inserted(el) &#123;</span><br><span class="line">    if (el) &#123;</span><br><span class="line">      document.body.appendChild(el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  unbind(el) &#123;</span><br><span class="line">    if (el.parentNode) &#123;</span><br><span class="line">      el.parentNode.removeChild(el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
+	  <h2 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h2><p>查看是否已经安装</p>
+<blockquote>
+<p>rpm -q vsftpd</p>
+</blockquote>
+<p>“package vsftpd is not installed” 说明没有安装。</p>
+<blockquote>
+<p>yum  install -y  vsftpd</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Installed:</span><br><span class="line"></span><br><span class="line"> vsftpd.x86_64 0:3.0.2-25.el</span><br><span class="line"> </span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>whereis  vsftpd</p>
+</blockquote>
+<p>vsftpd: /usr/sbin/vsftpd /etc/vsftpd /usr/share/man/man8/vsftpd.8.gz</p>
+<p>启动服务</p>
+<blockquote>
+<p>systemctl start vsftpd</p>
+</blockquote>
+<p>如果需要允许随系统启动的话可以使用</p>
+<blockquote>
+<p>systemctl enable vsftpd</p>
+</blockquote>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>使用 </p>
+<blockquote>
+<p>systemctl status vsftpd</p>
+</blockquote>
+<p>查看配置文件地址和安装情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vsftpd.service - Vsftpd ftp daemon</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/vsftpd.service; disabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Sun 2019-11-17 15:56:40 CST; 4s ago</span><br><span class="line">  Process: 15115 ExecStart=/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 15118 (vsftpd)</span><br><span class="line">   CGroup: /system.slice/vsftpd.service</span><br><span class="line">           └─15118 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
+<p>编辑配置文件</p>
+<blockquote>
+<p>vim /etc/vsftpd/vsftpd.conf</p>
+</blockquote>
+<p>vsftp 的匿名用户默认目录为</p>
+<blockquote>
+<p>/var/ftp/pub</p>
+</blockquote>
+<h2 id="ftp-服务需要特别开启防火墙服务"><a href="#ftp-服务需要特别开启防火墙服务" class="headerlink" title="ftp 服务需要特别开启防火墙服务"></a>ftp 服务需要特别开启防火墙服务</h2><blockquote>
+<p>firewall-cmd –permanent –zone=public –add-service=ftp<br>firewall-cmd –reload </p>
+</blockquote>
+<p>通过 ftp://{host} 访问</p>
+	  
 
 	  <div>
   		<center>
@@ -82,6 +127,145 @@
 	
 	
 		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -162,8 +346,6 @@
 		
 	
 		
-			
-		
 	
 		
 			
@@ -171,7 +353,6 @@
 	
 		
 			
-			
 		
 	
 		
@@ -196,135 +377,13 @@
 	
 		
 	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 	
 	
-		<li class="prev"><a href="/Javascript/javascript/javascript-regular/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Javascript/javascript/clean-empty-attribute-in-object/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/linux/linux/ngnix-conf/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
