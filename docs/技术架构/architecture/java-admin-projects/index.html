@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Java 一些开源后台管理系统 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="背景我们做的业务系统大部分都是 xxx 管理系统，除了独有的业务逻辑之外，大部分都有一些公共的业务需求
+
+权限管理
+登录登出
+图片上传
+列表
+表单
+支付
+…
+
+于是很多人做了一些后台管理的脚手架，我整理了一些，吸收一些好的东西和方法到系统中。
+https://github.com/elunez/el">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Java 一些开源后台管理系统">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Java 一些开源后台管理系统</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-18</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我们做的业务系统大部分都是 xxx 管理系统，除了独有的业务逻辑之外，大部分都有一些公共的业务需求</p>
+<ul>
+<li>权限管理</li>
+<li>登录登出</li>
+<li>图片上传</li>
+<li>列表</li>
+<li>表单</li>
+<li>支付</li>
+<li>…</li>
+</ul>
+<p>于是很多人做了一些后台管理的脚手架，我整理了一些，吸收一些好的东西和方法到系统中。</p>
+<h2 id="https-github-com-elunez-eladmin"><a href="#https-github-com-elunez-eladmin" class="headerlink" title="https://github.com/elunez/eladmin"></a><a href="https://github.com/elunez/eladmin" target="_blank" rel="noopener">https://github.com/elunez/eladmin</a></h2><p>项目基于 Spring Boot 2.1.0 、 Jpa、 Spring Security、redis、Vue的前后端分离的后台管理系统，项目采用分模块开发方式， 权限控制采用 RBAC，支持数据字典与数据权限管理，支持一键生成前后端代码，支持动态路由 </p>
+<h2 id="https-github-com-white-cat-jeeweb"><a href="#https-github-com-white-cat-jeeweb" class="headerlink" title="https://github.com/white-cat/jeeweb"></a><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></h2><p>JEEWEB是一款基于SpringMVC+Spring+Hibernate的JAVA WEB敏捷开发系统；它是一款具有代码生成功能的智能快速开发平台；是以Spring Framework为核心容器，Spring MVC为模型视图控制器，Hibernate为数据访问层， Apache Shiro为权限授权层，Ehcahe对常用数据进行缓存，Disruptor作为并发框架，Bootstrap作为前端框架的优秀开源系统。</p>
+<h2 id="https-github-com-lmxdawn-vue-admin-java"><a href="#https-github-com-lmxdawn-vue-admin-java" class="headerlink" title="https://github.com/lmxdawn/vue-admin-java"></a><a href="https://github.com/lmxdawn/vue-admin-java" target="_blank" rel="noopener">https://github.com/lmxdawn/vue-admin-java</a></h2><p>spring boot + mybatis + vue + element-ui 实现后台管理API接口</p>
+<h2 id="https-gitee-com-xiandafu-springboot-plus"><a href="#https-gitee-com-xiandafu-springboot-plus" class="headerlink" title="https://gitee.com/xiandafu/springboot-plus"></a><a href="https://gitee.com/xiandafu/springboot-plus" target="_blank" rel="noopener">https://gitee.com/xiandafu/springboot-plus</a></h2><p>一个基于SpringBoot 2 的管理后台系统,有数十个基于此的商业应用，包含了用户管理，组织机构管理，角色管理，功能点管理，菜单管理，权限分配，数据权限分配，代码生成等功能 相比其他开源的后台开发平台脚手架，SpringBoot-Plus 使用简单，可以轻易完成中型，大型系统开发。</p>
+<h2 id="https-github-com-yangzongzhuan-RuoYi"><a href="#https-github-com-yangzongzhuan-RuoYi" class="headerlink" title="https://github.com/yangzongzhuan/RuoYi"></a><a href="https://github.com/yangzongzhuan/RuoYi" target="_blank" rel="noopener">https://github.com/yangzongzhuan/RuoYi</a></h2><p>基于SpringBoot2.0的权限管理系统 易读易懂、界面简洁美观。 核心技术采用Spring、MyBatis、Shiro没有任何其它重度依赖。直接运行即可用。</p>
+<h2 id="https-github-com-lihengming-spring-boot-api-project-seed"><a href="#https-github-com-lihengming-spring-boot-api-project-seed" class="headerlink" title="https://github.com/lihengming/spring-boot-api-project-seed"></a><a href="https://github.com/lihengming/spring-boot-api-project-seed" target="_blank" rel="noopener">https://github.com/lihengming/spring-boot-api-project-seed</a></h2><p>Spring Boot API Project Seed 是一个基于Spring Boot &amp; MyBatis的种子项目，用于快速构建中小型API、RESTful API项目，没有后台管理系统，只有一个 API。</p>
+<h2 id="https-gitee-com-naan1993-guns"><a href="#https-gitee-com-naan1993-guns" class="headerlink" title="https://gitee.com/naan1993/guns/"></a><a href="https://gitee.com/naan1993/guns/" target="_blank" rel="noopener">https://gitee.com/naan1993/guns/</a></h2><p>Guns基于Spring Boot2，致力于做更简洁的后台管理系统。包含系统管理，代码生成，多数据库适配，SSO单点登录，工作流，短信，邮件发送，OAuth2登录，任务调度，持续集成，docker部署等功。支持Spring Cloud Alibaba微服务。社区活跃，版本迭代快，加群免费技术支持。</p>
+<h2 id="https-github-com-paascloud-paascloud-master"><a href="#https-github-com-paascloud-paascloud-master" class="headerlink" title="https://github.com/paascloud/paascloud-master"></a><a href="https://github.com/paascloud/paascloud-master" target="_blank" rel="noopener">https://github.com/paascloud/paascloud-master</a></h2><p>spring cloud + vue + oAuth2.0全家桶实战，前后端分离模拟商城，完整的购物流程、后端运营平台，可以实现快速搭建企业级微服务项目。支持微信登录等三方登录。</p>
+<h2 id="https-github-com-macrozheng-mall"><a href="#https-github-com-macrozheng-mall" class="headerlink" title="https://github.com/macrozheng/mall"></a><a href="https://github.com/macrozheng/mall" target="_blank" rel="noopener">https://github.com/macrozheng/mall</a></h2><p>mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于SpringBoot+MyBatis实现。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/技术架构/architecture/java-project-structure/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
