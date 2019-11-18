@@ -1,5 +1,5 @@
 ---
-title: Java 一些开源后台管理系统
+title: Java 一些开源后台管理种子项目
 categories: 技术架构
 toc: true
 from: self
