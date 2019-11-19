@@ -209,10 +209,29 @@ buildscript {
 apply plugin: 'org.springframework.boot'
 ```
 
-再查看 gradle tasks
-
+再查看 gradle tasks，就会多了一些 bootRun 等任务。
 
 ```
+
+Application tasks
+-----------------
+bootRun - Runs this project as a Spring Boot application.
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+bootBuildInfo - Generates a META-INF/build-info.properties file.
+bootJar - Assembles an executable jar archive containing the main classes and their dependencies.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+generateGitProperties
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+
 ```
 
 ## dependency-management 插件

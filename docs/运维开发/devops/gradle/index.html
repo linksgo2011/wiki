@@ -156,9 +156,11 @@ ant 式">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    ext &#123;</span><br><span class="line">        springBootVersion = &apos;2.1.4.RELEASE&apos;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dependencies &#123;</span><br><span class="line">    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot; as Object)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;org.springframework.boot&apos;</span><br></pre></td></tr></table></figure>
-<p>再查看 gradle tasks</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## dependency-management 插件</span><br><span class="line"></span><br><span class="line">上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</span><br><span class="line"></span><br><span class="line">引入</span><br></pre></td></tr></table></figure>
-<p>apply plugin: ‘io.spring.dependency-management’<br><code>`</code></p>
+<p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Application tasks</span><br><span class="line">-----------------</span><br><span class="line">bootRun - Runs this project as a Spring Boot application.</span><br><span class="line"></span><br><span class="line">Build tasks</span><br><span class="line">-----------</span><br><span class="line">assemble - Assembles the outputs of this project.</span><br><span class="line">bootBuildInfo - Generates a META-INF/build-info.properties file.</span><br><span class="line">bootJar - Assembles an executable jar archive containing the main classes and their dependencies.</span><br><span class="line">build - Assembles and tests this project.</span><br><span class="line">buildDependents - Assembles and tests this project and all projects that depend on it.</span><br><span class="line">buildNeeded - Assembles and tests this project and all projects it depends on.</span><br><span class="line">classes - Assembles main classes.</span><br><span class="line">clean - Deletes the build directory.</span><br><span class="line">generateGitProperties</span><br><span class="line">jar - Assembles a jar archive containing the main classes.</span><br><span class="line">testClasses - Assembles test classes.</span><br></pre></td></tr></table></figure>
+<h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p>
+<p>引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;io.spring.dependency-management&apos;</span><br></pre></td></tr></table></figure>
 <p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p>
 <h3 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h3><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p>
 <p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p>
@@ -299,9 +301,9 @@ ant 式">
 		
 	
 		
-			
-		
 	
+		
+			
 		
 	
 		
