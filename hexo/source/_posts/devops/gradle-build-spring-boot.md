@@ -1,5 +1,5 @@
 ---
-title: Gradle 基本使用指南
+title: Gradle 构建 Spring boot 项目
 categories: 运维开发
 toc: true
 ---
