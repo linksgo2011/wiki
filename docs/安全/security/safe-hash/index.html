@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>使用 Bcrypt 代替 md5/sha1 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="背景如果数据库被“拖库”明文存储的密码就变得不安全。之前的做法是使用 md5 散列的方式，因为 md5 不可逆，无法从密文推出原文。
+但是 HASH 算法最大的问题是，会发生撞库，也就是说，有可能出现多个原文得到同一个密码。
+下面这个式子是存在的，如果原文是 M1，只需要另外一个同样 HASH 值的">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用 Bcrypt 代替 md5/sha1">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">使用 Bcrypt 代替 md5/sha1</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-20</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>如果数据库被“拖库”明文存储的密码就变得不安全。之前的做法是使用 md5 散列的方式，因为 md5 不可逆，无法从密文推出原文。</p>
+<p>但是 HASH 算法最大的问题是，会发生撞库，也就是说，有可能出现多个原文得到同一个密码。</p>
+<p>下面这个式子是存在的，如果原文是 M1，只需要另外一个同样 HASH 值的密码即可登录。</p>
+<blockquote>
+<p>MD5(M1) = MD5(M2) = MD5(M3)</p>
+</blockquote>
+<p>一种攻击方法是，攻击者记录了一张巨大的密码库，预先计算了常用密码的 hash 值，这样只需要搜索 hash 值就能寻找到一个合适的密码用于登录。</p>
+<p>这就是被彩虹表攻击。</p>
+<p>解决彩虹表的问题是加盐，在加密之前，对原文混入其他信息，混入的信息不存放到数据库中。实际寻找到其他原文也无法登录。</p>
+<p>第二中攻击方法是王小云教授寻找到的一种新的方法，通过算法快速的找到 M2，这样不依赖彩虹表就可以实施攻击。</p>
+<blockquote>
+<p>MD5(M1) = MD5(M2)</p>
+</blockquote>
+<p>当被攻击者价值非常大，攻击者获取足够多的撞库原文，还是能分析盐值。</p>
+<h2 id="Bcrypt"><a href="#Bcrypt" class="headerlink" title="Bcrypt"></a>Bcrypt</h2><p>Bcrypt 有两个特点</p>
+<ul>
+<li>每一次 HASH 出来的值不一样</li>
+<li>计算非常缓慢</li>
+</ul>
+<p>因此使用 Bcrypt 进行加密后，攻击者想要使用算出 M2 成本变得不可接受。但代价是应用自身也会性能受到影响，不过登录行为并不是随时在发生，因此能够忍受。对于攻击者来说，需要不断计算，让攻击变得不太可能。</p>
+<p>因此推荐使用 Bcrypt 进行密码加密。</p>
+<h2 id="在-Java-中使用-Bcrypt"><a href="#在-Java-中使用-Bcrypt" class="headerlink" title="在 Java 中使用 Bcrypt"></a>在 Java 中使用 Bcrypt</h2><p>如果引入了 Spring Security, BCryptPasswordEncoder 提供了相关的方法。</p>
+<pre><code>    public String encode(CharSequence rawPassword) {
+        String salt;
+        if (this.strength &gt; 0) {
+            if (this.random != null) {
+                salt = BCrypt.gensalt(this.strength, this.random);
+            } else {
+                salt = BCrypt.gensalt(this.strength);
+            }
+        } else {
+            salt = BCrypt.gensalt();
+        }
+
+        return BCrypt.hashpw(rawPassword.toString(), salt);
+    }
+</code></pre><p>BCryptPasswordEncoder 调用了另外一个类 BCrypt 完成加密操作，实际工作工作中可以直接使用 BCryptPasswordEncoder 类即可。</p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li><a href="https://blog.csdn.net/nnsword/article/details/78191292" target="_blank" rel="noopener">https://blog.csdn.net/nnsword/article/details/78191292</a></li>
+<li><a href="https://www.cnblogs.com/qianjinyan/p/10636404.html" target="_blank" rel="noopener">https://www.cnblogs.com/qianjinyan/p/10636404.html</a></li>
+</ul>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/安全/security/iam/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
