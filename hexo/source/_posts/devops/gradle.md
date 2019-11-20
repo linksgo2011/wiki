@@ -246,7 +246,7 @@ apply plugin: 'io.spring.dependency-management'
 
 Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。
 
-### wrapper
+## wrapper
 
 wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。
 
@@ -268,6 +268,93 @@ wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle
 - java 插件
 - spring-boot 插件
 - dependency-management 插件
+
+## 一份相对完整 spring boot 配置清单
+
+```
+// Gradle 构建本身需要的配置（例如插件仓库）
+buildscript {
+    // 配置变量
+    ext {
+        flywayVersion = '3.2.1'
+        hibernateVersion = '5.3.7.Final'
+    }
+    // 插件仓库
+    repositories {
+        gradlePluginPortal()
+    }
+    // 应用插件需要的依赖包
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" as Object)
+    }
+}
+
+// idea 插件，用来生成 idea 工程目录
+apply plugin: 'idea'
+// java 插件,提供 build、jar 等task
+apply plugin: 'java'
+// spring boot 插件提供 bootrun 等task，非必须
+apply plugin: 'org.springframework.boot'
+// dependency-management 插件，为spring 版本火车项目提供一致的版本号
+apply plugin: 'io.spring.dependency-management'
+
+// 指定构建输出目录
+buildDir = './out'
+
+// 指定包信息
+group = 'cn.printf'
+version = '1.0.0'
+
+// java 版本
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// 编译字符集
+tasks.withType(JavaCompile) { options.encoding = 'utf-8' }
+
+// 包依赖仓库
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    mavenCentral()
+}
+
+// 依赖
+dependencies {
+    // 监控
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+
+    compileOnly "org.projectlombok:lombok"
+    testCompileOnly "org.projectlombok:lombok"
+
+    // web 
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    // Session
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.session:spring-session-data-redis'
+
+    // database
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    // 数据库迁移
+    compile 'org.flywaydb:flyway-core'
+
+    // 对象转换
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '1.1.1'
+
+    // 加密库
+    compile 'commons-codec:commons-codec:1.13'
+
+    // 测试
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    // 开发热启动工具
+    runtime('org.springframework.boot:spring-boot-devtools')
+}
+```
 
 ## 相关资料
 
