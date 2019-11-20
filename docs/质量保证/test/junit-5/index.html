@@ -6,7 +6,11 @@
   <title>Junit 5 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="例子用Junit5 测试 controller 或者API的例子12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152package com.tw.api.unit">
+  <meta name="description" content="例子用Junit5 测试 controller 或者API的例子
+package com.tw.api.unit.test.controller;
+
+import com.tw.api.unit.test.domain.todo.Todo;
+import com.tw.api.unit.test.d">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -67,8 +71,98 @@
 	
 
 	  <!-- content -->
-	  <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="用Junit5-测试-controller-或者API的例子"><a href="#用Junit5-测试-controller-或者API的例子" class="headerlink" title="用Junit5 测试 controller 或者API的例子"></a>用Junit5 测试 controller 或者API的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.tw.api.unit.test.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.tw.api.unit.test.domain.todo.Todo;</span><br><span class="line"><span class="keyword">import</span> com.tw.api.unit.test.domain.todo.TodoRepository;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.extension.ExtendWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.mock.mockito.MockBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ActiveProfiles;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit.jupiter.SpringExtension;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.ResultActions;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.hamcrest.Matchers.is;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.mockito.Mockito.when;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ExtendWith</span>(SpringExtension.class)</span><br><span class="line"><span class="meta">@WebMvcTest</span>(TodoController.class)</span><br><span class="line"><span class="meta">@ActiveProfiles</span>(profiles = <span class="string">"test"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoControllerTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TodoController todoController;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MockMvc mvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MockBean</span></span><br><span class="line">    <span class="keyword">private</span> TodoRepository todoRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getAll</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//given</span></span><br><span class="line">        when(todoRepository.getAll()).thenReturn(Arrays.asList(<span class="keyword">new</span> Todo(<span class="number">1</span>,<span class="string">"first todo"</span>,<span class="keyword">true</span>,<span class="number">0</span>)));</span><br><span class="line">        <span class="comment">//when</span></span><br><span class="line">        ResultActions result = mvc.perform(get(<span class="string">"/todos"</span>));</span><br><span class="line">        <span class="comment">//then</span></span><br><span class="line">        result.andExpect(status().isOk())</span><br><span class="line">                .andDo(print())</span><br><span class="line">                .andExpect(jsonPath(<span class="string">"$[0].title"</span>, is(<span class="string">"first todo"</span>)))</span><br><span class="line">                .andExpect(jsonPath(<span class="string">"$[0].id"</span>, is(<span class="number">1</span>)))</span><br><span class="line">                .andExpect(jsonPath(<span class="string">"$[0].completed"</span>, is(<span class="keyword">true</span>)))</span><br><span class="line">                .andExpect(jsonPath(<span class="string">"$[0].order"</span>, is(<span class="number">0</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="用Junit5测试service的例子"><a href="#用Junit5测试service的例子" class="headerlink" title="用Junit5测试service的例子"></a>用Junit5测试service的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tw.api.unit.test.services;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.DisplayName;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.extension.ExtendWith;</span><br><span class="line"><span class="keyword">import</span> org.mockito.InjectMocks;</span><br><span class="line"><span class="keyword">import</span> org.mockito.Mock;</span><br><span class="line"><span class="keyword">import</span> org.mockito.junit.jupiter.MockitoExtension;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.mockito.Mockito.when;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ExtendWith</span>(MockitoExtension.class)</span><br><span class="line"><span class="meta">@DisplayName</span>(<span class="string">"A example to test show service with mock strategy"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowServiceTests</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String MOCK_OUTPUT = <span class="string">"Mocked show label"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Mock</span></span><br><span class="line">    <span class="keyword">private</span> TextService textService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@InjectMocks</span></span><br><span class="line">    <span class="keyword">private</span> ShowService showService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setMockOutput</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        when(textService.getText()).thenReturn(MOCK_OUTPUT);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"Mock the output of the text service using mockito"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(showService.getShowLabel(), MOCK_OUTPUT);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	  <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="用Junit5-测试-controller-或者API的例子"><a href="#用Junit5-测试-controller-或者API的例子" class="headerlink" title="用Junit5 测试 controller 或者API的例子"></a>用Junit5 测试 controller 或者API的例子</h3><pre><code class="java">
+package com.tw.api.unit.test.controller;
+
+import com.tw.api.unit.test.domain.todo.Todo;
+import com.tw.api.unit.test.domain.todo.TodoRepository;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+
+import java.util.Arrays;
+
+import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(TodoController.class)
+@ActiveProfiles(profiles = &quot;test&quot;)
+class TodoControllerTest {
+    @Autowired
+    private TodoController todoController;
+
+    @Autowired
+    private MockMvc mvc;
+
+    @MockBean
+    private TodoRepository todoRepository;
+
+    @Test
+    void getAll() throws Exception {
+        //given
+        when(todoRepository.getAll()).thenReturn(Arrays.asList(new Todo(1,&quot;first todo&quot;,true,0)));
+        //when
+        ResultActions result = mvc.perform(get(&quot;/todos&quot;));
+        //then
+        result.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath(&quot;$[0].title&quot;, is(&quot;first todo&quot;)))
+                .andExpect(jsonPath(&quot;$[0].id&quot;, is(1)))
+                .andExpect(jsonPath(&quot;$[0].completed&quot;, is(true)))
+                .andExpect(jsonPath(&quot;$[0].order&quot;, is(0)));
+    }
+}
+
+</code></pre>
+<h3 id="用Junit5测试service的例子"><a href="#用Junit5测试service的例子" class="headerlink" title="用Junit5测试service的例子"></a>用Junit5测试service的例子</h3><pre><code class="java">package com.tw.api.unit.test.services;
+
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+@DisplayName(&quot;A example to test show service with mock strategy&quot;)
+public class ShowServiceTests {
+    private static final String MOCK_OUTPUT = &quot;Mocked show label&quot;;
+
+    @Mock
+    private TextService textService;
+
+    @InjectMocks
+    private ShowService showService;
+
+    @BeforeEach
+    void setMockOutput() {
+        when(textService.getText()).thenReturn(MOCK_OUTPUT);
+    }
+
+    @Test
+    @DisplayName(&quot;Mock the output of the text service using mockito&quot;)
+    public void contextLoads() {
+        assertEquals(showService.getShowLabel(), MOCK_OUTPUT);
+    }
+}
+
+</code></pre>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.ibm.com/developerworks/cn/java/j-introducing-junit5-part1-jupiter-api/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/java/j-introducing-junit5-part1-jupiter-api/index.html</a></li>
 </ul>
@@ -264,13 +358,13 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
 			
-		
-	
-		
-	
-		
-	
 		
 	
 		

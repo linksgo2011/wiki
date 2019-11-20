@@ -6,7 +6,11 @@
   <title>Javascript 清理对象中的空值 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="1234567891011121314export function cleanNull(object)&amp;#123;  const returnValue = &amp;#123;&amp;#125;  Object.keys(object).map((key)=&amp;gt;&amp;#123;    const value ">
+  <meta name="description" content="export function cleanNull(object){
+  const returnValue = {}
+  Object.keys(object).map((key)=&amp;gt;{
+    const value = object[key]
+    if (value === unde">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -67,8 +71,22 @@
 	
 
 	  <!-- content -->
-	  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export function cleanNull(object)&#123;</span><br><span class="line">  const returnValue = &#123;&#125;</span><br><span class="line">  Object.keys(object).map((key)=&gt;&#123;</span><br><span class="line">    const value = object[key]</span><br><span class="line">    if (value === undefined || value === null || value === &apos;&apos;) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    returnValue[key] = value</span><br><span class="line">    return key</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  return returnValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-	  
+	  <pre><code>
+export function cleanNull(object){
+  const returnValue = {}
+  Object.keys(object).map((key)=&gt;{
+    const value = object[key]
+    if (value === undefined || value === null || value === &#39;&#39;) {
+      return
+    }
+    returnValue[key] = value
+    return key
+  })
+
+  return returnValue
+}
+
+</code></pre>	  
 
 	  <div>
   		<center>

@@ -7,7 +7,10 @@
   <meta name="author" content="少个分号">
   
   <meta name="description" content="使用 react 高阶函数https://github.com/joshgeller/react-redux-jwt-auth-example
-12345678910111213router.jsimport &amp;#123;HomeView, LoginView, ProtectedView&amp;#125">
+
+router.js
+
+import {HomeView, LoginView, ProtectedView} from &amp;#39;../views&amp;#39">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -69,8 +72,67 @@
 
 	  <!-- content -->
 	  <p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">router.js</span><br><span class="line"></span><br><span class="line">import &#123;HomeView, LoginView, ProtectedView&#125; from &apos;../views&apos;;</span><br><span class="line">import &#123;requireAuthentication&#125; from &apos;../components/AuthenticatedComponent&apos;;</span><br><span class="line"></span><br><span class="line">export default(</span><br><span class="line">    &lt;Route path=&apos;/&apos; component=&#123;App&#125;&gt;</span><br><span class="line">        &lt;IndexRoute component=&#123;HomeView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;login&quot; component=&#123;LoginView&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;protected&quot; component=&#123;requireAuthentication(ProtectedView)&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;connect&#125; from &apos;react-redux&apos;;</span><br><span class="line">import &#123;pushState&#125; from &apos;redux-router&apos;;</span><br><span class="line"></span><br><span class="line">export function requireAuthentication(Component) &#123;</span><br><span class="line"></span><br><span class="line">    class AuthenticatedComponent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            this.checkAuth();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        checkAuth() &#123;</span><br><span class="line">            if (!this.props.isAuthenticated) &#123;</span><br><span class="line">                let redirectAfterLogin = this.props.location.pathname;</span><br><span class="line">                this.props.dispatch(pushState(null, `/login?next=$&#123;redirectAfterLogin&#125;`));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &#123;this.props.isAuthenticated === true</span><br><span class="line">                        ? &lt;Component &#123;...this.props&#125;/&gt;</span><br><span class="line">                        : null</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const mapStateToProps = (state) =&gt; (&#123;</span><br><span class="line">        token: state.auth.token,</span><br><span class="line">        userName: state.auth.userName,</span><br><span class="line">        isAuthenticated: state.auth.isAuthenticated</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return connect(mapStateToProps)(AuthenticatedComponent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
+<pre><code>
+router.js
+
+import {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;
+import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;
+
+export default(
+    &lt;Route path=&#39;/&#39; component={App}&gt;
+        &lt;IndexRoute component={HomeView}/&gt;
+        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;
+        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;
+    &lt;/Route&gt;
+);
+
+</code></pre><pre><code>import React from &#39;react&#39;;
+import {connect} from &#39;react-redux&#39;;
+import {pushState} from &#39;redux-router&#39;;
+
+export function requireAuthentication(Component) {
+
+    class AuthenticatedComponent extends React.Component {
+
+        componentWillMount() {
+            this.checkAuth();
+        }
+
+        componentWillReceiveProps(nextProps) {
+            this.checkAuth();
+        }
+
+        checkAuth() {
+            if (!this.props.isAuthenticated) {
+                let redirectAfterLogin = this.props.location.pathname;
+                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
+            }
+        }
+
+        render() {
+            return (
+                &lt;div&gt;
+                    {this.props.isAuthenticated === true
+                        ? &lt;Component {...this.props}/&gt;
+                        : null
+                    }
+                &lt;/div&gt;
+            )
+
+        }
+    }
+
+    const mapStateToProps = (state) =&gt; ({
+        token: state.auth.token,
+        userName: state.auth.userName,
+        isAuthenticated: state.auth.isAuthenticated
+    });
+
+    return connect(mapStateToProps)(AuthenticatedComponent);
+
+}
+
+</code></pre>	  
 
 	  <div>
   		<center>
@@ -221,12 +283,12 @@
 		
 	
 		
-			
-			
-		
 	
 		
 	
+		
+			
+			
 		
 	
 		

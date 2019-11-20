@@ -117,14 +117,57 @@ ant 式">
 <blockquote>
 <p>vim build.gradle </p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 这个 build.gradle 只有一行代码</span><br><span class="line">apply plugin: &apos;java&apos;</span><br></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>// 这个 build.gradle 只有一行代码
+apply plugin: &#39;java&#39;
+</code></pre><blockquote>
 <p>gradle tasks</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Build tasks</span><br><span class="line">-----------</span><br><span class="line">assemble - Assembles the outputs of this project.</span><br><span class="line">build - Assembles and tests this project.</span><br><span class="line">buildDependents - Assembles and tests this project and all projects that depend on it.</span><br><span class="line">buildNeeded - Assembles and tests this project and all projects it depends on.</span><br><span class="line">classes - Assembles main classes.</span><br><span class="line">clean - Deletes the build directory.</span><br><span class="line">jar - Assembles a jar archive containing the main classes.</span><br><span class="line">testClasses - Assembles test classes.</span><br><span class="line"></span><br><span class="line">Build Setup tasks</span><br><span class="line">-----------------</span><br><span class="line">init - Initializes a new Gradle build.</span><br><span class="line">wrapper - Generates Gradle wrapper files.</span><br><span class="line"></span><br><span class="line">Documentation tasks</span><br><span class="line">-------------------</span><br><span class="line">javadoc - Generates Javadoc API documentation for the main source code.</span><br><span class="line"></span><br><span class="line">Help tasks</span><br><span class="line">----------</span><br><span class="line">buildEnvironment - Displays all buildscript dependencies declared in root project &apos;gradle-practise&apos;.</span><br><span class="line">components - Displays the components produced by root project &apos;gradle-practise&apos;. [incubating]</span><br><span class="line">dependencies - Displays all dependencies declared in root project &apos;gradle-practise&apos;.</span><br><span class="line">dependencyInsight - Displays the insight into a specific dependency in root project &apos;gradle-practise&apos;.</span><br><span class="line">dependentComponents - Displays the dependent components of components in root project &apos;gradle-practise&apos;. [incubating]</span><br><span class="line">help - Displays a help message.</span><br><span class="line">model - Displays the configuration model of root project &apos;gradle-practise&apos;. [incubating]</span><br><span class="line">projects - Displays the sub-projects of root project &apos;gradle-practise&apos;.</span><br><span class="line">properties - Displays the properties of root project &apos;gradle-practise&apos;.</span><br><span class="line">tasks - Displays the tasks runnable from root project &apos;gradle-practise&apos;.</span><br><span class="line"></span><br><span class="line">Verification tasks</span><br><span class="line">------------------</span><br><span class="line">check - Runs all checks.</span><br><span class="line">test - Runs the unit tests.</span><br></pre></td></tr></table></figure>
-<p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project  </span><br><span class="line">    +build  </span><br><span class="line">    +src/main/java  </span><br><span class="line">    +src/main/resources  </span><br><span class="line">    +src/test/java  </span><br><span class="line">    +src/test/resources</span><br></pre></td></tr></table></figure>
-<p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p>
+<pre><code>Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.
+components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]
+dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.
+dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.
+dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]
+help - Displays a help message.
+model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]
+projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.
+properties - Displays the properties of root project &#39;gradle-practise&#39;.
+tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the unit tests.
+
+</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p>
+<pre><code>project  
+    +build  
+    +src/main/java  
+    +src/main/resources  
+    +src/test/java  
+    +src/test/resources  
+</code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p>
 <p>比较有用的几个命令</p>
 <p>编译、打包、测试</p>
 <blockquote>
@@ -139,10 +182,17 @@ ant 式">
 <p>clean </p>
 </blockquote>
 <h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    mavenLocal()</span><br><span class="line">    maven &#123; url &apos;http://maven.aliyun.com/nexus/content/groups/public/&apos; &#125;</span><br><span class="line">    maven &#123; url &apos;http://maven.aliyun.com/nexus/content/repositories/jcenter&apos; &#125;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>配置依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    testCompile group: &apos;junit&apos;, name: &apos;junit&apos;, version: &apos;4.+&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p>
+<pre><code>    repositories {
+        mavenLocal()
+        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }
+        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }
+        mavenCentral()
+    }
+</code></pre><p>配置依赖</p>
+<pre><code>dependencies {
+    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;
+}
+</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p>
 <ul>
 <li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li>
 <li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li>
@@ -153,15 +203,47 @@ ant 式">
 <p>一个最简单的 java 项目可以由这两部分构成即可完成。</p>
 <h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p>
 <p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    ext &#123;</span><br><span class="line">        springBootVersion = &apos;2.1.4.RELEASE&apos;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dependencies &#123;</span><br><span class="line">    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot; as Object)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;org.springframework.boot&apos;</span><br></pre></td></tr></table></figure>
-<p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Application tasks</span><br><span class="line">-----------------</span><br><span class="line">bootRun - Runs this project as a Spring Boot application.</span><br><span class="line"></span><br><span class="line">Build tasks</span><br><span class="line">-----------</span><br><span class="line">assemble - Assembles the outputs of this project.</span><br><span class="line">bootBuildInfo - Generates a META-INF/build-info.properties file.</span><br><span class="line">bootJar - Assembles an executable jar archive containing the main classes and their dependencies.</span><br><span class="line">build - Assembles and tests this project.</span><br><span class="line">buildDependents - Assembles and tests this project and all projects that depend on it.</span><br><span class="line">buildNeeded - Assembles and tests this project and all projects it depends on.</span><br><span class="line">classes - Assembles main classes.</span><br><span class="line">clean - Deletes the build directory.</span><br><span class="line">generateGitProperties</span><br><span class="line">jar - Assembles a jar archive containing the main classes.</span><br><span class="line">testClasses - Assembles test classes.</span><br></pre></td></tr></table></figure>
-<h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p>
+<pre><code>buildscript {
+    ext {
+        springBootVersion = &#39;2.1.4.RELEASE&#39;
+    }
+
+    repositories {
+        gradlePluginPortal()
+    }
+
+    dependencies {
+    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)
+    }
+}
+
+</code></pre><p>然后添加</p>
+<pre><code>apply plugin: &#39;org.springframework.boot&#39;
+</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p>
+<pre><code>
+Application tasks
+-----------------
+bootRun - Runs this project as a Spring Boot application.
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+bootBuildInfo - Generates a META-INF/build-info.properties file.
+bootJar - Assembles an executable jar archive containing the main classes and their dependencies.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+generateGitProperties
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+
+</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p>
 <p>引入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;io.spring.dependency-management&apos;</span><br></pre></td></tr></table></figure>
-<p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p>
+<pre><code>apply plugin: &#39;io.spring.dependency-management&#39;
+</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p>
 <h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p>
 <p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p>
 <ul>
@@ -179,8 +261,89 @@ ant 式">
 <li>spring-boot 插件</li>
 <li>dependency-management 插件</li>
 </ul>
-<h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">// Gradle 构建本身需要的配置（例如插件仓库）</span><br><span class="line">buildscript &#123;</span><br><span class="line">    // 配置变量</span><br><span class="line">    ext &#123;</span><br><span class="line">        flywayVersion = &apos;3.2.1&apos;</span><br><span class="line">        hibernateVersion = &apos;5.3.7.Final&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    // 插件仓库</span><br><span class="line">    repositories &#123;</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line">    // 应用插件需要的依赖包</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot; as Object)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// idea 插件，用来生成 idea 工程目录</span><br><span class="line">apply plugin: &apos;idea&apos;</span><br><span class="line">// java 插件,提供 build、jar 等task</span><br><span class="line">apply plugin: &apos;java&apos;</span><br><span class="line">// spring boot 插件提供 bootrun 等task，非必须</span><br><span class="line">apply plugin: &apos;org.springframework.boot&apos;</span><br><span class="line">// dependency-management 插件，为spring 版本火车项目提供一致的版本号</span><br><span class="line">apply plugin: &apos;io.spring.dependency-management&apos;</span><br><span class="line"></span><br><span class="line">// 指定构建输出目录</span><br><span class="line">buildDir = &apos;./out&apos;</span><br><span class="line"></span><br><span class="line">// 指定包信息</span><br><span class="line">group = &apos;cn.printf&apos;</span><br><span class="line">version = &apos;1.0.0&apos;</span><br><span class="line"></span><br><span class="line">// java 版本</span><br><span class="line">sourceCompatibility = 1.8</span><br><span class="line">targetCompatibility = 1.8</span><br><span class="line"></span><br><span class="line">// 编译字符集</span><br><span class="line">tasks.withType(JavaCompile) &#123; options.encoding = &apos;utf-8&apos; &#125;</span><br><span class="line"></span><br><span class="line">// 包依赖仓库</span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenLocal()</span><br><span class="line">    maven &#123; url &apos;http://maven.aliyun.com/nexus/content/groups/public/&apos; &#125;</span><br><span class="line">    maven &#123; url &apos;http://maven.aliyun.com/nexus/content/repositories/jcenter&apos; &#125;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 依赖</span><br><span class="line">dependencies &#123;</span><br><span class="line">    // 监控</span><br><span class="line">    compile &apos;org.springframework.boot:spring-boot-starter-actuator&apos;</span><br><span class="line"></span><br><span class="line">    compileOnly &quot;org.projectlombok:lombok&quot;</span><br><span class="line">    testCompileOnly &quot;org.projectlombok:lombok&quot;</span><br><span class="line"></span><br><span class="line">    // web </span><br><span class="line">    compile &apos;org.springframework.boot:spring-boot-starter-web&apos;</span><br><span class="line"></span><br><span class="line">    // Session</span><br><span class="line">    compile &apos;org.springframework.boot:spring-boot-starter-data-redis&apos;</span><br><span class="line">    compile &apos;org.springframework.session:spring-session-data-redis&apos;</span><br><span class="line"></span><br><span class="line">    // database</span><br><span class="line">    compile &apos;org.springframework.boot:spring-boot-starter-data-jpa&apos;</span><br><span class="line">    runtimeOnly &apos;mysql:mysql-connector-java&apos;</span><br><span class="line"></span><br><span class="line">    // 数据库迁移</span><br><span class="line">    compile &apos;org.flywaydb:flyway-core&apos;</span><br><span class="line"></span><br><span class="line">    // 对象转换</span><br><span class="line">    compile group: &apos;org.modelmapper&apos;, name: &apos;modelmapper&apos;, version: &apos;1.1.1&apos;</span><br><span class="line"></span><br><span class="line">    // 加密库</span><br><span class="line">    compile &apos;commons-codec:commons-codec:1.13&apos;</span><br><span class="line"></span><br><span class="line">    // 测试</span><br><span class="line">    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)</span><br><span class="line"></span><br><span class="line">    // 开发热启动工具</span><br><span class="line">    runtime(&apos;org.springframework.boot:spring-boot-devtools&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）
+buildscript {
+    // 配置变量
+    ext {
+        flywayVersion = &#39;3.2.1&#39;
+        hibernateVersion = &#39;5.3.7.Final&#39;
+    }
+    // 插件仓库
+    repositories {
+        gradlePluginPortal()
+    }
+    // 应用插件需要的依赖包
+    dependencies {
+        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)
+    }
+}
+
+// idea 插件，用来生成 idea 工程目录
+apply plugin: &#39;idea&#39;
+// java 插件,提供 build、jar 等task
+apply plugin: &#39;java&#39;
+// spring boot 插件提供 bootrun 等task，非必须
+apply plugin: &#39;org.springframework.boot&#39;
+// dependency-management 插件，为spring 版本火车项目提供一致的版本号
+apply plugin: &#39;io.spring.dependency-management&#39;
+
+// 指定构建输出目录
+buildDir = &#39;./out&#39;
+
+// 指定包信息
+group = &#39;cn.printf&#39;
+version = &#39;1.0.0&#39;
+
+// java 版本
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// 编译字符集
+tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }
+
+// 包依赖仓库
+repositories {
+    mavenLocal()
+    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }
+    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }
+    mavenCentral()
+}
+
+// 依赖
+dependencies {
+    // 监控
+    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;
+
+    compileOnly &quot;org.projectlombok:lombok&quot;
+    testCompileOnly &quot;org.projectlombok:lombok&quot;
+
+    // web 
+    compile &#39;org.springframework.boot:spring-boot-starter-web&#39;
+
+    // Session
+    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;
+    compile &#39;org.springframework.session:spring-session-data-redis&#39;
+
+    // database
+    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;
+    runtimeOnly &#39;mysql:mysql-connector-java&#39;
+
+    // 数据库迁移
+    compile &#39;org.flywaydb:flyway-core&#39;
+
+    // 对象转换
+    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;
+
+    // 加密库
+    compile &#39;commons-codec:commons-codec:1.13&#39;
+
+    // 测试
+    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)
+
+    // 开发热启动工具
+    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)
+}
+</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
 <li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li>
 <li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li>
 <li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li>
@@ -302,8 +465,6 @@ ant 式">
 		
 	
 		
-	
-		
 			
 		
 	
@@ -398,18 +559,20 @@ ant 式">
 		
 	
 		
-			
-		
-	
-		
 	
 		
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
-		
-	
-		
-	
+			
 		
 	
 		

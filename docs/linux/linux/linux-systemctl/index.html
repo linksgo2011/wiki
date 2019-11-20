@@ -12,7 +12,13 @@
 systemctl –version
 
 管理系统
- 1234567891011121314151617181920# 重启系统$ sudo systemctl reboot# 关闭系统，切断电源">
+# 重启系统
+$ sudo systemctl reboot
+
+# 关闭系统，切断电源
+$ sudo systemctl poweroff
+
+#">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -79,10 +85,54 @@ systemctl –version
 <p>systemctl –version</p>
 </blockquote>
 <p>管理系统</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 重启系统</span><br><span class="line">$ sudo systemctl reboot</span><br><span class="line"></span><br><span class="line"># 关闭系统，切断电源</span><br><span class="line">$ sudo systemctl poweroff</span><br><span class="line"></span><br><span class="line"># CPU停止工作</span><br><span class="line">$ sudo systemctl halt</span><br><span class="line"></span><br><span class="line"># 暂停系统</span><br><span class="line">$ sudo systemctl suspend</span><br><span class="line"></span><br><span class="line"># 让系统进入冬眠状态</span><br><span class="line">$ sudo systemctl hibernate</span><br><span class="line"></span><br><span class="line"># 让系统进入交互式休眠状态</span><br><span class="line">$ sudo systemctl hybrid-sleep</span><br><span class="line"></span><br><span class="line"># 启动进入救援状态（单用户状态）</span><br><span class="line">$ sudo systemctl rescue</span><br></pre></td></tr></table></figure>
-<p>  管理服务 (平时用的最多的)</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 立即启动一个服务</span><br><span class="line">$ sudo systemctl start apache.service</span><br><span class="line"></span><br><span class="line"># 立即停止一个服务</span><br><span class="line">$ sudo systemctl stop apache.service</span><br><span class="line"></span><br><span class="line"># 重启一个服务</span><br><span class="line">$ sudo systemctl restart apache.service</span><br><span class="line"></span><br><span class="line"># 杀死一个服务的所有子进程</span><br><span class="line">$ sudo systemctl kill apache.service</span><br><span class="line"></span><br><span class="line"># 重新加载一个服务的配置文件</span><br><span class="line">$ sudo systemctl reload apache.service</span><br><span class="line"></span><br><span class="line"># 重载所有修改过的配置文件</span><br><span class="line">$ sudo systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"># 显示某个 Unit 的所有底层参数</span><br><span class="line">$ systemctl show httpd.service</span><br><span class="line"></span><br><span class="line"># 显示某个 Unit 的指定属性的值</span><br><span class="line">$ systemctl show -p CPUShares httpd.service</span><br><span class="line"></span><br><span class="line"># 设置某个 Unit 的指定属性</span><br><span class="line">$ sudo systemctl set-property httpd.service CPUShares=500</span><br></pre></td></tr></table></figure>
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<pre><code># 重启系统
+$ sudo systemctl reboot
+
+# 关闭系统，切断电源
+$ sudo systemctl poweroff
+
+# CPU停止工作
+$ sudo systemctl halt
+
+# 暂停系统
+$ sudo systemctl suspend
+
+# 让系统进入冬眠状态
+$ sudo systemctl hibernate
+
+# 让系统进入交互式休眠状态
+$ sudo systemctl hybrid-sleep
+
+# 启动进入救援状态（单用户状态）
+$ sudo systemctl rescue
+</code></pre><p>  管理服务 (平时用的最多的)</p>
+<pre><code># 立即启动一个服务
+$ sudo systemctl start apache.service
+
+# 立即停止一个服务
+$ sudo systemctl stop apache.service
+
+# 重启一个服务
+$ sudo systemctl restart apache.service
+
+# 杀死一个服务的所有子进程
+$ sudo systemctl kill apache.service
+
+# 重新加载一个服务的配置文件
+$ sudo systemctl reload apache.service
+
+# 重载所有修改过的配置文件
+$ sudo systemctl daemon-reload
+
+# 显示某个 Unit 的所有底层参数
+$ systemctl show httpd.service
+
+# 显示某个 Unit 的指定属性的值
+$ systemctl show -p CPUShares httpd.service
+
+# 设置某个 Unit 的指定属性
+$ sudo systemctl set-property httpd.service CPUShares=500
+</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
 <li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li>
 </ul>
 	  
@@ -319,13 +369,13 @@ systemctl –version
 		
 	
 		
-	
-		
 			
 		
 	
 		
 			
+		
+	
 		
 	
 		

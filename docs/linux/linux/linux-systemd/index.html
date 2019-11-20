@@ -66,8 +66,24 @@ Systemd servcie 文件编写参">
 <h2 id="一个注册-ngrok-（内网穿透工具）-的实例"><a href="#一个注册-ngrok-（内网穿透工具）-的实例" class="headerlink" title="一个注册 ngrok （内网穿透工具） 的实例"></a>一个注册 ngrok （内网穿透工具） 的实例</h2><ol>
 <li>编写ngrok.servcie 服务文件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=&quot;Ngrok service &quot;</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/bin/nohup /home/hp/workspace/ngrok tcp 80 -log=stdout &amp;</span><br><span class="line">ExeStart=ps -ef | grep ngrok | head -1 | awk &apos;&#123;print $2&#125;&apos; |xargs kill -9 </span><br><span class="line">KillSignal=SIGQUIT</span><br><span class="line">TimeoutStopSec=5</span><br><span class="line">KillMode=process</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<pre><code>
+[Unit]
+Description=&quot;Ngrok service &quot;
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/nohup /home/hp/workspace/ngrok tcp 80 -log=stdout &amp;
+ExeStart=ps -ef | grep ngrok | head -1 | awk &#39;{print $2}&#39; |xargs kill -9 
+KillSignal=SIGQUIT
+TimeoutStopSec=5
+KillMode=process
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre><ol start="2">
 <li>拷贝服务文件到系统指定目录</li>
 </ol>
 <blockquote>
@@ -319,13 +335,13 @@ Systemd servcie 文件编写参">
 			
 			
 		
-	
-		
 			
 		
 	
 		
 			
+		
+	
 		
 	
 		

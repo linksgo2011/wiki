@@ -10,7 +10,10 @@
 方法一定要从另一个类中调用，也就是从类的外部调用，类的内部调用是无效的。
 如果需要从类的内部调用，需要先获取其代理类，下面上代码
 
-1234567891011121314@Servicepublic class XxxService&amp;#123;  public v">
+@Service
+public class XxxService{
+  public void methodA(){
+    ...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -67,7 +70,21 @@
 <li>方法一定要从另一个类中调用，也就是从类的外部调用，类的内部调用是无效的。</li>
 <li>如果需要从类的内部调用，需要先获取其代理类，下面上代码</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class XxxService&#123;</span><br><span class="line">  public void methodA()&#123;</span><br><span class="line">    ...</span><br><span class="line">    XxxService xxxServiceProxy = SpringUtil.getBean(XxxService.class);</span><br><span class="line">    xxxServiceProxy.methodB();</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  @Async</span><br><span class="line">  public void methodB() &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
+<pre><code>@Service
+public class XxxService{
+  public void methodA(){
+    ...
+    XxxService xxxServiceProxy = SpringUtil.getBean(XxxService.class);
+    xxxServiceProxy.methodB();
+    ...
+  }
+
+  @Async
+  public void methodB() {
+    ...
+  }
+}
+</code></pre>	  
 
 	  <div>
   		<center>

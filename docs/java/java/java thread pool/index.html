@@ -71,14 +71,42 @@
 	  <p>在计算密集型的项目中，需要用到多线程来做并发操作，java 多线程最好的方案就是使用线程池。<br>可以通过使用 Spring 中封装好的线程池类，也可以使用 Java 原生接口。</p>
 <h2 id="使用-Spring-中ThreadPoolTaskExecutor实现线程池"><a href="#使用-Spring-中ThreadPoolTaskExecutor实现线程池" class="headerlink" title="使用 Spring 中ThreadPoolTaskExecutor实现线程池"></a>使用 Spring 中ThreadPoolTaskExecutor实现线程池</h2><p>如果项目中已经存在 Spring 则可以使用一个由Spring 封装好了的线程池单例</p>
 <p>声明下面 Bean</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class ThreadPoolConfig &#123;</span><br><span class="line">    @Bean(&quot;threadPoolTaskExecutor&quot;)</span><br><span class="line">    public ThreadPoolTaskExecutor threadPoolTaskExecutor()&#123;</span><br><span class="line">        ThreadPoolTaskExecutor threadPoolTaskExecutor=new ThreadPoolTaskExecutor();</span><br><span class="line">        threadPoolTaskExecutor.setCorePoolSize(4);</span><br><span class="line">        threadPoolTaskExecutor.setKeepAliveSeconds(10);</span><br><span class="line">        threadPoolTaskExecutor.setMaxPoolSize(10);</span><br><span class="line">        threadPoolTaskExecutor.setQueueCapacity(10);</span><br><span class="line">        return threadPoolTaskExecutor;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>创建一个测试的线程类，继承 Thread 或者实现 Runnable 都可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    publicvoid run() &#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(Thread.currentThread().getName() + &quot;正在执行。。。&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在需要使用的地方只需要注入 Bean，然后执行任务即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">ThreadPoolTaskExecutor threadPoolTaskExecutor;</span><br><span class="line">threadPoolTaskExecutor.execute(new MyThread());</span><br></pre></td></tr></table></figure>
-<h2 id="使用-Java-原生接口"><a href="#使用-Java-原生接口" class="headerlink" title="使用 Java 原生接口"></a>使用 Java 原生接口</h2><p>在 Java 中，原生的线程池接口为 ExecutorService。Executors 默认提供了数个实现，其中创建固定的线程个数的线程池比较常用 newFixedThreadPool。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService executor = Executors.newFixedThreadPool(10);</span><br><span class="line">executor.execute(new MyThread());</span><br><span class="line">executor.shutdown;</span><br></pre></td></tr></table></figure>
-<p>需要特别注意的是，线程池中的线程不会被自动释放，需要自己手动调用 shutdown 释放。</p>
+<pre><code>@Configuration
+public class ThreadPoolConfig {
+    @Bean(&quot;threadPoolTaskExecutor&quot;)
+    public ThreadPoolTaskExecutor threadPoolTaskExecutor(){
+        ThreadPoolTaskExecutor threadPoolTaskExecutor=new ThreadPoolTaskExecutor();
+        threadPoolTaskExecutor.setCorePoolSize(4);
+        threadPoolTaskExecutor.setKeepAliveSeconds(10);
+        threadPoolTaskExecutor.setMaxPoolSize(10);
+        threadPoolTaskExecutor.setQueueCapacity(10);
+        return threadPoolTaskExecutor;
+
+    }
+}
+</code></pre><p>创建一个测试的线程类，继承 Thread 或者实现 Runnable 都可</p>
+<pre><code>public class MyThread extends Thread {
+
+    @Override
+
+    publicvoid run() {
+
+        System.out.println(Thread.currentThread().getName() + &quot;正在执行。。。&quot;);
+
+    }
+
+}
+
+</code></pre><p>在需要使用的地方只需要注入 Bean，然后执行任务即可</p>
+<pre><code>@Autowired
+ThreadPoolTaskExecutor threadPoolTaskExecutor;
+threadPoolTaskExecutor.execute(new MyThread());
+
+</code></pre><h2 id="使用-Java-原生接口"><a href="#使用-Java-原生接口" class="headerlink" title="使用 Java 原生接口"></a>使用 Java 原生接口</h2><p>在 Java 中，原生的线程池接口为 ExecutorService。Executors 默认提供了数个实现，其中创建固定的线程个数的线程池比较常用 newFixedThreadPool。</p>
+<pre><code>ExecutorService executor = Executors.newFixedThreadPool(10);
+executor.execute(new MyThread());
+executor.shutdown;
+</code></pre><p>需要特别注意的是，线程池中的线程不会被自动释放，需要自己手动调用 shutdown 释放。</p>
 	  
 
 	  <div>
@@ -273,19 +301,13 @@
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 			
+		
+	
+		
+	
 		
 	
 		
@@ -298,6 +320,12 @@
 	
 		
 			
+		
+	
+		
+			
+		
+	
 		
 	
 		

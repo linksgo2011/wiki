@@ -72,16 +72,39 @@
 <p>使用 Maven 或者 Gradle 打包 jar 文件,一般在工程中使用 wapper 构建。</p>
 <p>可以通过 Initializr 构建一个基本的 SPring Boot 项目练习， <a href="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a> </p>
 <h2 id="使用-Maven-构建"><a href="#使用-Maven-构建" class="headerlink" title="使用 Maven 构建"></a>使用 Maven 构建</h2><p>在 Maven 的 pom.xml 文件中配置如下插件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">	&lt;plugins&gt;</span><br><span class="line">           ...</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
-<p>在工程目录下的命令行运行 <code>./mvnw clean package</code></p>
+<pre><code>    &lt;build&gt;
+        &lt;plugins&gt;
+            ...
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+</code></pre><p>在工程目录下的命令行运行 <code>./mvnw clean package</code></p>
 <blockquote>
 <p>./mvnw clean package </p>
 </blockquote>
 <p>构建成功后可以看到下面的信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ spring-boot-boilerplate ---</span><br><span class="line">[INFO] Building jar: /Users/nlin/Downloads/spring-boot-boilerplate/target/spring-boot-boilerplate-0.0.1-SNAPSHOT.jar</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- spring-boot-maven-plugin:2.2.1.RELEASE:repackage (repackage) @ spring-boot-boilerplate ---</span><br><span class="line">[INFO] Replacing main artifact with repackaged archive</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time:  4.237 s</span><br><span class="line">[INFO] Finished at: 2019-11-17T22:28:04+08:00</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
-<h3 id="使用-gradle-构建"><a href="#使用-gradle-构建" class="headerlink" title="使用 gradle 构建"></a>使用 gradle 构建</h3><p>在 build.gradle 文件中有如下配置， org.springframework.boot 是用来运行和构建 Spring Boot 应用程序的，io.spring.dependency-management 是用来管理 Spring 项目各个依赖的版本，让其保持一致。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id &apos;org.springframework.boot&apos; version &apos;2.1.3.RELEASE&apos;</span><br><span class="line">    id &quot;io.spring.dependency-management&quot; version &quot;1.0.3.RELEASE&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行命令</p>
+<pre><code>[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ spring-boot-boilerplate ---
+[INFO] Building jar: /Users/nlin/Downloads/spring-boot-boilerplate/target/spring-boot-boilerplate-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.1.RELEASE:repackage (repackage) @ spring-boot-boilerplate ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.237 s
+[INFO] Finished at: 2019-11-17T22:28:04+08:00
+[INFO] ------------------------------------------------------------------------
+
+</code></pre><h3 id="使用-gradle-构建"><a href="#使用-gradle-构建" class="headerlink" title="使用 gradle 构建"></a>使用 gradle 构建</h3><p>在 build.gradle 文件中有如下配置， org.springframework.boot 是用来运行和构建 Spring Boot 应用程序的，io.spring.dependency-management 是用来管理 Spring 项目各个依赖的版本，让其保持一致。</p>
+<pre><code>plugins {
+    id &#39;org.springframework.boot&#39; version &#39;2.1.3.RELEASE&#39;
+    id &quot;io.spring.dependency-management&quot; version &quot;1.0.3.RELEASE&quot;
+}
+
+</code></pre><p>运行命令</p>
 <blockquote>
 <p>./gradle clean package </p>
 </blockquote>
@@ -112,8 +135,18 @@
 <p>vim spring-boot-boilerplate.service </p>
 </blockquote>
 <p>然后添加配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=spring-boot-boilerplate java application</span><br><span class="line">After=syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/nohup /usr/bin/java -jar /home/workspace/spring-boot-boilerplate.jar --spring.profiles.active=dev</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<p>ExecStart 填写 java 应用启动命令，当 <code>systemctl start</code> 的时候会调用这个命令。注意依然需要使用 <code>nohup</code> 保持后台运行。</p>
+<pre><code>
+[Unit]
+Description=spring-boot-boilerplate java application
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/nohup /usr/bin/java -jar /home/workspace/spring-boot-boilerplate.jar --spring.profiles.active=dev
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>ExecStart 填写 java 应用启动命令，当 <code>systemctl start</code> 的时候会调用这个命令。注意依然需要使用 <code>nohup</code> 保持后台运行。</p>
 <p>配置完成后拷贝 service 文件到系统目录</p>
 <blockquote>
 <p>mv spring-boot-boilerplate.service /usr/lib/systemd/system/spring-boot-boilerplate.service</p>
@@ -134,8 +167,11 @@
 <blockquote>
 <p>vim Dockerfile</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-slim</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ADD target/spring-boot-boilerplate.jar app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;/app.jar&quot;]</span><br></pre></td></tr></table></figure>
-<p>cd 目录到当前目录下</p>
+<pre><code>FROM openjdk:8-jdk-slim
+VOLUME /tmp
+ADD target/spring-boot-boilerplate.jar app.jar
+ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;/app.jar&quot;]
+</code></pre><p>cd 目录到当前目录下</p>
 <blockquote>
 <p>docker build -t spring-boot-docker  .</p>
 </blockquote>

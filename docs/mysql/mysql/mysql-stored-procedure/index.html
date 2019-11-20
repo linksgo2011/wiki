@@ -6,7 +6,13 @@
   <title>mysql 存储过程编写示例 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="一个创建模拟数据的存储过程1234567891011121314151617181920DROP PROCEDURE IF EXISTS `insertStubData`;DELIMITER $$CREATE PROCEDURE `insertStubData`()BEGIN    DECLARE ">
+  <meta name="description" content="一个创建模拟数据的存储过程
+DROP PROCEDURE IF EXISTS `insertStubData`;
+DELIMITER $$
+CREATE PROCEDURE `insertStubData`()
+BEGIN
+    DECLARE i int unsigned DEFAULT 0;
+">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -67,7 +73,28 @@
 	
 
 	  <!-- content -->
-	  <h2 id="一个创建模拟数据的存储过程"><a href="#一个创建模拟数据的存储过程" class="headerlink" title="一个创建模拟数据的存储过程"></a>一个创建模拟数据的存储过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">DROP PROCEDURE IF EXISTS `insertStubData`;</span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE PROCEDURE `insertStubData`()</span><br><span class="line">BEGIN</span><br><span class="line">    DECLARE i int unsigned DEFAULT 0;</span><br><span class="line">    WHILE i &lt; 30000 DO</span><br><span class="line">		SET i = i+1;</span><br><span class="line">		INSERT INTO `sso_login`(`id`,</span><br><span class="line">		`phone_nbr`,</span><br><span class="line">		`open_id`,</span><br><span class="line">		`project_from`,</span><br><span class="line">		`task_id`)</span><br><span class="line">		VALUES</span><br><span class="line">		(null,CONCAT(&quot;133&quot;,i),i,&quot;TW&quot;,10);</span><br><span class="line">    END WHILE;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER ;</span><br><span class="line"></span><br><span class="line">CALL insertStubData();</span><br></pre></td></tr></table></figure>
+	  <h2 id="一个创建模拟数据的存储过程"><a href="#一个创建模拟数据的存储过程" class="headerlink" title="一个创建模拟数据的存储过程"></a>一个创建模拟数据的存储过程</h2><pre><code class="mysql">
+DROP PROCEDURE IF EXISTS `insertStubData`;
+DELIMITER $$
+CREATE PROCEDURE `insertStubData`()
+BEGIN
+    DECLARE i int unsigned DEFAULT 0;
+    WHILE i &lt; 30000 DO
+        SET i = i+1;
+        INSERT INTO `sso_login`(`id`,
+        `phone_nbr`,
+        `open_id`,
+        `project_from`,
+        `task_id`)
+        VALUES
+        (null,CONCAT(&quot;133&quot;,i),i,&quot;TW&quot;,10);
+    END WHILE;
+END $$
+DELIMITER ;
+
+CALL insertStubData();
+
+</code></pre>
 <h2 id="编写-mysql-存储过程的基础"><a href="#编写-mysql-存储过程的基础" class="headerlink" title="编写 mysql 存储过程的基础"></a>编写 mysql 存储过程的基础</h2><ul>
 <li>基本教程 <a href="https://www.runoob.com/w3cnote/mysql-stored-procedure.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/mysql-stored-procedure.html</a></li>
 </ul>
@@ -257,11 +284,11 @@
 			
 			
 		
-	
-		
-	
-		
 			
+		
+	
+		
+	
 		
 	
 		

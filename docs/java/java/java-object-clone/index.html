@@ -13,7 +13,10 @@ shallow 赋值
 克隆
 
 shallow 赋值这种赋值情况为共享内存空间,多个变量指向同一个地址空间
-123Object obj1 = new Object();Object obj2 = obj1;
+
+Object obj1 = new Object();
+Object obj2 = obj1;
+
 这里的ob">
   
   
@@ -73,12 +76,27 @@ shallow 赋值这种赋值情况为共享内存空间,多个变量指向同一�
 <li>克隆</li>
 </ul>
 <h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">Object obj2 = obj1;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">
+Object obj1 = new Object();
+Object obj2 = obj1;
+</code></pre>
 <p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p>
 <h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Object obj1 = <span class="keyword">new</span> Object();</span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Object obj2 = <span class="keyword">new</span> Object();</span><br><span class="line">obj2.a = obj1.a;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">
+Object obj1 = new Object();
+obj1.a = 1;
+
+Object obj2 = new Object();
+obj2.a = obj1.a;
+</code></pre>
 <h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person p = <span class="keyword">new</span> Person(<span class="number">23</span>, <span class="string">"zhang"</span>);</span><br><span class="line">Person p1 = (Person) p.clone();</span><br><span class="line"></span><br><span class="line">System.out.println(p);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>
+<pre><code class="Java">
+Person p = new Person(23, &quot;zhang&quot;);
+Person p1 = (Person) p.clone();
+
+System.out.println(p);
+System.out.println(p1);
+</code></pre>
 	  
 
 	  <div>
@@ -272,6 +290,8 @@ shallow 赋值这种赋值情况为共享内存空间,多个变量指向同一�
 		
 	
 		
+	
+		
 			
 			
 		
@@ -280,24 +300,22 @@ shallow 赋值这种赋值情况为共享内存空间,多个变量指向同一�
 	
 		
 	
-		
-	
-		
-	
-		
-			
-			
-			
 		
 	
 		
 	
 		
 			
+			
+			
+		
+			
 		
 	
 		
 			
+		
+	
 		
 	
 		

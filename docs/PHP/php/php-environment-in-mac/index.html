@@ -72,7 +72,13 @@ LoadModule php5_module ">
 <p>2、测试</p>
 <p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p>
 <p>为了方便测试，在此目录下新建一个test.php文件，并输入</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">phpinfo();</span><br><span class="line"></span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+
+phpinfo();
+
+ ?&gt;
+
+</code></pre>
 <p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p>
 <p>3、PHP配置</p>
 <p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p>
@@ -233,27 +239,15 @@ LoadModule php5_module ">
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
 		
-			
+	
 		
 	
 		
-			
-		
 	
-		
-			
 		
 	
 		
@@ -278,7 +272,15 @@ LoadModule php5_module ">
 		
 	
 		
+			
+		
 	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -345,13 +347,17 @@ LoadModule php5_module ">
 	
 		
 	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/php/php/cakephp scaffold/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/php/php/php-plugin-c/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/php/php/PHP-package manager/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/php/php/cakephp scaffold/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

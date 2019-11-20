@@ -6,7 +6,12 @@
   <title>一段简单的PHP 日志代码 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="1234567891011121314151617181920&amp;lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;">
+  <meta name="description" content="&amp;lt;?php
+
+define(&amp;quot;SEPARATOR&amp;quot;,&amp;quot; | &amp;quot;);
+define(&amp;quot;BASE_FILE_NAME&amp;quot;,__DIR__.&amp;quot;/../log/log.txt&amp;quot;);
+
+file_put_contents(BA">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -58,7 +63,32 @@
 	  
 
 	  <!-- content -->
-	  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">define(<span class="string">"SEPARATOR"</span>,<span class="string">" | "</span>);</span><br><span class="line">define(<span class="string">"BASE_FILE_NAME"</span>,<span class="keyword">__DIR__</span>.<span class="string">"/../log/log.txt"</span>);</span><br><span class="line"></span><br><span class="line">file_put_contents(BASE_FILE_NAME,<span class="string">"\n"</span>.date(<span class="string">"Y-m-d h:i:s"</span>).</span><br><span class="line">    SEPARATOR.$_SERVER[<span class="string">'PHP_SELF'</span>].SEPARATOR.</span><br><span class="line">    str_replace(<span class="string">"\n"</span>,<span class="string">""</span>,json_encode($_POST) ),</span><br><span class="line">    FILE_APPEND</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转存日志文件</span></span><br><span class="line">$currentDayFileName = <span class="keyword">__DIR__</span>.<span class="string">"/../log/"</span>.date(<span class="string">"Y-m-d"</span>,time()<span class="number">-60</span>*<span class="number">60</span>*<span class="number">24</span>).<span class="string">"_log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!file_exists($currentDayFileName))&#123;</span><br><span class="line">    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));</span><br><span class="line">    file_put_contents(BASE_FILE_NAME,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	  
+	  <pre><code class="php">
+
+&lt;?php
+
+define(&quot;SEPARATOR&quot;,&quot; | &quot;);
+define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);
+
+file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).
+    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.
+    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),
+    FILE_APPEND
+);
+
+// 转存日志文件
+$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;
+
+if(!file_exists($currentDayFileName)){
+    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));
+    file_put_contents(BASE_FILE_NAME,&quot;&quot;);
+}
+
+
+
+
+</code></pre>
+	  
 
 	  <div>
   		<center>
@@ -205,6 +235,10 @@
 		
 	
 		
+			
+		
+	
+		
 	
 		
 	
@@ -238,15 +272,13 @@
 	
 		
 			
-		
-	
-		
 			
 		
 	
 		
 			
 			
+			
 		
 	
 		
@@ -315,15 +347,13 @@
 	
 		
 	
-		
 	
 	
-	
-		<li class="prev"><a href="/php/php/PHP-extension/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/php/php/php-mamp/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/php/php/PHP-extension/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
