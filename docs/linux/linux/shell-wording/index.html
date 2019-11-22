@@ -3,18 +3,33 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>使用和生成 SSH key 登录 Linux 服务器 | 架构师知识系统</title>
+  <title>Shell 文字处理函数 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="基本原理基本原理为服务器持有公钥，客户端持有私钥。服务器 authorized_keys 中允许添加多个公钥，则允许多个持有私钥的客户端登陆上来。客户端生成密匙对，然后讲公钥文件注册到 authorized_keys 即可登录。
-操作方法在客户端打开控制台，输入命令
+  <meta name="description" content="cat用于查看文件
 
-ssh-keygen -t r">
+cat file.txt
+
+多个文件同时使用
+
+cat file1.txt  file2.txt
+
+显示行号
+
+cat -n [filename]
+
+甚至从命令行写入文件
+
+cat &amp;gt; [name-of-new-file]
+
+复制文件（通常不要这样干，用 cp）
+
+cat">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="使用和生成 SSH key 登录 Linux 服务器">
+  <meta property="og:title" content="Shell 文字处理函数">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -48,7 +63,7 @@ ssh-keygen -t r">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">使用和生成 SSH key 登录 Linux 服务器</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-13</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Shell 文字处理函数</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-22</span></h1>
 </div>		
 
 <div class="row page">
@@ -70,28 +85,116 @@ ssh-keygen -t r">
 	
 
 	  <!-- content -->
-	  <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>基本原理为服务器持有公钥，客户端持有私钥。服务器 authorized_keys 中允许添加多个公钥，则允许多个持有私钥的客户端登陆上来。客户端生成密匙对，然后讲公钥文件注册到 authorized_keys 即可登录。</p>
-<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>在客户端打开控制台，输入命令</p>
+	  <h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><p>用于查看文件</p>
 <blockquote>
-<p>ssh-keygen -t rsa</p>
+<p>cat file.txt</p>
 </blockquote>
-<p>Enter file in which to save the key (/home/hp/.ssh/id_rsa): </p>
-<p>输入生成 key 的位置</p>
-<p>选择默认选项的话，可以在指定的位置得到 id_rsa  id_rsa.pub 两个文件。<br>，id_rsa 私钥，id_rsa.pub 为公钥，公钥为服务器持有，私钥为客户端登录上来的凭证。</p>
-<p>需要把公钥添加到系统的密匙文件中，才能启用公钥。</p>
+<p>多个文件同时使用</p>
 <blockquote>
-<p>cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys </p>
+<p>cat file1.txt  file2.txt</p>
 </blockquote>
-<p>完成上面的步骤后，即可使用下面的命令登录：</p>
+<p>显示行号</p>
 <blockquote>
-<p>ssh -i id_rsa username@host</p>
+<p>cat -n [filename]</p>
 </blockquote>
-<p>注意</p>
-<ul>
-<li>如果密匙对是在服务器上生成的，可以吧 id_rsa 文件拷贝到本机 ./ssh/ 下即可登录。</li>
-<li>如果本机已经存在 id_rsa 文件，为了不影响登录其他服务，可以直接把存在的 id_rsa.pub 拷贝到 authorized_keys 即可登录。</li>
-</ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2>	  
+<p>甚至从命令行写入文件</p>
+<blockquote>
+<p>cat &gt; [name-of-new-file]</p>
+</blockquote>
+<p>复制文件（通常不要这样干，用 cp）</p>
+<blockquote>
+<p>cat file1.txt &gt; file3.txt</p>
+</blockquote>
+<p>行尾高亮</p>
+<blockquote>
+<p>cat -E file1.txt</p>
+</blockquote>
+<p>显示空白字符</p>
+<blockquote>
+<p>cat -v file9.txt</p>
+</blockquote>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>从指定文件中搜索字符串。</p>
+<p>简单搜索</p>
+<blockquote>
+<p>grep word sample2</p>
+</blockquote>
+<p>多个文件搜索</p>
+<blockquote>
+<p>grep word sample sample2 sample3</p>
+</blockquote>
+<p>搜索当前文件夹</p>
+<blockquote>
+<p>grep word *</p>
+</blockquote>
+<p>搜索完整的文字</p>
+<blockquote>
+<p>grep -w word *</p>
+</blockquote>
+<p>不区分大小写</p>
+<blockquote>
+<p>grep -i word *</p>
+</blockquote>
+<p>子目录递归搜索</p>
+<blockquote>
+<p>grep -r word *</p>
+</blockquote>
+<p>反向搜索,排除关键字</p>
+<blockquote>
+<p>grep -v word sample</p>
+</blockquote>
+<p>整行匹配</p>
+<blockquote>
+<p>grep -x “word line1” *</p>
+</blockquote>
+<p>获取匹配的文件列表</p>
+<blockquote>
+<p>grep -l word *</p>
+</blockquote>
+<p>统计匹配行数</p>
+<blockquote>
+<p>grep -c word *</p>
+</blockquote>
+<p>限制输出行数</p>
+<blockquote>
+<p>grep –m2 word sample</p>
+</blockquote>
+<h2 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h2><p>awk shell 中非常强大的命令，通常用来提取固定模式的字符串。</p>
+<p>TODO </p>
+<h2 id="seed"><a href="#seed" class="headerlink" title="seed"></a>seed</h2><p>和 awk 一样是非常重要的一个命令，开发者必须掌握。</p>
+<h2 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h2><p>统计文本数量的工具，例如</p>
+<blockquote>
+<p>wc myfile.txt</p>
+</blockquote>
+<p>5 13 57 myfile.txt</p>
+<p>5 是文件行数，13 是单词数，57 是字符数量。</p>
+<p>只获取行数</p>
+<blockquote>
+<p>wc -l </p>
+</blockquote>
+<p>结合管道使用获取当前目录文件数量</p>
+<blockquote>
+<p>ls -1 | wc -l</p>
+</blockquote>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>sort 不仅在文字处理上非常有用，服务器调优的时候也非常有用,可以快速地找 cpu 性能较差的服务。</p>
+<blockquote>
+<p>sort list.txt</p>
+</blockquote>
+<p>根据第二列排序 </p>
+<blockquote>
+<p>sort -k2 list.txt</p>
+</blockquote>
+<p>如果排序的字符是数字可以加上 n</p>
+<blockquote>
+<p>sort -nk9 list.txt</p>
+</blockquote>
+<h2 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h2><p>这个命令比较简单，将重复的数据只显示一行，一般配合 sort 使用，常用有两个参数，计数和忽略大小写。</p>
+<blockquote>
+<p>uniq -c list.txt </p>
+</blockquote>
+<blockquote>
+<p>uniq -i list.txt</p>
+</blockquote>
+	  
 
 	  <div>
   		<center>
@@ -105,54 +208,6 @@ ssh-keygen -t r">
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
 			
 		
 	
@@ -171,13 +226,27 @@ ssh-keygen -t r">
 		
 	
 		
+			
+			
+			
+		
 	
+		
+			
+		
+	
+		
+			
 		
 	
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -215,6 +284,40 @@ ssh-keygen -t r">
 		
 	
 		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -372,11 +475,11 @@ ssh-keygen -t r">
 	
 	
 	
-		<li class="prev"><a href="/linux/linux/linux-fire-wall/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/linux/linux/vagrant/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/linux/linux/linux-vsftpd/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

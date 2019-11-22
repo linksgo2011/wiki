@@ -166,7 +166,63 @@ MyBenchmark.testStringBuilder  thrpt   10  80369.037 ± 3058.280  ops/ms
 <pre><code>AutoBoxBenchmark.boxDataType       thrpt    5   312779.633 ±   26761.457  ops/ms
 AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/ms
 </code></pre><p>基本类型的性能高出了一个数量级。当然你可能会说基本类型这种性能问题比较微笑，但是性能往往就是这种从细微处提高的。另外编写 JMH 测试也会让团队看待性能问题更为直观。</p>
-<h2 id="一份直观的-Java-基础性能报告"><a href="#一份直观的-Java-基础性能报告" class="headerlink" title="一份直观的 Java 基础性能报告"></a>一份直观的 Java 基础性能报告</h2><p>TODO</p>
+<h2 id="一份直观的-Java-基础性能报告"><a href="#一份直观的-Java-基础性能报告" class="headerlink" title="一份直观的 Java 基础性能报告"></a>一份直观的 Java 基础性能报告</h2><p>下面是我写的常见场景的性能测试，例如 StringBuilder 比 new String() 速度快几个数量级。</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Mode</th>
+<th>OPS</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“cn.printf.jmhreports.AutoBoxBenchmark.boxDataType”</td>
+<td>“thrpt”</td>
+<td>323693300.862712</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.AutoBoxBenchmark.primaryDataType”</td>
+<td>“thrpt”</td>
+<td>9421830157.195677</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.CacheValueBenchmark.test”</td>
+<td>“thrpt”</td>
+<td>204814.611974</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.CacheValueBenchmark.testStringBuilder”</td>
+<td>“thrpt”</td>
+<td>80039810.903665</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.StringBenchmark.constructStringByAssignment”</td>
+<td>“thrpt”</td>
+<td>197815.644537</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.StringBenchmark.constructStringByConstructor”</td>
+<td>“thrpt”</td>
+<td>205494.677150</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>“cn.printf.jmhreports.StringBenchmark.constructStringByStringBuilder”</td>
+<td>“thrpt”</td>
+<td>66162972.690813</td>
+<td>ops/s</td>
+</tr>
+</tbody>
+</table>
+<p>代码仓库和持续更新的基准测试可以看下面的仓库。</p>
+<p><a href="https://github.com/linksgo2011/jmh-reports" target="_blank" rel="noopener">https://github.com/linksgo2011/jmh-reports</a></p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">http://openjdk.java.net/projects/code-tools/jmh/</a></li>
 <li><a href="https://github.com/melix/jmh-gradle-plugin" target="_blank" rel="noopener">https://github.com/melix/jmh-gradle-plugin</a></li>
@@ -186,46 +242,10 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 			
 			
-			
 		
 	
 		
@@ -235,15 +255,7 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
-			
-		
 	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -270,6 +282,8 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 	
 		
 			
+			
+			
 		
 	
 		
@@ -279,7 +293,7 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
-	
+			
 		
 	
 		
@@ -287,29 +301,7 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -381,7 +373,73 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
 		
 	
 		

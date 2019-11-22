@@ -42,6 +42,12 @@ toc: true
 - 服务器监控平台
   - zabbix
 
+- 防火墙
+  - IPtables
+  - firewall 
+- 操作系统
+  - CentOS
+
 ## 业务架构建模
 
 - DDD 

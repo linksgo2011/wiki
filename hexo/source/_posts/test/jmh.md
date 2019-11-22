@@ -144,8 +144,21 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 
 ## 一份直观的 Java 基础性能报告
 
-TODO
+下面是我写的常见场景的性能测试，例如 StringBuilder 比 new String() 速度快几个数量级。
 
+| Test                                                                  | Mode    | OPS               | Unit  |
+| --------------------------------------------------------------------- | ------- | ----------------- | ----- |
+| "cn.printf.jmhreports.AutoBoxBenchmark.boxDataType"                   | "thrpt" | 323693300.862712  | ops/s |
+| "cn.printf.jmhreports.AutoBoxBenchmark.primaryDataType"               | "thrpt" | 9421830157.195677 | ops/s |
+| "cn.printf.jmhreports.CacheValueBenchmark.test"                       | "thrpt" | 204814.611974     | ops/s |
+| "cn.printf.jmhreports.CacheValueBenchmark.testStringBuilder"          | "thrpt" | 80039810.903665   | ops/s |
+| "cn.printf.jmhreports.StringBenchmark.constructStringByAssignment"    | "thrpt" | 197815.644537     | ops/s |
+| "cn.printf.jmhreports.StringBenchmark.constructStringByConstructor"   | "thrpt" | 205494.677150     | ops/s |
+| "cn.printf.jmhreports.StringBenchmark.constructStringByStringBuilder" | "thrpt" | 66162972.690813   | ops/s |
+
+代码仓库和持续更新的基准测试可以看下面的仓库。
+
+https://github.com/linksgo2011/jmh-reports
 
 ## 参考资料
 
