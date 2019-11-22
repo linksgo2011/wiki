@@ -101,9 +101,10 @@ JMH 是一个用于构建、运行和分析 Java 方法运行性能工">
 <li>Measurement 是真实的性能测量参数，这里是 5轮，每轮10s。</li>
 <li>Timeout 每轮测试，JMH 会进行 GC 然后暂停一段时间，默认是 10 分钟。</li>
 <li>Threads 使用多少个线程来运行，一个线程会同步阻塞执行。</li>
-<li>Benchmark mode 输出的运行模式，常用的有两个。<ul>
+<li>Benchmark mode 输出的运行模式，常用的有下面几个。<ul>
 <li>Throughput 吞吐量，即每单位运行多少次操作。</li>
 <li>AverageTime 调用的平均时间，每次调用耗费多少时间。</li>
+<li>SingleShotTime 运行一次的时间，如果把预热关闭可以测试代码冷启动时间</li>
 </ul>
 </li>
 <li>Benchmark 测试的目标类</li>
@@ -166,6 +167,10 @@ MyBenchmark.testStringBuilder  thrpt   10  80369.037 ± 3058.280  ops/ms
 AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/ms
 </code></pre><p>基本类型的性能高出了一个数量级。当然你可能会说基本类型这种性能问题比较微笑，但是性能往往就是这种从细微处提高的。另外编写 JMH 测试也会让团队看待性能问题更为直观。</p>
 <h2 id="一份直观的-Java-基础性能报告"><a href="#一份直观的-Java-基础性能报告" class="headerlink" title="一份直观的 Java 基础性能报告"></a>一份直观的 Java 基础性能报告</h2><p>TODO</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">http://openjdk.java.net/projects/code-tools/jmh/</a></li>
+<li><a href="https://github.com/melix/jmh-gradle-plugin" target="_blank" rel="noopener">https://github.com/melix/jmh-gradle-plugin</a></li>
+</ul>
 	  
 
 	  <div>
@@ -372,9 +377,9 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 		
 	
 		
-			
-		
 	
+		
+			
 		
 	
 		

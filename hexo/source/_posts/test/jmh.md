@@ -56,9 +56,10 @@ OpenJdk 官方运行 JMH 测试推的方法是使用 Maven 构建一个单独的
 - Measurement 是真实的性能测量参数，这里是 5轮，每轮10s。
 - Timeout 每轮测试，JMH 会进行 GC 然后暂停一段时间，默认是 10 分钟。
 - Threads 使用多少个线程来运行，一个线程会同步阻塞执行。
-- Benchmark mode 输出的运行模式，常用的有两个。
+- Benchmark mode 输出的运行模式，常用的有下面几个。
   - Throughput 吞吐量，即每单位运行多少次操作。
   - AverageTime 调用的平均时间，每次调用耗费多少时间。
+  - SingleShotTime 运行一次的时间，如果把预热关闭可以测试代码冷启动时间
 - Benchmark 测试的目标类
 
 实际上还有很多配置，可以通过 -h 参数查看
@@ -144,3 +145,9 @@ AutoBoxBenchmark.primaryDataType   thrpt    5  8522641.543 ± 2500518.440  ops/m
 ## 一份直观的 Java 基础性能报告
 
 TODO
+
+
+## 参考资料
+
+- http://openjdk.java.net/projects/code-tools/jmh/
+- https://github.com/melix/jmh-gradle-plugin
