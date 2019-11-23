@@ -123,3 +123,10 @@ toc: true
   - LUA
   - Redis 限流
 - 容灾
+
+
+## 架构相关博客推荐
+
+- https://www.cnblogs.com/f-ck-need-u/p/7576137.html
+
+## 相关书籍推荐
