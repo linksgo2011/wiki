@@ -116,3 +116,10 @@ toc: true
 
 - Vue 
 - Nodejs
+
+## 高可用
+
+- API 限流
+  - LUA
+  - Redis 限流
+- 容灾
