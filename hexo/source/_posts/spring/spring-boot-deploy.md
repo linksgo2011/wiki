@@ -92,7 +92,7 @@ plugins {
 
 启动之前需要杀死之前运行的 java 程序，否则会端口被占用。根据端口杀死占用的进程
 
-> ssh root@192.168.1.86 ‘output=$( netstat -apn | grep 8080 | grep LISTEN) && read num1 num2 num3 num4 num5  <<<${output//[^0-9]/ } && kill -9 $num5 || pwd’
+> ssh root@192.168.1.86 'output=$( netstat -apn | grep 8080 | grep LISTEN) && read num1 num2 num3 num4 num5  <<<${output//[^0-9]/ } && kill -9 $num5 || pwd'
 
 ## 通过注册服务运行
 

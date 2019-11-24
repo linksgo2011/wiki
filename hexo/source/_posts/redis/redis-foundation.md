@@ -21,5 +21,12 @@ Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存
 
 ## cli常用操作
 
+## 在 cli 外部批量操作
+
+批量删除 keys
+
+> redis-cli keys "user*" | xargs redis-cli del
+
+## 
 
 

@@ -28,7 +28,7 @@ SHOW DATABASES;
 
 2、创建名称为rewin的数据库
 
-CREATE DATABASE rewin;
+CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;
 
 3、删除名称为rewin的数据库
 

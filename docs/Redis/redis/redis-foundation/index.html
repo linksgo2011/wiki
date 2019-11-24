@@ -79,7 +79,12 @@
 <li>Set: 集合</li>
 <li>Sorted Set: 有序集合</li>
 </ul>
-<h2 id="cli常用操作"><a href="#cli常用操作" class="headerlink" title="cli常用操作"></a>cli常用操作</h2>	  
+<h2 id="cli常用操作"><a href="#cli常用操作" class="headerlink" title="cli常用操作"></a>cli常用操作</h2><h2 id="在-cli-外部批量操作"><a href="#在-cli-外部批量操作" class="headerlink" title="在 cli 外部批量操作"></a>在 cli 外部批量操作</h2><p>批量删除 keys</p>
+<blockquote>
+<p>redis-cli keys “user*” | xargs redis-cli del</p>
+</blockquote>
+<p>## </p>
+	  
 
 	  <div>
   		<center>
@@ -90,6 +95,12 @@
 	
 	
 	
+	
+		
+	
+		
+	
+		
 	
 		
 	

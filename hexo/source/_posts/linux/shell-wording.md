@@ -133,3 +133,26 @@ sort 不仅在文字处理上非常有用，服务器调优的时候也非常有
 > uniq -c list.txt 
 
 > uniq -i list.txt
+
+
+## tr 
+
+这个命令可以用来转换和修改输入字符，例如大小写转换和提取数字
+
+> cat testfile |tr a-z A-Z 
+
+> echo "2014年7月21日" | tr -cd "[0-9]" 提取出数字
+
+
+## 综合应用
+
+提取字符串中的数字
+
+sed
+> sed 's/[^0-9]*//g'
+
+shell 自带功能
+> echo “${VAR1//[!0-9]/}”
+
+grep
+> echo $VAR1 | grep -o -E '[0-9]+'
