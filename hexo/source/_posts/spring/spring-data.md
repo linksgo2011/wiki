@@ -107,6 +107,65 @@ List<User> findByLastname(String lastname, Pageable pageable);
 ## 关联查询
 
 
+## UUID 生成策略
+
+```
+    @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private String id;
+
+```
+
+## 常用注解
+
+```
+    @Enumerated(STRING)
+    private AccountRoles role;
+```
+
+变成枚举类型。
+
+## 一些坑
+
+1. @ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional
+2. 应该使用 DDD 思想去设计关联，禁止双向关联
+3. @OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销
+4. @OneToOne 本质上是实体和值对象的关系，统一使用实体的ID
+5. @ManyToMany 默认会删除关联表
+6. @Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role
+
+```
+
+{
+  username:"",
+  department:{
+    id: 1
+  },
+  roles:[
+    {
+      id:1
+    }
+  ]
+}
+
+```
+当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。
+
+7. 当数据库插入异常，会报错，例如违反主键规则
+8. 更新、插入，只要不报错都会返回成功，无需再检查返回值
+
+
+## JPA 和建表规范
+
+- 根据 DDD 原则建表
+  - 例如 user user_avatar user_role
+
+## 性能优化
+
+1. 不要有一些无意义的关联
+2. 使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量
+
 ## 参考资料
 
 -  示例项目 https://github.com/spring-projects/spring-data-examples/tree/master/jpa

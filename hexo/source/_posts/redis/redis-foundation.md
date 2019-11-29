@@ -27,6 +27,16 @@ Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存
 
 > redis-cli keys "user*" | xargs redis-cli del
 
-## 
+## 启动 redis-server 
+
+
+> redis-server 
+
+后台运行
+
+> redis-server --daemonize yes
+
+后台运行也可以修改配置文件实现。
+
 
 

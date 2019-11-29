@@ -9,6 +9,9 @@ from: self
 
 Spring Security 主要解决用户的认证和授权问题，以及一些技术防护设施，例如 XSS、CSRF问题。
 
+Spring Security 不仅仅解决权限和认证问题，还解决一些安全过滤，以及增加 HTTP 头部等能力。
+
+
 ## security 注册的 filter 
 
 在 FilterComparator 中可以找到
@@ -144,9 +147,20 @@ public class MethodSecurityConfig {
 ```
 
 
+## 使用 token 方式鉴权
+
+![](./spring-security/spring-security-jwt-authentication-architecture-diagram.png)
+
+
+
+参考资料 https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial
+
+
+
 ## 相关资料
 
-- 
+- SpringSecurity原理剖析与权限系统设计 https://www.cnblogs.com/fanzhidongyzby/archive/2019/09/29/11610334.html
+- Spring Security用户认证流程源码详解 https://blog.csdn.net/qq_37142346/article/details/80032336
 - 中文文档 https://www.springcloud.cc/spring-security-zhcn.html#getting-starteda
 - Config Spring Security for Restful API https://www.baeldung.com/securing-a-restful-web-service-with-spring-security
 - https://spring.io/guides/gs/securing-web/

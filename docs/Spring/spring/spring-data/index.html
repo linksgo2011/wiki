@@ -152,7 +152,51 @@ List&lt;User&gt; findByLastname(String lastname, Sort sort);
 
 List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 
-</code></pre><h2 id="关联查询"><a href="#关联查询" class="headerlink" title="关联查询"></a>关联查询</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+</code></pre><h2 id="关联查询"><a href="#关联查询" class="headerlink" title="关联查询"></a>关联查询</h2><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id
+    @GeneratedValue(generator = &quot;UUID&quot;)
+    @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)
+    private String id;
+
+</code></pre><h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><pre><code>    @Enumerated(STRING)
+    private AccountRoles role;
+</code></pre><p>变成枚举类型。</p>
+<h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol>
+<li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li>
+<li>应该使用 DDD 思想去设计关联，禁止双向关联</li>
+<li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li>
+<li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li>
+<li>@ManyToMany 默认会删除关联表</li>
+<li>@Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role</li>
+</ol>
+<pre><code>
+{
+  username:&quot;&quot;,
+  department:{
+    id: 1
+  },
+  roles:[
+    {
+      id:1
+    }
+  ]
+}
+
+</code></pre><p>当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。</p>
+<ol start="7">
+<li>当数据库插入异常，会报错，例如违反主键规则</li>
+<li>更新、插入，只要不报错都会返回成功，无需再检查返回值</li>
+</ol>
+<h2 id="JPA-和建表规范"><a href="#JPA-和建表规范" class="headerlink" title="JPA 和建表规范"></a>JPA 和建表规范</h2><ul>
+<li>根据 DDD 原则建表<ul>
+<li>例如 user user_avatar user_role</li>
+</ul>
+</li>
+</ul>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol>
+<li>不要有一些无意义的关联</li>
+<li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li>
 <li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li>
 <li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li>
@@ -174,34 +218,6 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
 	
 		
 	
@@ -234,51 +250,14 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
 		
-			
+	
 		
 	
 		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
 			
 		
 	
@@ -331,6 +310,73 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -394,6 +440,10 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 	
 		
 			
+		
+	
+		
+	
 		
 	
 		
