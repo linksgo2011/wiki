@@ -73,6 +73,15 @@
 <h2 id="凭证"><a href="#凭证" class="headerlink" title="凭证"></a>凭证</h2><p>实现认证和授权的基础是需要一种媒介（credentials）来标记访问者的身份或权利，在现实生活中每个人都需要一张身份证才能访问自己的银行账户、结婚和办理养老保险等，这就是认证的凭证；在古代军事活动中，皇帝会给出战的将军颁发兵符，下级将领不关心持有兵符的人，只需要执行兵符对应的命令即可。在互联网世界中，服务器为每一个访问者颁发 session ID 存放到 cookie，这就是一种凭证技术。数字凭证还表现在方方面面，SSH 登录的密匙、JWT 令牌、一次性密码等。</p>
 <h2 id="一些权限模型"><a href="#一些权限模型" class="headerlink" title="一些权限模型"></a>一些权限模型</h2><h3 id="RBAC"><a href="#RBAC" class="headerlink" title="RBAC"></a>RBAC</h3><p>RBAC  是基于角色的访问控制（Role-Based Access Control ）在 RBAC  中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。</p>
 <h3 id="ABAC"><a href="#ABAC" class="headerlink" title="ABAC"></a>ABAC</h3><p>ABAC（Attribute Base Access Control） 基于属性的权限控制，用于解决权限和对象之间的关系，例如用户有创建贴吧的权限，但是删除某个贴吧，需要具体某个仓库的权限。</p>
+<h2 id="IAM-设计检查清单"><a href="#IAM-设计检查清单" class="headerlink" title="IAM 设计检查清单"></a>IAM 设计检查清单</h2><ul>
+<li>登录时把其他人挤下线</li>
+<li>图形验证码</li>
+<li>撤回和注销</li>
+<li>密码修改</li>
+<li>密码输入错误次数</li>
+<li>用户锁定</li>
+<li>检查密码是否过期</li>
+</ul>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://www.printf.cn/index.php/archives/api-authentication-authorization-credential.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-authentication-authorization-credential.html</a></li>
 <li><a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/overview" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/azure/role-based-access-control/overview</a></li>
@@ -235,8 +244,6 @@
 		
 	
 		
-	
-		
 			
 		
 	
@@ -244,6 +251,8 @@
 	
 		
 			
+		
+	
 		
 	
 		

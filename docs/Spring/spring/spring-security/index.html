@@ -8,7 +8,8 @@
   
   <meta name="description" content="基本概念Spring Security 主要解决用户的认证和授权问题，以及一些技术防护设施，例如 XSS、CSRF问题。
 Spring Security 不仅仅解决权限和认证问题，还解决一些安全过滤，以及增加 HTTP 头部等能力。
-security 注册的 filter在 FilterCompar">
+基本概念
+– SecurityContextHolder 存放认证">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -71,6 +72,9 @@ security 注册的 filter在 FilterCompar">
 	  <!-- content -->
 	  <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>Spring Security 主要解决用户的认证和授权问题，以及一些技术防护设施，例如 XSS、CSRF问题。</p>
 <p>Spring Security 不仅仅解决权限和认证问题，还解决一些安全过滤，以及增加 HTTP 头部等能力。</p>
+<p>基本概念</p>
+<p>– SecurityContextHolder 存放认证上上下文信息 SecurityContext<br>– SecurityContext 存放 Authentication 以及一些请求信息，用于全局跨上下文访问<br>– Authentication  存放用户认证后的信息，用户名和权限列表<br>– UserDetails 用户信息，例如用户名、密码、是否过期<br>– UserDetailsService AuthenticationProvider 进行验证时，调用该服务获取用户信息<br>– UsernamePasswordAuthenticationToken 存放用户名和密码，用于后面的验证<br>– AuthenticationManager 支持多种验证方式进行验证，只要有一个验证通过即可，默认会加载 DaoAuthenticationProvider 进行验证<br>– AuthenticationEntryPoint 处理验证过程中的异常信息</p>
+<h3 id="主要验证流程"><a href="#主要验证流程" class="headerlink" title="主要验证流程"></a>主要验证流程</h3><p><img src="/Spring/spring/spring-security/spring-security-flow.png" alt=""></p>
 <h2 id="security-注册的-filter"><a href="#security-注册的-filter" class="headerlink" title="security 注册的 filter"></a>security 注册的 filter</h2><p>在 FilterComparator 中可以找到</p>
 <pre><code>    FilterComparator() {
         Step order = new Step(INITIAL_ORDER, ORDER_STEP);

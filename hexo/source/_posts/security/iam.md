@@ -27,6 +27,17 @@ RBAC  是基于角色的访问控制（Role-Based Access Control ）在 RBAC  �
 
 ABAC（Attribute Base Access Control） 基于属性的权限控制，用于解决权限和对象之间的关系，例如用户有创建贴吧的权限，但是删除某个贴吧，需要具体某个仓库的权限。
 
+
+## IAM 设计检查清单
+
+- 登录时把其他人挤下线
+- 图形验证码
+- 撤回和注销
+- 密码修改
+- 密码输入错误次数
+- 用户锁定
+- 检查密码是否过期
+
 ## 参考资料
 
 - http://www.printf.cn/index.php/archives/api-authentication-authorization-credential.html

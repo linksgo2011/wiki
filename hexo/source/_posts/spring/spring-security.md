@@ -11,6 +11,21 @@ Spring Security 主要解决用户的认证和授权问题，以及一些技术�
 
 Spring Security 不仅仅解决权限和认证问题，还解决一些安全过滤，以及增加 HTTP 头部等能力。
 
+基本概念
+
+– SecurityContextHolder 存放认证上上下文信息 SecurityContext
+– SecurityContext 存放 Authentication 以及一些请求信息，用于全局跨上下文访问
+– Authentication  存放用户认证后的信息，用户名和权限列表
+– UserDetails 用户信息，例如用户名、密码、是否过期
+– UserDetailsService AuthenticationProvider 进行验证时，调用该服务获取用户信息
+– UsernamePasswordAuthenticationToken 存放用户名和密码，用于后面的验证
+– AuthenticationManager 支持多种验证方式进行验证，只要有一个验证通过即可，默认会加载 DaoAuthenticationProvider 进行验证
+– AuthenticationEntryPoint 处理验证过程中的异常信息
+
+### 主要验证流程
+
+![](./spring-security/spring-security-flow.png)
+
 
 ## security 注册的 filter 
 

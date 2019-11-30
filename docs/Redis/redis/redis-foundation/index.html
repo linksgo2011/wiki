@@ -72,13 +72,48 @@
 	  <!-- content -->
 	  <p>官网: <a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a><br>基础教程：<a href="http://www.runoob.com/redis/redis-java.html" target="_blank" rel="noopener">http://www.runoob.com/redis/redis-java.html</a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。</p>
-<h2 id="常用的数据结构"><a href="#常用的数据结构" class="headerlink" title="常用的数据结构"></a>常用的数据结构</h2><ul>
-<li>String: 字符串</li>
-<li>Hash: 散列</li>
-<li>List: 列表</li>
-<li>Set: 集合</li>
-<li>Sorted Set: 有序集合</li>
-</ul>
+<h2 id="常用的数据结构"><a href="#常用的数据结构" class="headerlink" title="常用的数据结构"></a>常用的数据结构</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>简介</th>
+<th>特性</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>二进制安全</td>
+<td>可以包含任何数据,比如jpg图片或者序列化的对象,一个键最大能存储512M</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td>键值对集合,即编程语言中的Map类型</td>
+<td>适合存储对象,并且可以像数据库中update一个属性一样只修改某一项属性值(Memcached中需要取出整个字符串反序列化成对象修改完再序列化存回去)</td>
+<td>存储、读取、修改用户属性</td>
+</tr>
+<tr>
+<td>List</td>
+<td>链表(双向链表)</td>
+<td>增删快,提供了操作某一段元素的API</td>
+<td>1,最新消息排行等功能(比如朋友圈的时间线) 2,消息队列</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>哈希表实现,元素不重复</td>
+<td>1、添加、删除,查找的复杂度都是O(1) 2、为集合提供了求交集、并集、差集等操作</td>
+<td>1、共同好友 2、利用唯一性,统计访问网站的所有独立ip 3、好友推荐时,根据tag求交集,大于某个阈值就可以推荐</td>
+</tr>
+<tr>
+<td>Sorted Set</td>
+<td>将Set中的元素增加一个权重参数score,元素按score有序排列</td>
+<td>数据插入集合时,已经进行天然排序</td>
+<td>1、排行榜 2、带权重的消息队列</td>
+</tr>
+</tbody>
+</table>
 <h2 id="cli常用操作"><a href="#cli常用操作" class="headerlink" title="cli常用操作"></a>cli常用操作</h2><h2 id="在-cli-外部批量操作"><a href="#在-cli-外部批量操作" class="headerlink" title="在 cli 外部批量操作"></a>在 cli 外部批量操作</h2><p>批量删除 keys</p>
 <blockquote>
 <p>redis-cli keys “user*” | xargs redis-cli del</p>
