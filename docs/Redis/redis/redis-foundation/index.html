@@ -132,7 +132,7 @@
 <p>Redis 事务的本质是一组命令批量执行，并不具备原子能力，也就是说中间失败剩下的还是会被执行，用处是保持时间在一起执行。</p>
 <p>单个 Redis 命令的执行是原子性的，但 Redis 没有在事务上增加任何维持原子性的机制，所以 Redis 事务的执行并不是原子性的。</p>
 <p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
-<h2 id="Redis-脚本"><a href="#Redis-脚本" class="headerlink" title="Redis 脚本"></a>Redis 脚本</h2><h2 id="在-cli-外部批量操作"><a href="#在-cli-外部批量操作" class="headerlink" title="在 cli 外部批量操作"></a>在 cli 外部批量操作</h2><p>批量删除 keys</p>
+<h2 id="在-cli-外部批量操作"><a href="#在-cli-外部批量操作" class="headerlink" title="在 cli 外部批量操作"></a>在 cli 外部批量操作</h2><p>批量删除 keys</p>
 <blockquote>
 <p>redis-cli keys “user*” | xargs redis-cli del</p>
 </blockquote>
@@ -152,6 +152,27 @@
 <p>redis-server –daemonize yes</p>
 </blockquote>
 <p>后台运行也可以修改配置文件实现。</p>
+<h2 id="redis-redistemplate-KEY为字符串是多双引号的问题"><a href="#redis-redistemplate-KEY为字符串是多双引号的问题" class="headerlink" title="redis redistemplate KEY为字符串是多双引号的问题"></a>redis redistemplate KEY为字符串是多双引号的问题</h2><p>原因是 redistemplate 使用json进行序列化，需要对 key value 使用不同的序列化策略。</p>
+<p>推荐使用如下配置</p>
+<pre><code>@Configuration
+public class RedisConfiguration {
+
+    @Bean
+    public GenericJackson2JsonRedisSerializer genericJackson2JsonRedisJsonSerializer() {
+        return new GenericJackson2JsonRedisSerializer();
+    }
+
+    @Bean
+    RedisTemplate&lt;String, Object&gt; redisTemplate(JedisConnectionFactory jedisConnectionFactory) {
+        final RedisTemplate&lt;String, Object&gt; restTemplate = new RedisTemplate&lt;&gt;();
+        restTemplate.setConnectionFactory(jedisConnectionFactory);
+        restTemplate.setKeySerializer(new StringRedisSerializer());
+        restTemplate.setValueSerializer(genericJackson2JsonRedisJsonSerializer());
+        return restTemplate;
+    }
+}
+
+</code></pre><p>这里定义了 key 和 value 的序列化策略，如果需要使用更多的数据类型，需要添加适当的序列化策略。</p>
 	  
 
 	  <div>
@@ -163,6 +184,12 @@
 	
 	
 	
+	
+		
+	
+		
+	
+		
 	
 		
 	

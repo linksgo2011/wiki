@@ -13,13 +13,13 @@ Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存
 
 ## 常用的数据结构
 
-|类型|简介|特性|场景|
-|--|--|--|--|
-| String | 二进制安全 | 可以包含任何数据,比如jpg图片或者序列化的对象,一个键最大能存储512M |	---|
-| Hash | 键值对集合,即编程语言中的Map类型 | 适合存储对象,并且可以像数据库中update一个属性一样只修改某一项属性值(Memcached中需要取出整个字符串反序列化成对象修改完再序列化存回去) | 存储、读取、修改用户属性 |
-| List | 链表(双向链表) | 增删快,提供了操作某一段元素的API	 | 1,最新消息排行等功能(比如朋友圈的时间线) 2,消息队列 |
-| Set | 哈希表实现,元素不重复 | 1、添加、删除,查找的复杂度都是O(1) 2、为集合提供了求交集、并集、差集等操作 | 1、共同好友 2、利用唯一性,统计访问网站的所有独立ip 3、好友推荐时,根据tag求交集,大于某个阈值就可以推荐 | 
-| Sorted Set | 将Set中的元素增加一个权重参数score,元素按score有序排列 | 数据插入集合时,已经进行天然排序 | 1、排行榜 2、带权重的消息队列|
+| 类型       | 简介                                                   | 特性                                                                                                                                 | 场景                                                                                                  |
+| ---------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| String     | 二进制安全                                             | 可以包含任何数据,比如jpg图片或者序列化的对象,一个键最大能存储512M                                                                    | ---                                                                                                   |
+| Hash       | 键值对集合,即编程语言中的Map类型                       | 适合存储对象,并且可以像数据库中update一个属性一样只修改某一项属性值(Memcached中需要取出整个字符串反序列化成对象修改完再序列化存回去) | 存储、读取、修改用户属性                                                                              |
+| List       | 链表(双向链表)                                         | 增删快,提供了操作某一段元素的API                                                                                                     | 1,最新消息排行等功能(比如朋友圈的时间线) 2,消息队列                                                   |
+| Set        | 哈希表实现,元素不重复                                  | 1、添加、删除,查找的复杂度都是O(1) 2、为集合提供了求交集、并集、差集等操作                                                           | 1、共同好友 2、利用唯一性,统计访问网站的所有独立ip 3、好友推荐时,根据tag求交集,大于某个阈值就可以推荐 |
+| Sorted Set | 将Set中的元素增加一个权重参数score,元素按score有序排列 | 数据插入集合时,已经进行天然排序                                                                                                      | 1、排行榜 2、带权重的消息队列                                                                         |
 
 ## cli常用操作
 
@@ -49,10 +49,6 @@ Redis 事务的本质是一组命令批量执行，并不具备原子能力，�
 
 事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。
 
-## Redis 脚本
-
-
-
 ## 在 cli 外部批量操作
 
 批量删除 keys
@@ -77,4 +73,31 @@ Redis 事务的本质是一组命令批量执行，并不具备原子能力，�
 后台运行也可以修改配置文件实现。
 
 
+## redis redistemplate KEY为字符串是多双引号的问题
 
+原因是 redistemplate 使用json进行序列化，需要对 key value 使用不同的序列化策略。
+
+推荐使用如下配置
+
+```
+@Configuration
+public class RedisConfiguration {
+
+    @Bean
+    public GenericJackson2JsonRedisSerializer genericJackson2JsonRedisJsonSerializer() {
+        return new GenericJackson2JsonRedisSerializer();
+    }
+
+    @Bean
+    RedisTemplate<String, Object> redisTemplate(JedisConnectionFactory jedisConnectionFactory) {
+        final RedisTemplate<String, Object> restTemplate = new RedisTemplate<>();
+        restTemplate.setConnectionFactory(jedisConnectionFactory);
+        restTemplate.setKeySerializer(new StringRedisSerializer());
+        restTemplate.setValueSerializer(genericJackson2JsonRedisJsonSerializer());
+        return restTemplate;
+    }
+}
+
+```
+
+这里定义了 key 和 value 的序列化策略，如果需要使用更多的数据类型，需要添加适当的序列化策略。
