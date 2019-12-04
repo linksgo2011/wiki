@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Hibernate 主键生成策略</title>
+      <link href="/hibernate/hibernate/hibernate-id/"/>
+      <url>/hibernate/hibernate/hibernate-id/</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用-JPA-生成策略"><a href="#使用-JPA-生成策略" class="headerlink" title="使用 JPA 生成策略"></a>使用 JPA 生成策略</h2><p>在实体中使用 @GeneratedValue 即可生成</p><pre><code>public class Role implements Serializable {    @Id    @GeneratedValue(strategy = GenerationType.IDENTITY)    private Long id;}</code></pre><p>JPA 标准中默认支持四种策略</p><ul><li>TABLE //使用一个额外的数据库表来保存主键</li><li>SEQUENCE //使用序列的方式，且其底层数据库要支持序列，一般有postgres、Oracle等</li><li>IDENTITY //主键由数据库生成，一般为自增型主键，支持的有MySql和Sql Server</li><li>AUTO //由程序来决定主键规则</li></ul><p>如果不指定策略，默认为 AUTO</p><h2 id="Hibernate-内置策略"><a href="#Hibernate-内置策略" class="headerlink" title="Hibernate 内置策略"></a>Hibernate 内置策略</h2><p>除了 JPA 标准策略之外 Hibernate 还有很多其他策略。可以在实体类中定义一个生成器。然后再 GeneratedValue 注解中使用即可。</p><pre><code>@Entity@Table(name = &quot;ip_user&quot;)@GenericGenerator(name = &quot;jpa-uuid&quot;, strategy = &quot;uuid&quot;)public class User  implements Serializable {    @Id    @GeneratedValue(generator = &quot;jpa-uuid&quot;)    @Column(length = 32)    private String userId;    ...}</code></pre><p>在 Hibernate 源码中，DefaultIdentifierGeneratorFactory 注册了大量的生成器。</p><pre><code> public DefaultIdentifierGeneratorFactory() {        register( &quot;uuid2&quot;, UUIDGenerator.class );        register( &quot;guid&quot;, GUIDGenerator.class );            // can be done with UUIDGenerator + strategy        register( &quot;uuid&quot;, UUIDHexGenerator.class );         // &quot;deprecated&quot; for new use        register( &quot;uuid.hex&quot;, UUIDHexGenerator.class );     // uuid.hex is deprecated        register( &quot;assigned&quot;, Assigned.class );        register( &quot;identity&quot;, IdentityGenerator.class );        register( &quot;select&quot;, SelectGenerator.class );        register( &quot;sequence&quot;, SequenceStyleGenerator.class );        register( &quot;seqhilo&quot;, SequenceHiLoGenerator.class );        register( &quot;increment&quot;, IncrementGenerator.class );        register( &quot;foreign&quot;, ForeignGenerator.class );        register( &quot;sequence-identity&quot;, SequenceIdentityGenerator.class );        register( &quot;enhanced-sequence&quot;, SequenceStyleGenerator.class );        register( &quot;enhanced-table&quot;, TableGenerator.class );    }    public void register(String strategy, Class generatorClass) {        LOG.debugf( &quot;Registering IdentifierGenerator strategy [%s] -&gt; [%s]&quot;, strategy, generatorClass.getName() );        final Class previous = generatorStrategyToClassNameMap.put( strategy, generatorClass );        if ( previous != null ) {            LOG.debugf( &quot;    - overriding [%s]&quot;, previous.getName() );        }    }</code></pre><p>常用的说明</p><h3 id="uuid"><a href="#uuid" class="headerlink" title="uuid"></a>uuid</h3><p>采用 128位的uuid算法生成主键，uuid被编码为一个32位16进制数字的字符串。<br>当使用strategy为uuid时，使用的时hibernate自己定义的UUID生成算法，此策略已过时，其具体实现参照org.hibernate.id. UUIDHexGenerator, 生成的字符串如402880876359adeb016359ae27190000<br>当使用strategy为uuid2时，此为此版本推荐使用的uuid生成算法，其默认采用标准的生成策略StandardRandomStrategy，实现为使用jdk自带的uuid生成方法，生成的字符串如<br>4af17c8e-8317-43e9-aff9-12d5590a71c6</p><h3 id="assigned"><a href="#assigned" class="headerlink" title="assigned"></a>assigned</h3><p>插入主键时，由程序来指定。相当于JPA中的AUTO。</p><h3 id="guid"><a href="#guid" class="headerlink" title="guid"></a>guid</h3><p>采用数据库底层的guid算法机制，对应MYSQL的uuid()函数，SQL Server的newid()函数，ORACLE的rawtohex(sys_guid())函数等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hibernate </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>常用断言写法</title>
       <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/assert-basic/"/>
       <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/assert-basic/</url>
@@ -1295,23 +1312,6 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><pre><code class="yaml">version: 2jobs:  build:    machine:      java:        version: oraclejdk8    working_directory: ~/whoisspy    steps:      - checkout      - run: ./gradlew clean build      - store_artifacts:          path: build/libs  deploy:    machine: true    working_directory: ~/whoisspy    steps:      - checkout      - run:          name: Display current position          command: pwd      - run:          name: Display those variables          command: env      - run:          name: Download jar file          command: |            export CIRCLE_TOKEN=&#39;?circle-token=93106a0b530273d9cb344ea608bc609490fdf202&#39;            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o &#39;https://[^&quot;]*&#39; &gt; artifacts.txt            &lt;artifacts.txt xargs -P4 -I % wget %      - run:          name: Display whole list          command: ls -al &amp; aws --version      - run:          name: Change permission for aws.pem          command: chmod 0600 .circleci/aws.pem      - run:          name: SCP file to instance          command: scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar      - run:          name: login to target instance          command: |            ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;      - run:          name: last step          command: pwd#      - run:#          name: kill ssh process#          command: |##            pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )#            sleep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;workflows:  version: 2  build-deploy:    jobs:      - build      - deploy:          requires:            - build          filters:            branches:              only: set-ci</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
       <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
@@ -1322,6 +1322,23 @@
       <categories>
           
           <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Circle CI 基本使用</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><pre><code class="yaml">version: 2jobs:  build:    machine:      java:        version: oraclejdk8    working_directory: ~/whoisspy    steps:      - checkout      - run: ./gradlew clean build      - store_artifacts:          path: build/libs  deploy:    machine: true    working_directory: ~/whoisspy    steps:      - checkout      - run:          name: Display current position          command: pwd      - run:          name: Display those variables          command: env      - run:          name: Download jar file          command: |            export CIRCLE_TOKEN=&#39;?circle-token=93106a0b530273d9cb344ea608bc609490fdf202&#39;            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o &#39;https://[^&quot;]*&#39; &gt; artifacts.txt            &lt;artifacts.txt xargs -P4 -I % wget %      - run:          name: Display whole list          command: ls -al &amp; aws --version      - run:          name: Change permission for aws.pem          command: chmod 0600 .circleci/aws.pem      - run:          name: SCP file to instance          command: scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar      - run:          name: login to target instance          command: |            ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;      - run:          name: last step          command: pwd#      - run:#          name: kill ssh process#          command: |##            pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )#            sleep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;workflows:  version: 2  build-deploy:    jobs:      - build      - deploy:          requires:            - build          filters:            branches:              only: set-ci</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -1567,23 +1584,6 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
@@ -1594,23 +1594,6 @@
       <categories>
           
           <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
           
       </categories>
       
@@ -1635,6 +1618,23 @@
     </entry>
     
     <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React 资源收集</title>
       <link href="/React/react/react-recource/"/>
       <url>/React/react/react-recource/</url>
@@ -1652,11 +1652,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
       
       
       <categories>
@@ -1674,6 +1674,23 @@
       <url>/php/php/php-mamp/</url>
       
         <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
+      
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -1720,6 +1737,23 @@
     </entry>
     
     <entry>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP环境 in Mac</title>
       <link href="/php/php/php-environment-in-mac/"/>
       <url>/php/php/php-environment-in-mac/</url>
@@ -1737,11 +1771,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>PHP拓展Linux/unix 下的编译安装</title>
+      <link href="/php/php/PHP-extension/"/>
+      <url>/php/php/PHP-extension/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
       
       
       <categories>
@@ -1776,23 +1810,6 @@
       <url>/php/php/simple-log-feature/</url>
       
         <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP拓展Linux/unix 下的编译安装</title>
-      <link href="/php/php/PHP-extension/"/>
-      <url>/php/php/PHP-extension/</url>
-      
-        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
       
       
       <categories>
@@ -1856,23 +1873,6 @@
     </entry>
     
     <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Spring boot 学习指南</title>
       <link href="/Spring/spring/Spring%20boot%20Basic/"/>
       <url>/Spring/spring/Spring%20boot%20Basic/</url>
@@ -1883,6 +1883,23 @@
       <categories>
           
           <category> Spring </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Mock工具 wiremock</title>
+      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
+      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
+      
+        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 质量保证 </category>
           
       </categories>
       
@@ -1924,16 +1941,16 @@
     </entry>
     
     <entry>
-      <title>Mock工具 wiremock</title>
-      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
-      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
       
-        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
           
-          <category> 质量保证 </category>
+          <category> java </category>
           
       </categories>
       
@@ -1941,16 +1958,16 @@
     </entry>
     
     <entry>
-      <title>使用Java构建API的知识体系</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> java </category>
           
       </categories>
       
@@ -1975,16 +1992,16 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>使用Java构建API的知识体系</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -2060,11 +2077,11 @@
     </entry>
     
     <entry>
-      <title>前端面试tips</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
+      <title>CSS样式框架选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
       
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
       
       
       <categories>
@@ -2077,11 +2094,11 @@
     </entry>
     
     <entry>
-      <title>CSS样式框架选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
+      <title>前端面试tips</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -2128,23 +2145,6 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/linux/linux/nginx-usful%20command/"/>
-      <url>/linux/linux/nginx-usful%20command/</url>
-      
-        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Gradle 构建 Spring boot 项目</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
@@ -2155,6 +2155,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Nginx 常用操作</title>
+      <link href="/linux/linux/nginx-usful%20command/"/>
+      <url>/linux/linux/nginx-usful%20command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -2213,6 +2230,23 @@
     </entry>
     
     <entry>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Ansible 入门和使用</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
@@ -2230,16 +2264,16 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      <title>必背的常用VIM命令</title>
+      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/"/>
+      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<p>通常来讲,我们不需要使用VIM做开发,但是需要掌握基本的VIM命令,因为需要在服务器上使用。<br>网上的VIM命令表太长,整理一个基本的命令表</p><p>【按下Esc后的命令模式执行</p><hr><pre><code>              a       插入字母后              i       插入当前光标</code></pre><hr><pre><code>            dd       删除当前行            yy       复制当前行</code></pre><hr><pre><code>             v       选择             d       剪切             y       复制             p       粘贴在当前光标处上面             P       粘贴在当前光标处下面    shift+p       在当前行前粘贴</code></pre><hr><pre><code>             u       撤销操作      ctrl+r       重复操作</code></pre><hr><pre><code>             ^       移动到本行第一个非空白字符上   0(数字0)      移动到本行第一个字符上,             $       移动到行尾           3$       移动到下面3行的行尾      ctrl+f       跳转下一页     ctrl+b       跳转上一页       [[/gg       文件头        ]]/G       文件尾</code></pre><hr><pre><code>    :set nu       显示行号        :100       跳转到100位置</code></pre><hr><pre><code>           :q!       不保存退出            :w       保存             :x       保存退出</code></pre><hr><pre><code>                /xxx       向后查找xxx                ?xxx       向上查找xxx                     n       继续查找下一个</code></pre><h2 id="set-nohlsearch-关闭高亮搜索显示"><a href="#set-nohlsearch-关闭高亮搜索显示" class="headerlink" title="   :set nohlsearch       关闭高亮搜索显示"></a>   :set nohlsearch       关闭高亮搜索显示</h2><p>  :%s/abc/123/gc       将abc替换成123</p>]]></content>
       
       
       <categories>
           
-          <category> 运维开发 </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -2264,16 +2298,16 @@
     </entry>
     
     <entry>
-      <title>必背的常用VIM命令</title>
-      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/"/>
-      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/</url>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
       
-        <content type="html"><![CDATA[<p>通常来讲,我们不需要使用VIM做开发,但是需要掌握基本的VIM命令,因为需要在服务器上使用。<br>网上的VIM命令表太长,整理一个基本的命令表</p><p>【按下Esc后的命令模式执行</p><hr><pre><code>              a       插入字母后              i       插入当前光标</code></pre><hr><pre><code>            dd       删除当前行            yy       复制当前行</code></pre><hr><pre><code>             v       选择             d       剪切             y       复制             p       粘贴在当前光标处上面             P       粘贴在当前光标处下面    shift+p       在当前行前粘贴</code></pre><hr><pre><code>             u       撤销操作      ctrl+r       重复操作</code></pre><hr><pre><code>             ^       移动到本行第一个非空白字符上   0(数字0)      移动到本行第一个字符上,             $       移动到行尾           3$       移动到下面3行的行尾      ctrl+f       跳转下一页     ctrl+b       跳转上一页       [[/gg       文件头        ]]/G       文件尾</code></pre><hr><pre><code>    :set nu       显示行号        :100       跳转到100位置</code></pre><hr><pre><code>           :q!       不保存退出            :w       保存             :x       保存退出</code></pre><hr><pre><code>                /xxx       向后查找xxx                ?xxx       向上查找xxx                     n       继续查找下一个</code></pre><h2 id="set-nohlsearch-关闭高亮搜索显示"><a href="#set-nohlsearch-关闭高亮搜索显示" class="headerlink" title="   :set nohlsearch       关闭高亮搜索显示"></a>   :set nohlsearch       关闭高亮搜索显示</h2><p>  :%s/abc/123/gc       将abc替换成123</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
       
       
       <categories>
           
-          <category> 开发工具 </category>
+          <category> 敏捷开发 </category>
           
       </categories>
       
@@ -2315,16 +2349,16 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      <title>怎么样快速入门/学习一项技术</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>编写文档到知识系统中</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 敏捷开发 </category>
+          <category> 自我管理 </category>
           
       </categories>
       
@@ -2342,23 +2376,6 @@
       <categories>
           
           <category> 职业素质 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>怎么样快速入门/学习一项技术</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/</url>
-      
-        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>编写文档到知识系统中</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
           
       </categories>
       
