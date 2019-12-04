@@ -8,8 +8,11 @@
   
   <meta name="description" content="一个项目需要做多少测试，做到什么程度，这属于测试策略的范畴。
 分层测试
-API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service，测试的目标是数据的转换，权限控制
-Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture 来进">
+API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service
+测试的目标是返回的状态码等等信息
+
+
+Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -63,7 +66,10 @@ Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture �
 	  <!-- content -->
 	  <p>一个项目需要做多少测试，做到什么程度，这属于测试策略的范畴。</p>
 <h2 id="分层测试"><a href="#分层测试" class="headerlink" title="分层测试"></a>分层测试</h2><ul>
-<li>API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service，测试的目标是数据的转换，权限控制</li>
+<li>API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service<ul>
+<li>测试的目标是返回的状态码等等信息</li>
+</ul>
+</li>
 <li>Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture 来进行测试，这是测试重心之一</li>
 <li>Domain 测试使用纯的单元测试，测试业务逻辑, domain 保持干净可以不使用 Mock 工具,这也是测试重心</li>
 <li>Repository 有 ORM 实现，在 Service 处做测试</li>
@@ -88,6 +94,10 @@ Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture �
 	
 	
 	
+	
+		
+			
+		
 	
 		
 	

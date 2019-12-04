@@ -7,7 +7,8 @@ categories: 质量保证
 
 ## 分层测试
 
-- API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service，测试的目标是数据的转换，权限控制
+- API 层使用 MockMVC 进行简单的测试，目的是快速验证，mock 掉 Service
+  - 测试的目标是返回的状态码等等信息
 - Service 层结合 Repository 测试，测试业务逻辑，结合 DataFixture 来进行测试，这是测试重心之一
 - Domain 测试使用纯的单元测试，测试业务逻辑, domain 保持干净可以不使用 Mock 工具,这也是测试重心
 - Repository 有 ORM 实现，在 Service 处做测试

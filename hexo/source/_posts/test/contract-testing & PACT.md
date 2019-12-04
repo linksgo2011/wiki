@@ -12,6 +12,10 @@ categories: 质量保证
 
 pact 是contact测试的一个实现
 
+## 我的一个契约测试的例子
+
+- https://github.com/domain-driven-design/contract-testing-mockmvc
+
 ## 一些资源
 
 - pact文档 https://docs.pact.io
