@@ -112,14 +112,22 @@ private long port;
 
 ### Spring mvc
 
+- @EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置
+- @Controller 声明该类为SpringMVC中的Controller
+- @RequestMapping 用于映射Web请求，包括访问路径和参数（类或方法上）
+- @ResponseBody 支持将返回值放在response内，而不是一个页面，通常用户返回json数据（返回值旁或方法上）
+- @PathVariable 用于接收路径参数
+- @RestController 该注解为一个组合注解，相当于@Controller和@ResponseBody的组合
+- @ControllerAdvice 通过该注解，我们可以将对于控制器的全局配置放置在同一个位置
+- @Controller的类的方法可使用@ExceptionHandler、@InitBinder、@ModelAttribute注解到方法上
+- @ExceptionHandler 用于全局处理控制器里的异常
+- @InitBinder 用来设置WebDataBinder，WebDataBinder用来自动绑定前台请求参数到Model中，使用 RESTful API 用不到这些
+- @ModelAttribute 本来的作用是绑定键值对到Model里，在@ControllerAdvice中是让全局的
+
 ### 单元测试相关
 
 - @RunWith 运行器，Spring中通常用于对JUnit的支持
 - @ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类
-  
-
-
-
 
 ## 参考学习资料
 
