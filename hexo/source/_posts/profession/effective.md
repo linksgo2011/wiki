@@ -15,3 +15,17 @@ toc: true
 例如 userRepository.save() 补全返回的结果
 
 使用 alt + 两次 enter 即可实现自动补全。
+
+## 清除控制台
+
+command + K
+
+## 可以提高效率的 IntelliJ 的快捷键
+
+显示最近的文件
+
+command E
+
+选中当前文本
+command W
+

@@ -152,14 +152,24 @@ List&lt;User&gt; findByLastname(String lastname, Sort sort);
 
 List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 
-</code></pre><h2 id="关联查询"><a href="#关联查询" class="headerlink" title="关联查询"></a>关联查询</h2><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id
+</code></pre><h2 id="一对多级联存储"><a href="#一对多级联存储" class="headerlink" title="一对多级联存储"></a>一对多级联存储</h2><p>一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。</p>
+<pre><code> Feature ageFeature = new Feature();
+        ageFeature.setName(&quot;年龄&quot;);
+        ageFeature.setStep(2);
+
+        ageFeature.setFeatureValues(Arrays.asList(
+                new FeatureValue(null, &quot;10-20&quot;, ageFeature),
+                new FeatureValue(null, &quot;20-30&quot;, ageFeature)
+        ));
+        return ageFeature;
+</code></pre><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id
     @GeneratedValue(generator = &quot;UUID&quot;)
     @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)
     private String id;
 
-</code></pre><h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><pre><code>    @Enumerated(STRING)
+</code></pre><h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)
     private AccountRoles role;
-</code></pre><p>变成枚举类型。</p>
+</code></pre><p>可以将字符串类型变成枚举类型。</p>
 <h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol>
 <li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li>
 <li>应该使用 DDD 思想去设计关联，禁止双向关联</li>
@@ -214,6 +224,10 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 	
 	
 		
+			
+		
+	
+		
 	
 		
 			
@@ -445,9 +459,9 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
-	
-		
 			
+		
+	
 		
 	
 		

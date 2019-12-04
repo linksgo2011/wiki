@@ -104,7 +104,21 @@ List<User> findByLastname(String lastname, Pageable pageable);
 
 ```
 
-## 关联查询
+## 一对多级联存储
+
+一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。
+
+```
+ Feature ageFeature = new Feature();
+        ageFeature.setName("年龄");
+        ageFeature.setStep(2);
+
+        ageFeature.setFeatureValues(Arrays.asList(
+                new FeatureValue(null, "10-20", ageFeature),
+                new FeatureValue(null, "20-30", ageFeature)
+        ));
+        return ageFeature;
+```
 
 
 ## UUID 生成策略
@@ -119,12 +133,14 @@ List<User> findByLastname(String lastname, Pageable pageable);
 
 ## 常用注解
 
+### Enumerated 
+
 ```
     @Enumerated(STRING)
     private AccountRoles role;
 ```
 
-变成枚举类型。
+可以将字符串类型变成枚举类型。
 
 ## 一些坑
 
