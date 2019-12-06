@@ -206,7 +206,13 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 <li>不要有一些无意义的关联</li>
 <li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li>
 </ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="在-Spring-data-中使用-entityManager-直接操作数据"><a href="#在-Spring-data-中使用-entityManager-直接操作数据" class="headerlink" title="在 Spring data 中使用 entityManager 直接操作数据"></a>在 Spring data 中使用 entityManager 直接操作数据</h2><pre><code>  @Autowired
+  EntityManager entityManager;
+
+  Role role = entityManager.find(Role.class, savedRole.getId());
+  assertEquals(&quot;remark&quot;, role.getRemark());
+
+</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li>
 <li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li>
 <li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li>
@@ -224,6 +230,14 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 	
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -471,13 +485,13 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
+	
+		
+	
+		
+	
+		
 			
-		
-	
-		
-	
-		
-	
 		
 	
 		

@@ -182,6 +182,20 @@ List<User> findByLastname(String lastname, Pageable pageable);
 1. 不要有一些无意义的关联
 2. 使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量
 
+## 在 Spring data 中使用 entityManager 直接操作数据
+
+
+```
+  @Autowired
+  EntityManager entityManager;
+
+  Role role = entityManager.find(Role.class, savedRole.getId());
+  assertEquals("remark", role.getRemark());
+
+```
+
+
+
 ## 参考资料
 
 -  示例项目 https://github.com/spring-projects/spring-data-examples/tree/master/jpa
