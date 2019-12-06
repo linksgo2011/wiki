@@ -29,3 +29,5 @@ command E
 选中当前文本
 command W
 
+返回代码上一处
+Command+ Alt + 左右键
