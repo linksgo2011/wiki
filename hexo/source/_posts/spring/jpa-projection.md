@@ -102,6 +102,7 @@ springbootboilerplate.read.FeatureProjection 不然会报类找不到。
 
 如果不想使用 new 的方法，可以使用在结果集的对象上/类上，打上 @Projection 注解，并给出类的来源 types 属性
 
+
 ## 参考资料
 
 - https://stackoverflow.com/questions/46083329/no-converter-found-capable-of-converting-from-type-to-type

@@ -103,6 +103,14 @@ Spring data，是 Spring ">
 </ul>
 <h2 id="Spring-Data-JPA-的主要类"><a href="#Spring-Data-JPA-的主要类" class="headerlink" title="Spring Data JPA 的主要类"></a>Spring Data JPA 的主要类</h2><p>从 SimpleJpaRepository 的实现开，使用 idea 分析出类图。</p>
 <p><img src="/Spring/spring/spring-data/simple-jpa-repository-diagram.png" alt="SimpleJpaRepository"></p>
+<ul>
+<li>EntityManagerFactory EntityManager 的工厂类</li>
+<li>EntityManager 一个接口，管理持久化操作的对象</li>
+<li>Entity 实体是持久性对象，对应存储在数据库中的记录</li>
+<li>EntityTransaction 和 EntityManager 是一对一关系，提供事务支持</li>
+<li>Persistence 包含静态方法，获取 EntityManagerFactory 实例</li>
+<li>Query 该接口由每个 JPA 供应商提供，用于数据查询</li>
+</ul>
 <h2 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h2><p><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">https://spring.io/guides/gs/accessing-data-jpa/</a></p>
 <h2 id="常见的查询方法"><a href="#常见的查询方法" class="headerlink" title="常见的查询方法"></a>常见的查询方法</h2><p>查询方法策略就是Spring Data如何从 repository 中找到合适的查询方法。有一下几种</p>
 <ul>
@@ -167,12 +175,141 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
     @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)
     private String id;
 
-</code></pre><h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)
+</code></pre><h2 id="Entity-实例里面常用注解"><a href="#Entity-实例里面常用注解" class="headerlink" title="@Entity 实例里面常用注解"></a>@Entity 实例里面常用注解</h2><h3 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a>@Entity</h3><p>javax.persistence 包中提供，设置该对象会被 JPA 管理，并映射到指定的数据库表。</p>
+<p>这个类可以给一个名字。</p>
+<h3 id="Table"><a href="#Table" class="headerlink" title="@Table"></a>@Table</h3><p>指定数据库表名</p>
+<pre><code>// 表名，可以使用命名策略设置约定的名字
+String name() default &quot;&quot;;
+// 数据库抽象概念,用于处理table 的命名冲突
+String catalog() default &quot;&quot;;
+// 一般来说，是指数据库名
+String schema() default &quot;&quot;;
+// 唯一约束，如果不使用 JPA 自动建表不用管
+UniqueConstraint[] uniqueConstraints() default {};
+// 索引，建表时候使用，一般来说不需要
+Index[] indexes() default {};
+</code></pre><h3 id="ID"><a href="#ID" class="headerlink" title="@ID"></a>@ID</h3><p>指定为实体的主键，JPA 兼容遗留系统，使用复合主键。@IdClass </p>
+<p>不过推荐不使用。</p>
+<h3 id="GeneratedValue"><a href="#GeneratedValue" class="headerlink" title="@GeneratedValue"></a>@GeneratedValue</h3><p>主键生成策略 GenerationType 中定义了四种主键生成策略</p>
+<ul>
+<li>TABLE 通过表序列生成，框架模拟表增长</li>
+<li>SEQUENCE 采用数据库序列增长，MySQL 不支持这种方式</li>
+<li>IDENTITY 使用表主键的自动增长</li>
+<li>AUTO 自动选择，默认设置选项，但不推荐使用</li>
+</ul>
+<h3 id="Basic"><a href="#Basic" class="headerlink" title="@Basic"></a>@Basic</h3><p>属性到数据库字段的映射，如果实体属性上没有任何注解，默认为@Basic</p>
+<p>使用 @Basic 提供了额外懒加载的特性，对大字段非常有用</p>
+<h3 id="Transient"><a href="#Transient" class="headerlink" title="@Transient"></a>@Transient</h3><p>设置为忽略，表明该字段不会被持久化。使用上和 @Basic 相反，JPA 映射数据库的时候选择忽略它。</p>
+<h3 id="Column"><a href="#Column" class="headerlink" title="@Column"></a>@Column</h3><p>定义实体属性和数据库字段的列名，这个注解的参数比较多。</p>
+<pre><code>// 列名
+String name() default &quot;&quot;;
+// 是否唯一
+boolean unique() default false;
+// 是否允许为空，用于建表时使用
+boolean nullable() default true;
+// 是否插入数据库
+boolean insertable() default true;
+// 是否运行更新数据库
+boolean updatable() default true;
+// 表名，用的比较少
+String table() default &quot;&quot;;
+// 下面三个用于创建表的属性设定
+int length() default 255;
+int precision() default 0;
+int scale() default 0;
+</code></pre><h3 id="Temporal"><a href="#Temporal" class="headerlink" title="@Temporal"></a>@Temporal</h3><p>Temporal 用于设置 Date 类型的属性到对应精度的字段。</p>
+<ul>
+<li>TemporalType.DATE 映射为日期</li>
+<li>TemporalType.TIME 映射为时间</li>
+<li>TemporalType.TIMESTAMP 映射为时间戳</li>
+</ul>
+<h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)
     private AccountRoles role;
-</code></pre><p>可以将字符串类型变成枚举类型。</p>
-<h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol>
+</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。</p>
+<h3 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h3><p>建表时候映射为大字段</p>
+<ul>
+<li>如果是字符串类型会映射为 Clob 类型</li>
+<li>如果是字节类型，会映射为 Blob</li>
+</ul>
+<h3 id="JoinColumn"><a href="#JoinColumn" class="headerlink" title="@JoinColumn"></a>@JoinColumn</h3><p>配合 @OneToOne、@OneToMany、ManyToOne 使用，单独使用没有意义。</p>
+<p>@JoinColumn 多个字段的关联关系，很少用</p>
+<h3 id="OneToOne"><a href="#OneToOne" class="headerlink" title="@OneToOne"></a>@OneToOne</h3><pre><code>// 默认当前字段的类型
+Class targetEntity() default void.class;
+// 级联操作类型
+CascadeType[] cascade() default {};
+
+1. CascadeType.ALL
+2. CascadeType.PERSIST
+3. CascadeType.MERGE
+4. CascadeType.REMOVE
+5. CascadeType.REFRESH
+6. CascadeType.DETACH
+
+// 是否懒加载
+
+FetchType fetch() default EAGER;
+
+// 是否为空
+ boolean optional() default true;
+
+// 配置对方拥有关系
+String mappedBy() default &quot;&quot;;
+
+// 是否反向级联删除
+boolean orphanRemoval() default false;
+
+</code></pre><p>@OneToOne 需要和 @JoinColumn(name = “solution_id”) 配合使用。</p>
+<p>例如一个用户对应有一个头像</p>
+<pre><code>    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = &quot;avatar_id&quot;)
+    private UserAvatar userAvatar;
+</code></pre><h3 id="OneToMany-和-ManyToOne"><a href="#OneToMany-和-ManyToOne" class="headerlink" title="@OneToMany 和 @ManyToOne"></a>@OneToMany 和 @ManyToOne</h3><p>这两个参数和 @OneToOne 差不多，也需要和 @JoinColumn 配合使用</p>
+<pre><code>
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = &quot;feature_id&quot;)
+    private List&lt;FeatureValue&gt; featureValues;
+</code></pre><p>@OneToMany 需要额外配合使用的注解是 @OrderBy</p>
+<p>在 @OneToMany 中，使用 @OrderBy 控制列表的顺序</p>
+<pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = &quot;feature_id&quot;)
+    @OrderBy(&quot;order DESC&quot;)
+    private List&lt;FeatureValue&gt; featureValues;
+</code></pre><h2 id="ManyToMany"><a href="#ManyToMany" class="headerlink" title="@ManyToMany"></a>@ManyToMany</h2><p>多对多一般发生在聚合根之间，其中有一个隐藏的关联表。</p>
+<pre><code>    @ManyToMany
+    @JoinTable(name = &quot;product_feature_value&quot;,
+            joinColumns = {@JoinColumn(name = &quot;product_id&quot;, referencedColumnName = &quot;id&quot;)},
+            inverseJoinColumns = {@JoinColumn(name = &quot;feature_value_id&quot;, referencedColumnName = &quot;id&quot;)}
+    )
+    private List&lt;FeatureValue&gt; featureValues;
+</code></pre><p>一个 Product 有多个 FeatureValue，使用多对多需要引入 product_feature_value 中间表。</p>
+<h2 id="EntityGraph-解决-N-1-条-SQL-的问题"><a href="#EntityGraph-解决-N-1-条-SQL-的问题" class="headerlink" title="@EntityGraph 解决 N+1 条 SQL 的问题"></a>@EntityGraph 解决 N+1 条 SQL 的问题</h2><p>使用一对多，多对多关联的时，会产生 N+1 条SQL，我们可以通过使用 Join 来避免这种情况。</p>
+<p>使用 join 有三种方法</p>
+<ul>
+<li>@EntityGraph 在实体关联阶段解决</li>
+<li>@Query JPQL</li>
+<li>Criteria API 编写 JOIN 子句</li>
+</ul>
+<p>使用 @EntityGraph</p>
+<p>现在实体上定义</p>
+<pre><code>@Table(name = &quot;user&quot;)
+@NamedEntityGraph(name=&quot;userReadModel.department&quot;,attributeNodes={@NamedAttributeNode(&quot;department&quot;)})
+public class UserReadModel {
+
+    @ManyToOne
+    @JoinColumn(name = &quot;department_id&quot;)
+    private Department department;
+
+</code></pre><p>在查询的方法上使用即可</p>
+<pre><code>@Repository
+public interface UserReadModelRepository extends JpaRepository&lt;UserReadModel, Long&gt;,
+        JpaSpecificationExecutor&lt;UserReadModel&gt; {
+
+    @EntityGraph(value = &quot;userReadModel.department&quot; , type= EntityGraph.EntityGraphType.FETCH)
+    List&lt;UserReadModel&gt; findAll(@Nullable Specification&lt;UserReadModel&gt; spec);
+}
+</code></pre><h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol>
 <li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li>
-<li>应该使用 DDD 思想去设计关联，禁止双向关联</li>
+<li>应该使用 DDD 思想去设计关联，减少不必要的关联，聚合根之间不要关联。查询使用 join 完成</li>
 <li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li>
 <li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li>
 <li>@ManyToMany 默认会删除关联表</li>
@@ -489,9 +626,9 @@ List&lt;User&gt; findByLastname(String lastname, Pageable pageable);
 		
 	
 		
-	
-		
 			
+		
+	
 		
 	
 		

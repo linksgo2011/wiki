@@ -75,7 +75,7 @@
       <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/quick-learn/"/>
       <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/quick-learn/</url>
       
-        <content type="html"><![CDATA[<h2 id="学习的一般过程"><a href="#学习的一般过程" class="headerlink" title="学习的一般过程"></a>学习的一般过程</h2><ul><li>采访专业的人，了解知识框架和学习路线</li><li>倍速看视频教程，了解如何做</li><li>编写代码，动手实践</li><li>看相关的书深入学习，了解原理以及<strong>使用中的一些注意事项</strong></li><li>看源码</li></ul><h2 id="学习的注意事项"><a href="#学习的注意事项" class="headerlink" title="学习的注意事项"></a>学习的注意事项</h2><ul><li>少量学习，多去实践</li></ul><h2 id="编程相关学习资源"><a href="#编程相关学习资源" class="headerlink" title="编程相关学习资源"></a>编程相关学习资源</h2><p>中文学习资源网站 </p><ul><li>网易云课堂 <a href="http://study.163.com/" target="_blank" rel="noopener">http://study.163.com/</a></li></ul><p>英文学习资源网站</p><ul><li>Lynda.com <a href="https://www.lynda.com/" target="_blank" rel="noopener">https://www.lynda.com/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="学习的一般过程"><a href="#学习的一般过程" class="headerlink" title="学习的一般过程"></a>学习的一般过程</h2><ul><li>采访专业的人，了解知识框架和学习路线</li><li>倍速看视频教程，了解如何做</li><li>编写代码，动手实践，遇到问题搜索</li><li>落入知识系统，可以将做的实验作为例子编写笔记</li><li>看相关的书深入学习，了解原理以及<strong>使用中的一些注意事项</strong></li><li>看源码</li></ul><h2 id="学习的注意事项"><a href="#学习的注意事项" class="headerlink" title="学习的注意事项"></a>学习的注意事项</h2><ul><li>少量学习，多去实践</li></ul><h2 id="编程相关学习资源"><a href="#编程相关学习资源" class="headerlink" title="编程相关学习资源"></a>编程相关学习资源</h2><p>中文学习资源网站 </p><ul><li>网易云课堂 <a href="http://study.163.com/" target="_blank" rel="noopener">http://study.163.com/</a></li></ul><p>英文学习资源网站</p><ul><li>Lynda.com <a href="https://www.lynda.com/" target="_blank" rel="noopener">https://www.lynda.com/</a></li></ul>]]></content>
       
       
       <categories>
@@ -1044,7 +1044,7 @@
       <link href="/Spring/spring/spring-data/"/>
       <url>/Spring/spring/spring-data/</url>
       
-        <content type="html"><![CDATA[<h2 id="Spring、Spring-data-和-Spring-data-JPA-的关系"><a href="#Spring、Spring-data-和-Spring-data-JPA-的关系" class="headerlink" title="Spring、Spring data 和 Spring data JPA 的关系"></a>Spring、Spring data 和 Spring data JPA 的关系</h2><p>Spring data JPA 是 Java 服务器开发中最容易混淆的一堆概念。</p><ul><li>Spring，众所周知是一个轻量级的 IOC 容器，用来处理对象实例（Bean）之间的关系。</li><li>Spring data，是 Spring Framework 生态下用来访问数据的一个模块。</li><li>JPA，是 Java persistence API 的缩写，Java 用来抽象访问数据库的规范，主要实现有 Hibernate、TopLink 等 ORM 库。</li><li>Spirng data JPA，是 Spring data 项目的一个主要模块，用来封装 JPA 实现，并增加了一些便利的方法。如果直接使用 Hibernate 还是需要编写类似于 SQL 的 JPQL 的查询语言。但使用 Spring data JPA 可以实现类似 <code>findById()</code> 一类基本操作的方法。</li></ul><p>Spring Data 的一些属于版本火车的子项目：</p><ul><li>Spring Data Commons</li><li>Spring Data JPA</li><li>Spring Data KeyValue</li><li>Spring Data LDAP</li><li>Spring Data MongoDB</li><li>Spring Data Redis</li><li>Spring Data REST</li><li>Spring Data for Apache Cassandra</li><li>Spring Data for Apache Geode</li><li>Spring Data for Apache Solr</li><li>Spring Data for Pivotal GemFire</li><li>Spring Data Couchbase (community module)</li><li>Spring Data Elasticsearch (community module)</li><li>Spring Data Neo4j (community module)</li></ul><p>版本火车指的是，不同的独立子项目会保持同步的发布节奏，如果使用 Spring boot，也会随着 parent pom 变化，避免版本不一致导致的问题。</p><h2 id="Spring-Data-JPA-主要特性"><a href="#Spring-Data-JPA-主要特性" class="headerlink" title="Spring Data JPA 主要特性"></a>Spring Data JPA 主要特性</h2><ul><li>辅助查询 <code>findByxx</code></li><li>支持使用 Querydsl 复杂统一的查询方法</li><li>分页、排序</li><li>启动时检查 <code>@Query</code> 有效性</li></ul><h2 id="Spring-Data-JPA-的主要类"><a href="#Spring-Data-JPA-的主要类" class="headerlink" title="Spring Data JPA 的主要类"></a>Spring Data JPA 的主要类</h2><p>从 SimpleJpaRepository 的实现开，使用 idea 分析出类图。</p><p><img src="/Spring/spring/spring-data/simple-jpa-repository-diagram.png" alt="SimpleJpaRepository"></p><h2 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h2><p><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">https://spring.io/guides/gs/accessing-data-jpa/</a></p><h2 id="常见的查询方法"><a href="#常见的查询方法" class="headerlink" title="常见的查询方法"></a>常见的查询方法</h2><p>查询方法策略就是Spring Data如何从 repository 中找到合适的查询方法。有一下几种</p><ul><li>CREATE 尝试从查询方法名称构造特定于仓库的查询。例如 findByName，根据约定有以下几种查询方式：<ul><li>find…By</li><li>read…By</li><li>query…By</li><li>count…By</li><li>get…By</li></ul></li><li>USE_DECLARED_QUERY 会从 repository 中定义的方法中寻找合适的查询方式</li><li>CREATE_IF_NOT_FOUND 这是 JPA 默认的策略，组合CREATE和USE_DECLARED_QUERY</li></ul><p>CREATE 策略的几个例子：</p><pre><code>interface PersonRepository extends Repository&lt;User, Long&gt; {  List&lt;Person&gt; findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);  // Enables the distinct flag for the query  List&lt;Person&gt; findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);  List&lt;Person&gt; findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);  // Enabling ignoring case for an individual property  List&lt;Person&gt; findByLastnameIgnoreCase(String lastname);  // Enabling ignoring case for all suitable properties  List&lt;Person&gt; findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);  // Enabling static ORDER BY for a query  List&lt;Person&gt; findByLastnameOrderByFirstnameAsc(String lastname);  List&lt;Person&gt; findByLastnameOrderByFirstnameDesc(String lastname);}</code></pre><ul><li><p>表达式通常是属性遍历和可以连接的运算符。您可以使用组合属性表达式AND和OR。您还可以得到这样的运营商为支撑Between，LessThan，GreaterThan，和Like该属性的表达式。受支持的操作员可能因数据存储而异，因此请参阅相应部分的参考文档。</p></li><li><p>方法解析器支持IgnoreCase为单个属性（例如，findByLastnameIgnoreCase(…)）或支持忽略大小写的类型的所有属性（通常为String实例 - 例如findByLastnameAndFirstnameAllIgnoreCase(…)）设置标志。支持忽略情况的方式可能因商店而异，因此请参阅参考文档中的相关部分以获取特定于商店的查询方法。</p></li><li><p>您可以通过OrderBy向引用属性的查询方法附加子句并提供排序方向（Asc或Desc）来应用静态排序。</p></li></ul><p>分页的情况</p><pre><code>Page&lt;User&gt; findByLastname(String lastname, Pageable pageable);Slice&lt;User&gt; findByLastname(String lastname, Pageable pageable);List&lt;User&gt; findByLastname(String lastname, Sort sort);List&lt;User&gt; findByLastname(String lastname, Pageable pageable);</code></pre><h2 id="一对多级联存储"><a href="#一对多级联存储" class="headerlink" title="一对多级联存储"></a>一对多级联存储</h2><p>一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。</p><pre><code> Feature ageFeature = new Feature();        ageFeature.setName(&quot;年龄&quot;);        ageFeature.setStep(2);        ageFeature.setFeatureValues(Arrays.asList(                new FeatureValue(null, &quot;10-20&quot;, ageFeature),                new FeatureValue(null, &quot;20-30&quot;, ageFeature)        ));        return ageFeature;</code></pre><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id    @GeneratedValue(generator = &quot;UUID&quot;)    @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)    private String id;</code></pre><h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)    private AccountRoles role;</code></pre><p>可以将字符串类型变成枚举类型。</p><h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol><li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li><li>应该使用 DDD 思想去设计关联，禁止双向关联</li><li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li><li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li><li>@ManyToMany 默认会删除关联表</li><li>@Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role</li></ol><pre><code>{  username:&quot;&quot;,  department:{    id: 1  },  roles:[    {      id:1    }  ]}</code></pre><p>当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。</p><ol start="7"><li>当数据库插入异常，会报错，例如违反主键规则</li><li>更新、插入，只要不报错都会返回成功，无需再检查返回值</li></ol><h2 id="JPA-和建表规范"><a href="#JPA-和建表规范" class="headerlink" title="JPA 和建表规范"></a>JPA 和建表规范</h2><ul><li>根据 DDD 原则建表<ul><li>例如 user user_avatar user_role</li></ul></li></ul><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol><li>不要有一些无意义的关联</li><li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li></ol><h2 id="在-Spring-data-中使用-entityManager-直接操作数据"><a href="#在-Spring-data-中使用-entityManager-直接操作数据" class="headerlink" title="在 Spring data 中使用 entityManager 直接操作数据"></a>在 Spring data 中使用 entityManager 直接操作数据</h2><pre><code>  @Autowired  EntityManager entityManager;  Role role = entityManager.find(Role.class, savedRole.getId());  assertEquals(&quot;remark&quot;, role.getRemark());</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li><li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li><li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Spring、Spring-data-和-Spring-data-JPA-的关系"><a href="#Spring、Spring-data-和-Spring-data-JPA-的关系" class="headerlink" title="Spring、Spring data 和 Spring data JPA 的关系"></a>Spring、Spring data 和 Spring data JPA 的关系</h2><p>Spring data JPA 是 Java 服务器开发中最容易混淆的一堆概念。</p><ul><li>Spring，众所周知是一个轻量级的 IOC 容器，用来处理对象实例（Bean）之间的关系。</li><li>Spring data，是 Spring Framework 生态下用来访问数据的一个模块。</li><li>JPA，是 Java persistence API 的缩写，Java 用来抽象访问数据库的规范，主要实现有 Hibernate、TopLink 等 ORM 库。</li><li>Spirng data JPA，是 Spring data 项目的一个主要模块，用来封装 JPA 实现，并增加了一些便利的方法。如果直接使用 Hibernate 还是需要编写类似于 SQL 的 JPQL 的查询语言。但使用 Spring data JPA 可以实现类似 <code>findById()</code> 一类基本操作的方法。</li></ul><p>Spring Data 的一些属于版本火车的子项目：</p><ul><li>Spring Data Commons</li><li>Spring Data JPA</li><li>Spring Data KeyValue</li><li>Spring Data LDAP</li><li>Spring Data MongoDB</li><li>Spring Data Redis</li><li>Spring Data REST</li><li>Spring Data for Apache Cassandra</li><li>Spring Data for Apache Geode</li><li>Spring Data for Apache Solr</li><li>Spring Data for Pivotal GemFire</li><li>Spring Data Couchbase (community module)</li><li>Spring Data Elasticsearch (community module)</li><li>Spring Data Neo4j (community module)</li></ul><p>版本火车指的是，不同的独立子项目会保持同步的发布节奏，如果使用 Spring boot，也会随着 parent pom 变化，避免版本不一致导致的问题。</p><h2 id="Spring-Data-JPA-主要特性"><a href="#Spring-Data-JPA-主要特性" class="headerlink" title="Spring Data JPA 主要特性"></a>Spring Data JPA 主要特性</h2><ul><li>辅助查询 <code>findByxx</code></li><li>支持使用 Querydsl 复杂统一的查询方法</li><li>分页、排序</li><li>启动时检查 <code>@Query</code> 有效性</li></ul><h2 id="Spring-Data-JPA-的主要类"><a href="#Spring-Data-JPA-的主要类" class="headerlink" title="Spring Data JPA 的主要类"></a>Spring Data JPA 的主要类</h2><p>从 SimpleJpaRepository 的实现开，使用 idea 分析出类图。</p><p><img src="/Spring/spring/spring-data/simple-jpa-repository-diagram.png" alt="SimpleJpaRepository"></p><ul><li>EntityManagerFactory EntityManager 的工厂类</li><li>EntityManager 一个接口，管理持久化操作的对象</li><li>Entity 实体是持久性对象，对应存储在数据库中的记录</li><li>EntityTransaction 和 EntityManager 是一对一关系，提供事务支持</li><li>Persistence 包含静态方法，获取 EntityManagerFactory 实例</li><li>Query 该接口由每个 JPA 供应商提供，用于数据查询</li></ul><h2 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h2><p><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">https://spring.io/guides/gs/accessing-data-jpa/</a></p><h2 id="常见的查询方法"><a href="#常见的查询方法" class="headerlink" title="常见的查询方法"></a>常见的查询方法</h2><p>查询方法策略就是Spring Data如何从 repository 中找到合适的查询方法。有一下几种</p><ul><li>CREATE 尝试从查询方法名称构造特定于仓库的查询。例如 findByName，根据约定有以下几种查询方式：<ul><li>find…By</li><li>read…By</li><li>query…By</li><li>count…By</li><li>get…By</li></ul></li><li>USE_DECLARED_QUERY 会从 repository 中定义的方法中寻找合适的查询方式</li><li>CREATE_IF_NOT_FOUND 这是 JPA 默认的策略，组合CREATE和USE_DECLARED_QUERY</li></ul><p>CREATE 策略的几个例子：</p><pre><code>interface PersonRepository extends Repository&lt;User, Long&gt; {  List&lt;Person&gt; findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);  // Enables the distinct flag for the query  List&lt;Person&gt; findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);  List&lt;Person&gt; findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);  // Enabling ignoring case for an individual property  List&lt;Person&gt; findByLastnameIgnoreCase(String lastname);  // Enabling ignoring case for all suitable properties  List&lt;Person&gt; findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);  // Enabling static ORDER BY for a query  List&lt;Person&gt; findByLastnameOrderByFirstnameAsc(String lastname);  List&lt;Person&gt; findByLastnameOrderByFirstnameDesc(String lastname);}</code></pre><ul><li><p>表达式通常是属性遍历和可以连接的运算符。您可以使用组合属性表达式AND和OR。您还可以得到这样的运营商为支撑Between，LessThan，GreaterThan，和Like该属性的表达式。受支持的操作员可能因数据存储而异，因此请参阅相应部分的参考文档。</p></li><li><p>方法解析器支持IgnoreCase为单个属性（例如，findByLastnameIgnoreCase(…)）或支持忽略大小写的类型的所有属性（通常为String实例 - 例如findByLastnameAndFirstnameAllIgnoreCase(…)）设置标志。支持忽略情况的方式可能因商店而异，因此请参阅参考文档中的相关部分以获取特定于商店的查询方法。</p></li><li><p>您可以通过OrderBy向引用属性的查询方法附加子句并提供排序方向（Asc或Desc）来应用静态排序。</p></li></ul><p>分页的情况</p><pre><code>Page&lt;User&gt; findByLastname(String lastname, Pageable pageable);Slice&lt;User&gt; findByLastname(String lastname, Pageable pageable);List&lt;User&gt; findByLastname(String lastname, Sort sort);List&lt;User&gt; findByLastname(String lastname, Pageable pageable);</code></pre><h2 id="一对多级联存储"><a href="#一对多级联存储" class="headerlink" title="一对多级联存储"></a>一对多级联存储</h2><p>一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。</p><pre><code> Feature ageFeature = new Feature();        ageFeature.setName(&quot;年龄&quot;);        ageFeature.setStep(2);        ageFeature.setFeatureValues(Arrays.asList(                new FeatureValue(null, &quot;10-20&quot;, ageFeature),                new FeatureValue(null, &quot;20-30&quot;, ageFeature)        ));        return ageFeature;</code></pre><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id    @GeneratedValue(generator = &quot;UUID&quot;)    @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)    private String id;</code></pre><h2 id="Entity-实例里面常用注解"><a href="#Entity-实例里面常用注解" class="headerlink" title="@Entity 实例里面常用注解"></a>@Entity 实例里面常用注解</h2><h3 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a>@Entity</h3><p>javax.persistence 包中提供，设置该对象会被 JPA 管理，并映射到指定的数据库表。</p><p>这个类可以给一个名字。</p><h3 id="Table"><a href="#Table" class="headerlink" title="@Table"></a>@Table</h3><p>指定数据库表名</p><pre><code>// 表名，可以使用命名策略设置约定的名字String name() default &quot;&quot;;// 数据库抽象概念,用于处理table 的命名冲突String catalog() default &quot;&quot;;// 一般来说，是指数据库名String schema() default &quot;&quot;;// 唯一约束，如果不使用 JPA 自动建表不用管UniqueConstraint[] uniqueConstraints() default {};// 索引，建表时候使用，一般来说不需要Index[] indexes() default {};</code></pre><h3 id="ID"><a href="#ID" class="headerlink" title="@ID"></a>@ID</h3><p>指定为实体的主键，JPA 兼容遗留系统，使用复合主键。@IdClass </p><p>不过推荐不使用。</p><h3 id="GeneratedValue"><a href="#GeneratedValue" class="headerlink" title="@GeneratedValue"></a>@GeneratedValue</h3><p>主键生成策略 GenerationType 中定义了四种主键生成策略</p><ul><li>TABLE 通过表序列生成，框架模拟表增长</li><li>SEQUENCE 采用数据库序列增长，MySQL 不支持这种方式</li><li>IDENTITY 使用表主键的自动增长</li><li>AUTO 自动选择，默认设置选项，但不推荐使用</li></ul><h3 id="Basic"><a href="#Basic" class="headerlink" title="@Basic"></a>@Basic</h3><p>属性到数据库字段的映射，如果实体属性上没有任何注解，默认为@Basic</p><p>使用 @Basic 提供了额外懒加载的特性，对大字段非常有用</p><h3 id="Transient"><a href="#Transient" class="headerlink" title="@Transient"></a>@Transient</h3><p>设置为忽略，表明该字段不会被持久化。使用上和 @Basic 相反，JPA 映射数据库的时候选择忽略它。</p><h3 id="Column"><a href="#Column" class="headerlink" title="@Column"></a>@Column</h3><p>定义实体属性和数据库字段的列名，这个注解的参数比较多。</p><pre><code>// 列名String name() default &quot;&quot;;// 是否唯一boolean unique() default false;// 是否允许为空，用于建表时使用boolean nullable() default true;// 是否插入数据库boolean insertable() default true;// 是否运行更新数据库boolean updatable() default true;// 表名，用的比较少String table() default &quot;&quot;;// 下面三个用于创建表的属性设定int length() default 255;int precision() default 0;int scale() default 0;</code></pre><h3 id="Temporal"><a href="#Temporal" class="headerlink" title="@Temporal"></a>@Temporal</h3><p>Temporal 用于设置 Date 类型的属性到对应精度的字段。</p><ul><li>TemporalType.DATE 映射为日期</li><li>TemporalType.TIME 映射为时间</li><li>TemporalType.TIMESTAMP 映射为时间戳</li></ul><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)    private AccountRoles role;</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。</p><h3 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h3><p>建表时候映射为大字段</p><ul><li>如果是字符串类型会映射为 Clob 类型</li><li>如果是字节类型，会映射为 Blob</li></ul><h3 id="JoinColumn"><a href="#JoinColumn" class="headerlink" title="@JoinColumn"></a>@JoinColumn</h3><p>配合 @OneToOne、@OneToMany、ManyToOne 使用，单独使用没有意义。</p><p>@JoinColumn 多个字段的关联关系，很少用</p><h3 id="OneToOne"><a href="#OneToOne" class="headerlink" title="@OneToOne"></a>@OneToOne</h3><pre><code>// 默认当前字段的类型Class targetEntity() default void.class;// 级联操作类型CascadeType[] cascade() default {};1. CascadeType.ALL2. CascadeType.PERSIST3. CascadeType.MERGE4. CascadeType.REMOVE5. CascadeType.REFRESH6. CascadeType.DETACH// 是否懒加载FetchType fetch() default EAGER;// 是否为空 boolean optional() default true;// 配置对方拥有关系String mappedBy() default &quot;&quot;;// 是否反向级联删除boolean orphanRemoval() default false;</code></pre><p>@OneToOne 需要和 @JoinColumn(name = “solution_id”) 配合使用。</p><p>例如一个用户对应有一个头像</p><pre><code>    @OneToOne(cascade = CascadeType.ALL)    @JoinColumn(name = &quot;avatar_id&quot;)    private UserAvatar userAvatar;</code></pre><h3 id="OneToMany-和-ManyToOne"><a href="#OneToMany-和-ManyToOne" class="headerlink" title="@OneToMany 和 @ManyToOne"></a>@OneToMany 和 @ManyToOne</h3><p>这两个参数和 @OneToOne 差不多，也需要和 @JoinColumn 配合使用</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>@OneToMany 需要额外配合使用的注解是 @OrderBy</p><p>在 @OneToMany 中，使用 @OrderBy 控制列表的顺序</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    @OrderBy(&quot;order DESC&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><h2 id="ManyToMany"><a href="#ManyToMany" class="headerlink" title="@ManyToMany"></a>@ManyToMany</h2><p>多对多一般发生在聚合根之间，其中有一个隐藏的关联表。</p><pre><code>    @ManyToMany    @JoinTable(name = &quot;product_feature_value&quot;,            joinColumns = {@JoinColumn(name = &quot;product_id&quot;, referencedColumnName = &quot;id&quot;)},            inverseJoinColumns = {@JoinColumn(name = &quot;feature_value_id&quot;, referencedColumnName = &quot;id&quot;)}    )    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>一个 Product 有多个 FeatureValue，使用多对多需要引入 product_feature_value 中间表。</p><h2 id="EntityGraph-解决-N-1-条-SQL-的问题"><a href="#EntityGraph-解决-N-1-条-SQL-的问题" class="headerlink" title="@EntityGraph 解决 N+1 条 SQL 的问题"></a>@EntityGraph 解决 N+1 条 SQL 的问题</h2><p>使用一对多，多对多关联的时，会产生 N+1 条SQL，我们可以通过使用 Join 来避免这种情况。</p><p>使用 join 有三种方法</p><ul><li>@EntityGraph 在实体关联阶段解决</li><li>@Query JPQL</li><li>Criteria API 编写 JOIN 子句</li></ul><p>使用 @EntityGraph</p><p>现在实体上定义</p><pre><code>@Table(name = &quot;user&quot;)@NamedEntityGraph(name=&quot;userReadModel.department&quot;,attributeNodes={@NamedAttributeNode(&quot;department&quot;)})public class UserReadModel {    @ManyToOne    @JoinColumn(name = &quot;department_id&quot;)    private Department department;</code></pre><p>在查询的方法上使用即可</p><pre><code>@Repositorypublic interface UserReadModelRepository extends JpaRepository&lt;UserReadModel, Long&gt;,        JpaSpecificationExecutor&lt;UserReadModel&gt; {    @EntityGraph(value = &quot;userReadModel.department&quot; , type= EntityGraph.EntityGraphType.FETCH)    List&lt;UserReadModel&gt; findAll(@Nullable Specification&lt;UserReadModel&gt; spec);}</code></pre><h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol><li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li><li>应该使用 DDD 思想去设计关联，减少不必要的关联，聚合根之间不要关联。查询使用 join 完成</li><li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li><li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li><li>@ManyToMany 默认会删除关联表</li><li>@Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role</li></ol><pre><code>{  username:&quot;&quot;,  department:{    id: 1  },  roles:[    {      id:1    }  ]}</code></pre><p>当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。</p><ol start="7"><li>当数据库插入异常，会报错，例如违反主键规则</li><li>更新、插入，只要不报错都会返回成功，无需再检查返回值</li></ol><h2 id="JPA-和建表规范"><a href="#JPA-和建表规范" class="headerlink" title="JPA 和建表规范"></a>JPA 和建表规范</h2><ul><li>根据 DDD 原则建表<ul><li>例如 user user_avatar user_role</li></ul></li></ul><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol><li>不要有一些无意义的关联</li><li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li></ol><h2 id="在-Spring-data-中使用-entityManager-直接操作数据"><a href="#在-Spring-data-中使用-entityManager-直接操作数据" class="headerlink" title="在 Spring data 中使用 entityManager 直接操作数据"></a>在 Spring data 中使用 entityManager 直接操作数据</h2><pre><code>  @Autowired  EntityManager entityManager;  Role role = entityManager.find(Role.class, savedRole.getId());  assertEquals(&quot;remark&quot;, role.getRemark());</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li><li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li><li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -1414,23 +1414,6 @@
     </entry>
     
     <entry>
-      <title>Circle CI 基本使用</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><pre><code class="yaml">version: 2jobs:  build:    machine:      java:        version: oraclejdk8    working_directory: ~/whoisspy    steps:      - checkout      - run: ./gradlew clean build      - store_artifacts:          path: build/libs  deploy:    machine: true    working_directory: ~/whoisspy    steps:      - checkout      - run:          name: Display current position          command: pwd      - run:          name: Display those variables          command: env      - run:          name: Download jar file          command: |            export CIRCLE_TOKEN=&#39;?circle-token=93106a0b530273d9cb344ea608bc609490fdf202&#39;            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o &#39;https://[^&quot;]*&#39; &gt; artifacts.txt            &lt;artifacts.txt xargs -P4 -I % wget %      - run:          name: Display whole list          command: ls -al &amp; aws --version      - run:          name: Change permission for aws.pem          command: chmod 0600 .circleci/aws.pem      - run:          name: SCP file to instance          command: scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar      - run:          name: login to target instance          command: |            ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;      - run:          name: last step          command: pwd#      - run:#          name: kill ssh process#          command: |##            pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )#            sleep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;workflows:  version: 2  build-deploy:    jobs:      - build      - deploy:          requires:            - build          filters:            branches:              only: set-ci</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
       <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
@@ -1441,6 +1424,23 @@
       <categories>
           
           <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Circle CI 基本使用</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="CircleCI是什么"><a href="#CircleCI是什么" class="headerlink" title="CircleCI是什么"></a>CircleCI是什么</h2><p>CircleCI is a continuous integration engine offered as SaaS and on premise.</p><h2 id="CircleCI特点"><a href="#CircleCI特点" class="headerlink" title="CircleCI特点"></a>CircleCI特点</h2><ul><li>容易和Github集成</li><li>SasS平台，无需自己搭建环境</li></ul><h2 id="有用的资源"><a href="#有用的资源" class="headerlink" title="有用的资源"></a>有用的资源</h2><ul><li>官网：<a href="https://circleci.com/" target="_blank" rel="noopener">https://circleci.com/</a></li><li>文档：<a href="https://circleci.com/docs/" target="_blank" rel="noopener">https://circleci.com/docs/</a></li><li>技术雷达的演讲keynote：<a href="http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key">http://wiki.printf.cn/media/CIrcleCI%20on%20tech%20Radar.key</a></li></ul><h2 id="一个构建java并部署的例子"><a href="#一个构建java并部署的例子" class="headerlink" title="一个构建java并部署的例子"></a>一个构建java并部署的例子</h2><pre><code class="yaml">version: 2jobs:  build:    machine:      java:        version: oraclejdk8    working_directory: ~/whoisspy    steps:      - checkout      - run: ./gradlew clean build      - store_artifacts:          path: build/libs  deploy:    machine: true    working_directory: ~/whoisspy    steps:      - checkout      - run:          name: Display current position          command: pwd      - run:          name: Display those variables          command: env      - run:          name: Download jar file          command: |            export CIRCLE_TOKEN=&#39;?circle-token=93106a0b530273d9cb344ea608bc609490fdf202&#39;            curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts$CIRCLE_TOKEN | grep -o &#39;https://[^&quot;]*&#39; &gt; artifacts.txt            &lt;artifacts.txt xargs -P4 -I % wget %      - run:          name: Display whole list          command: ls -al &amp; aws --version      - run:          name: Change permission for aws.pem          command: chmod 0600 .circleci/aws.pem      - run:          name: SCP file to instance          command: scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar      - run:          name: login to target instance          command: |            ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;      - run:          name: last step          command: pwd#      - run:#          name: kill ssh process#          command: |##            pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )#            sleep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;workflows:  version: 2  build-deploy:    jobs:      - build      - deploy:          requires:            - build          filters:            branches:              only: set-ci</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -1669,6 +1669,57 @@
     </entry>
     
     <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP拓展和使用C编写自定义拓展</title>
       <link href="/php/php/php-plugin-c/"/>
       <url>/php/php/php-plugin-c/</url>
@@ -1703,23 +1754,6 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React学习体系</title>
       <link href="/react/react/react-crouse%20map/"/>
       <url>/react/react/react-crouse%20map/</url>
@@ -1730,74 +1764,6 @@
       <categories>
           
           <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
-      
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
-      
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
           
       </categories>
       
@@ -1839,11 +1805,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -1861,6 +1827,40 @@
       <url>/php/php/lightweight%20php%20api/</url>
       
         <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -1975,40 +1975,6 @@
     </entry>
     
     <entry>
-      <title>Java CMS 选型</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/</url>
-      
-        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mock工具 wiremock</title>
-      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
-      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
-      
-        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 质量保证 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>java 异常</title>
       <link href="/java/java/java-exception/"/>
       <url>/java/java/java-exception/</url>
@@ -2019,6 +1985,23 @@
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java CMS 选型</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -2043,6 +2026,23 @@
     </entry>
     
     <entry>
+      <title>Mock工具 wiremock</title>
+      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
+      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
+      
+        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 质量保证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
@@ -2060,16 +2060,16 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>使用Java构建API的知识体系</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -2094,16 +2094,16 @@
     </entry>
     
     <entry>
-      <title>使用Java构建API的知识体系</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> java </category>
           
       </categories>
       
@@ -2145,23 +2145,6 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
-      
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端工程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端生态图谱</title>
       <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
@@ -2179,11 +2162,11 @@
     </entry>
     
     <entry>
-      <title>CSS样式框架选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
       
-        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -2213,16 +2196,16 @@
     </entry>
     
     <entry>
-      <title>免费的CI/CD 工具</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
+      <title>CSS样式框架选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
       
-        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
       
       
       <categories>
           
-          <category> 运维开发 </category>
+          <category> 前端工程 </category>
           
       </categories>
       
@@ -2247,11 +2230,11 @@
     </entry>
     
     <entry>
-      <title>Gradle 构建 Spring boot 项目</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
+      <title>免费的CI/CD 工具</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
       
-        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
       
       
       <categories>
@@ -2264,16 +2247,16 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/linux/linux/nginx-usful%20command/"/>
-      <url>/linux/linux/nginx-usful%20command/</url>
+      <title>Gradle 构建 Spring boot 项目</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
       
       
       <categories>
           
-          <category> linux </category>
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -2298,11 +2281,45 @@
     </entry>
     
     <entry>
+      <title>Nginx 常用操作</title>
+      <link href="/linux/linux/nginx-usful%20command/"/>
+      <url>/linux/linux/nginx-usful%20command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>AWS Certificate Manager 常见问题</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws-certificate-manager-faqs/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws-certificate-manager-faqs/</url>
       
         <content type="html"><![CDATA[<h3 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h3><p>问：什么是 AWS Certificate Manager (ACM)？</p><p>AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理和部署用于 AWS 服务的安全套接字层/传输层安全性 (SSL/TLS) 证书。SSL/TLS 证书用于保护网络通信的安全并确立网站在 Internet 上的身份。使用 AWS Certificate Manager，您无需再为购买、上传和更新 SSL/TLS 证书而经历耗时的手动流程。利用 AWS Certificate Manager，您可以快速请求证书，在 AWS 资源 (如 Amazon API Gateway 上的 Elastic Load Balancer、Amazon CloudFront 分配或 API) 上部署该证书，并让 AWS Certificate Manager 处理证书更新事宜。通过 AWS Certificate Manager 预置的 SSL/TLS 证书可免费使用。您只需为您创建的用于运行应用程序的 AWS 资源付费。</p><p>问：什么是 SSL/TLS 证书？</p><p>SSL/TLS 证书使 Web 浏览器能够标识使用安全套接字层/传输层安全性 (SSL/TLS) 协议的网站并与之建立加密的网络连接。证书在名为公有密钥基础设施 (PKI) 的加密系统中使用。通过 PKI，在双方都信任同一个第三方 (称为证书颁发机构) 的情况下，一方可以为使用证书的另一方确立身份。ACM 用户指南、概念和术语提供了其他背景信息和定义。</p><p>问：AWS Certificate Manager 有什么作用？</p><p>您可以请求并预置 SSL/TLS 证书，然后为使用 Elastic Load Balancing、Amazon CloudFront 或 Amazon API Gateway 的站点和应用程序部署这些证书。验证请求域的所有权并获得颁发的证书之后，您可以从 AWS 管理控制台的下拉列表中选择 SSL/TLS 证书并部署该证书。或者，您也可以使用 AWS 命令行界面 (CLI) 命令或 API 调用将 ACM 提供的证书部署到 AWS 资源。ACM 会为您管理证书更新和证书部署事宜。</p><p>问：使用 AWS Certificate Manager 有哪些优势？</p><p>借助 ACM，您可以更加轻松地为 AWS 平台上的网站或应用程序启用 SSL/TLS。ACM 免除了过去与使用 SSL/TLS 和管理 SSL/TLS 证书相关的大量手动流程。ACM 还可管理证书更新，从而帮助您避免因证书配置错误、撤销或过期而导致的停机。您可获得 SSL/TLS 保护并轻松管理证书。启用 SSL/TLS 有助于提高站点的搜索排名，并可帮助您满足传输数据加密的法规合规性要求。</p><p>当您使用 ACM 时，它会应用强加密和密钥管理最佳实践来确保证书私有密钥的安全。借助 ACM，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 集中管理 AWS Certificate Manager 在 AWS 区域内提供的所有 SSL/TLS 证书。AWS Certificate Manager 集成了其他 AWS 服务，因此您可以请求 SSL/TLS 证书，然后通过 AWS 管理控制台、AWS CLI 命令或 API 调用为 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配预置证书。</p><p>问：如何开始使用 ACM？</p><p>要开始使用 AWS Certificate Manager，请导航到 AWS 管理控制台中的“Certificate Manager”，然后使用向导输入站点的名称以请求 SSL/TLS 证书。您也可以使用 AWS CLI 或 API 请求证书。在 ACM 获得域所有者的批准并且系统颁发 SSL/TLS 证书后，您就可以将其用于与 ACM 集成的其他 AWS 资源了。您只需从 AWS 管理控制台的下拉列表中选择您要部署的 SSL/TLS 证书即可。或者，您也可以执行一个 AWS CLI 命令或调用一个 AWS API，将该证书与您的资源关联起来。AWS Certificate Manager 随后会将该证书部署到您选择的资源。有关请求和使用 AWS Certificate Manager 所提供证书的更多信息，请参阅《AWS Certificate Manager 用户指南》中的入门。</p><p>问：ACM 提供哪种类型的证书？</p><p>ACM 提供域验证 (DV) 证书，供终止 SSL/TLS 的网站和应用程序使用。有关 ACM 提供的证书的更多详细信息，请参阅证书特点。</p><p>问：我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>您可以将 ACM 用于以下 AWS 服务：<br>• Elastic Load Balancing – 请参阅 Elastic Load Balancing 文档<br>• Amazon CloudFront – 请参阅 CloudFront 文档<br>• Amazon API Gateway – 请参阅 API Gateway 文档<br>• AWS Elastic Beanstalk – 请参阅 AWS Elastic Beanstalk 文档<br>问：ACM 提供的证书是否适合政府部门？</p><p>ACM 证书可能适合部分政府部门，而并非对所有政府部门均适合。请查看当地法律、规则和法规，以确定某个 ACM 证书是否适合。如有任何疑问，请访问 AWS Support 中心并创建案例。</p><p>问：ACM 在哪些区域提供？</p><p>请访问 AWS 全球基础设施页面，了解目前提供 AWS 服务的区域。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请或导入该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：我是否可以在多个 AWS 区域使用同一证书？</p><p>这要取决于您目前使用的是 Elastic Load Balancing 还是 Amazon CloudFront。要在不同区域内针对同一站点 (具有相同的完全限定域名 (FQDN) 或 FQDN 集) 将某个证书与 Elastic Load Balancing 配合使用，您需要为计划使用证书的每个区域申请新证书。请注意，还需要针对新区域重新验证证书中的每个名称。要将 ACM 证书与 Amazon CloudFront 配合使用，您必须在美国东部 (弗吉尼亚北部) 区域申请该证书。该区域内与 CloudFront 分配关联的 ACM 证书将被分发到为该分配配置的所有地理位置。</p><p>问：是否可以在区域之间复制证书？</p><p>目前不可以。</p><p>问：如果同一域名我已拥有来自其他提供商的证书，我是否还能够使用 ACM 配置证书？</p><p>是。<br>问：我是否可以在 Amazon EC2 实例或自己的服务器上使用证书？</p><p>不可以。目前，ACM 提供的证书只能用于特定 AWS 服务。请参阅我可以将 ACM 提供的证书用于哪些 AWS 服务？</p><p>问：我能够通过 ACM 预置的证书数量是否有限制？</p><p>默认情况下，您可以在每个区域中为每个账户预置多达 100 个证书。通过 ACM 预置的每个证书最多可以拥有 10 个完全限定域名。您可以访问 AWS Support 中心请求增加上限。有关更多详细信息，请参阅 AWS 文档。</p><h3 id="预置证书"><a href="#预置证书" class="headerlink" title="预置证书"></a>预置证书</h3><p>问：如何预置 ACM 提供的证书？</p><p>您可以使用 AWS 管理控制台、AWS CLI 或 ACM API/SDK 进行预置。要使用 AWS 管理控制台，请导航到控制台的 ACM 部分，选择“Request a Certificate”，输入站点的域名，然后按照屏幕上的说明完成请求。如果用户可以通过其他名称访问您的站点，则可以在请求中添加其他域名。域的所有者会收到一封关于请求批准颁发证书的电子邮件。在请求中的所有域名获得域所有者的批准后，系统将颁发证书并准备好预置证书以用于其他 AWS 服务，如 Elastic Load Balancing 或 Amazon CloudFront。有关详细信息，请参阅 ACM 文档。<br>问：颁发证书需要多长时间？</p><p>获得域的所有者或域所有者授权代表的批准后，系统通常会在几分钟内颁发证书，但也可能需要更长时间。有关更多详细信息，请参阅如何预置 ACM 提供的证书？<br>问：请求证书时会发生什么情况？</p><p>为了验证您对请求的证书中包括的域名或名称的控制权，系统会针对证书请求中的每个域名向注册域的所有者发送电子邮件。在域的所有者或授权代表批准证书请求之前，证书请求将处于待验证状态。域的所有者或授权代表 (审批者) 可以按照电子邮件中的说明批准证书请求。说明将指引审批者导航到审批网站，单击电子邮件中的链接或将电子邮件中的链接粘贴到浏览器中，以导航到审批网站。审批者确认与证书请求相关的信息，如域名、证书 ID (ARN) 以及发出请求的 AWS 账户 ID，如果信息准确无误，则批准请求。在证书请求中的所有域名获得批准后，系统通常会在几分钟内颁发证书，届时证书请求的状态将变为已颁发。获得颁发的证书后，您便可以开始将其用于其他 AWS 服务。<br>问：审批请求要发送到哪个电子邮件地址？<br>当您请求证书时，系统会针对证书请求中的每个域名使用 WHOIS 查找来检索该域的联系人信息。电子邮件会发送至针对该域列出的域注册人、管理联系人和技术联系人。电子邮件还会同时发送至域的五个特定电子邮件地址，即在您请求的域名前加上 admin@、administrator@、hostmaster@、webmaster@ 和 postmaster@ 生成的五个地址。例如，如果您为 server.example.com 请求证书，系统将使用针对 example.com 域，外加 <a href="mailto:admin@server.example.com" target="_blank" rel="noopener">admin@server.example.com</a>、<a href="mailto:administrator@server.example.com" target="_blank" rel="noopener">administrator@server.example.com</a>、<a href="mailto:hostmaster@server.example.com" target="_blank" rel="noopener">hostmaster@server.example.com</a>、<a href="mailto:postmaster@server.example.com" target="_blank" rel="noopener">postmaster@server.example.com</a> 和 <a href="mailto:webmaster@server.example.com" target="_blank" rel="noopener">webmaster@server.example.com</a> 的 WHOIS 查询返回的联系人信息将电子邮件发送至域注册人、技术联系人和管理联系人。</p><p>针对以“www”开头的域名或以星号 (*) 开头的通配符名称，这五个特定电子邮件地址采用不同的构造方式。ACM 会删除前导的“www”或星号，而电子邮件则被发送到通过在域名其余部分之前加上 admin@、administrator@、hostmaster@、postmaster@ 和 webmaster@ 来构造的管理员地址。例如，如果您为 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 请求证书，则电子邮件被发送到 WHOIS 联系人 (如前所述) 以及 <a href="mailto:admin@example.com" target="_blank" rel="noopener">admin@example.com</a>，而不是 <a href="mailto:admin@www.example.com" target="_blank" rel="noopener">admin@www.example.com</a>。其余四个特定电子邮件地址也采用类似的方式构造。</p><p>请求证书之后，您可以使用 ACM 控制台、AWS CLI 或 API 查看针对各个域发送的电子邮件的收件方电子邮件地址列表。<br>问：我是否可以配置接收证书审批请求的电子邮件地址？</p><p>不可以，不过您可以配置用于接收验证电子邮件的基础域名。基础域名必须是证书请求中域名的超级域。例如，如果您想为 server.domain.example.com 请求证书，但希望将审批电子邮件发送至 <a href="mailto:admin@domain.example.com" target="_blank" rel="noopener">admin@domain.example.com</a>，则可以使用 AWS API 或 API 实现这一目的。有关更多详细信息，请参阅 ACM CLI 参考和 ACM API 参考。<br>问：我是否可以使用具有代理联系人信息 (例如 Privacy Guard 或 WhoisGuard) 的域？</p><p>可以；不过，电子邮件的发送可能会因为代理而延迟。通过代理发送的电子邮件可能会进入您的垃圾邮件文件夹。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以通过我的 AWS 账户的技术联系人验证我的身份？</p><p>不可以。验证域所有者身份的流程和策略非常严格，并且由为公开可信的证书颁发机构设置策略标准的 CA/Browser Forum 决定。要了解详情，请参阅 Amazon Trust Services 存储库中最新的“Amazon Trust Services 认证规范声明”。<br>问：我的证书请求状态为什么是“待验证”？</p><p>已发出请求但未经过批准的证书的状态为待验证。域的所有者或授权代表必须批准证书请求，然后系统才能颁发证书。</p><p>问：如果我没有收到验证和批准电子邮件，该怎么做？</p><p>有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：我的证书请求状态为什么显示为“失败”？</p><p>有多种原因会导致域的验证控制流程失败，包括但不限于：网络资源的网址列表中包括的域被认定为包含恶意软件或欺诈性内容。要确定申请失败的原因，请访问 ACM 故障排除指南。</p><p>问：我的证书请求状态为什么显示为“验证超时”？</p><p>如果 ACM 证书请求在 72 小时内没有接受验证，则被视为超时。有关故障排除建议，请参阅 ACM 用户指南。</p><p>问：是否有其他方法来验证域或审批支持的证书？</p><p>目前没有。</p><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>问：浏览器、操作系统和移动设备是否信任 ACM 提供的证书？</p><p>目前的绝大部分浏览器、操作系统和移动设备都信任 ACM 提供的证书。ACM 提供的证书在浏览器和操作系统中的普及率高达 99%，包括 Windows XP SP3 和 Java 6 及更高版本。</p><p>问：如何确认我的浏览器是否信任 ACM 提供的证书？</p><p>信任 ACM 提供的证书的浏览器会显示一个锁形图标，并且在连接到使用 ACM 基于 SSL/TLS 提供的证书 (例如使用 HTTPS) 的站点时会显示不要颁发证书的警告。</p><p>ACM 提供的证书由亚马逊的证书颁发机构 (CA) 进行验证。任何包含 Amazon Root CA 1、Starfield Services Root Certificate Authority – G2 或 Starfield Class 2 Certification Authority 的浏览器、应用程序和操作系统均会信任由 ACM 提供的证书。</p><p>问：ACM 是否可以提供包括多个域名的证书？</p><p>可以。每个证书必须包括至少一个域名，并且您可以根据需要在证书中添加更多域名。例如，您可以将域名“<a href="http://www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。" target="_blank" rel="noopener">www.example.net”添加到用于“www.example.com”的证书，前提是用户通过这两个域名都可以访问您的站点。对于证书请求中包括的所有名称，您必须具有所有权和控制权。</a></p><p>问：什么是通配符域名？</p><p>通配符域名匹配域中的所有第一级子域或主机名。第一级子域是一个不包含句号 (圆点) 的域名标签。例如，您可以使用名称“*.example.com”保护 <a href="http://www.example.com、images.example.com" target="_blank" rel="noopener">www.example.com、images.example.com</a> 以及以 .example.com 结尾的任何其他主机名或第一级子域。有关更多详细信息，请参阅 ACM 用户指南。</p><p>问：ACM 是否可以提供带有通配符域名的证书？</p><p>可以。</p><p>问：ACM 是否提供组织验证 (OV) 或扩展验证 (EV) 证书？</p><p>目前不提供。</p><p>问：ACM 是否为网站提供除 SSL/TLS 以外的其他类型的证书？</p><p>目前不提供。</p><p>问：我是否可以使用 ACM 提供的证书进行代码签名或电子邮件加密？</p><p>不可以。</p><p>问：ACM 是否提供用于签名和加密电子邮件的证书 (S/MIME 证书) ？</p><p>目前不提供。</p><p>问：ACM 提供的证书使用哪些算法？</p><p>ACM 证书使用的是采用 2048 位模数和 SHA-256 的 RSA 密钥。</p><p>问：ACM 是否支持椭圆曲线 (ECDSA) 证书？</p><p>目前不支持。<br>问：亚马逊在哪里介绍其关于颁发证书的策略和规范？</p><p>“Amazon Trust Services 证书策略”和“Amazon Trust Services 证书规范声明”文档中提供了相关信息。有关最新版本，请参阅 Amazon Trust Services 存储库。</p><p>问：如何撤销证书？</p><p>您可以访问 AWS Support 中心并创建案例，以请求 ACM 撤销证书。 </p><p>问：如果证书中的信息发生更改，我该如何通知 AWS？</p><p>您可以发送电子邮件至 validation-questions[at]amazon.com，通知 AWS。</p><p> </p><h3 id="私有密钥保护"><a href="#私有密钥保护" class="headerlink" title="私有密钥保护"></a>私有密钥保护</h3><p>问：ACM 提供的证书的私有密钥是如何管理的？</p><p>系统会为 ACM 提供的每个证书创建一个键前缀。AWS Certificate Manager 可保护并管理用于 SSL/TLS 证书的私有密钥。ACM 会运用强加密和密钥管理最佳实践来保护并存储私有密钥。</p><p>问：ACM 是否可以跨 AWS 区域复制证书？</p><p>不可以。每个 ACM 证书私有密钥均存储在您请求该证书的区域。例如，当您在弗吉尼亚北部区域获得新的证书后，ACM 会将私有密钥存储在弗吉尼亚北部区域。仅当 ACM 证书与 CloudFront 分配关联时，该证书才能跨区域复制。在这种情况下，CloudFront 会将 ACM 证书分配到为您的分配配置的地理位置。</p><p>问：我是否可以对证书私有密钥的使用进行审核？</p><p>可以。您可以使用 AWS CloudTrail 查看日志，从而了解证书私有密钥的使用时间。</p><h3 id="记账功能"><a href="#记账功能" class="headerlink" title="记账功能"></a>记账功能</h3><p>问：ACM 证书的使用如何收费和计费？</p><p>通过 AWS Certificate Manager 预置、管理和部署的 SSL/TLS 证书可免费使用。您只需针对为运行应用程序而创建的 AWS 资源付费，例如 Elastic Load Balancing 负载均衡器或 Amazon CloudFront 分配。</p><h3 id="详细信息"><a href="#详细信息" class="headerlink" title="详细信息"></a>详细信息</h3><p>问：我是否可以将同一证书用于多个 Elastic Load Balancing 负载均衡器和多个 CloudFront 分配？</p><p>可以。</p><p>问：我是否可以将证书用于没有公共 Internet 访问权限的内部 Elastic Load Balancing 负载均衡器？</p><p>可以。请参阅托管更新与部署，详细了解 ACM 如何处理无法通过公共 Internet 访问的证书的更新问题。</p><p>问：用于 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 的证书是否也能用于 example.com？</p><p>不可以。如果您希望自己的站点能够被两个域名 (<a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 和 example.com) 引用，则必须请求包含这两个名称的证书。</p><p>问：我是否可以导入第三方证书并将其用于 AWS 服务？</p><p>可以。如果想要将第三方证书与 Amazon CloudFront 或 Elastic Load Balancing 配合使用，您可以使用 AWS 管理控制台、AWS CLI 或 AWS Certificate Manager API 将该证书导入 ACM。ACM 不会处理已导入证书的更新流程。您可以使用 AWS 管理控制台监控已导入证书的到期日期，并导入新的第三方证书以便替换即将过期的证书。</p><p>问：ACM 提供的证书的有效期是多久？</p><p>目前，ACM 提供的证书的有效期为 13 个月。</p><p>问：ACM 如何帮助我的企业或组织满足合规性要求？</p><p>使用 ACM 可以轻松确保连接的安全性 (这也是 PCI、 FedRAMP 以及 HIPAA 等众多合规性计划的共同要求)，从而帮助您遵守法规要求。有关合规性的具体信息，请参阅 <a href="http://aws.amazon.com/compliance。" target="_blank" rel="noopener">http://aws.amazon.com/compliance。</a></p><p>问：ACM 是否有服务等级协议 (SLA)？</p><p>目前没有。</p><p>问：ACM 是否允许域名 (也称为国际化域名 (IDN)) 中包含本地语言字符？</p><p>ACM 不支持采用 Unicode 编码的本地语言字符；不过，ACM 支持域名使用 ASCII 编码的本地语言字符。</p><p>问：ACM 支持哪些域名标签格式？</p><p>ACM 仅支持采用 UTF-8 编码的 ASCII 字符，包括包含“xn-”的标签 (通常称为域名的 Punycode)。ACM 不支持域名中使用 Unicode 输入 (Unicode 标签)。</p><p>问：ACM 是否会提供一个可以在我的网站上显示的安全站点签章或信任徽标？</p><p>不会。如果您想使用站点签章，您可以从第三方供应商处获得。我们建议选择可评估和维护您站点和/或业务实践的安全性的供应商。</p><p>问：亚马逊是否允许将其商标或徽标用作证书徽章、站点签章或信任徽标？</p><p>不允许。此类签章和徽章可复制到不使用 ACM 服务的站点，但不能假借亚马逊名号建立信任。为保护我们的客户和亚马逊的声誉，我们不允许以这种方式使用我们的徽标。</p><h3 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h3><p>问：AWS CloudTrail 提供哪些日志记录信息？</p><p>您可以确定哪些用户和账户为支持 AWS CloudTrail 的服务调用了 AWS API、发出调用的源 IP 地址以及调用发生的时间。例如，您可以确定哪些用户为关联 ACM 提供的证书与 Elastic Load Balancer 调用了 API，以及 Elastic Load Balancing 服务使用 KMS API 调用加密密钥的时间。</p><h3 id="托管更新与部署"><a href="#托管更新与部署" class="headerlink" title="托管更新与部署"></a>托管更新与部署</h3><p>问：什么是 ACM 托管更新与部署？</p><p>ACM 托管更新与部署可以管理由 ACM 提供的 SSL/TLS 证书的更新流程并部署更新后的证书。</p><p>问：使用 ACM 托管更新与部署有哪些优势？</p><p>ACM 可帮助您管理 SSL/TLS 证书的更新和部署。与容易出错的手动流程相比，ACM 能够让安全 Web 服务或应用程序的 SSL/TLS 配置和维护具有更高的操作可靠性。托管更新与部署有助于您避免因证书过期导致的停机。ACM 托管更新与部署不需要您在自己的站点安装或维护软件客户端或代理。ACM 会作为一种服务运行，并且与其他 AWS 服务集成。这意味着，您可以使用 AWS 管理控制台、AWS CLI 或 API 在 AWS 平台上集中管理和部署证书。</p><p>问：哪些证书可以自动更新和部署？</p><p>ACM 能够更新并部署 ACM 提供的证书，而无需域的所有者进行任何其他审批或介入。如果证书必须经过附加审批才能更新，ACM 会基于证书中的所有域名向相应域的所有者提出审批请求，以此管理更新流程。在证书中的所有域名均获得批准后，ACM 会更新证书并自动将其部署到您的 AWS 资源。如果域的所有者没有批准证书，我们会通知您 (AWS 账户所有者)。为了提高 ACM 自动更新和部署 ACM 提供的证书的能力，请确保证书正在使用，且证书中包括的所有域名均能解析至您的站点，并可通过 Internet 访问。<br>问：ACM 何时更新证书？</p><p>ACM 最早可在证书过期前 60 天开始执行更新流程。目前，ACM 提供的证书的验证期限是 13 个月。请参阅 ACM 用户指南，了解有关托管续订的更多信息。</p><p>问：在更新证书和部署新证书之前，我是否会收到通知？</p><p>不会。ACM 可能会在不提前通知的情况下更新证书或更新密钥，并更换旧的证书。</p><p>问：ACM 是否可以更新包含裸域 (也称为顶级域名，例如“example.com”) 的证书？</p><p>为了提高 ACM 自动更新和部署包含裸域的证书的能力，请确保裸域的 DNS 查找能够解析至与该证书关联的 AWS 资源。将裸域解析到 AWS 资源可能非常困难，除非您使用 Route 53 或支持别名资源记录 (或同类记录) 的其他 DNS 提供商，从而将裸域映射到 AWS 资源。有关更多信息，请参阅 Route 53 开发人员指南。</p><p>问：在 ACM 部署更新后的证书时，我的站点是否会断开现有连接？</p><p>不会。在部署新证书之后建立的连接将使用新证书，而现有连接不会受到影响。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ansible 入门和使用</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
       
       
       <categories>
@@ -2337,23 +2354,6 @@
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
       
         <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Ansible 入门和使用</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
       
       
       <categories>
@@ -2451,23 +2451,6 @@
     </entry>
     
     <entry>
-      <title>怎么样快速入门/学习一项技术</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/</url>
-      
-        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>编写文档到知识系统中</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>How to end a meeting?</title>
       <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
       <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
@@ -2478,6 +2461,23 @@
       <categories>
           
           <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>怎么样快速入门/学习一项技术</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术类知识学习的流程"><a href="#技术类知识学习的流程" class="headerlink" title="技术类知识学习的流程"></a>技术类知识学习的流程</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术  </li></ul></li><li>收集入门教程</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技术的要点"><a href="#学习一门新技术的要点" class="headerlink" title="学习一门新技术的要点"></a>学习一门新技术的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>一定要有产出</li><li>编写文档到知识系统中</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自我管理 </category>
           
       </categories>
       

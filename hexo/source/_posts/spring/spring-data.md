@@ -46,6 +46,13 @@ Spring Data 的一些属于版本火车的子项目：
 ![SimpleJpaRepository](./spring-data/simple-jpa-repository-diagram.png)
 
 
+- EntityManagerFactory EntityManager 的工厂类
+- EntityManager 一个接口，管理持久化操作的对象
+- Entity 实体是持久性对象，对应存储在数据库中的记录
+- EntityTransaction 和 EntityManager 是一对一关系，提供事务支持
+- Persistence 包含静态方法，获取 EntityManagerFactory 实例
+- Query 该接口由每个 JPA 供应商提供，用于数据查询
+
 ## 快速入门教程
 
 https://spring.io/guides/gs/accessing-data-jpa/
@@ -131,7 +138,90 @@ List<User> findByLastname(String lastname, Pageable pageable);
 
 ```
 
-## 常用注解
+## @Entity 实例里面常用注解
+
+
+### @Entity
+
+javax.persistence 包中提供，设置该对象会被 JPA 管理，并映射到指定的数据库表。
+
+这个类可以给一个名字。
+
+### @Table
+
+指定数据库表名
+
+
+```
+// 表名，可以使用命名策略设置约定的名字
+String name() default "";
+// 数据库抽象概念,用于处理table 的命名冲突
+String catalog() default "";
+// 一般来说，是指数据库名
+String schema() default "";
+// 唯一约束，如果不使用 JPA 自动建表不用管
+UniqueConstraint[] uniqueConstraints() default {};
+// 索引，建表时候使用，一般来说不需要
+Index[] indexes() default {};
+```
+
+### @ID
+
+指定为实体的主键，JPA 兼容遗留系统，使用复合主键。@IdClass 
+
+不过推荐不使用。
+
+
+### @GeneratedValue
+
+主键生成策略 GenerationType 中定义了四种主键生成策略
+
+- TABLE 通过表序列生成，框架模拟表增长
+- SEQUENCE 采用数据库序列增长，MySQL 不支持这种方式
+- IDENTITY 使用表主键的自动增长
+- AUTO 自动选择，默认设置选项，但不推荐使用
+
+### @Basic 
+
+属性到数据库字段的映射，如果实体属性上没有任何注解，默认为@Basic
+
+使用 @Basic 提供了额外懒加载的特性，对大字段非常有用
+
+### @Transient 
+
+设置为忽略，表明该字段不会被持久化。使用上和 @Basic 相反，JPA 映射数据库的时候选择忽略它。
+
+
+### @Column 
+
+定义实体属性和数据库字段的列名，这个注解的参数比较多。
+
+```
+// 列名
+String name() default "";
+// 是否唯一
+boolean unique() default false;
+// 是否允许为空，用于建表时使用
+boolean nullable() default true;
+// 是否插入数据库
+boolean insertable() default true;
+// 是否运行更新数据库
+boolean updatable() default true;
+// 表名，用的比较少
+String table() default "";
+// 下面三个用于创建表的属性设定
+int length() default 255;
+int precision() default 0;
+int scale() default 0;
+```
+
+### @Temporal 
+
+Temporal 用于设置 Date 类型的属性到对应精度的字段。
+
+- TemporalType.DATE 映射为日期
+- TemporalType.TIME 映射为时间
+- TemporalType.TIMESTAMP 映射为时间戳
 
 ### Enumerated 
 
@@ -140,12 +230,140 @@ List<User> findByLastname(String lastname, Pageable pageable);
     private AccountRoles role;
 ```
 
-可以将字符串类型变成枚举类型。
+可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。
+
+### @Lob
+
+建表时候映射为大字段
+
+- 如果是字符串类型会映射为 Clob 类型
+- 如果是字节类型，会映射为 Blob
+
+### @JoinColumn
+
+配合 @OneToOne、@OneToMany、ManyToOne 使用，单独使用没有意义。
+
+@JoinColumn 多个字段的关联关系，很少用
+
+### @OneToOne
+
+```
+// 默认当前字段的类型
+Class targetEntity() default void.class;
+// 级联操作类型
+CascadeType[] cascade() default {};
+
+1. CascadeType.ALL
+2. CascadeType.PERSIST
+3. CascadeType.MERGE
+4. CascadeType.REMOVE
+5. CascadeType.REFRESH
+6. CascadeType.DETACH
+
+// 是否懒加载
+
+FetchType fetch() default EAGER;
+
+// 是否为空
+ boolean optional() default true;
+
+// 配置对方拥有关系
+String mappedBy() default "";
+
+// 是否反向级联删除
+boolean orphanRemoval() default false;
+
+```
+
+@OneToOne 需要和 @JoinColumn(name = "solution_id") 配合使用。
+
+例如一个用户对应有一个头像
+
+```
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "avatar_id")
+    private UserAvatar userAvatar;
+```
+
+### @OneToMany 和 @ManyToOne
+
+这两个参数和 @OneToOne 差不多，也需要和 @JoinColumn 配合使用
+
+```
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "feature_id")
+    private List<FeatureValue> featureValues;
+```
+
+@OneToMany 需要额外配合使用的注解是 @OrderBy
+
+在 @OneToMany 中，使用 @OrderBy 控制列表的顺序
+
+```
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "feature_id")
+    @OrderBy("order DESC")
+    private List<FeatureValue> featureValues;
+```
+
+## @ManyToMany 
+
+多对多一般发生在聚合根之间，其中有一个隐藏的关联表。
+
+```
+    @ManyToMany
+    @JoinTable(name = "product_feature_value",
+            joinColumns = {@JoinColumn(name = "product_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "feature_value_id", referencedColumnName = "id")}
+    )
+    private List<FeatureValue> featureValues;
+```
+
+一个 Product 有多个 FeatureValue，使用多对多需要引入 product_feature_value 中间表。
+
+## @EntityGraph 解决 N+1 条 SQL 的问题
+
+使用一对多，多对多关联的时，会产生 N+1 条SQL，我们可以通过使用 Join 来避免这种情况。
+
+使用 join 有三种方法
+
+- @EntityGraph 在实体关联阶段解决
+- @Query JPQL
+- Criteria API 编写 JOIN 子句
+
+
+使用 @EntityGraph
+
+现在实体上定义
+
+```
+@Table(name = "user")
+@NamedEntityGraph(name="userReadModel.department",attributeNodes={@NamedAttributeNode("department")})
+public class UserReadModel {
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+```
+
+在查询的方法上使用即可
+
+```
+@Repository
+public interface UserReadModelRepository extends JpaRepository<UserReadModel, Long>,
+        JpaSpecificationExecutor<UserReadModel> {
+
+    @EntityGraph(value = "userReadModel.department" , type= EntityGraph.EntityGraphType.FETCH)
+    List<UserReadModel> findAll(@Nullable Specification<UserReadModel> spec);
+}
+```
 
 ## 一些坑
 
 1. @ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional
-2. 应该使用 DDD 思想去设计关联，禁止双向关联
+2. 应该使用 DDD 思想去设计关联，减少不必要的关联，聚合根之间不要关联。查询使用 join 完成
 3. @OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销
 4. @OneToOne 本质上是实体和值对象的关系，统一使用实体的ID
 5. @ManyToMany 默认会删除关联表
@@ -171,7 +389,6 @@ List<User> findByLastname(String lastname, Pageable pageable);
 7. 当数据库插入异常，会报错，例如违反主键规则
 8. 更新、插入，只要不报错都会返回成功，无需再检查返回值
 
-
 ## JPA 和建表规范
 
 - 根据 DDD 原则建表
@@ -193,8 +410,6 @@ List<User> findByLastname(String lastname, Pageable pageable);
   assertEquals("remark", role.getRemark());
 
 ```
-
-
 
 ## 参考资料
 
