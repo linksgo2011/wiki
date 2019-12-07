@@ -73,7 +73,7 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
     private List&lt;FeatureValue&gt; featureValues;
 
 }
-</code></pre><h2 id="迫切关联连接"><a href="#迫切关联连接" class="headerlink" title="迫切关联连接"></a>迫切关联连接</h2><p>在查询的 JPQL 语句中有一个 fetch，这个 fetch 可以自动将join 后的结果集使用一对多的方式组织数据。</p>
+</code></pre><h2 id="迫切关联连接"><a href="#迫切关联连接" class="headerlink" title="迫切关联连接"></a>迫切关联连接</h2><p>在查询的 JPQL 语句中有一个 fetch，这个 fetch 可以自动将join 后的结果集使用一对多的方式组织数据，避免 N+1 问题，平时项目都是用 fetch 的方法。</p>
 	  
 
 	  <div>
@@ -350,11 +350,11 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
 		
 	
 		
+	
+		
+	
+		
 			
-		
-	
-		
-	
 		
 	
 		

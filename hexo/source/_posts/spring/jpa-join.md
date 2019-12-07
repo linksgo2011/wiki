@@ -30,4 +30,5 @@ public class Feature implements Serializable {
 
 ## 迫切关联连接
 
-在查询的 JPQL 语句中有一个 fetch，这个 fetch 可以自动将join 后的结果集使用一对多的方式组织数据。
+在查询的 JPQL 语句中有一个 fetch，这个 fetch 可以自动将join 后的结果集使用一对多的方式组织数据，避免 N+1 问题，平时项目都是用 fetch 的方法。
+
