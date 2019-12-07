@@ -31,3 +31,8 @@ toc: true
   - jdcmd process_id 显示栈运行信息 
 - jsstack 显示栈运行信息
 - jconsole 显示Java编译
+
+## 一些明显的  Java 性能问题
+
+- SimpleDataFormat
+- String
