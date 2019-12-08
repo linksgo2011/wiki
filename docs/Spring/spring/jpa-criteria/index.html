@@ -6,6 +6,11 @@
   <title>JPA Criteria | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
+  <meta name="description" content="在 EntityManager 中使用 Criteria// 1. 获取 builder
+CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+// 2. 创建 query
+CriteriaQuery&amp;lt;Fea">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -56,7 +61,24 @@
 	  
 
 	  <!-- content -->
-	  	  
+	  <h2 id="在-EntityManager-中使用-Criteria"><a href="#在-EntityManager-中使用-Criteria" class="headerlink" title="在 EntityManager 中使用 Criteria"></a>在 EntityManager 中使用 Criteria</h2><pre><code>// 1. 获取 builder
+CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+// 2. 创建 query
+CriteriaQuery&lt;Feature&gt; query = criteriaBuilder.createQuery(Feature.class);
+// 3. 获取根对象，根对象可以有多个
+Root&lt;Feature&gt; root = query.from(Feature.class);
+
+// 4. 查询大于 1 的条件
+Predicate predicate = criteriaBuilder.greaterThanOrEqualTo(root.get(&quot;id&quot;), 1L);
+Predicate predicate1 = criteriaBuilder.equal(root.get(&quot;name&quot;), &quot;年龄&quot;);
+
+query.where(criteriaBuilder.and(predicate, predicate1));
+
+// 4. 执行构造出的条件
+
+List&lt;Feature&gt; resultList = entityManager.createQuery(query).getResultList();
+
+</code></pre>	  
 
 	  <div>
   		<center>
@@ -338,15 +360,15 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
 			
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
