@@ -230,7 +230,7 @@ Temporal 用于设置 Date 类型的属性到对应精度的字段。
     private AccountRoles role;
 ```
 
-可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。
+可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。需要注意的是，定义枚举时，如没有任何 valueOf的方法，在序列化和反序列化时对大小写敏感。
 
 ### @Lob
 
@@ -270,7 +270,7 @@ FetchType fetch() default EAGER;
 // 配置对方拥有关系
 String mappedBy() default "";
 
-// 是否反向级联删除
+// 是否允许级联删除
 boolean orphanRemoval() default false;
 
 ```

@@ -225,7 +225,7 @@ int scale() default 0;
 </ul>
 <h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)
     private AccountRoles role;
-</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。</p>
+</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。需要注意的是，定义枚举时，如没有任何 valueOf的方法，在序列化和反序列化时对大小写敏感。</p>
 <h3 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h3><p>建表时候映射为大字段</p>
 <ul>
 <li>如果是字符串类型会映射为 Clob 类型</li>
@@ -255,7 +255,7 @@ FetchType fetch() default EAGER;
 // 配置对方拥有关系
 String mappedBy() default &quot;&quot;;
 
-// 是否反向级联删除
+// 是否允许级联删除
 boolean orphanRemoval() default false;
 
 </code></pre><p>@OneToOne 需要和 @JoinColumn(name = “solution_id”) 配合使用。</p>
@@ -642,9 +642,9 @@ public interface UserReadModelRepository extends JpaRepository&lt;UserReadModel,
 		
 	
 		
-	
-		
 			
+		
+	
 		
 	
 		

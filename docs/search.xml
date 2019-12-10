@@ -1129,7 +1129,7 @@
       <link href="/Spring/spring/spring-data/"/>
       <url>/Spring/spring/spring-data/</url>
       
-        <content type="html"><![CDATA[<h2 id="Spring、Spring-data-和-Spring-data-JPA-的关系"><a href="#Spring、Spring-data-和-Spring-data-JPA-的关系" class="headerlink" title="Spring、Spring data 和 Spring data JPA 的关系"></a>Spring、Spring data 和 Spring data JPA 的关系</h2><p>Spring data JPA 是 Java 服务器开发中最容易混淆的一堆概念。</p><ul><li>Spring，众所周知是一个轻量级的 IOC 容器，用来处理对象实例（Bean）之间的关系。</li><li>Spring data，是 Spring Framework 生态下用来访问数据的一个模块。</li><li>JPA，是 Java persistence API 的缩写，Java 用来抽象访问数据库的规范，主要实现有 Hibernate、TopLink 等 ORM 库。</li><li>Spirng data JPA，是 Spring data 项目的一个主要模块，用来封装 JPA 实现，并增加了一些便利的方法。如果直接使用 Hibernate 还是需要编写类似于 SQL 的 JPQL 的查询语言。但使用 Spring data JPA 可以实现类似 <code>findById()</code> 一类基本操作的方法。</li></ul><p>Spring Data 的一些属于版本火车的子项目：</p><ul><li>Spring Data Commons</li><li>Spring Data JPA</li><li>Spring Data KeyValue</li><li>Spring Data LDAP</li><li>Spring Data MongoDB</li><li>Spring Data Redis</li><li>Spring Data REST</li><li>Spring Data for Apache Cassandra</li><li>Spring Data for Apache Geode</li><li>Spring Data for Apache Solr</li><li>Spring Data for Pivotal GemFire</li><li>Spring Data Couchbase (community module)</li><li>Spring Data Elasticsearch (community module)</li><li>Spring Data Neo4j (community module)</li></ul><p>版本火车指的是，不同的独立子项目会保持同步的发布节奏，如果使用 Spring boot，也会随着 parent pom 变化，避免版本不一致导致的问题。</p><h2 id="Spring-Data-JPA-主要特性"><a href="#Spring-Data-JPA-主要特性" class="headerlink" title="Spring Data JPA 主要特性"></a>Spring Data JPA 主要特性</h2><ul><li>辅助查询 <code>findByxx</code></li><li>支持使用 Querydsl 复杂统一的查询方法</li><li>分页、排序</li><li>启动时检查 <code>@Query</code> 有效性</li></ul><h2 id="Spring-Data-JPA-的主要类"><a href="#Spring-Data-JPA-的主要类" class="headerlink" title="Spring Data JPA 的主要类"></a>Spring Data JPA 的主要类</h2><p>从 SimpleJpaRepository 的实现开，使用 idea 分析出类图。</p><p><img src="/Spring/spring/spring-data/simple-jpa-repository-diagram.png" alt="SimpleJpaRepository"></p><ul><li>EntityManagerFactory EntityManager 的工厂类</li><li>EntityManager 一个接口，管理持久化操作的对象</li><li>Entity 实体是持久性对象，对应存储在数据库中的记录</li><li>EntityTransaction 和 EntityManager 是一对一关系，提供事务支持</li><li>Persistence 包含静态方法，获取 EntityManagerFactory 实例</li><li>Query 该接口由每个 JPA 供应商提供，用于数据查询</li></ul><h2 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h2><p><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">https://spring.io/guides/gs/accessing-data-jpa/</a></p><h2 id="常见的查询方法"><a href="#常见的查询方法" class="headerlink" title="常见的查询方法"></a>常见的查询方法</h2><p>查询方法策略就是Spring Data如何从 repository 中找到合适的查询方法。有一下几种</p><ul><li>CREATE 尝试从查询方法名称构造特定于仓库的查询。例如 findByName，根据约定有以下几种查询方式：<ul><li>find…By</li><li>read…By</li><li>query…By</li><li>count…By</li><li>get…By</li></ul></li><li>USE_DECLARED_QUERY 会从 repository 中定义的方法中寻找合适的查询方式</li><li>CREATE_IF_NOT_FOUND 这是 JPA 默认的策略，组合CREATE和USE_DECLARED_QUERY</li></ul><p>CREATE 策略的几个例子：</p><pre><code>interface PersonRepository extends Repository&lt;User, Long&gt; {  List&lt;Person&gt; findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);  // Enables the distinct flag for the query  List&lt;Person&gt; findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);  List&lt;Person&gt; findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);  // Enabling ignoring case for an individual property  List&lt;Person&gt; findByLastnameIgnoreCase(String lastname);  // Enabling ignoring case for all suitable properties  List&lt;Person&gt; findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);  // Enabling static ORDER BY for a query  List&lt;Person&gt; findByLastnameOrderByFirstnameAsc(String lastname);  List&lt;Person&gt; findByLastnameOrderByFirstnameDesc(String lastname);}</code></pre><ul><li><p>表达式通常是属性遍历和可以连接的运算符。您可以使用组合属性表达式AND和OR。您还可以得到这样的运营商为支撑Between，LessThan，GreaterThan，和Like该属性的表达式。受支持的操作员可能因数据存储而异，因此请参阅相应部分的参考文档。</p></li><li><p>方法解析器支持IgnoreCase为单个属性（例如，findByLastnameIgnoreCase(…)）或支持忽略大小写的类型的所有属性（通常为String实例 - 例如findByLastnameAndFirstnameAllIgnoreCase(…)）设置标志。支持忽略情况的方式可能因商店而异，因此请参阅参考文档中的相关部分以获取特定于商店的查询方法。</p></li><li><p>您可以通过OrderBy向引用属性的查询方法附加子句并提供排序方向（Asc或Desc）来应用静态排序。</p></li></ul><p>分页的情况</p><pre><code>Page&lt;User&gt; findByLastname(String lastname, Pageable pageable);Slice&lt;User&gt; findByLastname(String lastname, Pageable pageable);List&lt;User&gt; findByLastname(String lastname, Sort sort);List&lt;User&gt; findByLastname(String lastname, Pageable pageable);</code></pre><h2 id="一对多级联存储"><a href="#一对多级联存储" class="headerlink" title="一对多级联存储"></a>一对多级联存储</h2><p>一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。</p><pre><code> Feature ageFeature = new Feature();        ageFeature.setName(&quot;年龄&quot;);        ageFeature.setStep(2);        ageFeature.setFeatureValues(Arrays.asList(                new FeatureValue(null, &quot;10-20&quot;, ageFeature),                new FeatureValue(null, &quot;20-30&quot;, ageFeature)        ));        return ageFeature;</code></pre><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id    @GeneratedValue(generator = &quot;UUID&quot;)    @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)    private String id;</code></pre><h2 id="Entity-实例里面常用注解"><a href="#Entity-实例里面常用注解" class="headerlink" title="@Entity 实例里面常用注解"></a>@Entity 实例里面常用注解</h2><h3 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a>@Entity</h3><p>javax.persistence 包中提供，设置该对象会被 JPA 管理，并映射到指定的数据库表。</p><p>这个类可以给一个名字。</p><h3 id="Table"><a href="#Table" class="headerlink" title="@Table"></a>@Table</h3><p>指定数据库表名</p><pre><code>// 表名，可以使用命名策略设置约定的名字String name() default &quot;&quot;;// 数据库抽象概念,用于处理table 的命名冲突String catalog() default &quot;&quot;;// 一般来说，是指数据库名String schema() default &quot;&quot;;// 唯一约束，如果不使用 JPA 自动建表不用管UniqueConstraint[] uniqueConstraints() default {};// 索引，建表时候使用，一般来说不需要Index[] indexes() default {};</code></pre><h3 id="ID"><a href="#ID" class="headerlink" title="@ID"></a>@ID</h3><p>指定为实体的主键，JPA 兼容遗留系统，使用复合主键。@IdClass </p><p>不过推荐不使用。</p><h3 id="GeneratedValue"><a href="#GeneratedValue" class="headerlink" title="@GeneratedValue"></a>@GeneratedValue</h3><p>主键生成策略 GenerationType 中定义了四种主键生成策略</p><ul><li>TABLE 通过表序列生成，框架模拟表增长</li><li>SEQUENCE 采用数据库序列增长，MySQL 不支持这种方式</li><li>IDENTITY 使用表主键的自动增长</li><li>AUTO 自动选择，默认设置选项，但不推荐使用</li></ul><h3 id="Basic"><a href="#Basic" class="headerlink" title="@Basic"></a>@Basic</h3><p>属性到数据库字段的映射，如果实体属性上没有任何注解，默认为@Basic</p><p>使用 @Basic 提供了额外懒加载的特性，对大字段非常有用</p><h3 id="Transient"><a href="#Transient" class="headerlink" title="@Transient"></a>@Transient</h3><p>设置为忽略，表明该字段不会被持久化。使用上和 @Basic 相反，JPA 映射数据库的时候选择忽略它。</p><h3 id="Column"><a href="#Column" class="headerlink" title="@Column"></a>@Column</h3><p>定义实体属性和数据库字段的列名，这个注解的参数比较多。</p><pre><code>// 列名String name() default &quot;&quot;;// 是否唯一boolean unique() default false;// 是否允许为空，用于建表时使用boolean nullable() default true;// 是否插入数据库boolean insertable() default true;// 是否运行更新数据库boolean updatable() default true;// 表名，用的比较少String table() default &quot;&quot;;// 下面三个用于创建表的属性设定int length() default 255;int precision() default 0;int scale() default 0;</code></pre><h3 id="Temporal"><a href="#Temporal" class="headerlink" title="@Temporal"></a>@Temporal</h3><p>Temporal 用于设置 Date 类型的属性到对应精度的字段。</p><ul><li>TemporalType.DATE 映射为日期</li><li>TemporalType.TIME 映射为时间</li><li>TemporalType.TIMESTAMP 映射为时间戳</li></ul><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)    private AccountRoles role;</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。</p><h3 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h3><p>建表时候映射为大字段</p><ul><li>如果是字符串类型会映射为 Clob 类型</li><li>如果是字节类型，会映射为 Blob</li></ul><h3 id="JoinColumn"><a href="#JoinColumn" class="headerlink" title="@JoinColumn"></a>@JoinColumn</h3><p>配合 @OneToOne、@OneToMany、ManyToOne 使用，单独使用没有意义。</p><p>@JoinColumn 多个字段的关联关系，很少用</p><h3 id="OneToOne"><a href="#OneToOne" class="headerlink" title="@OneToOne"></a>@OneToOne</h3><pre><code>// 默认当前字段的类型Class targetEntity() default void.class;// 级联操作类型CascadeType[] cascade() default {};1. CascadeType.ALL2. CascadeType.PERSIST3. CascadeType.MERGE4. CascadeType.REMOVE5. CascadeType.REFRESH6. CascadeType.DETACH// 是否懒加载FetchType fetch() default EAGER;// 是否为空 boolean optional() default true;// 配置对方拥有关系String mappedBy() default &quot;&quot;;// 是否反向级联删除boolean orphanRemoval() default false;</code></pre><p>@OneToOne 需要和 @JoinColumn(name = “solution_id”) 配合使用。</p><p>例如一个用户对应有一个头像</p><pre><code>    @OneToOne(cascade = CascadeType.ALL)    @JoinColumn(name = &quot;avatar_id&quot;)    private UserAvatar userAvatar;</code></pre><h3 id="OneToMany-和-ManyToOne"><a href="#OneToMany-和-ManyToOne" class="headerlink" title="@OneToMany 和 @ManyToOne"></a>@OneToMany 和 @ManyToOne</h3><p>这两个参数和 @OneToOne 差不多，也需要和 @JoinColumn 配合使用</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>@OneToMany 需要额外配合使用的注解是 @OrderBy</p><p>在 @OneToMany 中，使用 @OrderBy 控制列表的顺序</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    @OrderBy(&quot;order DESC&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><h2 id="ManyToMany"><a href="#ManyToMany" class="headerlink" title="@ManyToMany"></a>@ManyToMany</h2><p>多对多一般发生在聚合根之间，其中有一个隐藏的关联表。</p><pre><code>    @ManyToMany    @JoinTable(name = &quot;product_feature_value&quot;,            joinColumns = {@JoinColumn(name = &quot;product_id&quot;, referencedColumnName = &quot;id&quot;)},            inverseJoinColumns = {@JoinColumn(name = &quot;feature_value_id&quot;, referencedColumnName = &quot;id&quot;)}    )    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>一个 Product 有多个 FeatureValue，使用多对多需要引入 product_feature_value 中间表。</p><h2 id="EntityGraph-解决-N-1-条-SQL-的问题"><a href="#EntityGraph-解决-N-1-条-SQL-的问题" class="headerlink" title="@EntityGraph 解决 N+1 条 SQL 的问题"></a>@EntityGraph 解决 N+1 条 SQL 的问题</h2><p>使用一对多，多对多关联的时，会产生 N+1 条SQL，我们可以通过使用 Join 来避免这种情况。</p><p>使用 join 有三种方法</p><ul><li>@EntityGraph 在实体关联阶段解决</li><li>@Query JPQL</li><li>Criteria API 编写 JOIN 子句</li></ul><p>使用 @EntityGraph</p><p>现在实体上定义</p><pre><code>@Table(name = &quot;user&quot;)@NamedEntityGraph(name=&quot;userReadModel.department&quot;,attributeNodes={@NamedAttributeNode(&quot;department&quot;)})public class UserReadModel {    @ManyToOne    @JoinColumn(name = &quot;department_id&quot;)    private Department department;</code></pre><p>在查询的方法上使用即可</p><pre><code>@Repositorypublic interface UserReadModelRepository extends JpaRepository&lt;UserReadModel, Long&gt;,        JpaSpecificationExecutor&lt;UserReadModel&gt; {    @EntityGraph(value = &quot;userReadModel.department&quot; , type= EntityGraph.EntityGraphType.FETCH)    List&lt;UserReadModel&gt; findAll(@Nullable Specification&lt;UserReadModel&gt; spec);}</code></pre><h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol><li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li><li>应该使用 DDD 思想去设计关联，减少不必要的关联，聚合根之间不要关联。查询使用 join 完成</li><li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li><li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li><li>@ManyToMany 默认会删除关联表</li><li>@Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role</li></ol><pre><code>{  username:&quot;&quot;,  department:{    id: 1  },  roles:[    {      id:1    }  ]}</code></pre><p>当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。</p><ol start="7"><li>当数据库插入异常，会报错，例如违反主键规则</li><li>更新、插入，只要不报错都会返回成功，无需再检查返回值</li></ol><h2 id="JPA-和建表规范"><a href="#JPA-和建表规范" class="headerlink" title="JPA 和建表规范"></a>JPA 和建表规范</h2><ul><li>根据 DDD 原则建表<ul><li>例如 user user_avatar user_role</li></ul></li></ul><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol><li>不要有一些无意义的关联</li><li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li></ol><h2 id="在-Spring-data-中使用-entityManager-直接操作数据"><a href="#在-Spring-data-中使用-entityManager-直接操作数据" class="headerlink" title="在 Spring data 中使用 entityManager 直接操作数据"></a>在 Spring data 中使用 entityManager 直接操作数据</h2><pre><code>  @Autowired  EntityManager entityManager;  Role role = entityManager.find(Role.class, savedRole.getId());  assertEquals(&quot;remark&quot;, role.getRemark());</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li><li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li><li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Spring、Spring-data-和-Spring-data-JPA-的关系"><a href="#Spring、Spring-data-和-Spring-data-JPA-的关系" class="headerlink" title="Spring、Spring data 和 Spring data JPA 的关系"></a>Spring、Spring data 和 Spring data JPA 的关系</h2><p>Spring data JPA 是 Java 服务器开发中最容易混淆的一堆概念。</p><ul><li>Spring，众所周知是一个轻量级的 IOC 容器，用来处理对象实例（Bean）之间的关系。</li><li>Spring data，是 Spring Framework 生态下用来访问数据的一个模块。</li><li>JPA，是 Java persistence API 的缩写，Java 用来抽象访问数据库的规范，主要实现有 Hibernate、TopLink 等 ORM 库。</li><li>Spirng data JPA，是 Spring data 项目的一个主要模块，用来封装 JPA 实现，并增加了一些便利的方法。如果直接使用 Hibernate 还是需要编写类似于 SQL 的 JPQL 的查询语言。但使用 Spring data JPA 可以实现类似 <code>findById()</code> 一类基本操作的方法。</li></ul><p>Spring Data 的一些属于版本火车的子项目：</p><ul><li>Spring Data Commons</li><li>Spring Data JPA</li><li>Spring Data KeyValue</li><li>Spring Data LDAP</li><li>Spring Data MongoDB</li><li>Spring Data Redis</li><li>Spring Data REST</li><li>Spring Data for Apache Cassandra</li><li>Spring Data for Apache Geode</li><li>Spring Data for Apache Solr</li><li>Spring Data for Pivotal GemFire</li><li>Spring Data Couchbase (community module)</li><li>Spring Data Elasticsearch (community module)</li><li>Spring Data Neo4j (community module)</li></ul><p>版本火车指的是，不同的独立子项目会保持同步的发布节奏，如果使用 Spring boot，也会随着 parent pom 变化，避免版本不一致导致的问题。</p><h2 id="Spring-Data-JPA-主要特性"><a href="#Spring-Data-JPA-主要特性" class="headerlink" title="Spring Data JPA 主要特性"></a>Spring Data JPA 主要特性</h2><ul><li>辅助查询 <code>findByxx</code></li><li>支持使用 Querydsl 复杂统一的查询方法</li><li>分页、排序</li><li>启动时检查 <code>@Query</code> 有效性</li></ul><h2 id="Spring-Data-JPA-的主要类"><a href="#Spring-Data-JPA-的主要类" class="headerlink" title="Spring Data JPA 的主要类"></a>Spring Data JPA 的主要类</h2><p>从 SimpleJpaRepository 的实现开，使用 idea 分析出类图。</p><p><img src="/Spring/spring/spring-data/simple-jpa-repository-diagram.png" alt="SimpleJpaRepository"></p><ul><li>EntityManagerFactory EntityManager 的工厂类</li><li>EntityManager 一个接口，管理持久化操作的对象</li><li>Entity 实体是持久性对象，对应存储在数据库中的记录</li><li>EntityTransaction 和 EntityManager 是一对一关系，提供事务支持</li><li>Persistence 包含静态方法，获取 EntityManagerFactory 实例</li><li>Query 该接口由每个 JPA 供应商提供，用于数据查询</li></ul><h2 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h2><p><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">https://spring.io/guides/gs/accessing-data-jpa/</a></p><h2 id="常见的查询方法"><a href="#常见的查询方法" class="headerlink" title="常见的查询方法"></a>常见的查询方法</h2><p>查询方法策略就是Spring Data如何从 repository 中找到合适的查询方法。有一下几种</p><ul><li>CREATE 尝试从查询方法名称构造特定于仓库的查询。例如 findByName，根据约定有以下几种查询方式：<ul><li>find…By</li><li>read…By</li><li>query…By</li><li>count…By</li><li>get…By</li></ul></li><li>USE_DECLARED_QUERY 会从 repository 中定义的方法中寻找合适的查询方式</li><li>CREATE_IF_NOT_FOUND 这是 JPA 默认的策略，组合CREATE和USE_DECLARED_QUERY</li></ul><p>CREATE 策略的几个例子：</p><pre><code>interface PersonRepository extends Repository&lt;User, Long&gt; {  List&lt;Person&gt; findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);  // Enables the distinct flag for the query  List&lt;Person&gt; findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);  List&lt;Person&gt; findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);  // Enabling ignoring case for an individual property  List&lt;Person&gt; findByLastnameIgnoreCase(String lastname);  // Enabling ignoring case for all suitable properties  List&lt;Person&gt; findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);  // Enabling static ORDER BY for a query  List&lt;Person&gt; findByLastnameOrderByFirstnameAsc(String lastname);  List&lt;Person&gt; findByLastnameOrderByFirstnameDesc(String lastname);}</code></pre><ul><li><p>表达式通常是属性遍历和可以连接的运算符。您可以使用组合属性表达式AND和OR。您还可以得到这样的运营商为支撑Between，LessThan，GreaterThan，和Like该属性的表达式。受支持的操作员可能因数据存储而异，因此请参阅相应部分的参考文档。</p></li><li><p>方法解析器支持IgnoreCase为单个属性（例如，findByLastnameIgnoreCase(…)）或支持忽略大小写的类型的所有属性（通常为String实例 - 例如findByLastnameAndFirstnameAllIgnoreCase(…)）设置标志。支持忽略情况的方式可能因商店而异，因此请参阅参考文档中的相关部分以获取特定于商店的查询方法。</p></li><li><p>您可以通过OrderBy向引用属性的查询方法附加子句并提供排序方向（Asc或Desc）来应用静态排序。</p></li></ul><p>分页的情况</p><pre><code>Page&lt;User&gt; findByLastname(String lastname, Pageable pageable);Slice&lt;User&gt; findByLastname(String lastname, Pageable pageable);List&lt;User&gt; findByLastname(String lastname, Sort sort);List&lt;User&gt; findByLastname(String lastname, Pageable pageable);</code></pre><h2 id="一对多级联存储"><a href="#一对多级联存储" class="headerlink" title="一对多级联存储"></a>一对多级联存储</h2><p>一对多的级联存储时，需要配置好关联关系，然后将自增ID置空即可。</p><pre><code> Feature ageFeature = new Feature();        ageFeature.setName(&quot;年龄&quot;);        ageFeature.setStep(2);        ageFeature.setFeatureValues(Arrays.asList(                new FeatureValue(null, &quot;10-20&quot;, ageFeature),                new FeatureValue(null, &quot;20-30&quot;, ageFeature)        ));        return ageFeature;</code></pre><h2 id="UUID-生成策略"><a href="#UUID-生成策略" class="headerlink" title="UUID 生成策略"></a>UUID 生成策略</h2><pre><code>    @Id    @GeneratedValue(generator = &quot;UUID&quot;)    @GenericGenerator(name = &quot;UUID&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)    private String id;</code></pre><h2 id="Entity-实例里面常用注解"><a href="#Entity-实例里面常用注解" class="headerlink" title="@Entity 实例里面常用注解"></a>@Entity 实例里面常用注解</h2><h3 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a>@Entity</h3><p>javax.persistence 包中提供，设置该对象会被 JPA 管理，并映射到指定的数据库表。</p><p>这个类可以给一个名字。</p><h3 id="Table"><a href="#Table" class="headerlink" title="@Table"></a>@Table</h3><p>指定数据库表名</p><pre><code>// 表名，可以使用命名策略设置约定的名字String name() default &quot;&quot;;// 数据库抽象概念,用于处理table 的命名冲突String catalog() default &quot;&quot;;// 一般来说，是指数据库名String schema() default &quot;&quot;;// 唯一约束，如果不使用 JPA 自动建表不用管UniqueConstraint[] uniqueConstraints() default {};// 索引，建表时候使用，一般来说不需要Index[] indexes() default {};</code></pre><h3 id="ID"><a href="#ID" class="headerlink" title="@ID"></a>@ID</h3><p>指定为实体的主键，JPA 兼容遗留系统，使用复合主键。@IdClass </p><p>不过推荐不使用。</p><h3 id="GeneratedValue"><a href="#GeneratedValue" class="headerlink" title="@GeneratedValue"></a>@GeneratedValue</h3><p>主键生成策略 GenerationType 中定义了四种主键生成策略</p><ul><li>TABLE 通过表序列生成，框架模拟表增长</li><li>SEQUENCE 采用数据库序列增长，MySQL 不支持这种方式</li><li>IDENTITY 使用表主键的自动增长</li><li>AUTO 自动选择，默认设置选项，但不推荐使用</li></ul><h3 id="Basic"><a href="#Basic" class="headerlink" title="@Basic"></a>@Basic</h3><p>属性到数据库字段的映射，如果实体属性上没有任何注解，默认为@Basic</p><p>使用 @Basic 提供了额外懒加载的特性，对大字段非常有用</p><h3 id="Transient"><a href="#Transient" class="headerlink" title="@Transient"></a>@Transient</h3><p>设置为忽略，表明该字段不会被持久化。使用上和 @Basic 相反，JPA 映射数据库的时候选择忽略它。</p><h3 id="Column"><a href="#Column" class="headerlink" title="@Column"></a>@Column</h3><p>定义实体属性和数据库字段的列名，这个注解的参数比较多。</p><pre><code>// 列名String name() default &quot;&quot;;// 是否唯一boolean unique() default false;// 是否允许为空，用于建表时使用boolean nullable() default true;// 是否插入数据库boolean insertable() default true;// 是否运行更新数据库boolean updatable() default true;// 表名，用的比较少String table() default &quot;&quot;;// 下面三个用于创建表的属性设定int length() default 255;int precision() default 0;int scale() default 0;</code></pre><h3 id="Temporal"><a href="#Temporal" class="headerlink" title="@Temporal"></a>@Temporal</h3><p>Temporal 用于设置 Date 类型的属性到对应精度的字段。</p><ul><li>TemporalType.DATE 映射为日期</li><li>TemporalType.TIME 映射为时间</li><li>TemporalType.TIMESTAMP 映射为时间戳</li></ul><h3 id="Enumerated"><a href="#Enumerated" class="headerlink" title="Enumerated"></a>Enumerated</h3><pre><code>    @Enumerated(STRING)    private AccountRoles role;</code></pre><p>可以将字符串类型变成枚举类型，如果不使用这种方式，枚举会被自动转换为数字。如果将来发生变化，就无法映射回到正确的枚举值。需要注意的是，定义枚举时，如没有任何 valueOf的方法，在序列化和反序列化时对大小写敏感。</p><h3 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h3><p>建表时候映射为大字段</p><ul><li>如果是字符串类型会映射为 Clob 类型</li><li>如果是字节类型，会映射为 Blob</li></ul><h3 id="JoinColumn"><a href="#JoinColumn" class="headerlink" title="@JoinColumn"></a>@JoinColumn</h3><p>配合 @OneToOne、@OneToMany、ManyToOne 使用，单独使用没有意义。</p><p>@JoinColumn 多个字段的关联关系，很少用</p><h3 id="OneToOne"><a href="#OneToOne" class="headerlink" title="@OneToOne"></a>@OneToOne</h3><pre><code>// 默认当前字段的类型Class targetEntity() default void.class;// 级联操作类型CascadeType[] cascade() default {};1. CascadeType.ALL2. CascadeType.PERSIST3. CascadeType.MERGE4. CascadeType.REMOVE5. CascadeType.REFRESH6. CascadeType.DETACH// 是否懒加载FetchType fetch() default EAGER;// 是否为空 boolean optional() default true;// 配置对方拥有关系String mappedBy() default &quot;&quot;;// 是否允许级联删除boolean orphanRemoval() default false;</code></pre><p>@OneToOne 需要和 @JoinColumn(name = “solution_id”) 配合使用。</p><p>例如一个用户对应有一个头像</p><pre><code>    @OneToOne(cascade = CascadeType.ALL)    @JoinColumn(name = &quot;avatar_id&quot;)    private UserAvatar userAvatar;</code></pre><h3 id="OneToMany-和-ManyToOne"><a href="#OneToMany-和-ManyToOne" class="headerlink" title="@OneToMany 和 @ManyToOne"></a>@OneToMany 和 @ManyToOne</h3><p>这两个参数和 @OneToOne 差不多，也需要和 @JoinColumn 配合使用</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>@OneToMany 需要额外配合使用的注解是 @OrderBy</p><p>在 @OneToMany 中，使用 @OrderBy 控制列表的顺序</p><pre><code>    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)    @JoinColumn(name = &quot;feature_id&quot;)    @OrderBy(&quot;order DESC&quot;)    private List&lt;FeatureValue&gt; featureValues;</code></pre><h2 id="ManyToMany"><a href="#ManyToMany" class="headerlink" title="@ManyToMany"></a>@ManyToMany</h2><p>多对多一般发生在聚合根之间，其中有一个隐藏的关联表。</p><pre><code>    @ManyToMany    @JoinTable(name = &quot;product_feature_value&quot;,            joinColumns = {@JoinColumn(name = &quot;product_id&quot;, referencedColumnName = &quot;id&quot;)},            inverseJoinColumns = {@JoinColumn(name = &quot;feature_value_id&quot;, referencedColumnName = &quot;id&quot;)}    )    private List&lt;FeatureValue&gt; featureValues;</code></pre><p>一个 Product 有多个 FeatureValue，使用多对多需要引入 product_feature_value 中间表。</p><h2 id="EntityGraph-解决-N-1-条-SQL-的问题"><a href="#EntityGraph-解决-N-1-条-SQL-的问题" class="headerlink" title="@EntityGraph 解决 N+1 条 SQL 的问题"></a>@EntityGraph 解决 N+1 条 SQL 的问题</h2><p>使用一对多，多对多关联的时，会产生 N+1 条SQL，我们可以通过使用 Join 来避免这种情况。</p><p>使用 join 有三种方法</p><ul><li>@EntityGraph 在实体关联阶段解决</li><li>@Query JPQL</li><li>Criteria API 编写 JOIN 子句</li></ul><p>使用 @EntityGraph</p><p>现在实体上定义</p><pre><code>@Table(name = &quot;user&quot;)@NamedEntityGraph(name=&quot;userReadModel.department&quot;,attributeNodes={@NamedAttributeNode(&quot;department&quot;)})public class UserReadModel {    @ManyToOne    @JoinColumn(name = &quot;department_id&quot;)    private Department department;</code></pre><p>在查询的方法上使用即可</p><pre><code>@Repositorypublic interface UserReadModelRepository extends JpaRepository&lt;UserReadModel, Long&gt;,        JpaSpecificationExecutor&lt;UserReadModel&gt; {    @EntityGraph(value = &quot;userReadModel.department&quot; , type= EntityGraph.EntityGraphType.FETCH)    List&lt;UserReadModel&gt; findAll(@Nullable Specification&lt;UserReadModel&gt; spec);}</code></pre><h2 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h2><ol><li>@ManyToOne 如果 one 这一方不存在，会报错，即使设置了 Optional</li><li>应该使用 DDD 思想去设计关联，减少不必要的关联，聚合根之间不要关联。查询使用 join 完成</li><li>@OneToMany 关系默认懒加载会报错，应该设置为 Eager，或者使用 @Transactional 但是会带来性能开销</li><li>@OneToOne 本质上是实体和值对象的关系，统一使用实体的ID</li><li>@ManyToMany 默认会删除关联表</li><li>@Save  时候如果外键在对应表中，找不到目标记录会丢出错误,例如用户属于某个部门,拥有多个 Role</li></ol><pre><code>{  username:&quot;&quot;,  department:{    id: 1  },  roles:[    {      id:1    }  ]}</code></pre><p>当 role 的 ID 在数据库中不存在时，会报错，需要处理异常。</p><ol start="7"><li>当数据库插入异常，会报错，例如违反主键规则</li><li>更新、插入，只要不报错都会返回成功，无需再检查返回值</li></ol><h2 id="JPA-和建表规范"><a href="#JPA-和建表规范" class="headerlink" title="JPA 和建表规范"></a>JPA 和建表规范</h2><ul><li>根据 DDD 原则建表<ul><li>例如 user user_avatar user_role</li></ul></li></ul><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol><li>不要有一些无意义的关联</li><li>使用 NamedEntityGraph 帮我们一次抓取数据，可以明显减少 SQL 数量</li></ol><h2 id="在-Spring-data-中使用-entityManager-直接操作数据"><a href="#在-Spring-data-中使用-entityManager-直接操作数据" class="headerlink" title="在 Spring data 中使用 entityManager 直接操作数据"></a>在 Spring data 中使用 entityManager 直接操作数据</h2><pre><code>  @Autowired  EntityManager entityManager;  Role role = entityManager.find(Role.class, savedRole.getId());  assertEquals(&quot;remark&quot;, role.getRemark());</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>示例项目 <a href="https://github.com/spring-projects/spring-data-examples/tree/master/jpa" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-examples/tree/master/jpa</a></li><li>Spring data  中文版本 <a href="https://blog.csdn.net/yongboyhood/article/details/81226553" target="_blank" rel="noopener">https://blog.csdn.net/yongboyhood/article/details/81226553</a></li><li>JPA 教程 <a href="https://www.yiibai.com/jpa/jpa-introduction.html" target="_blank" rel="noopener">https://www.yiibai.com/jpa/jpa-introduction.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -1499,23 +1499,6 @@
     </entry>
     
     <entry>
-      <title>微软SDL( Security Development Lifecycle)流程</title>
-      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
-      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Circle CI 基本使用</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
@@ -1526,6 +1509,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
+      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
           
       </categories>
       
@@ -1754,50 +1754,16 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
       
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/react-recource/"/>
-      <url>/React/react/react-recource/</url>
-      
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
       
       
       <categories>
           
           <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
           
       </categories>
       
@@ -1822,11 +1788,28 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React 资源收集</title>
+      <link href="/React/react/react-recource/"/>
+      <url>/React/react/react-recource/</url>
+      
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
@@ -1856,45 +1839,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
-      
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
       
       
       <categories>
@@ -1958,11 +1907,45 @@
     </entry>
     
     <entry>
-      <title>PHP拓展Linux/unix 下的编译安装</title>
-      <link href="/php/php/PHP-extension/"/>
-      <url>/php/php/PHP-extension/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
+      
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
       
       
       <categories>
@@ -1980,6 +1963,23 @@
       <url>/php/php/simple-log-feature/</url>
       
         <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展Linux/unix 下的编译安装</title>
+      <link href="/php/php/PHP-extension/"/>
+      <url>/php/php/PHP-extension/</url>
+      
+        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
       
       
       <categories>
@@ -2060,6 +2060,23 @@
     </entry>
     
     <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Mock工具 wiremock</title>
       <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
       <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
@@ -2094,40 +2111,6 @@
     </entry>
     
     <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
-      
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Spring boot 学习指南</title>
       <link href="/Spring/spring/Spring%20boot%20Basic/"/>
       <url>/Spring/spring/Spring%20boot%20Basic/</url>
@@ -2145,16 +2128,16 @@
     </entry>
     
     <entry>
-      <title>使用Java构建API的知识体系</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
       
-        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> java </category>
           
       </categories>
       
@@ -2189,6 +2172,23 @@
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>使用Java构建API的知识体系</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
+      
+        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -2298,23 +2298,6 @@
     </entry>
     
     <entry>
-      <title>最实用的Linux命令</title>
-      <link href="/linux/linux/common-useful-commands/"/>
-      <url>/linux/linux/common-useful-commands/</url>
-      
-        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>免费的CI/CD 工具</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
@@ -2325,6 +2308,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>最实用的Linux命令</title>
+      <link href="/linux/linux/common-useful-commands/"/>
+      <url>/linux/linux/common-useful-commands/</url>
+      
+        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -2349,23 +2349,6 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/linux/linux/nginx-usful%20command/"/>
-      <url>/linux/linux/nginx-usful%20command/</url>
-      
-        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Gradle 构建 Spring boot 项目</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
@@ -2376,6 +2359,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Nginx 常用操作</title>
+      <link href="/linux/linux/nginx-usful%20command/"/>
+      <url>/linux/linux/nginx-usful%20command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -2451,23 +2451,6 @@
     </entry>
     
     <entry>
-      <title>常用开源项目收集</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>必背的常用VIM命令</title>
       <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/"/>
       <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/common-vim-commands/</url>
@@ -2485,16 +2468,16 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      <title>常用开源项目收集</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
       
       
       <categories>
           
-          <category> 敏捷开发 </category>
+          <category> 自我管理 </category>
           
       </categories>
       
@@ -2512,6 +2495,23 @@
       <categories>
           
           <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 敏捷开发 </category>
           
       </categories>
       
