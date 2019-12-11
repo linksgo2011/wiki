@@ -13,8 +13,8 @@ Docker for desktop
 Swarm 官方的编排工具
 K8s 社区最火的编排工具
 
-Swarm 相关概念StackStack 指一个应用需要的一整套容器，例如前端、后端API、BFF等，由多个 service 构成。
-S">
+Swarm 相关概念节点安装了 Docker 的一个物理机或者虚拟机，节点分为管理节点和工作节点。
+管理节点分为 Leader 和 fo">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -82,7 +82,9 @@ S">
 <li>Swarm 官方的编排工具</li>
 <li>K8s 社区最火的编排工具</li>
 </ul>
-<h2 id="Swarm-相关概念"><a href="#Swarm-相关概念" class="headerlink" title="Swarm 相关概念"></a>Swarm 相关概念</h2><h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack 指一个应用需要的一整套容器，例如前端、后端API、BFF等，由多个 service 构成。</p>
+<h2 id="Swarm-相关概念"><a href="#Swarm-相关概念" class="headerlink" title="Swarm 相关概念"></a>Swarm 相关概念</h2><h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><p>安装了 Docker 的一个物理机或者虚拟机，节点分为管理节点和工作节点。</p>
+<p>管理节点分为 Leader 和 follower，管理节点最好是奇数。他们之间会自动选举，leader，生产上不建议将管理节点和工作节点放到一台服务器上。</p>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack 指一个应用需要的一整套容器，例如前端、后端API、BFF等，由多个 service 构成。</p>
 <h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>一个 Service 指一个 docker compose运行后的一个服务，可以存在多个容器的副本</p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p>一个Docker镜像</p>
 <h3 id="network"><a href="#network" class="headerlink" title="network"></a>network</h3><p>容器分配的IP地址</p>
@@ -104,6 +106,10 @@ S">
 	
 	
 		
+			
+		
+	
+		
 	
 		
 	
@@ -412,7 +418,7 @@ S">
 	
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/docker/docker/docker-basic/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
