@@ -45,6 +45,18 @@ TODO Docker 的概念
 容器运行需要的存储空间。
 
 
+## docker swarm 常见命令
+
+### 查看运行的 service 
+
+> docker service list 
+  
+### 查看某个日志
+
+> docker service logs [servicename]
+
+
 ## 参考资料
 
+- https://blog.xiodi.cn/?s=swarm
 - https://docs.docker.com/v17.09/engine/swarm/

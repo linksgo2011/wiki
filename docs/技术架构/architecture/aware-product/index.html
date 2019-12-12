@@ -112,6 +112,16 @@ firewall 设置
 <h2 id="使用-docker"><a href="#使用-docker" class="headerlink" title="使用 docker"></a>使用 docker</h2><ul>
 <li>使用合理的基础镜像，减少大小 （shim alphine）</li>
 </ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>开启 bin-log 复制</li>
+<li>设置合理的时区</li>
+<li>设置合理的字符集</li>
+<li>设置合理的存储引擎</li>
+<li>有合理的唯一健和索引</li>
+<li>视情况使用的外键，高并发的场景不建议使用外键</li>
+<li>对 UUID 采用合理的索引</li>
+<li>考虑数据迁移的便利性</li>
+</ul>
 	  
 
 	  <div>
@@ -378,12 +388,6 @@ firewall 设置
 		
 	
 		
-			
-		
-	
-		
-	
-		
 	
 		
 	
@@ -391,8 +395,6 @@ firewall 设置
 			
 		
 	
-		
-			
 		
 	
 		
@@ -403,6 +405,14 @@ firewall 设置
 			
 		
 	
+		
+			
+		
+	
+		
+	
+		
+			
 		
 	
 		
