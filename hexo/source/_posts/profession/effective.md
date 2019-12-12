@@ -31,3 +31,7 @@ command W
 
 返回代码上一处
 Command+ Alt + 左右键
+
+查看类图
+
+option+command+U

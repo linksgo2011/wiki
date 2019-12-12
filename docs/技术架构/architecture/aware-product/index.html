@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>线上运行和部署清单 | 架构师知识系统</title>
+  <title>和生产环境相关的注意事项 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
   <meta name="description" content="线上配置
@@ -18,12 +18,19 @@ firewall 设置
 
 设置合理的 jvm 参数
 设置合理的线程数
-设置合理的数据库连接数">
+设置合理的数据库连接数
+设置合理的时区
+合理的日志输出
+常见异常的处理
+系统监控
+密匙管理
+
+">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="线上运行和部署清单">
+  <meta property="og:title" content="和生产环境相关的注意事项">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -57,7 +64,7 @@ firewall 设置
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">线上运行和部署清单</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-24</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">和生产环境相关的注意事项</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-24</span></h1>
 </div>		
 
 <div class="row page">
@@ -92,6 +99,18 @@ firewall 设置
 <li>设置合理的 jvm 参数</li>
 <li>设置合理的线程数</li>
 <li>设置合理的数据库连接数</li>
+<li>设置合理的时区</li>
+<li>合理的日志输出</li>
+<li>常见异常的处理</li>
+<li>系统监控</li>
+<li>密匙管理</li>
+</ul>
+<h2 id="前端产品注意事项"><a href="#前端产品注意事项" class="headerlink" title="前端产品注意事项"></a>前端产品注意事项</h2><ul>
+<li>gzip</li>
+<li>js 压缩和混淆</li>
+</ul>
+<h2 id="使用-docker"><a href="#使用-docker" class="headerlink" title="使用 docker"></a>使用 docker</h2><ul>
+<li>使用合理的基础镜像，减少大小 （shim alphine）</li>
 </ul>
 	  
 
@@ -359,10 +378,6 @@ firewall 设置
 		
 	
 		
-	
-		
-	
-		
 			
 		
 	
@@ -371,11 +386,15 @@ firewall 设置
 		
 	
 		
+	
+		
 			
 		
 	
 		
 			
+		
+	
 		
 	
 		
