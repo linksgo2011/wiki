@@ -95,6 +95,10 @@ docker ">
 <blockquote>
 <p>docker run -p 8080:80 -d docker.io/nginx</p>
 </blockquote>
+<ul>
+<li>-p 参数为设置端口映射</li>
+<li>-d 为后台运行 –daemon </li>
+</ul>
 <p>docker exec 进入容器</p>
 <blockquote>
 <p>docker exec -it ngnix bash </p>
@@ -124,6 +128,9 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 <blockquote>
 <p>docker commit c9e5bb7a524f linksgo2011/frontend</p>
 </blockquote>
+<h2 id="docker-的版本说明"><a href="#docker-的版本说明" class="headerlink" title="docker 的版本说明"></a>docker 的版本说明</h2><p>docker 仓库的版本约定为 用户/仓库/标签</p>
+<p>例如 linksgo2011/fonrtend:01 标签的镜像推送时，会推送到 linksgo2011 下面的 fonrtend 中为 01 标签</p>
+<p>如果在构建镜像时候，不指定最后的标签名称，会使用 latest 标签，并且每次会覆盖上一次的镜像。</p>
 <h2 id="一些和-docker-相关的排错命令"><a href="#一些和-docker-相关的排错命令" class="headerlink" title="一些和 docker 相关的排错命令"></a>一些和 docker 相关的排错命令</h2><p>重启 docker daemon</p>
 <blockquote>
 <p>sudo systemctl restart docker</p>
@@ -142,6 +149,12 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 	
 	
 		
+	
+		
+			
+		
+	
+		
 			
 			
 		
@@ -454,7 +467,7 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 	
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/docker/docker/dockerfile/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	

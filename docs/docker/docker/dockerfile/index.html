@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Dockerfile 详解 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="Dockerfile 编写基础我们可以通过编写 Dockerfile 构建出 Docker 镜像，Dockerfile 可以看作为一个用于构建镜像的 Linux 命令集。Docker 在构建镜像的过程中，执行这个命令集，安装必要的软件以及一些基本的配置。
+一个基本的 Dockerfle
+FROM d">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Dockerfile 详解">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Dockerfile 详解</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-13</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="Dockerfile-编写基础"><a href="#Dockerfile-编写基础" class="headerlink" title="Dockerfile 编写基础"></a>Dockerfile 编写基础</h2><p>我们可以通过编写 Dockerfile 构建出 Docker 镜像，Dockerfile 可以看作为一个用于构建镜像的 Linux 命令集。Docker 在构建镜像的过程中，执行这个命令集，安装必要的软件以及一些基本的配置。</p>
+<p>一个基本的 Dockerfle</p>
+<pre><code>FROM docker.io/nginx
+
+COPY ./test.html /usr/share/nginx/htm/index.html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+CMD [&quot;nginx&quot;,&quot;-g&quot;,&quot;daemon off;&quot;]
+
+</code></pre><ul>
+<li>FROM 指明基础镜像，COPY 为复制资源文件命令， CMD 为容器启动时的命令。</li>
+</ul>
+<p>“Dockerfile” 是 Docker 默认的的文件名，也可使用 -f 参数进行指定其他文件名。</p>
+<blockquote>
+<p>docker build -t user/image:tag .<br>docker build -t user/image:new -f Dockerfile.new</p>
+</blockquote>
+<h3 id="Dockerfile-编写的注意事项"><a href="#Dockerfile-编写的注意事项" class="headerlink" title="Dockerfile 编写的注意事项"></a>Dockerfile 编写的注意事项</h3><p>尽可能自动化，避免 Y/n 提示导致构建失败。</p>
+<p>考虑命令的顺序,后面的命令会依赖前面的结果。</p>
+<p>如果很长的命令可以使用 \&amp;&amp; 来进行连接,例如</p>
+<pre><code>RUN echo &#39;this is a long message&#39; \
+&amp;&amp; echo &#39;hello&#39;
+</code></pre><p>如果 Dockerfile 存放的目录还有其他文件，例如 node_modules 等超大型文件集合，Docker 也会发送到 Daemon 去构建，因此可以使用 .dockerignore 来排除文件，加快构建速度。.dockerignore 文件的语法类似于 .gitignore。</p>
+<p>另外，一个容器最好只做一件事情，如果将数据库、前端静态页面、后端网站等都放到一个容器中，这样就失去了容器的意义。如果需要编排各种应用，可以使用 docker-compose 进行编排。</p>
+<h2 id="Dockerfile-命令"><a href="#Dockerfile-命令" class="headerlink" title="Dockerfile 命令"></a>Dockerfile 命令</h2><h3 id="解析器命令"><a href="#解析器命令" class="headerlink" title="解析器命令"></a>解析器命令</h3><p>解析器命令是可选的，它影响 Dockerfile 后续的处理方式。解析器命令告诉 Docker 如何处理后续的命令，使用注释的形式，写下 FROM 命令之前，否则会被作为注释处理。</p>
+<p>目前只有一个解析命令，escape </p>
+<pre><code># escape=`
+FROM ...
+COPY testfile.txt c:\\
+</code></pre><p>因为在 windows 下转义字符为 \ 因此 c:\ 会被解析成 c:\</p>
+<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p>FORM 命令用来表明，使用那个镜像作为基础构建，一般情况下都有基础镜像。FROM 必须是 Dockerfile 的第一句命令。</p>
+<blockquote>
+<p>FROM <a href="imageName:tag" target="_blank" rel="noopener">imageName:tag</a></p>
+</blockquote>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/docker/docker/docker-basic/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2019 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

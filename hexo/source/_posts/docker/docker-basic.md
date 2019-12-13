@@ -23,6 +23,9 @@ docker run 启动容器
 
 > docker run -p 8080:80 -d docker.io/nginx
 
+- -p 参数为设置端口映射
+- -d 为后台运行 --daemon 
+
 docker exec 进入容器
 
 > docker exec -it ngnix bash 
@@ -57,6 +60,14 @@ docker commit 将当前的容器提交为镜像，一般不常用
 
 > docker commit c9e5bb7a524f linksgo2011/frontend
 
+
+## docker 的版本说明
+
+docker 仓库的版本约定为 用户/仓库/标签
+
+例如 linksgo2011/fonrtend:01 标签的镜像推送时，会推送到 linksgo2011 下面的 fonrtend 中为 01 标签
+
+如果在构建镜像时候，不指定最后的标签名称，会使用 latest 标签，并且每次会覆盖上一次的镜像。
 
 ## 一些和 docker 相关的排错命令
 
