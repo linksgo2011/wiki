@@ -35,7 +35,7 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 
 ```
 
-> docker  build -t linksgo2011/frontend .
+> docker build -t linksgo2011/frontend .
 
 -t 指的是给容器打一个标签，最后的 . 指出 dockerfile的位置
 
@@ -56,3 +56,14 @@ docker tag 旧标签名 新标签名
 docker commit 将当前的容器提交为镜像，一般不常用
 
 > docker commit c9e5bb7a524f linksgo2011/frontend
+
+
+## 一些和 docker 相关的排错命令
+
+重启 docker daemon
+
+> sudo systemctl restart docker
+
+## docker 文档 
+
+https://docs.docker.com/

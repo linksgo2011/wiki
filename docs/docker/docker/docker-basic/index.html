@@ -104,7 +104,7 @@ docker ">
 COPY ./test.html /usr/share/nginx/htm/index.html
 
 </code></pre><blockquote>
-<p>docker  build -t linksgo2011/frontend .</p>
+<p>docker build -t linksgo2011/frontend .</p>
 </blockquote>
 <p>-t 指的是给容器打一个标签，最后的 . 指出 dockerfile的位置</p>
 <p>docker login 登录 docker hub</p>
@@ -124,6 +124,11 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 <blockquote>
 <p>docker commit c9e5bb7a524f linksgo2011/frontend</p>
 </blockquote>
+<h2 id="一些和-docker-相关的排错命令"><a href="#一些和-docker-相关的排错命令" class="headerlink" title="一些和 docker 相关的排错命令"></a>一些和 docker 相关的排错命令</h2><p>重启 docker daemon</p>
+<blockquote>
+<p>sudo systemctl restart docker</p>
+</blockquote>
+<h2 id="docker-文档"><a href="#docker-文档" class="headerlink" title="docker 文档"></a>docker 文档</h2><p><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>
 	  
 
 	  <div>
