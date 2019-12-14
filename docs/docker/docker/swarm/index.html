@@ -87,8 +87,7 @@ Swarm 相关概念节点安装了 Docker 的一个物理机或者虚拟机，节
 <h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack 指一个应用需要的一整套容器，例如前端、后端API、BFF等，由多个 service 构成。</p>
 <h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>一个 Service 指一个 docker compose运行后的一个服务，可以存在多个容器的副本</p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p>一个Docker镜像</p>
-<h3 id="network"><a href="#network" class="headerlink" title="network"></a>network</h3><p>容器分配的IP地址</p>
-<p>TODO Docker 的概念</p>
+<h3 id="network"><a href="#network" class="headerlink" title="network"></a>network</h3><p>容器的网络和虚拟机的网络概念上类似，桥接模式、host模式，但是非常重要的一个网络模式是overlay。类似于网络中的 VLAN，可以在不同容器之间建立一个虚拟网络。</p>
 <h3 id="Volumes"><a href="#Volumes" class="headerlink" title="Volumes"></a>Volumes</h3><p>容器运行需要的存储空间。</p>
 <h2 id="docker-swarm-常见命令"><a href="#docker-swarm-常见命令" class="headerlink" title="docker swarm 常见命令"></a>docker swarm 常见命令</h2><h3 id="查看运行的-service"><a href="#查看运行的-service" class="headerlink" title="查看运行的 service"></a>查看运行的 service</h3><blockquote>
 <p>docker service list </p>
@@ -96,6 +95,164 @@ Swarm 相关概念节点安装了 Docker 的一个物理机或者虚拟机，节
 <h3 id="查看某个日志"><a href="#查看某个日志" class="headerlink" title="查看某个日志"></a>查看某个日志</h3><blockquote>
 <p>docker service logs [servicename]</p>
 </blockquote>
+<h2 id="搭建-swarm-集群实战"><a href="#搭建-swarm-集群实战" class="headerlink" title="搭建 swarm 集群实战"></a>搭建 swarm 集群实战</h2><p>在本机练习可以使用 docker-machine 来创建数台虚拟机练习网络。</p>
+<p>使用 docker-machine 创建一个虚拟机，最好使用 virtualbox 作为虚拟机管理工具。当然也可以使用 vagrant 作为虚拟机管理工具。</p>
+<blockquote>
+<p>docker-machine create –driver virtualbox manager1</p>
+</blockquote>
+<pre><code>Running pre-create checks...
+(manager1) No default Boot2Docker ISO found locally, downloading the latest release...
+(manager1) Latest release for github.com/boot2docker/boot2docker is v19.03.5
+(manager1) Downloading /Users/nlin/.docker/machine/cache/boot2docker.iso from https://github.com/boot2docker/boot2docker/releases/download/v19.03.5/boot2docker.iso...
+
+
+(manager1) 0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Creating machine...
+(manager1) Copying /Users/nlin/.docker/machine/cache/boot2docker.iso to /Users/nlin/.docker/machine/machines/manager1/boot2docker.iso...
+(manager1) Creating VirtualBox VM...
+(manager1) Creating SSH key...
+(manager1) Starting the VM...
+(manager1) Check network to re-create if needed...
+(manager1) Found a new host-only adapter: &quot;vboxnet0&quot;
+(manager1) Waiting for an IP...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with boot2docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+Checking connection to Docker...
+Docker is up and running!
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env manager1
+
+</code></pre><p>这个阶段耗时比较长，创建成功之后可以使用 docker-machine env 命令查看虚拟机信息，这个过程可能需要翻墙才能成功拉取镜像。</p>
+<blockquote>
+<p>docker-machine env manager1</p>
+</blockquote>
+<pre><code>export DOCKER_TLS_VERIFY=&quot;1&quot;
+export DOCKER_HOST=&quot;tcp://192.168.99.100:2376&quot;
+export DOCKER_CERT_PATH=&quot;/Users/nlin/.docker/machine/machines/manager1&quot;
+export DOCKER_MACHINE_NAME=&quot;manager1&quot;
+# Run this command to configure your shell: 
+# eval $(docker-machine env manager1)
+</code></pre><p>使用  docker-machine ls 可以查看运行的虚拟机</p>
+<blockquote>
+<p>docker-machine ls</p>
+</blockquote>
+<pre><code>NAME       ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER     ERRORS
+manager1   -        virtualbox   Running   tcp://192.168.99.100:2376           v19.03.5   
+
+</code></pre><p>再创建一个虚拟机，作为 swarm 的 worker</p>
+<blockquote>
+<p>docker-machine create –driver virtualbox manager1</p>
+</blockquote>
+<p>现在有两台机器了，在 manager 中初始化集群。</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker swarm init –listen-addr 192.168.99.100:2337 –advertise-addr 192.168.99.100</p>
+</blockquote>
+<p>会得到一个集群的 token ，使用这个 token 可以进行后续的操作。</p>
+<pre><code>Swarm initialized: current node (ifzgulv2nsw5r84dw55f8vut0) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-5j94cvq03w9phk6vid7mgsyq4 192.168.99.100:2337
+
+To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
+</code></pre><p>在真实的机器上，不会使用 docker-machine ssh 命令，初始化集群的命令直接就是：</p>
+<blockquote>
+<p>docker swarm init –listen-addr 192.168.99.100:2337 –advertise-addr 192.168.99.100</p>
+</blockquote>
+<p>接下来把 worker1 加入集群:</p>
+<blockquote>
+<p>docker-machine ssh worker1 docker swarm join –token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-5j94cvq03w9phk6vid7mgsyq4 192.168.99.100:2337</p>
+</blockquote>
+<pre><code>This node joined a swarm as a worker.
+</code></pre><p>然后两台机器就被添加到集群了。进入其中一个管理节点，可以使用 docker node 命令查看节点信息。</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker node ls</p>
+</blockquote>
+<p>能看到两台机器已经在集群里面作为 node 存在</p>
+<pre><code>ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+ifzgulv2nsw5r84dw55f8vut0 *   manager1            Ready               Active              Leader              19.03.5
+iwtggbei2por21t4z9q3x9usx     worker1             Ready               Active                                  19.03.5
+
+</code></pre><p>接下来创建更多的虚拟器 manager2、worker1、worker2、worker3</p>
+<blockquote>
+<p>docker-machine create –driver virtualbox manager2<br>docker-machine create –driver virtualbox worker2<br>docker-machine create –driver virtualbox worker3</p>
+</blockquote>
+<p>也将他们加入集群，然后就可以部署应用了。</p>
+<blockquote>
+<p>docker-machine ssh worker2 docker swarm join –token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-5j94cvq03w9phk6vid7mgsyq4 192.168.99.100:2337<br>docker-machine ssh worker3 docker swarm join –token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-5j94cvq03w9phk6vid7mgsyq4 192.168.99.100:2337</p>
+</blockquote>
+<p>加入 manager 需要先获取 manager 的token，到 leader 的机器上获取 token</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker swarm jon-token manager</p>
+</blockquote>
+<pre><code>To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-4tbwy1t6rnlfjn1lnw84v13bq 192.168.99.100:2337
+
+</code></pre><p>将 manager2 加入集群</p>
+<blockquote>
+<p>docker-machine ssh manager2 docker swarm join –token SWMTKN-1-57k8uubh350ppnb68p4jjqmyp6nu4x2ziu8mf2ocmpqsojvc6s-4tbwy1t6rnlfjn1lnw84v13bq 192.168.99.100:2337</p>
+</blockquote>
+<p>这样我们共有 5 台机器。</p>
+<pre><code>ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+ifzgulv2nsw5r84dw55f8vut0     manager1            Ready               Active              Leader              19.03.5
+ypzwukwsof5ec7r4itkvkzxa3 *   manager2            Ready               Active              Reachable           19.03.5
+iwtggbei2por21t4z9q3x9usx     worker1             Ready               Active                                  19.03.5
+sdtzfghzoafij246b272ob4wl     worker2             Ready               Active                                  19.03.5
+uc27drfjn1anv01yy24y9d5g5     worker3             Ready               Active                                  19.03.5
+</code></pre><p>这样一个 swarm 集群就建立好了，然后可以对它进行一些管理。</p>
+<p>查看网络：</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker network ls</p>
+</blockquote>
+<h2 id="部署应用到集群"><a href="#部署应用到集群" class="headerlink" title="部署应用到集群"></a>部署应用到集群</h2><p>使用 nginx 打一镜像用于部署前端项目，编写如下 docker-compose.yml 文件</p>
+<pre><code>version: &quot;3.5&quot;
+services:
+  frontend:
+    image: linksgo2011/frontend:latest
+    networks:
+      - sample-network
+    ports:
+      - 8000:80
+    deploy:
+      replicas: 1
+      labels:
+        app: sample-app
+        environment: local
+
+networks:
+  sample-network:
+    driver: overlay
+
+</code></pre><p>使用 docker-machine 的 scp命令拷贝 compose 文件到一台 manager 中</p>
+<blockquote>
+<p>docker-machine scp  docker-compose.yml docker@manager1:~/docker-compose.yml</p>
+</blockquote>
+<p>然后在这台 manager 中执行 stack 部署命令</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker stack deploy -c docker-compose.yml sample-stack</p>
+</blockquote>
+<p>Docker 会自动帮助创建网络，然后部署 sample-stack 到 worker 中。</p>
+<p>可以查看部署的服务</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker service ls</p>
+</blockquote>
+<p>ID                  NAME                    MODE                REPLICAS            IMAGE                         PORTS<br>ovifr1oldnc7        sample-stack_frontend   replicated          1/1                 linksgo2011/frontend:latest   *:8000-&gt;80/tcp</p>
+<p>可以查看某个服务的日志，对调试和排错非常有用</p>
+<blockquote>
+<p>docker-machine ssh manager1 docker service logs  sample-stack_frontend</p>
+</blockquote>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
+<li>使用 docker-compose 部署应用</li>
+<li>容器内部的通信</li>
+<li>使用 Jenkins 自动化搭建 swarm 集群</li>
+<li>安装 portainer</li>
+</ul>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://blog.xiodi.cn/?s=swarm" target="_blank" rel="noopener">https://blog.xiodi.cn/?s=swarm</a></li>
 <li><a href="https://docs.docker.com/v17.09/engine/swarm/" target="_blank" rel="noopener">https://docs.docker.com/v17.09/engine/swarm/</a></li>

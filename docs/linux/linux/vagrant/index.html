@@ -6,16 +6,16 @@
   <title>Linux 虚拟机管理 Vagrant | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="虚拟机管理工具安装步骤
-
+  <meta name="description" content="虚拟机管理工具在 window 上下载安装包安装即可，在 Mac 上使用 brew 安装
 安装 VisualBox
+
+brew install caskroom/cask/virtualbox
+
 安装 Vagrant
-安装 Vagrant 封装好的镜像 http://www.vagrantbox.es/
-启动 
 
-常用命令添加虚拟机
+brew install caskroom/cask/vagrant
 
-vagrant box add centos7 /Users/apple/Downloads/centos">
+可以去 ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -76,20 +76,28 @@ vagrant box add centos7 /Users/apple/Downloads/centos">
 	
 
 	  <!-- content -->
-	  <h2 id="虚拟机管理工具"><a href="#虚拟机管理工具" class="headerlink" title="虚拟机管理工具"></a>虚拟机管理工具</h2><p>安装步骤</p>
-<ol>
-<li>安装 VisualBox</li>
-<li>安装 Vagrant</li>
-<li>安装 Vagrant 封装好的镜像 <a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a></li>
-<li>启动 </li>
-</ol>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>添加虚拟机</p>
+	  <h2 id="虚拟机管理工具"><a href="#虚拟机管理工具" class="headerlink" title="虚拟机管理工具"></a>虚拟机管理工具</h2><p>在 window 上下载安装包安装即可，在 Mac 上使用 brew 安装</p>
+<p>安装 VisualBox</p>
 <blockquote>
-<p>vagrant box add centos7 /Users/apple/Downloads/centos7.box</p>
+<p>brew install caskroom/cask/virtualbox</p>
 </blockquote>
-<p>初始话虚拟机</p>
+<p>安装 Vagrant</p>
+<blockquote>
+<p>brew install caskroom/cask/vagrant</p>
+</blockquote>
+<p>可以去 <a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a>  下载 Vagrant 封装好的镜像，然后直接导入，否则自己下载镜像配置。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>添加虚拟机</p>
+<p>可以在 <a href="https://app.vagrantup.com/boxes/search" target="_blank" rel="noopener">https://app.vagrantup.com/boxes/search</a> 上寻找和下载 virtualbox 文件</p>
+<blockquote>
+<p>vagrant box add centos7 /Users/nlin/www/env/centos-7.0-x86_64.box</p>
+</blockquote>
+<p>初始化虚拟机，如果未添加虚拟机文件会自动从仓库里下载，第一次初始化会生成一个 Vagrantfile 文件用于管理素所有命令操作后的变化，利于版本管理:</p>
 <blockquote>
 <p>vagrant init centos7  </p>
+</blockquote>
+<p>vagrant box add 添加时可以给一个不同的名称，用于启动多个虚拟机,这里设置一个 manager 用于 swarm manager:</p>
+<blockquote>
+<p>vagrant box add manager /Users/nlin/www/env/centos-7.0-x86_64.box<br>vagrant init manager</p>
 </blockquote>
 <p>启动虚拟机</p>
 <blockquote>
@@ -107,9 +115,10 @@ vagrant box add centos7 /Users/apple/Downloads/centos">
 <blockquote>
 <p>vagrant -h</p>
 </blockquote>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p>安装方法：</p>
-<ul>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
+<li>官方文档 <a href="https://www.vagrantup.com/docs/index.html" target="_blank" rel="noopener">https://www.vagrantup.com/docs/index.html</a></li>
 <li>安装方法 <a href="https://blog.csdn.net/yanyan42/article/details/79697659" target="_blank" rel="noopener">https://blog.csdn.net/yanyan42/article/details/79697659</a></li>
+<li>一个快速上手教程 <a href="https://www.jianshu.com/p/7e8f61376053" target="_blank" rel="noopener">https://www.jianshu.com/p/7e8f61376053</a></li>
 </ul>
 	  
 
