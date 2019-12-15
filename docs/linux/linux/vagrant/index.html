@@ -115,6 +115,91 @@ brew install caskroom/cask/vagrant
 <blockquote>
 <p>vagrant -h</p>
 </blockquote>
+<p>一份整理好的 vagrant 文件</p>
+<pre><code># -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$setup_jenkins_server = &lt;&lt;SCRIPT
+sudo yum -y install ansible
+sudo yum -y install git
+sudo chown -R ansible /vagrant
+SCRIPT
+
+$setup_ansible_user = &lt;&lt;SCRIPT
+sudo useradd ansible --groups vagrant
+sudo mkdir -p /home/ansible/.ssh/ &amp;&amp; sudo cp -rf /home/vagrant/.ssh/authorized_keys /home/ansible/.ssh/authorized_keys
+sudo chown -R ansible /home/ansible/.ssh
+sudo chmod 600 /home/ansible/.ssh/authorized_keys
+SCRIPT
+
+Vagrant.configure(2) do |config|
+  config.vm.box = &quot;centos/7&quot;
+  config.vm.provider &quot;virtualbox&quot; do |v|
+    v.memory = 1024
+  end
+  config.vm.box_check_update = false
+
+  VAGRANT_COMMAND = ARGV[0]
+  if VAGRANT_COMMAND == &quot;ssh&quot;
+    config.ssh.username = &#39;ansible&#39;
+  end
+
+  config.vm.define &quot;jenkins-server&quot; do |dev|
+    config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;
+    dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.10&quot;
+    dev.vm.hostname = &quot;jenkins-server&quot;
+    dev.vm.provision :shell, inline: $setup_ansible_user
+    dev.vm.provision :shell, inline: $setup_jenkins_server
+  end
+
+  config.vm.define &quot;jenkins-agent-1&quot; do |dev|
+    dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.11&quot;
+    dev.vm.hostname = &quot;jenkins-agent&quot;
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+
+  config.vm.define &quot;manager1&quot; do |dev|
+    config.vm.provider &quot;virtualbox&quot; do |v|
+      v.memory = 2048
+    end
+    dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.21&quot;
+    dev.vm.hostname = &quot;manager1&quot;
+    dev.vm.provision :shell, inline: $setup_ansible_user
+    # dev.vm.network :forwarded_port, guest: 80, host: 9080
+  end
+
+   config.vm.define &quot;manager2&quot; do |dev|
+     config.vm.provider &quot;virtualbox&quot; do |v|
+       v.memory = 2048
+     end
+     dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.22&quot;
+     dev.vm.hostname = &quot;manager2&quot;
+     dev.vm.provision :shell, inline: $setup_ansible_user
+   end
+
+  config.vm.define &quot;worker1&quot; do |dev|
+    dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.23&quot;
+    dev.vm.hostname = &quot;worker1&quot;
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+
+  config.vm.define &quot;worker2&quot; do |dev|
+    dev.vm.network &quot;private_network&quot;, ip: &quot;10.132.112.24&quot;
+    dev.vm.hostname = &quot;worker2&quot;
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+end
+
+</code></pre><p>只需要创建文件 Vagrantfile 并粘贴上面内容，然后运行：</p>
+<blockquote>
+<p>vagrant up</p>
+</blockquote>
+<p>可以快速的创建一组虚拟机。启动成功后，运行 provision 命令初始化 ansible 以及 docker 等基本工具。</p>
+<p>服务器上的 Jenkins 机器需要自己手动安装 ansible 以及 git </p>
+<blockquote>
+<p>yum -y install ansible<br>yum -y install git</p>
+</blockquote>
+<p>其他机器全部使用 ansible 来操作。</p>
 <h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
 <li>官方文档 <a href="https://www.vagrantup.com/docs/index.html" target="_blank" rel="noopener">https://www.vagrantup.com/docs/index.html</a></li>
 <li>安装方法 <a href="https://blog.csdn.net/yanyan42/article/details/79697659" target="_blank" rel="noopener">https://blog.csdn.net/yanyan42/article/details/79697659</a></li>
@@ -440,13 +525,13 @@ brew install caskroom/cask/vagrant
 		
 	
 		
-	
-		
 			
 		
 	
 		
 			
+		
+	
 		
 	
 		

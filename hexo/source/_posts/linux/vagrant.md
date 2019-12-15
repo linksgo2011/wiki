@@ -52,10 +52,101 @@ vagrant box add 添加时可以给一个不同的名称，用于启动多个虚�
 
 > vagrant -h
 
+
+一份整理好的 vagrant 文件
+
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$setup_jenkins_server = <<SCRIPT
+sudo yum -y install ansible
+sudo yum -y install git
+sudo chown -R ansible /vagrant
+SCRIPT
+
+$setup_ansible_user = <<SCRIPT
+sudo useradd ansible --groups vagrant
+sudo mkdir -p /home/ansible/.ssh/ && sudo cp -rf /home/vagrant/.ssh/authorized_keys /home/ansible/.ssh/authorized_keys
+sudo chown -R ansible /home/ansible/.ssh
+sudo chmod 600 /home/ansible/.ssh/authorized_keys
+SCRIPT
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "centos/7"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 1024
+  end
+  config.vm.box_check_update = false
+
+  VAGRANT_COMMAND = ARGV[0]
+  if VAGRANT_COMMAND == "ssh"
+    config.ssh.username = 'ansible'
+  end
+
+  config.vm.define "jenkins-server" do |dev|
+    config.vm.synced_folder ".", "/vagrant"
+    dev.vm.network "private_network", ip: "10.132.112.10"
+    dev.vm.hostname = "jenkins-server"
+    dev.vm.provision :shell, inline: $setup_ansible_user
+    dev.vm.provision :shell, inline: $setup_jenkins_server
+  end
+
+  config.vm.define "jenkins-agent-1" do |dev|
+    dev.vm.network "private_network", ip: "10.132.112.11"
+    dev.vm.hostname = "jenkins-agent"
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+
+  config.vm.define "manager1" do |dev|
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
+    dev.vm.network "private_network", ip: "10.132.112.21"
+    dev.vm.hostname = "manager1"
+    dev.vm.provision :shell, inline: $setup_ansible_user
+    # dev.vm.network :forwarded_port, guest: 80, host: 9080
+  end
+
+   config.vm.define "manager2" do |dev|
+     config.vm.provider "virtualbox" do |v|
+       v.memory = 2048
+     end
+     dev.vm.network "private_network", ip: "10.132.112.22"
+     dev.vm.hostname = "manager2"
+     dev.vm.provision :shell, inline: $setup_ansible_user
+   end
+
+  config.vm.define "worker1" do |dev|
+    dev.vm.network "private_network", ip: "10.132.112.23"
+    dev.vm.hostname = "worker1"
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+
+  config.vm.define "worker2" do |dev|
+    dev.vm.network "private_network", ip: "10.132.112.24"
+    dev.vm.hostname = "worker2"
+    dev.vm.provision :shell, inline: $setup_ansible_user
+  end
+end
+
+```
+
+只需要创建文件 Vagrantfile 并粘贴上面内容，然后运行：
+
+> vagrant up
+
+可以快速的创建一组虚拟机。启动成功后，运行 provision 命令初始化 ansible 以及 docker 等基本工具。
+
+服务器上的 Jenkins 机器需要自己手动安装 ansible 以及 git 
+
+> yum -y install ansible
+> yum -y install git
+
+其他机器全部使用 ansible 来操作。
+
 ## 参考资源 
 
 - 官方文档 https://www.vagrantup.com/docs/index.html
 - 安装方法 https://blog.csdn.net/yanyan42/article/details/79697659
 - 一个快速上手教程 https://www.jianshu.com/p/7e8f61376053
-
-
