@@ -138,7 +138,7 @@ end
 
 可以快速的创建一组虚拟机。启动成功后，运行 provision 命令初始化 ansible 以及 docker 等基本工具。
 
-服务器上的 Jenkins 机器需要自己手动安装 ansible 以及 git 
+服务器上的 Jenkins 机器需要自己手动安装 ansible 以及 git， 最好配置一个 ansible user，否则修改 hosts 中 ansible_user 使用 root 用户连接。
 
 > yum -y install ansible
 > yum -y install git
