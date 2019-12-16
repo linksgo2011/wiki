@@ -3,15 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>ldap | 架构师知识系统</title>
+  <title>Spring boot 项目中常见的日志配置 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="LDAP是轻量目录访问协议，英文全称是Lightweight Directory Access Protocol，一般都简称为LDAP。它是基于X.500标准的，但是简单多了并且可以根据需要定制。与X.500不同，LDAP支持TCP/IP，这对访问Internet是必须的。LDAP的核心规范在RFC">
+  <meta name="description" content="建议开启 webclient 相关的日志使用 RestTemplate使用 application.properties 的方法
+logging.level.org.springframework.web.client=DEBUG
+使用 application.yml 的方法
+logging:
+  ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="ldap">
+  <meta property="og:title" content="Spring boot 项目中常见的日志配置">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -45,7 +49,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">ldap</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-11</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Spring boot 项目中常见的日志配置</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-16</span></h1>
 </div>		
 
 <div class="row page">
@@ -67,17 +71,29 @@
 	
 
 	  <!-- content -->
-	  <p>LDAP是轻量目录访问协议，英文全称是Lightweight Directory Access Protocol，一般都简称为LDAP。它是基于X.500标准的，但是简单多了并且可以根据需要定制。与X.500不同，LDAP支持TCP/IP，这对访问Internet是必须的。LDAP的核心规范在RFC中都有定义，所有与LDAP相关的RFC都可以在LDAPman RFC网页中找到。</p>
-<p>一般在大型企业IT架构中使用，用于维护一个中心化的用户账户和权限，例如JIRA、邮箱、WIKI等。另外一个实现是windows 的活动目录（AD）</p>
-<p>OpenLDAP是LDAP协议的一个开源实现，具有组件：</p>
-<ul>
-<li>OpenLDAP OpenLDAP的服务器本身，目录服务器</li>
-<li>phpLDAPadmin 管理图形界面</li>
-<li>PWM 用户自主账号管理</li>
-<li>客户端 （各个接入的应用自己实现，例如JIRA）</li>
-</ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>OpenLDAP 安装<a href="https://wiki.archlinux.org/index.php/OpenLDAP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/OpenLDAP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></li>
+	  <h2 id="建议开启-webclient-相关的日志"><a href="#建议开启-webclient-相关的日志" class="headerlink" title="建议开启 webclient 相关的日志"></a>建议开启 webclient 相关的日志</h2><h3 id="使用-RestTemplate"><a href="#使用-RestTemplate" class="headerlink" title="使用 RestTemplate"></a>使用 RestTemplate</h3><p>使用 application.properties 的方法</p>
+<pre><code>logging.level.org.springframework.web.client=DEBUG
+</code></pre><p>使用 application.yml 的方法</p>
+<pre><code>logging:
+  level:  
+    root: WARN
+    org.springframework.web.client: DEBUG
+</code></pre><h3 id="使用-FeignClient"><a href="#使用-FeignClient" class="headerlink" title="使用 FeignClient"></a>使用 FeignClient</h3><p>增加一个 Feign 配置类</p>
+<pre><code>@Configuration
+public class FeignConfiguration {
+    @Bean
+    Logger.Level feignLoggerLevel() {
+        //这里记录所有，根据实际情况选择合适的日志level
+        return Logger.Level.FULL;
+    }
+}
+</code></pre><p>在 feign 的接口上增加配置类 </p>
+<pre><code>configuration = FeignConfiguration.class
+</code></pre><p>修改日志级别</p>
+<pre><code>logging.level.&lt;FeignClient类的全路径&gt; = DEBUG
+</code></pre><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
+<li><a href="https://stackoverflow.com/questions/7952154/spring-resttemplate-how-to-enable-full-debugging-logging-of-requests-responses" target="_blank" rel="noopener">https://stackoverflow.com/questions/7952154/spring-resttemplate-how-to-enable-full-debugging-logging-of-requests-responses</a></li>
+<li>FeignClient日志打印 <a href="https://www.cnblogs.com/lemondada/p/11270648.html" target="_blank" rel="noopener">https://www.cnblogs.com/lemondada/p/11270648.html</a></li>
 </ul>
 	  
 
@@ -92,7 +108,8 @@
 	
 	
 		
-	
+			
+			
 		
 	
 		
@@ -100,7 +117,9 @@
 		
 	
 		
-	
+			
+			
+			
 		
 	
 		
@@ -108,7 +127,11 @@
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -116,43 +139,7 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -194,7 +181,7 @@
 		
 	
 		
-	
+			
 		
 	
 		
@@ -219,6 +206,16 @@
 	
 		
 	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -275,19 +272,6 @@
 	
 		
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
 		
 	
 		
@@ -295,25 +279,7 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
 		
 	
 		
@@ -422,13 +388,79 @@
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/安全/security/user-track/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/安全/security/security-in-frontend/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/Spring/spring/spring-rest-template/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
