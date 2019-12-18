@@ -1,5 +1,5 @@
 ---
-title: 常见线上调优参数
+title: 常见线上调优参数和性能优化
 categories: 技术架构
 toc: true
 from: other
@@ -73,6 +73,7 @@ spring:
       validation-query: select 1
 
 ```
+
 
 ## 参考资源
 

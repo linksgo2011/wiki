@@ -26,7 +26,3 @@ categories: 职业素质
 英文学习资源网站
 
 - Lynda.com https://www.lynda.com/
-
-## 比较好的博客
-
-- 一个 Java 后端作者的笔记，适合 Java 中级看 https://www.cnblogs.com/wangdaijun/
