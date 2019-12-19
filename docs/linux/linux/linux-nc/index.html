@@ -3,17 +3,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>JPA JOIN 的用法 | 架构师知识系统</title>
+  <title>linux nc 工具零时监听端口 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="JPA JOIN 支持的条件JPA JOIN 支持 内连接和左外连接，JPA 的 Join 必须是两个实体之间存在关联当前情况下才需要这样操作。
-推荐只是简单地情况下这样使用，复杂的情况直接编写 native sql 来完成。
-Feature 和 FeatureValue 是一对多关系，查询方法如下">
+  <meta name="description" content="为了测试端口是否开放，需要临时开启端口
+可以使用文件描述符:
+
+lsof -i:6066
+
+以及
+
+nc -l 0.0.0.0 6066netstat -ntlp 就能查看端口了
+
+参考地址
+https://www.v2ex.com/amp/t/459497">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="JPA JOIN 的用法">
+  <meta property="og:title" content="linux nc 工具零时监听端口">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -47,33 +55,40 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">JPA JOIN 的用法</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-07</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">linux nc 工具零时监听端口</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-19</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
   
 
   
-	<div class="col-md-12">
-	  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
 
 	  <!-- content -->
-	  <h2 id="JPA-JOIN-支持的条件"><a href="#JPA-JOIN-支持的条件" class="headerlink" title="JPA JOIN 支持的条件"></a>JPA JOIN 支持的条件</h2><p>JPA JOIN 支持 内连接和左外连接，JPA 的 Join 必须是两个实体之间存在关联当前情况下才需要这样操作。</p>
-<p>推荐只是简单地情况下这样使用，复杂的情况直接编写 native sql 来完成。</p>
-<p>Feature 和 FeatureValue 是一对多关系，查询方法如下</p>
-<pre><code>    @Query(&quot;select distinct feature from Feature feature inner join fetch feature.featureValues&quot;)
-    List&lt;Feature&gt; findFeatureWithJoin();
-</code></pre><p>Feature 中需要设置一个一对多的关联</p>
-<pre><code>public class Feature implements Serializable {
-
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = &quot;feature_id&quot;)
-    private List&lt;FeatureValue&gt; featureValues;
-
-}
-</code></pre><h2 id="迫切关联连接"><a href="#迫切关联连接" class="headerlink" title="迫切关联连接"></a>迫切关联连接</h2><p>在查询的 JPQL 语句中有一个 fetch，这个 fetch 可以自动将join 后的结果集使用一对多的方式组织数据，避免 N+1 问题，平时项目都是用 fetch 的方法。</p>
+	  <p>为了测试端口是否开放，需要临时开启端口</p>
+<p>可以使用文件描述符:</p>
+<blockquote>
+<p>lsof -i:6066</p>
+</blockquote>
+<p>以及</p>
+<blockquote>
+<p>nc -l 0.0.0.0 6066<br>netstat -ntlp 就能查看端口了</p>
+</blockquote>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><ul>
+<li><a href="https://www.v2ex.com/amp/t/459497" target="_blank" rel="noopener">https://www.v2ex.com/amp/t/459497</a></li>
+</ul>
 	  
 
 	  <div>
@@ -87,70 +102,14 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
 		
 			
 			
-		
-	
-		
-	
-		
-	
-		
 			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 			
 		
@@ -162,221 +121,7 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -447,13 +192,293 @@ Feature 和 FeatureValue 是一对多关系，查询方法如下">
 	
 		
 	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/Spring/spring/jpa-criteria/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Spring/spring/jpa-projection/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/linux/linux/linux-port/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

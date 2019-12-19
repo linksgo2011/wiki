@@ -3,6 +3,15 @@ title: linux 常用线上排错命令
 categories: linux
 ---
 
+## 安装一些调试工具
+
+> yum install -y telnet
+
+> yum install git
+
+> yum install httpd-tools
+
+> yum install java-1.8.0-openjdk.x86_64
 
 ## 查看打开的文件数
 

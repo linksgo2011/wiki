@@ -4,6 +4,12 @@ categories: 运维开发
 toc: true
 ---
 
+## 常用命令
+
+直接执行 ad-hoc 命令
+
+> ansible [hosts] comamnd -a "echo xxx";
+
 ## 相关资料
 
 - 官网: https://www.ansible.com/get-started

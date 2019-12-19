@@ -6,9 +6,19 @@
   <title>linux 常用线上排错命令 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="查看打开的文件数linux tcp 连接是通过文件描述符 FD 也就是每个链接创建了一个虚拟文件。系统的连接数是有限制，如果连接数超过最大数量会得到一个异常。如果是一些流忘记关闭，会造成此类错误。
+  <meta name="description" content="安装一些调试工具
+yum install -y telnet
 
-lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
+
+yum install git
+
+
+yum install httpd-tools
+
+
+yum install java-1.8.0-openjdk.x86_64
+
+查看打开的文件数linux tcp 连接是通过文件描述符 FD 也就">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -60,7 +70,19 @@ lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
 	  
 
 	  <!-- content -->
-	  <h2 id="查看打开的文件数"><a href="#查看打开的文件数" class="headerlink" title="查看打开的文件数"></a>查看打开的文件数</h2><p>linux tcp 连接是通过文件描述符 FD 也就是每个链接创建了一个虚拟文件。系统的连接数是有限制，如果连接数超过最大数量会得到一个异常。如果是一些流忘记关闭，会造成此类错误。</p>
+	  <h2 id="安装一些调试工具"><a href="#安装一些调试工具" class="headerlink" title="安装一些调试工具"></a>安装一些调试工具</h2><blockquote>
+<p>yum install -y telnet</p>
+</blockquote>
+<blockquote>
+<p>yum install git</p>
+</blockquote>
+<blockquote>
+<p>yum install httpd-tools</p>
+</blockquote>
+<blockquote>
+<p>yum install java-1.8.0-openjdk.x86_64</p>
+</blockquote>
+<h2 id="查看打开的文件数"><a href="#查看打开的文件数" class="headerlink" title="查看打开的文件数"></a>查看打开的文件数</h2><p>linux tcp 连接是通过文件描述符 FD 也就是每个链接创建了一个虚拟文件。系统的连接数是有限制，如果连接数超过最大数量会得到一个异常。如果是一些流忘记关闭，会造成此类错误。</p>
 <blockquote>
 <p>lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -nr | more</p>
 </blockquote>
@@ -101,117 +123,6 @@ lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
 		
 	
 		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
@@ -219,58 +130,17 @@ lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
 	
 		
 			
-		
-	
-		
-			
-		
-	
-		
-	
-		
 			
 		
 	
 		
 			
-		
-	
-		
 			
-		
-	
-		
 			
 		
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -336,6 +206,162 @@ lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
 		
 	
 		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -432,9 +458,9 @@ lsof -n | awk ‘{print $2}’ sort | uniq -c | sort -">
 		
 	
 		
-	
-		
 			
+		
+	
 		
 	
 		

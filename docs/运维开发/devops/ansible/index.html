@@ -6,10 +6,13 @@
   <title>Ansible 入门和使用 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="相关资料
+  <meta name="description" content="常用命令直接执行 ad-hoc 命令
+
+ansible [hosts] comamnd -a “echo xxx”;
+
+相关资料
 官网: https://www.ansible.com/get-started
-工作原理:https://www.ansible.com/how-ansible-works
-下载和安装:http://docs.ansible.com/ansible/latest/intro_install">
+工作原理:https://www.ansible.com/how-ansible-work">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -70,7 +73,11 @@
 	
 
 	  <!-- content -->
-	  <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+	  <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>直接执行 ad-hoc 命令</p>
+<blockquote>
+<p>ansible [hosts] comamnd -a “echo xxx”;</p>
+</blockquote>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
 <li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li>
 <li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li>
 <li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li>
@@ -120,120 +127,6 @@ ansible-playbook foo.yml --check
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 			
@@ -255,62 +148,6 @@ ansible-playbook foo.yml --check
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -414,12 +251,180 @@ ansible-playbook foo.yml --check
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
@@ -429,12 +434,16 @@ ansible-playbook foo.yml --check
 	
 		
 			
-			
 		
 	
 		
 			
 			
+		
+	
+		
+			
+			
 			
 		
 	
@@ -452,11 +461,11 @@ ansible-playbook foo.yml --check
 	
 	
 	
-		<li class="prev"><a href="/运维开发/devops/auto deployment with ssh/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/运维开发/devops/aws lambda/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/运维开发/devops/aws lambda/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/运维开发/devops/auto deployment with ssh/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
