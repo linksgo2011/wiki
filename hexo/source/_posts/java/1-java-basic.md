@@ -229,10 +229,6 @@ b = a -1
 
 对象的比较是比较的引用，而非值本身
 
-## 条件执行
-
-
-
 ## 转义表
 
 | 符号   | 含义                        |
@@ -249,6 +245,51 @@ b = a -1
 | \DDD   | 八进制字符（ddd）           |
 | \uxxxx | 十六进制UNICODE字符（xxxx） |
 
+
+## Java 各个版本更新特性
+
+- JDK5 foreach 迭代方式、可变参数、枚举、自动拆装箱、泛型、注解
+- JDK6 SystemTray 类、 COmpiler API、Command Annotations
+- JDK7 switch 支持字符串匹配条件、泛型类型自动推断、try-with-resources 资源关闭、Objects 类、ForkJoinPool 等
+- JDK8 接口的默认方法实现和静态方法、Lambda 表达式、函数式接口、方法和构造函数引用、新的日期和时间API、流处理
+- JDK9 模块化、简化进程API、JSON API、钱和货币的API
+- JDK10 局部变量的类型推断、改进 GC和内存管理、线程本地握手、备用内存设备上的堆分配
+
+## this 与 super
+
+共同点
+
+- 都是关键字，起指代作用
+- 在构造方法中必须出现在第一行
+
+this
+
+- 访问本类示例属性和方法
+- 先找本类没有再找父类
+- 单独使用表示当前对象
+
+super 
+
+- 用于子类直接访问父类的实例属性和方法
+- 直接找到父类
+- 在子类复写父类方法时，访问父类同名方法
+
+## Java 中参数传递
+
+- 无论是对于基本数据类型，还是引用类型，java 中的参数传递都是值复制的传递过程。对于引用变量，复制指向对象的首地址。
+
+## 什么时候防御编程做参数验证
+
+一般在最外层做数据校验，使用 bean validation 做数据的基本校验，然后在内部使用业务的校验。
+
+## 常见 POJO 缩写的含义
+
+- POJO Plain Ordinary Java Object 
+- DO Data Object 
+- BO Business Object
+- DTO Data Transfer Object
+- VO View Object 
+- AO Application Object
 
 ## 参考资料
 

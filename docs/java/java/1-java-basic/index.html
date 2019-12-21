@@ -365,7 +365,7 @@ a = a + 1
 b = a -1
 </code></pre><p>原理是 –/++ 的运算优先级很高。a++ 是先做其他操作，在自增;a++ 是先自增再做其他操作。</p>
 <p>对象的比较是比较的引用，而非值本身</p>
-<h2 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h2><h2 id="转义表"><a href="#转义表" class="headerlink" title="转义表"></a>转义表</h2><table>
+<h2 id="转义表"><a href="#转义表" class="headerlink" title="转义表"></a>转义表</h2><table>
 <thead>
 <tr>
 <th>符号</th>
@@ -419,6 +419,43 @@ b = a -1
 </tr>
 </tbody>
 </table>
+<h2 id="Java-各个版本更新特性"><a href="#Java-各个版本更新特性" class="headerlink" title="Java 各个版本更新特性"></a>Java 各个版本更新特性</h2><ul>
+<li>JDK5 foreach 迭代方式、可变参数、枚举、自动拆装箱、泛型、注解</li>
+<li>JDK6 SystemTray 类、 COmpiler API、Command Annotations</li>
+<li>JDK7 switch 支持字符串匹配条件、泛型类型自动推断、try-with-resources 资源关闭、Objects 类、ForkJoinPool 等</li>
+<li>JDK8 接口的默认方法实现和静态方法、Lambda 表达式、函数式接口、方法和构造函数引用、新的日期和时间API、流处理</li>
+<li>JDK9 模块化、简化进程API、JSON API、钱和货币的API</li>
+<li>JDK10 局部变量的类型推断、改进 GC和内存管理、线程本地握手、备用内存设备上的堆分配</li>
+</ul>
+<h2 id="this-与-super"><a href="#this-与-super" class="headerlink" title="this 与 super"></a>this 与 super</h2><p>共同点</p>
+<ul>
+<li>都是关键字，起指代作用</li>
+<li>在构造方法中必须出现在第一行</li>
+</ul>
+<p>this</p>
+<ul>
+<li>访问本类示例属性和方法</li>
+<li>先找本类没有再找父类</li>
+<li>单独使用表示当前对象</li>
+</ul>
+<p>super </p>
+<ul>
+<li>用于子类直接访问父类的实例属性和方法</li>
+<li>直接找到父类</li>
+<li>在子类复写父类方法时，访问父类同名方法</li>
+</ul>
+<h2 id="Java-中参数传递"><a href="#Java-中参数传递" class="headerlink" title="Java 中参数传递"></a>Java 中参数传递</h2><ul>
+<li>无论是对于基本数据类型，还是引用类型，java 中的参数传递都是值复制的传递过程。对于引用变量，复制指向对象的首地址。</li>
+</ul>
+<h2 id="什么时候防御编程做参数验证"><a href="#什么时候防御编程做参数验证" class="headerlink" title="什么时候防御编程做参数验证"></a>什么时候防御编程做参数验证</h2><p>一般在最外层做数据校验，使用 bean validation 做数据的基本校验，然后在内部使用业务的校验。</p>
+<h2 id="常见-POJO-缩写的含义"><a href="#常见-POJO-缩写的含义" class="headerlink" title="常见 POJO 缩写的含义"></a>常见 POJO 缩写的含义</h2><ul>
+<li>POJO Plain Ordinary Java Object </li>
+<li>DO Data Object </li>
+<li>BO Business Object</li>
+<li>DTO Data Transfer Object</li>
+<li>VO View Object </li>
+<li>AO Application Object</li>
+</ul>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.tutorialspoint.com/java/index.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/java/index.htm</a></li>
 </ul>

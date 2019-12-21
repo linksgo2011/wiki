@@ -738,7 +738,7 @@
       <link href="/java/java/1-java-basic/"/>
       <url>/java/java/1-java-basic/</url>
       
-        <content type="html"><![CDATA[<h2 id="Java-背景"><a href="#Java-背景" class="headerlink" title="Java 背景"></a>Java 背景</h2><p>Java是由Sun Microsystems最初开发并于1995年发布的高级编程语言。Java在各种平台上运行，例如Windows，Mac OS和各种UNIX版本。</p><h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><table><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>abstract</td><td>assert</td><td>boolean</td><td>break</td></tr><tr><td>byte</td><td>case</td><td>catch</td><td>char</td></tr><tr><td>class</td><td>const</td><td>continue</td><td>default</td></tr><tr><td>do</td><td>double</td><td>else</td><td>enum</td></tr><tr><td>extends</td><td>final</td><td>finally</td><td>float</td></tr><tr><td>for</td><td>goto</td><td>if</td><td>implements</td></tr><tr><td>import</td><td>instanceof</td><td>int</td><td>interface</td></tr><tr><td>long</td><td>native</td><td>new</td><td>package</td></tr><tr><td>private</td><td>protected</td><td>public</td><td>return</td></tr><tr><td>short</td><td>static</td><td>strictfp</td><td>super</td></tr><tr><td>switch</td><td>synchronized</td><td>this</td><td>throw</td></tr><tr><td>throws</td><td>transient</td><td>try</td><td>void</td></tr><tr><td>volatile</td><td>while</td><td></td></tr></tbody></table><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Java有两种可用的数据类型</p><ul><li>原始数据类型共8种</li><li>引用/对象数据类型</li></ul><h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><p>Byte</p><ul><li>字节数据类型是8位带符号的二进制补码整数</li><li>最小值是-128（-2 ^ 7）</li><li>最大值为127（含）（2 ^ 7 -1）</li><li>默认值为0</li><li>字节数据类型用于节省大型数组中的空间，主要用于代替整数，因为字节比整数小四倍。</li><li>示例：字节a = 100，字节b = -50</li></ul><p>Short</p><ul><li>短数据类型是一个16位带符号的二进制补码整数</li><li>最小值是-32,768（-2 ^ 15）</li><li>最大值为32,767（含）（2 ^ 15 -1）</li><li>短数据类型也可以用于将内存保存为字节数据类型。短路比整数小2倍</li><li>预设值为0。</li><li>例如：short s = 10000，short r = -20000</li></ul><p>Int</p><ul><li>Int数据类型是32位带符号的二进制补码整数。</li><li>最小值是-2,147,483,648（-2 ^ 31）</li><li>最大值为2,147,483,647（含）（2 ^ 31 -1）</li><li>除非担心内存，否则通常将整数用作整数值的默认数据类型。</li><li>默认值为0</li><li>例如：int a = 100000，int b = -200000</li></ul><p>Long </p><ul><li>长数据类型是64位带符号的二进制补码整数</li><li>最小值是-9,223,372,036,854,775,808（-2 ^ 63）</li><li>最大值为9,223,372,036,854,775,807（含）（2 ^ 63 -1）</li><li>当需要比int更大的范围时使用此类型</li><li>默认值为0L</li><li>示例：长a = 100000L，长b = -200000L</li></ul><p>Float</p><ul><li>浮点数据类型是单精度32位IEEE 754浮点</li><li>浮点数主要用于以大数组浮点数保存内存</li><li>默认值为0.0f</li><li>浮动数据类型从不用于诸如货币之类的精确值</li><li>示例：float f1 = 234.5f</li></ul><p>Double </p><ul><li>double数据类型是双精度64位IEEE 754浮点</li><li>此数据类型通常用作十进制值的默认数据类型，通常是默认选择</li><li>绝对不能将双精度数据类型用于货币等精确值</li><li>默认值为0.0d</li><li>例如：double d1 = 123.4</li></ul><p>Bool</p><ul><li>布尔数据类型表示一位信息</li><li>只有两个可能的值：true和false</li><li>此数据类型用于跟踪真/假条件的简单标志</li><li>默认值为假</li><li>示例：bool isTrue = true</li></ul><p>Char</p><ul><li>char数据类型是单个16位Unicode字符</li><li>最小值为“ \ u0000”（或0）</li><li>最大值为“ \ uffff”（或65,535（含））</li><li>Char数据类型用于存储任何字符</li><li>示例：char letterA =’A’</li></ul><h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><ul><li>引用变量是使用类的已定义构造函数创建的。它们用于访问对象。这些变量被声明为无法更改的特定类型。</li><li>类对象和各种类型的数组变量都属于引用数据类型。</li><li>任何引用变量的默认值为null。</li><li>引用变量可用于引用声明类型或任何兼容类型的任何对象。</li></ul><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>定义一个数组</p><pre><code>dataType[] arrayRefVar;   // 推荐的方式ordataType arrayRefVar[];  // 工作，但不推荐</code></pre><p>创建数组</p><pre><code>arrayRefVar = new dataType[arraySize];</code></pre><p>使用已知数据创建数组</p><pre><code>dataType[] arrayRefVar = {value0, value1, ..., valuek};</code></pre><p>处理数组的一个例子</p><pre><code>public class TestArray {   public static void main(String[] args) {      double[] myList = {1.9, 2.9, 3.4, 3.5};      // Print all the array elements      for (int i = 0; i &lt; myList.length; i++) {         System.out.println(myList[i] + &quot; &quot;);      }      // Summing all elements      double total = 0;      for (int i = 0; i &lt; myList.length; i++) {         total += myList[i];      }      System.out.println(&quot;Total is &quot; + total);      // Finding the largest element      double max = myList[0];      for (int i = 1; i &lt; myList.length; i++) {         if (myList[i] &gt; max) max = myList[i];      }      System.out.println(&quot;Max is &quot; + max);     }}</code></pre><p>数组的内存空间分为两部分，一块用于存储引用，一块存储真实的数据。</p><p><img src="/java/java/1-java-basic/java_array.jpg" alt="数组地址空间">;</p><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><table><thead><tr><th>操作符</th><th>描述</th><th>范例</th></tr></thead><tbody><tr><td>+（加法）</td><td>在运算符的任一侧添加值。</td><td>A + B会得到30</td></tr><tr><td>-（减法）</td><td>从左操作数中减去右操作数。</td><td>A-B会得到-10</td></tr><tr><td>*（乘法）</td><td>将运算符两边的值相乘。</td><td>A * B会得到200</td></tr><tr><td>/（部门）</td><td>用左手操作数除以右手操作数。</td><td>B / A会得到2</td></tr><tr><td>％（模量）</td><td>将左操作数除以右操作数，然后返回余数。</td><td>B％A得到0</td></tr><tr><td>++（增量）</td><td>将操作数的值增加1。</td><td>B++得到21</td></tr><tr><td>-（减量）</td><td>将操作数的值减1。</td><td>B–得到19</td></tr></tbody></table><p>运算注意长度</p><pre><code>int a = 2147483647*2 // 得到 -2 因为超长了long a = 2147483647*2 // 也不行，因为还是 int long a = 2147483647*2L // 工作了，转换成long 了</code></pre><p>整数除法不是四舍五入，而是直接舍去小数</p><pre><code>double d = 10/4 // 结果是2double d = 10/4.0 // 正确double d = 10/(double)4 // 正确</code></pre><p>小数比较无意义</p><pre><code>boole same = 2.0 == 1.0+1.0 //false 计算机浮点问题</code></pre><p>小数计算结果不精确</p><p>float f = 0.1F * 0.1F // 结果是 0.00000001</p><p>自增（++）理解很简单 </p><pre><code>b = a++-1本质是b = (a++)-1等效于a = a + 1b = a -1</code></pre><p>原理是 –/++ 的运算优先级很高。a++ 是先做其他操作，在自增;a++ 是先自增再做其他操作。</p><p>对象的比较是比较的引用，而非值本身</p><h2 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h2><h2 id="转义表"><a href="#转义表" class="headerlink" title="转义表"></a>转义表</h2><table><thead><tr><th>符号</th><th>含义</th></tr></thead><tbody><tr><td>\n</td><td>换行（0x0a）</td></tr><tr><td>\r</td><td>回车（0x0d）</td></tr><tr><td>\F</td><td>换页（0x0c）</td></tr><tr><td>\b</td><td>退格键（0x08）</td></tr><tr><td>\s</td><td>空格（0x20）</td></tr><tr><td>\t</td><td>制表符</td></tr><tr><td>\“</td><td>双引号</td></tr><tr><td>\’</td><td>单引号</td></tr><tr><td>\</td><td>反斜杠</td></tr><tr><td>\DDD</td><td>八进制字符（ddd）</td></tr><tr><td>\uxxxx</td><td>十六进制UNICODE字符（xxxx）</td></tr></tbody></table><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.tutorialspoint.com/java/index.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/java/index.htm</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Java-背景"><a href="#Java-背景" class="headerlink" title="Java 背景"></a>Java 背景</h2><p>Java是由Sun Microsystems最初开发并于1995年发布的高级编程语言。Java在各种平台上运行，例如Windows，Mac OS和各种UNIX版本。</p><h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><table><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>abstract</td><td>assert</td><td>boolean</td><td>break</td></tr><tr><td>byte</td><td>case</td><td>catch</td><td>char</td></tr><tr><td>class</td><td>const</td><td>continue</td><td>default</td></tr><tr><td>do</td><td>double</td><td>else</td><td>enum</td></tr><tr><td>extends</td><td>final</td><td>finally</td><td>float</td></tr><tr><td>for</td><td>goto</td><td>if</td><td>implements</td></tr><tr><td>import</td><td>instanceof</td><td>int</td><td>interface</td></tr><tr><td>long</td><td>native</td><td>new</td><td>package</td></tr><tr><td>private</td><td>protected</td><td>public</td><td>return</td></tr><tr><td>short</td><td>static</td><td>strictfp</td><td>super</td></tr><tr><td>switch</td><td>synchronized</td><td>this</td><td>throw</td></tr><tr><td>throws</td><td>transient</td><td>try</td><td>void</td></tr><tr><td>volatile</td><td>while</td><td></td></tr></tbody></table><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Java有两种可用的数据类型</p><ul><li>原始数据类型共8种</li><li>引用/对象数据类型</li></ul><h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><p>Byte</p><ul><li>字节数据类型是8位带符号的二进制补码整数</li><li>最小值是-128（-2 ^ 7）</li><li>最大值为127（含）（2 ^ 7 -1）</li><li>默认值为0</li><li>字节数据类型用于节省大型数组中的空间，主要用于代替整数，因为字节比整数小四倍。</li><li>示例：字节a = 100，字节b = -50</li></ul><p>Short</p><ul><li>短数据类型是一个16位带符号的二进制补码整数</li><li>最小值是-32,768（-2 ^ 15）</li><li>最大值为32,767（含）（2 ^ 15 -1）</li><li>短数据类型也可以用于将内存保存为字节数据类型。短路比整数小2倍</li><li>预设值为0。</li><li>例如：short s = 10000，short r = -20000</li></ul><p>Int</p><ul><li>Int数据类型是32位带符号的二进制补码整数。</li><li>最小值是-2,147,483,648（-2 ^ 31）</li><li>最大值为2,147,483,647（含）（2 ^ 31 -1）</li><li>除非担心内存，否则通常将整数用作整数值的默认数据类型。</li><li>默认值为0</li><li>例如：int a = 100000，int b = -200000</li></ul><p>Long </p><ul><li>长数据类型是64位带符号的二进制补码整数</li><li>最小值是-9,223,372,036,854,775,808（-2 ^ 63）</li><li>最大值为9,223,372,036,854,775,807（含）（2 ^ 63 -1）</li><li>当需要比int更大的范围时使用此类型</li><li>默认值为0L</li><li>示例：长a = 100000L，长b = -200000L</li></ul><p>Float</p><ul><li>浮点数据类型是单精度32位IEEE 754浮点</li><li>浮点数主要用于以大数组浮点数保存内存</li><li>默认值为0.0f</li><li>浮动数据类型从不用于诸如货币之类的精确值</li><li>示例：float f1 = 234.5f</li></ul><p>Double </p><ul><li>double数据类型是双精度64位IEEE 754浮点</li><li>此数据类型通常用作十进制值的默认数据类型，通常是默认选择</li><li>绝对不能将双精度数据类型用于货币等精确值</li><li>默认值为0.0d</li><li>例如：double d1 = 123.4</li></ul><p>Bool</p><ul><li>布尔数据类型表示一位信息</li><li>只有两个可能的值：true和false</li><li>此数据类型用于跟踪真/假条件的简单标志</li><li>默认值为假</li><li>示例：bool isTrue = true</li></ul><p>Char</p><ul><li>char数据类型是单个16位Unicode字符</li><li>最小值为“ \ u0000”（或0）</li><li>最大值为“ \ uffff”（或65,535（含））</li><li>Char数据类型用于存储任何字符</li><li>示例：char letterA =’A’</li></ul><h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><ul><li>引用变量是使用类的已定义构造函数创建的。它们用于访问对象。这些变量被声明为无法更改的特定类型。</li><li>类对象和各种类型的数组变量都属于引用数据类型。</li><li>任何引用变量的默认值为null。</li><li>引用变量可用于引用声明类型或任何兼容类型的任何对象。</li></ul><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>定义一个数组</p><pre><code>dataType[] arrayRefVar;   // 推荐的方式ordataType arrayRefVar[];  // 工作，但不推荐</code></pre><p>创建数组</p><pre><code>arrayRefVar = new dataType[arraySize];</code></pre><p>使用已知数据创建数组</p><pre><code>dataType[] arrayRefVar = {value0, value1, ..., valuek};</code></pre><p>处理数组的一个例子</p><pre><code>public class TestArray {   public static void main(String[] args) {      double[] myList = {1.9, 2.9, 3.4, 3.5};      // Print all the array elements      for (int i = 0; i &lt; myList.length; i++) {         System.out.println(myList[i] + &quot; &quot;);      }      // Summing all elements      double total = 0;      for (int i = 0; i &lt; myList.length; i++) {         total += myList[i];      }      System.out.println(&quot;Total is &quot; + total);      // Finding the largest element      double max = myList[0];      for (int i = 1; i &lt; myList.length; i++) {         if (myList[i] &gt; max) max = myList[i];      }      System.out.println(&quot;Max is &quot; + max);     }}</code></pre><p>数组的内存空间分为两部分，一块用于存储引用，一块存储真实的数据。</p><p><img src="/java/java/1-java-basic/java_array.jpg" alt="数组地址空间">;</p><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><table><thead><tr><th>操作符</th><th>描述</th><th>范例</th></tr></thead><tbody><tr><td>+（加法）</td><td>在运算符的任一侧添加值。</td><td>A + B会得到30</td></tr><tr><td>-（减法）</td><td>从左操作数中减去右操作数。</td><td>A-B会得到-10</td></tr><tr><td>*（乘法）</td><td>将运算符两边的值相乘。</td><td>A * B会得到200</td></tr><tr><td>/（部门）</td><td>用左手操作数除以右手操作数。</td><td>B / A会得到2</td></tr><tr><td>％（模量）</td><td>将左操作数除以右操作数，然后返回余数。</td><td>B％A得到0</td></tr><tr><td>++（增量）</td><td>将操作数的值增加1。</td><td>B++得到21</td></tr><tr><td>-（减量）</td><td>将操作数的值减1。</td><td>B–得到19</td></tr></tbody></table><p>运算注意长度</p><pre><code>int a = 2147483647*2 // 得到 -2 因为超长了long a = 2147483647*2 // 也不行，因为还是 int long a = 2147483647*2L // 工作了，转换成long 了</code></pre><p>整数除法不是四舍五入，而是直接舍去小数</p><pre><code>double d = 10/4 // 结果是2double d = 10/4.0 // 正确double d = 10/(double)4 // 正确</code></pre><p>小数比较无意义</p><pre><code>boole same = 2.0 == 1.0+1.0 //false 计算机浮点问题</code></pre><p>小数计算结果不精确</p><p>float f = 0.1F * 0.1F // 结果是 0.00000001</p><p>自增（++）理解很简单 </p><pre><code>b = a++-1本质是b = (a++)-1等效于a = a + 1b = a -1</code></pre><p>原理是 –/++ 的运算优先级很高。a++ 是先做其他操作，在自增;a++ 是先自增再做其他操作。</p><p>对象的比较是比较的引用，而非值本身</p><h2 id="转义表"><a href="#转义表" class="headerlink" title="转义表"></a>转义表</h2><table><thead><tr><th>符号</th><th>含义</th></tr></thead><tbody><tr><td>\n</td><td>换行（0x0a）</td></tr><tr><td>\r</td><td>回车（0x0d）</td></tr><tr><td>\F</td><td>换页（0x0c）</td></tr><tr><td>\b</td><td>退格键（0x08）</td></tr><tr><td>\s</td><td>空格（0x20）</td></tr><tr><td>\t</td><td>制表符</td></tr><tr><td>\“</td><td>双引号</td></tr><tr><td>\’</td><td>单引号</td></tr><tr><td>\</td><td>反斜杠</td></tr><tr><td>\DDD</td><td>八进制字符（ddd）</td></tr><tr><td>\uxxxx</td><td>十六进制UNICODE字符（xxxx）</td></tr></tbody></table><h2 id="Java-各个版本更新特性"><a href="#Java-各个版本更新特性" class="headerlink" title="Java 各个版本更新特性"></a>Java 各个版本更新特性</h2><ul><li>JDK5 foreach 迭代方式、可变参数、枚举、自动拆装箱、泛型、注解</li><li>JDK6 SystemTray 类、 COmpiler API、Command Annotations</li><li>JDK7 switch 支持字符串匹配条件、泛型类型自动推断、try-with-resources 资源关闭、Objects 类、ForkJoinPool 等</li><li>JDK8 接口的默认方法实现和静态方法、Lambda 表达式、函数式接口、方法和构造函数引用、新的日期和时间API、流处理</li><li>JDK9 模块化、简化进程API、JSON API、钱和货币的API</li><li>JDK10 局部变量的类型推断、改进 GC和内存管理、线程本地握手、备用内存设备上的堆分配</li></ul><h2 id="this-与-super"><a href="#this-与-super" class="headerlink" title="this 与 super"></a>this 与 super</h2><p>共同点</p><ul><li>都是关键字，起指代作用</li><li>在构造方法中必须出现在第一行</li></ul><p>this</p><ul><li>访问本类示例属性和方法</li><li>先找本类没有再找父类</li><li>单独使用表示当前对象</li></ul><p>super </p><ul><li>用于子类直接访问父类的实例属性和方法</li><li>直接找到父类</li><li>在子类复写父类方法时，访问父类同名方法</li></ul><h2 id="Java-中参数传递"><a href="#Java-中参数传递" class="headerlink" title="Java 中参数传递"></a>Java 中参数传递</h2><ul><li>无论是对于基本数据类型，还是引用类型，java 中的参数传递都是值复制的传递过程。对于引用变量，复制指向对象的首地址。</li></ul><h2 id="什么时候防御编程做参数验证"><a href="#什么时候防御编程做参数验证" class="headerlink" title="什么时候防御编程做参数验证"></a>什么时候防御编程做参数验证</h2><p>一般在最外层做数据校验，使用 bean validation 做数据的基本校验，然后在内部使用业务的校验。</p><h2 id="常见-POJO-缩写的含义"><a href="#常见-POJO-缩写的含义" class="headerlink" title="常见 POJO 缩写的含义"></a>常见 POJO 缩写的含义</h2><ul><li>POJO Plain Ordinary Java Object </li><li>DO Data Object </li><li>BO Business Object</li><li>DTO Data Transfer Object</li><li>VO View Object </li><li>AO Application Object</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.tutorialspoint.com/java/index.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/java/index.htm</a></li></ul>]]></content>
       
       
       <categories>
@@ -1686,23 +1686,6 @@
     </entry>
     
     <entry>
-      <title>英文邮件写作</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/</url>
-      
-        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端项目安全扫描</title>
       <link href="/%E5%AE%89%E5%85%A8/security/security-in-frontend/"/>
       <url>/%E5%AE%89%E5%85%A8/security/security-in-frontend/</url>
@@ -1720,16 +1703,16 @@
     </entry>
     
     <entry>
-      <title>微软SDL( Security Development Lifecycle)流程</title>
-      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
-      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
+      <title>英文邮件写作</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 安全 </category>
+          <category> 职业素质 </category>
           
       </categories>
       
@@ -1754,16 +1737,16 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
+      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
       
       
       <categories>
           
-          <category> API设计 </category>
+          <category> 安全 </category>
           
       </categories>
       
@@ -1776,6 +1759,23 @@
       <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
       
         <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> API设计 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>API 文档和契约</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
+      
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -1975,23 +1975,6 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React Native 资源收集</title>
       <link href="/React/react/react-native%20resource/"/>
       <url>/React/react/react-native%20resource/</url>
@@ -2002,57 +1985,6 @@
       <categories>
           
           <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/react-recource/"/>
-      <url>/React/react/react-recource/</url>
-      
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
           
       </categories>
       
@@ -2077,11 +2009,45 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p><p>## </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
       
       
       <categories>
@@ -2094,16 +2060,16 @@
     </entry>
     
     <entry>
-      <title>PHP 包管理工具</title>
-      <link href="/php/php/PHP-package%20manager/"/>
-      <url>/php/php/PHP-package%20manager/</url>
+      <title>React 资源收集</title>
+      <link href="/React/react/react-recource/"/>
+      <url>/React/react/react-recource/</url>
       
-        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> React </category>
           
       </categories>
       
@@ -2111,11 +2077,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>PHP环境 in Mac</title>
+      <link href="/php/php/php-environment-in-mac/"/>
+      <url>/php/php/php-environment-in-mac/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
       
       
       <categories>
@@ -2145,6 +2111,23 @@
     </entry>
     
     <entry>
+      <title>PHP 包管理工具</title>
+      <link href="/php/php/PHP-package%20manager/"/>
+      <url>/php/php/PHP-package%20manager/</url>
+      
+        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>CakePHP 脚手架和命令行工具</title>
       <link href="/php/php/cakephp%20scaffold/"/>
       <url>/php/php/cakephp%20scaffold/</url>
@@ -2162,11 +2145,45 @@
     </entry>
     
     <entry>
-      <title>PHP环境 in Mac</title>
-      <link href="/php/php/php-environment-in-mac/"/>
-      <url>/php/php/php-environment-in-mac/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
+      
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展Linux/unix 下的编译安装</title>
+      <link href="/php/php/PHP-extension/"/>
+      <url>/php/php/PHP-extension/</url>
+      
+        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
       
       
       <categories>
@@ -2201,23 +2218,6 @@
       <url>/php/php/simple-log-feature/</url>
       
         <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP拓展Linux/unix 下的编译安装</title>
-      <link href="/php/php/PHP-extension/"/>
-      <url>/php/php/PHP-extension/</url>
-      
-        <content type="html"><![CDATA[<p>在Linux下PHP如果出现了拓展不能被安装的情况时,需要自己安装拓展。</p><p>一般来说需要安装相应系统库:比如libmcrypt和相应的拓展.so文件,下面使用mycrypt作为例子</p><p>MCrypt是一个功能强大的加密算法扩展库，它包括有22种算法。</p><p>1:下载并解压mcrypt-2.6.8.tar.bz2。（2.6.8为版本号，可以自行选择，但是注意后边步骤要与下载的版本号一致。）<br>2:在终端执行命令（注意如下命令需要安装xcode支持）：</p><pre><code>cd ~/Downloads/mcrypt-2.5.8./configure --disable-posix-threads --enable-staticmakesudo make install</code></pre><p><em>实际上这一步在Ubuntu上可以使用 apt-get 工具安装,在Mac上使用homebrew安装</em></p><p>3：下载并解压php源码，根据自己情况选择对应版本。(注意以下命令中php的版本)<br>在终端执行命令：（如果出错请看后边）</p><pre><code>cd ~/Downloads/php-5.5.14/ext/mcryptphpize./configuremakecd modulessudo cp mcrypt.so /usr/lib/php/extensions/no-debug-non-zts-20121212///上面可以使用make install 代替</code></pre><p>（cd modules后当出现</p><p>Build complete.<br>Don’t forget to run ‘make test’.<br>表示安装成功。）</p><p>*</p><p>直接安装拓展<br><a href="https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks" target="_blank" rel="noopener">https://stackoverflow.com/questions/24749950/error-no-available-formula-for-php54-mcrypt-on-mac-os-x-mavericks</a></p><p>*</p><p>4：打开php.ini</p><pre><code>sudo vi /etc/php.ini</code></pre><p>添加如下代码：（注意no-debug-non-zts-20121212版本号，如果不清楚可以前往/usr/lib/php/extensions/查看）</p><p>extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/mcrypt.so<br>*如果phpize出现如下错误：</p><p>grep: /usr/include/php/main/php.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory<br>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory<br>Configuring for:<br>PHP Api Version:<br>Zend Module Api No:<br>Zend Extension Api No:<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.<br>表示需要安装autoconf</p><p>*如果make出现如下错误：</p><p>/ext/mcrypt/mcrypt.c:25:10: fatal error: ‘php.h’ file not found<br>执行如下命令即可：</p><pre><code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include /usr/include</code></pre><p><em>注意MacOSX10.10.sdk修改为自己系统的版本号</em></p><p>如果遇到<br>Configuring for:<br>PHP Api Version:         20121113<br>Zend Module Api No:      20121212<br>Zend Extension Api No:   220121212<br>Cannot find autoconf. Please check your autoconf installation and the<br>$PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>参考:<a href="https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/31583646/cannot-find-autoconf-please-check-your-autoconf-installation-xampp-in-centos</a></p><p>For CentOS:</p><blockquote><h1 id="yum-install-autoconf"><a href="#yum-install-autoconf" class="headerlink" title="yum install autoconf"></a>yum install autoconf</h1></blockquote><p>for Ubuntu :</p><blockquote><h1 id="apt-get-install-autoconf"><a href="#apt-get-install-autoconf" class="headerlink" title="apt-get install autoconf"></a>apt-get install autoconf</h1></blockquote><p>for fedora 24-27:</p><blockquote><h1 id="dnf-install-autoconf"><a href="#dnf-install-autoconf" class="headerlink" title="dnf install autoconf"></a>dnf install autoconf</h1></blockquote><p>For Mac</p><blockquote><p>brew install autoconf</p></blockquote><p>对于Mac系统遇到 /etc/权限问题</p><p>参考:<a href="https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208815/error-configuring-mcrypt-after-upgrading-to-el-capitan</a></p><p>我们可以安装到另外的地方</p><pre><code>sudo make EXTENSION_DIR=&#39;/usr/local/lib/php/extensions&#39; install</code></pre><h3 id="更多Mac的安全策略"><a href="#更多Mac的安全策略" class="headerlink" title="更多Mac的安全策略"></a>更多Mac的安全策略</h3><p>在最新的OSX中限制用户访问某些系统目录<br><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/Introduction/Introduction.html</a></p><p>无法访问的地址</p><pre><code>/bin/sbin/usr/System</code></pre><pre><code>/usr/local/Applications/Library~/Library</code></pre>]]></content>
       
       
       <categories>
@@ -2434,23 +2434,6 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
-      
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端工程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>H5 Cordova打包方案</title>
       <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
@@ -2473,6 +2456,23 @@
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
       
         <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工程 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
+      
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -2519,23 +2519,6 @@
     </entry>
     
     <entry>
-      <title>最实用的Linux命令</title>
-      <link href="/linux/linux/common-useful-commands/"/>
-      <url>/linux/linux/common-useful-commands/</url>
-      
-        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>免费的CI/CD 工具</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
@@ -2546,6 +2529,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>最实用的Linux命令</title>
+      <link href="/linux/linux/common-useful-commands/"/>
+      <url>/linux/linux/common-useful-commands/</url>
+      
+        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -2570,23 +2570,6 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/linux/linux/nginx-usful%20command/"/>
-      <url>/linux/linux/nginx-usful%20command/</url>
-      
-        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Gradle 构建 Spring boot 项目</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
@@ -2597,6 +2580,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Nginx 常用操作</title>
+      <link href="/linux/linux/nginx-usful%20command/"/>
+      <url>/linux/linux/nginx-usful%20command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -2638,11 +2638,11 @@
     </entry>
     
     <entry>
-      <title>Ansible 入门和使用</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
       
-        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>直接执行 ad-hoc 命令</p><blockquote><p>ansible [hosts] comamnd -a “echo xxx”;</p></blockquote><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
       
       
       <categories>
@@ -2655,11 +2655,11 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      <title>Ansible 入门和使用</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>直接执行 ad-hoc 命令</p><blockquote><p>ansible [hosts] comamnd -a “echo xxx”;</p></blockquote><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
       
       
       <categories>
@@ -2757,23 +2757,6 @@
     </entry>
     
     <entry>
-      <title>How to end a meeting?</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
-      
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>怎么样快速入门/学习一项技术</title>
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/How%20to%20learn%20something%20quickly/</url>
@@ -2784,6 +2767,23 @@
       <categories>
           
           <category> 自我管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>How to end a meeting?</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
+      
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 职业素质 </category>
           
       </categories>
       
