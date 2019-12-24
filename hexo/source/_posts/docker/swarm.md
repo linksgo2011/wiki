@@ -253,11 +253,21 @@ ovifr1oldnc7        sample-stack_frontend   replicated          1/1             
 
 
 
+## docker swarm 一些调试方法
 
+查看 service 无法启动的错误信息
+> docker service ps --no-trunc {serviceName}
 
+查看服务的 task
+> docker service ps <service-name>
 
+查看 task 的启动情况，可以看到容器、节点情况
+> docker inspect <task-id>
 
+找到了容器可以查看日志
+> docker logs <container-id>
 
+daemon.json 可以开启 debug 模式。
 
 ## TODO 
 

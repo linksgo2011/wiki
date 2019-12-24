@@ -75,6 +75,32 @@ docker 仓库的版本约定为 用户/仓库/标签
 
 > sudo systemctl restart docker
 
+
+## docker 清理镜像和容器
+
+> docker container prune
+
+> docker image prune
+
+
+## 用 ansible 操作 docker 时候需要使用 docker for Python 的插件
+
+在目标机上需要有 docker、Python、以及 python 的docker 插件
+
+```
+- name: install certain python modules for docker
+  pip:
+    name: "{{ item.name }}"
+    version: "{{ item.version }}"
+    state: present
+  with_items:
+  - { name: docker, version: 2.0.0 }
+  
+```
+
+http://www.it1352.com/647250.html
+
+
 ## docker 文档 
 
 https://docs.docker.com/

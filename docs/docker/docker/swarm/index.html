@@ -247,6 +247,23 @@ networks:
 <blockquote>
 <p>docker-machine ssh manager1 docker service logs  sample-stack_frontend</p>
 </blockquote>
+<h2 id="docker-swarm-一些调试方法"><a href="#docker-swarm-一些调试方法" class="headerlink" title="docker swarm 一些调试方法"></a>docker swarm 一些调试方法</h2><p>查看 service 无法启动的错误信息</p>
+<blockquote>
+<p>docker service ps –no-trunc {serviceName}</p>
+</blockquote>
+<p>查看服务的 task</p>
+<blockquote>
+<p>docker service ps <service-name></service-name></p>
+</blockquote>
+<p>查看 task 的启动情况，可以看到容器、节点情况</p>
+<blockquote>
+<p>docker inspect <task-id></task-id></p>
+</blockquote>
+<p>找到了容器可以查看日志</p>
+<blockquote>
+<p>docker logs <container-id></container-id></p>
+</blockquote>
+<p>daemon.json 可以开启 debug 模式。</p>
 <h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
 <li>使用 docker-compose 部署应用</li>
 <li>容器内部的通信</li>

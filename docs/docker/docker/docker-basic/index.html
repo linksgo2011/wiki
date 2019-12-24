@@ -135,6 +135,22 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 <blockquote>
 <p>sudo systemctl restart docker</p>
 </blockquote>
+<h2 id="docker-清理镜像和容器"><a href="#docker-清理镜像和容器" class="headerlink" title="docker 清理镜像和容器"></a>docker 清理镜像和容器</h2><blockquote>
+<p>docker container prune</p>
+</blockquote>
+<blockquote>
+<p>docker image prune</p>
+</blockquote>
+<h2 id="用-ansible-操作-docker-时候需要使用-docker-for-Python-的插件"><a href="#用-ansible-操作-docker-时候需要使用-docker-for-Python-的插件" class="headerlink" title="用 ansible 操作 docker 时候需要使用 docker for Python 的插件"></a>用 ansible 操作 docker 时候需要使用 docker for Python 的插件</h2><p>在目标机上需要有 docker、Python、以及 python 的docker 插件</p>
+<pre><code>- name: install certain python modules for docker
+  pip:
+    name: &quot;{{ item.name }}&quot;
+    version: &quot;{{ item.version }}&quot;
+    state: present
+  with_items:
+  - { name: docker, version: 2.0.0 }
+
+</code></pre><p><a href="http://www.it1352.com/647250.html" target="_blank" rel="noopener">http://www.it1352.com/647250.html</a></p>
 <h2 id="docker-文档"><a href="#docker-文档" class="headerlink" title="docker 文档"></a>docker 文档</h2><p><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>
 	  
 
