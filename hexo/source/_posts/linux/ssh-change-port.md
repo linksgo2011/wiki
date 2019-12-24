@@ -34,7 +34,16 @@ Job for sshd.service failed because the control process exited with error code. 
 
 需要关闭 SeLinux
 
+查看 selinux 状态
+> sestatus 
 
+修改配置
+> vim /etc/selinux/config
+
+编辑配置并修改
+> SELINUX=disabled
+
+然后重启即可
 
 
 ## 参考资料
