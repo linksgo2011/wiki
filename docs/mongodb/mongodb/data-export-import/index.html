@@ -3,15 +3,18 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Spring 中 Jackson 的常用技巧 | 架构师知识系统</title>
+  <title>mongodb 的数据导入\导出 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="格式化输出时间@JsonFormat(pattern = &amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;)">
+  <meta name="description" content="mongodb数据备份和恢复主要分为二种：一种是针对库的mongodump和mongorestore，一种是针对库中表的mongoexport和mongoimport
+mongorestore 比较常用。
+导出
+mongodump -d SERVERLOG -o /data/mongobak/SER">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring 中 Jackson 的常用技巧">
+  <meta property="og:title" content="mongodb 的数据导入\导出">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -45,30 +48,35 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Spring 中 Jackson 的常用技巧</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-30</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">mongodb 的数据导入\导出</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-25</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
-  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
-	<!-- toc -->
-<script type="text/javascript">
-		jQuery(document).ready(function() {
- 		   generateWikiTOC('.note', '.toc',  2 , 2 );
-		});
-</script>
-  </div><!-- col-md-3 -->
-  
   
 
   
-  <div class="col-xs-12 col-sm-9 col-md-9 note">
-	
+	<div class="col-md-12">
+	  
 
 	  <!-- content -->
-	  <h2 id="格式化输出时间"><a href="#格式化输出时间" class="headerlink" title="格式化输出时间"></a>格式化输出时间</h2><pre><code>@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)
-</code></pre>	  
+	  <p>mongodb数据备份和恢复主要分为二种：一种是针对库的mongodump和mongorestore，一种是针对库中表的mongoexport和mongoimport</p>
+<p>mongorestore 比较常用。</p>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><blockquote>
+<p>mongodump -d SERVERLOG -o /data/mongobak/SERVERLOG.bak/</p>
+</blockquote>
+<h2 id="导入指定文件夹下的数据"><a href="#导入指定文件夹下的数据" class="headerlink" title="导入指定文件夹下的数据"></a>导入指定文件夹下的数据</h2><blockquote>
+<p>mongorestore -d &lt;db_name&gt; &lt;bson_folder&gt;</p>
+</blockquote>
+<p>windows 下找到 C 盘中 mongdodb/server/bin, mongdo提供了一些工具软件</p>
+<blockquote>
+<p>mongorestore.exe -d &lt;db_name&gt; &lt;bson_folder&gt;</p>
+</blockquote>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongorestore/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/reference/program/mongorestore/</a></li>
+</ul>
+	  
 
 	  <div>
   		<center>
@@ -81,84 +89,12 @@
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
 			
 			
+		
+	
+		
+	
 		
 	
 		
@@ -200,7 +136,45 @@
 		
 	
 		
-			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -208,7 +182,13 @@
 		
 	
 		
-			
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -260,23 +240,23 @@
 		
 	
 		
-			
+	
 		
 	
 		
-			
+	
 		
 	
 		
-			
+	
 		
 	
 		
-			
+	
 		
 	
 		
-			
+	
 		
 	
 		
@@ -386,7 +366,7 @@
 		
 	
 		
-			
+	
 		
 	
 		
@@ -449,11 +429,11 @@
 	
 	
 	
-		<li class="prev"><a href="/Spring/spring/spring-basic/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Spring/spring/spring-bean-validation/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/mongodb/mongodb/bson-time-stamp/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
