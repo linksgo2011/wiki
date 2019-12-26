@@ -3,29 +3,33 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>高并发设计 | 架构师知识系统</title>
+  <title>CI/CD 搭建清单 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="前端页面并发优化
-Cookie 
-CDN 
-图标聚合
-Gzip 压缩
+  <meta name="description" content="代码库
+gitlab 
+crendential
 
-后端并发
-ehcache
-webflux
-负载均衡
-MQ
 
-数据库
-读写分离
-分库分表">
+Jenkins
+搭建 Jenkin
+配置 salve
+
+
+
+构建
+
+web hook 
+
+
+部署
+非生产
+生产">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="高并发设计">
+  <meta property="og:title" content="CI/CD 搭建清单">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -59,7 +63,7 @@ MQ
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">高并发设计</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-23</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">CI/CD 搭建清单</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-26</span></h1>
 </div>		
 
 <div class="row page">
@@ -81,21 +85,28 @@ MQ
 	
 
 	  <!-- content -->
-	  <h2 id="前端页面并发优化"><a href="#前端页面并发优化" class="headerlink" title="前端页面并发优化"></a>前端页面并发优化</h2><ul>
-<li>Cookie </li>
-<li>CDN </li>
-<li>图标聚合</li>
-<li>Gzip 压缩</li>
+	  <ul>
+<li>代码库<ul>
+<li>gitlab </li>
+<li>crendential</li>
 </ul>
-<h2 id="后端并发"><a href="#后端并发" class="headerlink" title="后端并发"></a>后端并发</h2><ul>
-<li>ehcache</li>
-<li>webflux</li>
-<li>负载均衡</li>
-<li>MQ</li>
+</li>
+<li>Jenkins<ul>
+<li>搭建 Jenkin</li>
+<li>配置 salve</li>
+<li></li>
 </ul>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
-<li>读写分离</li>
-<li>分库分表</li>
+</li>
+<li>构建<ul>
+<li></li>
+<li>web hook </li>
+</ul>
+</li>
+<li>部署<ul>
+<li>非生产</li>
+<li>生产</li>
+</ul>
+</li>
 </ul>
 	  
 
@@ -110,106 +121,10 @@ MQ
 	
 	
 		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
 			
 			
+		
+	
 		
 	
 		
@@ -221,7 +136,9 @@ MQ
 		
 	
 		
-			
+	
+		
+	
 		
 	
 		
@@ -349,6 +266,128 @@ MQ
 		
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -415,7 +454,11 @@ MQ
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -436,47 +479,13 @@ MQ
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 	
-	
-		<li class="prev"><a href="/技术架构/architecture/aware-product/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/技术架构/architecture/system-parameters/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/运维开发/devops/release-note/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
