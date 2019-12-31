@@ -3,13 +3,26 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Java 文件基础 | 架构师知识系统</title>
+  <title>Java 各种流总结 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
+  
+  <meta name="description" content="字节流字节流与字符无关，可以处理所有的资源类型。
+两个抽象类
+
+InputStream
+OutputStream
+
+JDK 提供常用的类有
+
+FileInputStream
+FileOutputSteam
+
+字符流字符流需要考虑编码，只能处理文本文件。字节流变成字符流需要解码，字符流编程字节流需要编">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java 文件基础">
+  <meta property="og:title" content="Java 各种流总结">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -43,7 +56,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Java 文件基础</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-29</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Java 各种流总结</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-12-29</span></h1>
 </div>		
 
 <div class="row page">
@@ -56,7 +69,43 @@
 	  
 
 	  <!-- content -->
-	  	  
+	  <h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><p>字节流与字符无关，可以处理所有的资源类型。</p>
+<p>两个抽象类</p>
+<ul>
+<li>InputStream</li>
+<li>OutputStream</li>
+</ul>
+<p>JDK 提供常用的类有</p>
+<ul>
+<li>FileInputStream</li>
+<li>FileOutputSteam</li>
+</ul>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><p>字符流需要考虑编码，只能处理文本文件。字节流变成字符流需要解码，字符流编程字节流需要编码。</p>
+<p>两个抽象类</p>
+<ul>
+<li>Reader</li>
+<li>Writer </li>
+</ul>
+<p>可用的类</p>
+<ul>
+<li>FileReader</li>
+<li>FileWriter</li>
+</ul>
+<h2 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h2><p>缓冲流依赖字符流,拥有缓冲区机制，可以提高性能。</p>
+<ul>
+<li>BufferedReader</li>
+<li>BufferedWriter</li>
+</ul>
+<h2 id="节点流"><a href="#节点流" class="headerlink" title="节点流"></a>节点流</h2><p>从字节数组中创建流，使用后无需关闭。当文件不大时，可以直接读取到字节数组。</p>
+<ul>
+<li>ByteArrayInputSteam</li>
+<li>ByteArrayOutputSteam</li>
+</ul>
+<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><ul>
+<li>DataInputSteam </li>
+<li>DataOuputSteam</li>
+</ul>
+<h2 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h2>	  
 
 	  <div>
   		<center>
@@ -374,18 +423,6 @@
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -396,11 +433,23 @@
 		
 	
 		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
 		
 			
+		
+	
 		
 	
 		
