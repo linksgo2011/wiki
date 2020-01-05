@@ -49,10 +49,29 @@ JDK 提供常用的类有
 
 ## 处理流
 
+处理流在输出数据时，可以输出数据类型，只能是基本类型和字符串。处理流，用的比较少。
+
 - DataInputSteam 
 - DataOuputSteam
 
-## 转换流
+## 序列化处理流
 
+用于序列化和序列化，可以将对象类型输出到文件。
 
+- ObjectInputStream
+- ObjectOutputStream
+
+使用 Java 自带的序列化机制，被序列化对象需要增加 Seriablizable 接口。
+如果不需要序列化的字段使用 transient 标注。
+
+## 打印流
+
+用于控制台打印输出，常见用处是将控制台的输出打印到文件中，日志框架一般通过这种方式，作为日志输出。
+
+- PrintStream
+
+```
+System.setOut(new PrintStream(new FileOutputSteam("./test.log")，true)
+
+```
 

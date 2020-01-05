@@ -101,11 +101,24 @@ FileOutputSteam
 <li>ByteArrayInputSteam</li>
 <li>ByteArrayOutputSteam</li>
 </ul>
-<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><ul>
+<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><p>处理流在输出数据时，可以输出数据类型，只能是基本类型和字符串。处理流，用的比较少。</p>
+<ul>
 <li>DataInputSteam </li>
 <li>DataOuputSteam</li>
 </ul>
-<h2 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h2>	  
+<h2 id="序列化处理流"><a href="#序列化处理流" class="headerlink" title="序列化处理流"></a>序列化处理流</h2><p>用于序列化和序列化，可以将对象类型输出到文件。</p>
+<ul>
+<li>ObjectInputStream</li>
+<li>ObjectOutputStream</li>
+</ul>
+<p>使用 Java 自带的序列化机制，被序列化对象需要增加 Seriablizable 接口。<br>如果不需要序列化的字段使用 transient 标注。</p>
+<h2 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h2><p>用于控制台打印输出，常见用处是将控制台的输出打印到文件中，日志框架一般通过这种方式，作为日志输出。</p>
+<ul>
+<li>PrintStream</li>
+</ul>
+<pre><code>System.setOut(new PrintStream(new FileOutputSteam(&quot;./test.log&quot;)，true)
+
+</code></pre>	  
 
 	  <div>
   		<center>
@@ -118,6 +131,12 @@ FileOutputSteam
 	
 	
 		
+	
+		
+			
+		
+	
+		
 			
 			
 		
@@ -423,30 +442,6 @@ FileOutputSteam
 		
 	
 		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
 			
 		
 	
@@ -463,7 +458,17 @@ FileOutputSteam
 		
 	
 		
+			
+		
 	
+		
+			
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -496,9 +501,23 @@ FileOutputSteam
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/java/java/jav-regrex/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
@@ -519,7 +538,7 @@ FileOutputSteam
   <div class="container-narrow">
 	<footer> <p>
   
-  &copy; 2019 少个分号
+  &copy; 2020 少个分号
   
   <a href="/about" target="_blank">关于本站</a> |
   <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
