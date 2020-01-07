@@ -3,16 +3,17 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>电商领域知识 | 架构师知识系统</title>
+  <title>linux 使用 alternatives 切换Java版本 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="电商数据库设计
-https://cloud.tencent.com/developer/article/1164332">
+  <meta name="description" content="lternatives与update-alternatives好像是同一样工具（各个linux发行版使用的不一样）
+原理如果 linux 机器上安装了多个 java 版本，需要切换。可以使用 alternatives。
+原来是在/usr/bin目录下创建一个符号链接，指向/etc/alternati">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="电商领域知识">
+  <meta property="og:title" content="linux 使用 alternatives 切换Java版本">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -46,30 +47,48 @@ https://cloud.tencent.com/developer/article/1164332">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">电商领域知识</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-25</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">linux 使用 alternatives 切换Java版本</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-07</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
-  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
-	<!-- toc -->
-<script type="text/javascript">
-		jQuery(document).ready(function() {
- 		   generateWikiTOC('.note', '.toc',  2 , 2 );
-		});
-</script>
-  </div><!-- col-md-3 -->
-  
   
 
   
-  <div class="col-xs-12 col-sm-9 col-md-9 note">
-	
+	<div class="col-md-12">
+	  
 
 	  <!-- content -->
-	  <h2 id="电商数据库设计"><a href="#电商数据库设计" class="headerlink" title="电商数据库设计"></a>电商数据库设计</h2><ul>
-<li><a href="https://cloud.tencent.com/developer/article/1164332" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1164332</a></li>
+	  <p>lternatives与update-alternatives好像是同一样工具（各个linux发行版使用的不一样）</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>如果 linux 机器上安装了多个 java 版本，需要切换。可以使用 alternatives。</p>
+<p>原来是在/usr/bin目录下创建一个符号链接，指向/etc/alternatives/ 下的的文件，而该文件依然是一个符号链接。</p>
+<pre><code>[root@node1 mec]# ll /usr/bin/java  
+lrwxrwxrwx. 1 root root 22 4月  16 16:06 /usr/bin/java -&gt; /etc/alternatives/java  
+</code></pre><h2 id="切换-java-版本"><a href="#切换-java-版本" class="headerlink" title="切换 java 版本"></a>切换 java 版本</h2><blockquote>
+<p>alternatives –config java  </p>
+</blockquote>
+<pre><code>
+共有 3 个程序提供“java”。  
+
+  选择    命令  
+-----------------------------------------------  
+   1           /usr/lib/jvm/jre-1.5.0-gcj/bin/java  
+*  2           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java  
+ + 3           /usr/java/default/bin/java  
+</code></pre><p>然后选择你想要选择的选项保存就好了</p>
+<h2 id="添加的新的-java-版本到-alternatives-管理"><a href="#添加的新的-java-版本到-alternatives-管理" class="headerlink" title="添加的新的 java 版本到 alternatives 管理"></a>添加的新的 java 版本到 alternatives 管理</h2><blockquote>
+<p>alternatives –install /usr/bin/java java /usr/lib/jdk1.8/bin/java 500  </p>
+</blockquote>
+<p>参数说明：</p>
+<ul>
+<li>/usr/bin/java java path 逻辑,会被 alternatives 软连接</li>
+<li>java java 命令</li>
+<li>/usr/lib/jdk1.8/bin/java 新的 java 版本目标地址</li>
+<li>500 选择的时候的序号</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://blog.csdn.net/ccfxue/article/details/53822740" target="_blank" rel="noopener">https://blog.csdn.net/ccfxue/article/details/53822740</a></li>
 </ul>
 	  
 
@@ -84,6 +103,277 @@ https://cloud.tencent.com/developer/article/1164332">
 	
 	
 		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -177,243 +467,16 @@ https://cloud.tencent.com/developer/article/1164332">
 	
 		
 			
+		
+	
+		
+	
+		
 			
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -444,7 +507,7 @@ https://cloud.tencent.com/developer/article/1164332">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/linux/linux/linux-disk/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
