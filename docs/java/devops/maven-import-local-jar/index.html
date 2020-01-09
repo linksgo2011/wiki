@@ -3,18 +3,18 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>微软SDL( Security Development Lifecycle)流程 | 架构师知识系统</title>
+  <title>Maven 将本地 jar 大包到项目 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="简介微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。
-项目中实践在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模
-相关资源
-官网 http://">
+  <meta name="description" content="使用 install 到本地仓库的方案使用 mvn install 到本地，如果使用 CI 可以先于 mvn package 执行。
+mvn install:install-file \
+   -Dfile=&amp;lt;path-to-file&amp;gt; \
+   -DgroupId=&amp;lt;group-">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="微软SDL( Security Development Lifecycle)流程">
+  <meta property="og:title" content="Maven 将本地 jar 大包到项目">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -48,7 +48,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">微软SDL( Security Development Lifecycle)流程</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-07</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Maven 将本地 jar 大包到项目</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-09</span></h1>
 </div>		
 
 <div class="row page">
@@ -70,12 +70,24 @@
 	
 
 	  <!-- content -->
-	  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p>
-<h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p>
-<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
-<li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li>
-</ul>
-	  
+	  <h2 id="使用-install-到本地仓库的方案"><a href="#使用-install-到本地仓库的方案" class="headerlink" title="使用 install 到本地仓库的方案"></a>使用 install 到本地仓库的方案</h2><p>使用 mvn install 到本地，如果使用 CI 可以先于 mvn package 执行。</p>
+<pre><code>mvn install:install-file \
+   -Dfile=&lt;path-to-file&gt; \
+   -DgroupId=&lt;group-id&gt; \
+   -DartifactId=&lt;artifact-id&gt; \
+   -Dversion=&lt;version&gt; \
+   -Dpackaging=&lt;packaging&gt; \
+   -DgeneratePom=true
+</code></pre><p>然后按照正常的方式引入依赖即可。</p>
+<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><p>systemPath 方式导入，但是这种方式，测试和本地运行可以，服务器运行会报找不到 class 的错误。</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.sample&lt;/groupId&gt;
+    &lt;artifactId&gt;sample&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;scope&gt;system&lt;/scope&gt;
+    &lt;systemPath&gt;${project.basedir}/src/main/resources/Name_Your_JAR.jar&lt;/systemPath&gt;
+&lt;/dependency&gt;
+</code></pre>	  
 
 	  <div>
   		<center>
@@ -88,7 +100,8 @@
 	
 	
 		
-	
+			
+			
 		
 	
 		
@@ -104,63 +117,15 @@
 		
 	
 		
-	
+			
+			
+			
+		
+			
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -216,6 +181,38 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
 			
 		
 	
@@ -234,21 +231,7 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -322,21 +305,6 @@
 		
 	
 		
-			
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -348,10 +316,18 @@
 	
 		
 			
-			
+		
+	
+		
+	
+		
 			
 		
 	
+		
+	
+		
+			
 		
 	
 		
@@ -395,7 +371,11 @@
 		
 	
 		
+			
+		
 	
+		
+			
 		
 	
 		
@@ -449,6 +429,38 @@
 		
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -460,13 +472,39 @@
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/安全/security/security-in-frontend/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/安全/security/security-management/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/java/java/jav-regrex/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
