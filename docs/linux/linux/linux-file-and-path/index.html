@@ -1,0 +1,640 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>linux 文件和目录操作 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="几个特殊的相对目录
+. 当前目录
+.. 上一个目录
+~ 家目录
+~account 另外一个用户的家目录
+- 上一次的目录 
+
+对目录的几个常见操作递归创建目录
+
+mkdir -p 目录名称
+
+递归删除目录
+
+rm -rf 目录名称
+
+ls 的几个技巧排序查看
+
+ls -S 
+
+查看包含隐藏文件，以及">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="linux 文件和目录操作">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">linux 文件和目录操作</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-09</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="几个特殊的相对目录"><a href="#几个特殊的相对目录" class="headerlink" title="几个特殊的相对目录"></a>几个特殊的相对目录</h2><ul>
+<li>. 当前目录</li>
+<li>.. 上一个目录</li>
+<li>~ 家目录</li>
+<li>~account 另外一个用户的家目录</li>
+<li><code>-</code> 上一次的目录 </li>
+</ul>
+<h2 id="对目录的几个常见操作"><a href="#对目录的几个常见操作" class="headerlink" title="对目录的几个常见操作"></a>对目录的几个常见操作</h2><p>递归创建目录</p>
+<blockquote>
+<p>mkdir -p 目录名称</p>
+</blockquote>
+<p>递归删除目录</p>
+<blockquote>
+<p>rm -rf 目录名称</p>
+</blockquote>
+<h2 id="ls-的几个技巧"><a href="#ls-的几个技巧" class="headerlink" title="ls 的几个技巧"></a>ls 的几个技巧</h2><p>排序查看</p>
+<blockquote>
+<p>ls -S </p>
+</blockquote>
+<p>查看包含隐藏文件，以及详细信息</p>
+<blockquote>
+<p>ls -al </p>
+</blockquote>
+<p>格式化文件大小显示</p>
+<blockquote>
+<p>ls -h</p>
+</blockquote>
+<h2 id="cp-rm-mv-注意事项"><a href="#cp-rm-mv-注意事项" class="headerlink" title="cp rm mv 注意事项"></a>cp rm mv 注意事项</h2><p>复制文件全部属性，包括权限，否则会当做当前用户处理</p>
+<blockquote>
+<p>cp -a </p>
+</blockquote>
+<p>创建符号链接</p>
+<blockquote>
+<p>cp -s</p>
+</blockquote>
+<p>创建硬链接</p>
+<blockquote>
+<p>cp -l </p>
+</blockquote>
+<p>如果文件中有特殊字符，无法直接删除，可以使用 <code>./xxx</code> 的方式删除</p>
+<blockquote>
+<p>rm ./–xx.txt</p>
+</blockquote>
+<h2 id="获取路径的文件名和目录名称"><a href="#获取路径的文件名和目录名称" class="headerlink" title="获取路径的文件名和目录名称"></a>获取路径的文件名和目录名称</h2><p>获取文件名 network </p>
+<blockquote>
+<p>basename /etc/sysconfig/network</p>
+</blockquote>
+<p>获取目录 /etc/sysconfig</p>
+<blockquote>
+<p>dirname /etc/sysconfig/network</p>
+</blockquote>
+<h2 id="文本文件查看"><a href="#文本文件查看" class="headerlink" title="文本文件查看"></a>文本文件查看</h2><ul>
+<li>cat 从第一行开始显示</li>
+<li>tac 从最后一行开始显示</li>
+<li>nl 输出并显示行号</li>
+<li>more 分页显示文件内容</li>
+<li>less 往前翻页</li>
+<li>head 看前面几行</li>
+<li>tail 看后面几行</li>
+<li>od 使用二进制的方式读取</li>
+</ul>
+<p>文本查看时几个比较方便的命令</p>
+<ul>
+<li>空格：向下翻动一页</li>
+<li>/ 向下查找</li>
+<li>? 向上查找</li>
+<li>n 重复前一个查找</li>
+<li>N 反向上一个查找</li>
+<li>g 前进到数据的第一行</li>
+<li>G 前进到数据的最后一行</li>
+<li>q 离开</li>
+</ul>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/linux/linux/jdk-version/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
