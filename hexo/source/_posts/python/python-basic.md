@@ -27,5 +27,3 @@ https://www.python.org/downloads/
 ## 进入交互模式
 
 linux上你只需要在命令行中输入 Python 命令即可启动交互式编程
-
-## 
