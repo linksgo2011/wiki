@@ -33,3 +33,20 @@ systemPath 方式导入，但是这种方式，测试和本地运行可以，服
     <systemPath>${project.basedir}/src/main/resources/Name_Your_JAR.jar</systemPath>
 </dependency>
 ```
+
+这种方式需要将jar 包通过 resources 引入,现在使用maven 打包，虽然添加到仓库里了，但是打包后到boot-info lib里是找不到的。
+
+```
+<resources>
+            <resource>
+                <directory>lib</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>**/*.jar</include>
+                </includes>
+            </resource>
+        </resources>
+```
+
+## 参考资料
+- https://blog.csdn.net/guogenfang/article/details/53734826
