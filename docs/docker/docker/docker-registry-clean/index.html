@@ -3,22 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Spring 中 @Async注解 | 架构师知识系统</title>
+  <title>docker 自带镜像仓库清理 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="注解的方法必须是public方法。
-方法一定要从另一个类中调用，也就是从类的外部调用，类的内部调用是无效的。
-如果需要从类的内部调用，需要先获取其代理类，下面上代码
+  <meta name="description" content="自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行
 
-@Service
-public class XxxService{
-  public void methodA(){
-    ...">
+registry garbage-collect /etc/docker/registry/config.yml
+
+网友编写的走自动调API的方法import requests
+from concurrent.futures i">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring 中 @Async注解">
+  <meta property="og:title" content="docker 自带镜像仓库清理">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -52,38 +50,89 @@ public class XxxService{
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Spring 中 @Async注解</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-06-03</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">docker 自带镜像仓库清理</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-19</span></h1>
 </div>		
 
 <div class="row page">
   <!-- cols -->	
   
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
   
 
   
-	<div class="col-md-12">
-	  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
 
 	  <!-- content -->
-	  <ol>
-<li>注解的方法必须是public方法。</li>
-<li>方法一定要从另一个类中调用，也就是从类的外部调用，类的内部调用是无效的。</li>
-<li>如果需要从类的内部调用，需要先获取其代理类，下面上代码</li>
-</ol>
-<pre><code>@Service
-public class XxxService{
-  public void methodA(){
-    ...
-    XxxService xxxServiceProxy = SpringUtil.getBean(XxxService.class);
-    xxxServiceProxy.methodB();
-    ...
-  }
+	  <p>自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行</p>
+<blockquote>
+<p>registry garbage-collect /etc/docker/registry/config.yml</p>
+</blockquote>
+<h2 id="网友编写的走自动调API的方法"><a href="#网友编写的走自动调API的方法" class="headerlink" title="网友编写的走自动调API的方法"></a>网友编写的走自动调API的方法</h2><pre><code>import requests
+from concurrent.futures import ThreadPoolExecutor
 
-  @Async
-  public void methodB() {
-    ...
-  }
-}
+
+class Docker(object):
+    def __init__(self, hub, repos):
+        self.hub = hub
+        self.repos = repos
+
+    @staticmethod
+    def get_tag_list(hub, repo):
+        # 获取这个repo的所有tags
+        tag_list_url = &#39;%s/v2/%s/tags/list&#39; % (hub, repo)
+        r1 = requests.get(url=tag_list_url)
+        tag_list = r1.json().get(&#39;tags&#39;)
+        return tag_list
+
+    def main(self):
+        thpool = ThreadPoolExecutor(10)
+        for repo in self.repos:
+            thpool.submit(self.delete_images, repo)
+
+        thpool.shutdown(wait=True)
+
+    def delete_images(self, repo):
+        hub = self.hub
+        tag_list = self.get_tag_list(hub=hub, repo=repo)
+        num = 0
+        try:
+            # 保留最后两个版本的镜像
+            for tag in tag_list[:-2]:
+                # 获取image digest摘要信息
+                get_info_url = &#39;{}/v2/{}/manifests/{}&#39;.format(hub, repo, tag)
+                header = {&quot;Accept&quot;: &quot;application/vnd.docker.distribution.manifest.v2+json&quot;}
+                r2 = requests.get(url=get_info_url, headers=header, timeout=10)
+                digest = r2.headers.get(&#39;Docker-Content-Digest&#39;)
+
+                # 删除镜像
+                delete_url = &#39;%s/v2/%s/manifests/%s&#39; % (hub, repo, digest)
+                r3 = requests.delete(url=delete_url)
+                if r3.status_code == 202:
+                    num += 1
+
+        except Exception as e:
+            print(str(e))
+
+        print(&#39;仓库%s 共删除了%i个历史镜像&#39; % (repo, num))
+
+
+if __name__ == &#39;__main__&#39;:
+    hub = &#39;http://registry.xxx.com:5000&#39;
+    repos = [&#39;zdtest&#39;, &#39;ordertest&#39;, &#39;bjdev&#39;, &#39;zhqtest&#39;, &#39;systemtest&#39;, &#39;zddev&#39;, &#39;bjtest&#39;, &#39;dsystemtest&#39;, &#39;tooltest&#39;]
+    d = Docker(hub=hub, repos=repos)
+    d.main()
+————————————————
+版权声明：本文为CSDN博主「ywq935」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/ywq935/article/details/83828888
 </code></pre>	  
 
 	  <div>
@@ -97,7 +146,8 @@ public class XxxService{
 	
 	
 		
-	
+			
+			
 		
 	
 		
@@ -113,6 +163,16 @@ public class XxxService{
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
 			
 		
 	
@@ -159,74 +219,6 @@ public class XxxService{
 		
 	
 		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
@@ -253,7 +245,11 @@ public class XxxService{
 		
 	
 		
-			
+	
+		
+	
+		
+	
 		
 	
 		
@@ -261,7 +257,17 @@ public class XxxService{
 		
 	
 		
-			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -317,16 +323,11 @@ public class XxxService{
 		
 	
 		
-			
-			
+	
 		
 	
 		
-			
-			
-			
-		
-			
+	
 		
 	
 		
@@ -446,8 +447,6 @@ public class XxxService{
 		
 	
 		
-			
-		
 	
 		
 	
@@ -501,13 +500,41 @@ public class XxxService{
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/Spring/spring/jpa-batch-operation/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Spring/spring/Spring transaction/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/docker/docker/docker-export/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
