@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>移动Vue组件挂载点到body上 | 架构师知识系统</title>
+  <title>docker 部署机器上镜像清理 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题
-export const moveElementToBody = {
-  inserted(el) {
-    if (el) {
-      document.body.appendChild(el)
-    }
-  },
-">
+  <meta name="description" content="docker rmi $(docker images –filter “dangling=true” -q) &amp;amp;
+
+添加到脚本
+
+vim /root/crontab/images_clean.sh
+
+写入 crontab
+0 0 * * * /root/crontab/images_clea">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="移动Vue组件挂载点到body上">
+  <meta property="og:title" content="docker 部署机器上镜像清理">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -52,7 +52,7 @@ export const moveElementToBody = {
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">移动Vue组件挂载点到body上</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-12</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">docker 部署机器上镜像清理</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-19</span></h1>
 </div>		
 
 <div class="row page">
@@ -74,20 +74,15 @@ export const moveElementToBody = {
 	
 
 	  <!-- content -->
-	  <p>非常有用的一个指令，可以移动组件到 body上，解决定位和全局遮罩等问题</p>
-<pre><code>export const moveElementToBody = {
-  inserted(el) {
-    if (el) {
-      document.body.appendChild(el)
-    }
-  },
-  unbind(el) {
-    if (el.parentNode) {
-      el.parentNode.removeChild(el)
-    }
-  }
-}
-
+	  <blockquote>
+<p>docker rmi $(docker images –filter “dangling=true” -q) &amp;</p>
+</blockquote>
+<p>添加到脚本</p>
+<blockquote>
+<p>vim /root/crontab/images_clean.sh</p>
+</blockquote>
+<p>写入 crontab</p>
+<pre><code>0 0 * * * /root/crontab/images_clean.sh 1&gt;/dev/null 2&gt;&amp;1 &amp;
 </code></pre>	  
 
 	  <div>
@@ -101,7 +96,36 @@ export const moveElementToBody = {
 	
 	
 		
+			
+			
+		
 	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -145,87 +169,11 @@ export const moveElementToBody = {
 		
 	
 		
-	
+			
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -329,17 +277,6 @@ export const moveElementToBody = {
 		
 	
 		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
 	
 		
 	
@@ -348,24 +285,6 @@ export const moveElementToBody = {
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
 			
 		
 	
@@ -483,13 +402,93 @@ export const moveElementToBody = {
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/Javascript/javascript/javascript-regular/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Javascript/javascript/clean-empty-attribute-in-object/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/docker/docker/docker-registry-clean/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

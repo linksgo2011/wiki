@@ -49,9 +49,6 @@ storage:
 
 > registry garbage-collect /etc/docker/registry/config.yml
 
-
-
-
 ## 参考资料
 
 > 参考 API https://docs.docker.com/registry/spec/api
