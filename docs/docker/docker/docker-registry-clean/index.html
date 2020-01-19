@@ -6,12 +6,13 @@
   <title>docker 自带镜像仓库清理 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行
+  <meta name="description" content="Docker存储使用的aufs文件系统分层存储结构,将容器文件以读写分层的形式存储在宿主机中。自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行。
+手动删除进入 registry 容器
 
-registry garbage-collect /etc/docker/registry/config.yml
+vim /etc/docker/registry/config.yml
 
-网友编写的走自动调API的方法import requests
-from concurrent.futures i">
+添加配置
+stora">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -72,13 +73,44 @@ from concurrent.futures i">
 	
 
 	  <!-- content -->
-	  <p>自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行</p>
+	  <p>Docker存储使用的aufs文件系统分层存储结构,将容器文件以读写分层的形式存储在宿主机中。自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行。</p>
+<h2 id="手动删除"><a href="#手动删除" class="headerlink" title="手动删除"></a>手动删除</h2><p>进入 registry 容器</p>
+<blockquote>
+<p>vim /etc/docker/registry/config.yml</p>
+</blockquote>
+<p>添加配置</p>
+<pre><code>storage:
+  delete:
+    enabled: true
+</code></pre><p>重启 registry</p>
+<p>调用 API 获取所有镜像仓库 </p>
+<blockquote>
+<p>curl <a href="http://host:5000/v2/_catalog" target="_blank" rel="noopener">http://host:5000/v2/_catalog</a></p>
+</blockquote>
+<p>获取仓库标签</p>
+<blockquote>
+<p>curl <a href="http://host:5000/v2/app-frontend/tags/list" target="_blank" rel="noopener">http://host:5000/v2/app-frontend/tags/list</a></p>
+</blockquote>
+<p>获取标签对应的digest</p>
+<blockquote>
+<p>curl <a href="http://host:5000/v2/app-frontend/manifests/v1" target="_blank" rel="noopener">http://host:5000/v2/app-frontend/manifests/v1</a></p>
+</blockquote>
+<p>注意： 必须配置 Header Accept: application/vnd.docker.distribution.manifest.v2+json，否则获取的值不对</p>
+<p>注意看前面操作返回值的 Header，使用 Docker-Content-Digest 的完整值，包含 sha256: 前缀。</p>
+<p>删除 manifest </p>
+<blockquote>
+<p>curl <a href="http://host:5000/v2/app-frontend/manifests/sha256:1234455" target="_blank" rel="noopener">http://host:5000/v2/app-frontend/manifests/sha256:1234455</a> -X DELETE</p>
+</blockquote>
+<p>调用API清理后，进入容器，清理磁盘空间</p>
+<p>清理空间</p>
 <blockquote>
 <p>registry garbage-collect /etc/docker/registry/config.yml</p>
 </blockquote>
-<h2 id="网友编写的走自动调API的方法"><a href="#网友编写的走自动调API的方法" class="headerlink" title="网友编写的走自动调API的方法"></a>网友编写的走自动调API的方法</h2><pre><code>import requests
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p>参考 API <a href="https://docs.docker.com/registry/spec/api" target="_blank" rel="noopener">https://docs.docker.com/registry/spec/api</a><br>单个清理过程 <a href="https://blog.csdn.net/isea533/article/details/87622213" target="_blank" rel="noopener">https://blog.csdn.net/isea533/article/details/87622213</a><br>批量清理 <a href="https://blog.csdn.net/ywq935/article/details/83828888" target="_blank" rel="noopener">https://blog.csdn.net/ywq935/article/details/83828888</a></p>
+</blockquote>
+<h2 id="网友编写的自动调API的-python2-7-脚本"><a href="#网友编写的自动调API的-python2-7-脚本" class="headerlink" title="网友编写的自动调API的 python2.7 脚本"></a>网友编写的自动调API的 python2.7 脚本</h2><pre><code>import requests
 from concurrent.futures import ThreadPoolExecutor
-
 
 class Docker(object):
     def __init__(self, hub, repos):

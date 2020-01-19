@@ -4,18 +4,65 @@ categories: docker
 toc: true
 ---
 
-自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行
+Docker存储使用的aufs文件系统分层存储结构,将容器文件以读写分层的形式存储在宿主机中。自带的镜像仓库删除比较麻烦，需要调用 API 删除，然后进入容器执行。
+
+
+## 手动删除
+
+进入 registry 容器
+
+> vim /etc/docker/registry/config.yml
+
+添加配置
+
+```
+storage:
+  delete:
+    enabled: true
+```
+
+重启 registry
+
+调用 API 获取所有镜像仓库 
+
+> curl http://host:5000/v2/_catalog
+
+获取仓库标签
+
+> curl http://host:5000/v2/app-frontend/tags/list
+
+获取标签对应的digest
+
+> curl http://host:5000/v2/app-frontend/manifests/v1
+
+注意： 必须配置 Header Accept: application/vnd.docker.distribution.manifest.v2+json，否则获取的值不对
+
+注意看前面操作返回值的 Header，使用 Docker-Content-Digest 的完整值，包含 sha256: 前缀。
+
+删除 manifest 
+
+> curl http://host:5000/v2/app-frontend/manifests/sha256:1234455 -X DELETE
+
+调用API清理后，进入容器，清理磁盘空间
+
+清理空间
 
 > registry garbage-collect /etc/docker/registry/config.yml
 
 
 
-## 网友编写的自动调API的方法
+
+## 参考资料
+
+> 参考 API https://docs.docker.com/registry/spec/api
+> 单个清理过程 https://blog.csdn.net/isea533/article/details/87622213
+> 批量清理 https://blog.csdn.net/ywq935/article/details/83828888
+
+## 网友编写的自动调API的 python2.7 脚本
 
 ```
 import requests
 from concurrent.futures import ThreadPoolExecutor
-
 
 class Docker(object):
     def __init__(self, hub, repos):
