@@ -128,6 +128,10 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 <blockquote>
 <p>docker commit c9e5bb7a524f linksgo2011/frontend</p>
 </blockquote>
+<p>拷贝文件到 docker 容器 </p>
+<blockquote>
+<p>docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-</p>
+</blockquote>
 <h2 id="docker-的版本说明"><a href="#docker-的版本说明" class="headerlink" title="docker 的版本说明"></a>docker 的版本说明</h2><p>docker 仓库的版本约定为 用户/仓库/标签</p>
 <p>例如 linksgo2011/fonrtend:01 标签的镜像推送时，会推送到 linksgo2011 下面的 fonrtend 中为 01 标签</p>
 <p>如果在构建镜像时候，不指定最后的标签名称，会使用 latest 标签，并且每次会覆盖上一次的镜像。</p>
@@ -163,6 +167,18 @@ COPY ./test.html /usr/share/nginx/htm/index.html
 	
 	
 	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
 	
 		
 	

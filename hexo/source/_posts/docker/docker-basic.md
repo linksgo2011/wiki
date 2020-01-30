@@ -60,6 +60,10 @@ docker commit 将当前的容器提交为镜像，一般不常用
 
 > docker commit c9e5bb7a524f linksgo2011/frontend
 
+拷贝文件到 docker 容器 
+
+> docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+
 
 ## docker 的版本说明
 
