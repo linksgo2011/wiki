@@ -3,18 +3,21 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>微格式 (Microformat） | 架构师知识系统</title>
+  <title>Linux 下字体安装 | 架构师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="微格式（Microformat），是通过语意相关让内容人机可读。网页上的允许的微格式数据包括事件、人物、地点等，它可以被其他的软件检测到，并提取出相应的信息，以及对信息进行索引、搜索、跨平台的参考，把这些信息以其他形式重复使用或组合。
-参考资源
-https://schema.org
-http://m">
+  <meta name="description" content="linux 下字体安装可以通过软件包的方式安装，例如 
+
+yum fonts-wqy-zenhei
+
+另外可以使用 ttf 和 ttc 字体文件安装
+安装 fontconfig 管理字体，然后将 ttf 和 ttc 文件拷贝到 /usr/share/fonts 目录下，最后更新字体缓存即可。
+字体安">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="微格式 (Microformat）">
+  <meta property="og:title" content="Linux 下字体安装">
   <meta property="og:site_name" content="架构师知识系统">
 
   
@@ -48,7 +51,7 @@ http://m">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">微格式 (Microformat）</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-11</span></h1>
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">Linux 下字体安装</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-30</span></h1>
 </div>		
 
 <div class="row page">
@@ -70,11 +73,33 @@ http://m">
 	
 
 	  <!-- content -->
-	  <p>微格式（Microformat），是通过语意相关让内容人机可读。网页上的允许的微格式数据包括事件、人物、地点等，它可以被其他的软件检测到，并提取出相应的信息，以及对信息进行索引、搜索、跨平台的参考，把这些信息以其他形式重复使用或组合。</p>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li><a href="https://schema.org" target="_blank" rel="noopener">https://schema.org</a></li>
-<li><a href="http://microformats.org/" target="_blank" rel="noopener">http://microformats.org/</a></li>
-</ul>
+	  <p>linux 下字体安装可以通过软件包的方式安装，例如 </p>
+<blockquote>
+<p>yum fonts-wqy-zenhei</p>
+</blockquote>
+<p>另外可以使用 ttf 和 ttc 字体文件安装</p>
+<p>安装 fontconfig 管理字体，然后将 ttf 和 ttc 文件拷贝到 /usr/share/fonts 目录下，最后更新字体缓存即可。</p>
+<h2 id="字体安装相关命令"><a href="#字体安装相关命令" class="headerlink" title="字体安装相关命令"></a>字体安装相关命令</h2><p>安装 fontconfig</p>
+<blockquote>
+<p>yum install -y fontconfig mkfontscale</p>
+</blockquote>
+<p>查看已经安装的字体</p>
+<blockquote>
+<p>fc-list</p>
+</blockquote>
+<p>查看中文字体</p>
+<blockquote>
+<p>fc-list :lang=zh</p>
+</blockquote>
+<p>拷贝字体 </p>
+<blockquote>
+<p>mv simsun.ttf /usr/share/fonts</p>
+</blockquote>
+<p>执行安装字体，并更新缓存 </p>
+<blockquote>
+<p>mkfontscale &amp;&amp; mkfontdir &amp;&amp; fc-cache</p>
+</blockquote>
+<p>使用 fc-list :lang=zh 可以验证</p>
 	  
 
 	  <div>
@@ -88,7 +113,110 @@ http://m">
 	
 	
 		
+			
+			
+		
 	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -150,7 +278,67 @@ http://m">
 		
 	
 		
+			
+		
 	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -180,17 +368,11 @@ http://m">
 		
 	
 		
-	
+			
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -341,99 +523,6 @@ http://m">
 	
 		
 			
-			
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -444,28 +533,6 @@ http://m">
 	
 		
 			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -496,7 +563,7 @@ http://m">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/前端工程/frontend/design-system/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/linux/linux/linux-dpkg/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
