@@ -1,0 +1,684 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>使用 k6 进行压力测试 | 架构师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="简介k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：
+
+提供了友好的 CLI  工具
+使用 JavaScript 代码编写测试用例
+可以根据性能条件设置阈值，表明成功还是失败
+
+k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用 k6 进行压力测试">
+  <meta property="og:site_name" content="架构师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">使用 k6 进行压力测试</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-31</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：</p>
+<ul>
+<li>提供了友好的 CLI  工具</li>
+<li>使用 JavaScript 代码编写测试用例</li>
+<li>可以根据性能条件设置阈值，表明成功还是失败</li>
+</ul>
+<p>k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。</p>
+<p>同时，k6 在运行测试时，没有启动浏览器，主要用于测试页面以及 API 加载速度。k6 提供了通过网络请求（HAR）生成测试脚本的方法，实现更简便的测试脚本编写，以及 session 的维护。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在 Mac 上比较简单，直接使用 HomeBrew 即可安装：</p>
+<blockquote>
+<p>brew install k6</p>
+</blockquote>
+<p>其他平台官网也提供了相应的安装方式，比较特别的是提供了 Docker 的方式运行。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>直接使用 k6 的命令运行测试，官网提供了一个例子：</p>
+<blockquote>
+<p>k6 run github.com/loadimpact/k6/samples/http_get.js</p>
+</blockquote>
+<p>也可以编写自己的测试脚本:</p>
+<pre><code>import http from &quot;k6/http&quot;;
+import { sleep } from &quot;k6&quot;;
+
+export default function() {
+  http.get(&quot;https://www.thoughtworks.com&quot;);
+  sleep(1);
+};
+
+</code></pre><p>保存文件 script.js 后运行 k6 命令</p>
+<blockquote>
+<p>k6 run script.js</p>
+</blockquote>
+<p>然后可以看到 http 请求的各项指标</p>
+<pre><code>        /\      |‾‾|  /‾‾/  /‾/   
+     /\  /  \     |  |_/  /  / /    
+    /  \/    \    |      |  /  ‾‾\  
+   /          \   |  |‾\  \ | (_) | 
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local
+     output: -
+     script: k6.js
+
+    duration: -,  iterations: 1
+         vus: 1, max: 1
+
+    done [==========================================================] 1 / 1
+
+    data_received..............: 108 kB 27 kB/s
+    data_sent..................: 1.0 kB 252 B/s
+    http_req_blocked...........: avg=2.35s    min=2.35s    med=2.35s    max=2.35s    p(90)=2.35s    p(95)=2.35s   
+    http_req_connecting........: avg=79.18ms  min=79.18ms  med=79.18ms  max=79.18ms  p(90)=79.18ms  p(95)=79.18ms 
+    http_req_duration..........: avg=639.03ms min=639.03ms med=639.03ms max=639.03ms p(90)=639.03ms p(95)=639.03ms
+    http_req_receiving.........: avg=358.12ms min=358.12ms med=358.12ms max=358.12ms p(90)=358.12ms p(95)=358.12ms
+    http_req_sending...........: avg=1.79ms   min=1.79ms   med=1.79ms   max=1.79ms   p(90)=1.79ms   p(95)=1.79ms  
+    http_req_tls_handshaking...: avg=701.46ms min=701.46ms med=701.46ms max=701.46ms p(90)=701.46ms p(95)=701.46ms
+    http_req_waiting...........: avg=279.12ms min=279.12ms med=279.12ms max=279.12ms p(90)=279.12ms p(95)=279.12ms
+    http_reqs..................: 1      0.249921/s
+    iteration_duration.........: avg=4s       min=4s       med=4s       max=4s       p(90)=4s       p(95)=4s      
+    iterations.................: 1      0.249921/s
+    vus........................: 1      min=1 max=1
+    vus_max....................: 1      min=1 max=1
+</code></pre><p>运行压力测试时，需要增加更多的虚拟用户（VU），vus 参数和持续时间的参数:</p>
+<blockquote>
+<p>k6 run –vus 10 –duration 30s script.js</p>
+</blockquote>
+<h2 id="编写测试脚本的一些规则"><a href="#编写测试脚本的一些规则" class="headerlink" title="编写测试脚本的一些规则"></a>编写测试脚本的一些规则</h2><p><code>default</code> 方法是用于给每个 VU 以及每次迭代重复运行的，因此需要把真正的测试代码放到这个方法中，例如访问某个页面。</p>
+<p>为了保证测试的准确性，一些初始化的代码不应该放到 <code>default</code> 方法中。尤其是文件的读取等依赖环境上下文的操作不能放到 <code>default</code> 方法中执行，这样做也会丢失 k6 分布式运行的能力。</p>
+<p>前面提到的命令行参数，例如指定虚拟用户数量 <code>--vus 10</code>，这些参数也可以放到脚本代码中。通过暴露一个 options 对象即可。</p>
+<pre><code>export let options = {
+  vus: 10,
+  duration: &quot;30s&quot;
+};
+</code></pre><p>为了更为真实的模拟用户访问的场景，k6 提供了在整个测试期间让用户数量和访问时间呈阶段性变化的能力。只需要在 options 中增加 stages 参数即可：</p>
+<pre><code>export let options = {
+ stages: [
+    { duration: &quot;30s&quot;, target: 20 },
+    { duration: &quot;1m30s&quot;, target: 10  },
+    { duration: &quot;20s&quot;, target: 0 },
+  ]
+};
+</code></pre><p>在测试过程中需要检查网络请求是否成功，返回的状态码是否正确，以及响应时间是否符合某个阈值。在脚本中可以通过调用 check() 方法编写检查语句，以便 k6 能收集到报告。</p>
+<pre><code>import http from &quot;k6/http&quot;;
+import { check, sleep } from &quot;k6&quot;;
+
+export let options = {
+  vus: 10,
+  duration: &quot;30s&quot;
+};
+
+export default function() {
+  let res = http.get(&quot;http://test.loadimpact.com&quot;);
+  check(res, {
+    &quot;status was 200&quot;: (r) =&gt; r.status == 200,
+    &quot;transaction time OK&quot;: (r) =&gt; r.timings.duration &lt; 200
+  });
+  sleep(1);
+};
+
+</code></pre><h2 id="报告输出"><a href="#报告输出" class="headerlink" title="报告输出"></a>报告输出</h2><p>k6 默认将报告输出到 stdout 控制台，同时也提供了多种格式报告输出，包括：</p>
+<ul>
+<li>JSON</li>
+<li>CSV</li>
+<li>InfluxDB</li>
+<li>Apache Kafka</li>
+<li>StatsD</li>
+<li>Datadog</li>
+<li>Load Impact cloud platform</li>
+</ul>
+<p>当然，我们在编写测试的时候不可能只有一个用例，对多个场景可以在脚本中通过 <code>group</code> 进行分组，分组后输出的报告会按照分组排列。同时，也可以使用对一个组整体性能衡量的指标 <code>group_duration</code>。</p>
+<pre><code>import { group } from &quot;k6&quot;;
+
+export default function() {
+  group(&quot;user flow: returning user&quot;, function() {
+    group(&quot;visit homepage&quot;, function() {
+      // load homepage resources
+    });
+    group(&quot;login&quot;, function() {
+      // perform login
+    });
+  });
+};
+
+</code></pre><p>InfluxDB 等外部数据收集平台时，还可以打上标签，供过滤和检索使用。k6 提供了一些内置的标签，并允许用户自定义标签。</p>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<li>官方文档 <a href="https://docs.k6.io/docs" target="_blank" rel="noopener">https://docs.k6.io/docs</a></li>
+</ul>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/质量保证/test/data-jpa-test/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

@@ -36,4 +36,12 @@ linux 下字体安装可以通过软件包的方式安装，例如
 
 使用 fc-list :lang=zh 可以验证
 
+如果过程中安装不顺利，可能需要赋权
 
+> chmod a+r simsun.ttc
+
+
+## 参考资料
+
+- linux安装中文字体 https://jingyan.baidu.com/article/0eb457e5d4a48703f0a90565.html
+- docker alpine版本服务中显示中文 https://www.wencst.com/archives/711
