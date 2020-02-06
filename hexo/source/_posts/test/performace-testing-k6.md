@@ -5,13 +5,13 @@ categories: 质量保证
 
 ## 简介
 
-k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：
+k6 是一个压力测试套件，使用 golang 编写。主要特性有：
 
 - 提供了友好的 CLI  工具
 - 使用 JavaScript 代码编写测试用例
 - 可以根据性能条件设置阈值，表明成功还是失败
 
-k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。
+k6 没有使用 nodejs 而是 golang 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。
 
 同时，k6 在运行测试时，没有启动浏览器，主要用于测试页面以及 API 加载速度。k6 提供了通过网络请求（HAR）生成测试脚本的方法，实现更简便的测试脚本编写，以及 session 的维护。
 

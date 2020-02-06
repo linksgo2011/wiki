@@ -20,11 +20,28 @@
     </entry>
     
     <entry>
+      <title>使用 ab(apache benchmark) 进行压力测试</title>
+      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/apache-benchmark/"/>
+      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/apache-benchmark/</url>
+      
+        <content type="html"><![CDATA[<p>Apache Benchmark 简称 ab 是 Apache web 服务器自带的性能测试工具，在 windows 或者 linux 上安装了 Apache 服务器就可以在其安装位置的 bin 目录中找到 ab 这个程序。</p><p>ab 使用起来非常简单，一般只需要 -n 参数指明发出请求的总数，以及 -c 参数指明测试期间的并发数。</p><p>例如对 thoughtworks 官网首页发出 100 个请求，模拟并发数为 10：</p><blockquote><p>ab -n 100 -c 10 <a href="https://thoughtworks.com/" target="_blank" rel="noopener">https://thoughtworks.com/</a></p></blockquote><p>需要注意的是 ab 工具接收一个 url 作为参数，仅仅是一个域名是不合法的，需要增加 <code>/</code> 表示首页。稍等片刻后就可以看到测试报告:</p><pre><code>Server Software:        nginx/1.15.6Server Hostname:        thoughtworks.comServer Port:            443SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES256-GCM-SHA384,2048,256Server Temp Key:        ECDH P-256 256 bitsTLS Server Name:        thoughtworks.comDocument Path:          /Document Length:        162 bytesConcurrency Level:      10Time taken for tests:   42.079 secondsComplete requests:      100Failed requests:        0Non-2xx responses:      100Total transferred:      42500 bytesHTML transferred:       16200 bytesRequests per second:    2.38 [#/sec] (mean)Time per request:       4207.888 [ms] (mean)Time per request:       420.789 [ms] (mean, across all concurrent requests)Transfer rate:          0.99 [Kbytes/sec] receivedConnection Times (ms)              min  mean[+/-sd] median   maxConnect:     1056 2474 3006.1   1144   23032Processing:   349  740 1003.5    379    8461Waiting:      349  461 290.9    377    2265Total:       1411 3214 3273.9   1674   23424Percentage of the requests served within a certain time (ms)  50%   1674  66%   2954  75%   3951  80%   4397  90%   6713  95%   9400  98%  14973  99%  23424 100%  23424 (longest request)</code></pre><p>从这个报告中可以看到服务器的一些基本信息，以及请求的统计信息。比较重要的指标是 <code>Requests per second</code> 每秒钟完成的请求数量，不严格的说也就是我们的平时说的 QPS。</p><p>ab 测试是专为 http 请求设计的，因此 ab 的其他参数和 curl 的参数比较类似，也可以指定 http method 以及 cookies 等参数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 质量保证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>使用 k6 进行压力测试</title>
       <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/performace-testing-k6/"/>
       <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/performace-testing-k6/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：</p><ul><li>提供了友好的 CLI  工具</li><li>使用 JavaScript 代码编写测试用例</li><li>可以根据性能条件设置阈值，表明成功还是失败</li></ul><p>k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。</p><p>同时，k6 在运行测试时，没有启动浏览器，主要用于测试页面以及 API 加载速度。k6 提供了通过网络请求（HAR）生成测试脚本的方法，实现更简便的测试脚本编写，以及 session 的维护。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在 Mac 上比较简单，直接使用 HomeBrew 即可安装：</p><blockquote><p>brew install k6</p></blockquote><p>其他平台官网也提供了相应的安装方式，比较特别的是提供了 Docker 的方式运行。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>直接使用 k6 的命令运行测试，官网提供了一个例子：</p><blockquote><p>k6 run github.com/loadimpact/k6/samples/http_get.js</p></blockquote><p>也可以编写自己的测试脚本:</p><pre><code>import http from &quot;k6/http&quot;;import { sleep } from &quot;k6&quot;;export default function() {  http.get(&quot;https://www.thoughtworks.com&quot;);  sleep(1);};</code></pre><p>保存文件 script.js 后运行 k6 命令</p><blockquote><p>k6 run script.js</p></blockquote><p>然后可以看到 http 请求的各项指标</p><pre><code>        /\      |‾‾|  /‾‾/  /‾/        /\  /  \     |  |_/  /  / /        /  \/    \    |      |  /  ‾‾\     /          \   |  |‾\  \ | (_) |   / __________ \  |__|  \__\ \___/ .io  execution: local     output: -     script: k6.js    duration: -,  iterations: 1         vus: 1, max: 1    done [==========================================================] 1 / 1    data_received..............: 108 kB 27 kB/s    data_sent..................: 1.0 kB 252 B/s    http_req_blocked...........: avg=2.35s    min=2.35s    med=2.35s    max=2.35s    p(90)=2.35s    p(95)=2.35s       http_req_connecting........: avg=79.18ms  min=79.18ms  med=79.18ms  max=79.18ms  p(90)=79.18ms  p(95)=79.18ms     http_req_duration..........: avg=639.03ms min=639.03ms med=639.03ms max=639.03ms p(90)=639.03ms p(95)=639.03ms    http_req_receiving.........: avg=358.12ms min=358.12ms med=358.12ms max=358.12ms p(90)=358.12ms p(95)=358.12ms    http_req_sending...........: avg=1.79ms   min=1.79ms   med=1.79ms   max=1.79ms   p(90)=1.79ms   p(95)=1.79ms      http_req_tls_handshaking...: avg=701.46ms min=701.46ms med=701.46ms max=701.46ms p(90)=701.46ms p(95)=701.46ms    http_req_waiting...........: avg=279.12ms min=279.12ms med=279.12ms max=279.12ms p(90)=279.12ms p(95)=279.12ms    http_reqs..................: 1      0.249921/s    iteration_duration.........: avg=4s       min=4s       med=4s       max=4s       p(90)=4s       p(95)=4s          iterations.................: 1      0.249921/s    vus........................: 1      min=1 max=1    vus_max....................: 1      min=1 max=1</code></pre><p>运行压力测试时，需要增加更多的虚拟用户（VU），vus 参数和持续时间的参数:</p><blockquote><p>k6 run –vus 10 –duration 30s script.js</p></blockquote><h2 id="编写测试脚本的一些规则"><a href="#编写测试脚本的一些规则" class="headerlink" title="编写测试脚本的一些规则"></a>编写测试脚本的一些规则</h2><p><code>default</code> 方法是用于给每个 VU 以及每次迭代重复运行的，因此需要把真正的测试代码放到这个方法中，例如访问某个页面。</p><p>为了保证测试的准确性，一些初始化的代码不应该放到 <code>default</code> 方法中。尤其是文件的读取等依赖环境上下文的操作不能放到 <code>default</code> 方法中执行，这样做也会丢失 k6 分布式运行的能力。</p><p>前面提到的命令行参数，例如指定虚拟用户数量 <code>--vus 10</code>，这些参数也可以放到脚本代码中。通过暴露一个 options 对象即可。</p><pre><code>export let options = {  vus: 10,  duration: &quot;30s&quot;};</code></pre><p>为了更为真实的模拟用户访问的场景，k6 提供了在整个测试期间让用户数量和访问时间呈阶段性变化的能力。只需要在 options 中增加 stages 参数即可：</p><pre><code>export let options = { stages: [    { duration: &quot;30s&quot;, target: 20 },    { duration: &quot;1m30s&quot;, target: 10  },    { duration: &quot;20s&quot;, target: 0 },  ]};</code></pre><p>在测试过程中需要检查网络请求是否成功，返回的状态码是否正确，以及响应时间是否符合某个阈值。在脚本中可以通过调用 check() 方法编写检查语句，以便 k6 能收集到报告。</p><pre><code>import http from &quot;k6/http&quot;;import { check, sleep } from &quot;k6&quot;;export let options = {  vus: 10,  duration: &quot;30s&quot;};export default function() {  let res = http.get(&quot;http://test.loadimpact.com&quot;);  check(res, {    &quot;status was 200&quot;: (r) =&gt; r.status == 200,    &quot;transaction time OK&quot;: (r) =&gt; r.timings.duration &lt; 200  });  sleep(1);};</code></pre><h2 id="报告输出"><a href="#报告输出" class="headerlink" title="报告输出"></a>报告输出</h2><p>k6 默认将报告输出到 stdout 控制台，同时也提供了多种格式报告输出，包括：</p><ul><li>JSON</li><li>CSV</li><li>InfluxDB</li><li>Apache Kafka</li><li>StatsD</li><li>Datadog</li><li>Load Impact cloud platform</li></ul><p>当然，我们在编写测试的时候不可能只有一个用例，对多个场景可以在脚本中通过 <code>group</code> 进行分组，分组后输出的报告会按照分组排列。同时，也可以使用对一个组整体性能衡量的指标 <code>group_duration</code>。</p><pre><code>import { group } from &quot;k6&quot;;export default function() {  group(&quot;user flow: returning user&quot;, function() {    group(&quot;visit homepage&quot;, function() {      // load homepage resources    });    group(&quot;login&quot;, function() {      // perform login    });  });};</code></pre><p>InfluxDB 等外部数据收集平台时，还可以打上标签，供过滤和检索使用。k6 提供了一些内置的标签，并允许用户自定义标签。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官方文档 <a href="https://docs.k6.io/docs" target="_blank" rel="noopener">https://docs.k6.io/docs</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>k6 是一个压力测试套件，使用 golang 编写。主要特性有：</p><ul><li>提供了友好的 CLI  工具</li><li>使用 JavaScript 代码编写测试用例</li><li>可以根据性能条件设置阈值，表明成功还是失败</li></ul><p>k6 没有使用 nodejs 而是 golang 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。</p><p>同时，k6 在运行测试时，没有启动浏览器，主要用于测试页面以及 API 加载速度。k6 提供了通过网络请求（HAR）生成测试脚本的方法，实现更简便的测试脚本编写，以及 session 的维护。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在 Mac 上比较简单，直接使用 HomeBrew 即可安装：</p><blockquote><p>brew install k6</p></blockquote><p>其他平台官网也提供了相应的安装方式，比较特别的是提供了 Docker 的方式运行。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>直接使用 k6 的命令运行测试，官网提供了一个例子：</p><blockquote><p>k6 run github.com/loadimpact/k6/samples/http_get.js</p></blockquote><p>也可以编写自己的测试脚本:</p><pre><code>import http from &quot;k6/http&quot;;import { sleep } from &quot;k6&quot;;export default function() {  http.get(&quot;https://www.thoughtworks.com&quot;);  sleep(1);};</code></pre><p>保存文件 script.js 后运行 k6 命令</p><blockquote><p>k6 run script.js</p></blockquote><p>然后可以看到 http 请求的各项指标</p><pre><code>        /\      |‾‾|  /‾‾/  /‾/        /\  /  \     |  |_/  /  / /        /  \/    \    |      |  /  ‾‾\     /          \   |  |‾\  \ | (_) |   / __________ \  |__|  \__\ \___/ .io  execution: local     output: -     script: k6.js    duration: -,  iterations: 1         vus: 1, max: 1    done [==========================================================] 1 / 1    data_received..............: 108 kB 27 kB/s    data_sent..................: 1.0 kB 252 B/s    http_req_blocked...........: avg=2.35s    min=2.35s    med=2.35s    max=2.35s    p(90)=2.35s    p(95)=2.35s       http_req_connecting........: avg=79.18ms  min=79.18ms  med=79.18ms  max=79.18ms  p(90)=79.18ms  p(95)=79.18ms     http_req_duration..........: avg=639.03ms min=639.03ms med=639.03ms max=639.03ms p(90)=639.03ms p(95)=639.03ms    http_req_receiving.........: avg=358.12ms min=358.12ms med=358.12ms max=358.12ms p(90)=358.12ms p(95)=358.12ms    http_req_sending...........: avg=1.79ms   min=1.79ms   med=1.79ms   max=1.79ms   p(90)=1.79ms   p(95)=1.79ms      http_req_tls_handshaking...: avg=701.46ms min=701.46ms med=701.46ms max=701.46ms p(90)=701.46ms p(95)=701.46ms    http_req_waiting...........: avg=279.12ms min=279.12ms med=279.12ms max=279.12ms p(90)=279.12ms p(95)=279.12ms    http_reqs..................: 1      0.249921/s    iteration_duration.........: avg=4s       min=4s       med=4s       max=4s       p(90)=4s       p(95)=4s          iterations.................: 1      0.249921/s    vus........................: 1      min=1 max=1    vus_max....................: 1      min=1 max=1</code></pre><p>运行压力测试时，需要增加更多的虚拟用户（VU），vus 参数和持续时间的参数:</p><blockquote><p>k6 run –vus 10 –duration 30s script.js</p></blockquote><h2 id="编写测试脚本的一些规则"><a href="#编写测试脚本的一些规则" class="headerlink" title="编写测试脚本的一些规则"></a>编写测试脚本的一些规则</h2><p><code>default</code> 方法是用于给每个 VU 以及每次迭代重复运行的，因此需要把真正的测试代码放到这个方法中，例如访问某个页面。</p><p>为了保证测试的准确性，一些初始化的代码不应该放到 <code>default</code> 方法中。尤其是文件的读取等依赖环境上下文的操作不能放到 <code>default</code> 方法中执行，这样做也会丢失 k6 分布式运行的能力。</p><p>前面提到的命令行参数，例如指定虚拟用户数量 <code>--vus 10</code>，这些参数也可以放到脚本代码中。通过暴露一个 options 对象即可。</p><pre><code>export let options = {  vus: 10,  duration: &quot;30s&quot;};</code></pre><p>为了更为真实的模拟用户访问的场景，k6 提供了在整个测试期间让用户数量和访问时间呈阶段性变化的能力。只需要在 options 中增加 stages 参数即可：</p><pre><code>export let options = { stages: [    { duration: &quot;30s&quot;, target: 20 },    { duration: &quot;1m30s&quot;, target: 10  },    { duration: &quot;20s&quot;, target: 0 },  ]};</code></pre><p>在测试过程中需要检查网络请求是否成功，返回的状态码是否正确，以及响应时间是否符合某个阈值。在脚本中可以通过调用 check() 方法编写检查语句，以便 k6 能收集到报告。</p><pre><code>import http from &quot;k6/http&quot;;import { check, sleep } from &quot;k6&quot;;export let options = {  vus: 10,  duration: &quot;30s&quot;};export default function() {  let res = http.get(&quot;http://test.loadimpact.com&quot;);  check(res, {    &quot;status was 200&quot;: (r) =&gt; r.status == 200,    &quot;transaction time OK&quot;: (r) =&gt; r.timings.duration &lt; 200  });  sleep(1);};</code></pre><h2 id="报告输出"><a href="#报告输出" class="headerlink" title="报告输出"></a>报告输出</h2><p>k6 默认将报告输出到 stdout 控制台，同时也提供了多种格式报告输出，包括：</p><ul><li>JSON</li><li>CSV</li><li>InfluxDB</li><li>Apache Kafka</li><li>StatsD</li><li>Datadog</li><li>Load Impact cloud platform</li></ul><p>当然，我们在编写测试的时候不可能只有一个用例，对多个场景可以在脚本中通过 <code>group</code> 进行分组，分组后输出的报告会按照分组排列。同时，也可以使用对一个组整体性能衡量的指标 <code>group_duration</code>。</p><pre><code>import { group } from &quot;k6&quot;;export default function() {  group(&quot;user flow: returning user&quot;, function() {    group(&quot;visit homepage&quot;, function() {      // load homepage resources    });    group(&quot;login&quot;, function() {      // perform login    });  });};</code></pre><p>InfluxDB 等外部数据收集平台时，还可以打上标签，供过滤和检索使用。k6 提供了一些内置的标签，并允许用户自定义标签。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官方文档 <a href="https://docs.k6.io/docs" target="_blank" rel="noopener">https://docs.k6.io/docs</a></li></ul>]]></content>
       
       
       <categories>
@@ -2264,23 +2281,6 @@
     </entry>
     
     <entry>
-      <title>微软SDL( Security Development Lifecycle)流程</title>
-      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
-      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Circle CI 基本使用</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
@@ -2291,6 +2291,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
+      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
           
       </categories>
       
@@ -2519,33 +2536,16 @@
     </entry>
     
     <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
       
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> React </category>
           
       </categories>
       
@@ -2558,6 +2558,23 @@
       <url>/react/react/react-crouse%20map/</url>
       
         <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
       
       
       <categories>
@@ -2587,16 +2604,16 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
       
       
       <categories>
           
-          <category> React </category>
+          <category> php </category>
           
       </categories>
       
@@ -2614,23 +2631,6 @@
       <categories>
           
           <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
-      
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
           
       </categories>
       
@@ -2672,23 +2672,6 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
-      
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>PHP 不同场景下技术选型的讨论</title>
       <link href="/php/php/lightweight%20php%20api/"/>
       <url>/php/php/lightweight%20php%20api/</url>
@@ -2706,11 +2689,45 @@
     </entry>
     
     <entry>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
+      
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP环境 in Mac</title>
       <link href="/php/php/php-environment-in-mac/"/>
       <url>/php/php/php-environment-in-mac/</url>
       
         <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -2774,6 +2791,23 @@
     </entry>
     
     <entry>
+      <title>Java 对象克隆</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
+      
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Mysql 基本管理命令</title>
       <link href="/mysql/mysql/mysql-baisc%20operation/"/>
       <url>/mysql/mysql/mysql-baisc%20operation/</url>
@@ -2808,11 +2842,45 @@
     </entry>
     
     <entry>
-      <title>Java 对象克隆</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
       
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Mock工具 wiremock</title>
+      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
+      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
+      
+        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 质量保证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
+      
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
@@ -2842,23 +2910,6 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
-      
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Spring boot 学习指南</title>
       <link href="/Spring/spring/Spring%20boot%20Basic/"/>
       <url>/Spring/spring/Spring%20boot%20Basic/</url>
@@ -2869,57 +2920,6 @@
       <categories>
           
           <category> Spring </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mock工具 wiremock</title>
-      <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
-      <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
-      
-        <content type="html"><![CDATA[<p>Wiremock 是一个Java环境中的Mock工具，非常容易和Junit等单元测试框架集成。</p><h2 id="The-JUnit-4-x-Rule"><a href="#The-JUnit-4-x-Rule" class="headerlink" title="The JUnit 4.x Rule"></a>The JUnit 4.x Rule</h2><p>在JUnit4中可以使用Rule的注解，来直接启动</p><pre><code class="java">@Rulepublic WireMockRule wireMockRule = new WireMockRule(options().port(8888).httpsPort(8889));</code></pre><h2 id="standalone-模式"><a href="#standalone-模式" class="headerlink" title="standalone 模式"></a>standalone 模式</h2><p>这种模式可以使用Wiremock提供的jar运行文件直接启动。</p><blockquote><p>java -jar wiremock-standalone-2.11.0.jar</p></blockquote><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol><li>可以使用录制模式来获取以后Mock的数据</li><li>如果遇到HTTPS需要配置certificate</li><li>更多信息查看文档 <a href="http://wiremock.org/docs/" target="_blank" rel="noopener">http://wiremock.org/docs/</a></li></ol><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><p>官网</p><p><a href="http://wiremock.org/" target="_blank" rel="noopener">http://wiremock.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 质量保证 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>使用Java构建API的知识体系</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
-      
-        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
           
       </categories>
       
@@ -2961,6 +2961,23 @@
     </entry>
     
     <entry>
+      <title>使用Java构建API的知识体系</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
+      
+        <content type="html"><![CDATA[<ul><li>API基本概念及资源的定义</li><li>RESTful架构风格与成熟度模型</li><li>规范化接口定义与设计</li><li>JSON API Spec</li><li>初始化项目环境并启动一个API Demo</li><li>用Spring Boot快速构建项目</li><li>Swagger UI对API文档化</li><li>搭建多个不同业务的APIs</li><li>API升级及版本控制策略</li><li>API的认证与授权（常用的API认证方法及安全问题）</li><li>Axway网关集成及流量控制</li><li>服务负载均衡ELB/F5</li><li>Hyxtrix故障熔断器，阻止故障雪崩</li><li>API中使用RxJava进行响应式编程</li><li>最佳实践及总结</li><li>日志监控与错误追踪</li><li>调用链跟踪和性能面板</li><li>Dynatrace &amp; Zipkin</li><li>AH Portal &amp; Splunk</li><li>什么是消费者契约测试？</li><li>契约测试工具Pact的使用</li><li>Spring Cloud Contract的使用？</li><li>API测试工具的使用（SoapUI/Postman/自动化测试）</li><li>Spring Cloud 理念</li><li>配置服务器应用</li><li>API服务注册与发现</li><li>GraphQL?</li><li>遗留系统向微服务架构迁移</li><li>最佳实践</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>wiki 使用方法</title>
       <link href="/help/how-to-use-this-wiki/"/>
       <url>/help/how-to-use-this-wiki/</url>
@@ -2971,23 +2988,6 @@
       <categories>
           
           <category> help </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
-      
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端工程 </category>
           
       </categories>
       
@@ -3029,11 +3029,11 @@
     </entry>
     
     <entry>
-      <title>CSS样式框架选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
       
-        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -3063,16 +3063,16 @@
     </entry>
     
     <entry>
-      <title>最实用的Linux命令</title>
-      <link href="/linux/linux/common-useful-commands/"/>
-      <url>/linux/linux/common-useful-commands/</url>
+      <title>CSS样式框架选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
       
-        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
       
       
       <categories>
           
-          <category> linux </category>
+          <category> 前端工程 </category>
           
       </categories>
       
@@ -3097,11 +3097,11 @@
     </entry>
     
     <entry>
-      <title>系统监控和维护</title>
-      <link href="/linux/linux/monitors-for%20website/"/>
-      <url>/linux/linux/monitors-for%20website/</url>
+      <title>最实用的Linux命令</title>
+      <link href="/linux/linux/common-useful-commands/"/>
+      <url>/linux/linux/common-useful-commands/</url>
       
-        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
+        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
       
       
       <categories>
@@ -3114,11 +3114,11 @@
     </entry>
     
     <entry>
-      <title>Nginx 常用操作</title>
-      <link href="/linux/linux/nginx-usful%20command/"/>
-      <url>/linux/linux/nginx-usful%20command/</url>
+      <title>系统监控和维护</title>
+      <link href="/linux/linux/monitors-for%20website/"/>
+      <url>/linux/linux/monitors-for%20website/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="日志分析技巧"><a href="#日志分析技巧" class="headerlink" title="日志分析技巧"></a>日志分析技巧</h2><pre><code>- 查看日志文件命令    - cat 快速显示文件    - more less 分页查找    - tail 显示文件尾    - head 显示文件头    - sort 内容排序    - wc 字符统计 wc 为Word count的缩写    - uniq 去重连续的重复行 </code></pre>]]></content>
       
       
       <categories>
@@ -3148,6 +3148,23 @@
     </entry>
     
     <entry>
+      <title>Nginx 常用操作</title>
+      <link href="/linux/linux/nginx-usful%20command/"/>
+      <url>/linux/linux/nginx-usful%20command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h1><p>Nginx是一个优秀的web服务器，同时也可以用作负载均衡和反向代理 </p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在Ubuntu的环境下，安装Nginx</p><blockquote><p>apt-get install nginx</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>配置修改后不停服重载</p><blockquote><p>service nginx reload</p></blockquote><p>停服重启</p><blockquote><p>service nginx start</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Nginx的配置文件位于</p><p><code>/etc/nginx</code></p><p>配置文件入口为 nginx.conf，其中定义了全局的配置文件，包括日志位置、gzip、邮件以及加载站点的等配置。</p><p>我们常用的站点信息配置在：</p><p>/etc/nginx/sites-enabled/*;</p><h3 id="一个默认的配置文件"><a href="#一个默认的配置文件" class="headerlink" title="一个默认的配置文件"></a>一个默认的配置文件</h3><p><code></code><br>server {<br>    listen 80 default_server;<br>    listen [::]:80 default_server ipv6only=on;</p><pre><code># 资源根目录root /var/www;# 主页index index.html index.htm index.php ;# Make site accessible from http://localhost/server_name localhost;location / {    # First attempt to serve request as file, then    # as directory, then fall back to displaying a 404.    try_files $uri $uri/ =404;    # Uncomment to enable naxsi on this location    # include /etc/nginx/naxsi.rules}# 配置反向代理 例如 host/sub-path -&gt; http://127.0.0.1:8080; # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests#location /RequestDenied {#    proxy_pass http://127.0.0.1:8080;    #}#error_page 404 /404.html;# redirect server error pages to the static page /50x.html##error_page 500 502 503 504 /50x.html;#location = /50x.html {#    root /usr/share/nginx/html;#}# 开启PHP 解析# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000#location ~ \.php$ {    fastcgi_split_path_info ^(.+\.php)(/.+)$;    # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini    # With php5-cgi alone:    fastcgi_pass 127.0.0.1:9000;    # With php5-fpm:    fastcgi_pass unix:/var/run/php5-fpm.sock;    fastcgi_index index.php;    include fastcgi_params;}# deny access to .htaccess files, if Apache&#39;s document root# concurs with nginx&#39;s one##location ~ /\.ht {#    deny all;#}</code></pre><p>}</p><p><code></code></p><h3 id="Nginx-解析PHP的原理"><a href="#Nginx-解析PHP的原理" class="headerlink" title="Nginx 解析PHP的原理"></a>Nginx 解析PHP的原理</h3><p>Nginx发送请求到php-fpm进程，然后php-fpm解析后返回给Nginx，即HTTP协议处理为Nginx完成，php-fpm 作为后台服务解析PHP页面</p><h3 id="Nginx-增加虚拟主机方法"><a href="#Nginx-增加虚拟主机方法" class="headerlink" title="Nginx 增加虚拟主机方法"></a>Nginx 增加虚拟主机方法</h3><blockquote><p>mv default v-host</p></blockquote><blockquote><p>vim v-host</p></blockquote><p>然后修改 v-host 文件中server_name为站点域名，讲该域名DNS指向本机即可</p><p>然后重在或者重启Nginx服务器 </p><blockquote><p>service nginx restart</p></blockquote><p>查看服务器状态</p><blockquote><p>service nginx status</p></blockquote><p>如果服务器重启有误或者无效，可以在nginx.info 中找到日志文件查看并修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>AWS Certificate Manager 常见问题</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws-certificate-manager-faqs/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws-certificate-manager-faqs/</url>
@@ -3165,11 +3182,11 @@
     </entry>
     
     <entry>
-      <title>Lambda 入门</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
       
       
       <categories>
@@ -3182,11 +3199,11 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      <title>Lambda 入门</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
       
       
       <categories>
@@ -3267,6 +3284,23 @@
     </entry>
     
     <entry>
+      <title>项目移交检查清单</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/</url>
+      
+        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>敏捷开发的基本流程</title>
       <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
       <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
@@ -3284,11 +3318,11 @@
     </entry>
     
     <entry>
-      <title>项目移交检查清单</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/</url>
+      <title>How to end a meeting?</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
       
-        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
       
       
       <categories>
@@ -3311,23 +3345,6 @@
       <categories>
           
           <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>How to end a meeting?</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
-      
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
           
       </categories>
       

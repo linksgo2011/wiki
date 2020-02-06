@@ -3,29 +3,29 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>使用 k6 进行压力测试 | 架构师知识系统</title>
+  <title>使用 k6 进行压力测试 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="简介k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：
+  <meta name="description" content="简介k6 是一个压力测试套件，使用 golang 编写。主要特性有：
 
 提供了友好的 CLI  工具
 使用 JavaScript 代码编写测试用例
 可以根据性能条件设置阈值，表明成功还是失败
 
-k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运">
+k6 没有使用 nodejs 而是 golang 程序，通过包裹了一个 JavaScript 运行时来运行">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="使用 k6 进行压力测试">
-  <meta property="og:site_name" content="架构师知识系统">
+  <meta property="og:site_name" content="web 工程师知识系统">
 
   
     <meta property="og:image" content="undefined">
   
 
   
-    <link rel="alternative" href="/atom.xml" title="架构师知识系统" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -51,7 +51,7 @@ k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript �
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">架构师知识系统</a><span class="split"></span><span class="title">使用 k6 进行压力测试</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-31</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">使用 k6 进行压力测试</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-01-31</span></h1>
 </div>		
 
 <div class="row page">
@@ -64,13 +64,13 @@ k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript �
 	  
 
 	  <!-- content -->
-	  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>k6 是一个压力测试套件，使用 JavaScript 编写。主要特性有：</p>
+	  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>k6 是一个压力测试套件，使用 golang 编写。主要特性有：</p>
 <ul>
 <li>提供了友好的 CLI  工具</li>
 <li>使用 JavaScript 代码编写测试用例</li>
 <li>可以根据性能条件设置阈值，表明成功还是失败</li>
 </ul>
-<p>k6 没有使用 nodejs 而是一 Go 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。</p>
+<p>k6 没有使用 nodejs 而是 golang 程序，通过包裹了一个 JavaScript 运行时来运行 JavaScript 脚本，因此不能直接使用 npm 包以及 Nodejs 提供的一些 API。</p>
 <p>同时，k6 在运行测试时，没有启动浏览器，主要用于测试页面以及 API 加载速度。k6 提供了通过网络请求（HAR）生成测试脚本的方法，实现更简便的测试脚本编写，以及 session 的维护。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在 Mac 上比较简单，直接使用 HomeBrew 即可安装：</p>
 <blockquote>
@@ -205,123 +205,11 @@ export default function() {
 	
 		
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
 			
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -360,94 +248,6 @@ export default function() {
 	
 		
 	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -514,6 +314,162 @@ export default function() {
 	
 		
 			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -603,6 +559,16 @@ export default function() {
 		
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -614,9 +580,47 @@ export default function() {
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/质量保证/test/apache-benchmark/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
