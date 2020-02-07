@@ -1,5 +1,5 @@
 ---
-title: Maven 将本地 jar 大包到项目
+title: Maven 将本地 jar 打包到项目
 categories: java
 toc: true
 ---
