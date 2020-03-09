@@ -155,7 +155,17 @@ COPY ./test.html /usr/share/nginx/htm/index.html
   - { name: docker, version: 2.0.0 }
 
 </code></pre><p><a href="http://www.it1352.com/647250.html" target="_blank" rel="noopener">http://www.it1352.com/647250.html</a></p>
-<h2 id="docker-文档"><a href="#docker-文档" class="headerlink" title="docker 文档"></a>docker 文档</h2><p><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>
+<h2 id="清理-docker"><a href="#清理-docker" class="headerlink" title="清理 docker"></a>清理 docker</h2><p>列出docker ID</p>
+<pre><code>docker ps -aq
+</code></pre><p>停止所有容器</p>
+<pre><code>docker stop $(docker ps -aq)
+</code></pre><p>docker 内置的docker 镜像清理</p>
+<pre><code>docker image prune --force --all
+</code></pre><p> 删除所有停止的容器</p>
+<pre><code>docker container prune
+</code></pre><p>docker 整体清理</p>
+<pre><code>docker system prune -a
+</code></pre><h2 id="docker-文档"><a href="#docker-文档" class="headerlink" title="docker 文档"></a>docker 文档</h2><p><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>
 	  
 
 	  <div>

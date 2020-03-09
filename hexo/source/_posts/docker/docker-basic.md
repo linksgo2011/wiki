@@ -105,6 +105,40 @@ docker 仓库的版本约定为 用户/仓库/标签
 http://www.it1352.com/647250.html
 
 
+
+## 清理 docker
+
+列出docker ID
+
+```
+docker ps -aq
+```
+
+停止所有容器
+
+```
+docker stop $(docker ps -aq)
+```
+
+docker 内置的docker 镜像清理
+
+```
+docker image prune --force --all
+```
+
+ 删除所有停止的容器
+
+```
+docker container prune
+```
+
+docker 整体清理
+
+```
+docker system prune -a
+```
+
+
 ## docker 文档 
 
 https://docs.docker.com/
