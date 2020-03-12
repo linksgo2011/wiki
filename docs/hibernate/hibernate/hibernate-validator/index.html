@@ -3,21 +3,31 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>前端项目安全扫描 | web 工程师知识系统</title>
+  <title>Hibernate bean 验证器 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="通用
-Sonarqube
-Synk
+  <meta name="description" content="JSR 380 Hibernate-validatorBean Validation 遵循 Bean Validation 2.0 规范，基于 JSR 380 实现。
+常见的验证器有：
 
-前端
-Npm audit 
-Retire.js">
+
+
+注解
+作用
+
+
+
+
+@Valid
+被注释的元素是一个对象，需要检查此对象的所有字段值
+
+
+@Null
+被注释">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="前端项目安全扫描">
+  <meta property="og:title" content="Hibernate bean 验证器">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -51,7 +61,7 @@ Retire.js">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">前端项目安全扫描</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-07</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Hibernate bean 验证器</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-03-09</span></h1>
 </div>		
 
 <div class="row page">
@@ -73,13 +83,113 @@ Retire.js">
 	
 
 	  <!-- content -->
-	  <h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
-<li>Sonarqube</li>
-<li>Synk</li>
-</ul>
-<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul>
-<li>Npm audit </li>
-<li>Retire.js</li>
+	  <h2 id="JSR-380-Hibernate-validator"><a href="#JSR-380-Hibernate-validator" class="headerlink" title="JSR 380 Hibernate-validator"></a>JSR 380 Hibernate-validator</h2><p>Bean Validation 遵循 Bean Validation 2.0 规范，基于 JSR 380 实现。</p>
+<p>常见的验证器有：</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Valid</td>
+<td>被注释的元素是一个对象，需要检查此对象的所有字段值</td>
+</tr>
+<tr>
+<td>@Null</td>
+<td>被注释的元素必须为 null</td>
+</tr>
+<tr>
+<td>@NotNull</td>
+<td>被注释的任何元素必须不为 null</td>
+</tr>
+<tr>
+<td>@AssertTrue</td>
+<td>被注释的元素必须为 true</td>
+</tr>
+<tr>
+<td>@AssertFalse</td>
+<td>被注释的元素必须为 false</td>
+</tr>
+<tr>
+<td>@Min(value)</td>
+<td>被注释的元素必须是一个数字，其值必须大于等于指定的最小值</td>
+</tr>
+<tr>
+<td>@Max(value)</td>
+<td>被注释的元素必须是一个数字，其值必须小于等于指定的最大值</td>
+</tr>
+<tr>
+<td>@DecimalMin(value)</td>
+<td>被注释的元素必须是一个数字，其值必须大于等于指定的最小值</td>
+</tr>
+<tr>
+<td>@DecimalMax(value)</td>
+<td>被注释的元素必须是一个数字，其值必须小于等于指定的最大值</td>
+</tr>
+<tr>
+<td>@Negative</td>
+<td>被注释的元素必须是一个负数</td>
+</tr>
+<tr>
+<td>@NegativeOrZero</td>
+<td>被注释的元素必须是负数或 0</td>
+</tr>
+<tr>
+<td>@Positive</td>
+<td>被注释的元素必须是一个正数</td>
+</tr>
+<tr>
+<td>@PositiveOrZero</td>
+<td>被注释的元素必须是一个正数或 0</td>
+</tr>
+<tr>
+<td>@Size(max, min)</td>
+<td>被注释的元素的大小必须在指定的范围内</td>
+</tr>
+<tr>
+<td>@Digits (integer, fraction)</td>
+<td>被注释的元素必须是一个数字，其值必须在可接受的范围内</td>
+</tr>
+<tr>
+<td>@Past</td>
+<td>被注释的元素必须是一个过去的日期</td>
+</tr>
+<tr>
+<td>@PastOrPresent</td>
+<td>被注释的元素必须是一个过去或当前的日期</td>
+</tr>
+<tr>
+<td>@Future</td>
+<td>被注释的元素必须是一个将来的日期</td>
+</tr>
+<tr>
+<td>@FutureOrPresent</td>
+<td>被注释的元素必须是一个将来或当前的日期</td>
+</tr>
+<tr>
+<td>@Pattern(value)</td>
+<td>被注释的元素必须符合指定的正则表达式</td>
+</tr>
+<tr>
+<td>@NotEmpty</td>
+<td>集合对象的元素不为0，即集合不为空，也可以用于字符串不为 null</td>
+</tr>
+<tr>
+<td>@NotBlank</td>
+<td>只能用于字符串不为null，并且字符串trim()以后length要大于0</td>
+</tr>
+<tr>
+<td>@Email</td>
+<td>被注释的元素必须是一个有效的邮箱地址</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://blog.csdn.net/y550918116j/article/details/78258916" target="_blank" rel="noopener">https://blog.csdn.net/y550918116j/article/details/78258916</a></li>
+<li><a href="https://beanvalidation.org/" target="_blank" rel="noopener">https://beanvalidation.org/</a></li>
 </ul>
 	  
 
@@ -94,51 +204,8 @@ Retire.js">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
+			
 		
 	
 		
@@ -267,149 +334,8 @@ Retire.js">
 	
 		
 			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
 			
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
 		
 			
 		
@@ -516,13 +442,187 @@ Retire.js">
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/安全/security/ldap/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/安全/security/security-sevelopment-lifecycle/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/hibernate/hibernate/hibernate-baisc/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
