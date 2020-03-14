@@ -1,0 +1,672 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>服务器推送方案 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="在邮件、消息等场景下需要使用服务器推方案，用于在  web 上和用户实时交互。
+一般有几种方案：
+
+HTTP 轮询
+HTTP stram 或 polling 技术 （Comet 技术）
+Websocket 技术
+HTTP/2 Server push 技术
+
+HTTP 轮询轮询的原理非常简单，让浏览器">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="服务器推送方案">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">服务器推送方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-03-14</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>在邮件、消息等场景下需要使用服务器推方案，用于在  web 上和用户实时交互。</p>
+<p>一般有几种方案：</p>
+<ol>
+<li>HTTP 轮询</li>
+<li>HTTP stram 或 polling 技术 （Comet 技术）</li>
+<li>Websocket 技术</li>
+<li>HTTP/2 Server push 技术</li>
+</ol>
+<h2 id="HTTP-轮询"><a href="#HTTP-轮询" class="headerlink" title="HTTP 轮询"></a>HTTP 轮询</h2><p>轮询的原理非常简单，让浏览器每隔几秒就向服务器发送一个请求，询问服务器是否有新的信息。</p>
+<p>这种方案也是最早期的方案，带来的问题是服务器资源消耗较大。</p>
+<p>连接的建立和销毁是比较耗费资源的行为。</p>
+<h2 id="HTTP-stram-或-polling-技术-（Comet-技术）"><a href="#HTTP-stram-或-polling-技术-（Comet-技术）" class="headerlink" title="HTTP stram 或 polling 技术 （Comet 技术）"></a>HTTP stram 或 polling 技术 （Comet 技术）</h2><p>Comet 技术和轮询差不多，不过采取的是阻塞模型，方法是客户端发起一个请求后，服务器挂起，等到需要服务器推送数据时返回 http 数据。返回数据后，客户端再次发起请求。</p>
+<p>这种技术会造成服务器线程长时间挂起，因此在服务器阻塞网络模型时性能变得非常差，因为这种方案一般没有兼容性的问题，可以在性能和实现成本上是一个比较好的取舍。</p>
+<h2 id="WebSocket-技术"><a href="#WebSocket-技术" class="headerlink" title="WebSocket 技术"></a>WebSocket 技术</h2><p>WebSocket协议（RFC 6455）提供了一种标准化的浏览器、服务器双工通信方法，通过一个TCP连接在客户机和服务器之间建立全双工、双向的通信通道。它是一种不同于 HTTP 的 TCP 协议，但设计用于在 HTTP 上工作，使用端口 80 和 443。因为可以重用端口，可以重用现有的防火墙。</p>
+<p>WebSocket交互从一个HTTP请求开始，该请求使用HTTP升级报头进行升级，切换 WebSocket协议。</p>
+<p>Websocket 协议只是借用了 HTTP 协议作为协议切换，建立信道后 HTTP 不在有关系。</p>
+<p>客户端发起协议切换请求：</p>
+<pre><code class="http">GET /spring-websocket-portfolio/portfolio HTTP/1.1
+Host: localhost:8080
+Upgrade: websocket 
+Connection: Upgrade 
+Sec-WebSocket-Key: Uc9l9TMkWGbHFD2qnFHltg==
+Sec-WebSocket-Protocol: v10.stomp, v11.stomp
+Sec-WebSocket-Version: 13
+Origin: http://localhost:8080
+</code></pre>
+<p>服务器成功切换协议后返回状态码 101 而非 200：</p>
+<pre><code class="http">HTTP/1.1 101 Switching Protocols 
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: 1qVdfYHU9hPOl4JYYNXF623Gzn0=
+Sec-WebSocket-Protocol: v10.stomp
+</code></pre>
+<h3 id="WebSocket-和-HTTP-协议的关系"><a href="#WebSocket-和-HTTP-协议的关系" class="headerlink" title="WebSocket 和 HTTP 协议的关系"></a>WebSocket 和 HTTP 协议的关系</h3><p>尽管 WebSocket 被设计为与 HTTP 兼容，并从 HTTP 请求开始，但重要的是要理解这两个协议导致了非常不同的体系结构和应用程序编程模型。</p>
+<p>在HTTP 和 REST 中，应用程序被建模为许多 url 。为了与应用程序交互，客户端访问这些url，请求-响应样式。服务器根据HTTP URL、方法和标头将请求路由到适当的处理程序。</p>
+<p>相反，在WebSockets中，初始连接通常只有一个URL。随后，所有应用程序消息都在同一TCP连接上流动。这指向一个完全不同的异步、事件驱动的消息传递体系结构。</p>
+<p>WebSocket 实际上是一种传输层协议，与 HTTP 不同，它不对消息的内容规定任何语义。这意味着，除非客户机和服务器在消息语义上达成一致，否则无法路由或处理消息。</p>
+<p>WebSocket 客户端和服务器可以通过 HTTP 握手请求上的 <code>Sec-WebSocket-Protocol</code> 头协商使用更高级别的消息传递协议(例如，STOMP)。在这种情况下，他们需要制定自己的惯例。</p>
+<h3 id="WebSocket-和-STOMP-协议"><a href="#WebSocket-和-STOMP-协议" class="headerlink" title="WebSocket 和 STOMP 协议"></a>WebSocket 和 STOMP 协议</h3><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><p>后端</p>
+<p>Java：</p>
+<p>SpringBoot</p>
+<p>Nodejs</p>
+<p>前端：</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p><strong>在合适的场景下使用 WebSocket</strong> </p>
+<p>低延迟、高频率和高容量是 WebSocket 特点，如果应用对延迟要求并不高，WebSocket 会带来额外的编程复杂度，并不见得是比轮询更好地方案。</p>
+<p><strong>反向代理和运营商网络要求</strong></p>
+<p>如果 WebSocket 服务器运行在 web 服务器(例如nginx)之后，可能需要将其配置为将 WebSocket 升级请求传递给WebSocke t服务器。同样，如果应用程序在云环境中运行，请检查云提供商与 WebSocket 支持相关的说明。</p>
+<pre><code class="nginx">server {
+      listen   80;
+      server_name example.com;
+
+      location / {
+        proxy_pass   http://127.0.0.1:8080/; 
+ 　　　　proxy_http_version 1.1;
+        proxy_read_timeout   3600s;
+        // 启用支持 websocket 连接
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+      }
+}
+</code></pre>
+<p>需要特别注意的是，Nginx 等反向代理服务器一定要将 <code>Upgrade</code> 相关的头转发出去，否则无法建立起来连接。这个问题非常难调试。</p>
+<pre><code class="nginx">       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection &quot;upgrade&quot;;
+</code></pre>
+<p><strong>wss 和 ws 协议头</strong></p>
+<p>在建立连接时如果使用的 http 协议，则对应发送消息的协议为 ws，如果使用 https 协议建立的链接，则发送消息的协议为 wss。</p>
+<p>同时需要注意，wss 还是需要配置相关证书。</p>
+<p><strong>跨域</strong></p>
+<p>WebSocket 协议没有同源策略，但是建立连接的 http 请求有同源策略，需要配置跨域访问。</p>
+<h2 id="HTTP-2-Server-push-技术"><a href="#HTTP-2-Server-push-技术" class="headerlink" title="HTTP/2 Server push 技术"></a>HTTP/2 Server push 技术</h2>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/技术架构/architecture/real-time/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
