@@ -3,29 +3,46 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>高并发设计 | web 工程师知识系统</title>
+  <title>高并发和性能优化 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="前端页面并发优化
-Cookie 
-CDN 
-图标聚合
-Gzip 压缩
-
-后端并发
+  <meta name="description" content="架构优化
+缓存
+redis
 ehcache
-webflux
+memecache
+
+
 负载均衡
 MQ
+异步模型
+webflux
+Nodejs
+
+
+
+后端并发
+web 服务器
+使用undertow
+
+
+
+
+前端页面并发优化
+Cookie 优化
+CDN 
+图标聚合
+开启 Gzip 压缩
 
 数据库
 读写分离
-分库分表">
+数据分片
+分库">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="高并发设计">
+  <meta property="og:title" content="高并发和性能优化">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -59,7 +76,7 @@ MQ
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">高并发设计</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-23</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">高并发和性能优化</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-23</span></h1>
 </div>		
 
 <div class="row page">
@@ -81,21 +98,41 @@ MQ
 	
 
 	  <!-- content -->
-	  <h2 id="前端页面并发优化"><a href="#前端页面并发优化" class="headerlink" title="前端页面并发优化"></a>前端页面并发优化</h2><ul>
-<li>Cookie </li>
-<li>CDN </li>
-<li>图标聚合</li>
-<li>Gzip 压缩</li>
-</ul>
-<h2 id="后端并发"><a href="#后端并发" class="headerlink" title="后端并发"></a>后端并发</h2><ul>
+	  <h2 id="架构优化"><a href="#架构优化" class="headerlink" title="架构优化"></a>架构优化</h2><ul>
+<li>缓存<ul>
+<li>redis</li>
 <li>ehcache</li>
-<li>webflux</li>
+<li>memecache</li>
+</ul>
+</li>
 <li>负载均衡</li>
 <li>MQ</li>
+<li>异步模型<ul>
+<li>webflux</li>
+<li>Nodejs</li>
+</ul>
+</li>
+</ul>
+<h2 id="后端并发"><a href="#后端并发" class="headerlink" title="后端并发"></a>后端并发</h2><ul>
+<li>web 服务器<ul>
+<li>使用undertow</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="前端页面并发优化"><a href="#前端页面并发优化" class="headerlink" title="前端页面并发优化"></a>前端页面并发优化</h2><ul>
+<li>Cookie 优化</li>
+<li>CDN </li>
+<li>图标聚合</li>
+<li>开启 Gzip 压缩</li>
 </ul>
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
 <li>读写分离</li>
+<li>数据分片</li>
 <li>分库分表</li>
+</ul>
+<h2 id="并发验证"><a href="#并发验证" class="headerlink" title="并发验证"></a>并发验证</h2><ul>
+<li>k6</li>
 </ul>
 	  
 
@@ -118,6 +155,14 @@ MQ
 		
 	
 		
+	
+		
+			
+		
+	
+		
+	
+		
 			
 		
 	
@@ -483,20 +528,6 @@ MQ
 		
 	
 		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
 			
 		
 	
@@ -508,6 +539,20 @@ MQ
 			
 		
 	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
