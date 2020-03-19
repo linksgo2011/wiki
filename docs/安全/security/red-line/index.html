@@ -1,0 +1,664 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>安全红线参考 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="网络安全安全通道
+用户测不允许直接连接到管理系统
+无任何隐藏通道
+关闭高危端口
+
+网络协议
+所有的网络端口都是业务必须的，动态监听的端口都应该被关闭
+所有的网络连接都需要有认证机制
+
+web 安全
+每一个需要用户授权的网络请求，都需要鉴权。必须核实用户的会话标识是否合法。
+对用户的最终认证必须发生在">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="安全红线参考">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">安全红线参考</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-03-19</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h2><h3 id="安全通道"><a href="#安全通道" class="headerlink" title="安全通道"></a>安全通道</h3><ol>
+<li>用户测不允许直接连接到管理系统</li>
+<li>无任何隐藏通道</li>
+<li>关闭高危端口</li>
+</ol>
+<h3 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h3><ol>
+<li>所有的网络端口都是业务必须的，动态监听的端口都应该被关闭</li>
+<li>所有的网络连接都需要有认证机制</li>
+</ol>
+<h3 id="web-安全"><a href="#web-安全" class="headerlink" title="web 安全"></a>web 安全</h3><ol>
+<li>每一个需要用户授权的网络请求，都需要鉴权。必须核实用户的会话标识是否合法。</li>
+<li>对用户的最终认证必须发生在服务器端。</li>
+<li>服务器对所有来自不可信数据源的数据进行校验（注入攻击），拒绝任何没通过校验的数据。若输出到客户端的数据来自不可信的数据源，都必须进行编码和转义（XSS攻击）。</li>
+<li>必须使用 web 安全扫描软件对容器和应用进行安全扫描，并解决高风险的漏洞。</li>
+<li>Session ID必须具有随机性、唯一性，身份验证成功后需要更换 Session ID。</li>
+<li>文件上传需要对类型进行验证，应当正确使用 MIME 检查。</li>
+</ol>
+<h3 id="数据库安全"><a href="#数据库安全" class="headerlink" title="数据库安全"></a>数据库安全</h3><ol>
+<li>禁止使用默认口令</li>
+<li>用户应该具有最小权限，不允许使用超级用户访问所有的数据库</li>
+<li>如果存在多个默认账号，应该禁用无用的账号</li>
+</ol>
+<h3 id="编码安全"><a href="#编码安全" class="headerlink" title="编码安全"></a>编码安全</h3><ol>
+<li>数据库等凭据不允许明文存储在应用程序中</li>
+<li>非信任的网络传输应该使用 HTTPS</li>
+<li>系统中对接必须使用公有账号</li>
+<li>禁止使用私有加密算法</li>
+</ol>
+<h2 id="口令策略"><a href="#口令策略" class="headerlink" title="口令策略"></a>口令策略</h2><h3 id="口令复杂度"><a href="#口令复杂度" class="headerlink" title="口令复杂度"></a>口令复杂度</h3><ol>
+<li>口令至少5个字符</li>
+<li>口令包含如下规则<ol>
+<li>至少一个小写字母</li>
+<li>至少一个大写字母</li>
+<li>至少一个数字</li>
+<li>至少一个特殊字符</li>
+</ol>
+</li>
+<li>口令不能和账号一样</li>
+<li>口令不能被重复使用</li>
+<li>*例外情况不要求强制复杂度<ol>
+<li>输入受限，例如无法使用3完整的键盘</li>
+<li>业界习惯，例如手机 PIN 码</li>
+</ol>
+</li>
+</ol>
+<h3 id="防暴力破解机制"><a href="#防暴力破解机制" class="headerlink" title="防暴力破解机制"></a>防暴力破解机制</h3><p>超过一定阈值（例如5次尝试）启动防暴力破解机制：</p>
+<ol>
+<li>锁定账号</li>
+<li>锁定IP</li>
+<li>登录延迟</li>
+<li>验证码识别</li>
+<li>白名单</li>
+</ol>
+<h3 id="口令安全规则"><a href="#口令安全规则" class="headerlink" title="口令安全规则"></a>口令安全规则</h3><ol>
+<li>口令禁止回显</li>
+<li>输入框不允许拷贝</li>
+<li>缺省密码符合复杂度要求</li>
+<li>用户修改自己口令必须验证旧口令或者 OTP 验证</li>
+</ol>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/安全/security/safe-hash/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

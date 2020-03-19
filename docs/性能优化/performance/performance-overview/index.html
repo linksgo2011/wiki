@@ -185,7 +185,92 @@ String str1 = new String();
 <h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><h4 id="少使用异常"><a href="#少使用异常" class="headerlink" title="少使用异常"></a>少使用异常</h4><h4 id="使用局部变量"><a href="#使用局部变量" class="headerlink" title="使用局部变量"></a>使用局部变量</h4><p>局部变量在栈中，类变量在堆中。</p>
 <h4 id="使用位运算"><a href="#使用位运算" class="headerlink" title="使用位运算"></a>使用位运算</h4><p>使用移位运算代替乘法除法（计算机实现原理）</p>
 <h4 id="替换-switch"><a href="#替换-switch" class="headerlink" title="替换 switch"></a>替换 switch</h4><h4 id="一维数组代替二维数组"><a href="#一维数组代替二维数组" class="headerlink" title="一维数组代替二维数组"></a>一维数组代替二维数组</h4><h4 id="使用-arrayCopy"><a href="#使用-arrayCopy" class="headerlink" title="使用 arrayCopy"></a>使用 arrayCopy</h4><h4 id="使用-Buffer-对-IO进行包装"><a href="#使用-Buffer-对-IO进行包装" class="headerlink" title="使用 Buffer 对 IO进行包装"></a>使用 Buffer 对 IO进行包装</h4><h4 id="使用-clone-代替new"><a href="#使用-clone-代替new" class="headerlink" title="使用 clone() 代替new"></a>使用 clone() 代替new</h4><p>clone 会绕过构造函数</p>
-<h4 id="静态方法代替实例方法"><a href="#静态方法代替实例方法" class="headerlink" title="静态方法代替实例方法"></a>静态方法代替实例方法</h4>	  
+<h4 id="静态方法代替实例方法"><a href="#静态方法代替实例方法" class="headerlink" title="静态方法代替实例方法"></a>静态方法代替实例方法</h4><h2 id="并发调优"><a href="#并发调优" class="headerlink" title="并发调优"></a>并发调优</h2><p> TODO </p>
+<h2 id="JVM-调优"><a href="#JVM-调优" class="headerlink" title="JVM 调优"></a>JVM 调优</h2><p>JVM 输出调试信息</p>
+<blockquote>
+<p>-XX:+PrintGCDetails</p>
+</blockquote>
+<h3 id="虚拟机内存模型"><a href="#虚拟机内存模型" class="headerlink" title="虚拟机内存模型"></a>虚拟机内存模型</h3><p>JVM 虚拟机模型</p>
+<p><img src="/性能优化/performance/performance-overview/format,png.png" alt="img"></p>
+<p>堆内存模型</p>
+<p><img src="/性能优化/performance/performance-overview/70.png" alt="img"></p>
+<h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><h4 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h4><p>栈的大小决定了函数调用可达的深度，-Xss 设置栈的大小，一般无需设置此参数，应该消除递归代码</p>
+<p>一般设置为 -Xss1M</p>
+<p>另外，函数嵌套调用次数由栈的大小决定。栈越大，函数的嵌套调用次数越多。对一个函数而言，它的参数越多，内部局部变量越多，栈帧就越大，嵌套调用次数就会减少。</p>
+<h4 id="本地方栈"><a href="#本地方栈" class="headerlink" title="本地方栈"></a>本地方栈</h4><p>本地方法栈为 java 原生函数调用使用的空间。</p>
+<h4 id="Java-堆"><a href="#Java-堆" class="headerlink" title="Java 堆"></a>Java 堆</h4><p>Java 堆为Java对象存储位置。采用分代内存回收策略：</p>
+<ul>
+<li>新生代<ul>
+<li>eden 伊利园</li>
+<li>s0 survior</li>
+<li>s1 survior</li>
+</ul>
+</li>
+<li>老年代</li>
+</ul>
+<p>使用 -XX 参数设置</p>
+<h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>方法去也可称为永久区，主要存放常量和类的定义信息。</p>
+<h3 id="JVM-内存分配参数"><a href="#JVM-内存分配参数" class="headerlink" title="JVM 内存分配参数"></a>JVM 内存分配参数</h3><h4 id="设置最大堆内存"><a href="#设置最大堆内存" class="headerlink" title="设置最大堆内存"></a>设置最大堆内存</h4><blockquote>
+<p>-Xmx </p>
+</blockquote>
+<p>默认为物理内存的四分之一，一般可以开启到物理内存一致。</p>
+<h4 id="设置最小堆内存"><a href="#设置最小堆内存" class="headerlink" title="设置最小堆内存"></a>设置最小堆内存</h4><blockquote>
+<p>-Xms</p>
+</blockquote>
+<p>JVM启动会先按照最小堆内存运行，然后尝试运行时申请更多内存。如果最小堆内存过小，就会频繁触发 GC。</p>
+<p>包括 Minor GC和Full GC。</p>
+<p>JVM 会试图将内存尽可能限制在 -Xms 中。因此，当内存实际使用量初级 -Xms 指定的大小时，会触发 Full GC。因此 -Xms 值设置为 -Xmx 可以减少GC的次数和耗时。</p>
+<p>这个操作的前提是，需要预知系统内存使用量。</p>
+<h4 id="设置新生代"><a href="#设置新生代" class="headerlink" title="设置新生代"></a>设置新生代</h4><blockquote>
+<p>-Xmn</p>
+</blockquote>
+<p>设置一个较大的新生代会减少老年代的大小，这个参数对系统性能以及 GC 行为有很大的影响。新生代的大小一般设置为整个堆空间的 1/4 左右。</p>
+<h4 id="设置持久代"><a href="#设置持久代" class="headerlink" title="设置持久代"></a>设置持久代</h4><blockquote>
+<p>-XX:MaxPerSize</p>
+</blockquote>
+<p>持久代（方法区）不属于堆的一部分，持久代决定了系统可以支持多少个类定义和多少常量。如果使用了 CGlib 或者 Javassist 等动态字节码技术的程序，需要合理设置。</p>
+<p>一般来说，设置为 64M 已经够用，如果出现溢出，可以设置为  128M。</p>
+<p>如果 128M依然不能满足，不应该继续增加参数值。而是优化程序设计。</p>
+<h4 id="设置线程栈"><a href="#设置线程栈" class="headerlink" title="设置线程栈"></a>设置线程栈</h4><blockquote>
+<p>-Xss </p>
+</blockquote>
+<p>线程栈是线程的一块私有空间，决定了支持线程的数量。</p>
+<p>如果线程栈的空间很大，则允许支持的线程数量就会减少，因此这个值需要合理设置。</p>
+<p>由于堆的增加会挤占栈空间的大小，因此设置这个参数需要和堆大小合理取舍。</p>
+<h4 id="堆的比例分配"><a href="#堆的比例分配" class="headerlink" title="堆的比例分配"></a>堆的比例分配</h4><p>新生代和S区域的比例</p>
+<blockquote>
+<p>-XX:SurviorRation=eden/s0=eden/s1</p>
+</blockquote>
+<h4 id="堆参数设置总结"><a href="#堆参数设置总结" class="headerlink" title="堆参数设置总结"></a>堆参数设置总结</h4><p><img src="/性能优化/performance/performance-overview/image-20200319125358200.png" alt="image-20200319125358200"></p>
+<ul>
+<li>-Xms：初始堆大小</li>
+<li>-Xmx：最大堆大小</li>
+<li>-Xss：线程栈的大小</li>
+<li>-XX：NewSize：设置新生代大小</li>
+<li>-XX：PermSize：永久区的初始值</li>
+<li>-XX：MaxPermSize：永久区的最大值</li>
+<li>-XX：MinHeapFreeRatio：设置堆空间最小空闲比例</li>
+<li>-XX：MaxHeapFreeRatio：设置堆空间最大空闲比例</li>
+<li>-XX：NewRatio：设置老年代与新生代的比例</li>
+<li>-XX：SurviorRatio：新生代中eden区域survivior区的比例</li>
+</ul>
+<h3 id="垃圾收集基础"><a href="#垃圾收集基础" class="headerlink" title="垃圾收集基础"></a>垃圾收集基础</h3><p>TODO </p>
+<h3 id="调优方法"><a href="#调优方法" class="headerlink" title="调优方法"></a>调优方法</h3><h3 id="实用的-JVM-参数"><a href="#实用的-JVM-参数" class="headerlink" title="实用的 JVM 参数"></a>实用的 JVM 参数</h3><h4 id="开启-JIT-编译参数"><a href="#开启-JIT-编译参数" class="headerlink" title="开启 JIT 编译参数"></a>开启 JIT 编译参数</h4><blockquote>
+<p>-XX:CompileThreadhold</p>
+</blockquote>
+<p>设置阈值，Java 代码进入 JIT 编译模型。</p>
+<h4 id="堆-dump"><a href="#堆-dump" class="headerlink" title="堆 dump"></a>堆 dump</h4><blockquote>
+<p>-XX: + HeapDumpOnOutOfMemoryError </p>
+</blockquote>
+<p>内存溢出时，dump 堆内存信息，还可以设置导出的位置</p>
+<blockquote>
+<p>-XX: HeapDumpPath </p>
+</blockquote>
+<h4 id="发生-OOM-时候执行一段脚本"><a href="#发生-OOM-时候执行一段脚本" class="headerlink" title="发生 OOM 时候执行一段脚本"></a>发生 OOM 时候执行一段脚本</h4><blockquote>
+<p>-XX: OnOutOfMemoryError=./restart.sh</p>
+</blockquote>
+<p>可以在发生内存溢出时候重启服务, 或者通知</p>
+	  
 
 	  <div>
   		<center>
@@ -196,6 +281,10 @@ String str1 = new String();
 	
 	
 	
+	
+		
+	
+		
 	
 		
 			
