@@ -145,22 +145,37 @@ public void removeUser(User user) {
 </code></pre>
 <h3 id="池化技术"><a href="#池化技术" class="headerlink" title="池化技术"></a>池化技术</h3><h4 id="对象池"><a href="#对象池" class="headerlink" title="对象池"></a>对象池</h4><p>java中的对象池技术，是为了方便快捷地创建某些对象而出现的，当需要一个对象时，就可以从池中取一个出来（如果池中没有则创建一个），则在需要重复重复创建相等变量时节省了很多时间。</p>
 <p>Java 中数据类型的包装类型支持基本的对象池技术。</p>
-<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><p>使用线程池可以大幅度提高多线程性能，下面是一个线程池的例子，推荐使用 Executors 创建线程：</p>
+<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><p>多线程可以充分利用多核 CPU 的使用率。使用线程池可以大幅度提高多线程性能，下面是一个线程池的例子，推荐使用 Executors 创建线程：</p>
 <pre><code class="java">ExecutorService executor = Executors.newFixedThreadPool(10);
 executor.execute(new MyThread());
 executor.shutdown;
 </code></pre>
+<p>线程池的数量非常重要，《Java 并发编程实践》中给出了一个公式</p>
+<ul>
+<li><p>Ncpu = CPU 的数量</p>
+</li>
+<li><p>Ucpu = 目标 CPU 的使用率</p>
+</li>
+<li><p>W/C = 等待时间与计算时间的比率</p>
+</li>
+<li><p>Nthreads  = 合理的线程数量 </p>
+</li>
+</ul>
+<blockquote>
+<p> Nthreads = Ncpu <em> Ucpu </em> (1 + W/C)</p>
+</blockquote>
 <h4 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h4><p>数据库连接池使用 C3P0、DBCP、HikariCP和Druid，spring 推荐使用 DBCP，但是 Druid 支持监控，可以对慢 SQL 进行分析。</p>
 <h2 id="Java-代码调优"><a href="#Java-代码调优" class="headerlink" title="Java 代码调优"></a>Java 代码调优</h2><h3 id="字符串优化"><a href="#字符串优化" class="headerlink" title="字符串优化"></a>字符串优化</h3><h4 id="优先使用字面量，而不是-new-String"><a href="#优先使用字面量，而不是-new-String" class="headerlink" title="优先使用字面量，而不是 new String();"></a>优先使用字面量，而不是 new String();</h4><pre><code>String str = &quot;&quot;;
 // 优于
 String str1 = new String();
 </code></pre><h4 id="优先使用-StringTokenizer-分隔字符串"><a href="#优先使用-StringTokenizer-分隔字符串" class="headerlink" title="优先使用 StringTokenizer 分隔字符串"></a>优先使用 StringTokenizer 分隔字符串</h4><h4 id="只用-charAt-进行字符串比较"><a href="#只用-charAt-进行字符串比较" class="headerlink" title="只用 charAt 进行字符串比较"></a>只用 charAt 进行字符串比较</h4><h4 id="优先使用-StringBuilder-和-StringBuffer"><a href="#优先使用-StringBuilder-和-StringBuffer" class="headerlink" title="优先使用 StringBuilder 和 StringBuffer"></a>优先使用 StringBuilder 和 StringBuffer</h4><h3 id="合理选用数据结构"><a href="#合理选用数据结构" class="headerlink" title="合理选用数据结构"></a>合理选用数据结构</h3><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>ArrayList 通过数组实现，每次扩容会造成大量的性能消耗，适合读多写少的操作，注意设置初始数组大小。</p>
-<p>Vector ArrayList 的线程安全实现，性能相差无几。</p>
-<p>CopyOnWriteArray 通过 COW 技术实现线程安全的实现。</p>
 <p>LinkedList 通过双向链表实现，查询效率低，写入速度快，适合写多读少。</p>
+<p>Vector ArrayList 的线程安全实现，性能相差无几, 适合写多读少的场景。</p>
+<p>CopyOnWriteArray 通过 COW 技术实现线程安全的实现，适合读多写少操作。</p>
 <h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>HashMap 注意设置负载因子降低冲突</p>
 <p>LinkedHaspMap 在读取时排序，内部基于链表，适合写多读少</p>
 <p>TreeMap 实现了 sortedMap 满足对有序性的需求，在写入时排序，内部基于红黑树，适合读多写少</p>
+<p>ConcurrentHashMap 是线程安全且高性能的额 Map 容器，使用了 CAS、红黑树、分段锁等技术。</p>
 <h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>满足 Map 的无重复性需求</p>
 <p>HashSet，对应 HashMap，基于hash的快速插入</p>
 <p>LinkedHashSet，对应 LinkedHashMap，基于 hash 的插入，维护了插入集合的先后顺序个。按照先进先出的顺序排序</p>
@@ -185,7 +200,99 @@ String str1 = new String();
 <h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><h4 id="少使用异常"><a href="#少使用异常" class="headerlink" title="少使用异常"></a>少使用异常</h4><h4 id="使用局部变量"><a href="#使用局部变量" class="headerlink" title="使用局部变量"></a>使用局部变量</h4><p>局部变量在栈中，类变量在堆中。</p>
 <h4 id="使用位运算"><a href="#使用位运算" class="headerlink" title="使用位运算"></a>使用位运算</h4><p>使用移位运算代替乘法除法（计算机实现原理）</p>
 <h4 id="替换-switch"><a href="#替换-switch" class="headerlink" title="替换 switch"></a>替换 switch</h4><h4 id="一维数组代替二维数组"><a href="#一维数组代替二维数组" class="headerlink" title="一维数组代替二维数组"></a>一维数组代替二维数组</h4><h4 id="使用-arrayCopy"><a href="#使用-arrayCopy" class="headerlink" title="使用 arrayCopy"></a>使用 arrayCopy</h4><h4 id="使用-Buffer-对-IO进行包装"><a href="#使用-Buffer-对-IO进行包装" class="headerlink" title="使用 Buffer 对 IO进行包装"></a>使用 Buffer 对 IO进行包装</h4><h4 id="使用-clone-代替new"><a href="#使用-clone-代替new" class="headerlink" title="使用 clone() 代替new"></a>使用 clone() 代替new</h4><p>clone 会绕过构造函数</p>
-<h4 id="静态方法代替实例方法"><a href="#静态方法代替实例方法" class="headerlink" title="静态方法代替实例方法"></a>静态方法代替实例方法</h4><h2 id="并发调优"><a href="#并发调优" class="headerlink" title="并发调优"></a>并发调优</h2><p> TODO </p>
+<h4 id="静态方法代替实例方法"><a href="#静态方法代替实例方法" class="headerlink" title="静态方法代替实例方法"></a>静态方法代替实例方法</h4><h2 id="并发调优"><a href="#并发调优" class="headerlink" title="并发调优"></a>并发调优</h2><h3 id="并发基础"><a href="#并发基础" class="headerlink" title="并发基础"></a>并发基础</h3><h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>线程会对变量局部更新，提高性能。volatile 变量可见性保证，这是并发编程的基础</p>
+<ul>
+<li>其他线程对变量的修改，理解反应到当前线程中</li>
+<li>确保当前线程对 volatile 的修改，能即时写回共享主内存中，并被其他线程所见</li>
+<li>使用 volatile 声明的变量，编译器会保证有序性</li>
+</ul>
+<h4 id="同步关键字-synchronized"><a href="#同步关键字-synchronized" class="headerlink" title="同步关键字 synchronized"></a>同步关键字 synchronized</h4><p>Java 中最基本的锁机制，可以锁方法、变量、类、静态方法等资源， synchronized 为公平锁。</p>
+<h4 id="线程局部变量-ThreadLocal"><a href="#线程局部变量-ThreadLocal" class="headerlink" title="线程局部变量 ThreadLocal"></a>线程局部变量 ThreadLocal</h4><p>线程执行时独立的内存空间，在某些业务场景下可以用来实现并发操作，避免锁的使用。</p>
+<h4 id="信号量-Semaphore"><a href="#信号量-Semaphore" class="headerlink" title="信号量 Semaphore"></a>信号量 Semaphore</h4><p>锁是对单个资源的控制，型号量可以对一组资源管理，例如 100 个线程的线程池，可以定义一个型号量 100，当型号量小于 100 时，请求才允许被加入。</p>
+<h3 id="锁优化"><a href="#锁优化" class="headerlink" title="锁优化"></a>锁优化</h3><h4 id="锁的分类"><a href="#锁的分类" class="headerlink" title="锁的分类"></a>锁的分类</h4><ul>
+<li>乐观锁/悲观锁<ul>
+<li>乐观锁：就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据。典型的是使用版本号更新前判断。<code>update xxx when version =xxx;</code>如果版本号不匹配更新失败。在Java中 CAS 就是乐观锁。</li>
+<li>悲观锁：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁。synchronized 就是悲观锁，mysql 中就是 readForUpdate 语句。</li>
+</ul>
+</li>
+<li>独享锁/共享锁<ul>
+<li>独享锁是指该锁一次只能被一个线程所持有，例如 Synchronize、ReentrantLock。</li>
+<li>共享锁是指该锁可被多个线程所持有。</li>
+</ul>
+</li>
+<li>互斥锁/读写锁<ul>
+<li>互斥锁在Java中的具体实现就是ReentrantLock。</li>
+<li>读写锁在Java中的具体实现就是ReadWriteLock、ReentrantReadWriteLock</li>
+</ul>
+</li>
+<li>可重入锁<ul>
+<li>上锁后每个访问的线程都需要排队，可重入的意思是已经获取锁的线程再次进入无需排队，避免死锁。可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁。</li>
+</ul>
+</li>
+<li>公平锁/非公平锁<ul>
+<li>公平锁是指多个线程按照申请锁的顺序来获取锁。ReetrantLock而言，通过构造函数指定该锁是否是公平锁，默认是非公平锁。</li>
+<li>非公平锁是指多个线程获取锁的顺序并不是按照申请锁的顺序，按照CPU运行时间片来划分的。ReetrantLock而言，通过构造函数指定该锁是否是公平锁，默认是非公平锁。Synchronized 也是一种非公平锁，无法变成公平锁。</li>
+</ul>
+</li>
+<li>分段锁<ul>
+<li>分段锁其实是一种锁的设计，并不是具体的一种锁。ConcurrentHashMap而言，其并发的实现就是通过分段锁的形式来实现高效的并发操作。ConcurrentHashMap中的分段锁称为Segment，它即类似于HashMap（JDK7和JDK8中HashMap的实现）的结构，即内部拥有一个Entry数组，数组中的每个元素又是一个链表。当需要put元素的时候，并不是对整个hashmap进行加锁，而是先通过hashcode来知道他要放在哪一个分段中，然后对这个分段进行加锁，所以当多线程put的时候，只要不是放在一个分段中，就实现了真正的并行的插入。统计 Size 的时候需要全局加锁才能统计</li>
+</ul>
+</li>
+<li>偏向锁/轻量级锁/重量级锁<ul>
+<li>这三种锁是指锁的状态，并且是针对Synchronized。</li>
+<li>偏向锁是指一段同步代码一直被一个线程所访问，那么该线程会自动获取锁。</li>
+<li>轻量级锁是指当锁是偏向锁的时候，被另一个线程所访问，偏向锁就会升级为轻量级锁，其他线程会通过自旋的形式尝试获取锁，不会阻塞。</li>
+<li>重量级锁是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。</li>
+</ul>
+</li>
+<li>自旋锁<ul>
+<li>在Java中，自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</li>
+</ul>
+</li>
+</ul>
+<h4 id="AQS-技术"><a href="#AQS-技术" class="headerlink" title="AQS 技术"></a>AQS 技术</h4><p>AbstractQueuedSynchronized 抽象队列式的同步器，AQS定义了一套多线程访问共享资源的同步器框架，许多同步类实现都依赖于它，如常用的ReentrantLock/Semaphore/CountDownLatch</p>
+<p><img src="/性能优化/performance/performance-overview/721070-20170504110246211-10684485.png" alt="img"></p>
+<p>想要获取锁的线程通过 CAS 设置资源计数器，当资源计数器为0时，队列开始移动，否则进行排队操作。</p>
+<h4 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h4><p>死锁会造成线程挂起彼此等待，死锁可以 dump 出栈空间即可分析。</p>
+<p>死锁产生的必要条件：</p>
+<ol>
+<li>互斥条件：一个资源每次只能被一个进程使用</li>
+<li>请求与保持条件：一个进程因请求资源被阻塞，对已经获得的资源保持不放</li>
+<li>不剥夺条件：进程获得的资源，在未使用完之前，不能强行剥夺</li>
+<li>循环等待等待条件：若干进程之间形成了一个等待资源的循环</li>
+</ol>
+<p>常见的死锁就是分布式锁和数据库锁之间的的矛盾。</p>
+<p>例如 数据库某行记录 A，某个变量 B，两个线程分别获得了锁，然后互相等待对方释放。</p>
+<h4 id="减少锁持有时间和颗粒度"><a href="#减少锁持有时间和颗粒度" class="headerlink" title="减少锁持有时间和颗粒度"></a>减少锁持有时间和颗粒度</h4><p>当锁不可避免时，应该减少锁的持有时间和颗粒度。</p>
+<ul>
+<li>synchronized 只锁变量不要锁类，注意 self  和 this的区别</li>
+<li>数据库锁行，而不要锁表</li>
+<li>使用分段锁减少锁的颗粒度</li>
+</ul>
+<h4 id="使用读写分离锁来替换独占锁"><a href="#使用读写分离锁来替换独占锁" class="headerlink" title="使用读写分离锁来替换独占锁"></a>使用读写分离锁来替换独占锁</h4><p>读一般无需上锁，因此不应该将所有的请求都上锁，只对写上锁即可。</p>
+<h4 id="锁分离思想"><a href="#锁分离思想" class="headerlink" title="锁分离思想"></a>锁分离思想</h4><p>根据读写分离锁的思想，更新、删除或其他操作都可以分别上锁，而不是一个大锁。</p>
+<p>例如 LinkedblockingQueue 基于链表，那么 take 和 put 操作可以分开上锁，减少锁竞争。</p>
+<h4 id="合理使用重入锁和内部锁-（synchronized）"><a href="#合理使用重入锁和内部锁-（synchronized）" class="headerlink" title="合理使用重入锁和内部锁 （synchronized）"></a>合理使用重入锁和内部锁 （synchronized）</h4><p>优先使用内部锁，减少编程复杂度，需要时再使用 ReentrantLock</p>
+<h4 id="锁粗化-（Lock-Coarsening）"><a href="#锁粗化-（Lock-Coarsening）" class="headerlink" title="锁粗化 （Lock Coarsening）"></a>锁粗化 （Lock Coarsening）</h4><p>锁粗化是相对于锁细粒度的另外一个极端情况的，当锁粒度过于细，反复获取锁也是不对的，应该保持适度。</p>
+<p>在循环体中不应该使用锁，而是应该在循环体外使用锁，否则锁会反复被获取和释放。</p>
+<h4 id="开启-JVM-锁自璇"><a href="#开启-JVM-锁自璇" class="headerlink" title="开启 JVM 锁自璇"></a>开启 JVM 锁自璇</h4><p>如果一个锁反复没有获取，线程切换的成本很高，还不如让它执行空循环（自旋）。</p>
+<blockquote>
+<p>=XX:+UseSpinning </p>
+</blockquote>
+<p>开启自旋</p>
+<h4 id="开启-JVM-自动锁消除"><a href="#开启-JVM-自动锁消除" class="headerlink" title="开启 JVM 自动锁消除"></a>开启 JVM 自动锁消除</h4><p>有一些程序不必要使用锁，例如局部变量，JVM 可以优化为开启自旋锁。</p>
+<blockquote>
+<p>-server -XX:+DoEsccapeAnalysis -XX:+EliminateLocks </p>
+</blockquote>
+<p>开启逃逸分析和锁消除。</p>
+<h4 id="开启锁偏向"><a href="#开启锁偏向" class="headerlink" title="开启锁偏向"></a>开启锁偏向</h4><p>如果没有发生竞争就进入锁偏向模式，关闭同步操作，用于优化不激烈的锁场景，这个优化场景意义不大。</p>
+<blockquote>
+<p>-XX:+UseBiasedLocking </p>
+</blockquote>
+<h3 id="无锁并行计算设计"><a href="#无锁并行计算设计" class="headerlink" title="无锁并行计算设计"></a>无锁并行计算设计</h3><p>无锁的算法实际上就是一些乐观锁 CAS、COW等。</p>
+<h4 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h4><p>在 atomic 包下有一些原子操作类，大量使用 CAS 技术，非常有用。</p>
+<p>例如 AtomicInteger.addAndGet() 通过一个无穷循环 CAS 直到成功。</p>
+<h4 id="Amino-框架"><a href="#Amino-框架" class="headerlink" title="Amino 框架"></a>Amino 框架</h4><p>提供了一些成熟的无锁数据结构。</p>
 <h2 id="JVM-调优"><a href="#JVM-调优" class="headerlink" title="JVM 调优"></a>JVM 调优</h2><p>JVM 输出调试信息</p>
 <blockquote>
 <p>-XX:+PrintGCDetails</p>
