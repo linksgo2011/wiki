@@ -97,4 +97,5 @@ toc: true
 - 擅长 Java 和大数据相关的博主 https://blog.csdn.net/vbirdbest
 - 擅长 java、运维、大数据的博主，非常擅长收藏 https://www.cnblogs.com/jpfss/
 - 擅长高并发和 GC 调优、MySQL、网络、微服务  https://www.cnblogs.com/duanxz
+- 一个年轻的兄弟，擅长微服务 https://www.cnblogs.com/sxdcgaq8080/p/12525626.html
 

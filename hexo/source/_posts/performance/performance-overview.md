@@ -618,15 +618,108 @@ JVM 会试图将内存尽可能限制在 -Xms 中。因此，当内存实际使�
 
 
 
-TODO 
+####  jdk 垃圾回收器设置策略
 
 
+
+- OpenJDK  8 使用 Parallel GC 
+- OpenJDK 8 提供了Parallel GC、CMS 和 G1 三种收集算法
+
+比较
+
+- Parallel GC  JDK 默认设置，关注吞吐量，服务器调优优先推荐使用这个值
+- G1 关注暂停
+- CMS 关注 gc 时间
 
 ### 调优方法
 
 
 
+调优需要搞清楚自己想要什么，这是最重要的，通过基准测试，明白现状，结合硬件平台和业务类型调优。
+
+
+
+调优往往有几个目的：
+
+- 提高吞吐量
+- 减少停顿
+- 出现内存泄漏、死锁等问题需要查找
+
+
+
+调优建立在一个合理的背景下，JDK 默认的设置能满足大部分场景需要，是比较均衡的，一般来说无需调优。兼顾内存分配的灵活性（多个java应用同时存在）、吞吐量、停顿时间。只有需要侧重调整的时候才需要调优。例如为了高吞吐量，内存分配灵活性就没意义了，让单个java应用初始堆大小直接设置为预期值，可以减少 gc 次数。另外为了高吞吐量，在服务器开发中停顿可以在一定程度上容忍，可以选择对提高吞吐量友好的 gc 回收器。
+
+一般来说，提高吞吐量、减少停顿是比较矛盾的两个指标。
+
+另外，应用性能下降和内存泄漏、死锁等问题有关，解决问题后，性能就会极大的提升。
+
+
+
+#### 提高吞吐量配置方案
+
+在服务器开发中，吞吐量比系统短时间停顿更重要，优先选用 Parallel GC ，合理设置堆大小。以 8G4U 的服务器来说，如果只部署单应用，可以参考以下参数：
+
+```shell
+java -Xmx7800m -Xms7800 -Xmn4g -Xss128k -XX:+UseParallelGC -XX:ParallelGC-Threads=4 -XX:+UseParallelOldGC
+```
+
+- -Xmx7800m -Xms7800 设置最大堆等于初始值，让内存全部给 java 应用使用，让最大堆等于初始值可以避免 运行初期堆内存不足造成的频繁GC。
+- -Xmn4g 这是新生代大小，这个需要结合程序设计，以及内存分析结果设置
+- -Xss128k 尽量减小线程栈，可以支持更多的线程
+- -XX:+UserParallelGC 新生代使用 UserParallelGC 
+- -XX:+UserParallelOldGC 老年代使用 UserParallelGC 
+
+
+
+#### 减低停顿时间的案例
+
+对于老年代使用 CMS G减低停顿。尽可能让对象留在新生代，然后被 Minor GC回收，因此设置 eden 和 survivor 区的比例为 8:1，让对象尽可能留在新生代，如果 survivor 不够用，会直接进入老年代。
+
+```shell
+java -Xmx7800m -Xms7800 -Xmn4g -Xss128k  -XX:ParallelGC-Threads=4 -XX:+ConcMarkSweepGC -XX:+UseParNewGC -XX:SurvivorRatio=8:1 -XX:TargetSurvivor-Ratio=90 -XX:MaxTenuringThreshold=30
+```
+
+- -Xmx7800m -Xms7800 -Xmn4g -Xss128k 设置堆和线程栈
+- -XX:+UseParNewGC 为新生代使用 ParallelGC
+- -XX:+ConcMarkSweepGC  整体使用 CMS
+- -XX:SurvivorRatio=8:1 Survivor 比例为 80%
+- -XX:TargetSurvivor-Ratio=90 Survivor可用比例，默认是 50%，如果超过这个值就会向老年代压缩。
+- -XX:ParallelGC-Threads=4 GC 回收线程
+- -XX:MaxTenuringThreshold=30 设置年轻对象进入老年代的阈值，默认是 15，就是15次 Minor GC依然存活就会进入老年代，这里设置为30，降低进入老年代的概率。
+
+
+
 ### 实用的 JVM 参数
+
+查看  GC 分配情况
+
+> java -XX:+PrintGCDetails -version
+
+```shell
+[root@localhost ~]# java -XX:+PrintGCDetails -version
+openjdk version "1.8.0_131"
+OpenJDK Runtime Environment (build 1.8.0_131-b12)
+OpenJDK 64-Bit Server VM (build 25.131-b12, mixed mode)
+Heap
+ PSYoungGen      total 17408K, used 922K [0x00000000ece00000, 0x00000000ee100000, 0x0000000100000000)
+  eden space 15360K, 6% used [0x00000000ece00000,0x00000000ecee6810,0x00000000edd00000)
+  from space 2048K, 0% used [0x00000000edf00000,0x00000000edf00000,0x00000000ee100000)
+  to   space 2048K, 0% used [0x00000000edd00000,0x00000000edd00000,0x00000000edf00000)
+ ParOldGen       total 39936K, used 0K [0x00000000c6a00000, 0x00000000c9100000, 0x00000000ece00000)
+  object space 39936K, 0% used [0x00000000c6a00000,0x00000000c6a00000,0x00000000c9100000)
+ Metaspace       used 2418K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 233K, capacity 384K, committed 384K, reserved 1048576K
+```
+
+查看 GC 参数
+
+```shell
+[root@localhost ~]# java -XX:+PrintCommandLineFlags -version
+-XX:InitialHeapSize=60045120 -XX:MaxHeapSize=960721920 -XX:+PrintCommandLineFlags -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseParallelGC 
+openjdk version "1.8.0_131"
+OpenJDK Runtime Environment (build 1.8.0_131-b12)
+OpenJDK 64-Bit Server VM (build 25.131-b12, mixed mode)
+```
 
 
 
@@ -649,6 +742,388 @@ TODO
 > -XX: OnOutOfMemoryError=./restart.sh
 
 可以在发生内存溢出时候重启服务, 或者通知
+
+
+
+### 常用的 JVM 工具
+
+
+
+#### jps 
+
+列出 java 的进程，类似于 ps 命令，不过只对 java 进程起作用，通过 jps 命令可以方便的查看 java 的进程启动类、传入参数和 JVM 参数等信息。
+
+```shell
+[root@localhost software]# jps 
+29328 Jps
+1734 jenkins.war
+711 spring-boot-boilerplate.jar
+1502 UnixLauncher	
+```
+
+参数 -m 可以输出传递给 Main 函数的参数:
+
+```shell g
+1734 jenkins.war --logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --daemon --httpPort=8000 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20 --prefix=
+711 spring-boot-boilerplate.jar --spring.profiles.active=dev
+29369 Jps -m
+1502 UnixLauncher start 9d17dc87   org.sonatype.nexus.karaf.NexusMain
+```
+
+参数 -l 可以输出主函数的完整路径: 
+
+```	shell
+[root@localhost software]# jps -v 
+1734 jenkins.war -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -Djenkins.install.runSetupWizard=false -DJENKINS_HOME=/var/lib/jenkins
+711 spring-boot-boilerplate.jar
+29389 Jps -Dapplication.home=/opt/oracle/jdk1.8.0_131 -Xms8m
+1502 UnixLauncher -Dinstall4j.jvmDir=/opt/oracle/jdk1.8.0_131 -Dexe4j.moduleName=/usr/local/nexus/bin/nexus -XX:+UnlockDiagnosticVMOptions -Dinstall4j.launcherId=245 -Dinstall4j.swt=false -Di4jv=0 -Di4jv=0 -Di4jv=0 -Di4jv=0 -Di4jv=0 -Xms1200M -Xmx1200M -XX:MaxDirectMemorySize=2G -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass -XX:+LogVMOutput -XX:LogFile=/usr/local/nexus/sonatype-work/nexus3/log/jvm.log -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dkaraf.home=. -Dkaraf.base=. -Dkaraf.etc=etc/karaf -Djava.util.logging.config.file=etc/karaf/java.util.logging.properties -Dkaraf.data=/usr/local/nexus/sonatype-work/nexus3 -Djava.io.tmpdir=/usr/local/nexus/sonatype-work/nexus3/tmp -Dkaraf.startLocalConsole=false -Di4j.vpt=true
+```
+
+参数  -v 可以显示传递给 JVM 的参数:
+
+```shell
+[root@localhost software]# jps -v 
+29411 Jps -Dapplication.home=/opt/oracle/jdk1.8.0_131 -Xms8m
+1734 jenkins.war -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -Djenkins.install.runSetupWizard=false -DJENKINS_HOME=/var/lib/jenkins
+711 spring-boot-boilerplate.jar			  	
+```
+
+
+
+#### jstat 命令
+
+jstat 可以查看某个 java 进程运行时的工具，非常强大，可以非常详细的查看 Java 应用程序的堆使用情况，以及 GC 情况。
+
+例如，每秒钟统计一次类装载信息，共统计两次：
+
+```shell
+[root@localhost software]# jstat -class -t 711 1000 2
+Timestamp       Loaded  Bytes  Unloaded  Bytes     Time   
+       998981.4  14249 25586.8        0     0.0     127.05
+       998982.5  14249 25586.8        0     0.0     127.05
+```
+
+
+
+查看 JIT 编译信息:
+
+```shell
+[root@localhost software]# jstat -compiler -t 711
+Timestamp       Compiled Failed Invalid   Time   FailedType FailedMethod
+       999312.5     8453      2       0   115.88          1 org/springframework/core/annotation/AnnotatedElementUtils searchWithGetSemanticsInAnnotations	
+```
+
+查看 GC 信息:
+
+```shell
+[root@localhost software]# jstat -gc 711
+ S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU    CCSC   CCSU   YGC     YGCT    FGC    FGCT     GCT   
+14848.0 9728.0  0.0   9427.4 99840.0  26216.5   73728.0    54161.6   76544.0 72788.4 10240.0 9518.9     49    2.662   3      2.449    5.111
+```
+
+查看 GC 和各个代的当前大小：
+
+```shell
+[root@localhost software]# jstat -gccapacity 711
+ NGCMN    NGCMX     NGC     S0C   S1C       EC      OGCMN      OGCMX       OGC         OC       MCMN     MCMX      MC     CCSMN    CCSMX     CCSC    YGC    FGC 
+ 19456.0 313344.0 129536.0 14848.0 9728.0  99840.0    39936.0   626688.0    73728.0    73728.0      0.0 1116160.0  76544.0      0.0 1048576.0  10240.0     49     3
+```
+
+查看新生代 gc 信息：
+
+```shell
+[root@localhost software]# jstat -gcnew 711
+ S0C    S1C    S0U    S1U   TT MTT  DSS      EC       EU     YGC     YGCT  
+14848.0 9728.0    0.0 9427.4 15  15 14848.0  99840.0  26466.1     49    2.662
+```
+
+查看老年代 gc 信息:
+
+```shell 
+[root@localhost software]# jstat -gcold 711
+   MC       MU      CCSC     CCSU       OC          OU       YGC    FGC    FGCT     GCT   
+ 76544.0  72788.4  10240.0   9518.9     73728.0     54161.6     49     3    2.449    5.111
+```
+
+查看老年代容量信息:
+
+```shell 
+[root@localhost software]# jstat -gcoldcapacity 711
+   OGCMN       OGCMX        OGC         OC       YGC   FGC    FGCT     GCT   
+    39936.0    626688.0     73728.0     73728.0    49     3    2.449    5.111
+```
+
+查看 gc 信息:
+
+```shell
+[root@localhost software]# jstat -gcutil 711
+  S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT   
+  0.00  96.91  27.43  73.46  95.09  92.96     49    2.662     3    2.449    5.111
+```
+
+
+
+#### jinfo 
+
+jinfo 可以查看应用的拓展参数，甚至修改。
+
+查看是否开启 GC 信息打印:
+
+```shell
+[root@localhost software]# jinfo -flag PrintGCDetails 711
+-XX:-PrintGCDetails
+```
+
+说明没有开启 GC 信息的打印，通过 jinfo 临时开启:
+
+```shell
+[root@localhost software]# jinfo -flag +PrintGCDetails 711
+[root@localhost software]# jinfo -flag PrintGCDetails 711
+-XX:+PrintGCDetails
+```
+
+#### jmap
+
+用于 dump 出堆的快照和统计信息
+
+
+
+```shell
+[root@localhost software]# jmap -histo 711 > /tmp/711.txt
+[root@localhost software]# cat /tmp/711.txt 
+
+ num     #instances         #bytes  class name
+----------------------------------------------
+   1:        139944       15081784  [C
+   2:         21776       14906296  [B
+   3:         10836       11056152  [I
+   4:           722       11023664  [J
+   5:        172795        5529440  java.util.HashMap$Node
+   6:        128993        3095832  java.lang.String
+   7:         33636        2959968  java.lang.reflect.Method
+   8:         70700        2262400  com.mysql.cj.conf.BooleanProperty
+   9:         15974        1987576  [Ljava.util.HashMap$Node;
+  10:         56835        1818720  java.util.concurrent.ConcurrentHashMap$Node
+  11:         15264        1685896  java.lang.Class
+
+```
+
+
+
+更有用的是导出堆信息:
+
+```shell
+[root@localhost software]# jmap -dump:format=b,file=./711.hprof 711
+Dumping heap to /opt/software/711.hprof ...
+Heap dump file created
+[root@localhost software]# ls
+711.hprof
+```
+
+快照信息可以通过 Visual VM 和 jhat 命令分析。
+
+#### jhat
+
+jhat 可以分析 jmap 导出的文件,然后启动一个 HTTP 服务器展示分析结果。
+
+```shell
+[root@localhost software]# jhat 711.hprof 
+Reading from 711.hprof...
+Dump file created Fri Mar 20 22:17:18 CST 2020
+Snapshot read, resolving...
+Resolving 1337950 objects...
+Chasing references, expect 267 dots...........................................................................................................................................................................................................................................................................
+Eliminating duplicate references...........................................................................................................................................................................................................................................................................
+Snapshot resolved.
+Started HTTP server on port 7000
+Server is ready.
+```
+
+#### jstack 
+
+可以打印出栈信息，包括线程、锁的信息，如果发现死锁信息，可以自动识别：
+
+```
+[root@localhost software]# jstack -l 711
+2020-03-20 22:21:40
+Full thread dump OpenJDK 64-Bit Server VM (25.131-b12 mixed mode):
+
+"Attach Listener" #10160 daemon prio=9 os_prio=0 tid=0x00007f65840a8800 nid=0x74dc waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"lettuce-eventExecutorLoop-1-3" #49 daemon prio=5 os_prio=0 tid=0x00007f65b92e7800 nid=0x934 waiting on condition [0x00007f65607e8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000c7b3d718> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:238)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+   Locked ownable synchronizers:
+	- None
+```
+
+#### jstatd 
+
+jstatd 可以启动一个远程调试端口，允许 jps、jstat 等工具远程访问，因为权限的原因，直接使用 jstatd 会报错。需要配置 policy 文件。
+
+使用 vim 创建一个文件如下：
+
+> vim jstatd.all.policy 
+
+```shell
+grant codebase "file:/opt/oracle/jdk1.8.0_131/lib/tools.jar"{
+ permission java.security.AllPermission;
+};
+```
+
+```shell
+[root@localhost ~]# jstatd -J-Djava.security.policy=./jstatd.all.policy
+```
+
+默认开启端口 1099 
+
+```shell 
+[root@localhost ~]# jps localhost:1099
+31136 Jps
+1734 jenkins.war
+711 spring-boot-boilerplate.jar
+1502 UnixLauncher
+```
+
+
+
+这样可以让调试非常方便，同时可视化的分析工具也可以通过个 jstatd 提供的服务连接到需要分析的服务器。
+
+
+
+#### hprof 工具
+
+除了使用 jstatd  让目标服务器提供一个远程服务用于调试之外，还可以让 java 应用通过 agent 的方式启动，得到该应用的调试信息。
+
+>  Java -agentlib:hprof=heap=dump,format=b,file=/tmp/app.hprof -jar  xxx.jar
+
+
+
+除了 hprof 之外，市面上还有一些远程监控 java 应用的 apm 工具和平台，例如听云 apm。
+
+
+
+#### spring actuator
+
+spring boot 的项目可以引入 spring-actuator，监控应用。actuator 功能之一就是导出堆信息 。
+
+如果使用 maven 作为构建工具，引入包：
+
+```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+```
+
+spring-actuator 会提供很多用于度量项目的接口，其中可使用 heapdump 端口导出堆信息
+
+> wget http://localhost:1001/monitor/actuator/heapdump
+
+然后通过 VisualVM 或者 MAT 分析
+
+
+
+####  MAT  内存分析工具
+
+TODO
+
+#### VisualVM 分析工具
+
+TODO
+
+
+
+## 操作系统调优 
+
+
+
+### linux 常用调优命令
+
+
+
+####  Top
+
+> top -hv | -bcHiOSs -d secs -n max -u|U user -p pid(s) -o field -w [cols
+
+
+
+使用 top 可以观察各个进程对 CPU 的占用和内存使用情况。
+
+
+
+#### sar 
+
+sar 可以对内存和 CPU 的使用情况进行采样
+
+统计 CPU 情况，每秒钟采样一次，共计采样 3 次
+
+> Sar -u 1 3
+
+
+
+获取内存使用情况
+
+> sar -r 1 3
+
+
+
+获取 I/O 信息
+
+> L sar -b 1 3 
+
+
+
+#### vmstart 
+
+vm start 是一个功能更为齐全的工具，需要单独安装，也可以安装 busybox 
+
+> vmstat 1 3
+
+
+
+#### Iostat
+
+> iostat 1 2
+
+可以查看CPU和磁盘IO信息
+
+
+
+#### pidstat 
+
+可以查询某个线程的状态，找出那个线程造成了大量的IO、CPU使用率，然后通过 jps、jstack 分析该线程的 IO情况。
+
+
+
+对线程 1520 cpu 使用率 每秒钟采样 1 次，总计采样 3次。
+
+> pidstat -p 1520 -u 1 3
+
+对线程 1520 io 使用率 每秒钟采样 1 次，总计采样 3次。
+
+> pidstat -p 1520 -d -t 1 3
+
+
+
+
+
+
 
 
 
