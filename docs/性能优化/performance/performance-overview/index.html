@@ -17,7 +17,11 @@ JVM 调优
 JMH Java 性能测试
 数据性能测试
 
-程序设计优化缓冲技术缓冲技术用于协调不同系统之间的性能差异。例如文件流写入磁盘的速度慢，程序就会阻塞，缓冲像一个漏斗，先存放到内存，应用程序可以完成操作">
+常用指标和计算公式QPS 计算公式
+QPS = (1 / t ) * n
+
+一秒内可以处理的请求数量称之为服务器的QPS。
+上面我们计算了10000个请">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -89,6 +93,13 @@ JMH Java 性能测试
 <li>JMH Java 性能测试</li>
 <li>数据性能测试</li>
 </ul>
+<h3 id="常用指标和计算公式"><a href="#常用指标和计算公式" class="headerlink" title="常用指标和计算公式"></a>常用指标和计算公式</h3><h4 id="QPS-计算公式"><a href="#QPS-计算公式" class="headerlink" title="QPS 计算公式"></a>QPS 计算公式</h4><blockquote>
+<p>QPS = (1 / t ) * n</p>
+</blockquote>
+<p>一秒内可以处理的请求数量称之为服务器的QPS。</p>
+<p>上面我们计算了10000个请求的耗时，那么反过来计算每秒处理多少请求则</p>
+<p>如果一次性可以处理100个请求，每个请求耗时100毫秒，则qps = 1000</p>
+<p>如果一次性可以处理50个请求，每个请求耗时200毫秒，则qps = 250</p>
 <h2 id="程序设计优化"><a href="#程序设计优化" class="headerlink" title="程序设计优化"></a>程序设计优化</h2><h3 id="缓冲技术"><a href="#缓冲技术" class="headerlink" title="缓冲技术"></a>缓冲技术</h3><p>缓冲技术用于协调不同系统之间的性能差异。例如文件流写入磁盘的速度慢，程序就会阻塞，缓冲像一个漏斗，先存放到内存，应用程序可以完成操作，缓冲慢慢释放内容到文件。缓冲可以大幅度提高 IO 效率。</p>
 <h4 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h4><p>用于包装 writer，构造函数的第二个参数可以指定缓冲区大小，默认为 8K。</p>
 <pre><code class="java">BufferedWriter bw = new BufferedWriter(new FileWriter(new File(&quot;test.txt&quot;))) ;
@@ -669,6 +680,10 @@ Full thread dump OpenJDK 64-Bit Server VM (25.131-b12 mixed mode):
 	
 	
 		
+			
+		
+	
+		
 	
 		
 	
@@ -1101,7 +1116,7 @@ Full thread dump OpenJDK 64-Bit Server VM (25.131-b12 mixed mode):
 	
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/性能优化/performance/redis-performance/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
