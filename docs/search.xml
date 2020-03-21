@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title>Java web 方向技术核心</title>
+      <link href="/%E9%9D%A2%E8%AF%95/interview/java-web-skill/"/>
+      <url>/%E9%9D%A2%E8%AF%95/interview/java-web-skill/</url>
+      
+        <content type="html"><![CDATA[<p>职场上，技术应该像一个同心圆一样，核心的部分代表你有没有饭吃，周围的东西代表了你能比别人做的好。首先要保证核心技能，再拓展周围技能。对程序员来说，核心技术就是编程语言、数据库、linux等，周边技能像管理、英语、沟通等属于加分项。</p><p>如果你定位是 Java 程序员，那么知识结构应该如下：</p><table><thead><tr><th></th><th>技能点</th><th>学习材料</th><th>验收</th></tr></thead><tbody><tr><td>Nice to have</td><td>英语<br><br>团队管理<br>技术架构<br><br>性能优化<br><br>Devops<br>DDD<br>UML<br>JVM 调优</td><td></td><td>能做到 TL ，并能承担海外项目主要能力</td></tr><tr><td>Java 应用层</td><td>Java <br>linux<br>spring boot<br>MySQL<br>Redis<br>RocketMQ</td><td></td><td>成为合格的 Java developer<br>能完成：<br>日常开发<br>DEBUG<br>总结这些技术的脚手架<br>对源码有一定了解</td></tr><tr><td>计算机科学层</td><td>计算机网络<br>数据结构<br>算法<br>操作系统<br>网络协议</td><td></td><td>内功，熟悉各种：<br>网络协议<br>基本算法<br>操作系统结构<br>数据库原理<br></td></tr></tbody></table><p>学习的过程应该是一个 PDCA 闭环，计划、学习、检查、处理形成一个闭环。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>值得学习的一些博客</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/well-blogs/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/well-blogs/</url>
+      
+        <content type="html"><![CDATA[<h2 id="博客收集"><a href="#博客收集" class="headerlink" title="博客收集"></a>博客收集</h2><p>- </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title></title>
       <link href="/uncategorized/redis/distributed-lock/"/>
       <url>/uncategorized/redis/distributed-lock/</url>
@@ -891,23 +925,6 @@
       <categories>
           
           <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>值得学习的一些博客</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/well-blogs/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/well-blogs/</url>
-      
-        <content type="html"><![CDATA[<h2 id="博客收集"><a href="#博客收集" class="headerlink" title="博客收集"></a>博客收集</h2><ul><li>一位大神谈学习 <a href="https://www.cnblogs.com/maowang1991/p/3572377.html#4284615" target="_blank" rel="noopener">https://www.cnblogs.com/maowang1991/p/3572377.html#4284615</a></li><li>一个 Java 后端作者的笔记，适合 Java 中级看 <a href="https://www.cnblogs.com/wangdaijun/" target="_blank" rel="noopener">https://www.cnblogs.com/wangdaijun/</a></li><li>一位大数据相关的博主，对 linux 研究非常到位 <a href="https://www.cnblogs.com/felixzh/" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
           
       </categories>
       
@@ -2802,11 +2819,62 @@
     </entry>
     
     <entry>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
       
         <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React学习体系</title>
+      <link href="/react/react/react-crouse%20map/"/>
+      <url>/react/react/react-crouse%20map/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
       
       
       <categories>
@@ -2836,40 +2904,6 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React学习体系</title>
-      <link href="/react/react/react-crouse%20map/"/>
-      <url>/react/react/react-crouse%20map/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考的几家课程体系："><a href="#参考的几家课程体系：" class="headerlink" title="参考的几家课程体系："></a>参考的几家课程体系：</h2><ul><li><a href="http://www.zhufengpeixun.cn/react/index.html" target="_blank" rel="noopener">http://www.zhufengpeixun.cn/react/index.html</a> </li><li><a href="http://www.jikexueyuan.com/course/reactjs/" target="_blank" rel="noopener">http://www.jikexueyuan.com/course/reactjs/</a></li><li><a href="https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT" target="_blank" rel="noopener">https://roadtoreact.com/course-details?courseId=THE_ROAD_TO_LEARN_REACT</a></li></ul><h2 id="课程列表"><a href="#课程列表" class="headerlink" title="课程列表"></a>课程列表</h2><ol><li>环境搭建和ES基础<ul><li>前端开发历史沿革</li><li>开发环境</li><li>Gitflow工作流</li><li>ES6新特性介绍</li></ul></li><li>webpack工程化前端项目<ul><li>Webpack的使用</li><li>Babel使用</li><li>测试环境的准备</li><li>JS linter</li><li>Webpack各种Loader配置</li></ul></li><li>React基础<ul><li>React基本思想</li><li>JSX语法</li><li>组件生命周期</li><li>Children使用场景</li><li>高阶组件</li></ul></li><li>React生态和周边工具库<ul><li>react-router前端路由管理</li><li>React中表单数据收集、验证、回写</li><li>React文件上传</li><li>React其他开源组件使用</li><li>Enzyme测试React组件</li><li>React组件文档工具storybook</li></ul></li><li>Redux管理以及API集成<ul><li>理解redux</li><li>react-redux使用</li><li>Logger中间件</li><li>Tthunk中间件实现异步action</li><li>Redux调试工具</li></ul></li><li>CI/CD部署上线以及版本管理<ul><li>CI工具介绍</li><li>多环境配置</li><li>使用semantic-release进行版本管理</li><li>私有仓库</li></ul></li></ol><p>PS: 测试和项目实践贯穿整个过程</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Python 入门</title>
       <link href="/python/python/python-basic/"/>
       <url>/python/python/python-basic/</url>
@@ -2887,28 +2921,11 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -2955,11 +2972,11 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
       
       
       <categories>
@@ -3057,16 +3074,16 @@
     </entry>
     
     <entry>
-      <title>Java 对象克隆</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
+      <title>Mysql 基本管理命令</title>
+      <link href="/mysql/mysql/mysql-baisc%20operation/"/>
+      <url>/mysql/mysql/mysql-baisc%20operation/</url>
       
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> mysql </category>
           
       </categories>
       
@@ -3091,16 +3108,16 @@
     </entry>
     
     <entry>
-      <title>Mysql 基本管理命令</title>
-      <link href="/mysql/mysql/mysql-baisc%20operation/"/>
-      <url>/mysql/mysql/mysql-baisc%20operation/</url>
+      <title>Java 对象克隆</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
       
-        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
       
       
       <categories>
           
-          <category> mysql </category>
+          <category> java </category>
           
       </categories>
       
@@ -3125,23 +3142,6 @@
     </entry>
     
     <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Mock工具 wiremock</title>
       <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
       <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
@@ -3152,6 +3152,40 @@
       <categories>
           
           <category> 质量保证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
+      
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java中的Exception"><a href="#Java中的Exception" class="headerlink" title="Java中的Exception"></a>Java中的Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
           
       </categories>
       
@@ -3176,16 +3210,16 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> java </category>
           
       </categories>
       
@@ -3227,16 +3261,16 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>wiki 使用方法</title>
+      <link href="/help/how-to-use-this-wiki/"/>
+      <url>/help/how-to-use-this-wiki/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="关于-hexo"><a href="#关于-hexo" class="headerlink" title="关于 hexo"></a>关于 hexo</h2><p>本 wiki 的思路为使用github作为文档、代码的版本管理,使用 hexo 来生成静态网站。摒弃了博客的写作方式,使用了 markdown 和 wiki 的方式,</p><p>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h2 id="更多-Hexo-的资料"><a href="#更多-Hexo-的资料" class="headerlink" title="更多 Hexo 的资料"></a>更多 Hexo 的资料</h2><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li><li><a href="https://github.com" target="_blank" rel="noopener">Github</a></li></ul><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code># 一级标题## 二级标题### 三级标题##### 四级标题###### 五级标题###### 六级标题</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><pre><code>- Red- Green- Blue* Red* Green* Blue+ Red+ Green+ Blue</code></pre><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><pre><code>&gt; 这是一个引用</code></pre><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><pre><code>图片：![]()    ![图片文本(可忽略)](图片地址)链接：[]()     [链接文本](链接地址)</code></pre><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><pre><code>| 标题            |      标题       |            标题 || :-------------- | :-------------: | --------------: || 居左测试文本    |  居中测试文本   |    居右测试文本 || 居左测试文本1   |  居中测试文本2  |   居右测试文本3 || 居左测试文本11  | 居中测试文本22  |  居右测试文本33 || 居左测试文本111 | 居中测试文本222 | 居右测试文本333 |</code></pre><h2 id="参考其他大神博客"><a href="#参考其他大神博客" class="headerlink" title="参考其他大神博客"></a>参考其他大神博客</h2><ul><li>擅长 Java 和大数据相关的博主 <a href="https://blog.csdn.net/vbirdbest" target="_blank" rel="noopener">https://blog.csdn.net/vbirdbest</a></li><li>擅长 java、运维、大数据的博主，非常擅长收藏 <a href="https://www.cnblogs.com/jpfss/" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/</a></li><li>擅长高并发和 GC 调优、MySQL、网络、微服务  <a href="https://www.cnblogs.com/duanxz" target="_blank" rel="noopener">https://www.cnblogs.com/duanxz</a></li><li>一个年轻的兄弟，擅长微服务 <a href="https://www.cnblogs.com/sxdcgaq8080/p/12525626.html" target="_blank" rel="noopener">https://www.cnblogs.com/sxdcgaq8080/p/12525626.html</a></li><li>一位大神谈学习 <a href="https://www.cnblogs.com/maowang1991/p/3572377.html#4284615" target="_blank" rel="noopener">https://www.cnblogs.com/maowang1991/p/3572377.html#4284615</a></li><li>一个 Java 后端作者的笔记，适合 Java 中级看 <a href="https://www.cnblogs.com/wangdaijun/" target="_blank" rel="noopener">https://www.cnblogs.com/wangdaijun/</a></li><li>一位大数据相关的博主，对 linux 研究非常到位 <a href="https://www.cnblogs.com/felixzh/" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/</a></li></ul>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> help </category>
           
       </categories>
       
@@ -3244,16 +3278,16 @@
     </entry>
     
     <entry>
-      <title>wiki 使用方法</title>
-      <link href="/help/how-to-use-this-wiki/"/>
-      <url>/help/how-to-use-this-wiki/</url>
+      <title>H5 Cordova打包方案</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
       
-        <content type="html"><![CDATA[<h2 id="关于-hexo"><a href="#关于-hexo" class="headerlink" title="关于 hexo"></a>关于 hexo</h2><p>本 wiki 的思路为使用github作为文档、代码的版本管理,使用 hexo 来生成静态网站。摒弃了博客的写作方式,使用了 markdown 和 wiki 的方式,</p><p>从首页的导航链接直接进入所有的文档,配合搜索框一部了然,用于建立一个知识地图,因此能快速的编写和寻找需要的资料。</p><h2 id="更多-Hexo-的资料"><a href="#更多-Hexo-的资料" class="headerlink" title="更多 Hexo 的资料"></a>更多 Hexo 的资料</h2><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li><li><a href="https://github.com" target="_blank" rel="noopener">Github</a></li></ul><h2 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><p>创建文章同名目录,然后放置图片或者其他资源即可使用相对路径访问</p><p><img src="/help/how-to-use-this-wiki/05a4c81a-8793-4baa-92a1-94b28aece873.jpg" alt=""></p><p><a href="hello-world.md">测试连接</a></p><h2 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code># 一级标题## 二级标题### 三级标题##### 四级标题###### 五级标题###### 六级标题</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><pre><code>- Red- Green- Blue* Red* Green* Blue+ Red+ Green+ Blue</code></pre><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><pre><code>&gt; 这是一个引用</code></pre><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><pre><code>图片：![]()    ![图片文本(可忽略)](图片地址)链接：[]()     [链接文本](链接地址)</code></pre><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><pre><code>| 标题            |      标题       |            标题 || :-------------- | :-------------: | --------------: || 居左测试文本    |  居中测试文本   |    居右测试文本 || 居左测试文本1   |  居中测试文本2  |   居右测试文本3 || 居左测试文本11  | 居中测试文本22  |  居右测试文本33 || 居左测试文本111 | 居中测试文本222 | 居右测试文本333 |</code></pre><h2 id="参考其他大神博客"><a href="#参考其他大神博客" class="headerlink" title="参考其他大神博客"></a>参考其他大神博客</h2><ul><li>擅长 Java 和大数据相关的博主 <a href="https://blog.csdn.net/vbirdbest" target="_blank" rel="noopener">https://blog.csdn.net/vbirdbest</a></li><li>擅长 java、运维、大数据的博主，非常擅长收藏 <a href="https://www.cnblogs.com/jpfss/" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/</a></li><li>擅长高并发和 GC 调优、MySQL、网络、微服务  <a href="https://www.cnblogs.com/duanxz" target="_blank" rel="noopener">https://www.cnblogs.com/duanxz</a></li><li>一个年轻的兄弟，擅长微服务 <a href="https://www.cnblogs.com/sxdcgaq8080/p/12525626.html" target="_blank" rel="noopener">https://www.cnblogs.com/sxdcgaq8080/p/12525626.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
       
       
       <categories>
           
-          <category> help </category>
+          <category> 前端工程 </category>
           
       </categories>
       
@@ -3295,11 +3329,11 @@
     </entry>
     
     <entry>
-      <title>H5 Cordova打包方案</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
+      <title>前端面试tips</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -3317,23 +3351,6 @@
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
       
         <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端工程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>前端面试tips</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
-      
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -3465,23 +3482,6 @@
     </entry>
     
     <entry>
-      <title>Ansible 入门和使用</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
-      
-        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>直接执行 ad-hoc 命令</p><blockquote><p>ansible [hosts] comamnd -a “echo xxx”;</p></blockquote><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Lambda 入门</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
@@ -3499,16 +3499,16 @@
     </entry>
     
     <entry>
-      <title>VIM 简明命令</title>
-      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
-      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
+      <title>Ansible 入门和使用</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/ansible/</url>
       
-        <content type="html"><![CDATA[<p><img src="/开发工具/tool/vim-commands/vi-vim-cheat-sheet-sch.gif" alt=""></p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li>ESC 健进入命令模式</li><li>i/a 进入插入模式</li><li>:/ 进入退出模式</li></ul><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-vim.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>直接执行 ad-hoc 命令</p><blockquote><p>ansible [hosts] comamnd -a “echo xxx”;</p></blockquote><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>官网: <a href="https://www.ansible.com/get-started" target="_blank" rel="noopener">https://www.ansible.com/get-started</a></li><li>工作原理:<a href="https://www.ansible.com/how-ansible-works" target="_blank" rel="noopener">https://www.ansible.com/how-ansible-works</a></li><li>下载和安装:<a href="http://docs.ansible.com/ansible/latest/intro_installation.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/intro_installation.html</a></li><li>编写自己的脚本:<a href="http://docs.ansible.com/ansible/latest/playbooks.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks.html</a></li><li><p>一些ansible 例子:<a href="https://github.com/ansible/ansible-examples" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples</a></p></li><li><p>使用ansible playbook部署LAMP<br><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple" target="_blank" rel="noopener">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></p></li><li><p>w3school 的一个教程 <a href="https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/automate_with_ansible/automate_with_ansible-db6727oq.html</a></p></li><li><p>我的常用脚本仓库 <a href="https://github.com/linksgo2011/deployment-automation" target="_blank" rel="noopener">https://github.com/linksgo2011/deployment-automation</a></p></li><li><p>ansible role 市场 <a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a>  </p></li></ul><h3 id="检查模式-“Dry-Run”"><a href="#检查模式-“Dry-Run”" class="headerlink" title="检查模式(“Dry Run”)"></a>检查模式(“Dry Run”)</h3><p>ansible version 1.1 后提供了一种dryrun环境，使得我们可以测试我们的脚本而不造成任何changes</p><p><a href="http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/playbooks_checkmode.html#id1</a></p><p>Example:</p><pre><code>ansible-playbook foo.yml --check</code></pre><h3 id="Ansible-test"><a href="#Ansible-test" class="headerlink" title="Ansible test"></a>Ansible test</h3><p><a href="http://docs.ansible.com/ansible/latest/dev_guide/testing.html" target="_blank" rel="noopener">http://docs.ansible.com/ansible/latest/dev_guide/testing.html</a></p>]]></content>
       
       
       <categories>
           
-          <category> 开发工具 </category>
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -3526,6 +3526,23 @@
       <categories>
           
           <category> 自我管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>VIM 简明命令</title>
+      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
+      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/开发工具/tool/vim-commands/vi-vim-cheat-sheet-sch.gif" alt=""></p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li>ESC 健进入命令模式</li><li>i/a 进入插入模式</li><li>:/ 进入退出模式</li></ul><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-vim.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
           
       </categories>
       

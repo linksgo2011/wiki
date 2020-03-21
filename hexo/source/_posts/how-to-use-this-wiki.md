@@ -98,4 +98,7 @@ toc: true
 - 擅长 java、运维、大数据的博主，非常擅长收藏 https://www.cnblogs.com/jpfss/
 - 擅长高并发和 GC 调优、MySQL、网络、微服务  https://www.cnblogs.com/duanxz
 - 一个年轻的兄弟，擅长微服务 https://www.cnblogs.com/sxdcgaq8080/p/12525626.html
+- 一位大神谈学习 https://www.cnblogs.com/maowang1991/p/3572377.html#4284615
+- 一个 Java 后端作者的笔记，适合 Java 中级看 https://www.cnblogs.com/wangdaijun/
+- 一位大数据相关的博主，对 linux 研究非常到位 https://www.cnblogs.com/felixzh/
 
