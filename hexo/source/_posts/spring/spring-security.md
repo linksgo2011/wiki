@@ -27,6 +27,44 @@ Spring Security 不仅仅解决权限和认证问题，还解决一些安全过�
 ![](./spring-security/spring-security-flow.png)
 
 
+
+### 认证原理
+
+
+
+- 用户认证阶段
+  - 用户名密码认证过滤器
+  - 初始化 AuthenticationManager
+  - 循环验证  AuthenticationProvider
+    - AnonymousAuthenticationProvider
+    - DaoProvider
+    - RememberMeAuthenticationProvider
+- 凭证验证阶段
+  - 获取 session 管理器
+  - AccessDecisionManager 决定是否放行
+
+
+
+
+
+#### 表单认证
+
+
+
+- spring security 会注册 filter 然后提供 login page
+- 用户提交后命中 userpassword 过滤器
+- AuthenticationProvider 检查注册的 Provider
+
+#### Token 无状态认证
+
+
+
+- 设置 session 认证方式为无状态
+- 每一次请求都拿从 redis、jwt 中取出的用户信息重新 auth 一次
+- 无状态认证会带来一些性能的开销
+
+
+
 ## security 注册的 filter 
 
 在 FilterComparator 中可以找到
@@ -159,6 +197,18 @@ public BCryptPasswordEncoder passwordEncoder() {
 public class MethodSecurityConfig {
 // ...
 }
+
+例如，通过  PreAuthorize 可以控制用户的访问
+ @PreAuthorize("hasRole('admin')")
+ @RequestMapping(value = "/user/", method = RequestMethod.GET)
+ @ResponseBody
+ public List<User> listAllUsers() {
+   List<User> users = userService.findAll();
+   if(users.isEmpty()){
+   	return null;
+ 		}
+ 		return users;
+ }
 ```
 
 
@@ -174,6 +224,7 @@ public class MethodSecurityConfig {
 
 ## 相关资料
 
+- 关于Spring Security中无Session和无状态stateless https://www.cnblogs.com/Mainz/p/3230077.html
 - SpringSecurity原理剖析与权限系统设计 https://www.cnblogs.com/fanzhidongyzby/archive/2019/09/29/11610334.html
 - Spring Security用户认证流程源码详解 https://blog.csdn.net/qq_37142346/article/details/80032336
 - 中文文档 https://www.springcloud.cc/spring-security-zhcn.html#getting-starteda

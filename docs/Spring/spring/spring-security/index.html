@@ -75,6 +75,34 @@ Spring Security 不仅仅解决权限和认证问题，还解决一些安全过�
 <p>基本概念</p>
 <p>– SecurityContextHolder 存放认证上上下文信息 SecurityContext<br>– SecurityContext 存放 Authentication 以及一些请求信息，用于全局跨上下文访问<br>– Authentication  存放用户认证后的信息，用户名和权限列表<br>– UserDetails 用户信息，例如用户名、密码、是否过期<br>– UserDetailsService AuthenticationProvider 进行验证时，调用该服务获取用户信息<br>– UsernamePasswordAuthenticationToken 存放用户名和密码，用于后面的验证<br>– AuthenticationManager 支持多种验证方式进行验证，只要有一个验证通过即可，默认会加载 DaoAuthenticationProvider 进行验证<br>– AuthenticationEntryPoint 处理验证过程中的异常信息</p>
 <h3 id="主要验证流程"><a href="#主要验证流程" class="headerlink" title="主要验证流程"></a>主要验证流程</h3><p><img src="/Spring/spring/spring-security/spring-security-flow.png" alt=""></p>
+<h3 id="认证原理"><a href="#认证原理" class="headerlink" title="认证原理"></a>认证原理</h3><ul>
+<li>用户认证阶段<ul>
+<li>用户名密码认证过滤器</li>
+<li>初始化 AuthenticationManager</li>
+<li>循环验证  AuthenticationProvider<ul>
+<li>AnonymousAuthenticationProvider</li>
+<li>DaoProvider</li>
+<li>RememberMeAuthenticationProvider</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>凭证验证阶段<ul>
+<li>获取 session 管理器</li>
+<li>AccessDecisionManager 决定是否放行</li>
+</ul>
+</li>
+</ul>
+<h4 id="表单认证"><a href="#表单认证" class="headerlink" title="表单认证"></a>表单认证</h4><ul>
+<li>spring security 会注册 filter 然后提供 login page</li>
+<li>用户提交后命中 userpassword 过滤器</li>
+<li>AuthenticationProvider 检查注册的 Provider</li>
+</ul>
+<h4 id="Token-无状态认证"><a href="#Token-无状态认证" class="headerlink" title="Token 无状态认证"></a>Token 无状态认证</h4><ul>
+<li>设置 session 认证方式为无状态</li>
+<li>每一次请求都拿从 redis、jwt 中取出的用户信息重新 auth 一次</li>
+<li>无状态认证会带来一些性能的开销</li>
+</ul>
 <h2 id="security-注册的-filter"><a href="#security-注册的-filter" class="headerlink" title="security 注册的 filter"></a>security 注册的 filter</h2><p>在 FilterComparator 中可以找到</p>
 <pre><code>    FilterComparator() {
         Step order = new Step(INITIAL_ORDER, ORDER_STEP);
@@ -170,9 +198,22 @@ public BCryptPasswordEncoder passwordEncoder() {
 public class MethodSecurityConfig {
 // ...
 }
+
+例如，通过  PreAuthorize 可以控制用户的访问
+ @PreAuthorize(&quot;hasRole(&#39;admin&#39;)&quot;)
+ @RequestMapping(value = &quot;/user/&quot;, method = RequestMethod.GET)
+ @ResponseBody
+ public List&lt;User&gt; listAllUsers() {
+   List&lt;User&gt; users = userService.findAll();
+   if(users.isEmpty()){
+       return null;
+         }
+         return users;
+ }
 </code></pre><h2 id="使用-token-方式鉴权"><a href="#使用-token-方式鉴权" class="headerlink" title="使用 token 方式鉴权"></a>使用 token 方式鉴权</h2><p><img src="/Spring/spring/spring-security/spring-security-jwt-authentication-architecture-diagram.png" alt=""></p>
 <p>参考资料 <a href="https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial" target="_blank" rel="noopener">https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial</a></p>
 <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<li>关于Spring Security中无Session和无状态stateless <a href="https://www.cnblogs.com/Mainz/p/3230077.html" target="_blank" rel="noopener">https://www.cnblogs.com/Mainz/p/3230077.html</a></li>
 <li>SpringSecurity原理剖析与权限系统设计 <a href="https://www.cnblogs.com/fanzhidongyzby/archive/2019/09/29/11610334.html" target="_blank" rel="noopener">https://www.cnblogs.com/fanzhidongyzby/archive/2019/09/29/11610334.html</a></li>
 <li>Spring Security用户认证流程源码详解 <a href="https://blog.csdn.net/qq_37142346/article/details/80032336" target="_blank" rel="noopener">https://blog.csdn.net/qq_37142346/article/details/80032336</a></li>
 <li>中文文档 <a href="https://www.springcloud.cc/spring-security-zhcn.html#getting-starteda" target="_blank" rel="noopener">https://www.springcloud.cc/spring-security-zhcn.html#getting-starteda</a></li>
@@ -190,6 +231,10 @@ public class MethodSecurityConfig {
 	
 	
 	
+	
+		
+	
+		
 	
 		
 	
