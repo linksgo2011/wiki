@@ -3,22 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>常见线上调优参数和性能优化 | web 工程师知识系统</title>
+  <title>Maven Dependency Management 统一管理多模块项目 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="tomcat#最大连接数
-server.tomcat.max-connections=200
-#最大线程数
-server.tomcat.max-threads=300
-#编码方式
-server.tomcat.uri-encoding=UTF-8
-#post提交数据最大大小，设置为0不限制
-serve">
+  <meta name="description" content="父级 pom + DepencyManagement当我们的项目模块很多的时候，我们使用Maven管理项目非常方便，帮助我们管理构建、文档、报告、依赖、scms、发布、分发的方法。可以方便的编译代码、进行依赖管理、管理二进制库等等。 由于我们的模块很多，所以我们又抽象了一层，如下图抽出一个paren">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="常见线上调优参数和性能优化">
+  <meta property="og:title" content="Maven Dependency Management 统一管理多模块项目">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -52,7 +45,7 @@ serve">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">常见线上调优参数和性能优化</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-23</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Maven Dependency Management 统一管理多模块项目</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-03-27</span></h1>
 </div>		
 
 <div class="row page">
@@ -74,63 +67,51 @@ serve">
 	
 
 	  <!-- content -->
-	  <h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><pre><code>#最大连接数
-server.tomcat.max-connections=200
-#最大线程数
-server.tomcat.max-threads=300
-#编码方式
-server.tomcat.uri-encoding=UTF-8
-#post提交数据最大大小，设置为0不限制
-server.tomcat.max-http-post-size=0
-
-</code></pre><h2 id="jvm"><a href="#jvm" class="headerlink" title="jvm"></a>jvm</h2><pre><code>
-nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m -Xmn256m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC -jar xxx.jar
-
--XX:MetaspaceSize=128m （元空间默认大小）
-
--XX:MaxMetaspaceSize=128m （元空间最大大小）
-
--Xms1024m （堆最大大小）
-
--Xmx1024m （堆默认大小）
-
--Xmn256m （新生代大小）
-
--Xss256k （棧最大深度大小）
-
--XX:SurvivorRatio=8 （新生代分区比例 8:2）
-
--XX:+UseConcMarkSweepGC （指定使用的垃圾收集器，这里使用CMS收集器）
-
-</code></pre><h2 id="druid-数据库连接信息"><a href="#druid-数据库连接信息" class="headerlink" title="druid 数据库连接信息"></a>druid 数据库连接信息</h2><pre><code>spring:
-  datasource:
-    druid:
-      type: com.alibaba.druid.pool.DruidDataSource
-      driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      url: jdbc:log4jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8&amp;useSSL=false
-      username: root
-      password: 123456
-
-      # 初始化配置
-      initial-size: 3
-      # 最小连接数
-      min-idle: 3
-      # 最大连接数
-      max-active: 15
-      # 获取连接超时时间
-      max-wait: 5000
-      # 连接有效性检测时间
-      time-between-eviction-runs-millis: 90000
-      # 最大空闲时间
-      min-evictable-idle-time-millis: 1800000
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      validation-query: select 1
-
-</code></pre><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/31803182" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31803182</a></li>
-</ul>
+	  <h2 id="父级-pom-DepencyManagement"><a href="#父级-pom-DepencyManagement" class="headerlink" title="父级 pom + DepencyManagement"></a>父级 pom + DepencyManagement</h2><p>当我们的项目模块很多的时候，我们使用Maven管理项目非常方便，帮助我们管理<strong>构建、文档、报告、依赖、scms、发布、分发</strong>的方法。可以方便的<strong>编译代码、进行依赖管理、管理二进制库</strong>等等。<br> 由于我们的模块很多，所以我们又抽象了一层，如下图抽出一个<strong>parent</strong>来管理子项目的公共的依赖。为了项目的正确运行，必须让所有的子项目使用依赖项的统一版本，必须确保应用的各个项目的依赖项和版本一致，才能保证测试的和发布的是相同的结果。</p>
+<p> 在我们项目顶层的POM文件中，我们会看到dependencyManagement元素。</p>
+<h2 id="在父级定义-dependencyManagement-标签"><a href="#在父级定义-dependencyManagement-标签" class="headerlink" title="在父级定义 dependencyManagement 标签"></a>在父级定义 dependencyManagement 标签</h2><pre><code class="xml">&lt;groupId&gt;printf.cn&lt;/groupId&gt;
+&lt;artifactId&gt;base&lt;/artifactId&gt;
+&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+&lt;!--// 这个很重要，否则报找不到 jar 文件--&gt;
+&lt;packing&gt;pom&lt;/packing&gt; 
+</code></pre>
+<pre><code class="xml"> &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+                &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+                &lt;version&gt;1.2.33&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+                &lt;artifactId&gt;druid&lt;/artifactId&gt;
+                &lt;version&gt;1.0.11&lt;/version&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+</code></pre>
+<h2 id="子项目配置"><a href="#子项目配置" class="headerlink" title="子项目配置"></a>子项目配置</h2><pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;project
+    xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;
+    xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+      &lt;groupId&gt;printf.cn&lt;/groupId&gt;
+      &lt;artifactId&gt;base&lt;/artifactId&gt;
+      &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+    &lt;/parent&gt;
+    &lt;artifactId&gt;app&lt;/artifactId&gt;
+    &lt;name&gt;femicro-cache&lt;/name&gt;
+    &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+             &lt;!--这些不需要设置版本号--&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
 	  
 
 	  <div>
@@ -144,14 +125,7 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 	
 	
 		
-	
-		
 			
-		
-	
-		
-	
-		
 			
 		
 	
@@ -198,22 +172,6 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
 	
 		
 	
@@ -233,22 +191,8 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
+			
 		
 	
 		
@@ -324,9 +268,7 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 		
 	
 		
-	
-		
-	
+			
 		
 	
 		
@@ -343,65 +285,6 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 	
 		
 	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
 		
 	
 		
@@ -525,6 +408,124 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 		
 	
 		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -589,6 +590,20 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 		
 	
 		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
 			
 		
 	
@@ -601,48 +616,6 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 	
@@ -650,11 +623,11 @@ nohup java -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m 
 	
 	
 	
-		<li class="prev"><a href="/技术架构/architecture/concurrence-design/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/技术架构/architecture/distributed-system-overview/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/运维开发/devops/intrusion-detection/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
