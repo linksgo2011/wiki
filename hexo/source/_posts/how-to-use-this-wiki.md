@@ -101,4 +101,6 @@ toc: true
 - 一位大神谈学习 https://www.cnblogs.com/maowang1991/p/3572377.html#4284615
 - 一个 Java 后端作者的笔记，适合 Java 中级看 https://www.cnblogs.com/wangdaijun/
 - 一位大数据相关的博主，对 linux 研究非常到位 https://www.cnblogs.com/felixzh/
+- 一位硕士学历的博主，对计算机科学很有研究 https://nezha.github.io/
+- 使用 java 完成的各种 demo https://github.com/nezha/java-learning-demo
 
