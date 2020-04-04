@@ -4,8 +4,6 @@ categories: 安全
 toc: true
 ---
 
-
-
 对于大型系统来说，IAM 不仅需要考虑多端的接入，还需要考虑性能。主流的使用如下方案：
 
 - web 走 CAS，通过全局 Session 和 本地 Session 的方案，session 通过使用 spring-session 存放数据到redis
