@@ -3,18 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Spring boot 技术栈流程分析 | web 工程师知识系统</title>
+  <title>Spring boot 源码分析 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="Spring boot 启动过程1 执行入口方法@SpringBootApplication
-public class SpringBootBestPracticeApplication {
-    public static void main(String[] args) {
-        S">
+  <meta name="description" content="前置知识
+要求对 Spring 有一定了解知道 Spring 和 spring boot 之间的关系
+对 Servlet 有一定了解
+对类加载器有一定了解
+
+spring 预习spring 本质上就是一个帮你加载类，管理类的库，所以被称作 IOC 容器。
+
+spring-core spring 核心">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring boot 技术栈流程分析">
+  <meta property="og:title" content="Spring boot 源码分析">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -48,7 +52,7 @@ public class SpringBootBestPracticeApplication {
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Spring boot 技术栈流程分析</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-04</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Spring boot 源码分析</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-04</span></h1>
 </div>		
 
 <div class="row page">
@@ -70,7 +74,75 @@ public class SpringBootBestPracticeApplication {
 	
 
 	  <!-- content -->
-	  <h1 id="Spring-boot-启动过程"><a href="#Spring-boot-启动过程" class="headerlink" title="Spring boot 启动过程"></a>Spring boot 启动过程</h1><h2 id="1-执行入口方法"><a href="#1-执行入口方法" class="headerlink" title="1 执行入口方法"></a>1 执行入口方法</h2><pre><code class="java">@SpringBootApplication
+	  <h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><ul>
+<li>要求对 Spring 有一定了解知道 Spring 和 spring boot 之间的关系</li>
+<li>对 Servlet 有一定了解</li>
+<li>对类加载器有一定了解</li>
+</ul>
+<h3 id="spring-预习"><a href="#spring-预习" class="headerlink" title="spring 预习"></a>spring 预习</h3><p>spring 本质上就是一个帮你加载类，管理类的库，所以被称作 IOC 容器。</p>
+<ul>
+<li>spring-core spring 核心基础能力：<ul>
+<li>动态代理 cglib</li>
+<li>类解析 asm</li>
+<li>类实例化 objenesis</li>
+<li>基础注解  core.annotation</li>
+<li>编解码 core.codec</li>
+<li>类型转换器 core.convert</li>
+<li>配置文件解析 core.env</li>
+<li>资源读取 core.io</li>
+<li>日志 core.log</li>
+<li>序列化 core.serializer</li>
+<li>格式化输出 core.style</li>
+<li>多线程任务 core.task</li>
+<li>注解处理 core.type</li>
+<li>工具包<ul>
+<li>退避算法 util.backoff</li>
+<li>比较器 util.comparator</li>
+<li>并发工具 util.concurrent</li>
+<li>单位 util.unit</li>
+<li>函数式工具 util.function</li>
+<li>xml 处理工具 util.xml</li>
+</ul>
+</li>
+<li>其他常用的工具类<ul>
+<li>TODO </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>spring-beans 对 bean 各种操作<ul>
+<li>bean 工厂 factory</li>
+<li>bean 的属性编辑器</li>
+<li>bean 工具</li>
+</ul>
+</li>
+<li>spring-aop 实现切片编程的逻辑</li>
+<li>spring-expression  EL 表达式，基本实现了一个 DSL</li>
+<li>spring-context 整合上面的组件，提供给应用程序一个上下文容器<ul>
+<li>cache 缓存相关</li>
+<li>context  应用上下文相关<ul>
+<li>annotation</li>
+<li>config</li>
+<li>event</li>
+<li>expression</li>
+<li>i18n</li>
+<li>index</li>
+<li>support</li>
+<li>weaving</li>
+</ul>
+</li>
+<li>format</li>
+<li>scheduling 计划任务</li>
+<li>scripting</li>
+<li>stereotype  模板类型，例如 Controller </li>
+<li>validation 数据验证</li>
+</ul>
+</li>
+</ul>
+<h3 id="spring-boot、-spring、spring-mvc-的关系"><a href="#spring-boot、-spring、spring-mvc-的关系" class="headerlink" title="spring boot、 spring、spring mvc 的关系"></a>spring boot、 spring、spring mvc 的关系</h3><p>spring 是一个 IOC 容器，负责初始化对象，以及管理对象。可以看做一个库，无法作为一个应用启动。spring 实际上与 web 应用无关，但是也提供了很多 web 应用的支持。</p>
+<p>spring boot 是一个整合了 spring 等其他技术的应用框架，开发者需要根据 spring boot 的逻辑来进行开发，spring boot 帮忙做了很多默认配置。</p>
+<p>spring mvc  是一个响应 servlet 请求并完成请求路由映射、模型加载、视图渲染等经典 MVC 框架。</p>
+<h1 id="Spring-boot-启动过程"><a href="#Spring-boot-启动过程" class="headerlink" title="Spring boot 启动过程"></a>Spring boot 启动过程</h1><h2 id="1-执行入口方法"><a href="#1-执行入口方法" class="headerlink" title="1 执行入口方法"></a>1 执行入口方法</h2><pre><code class="java">@SpringBootApplication
 public class SpringBootBestPracticeApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootBestPracticeApplication.class, args);
@@ -593,7 +665,7 @@ org.springframework.boot.context.event.EventPublishingRunListener
 }
 </code></pre>
 <p>打印一个 banner 信息，基本的逻辑就是 SpringApplicationBannerPrinter 类根据配置文件在指定的位置打印出 banner，根据 banner 输出的模式分为日志、控制台、不打印。</p>
-<h3 id="3-7-创建应用上下文"><a href="#3-7-创建应用上下文" class="headerlink" title="3.7 创建应用上下文"></a>3.7 创建应用上下文</h3><pre><code class="java">protected ConfigurableApplicationContext createApplicationContext() {
+<h3 id="3-7-创建应用上下文-核心点"><a href="#3-7-创建应用上下文-核心点" class="headerlink" title="3.7 创建应用上下文[核心点]"></a>3.7 创建应用上下文[核心点]</h3><pre><code class="java">protected ConfigurableApplicationContext createApplicationContext() {
    Class&lt;?&gt; contextClass = this.applicationContextClass;
    if (contextClass == null) {
       try {
@@ -619,7 +691,9 @@ org.springframework.boot.context.event.EventPublishingRunListener
 }
 </code></pre>
 <p>非常关键的一个环节，初始化一个 Spring boot 上下文，在这个上下文中会启动 Spring 上下文，实际上在这之前还没有启动 Spring 。根据不同的应用类型初始不同的上下文，如果是一个普通 web 应用，默认初始化的是  <code>AnnotationConfigServletWebServerApplicationContext</code> 。</p>
-<p>使用 BeanUtils.instantiateClass 来初始化一个类，这种初始话方法能使用 Spring 类的生命周期注解。</p>
+<p>使用 BeanUtils.instantiateClass 来初始化一个类，这种初始化方法能使用 Spring 类的生命周期注解。这里默认构造了一个上下文，通过这个上下文在后面利用 spring 初始化 bean 的时候非常重要。</p>
+<p>基本上这个类是 Spring boot 继承于 Spring 中的 ServletWebServerApplicationContext，ServletWebServerApplicationContext 有继承于 GenericApplicationContext。GenericApplicationContext 是一个抽象程度非常高的上下文。实现了大量与应用类型无关的 bean 操作，后面的 bean 初始化会靠它，另外一个很重要的是 这里默认初始花了一个 DefaultListableBeanFactory 作为 bean 工厂。</p>
+<p><img src="/Spring/spring/spring-boot-workflow/image-20200405225010409.png" alt="image-20200405225010409"></p>
 <h3 id="3-8-准备应用上下文"><a href="#3-8-准备应用上下文" class="headerlink" title="3.8 准备应用上下文"></a>3.8 准备应用上下文</h3><pre><code class="java">private void prepareContext(ConfigurableApplicationContext context,
       ConfigurableEnvironment environment, SpringApplicationRunListeners listeners,
       ApplicationArguments applicationArguments, Banner printedBanner) {
@@ -703,7 +777,267 @@ org.springframework.boot.web.context.ServerPortInfoApplicationContextInitializer
 </code></pre>
 <p>在 RestartScope 中使用了 Restarter 来刷新应用。</p>
 <p>TODO </p>
-<h4 id="3-8-3-记录启动日志"><a href="#3-8-3-记录启动日志" class="headerlink" title="3.8.3 记录启动日志"></a>3.8.3 记录启动日志</h4><h4 id="3-8-4-注册两个特殊的-bean"><a href="#3-8-4-注册两个特殊的-bean" class="headerlink" title="3.8.4 注册两个特殊的 bean"></a>3.8.4 注册两个特殊的 bean</h4><h4 id="3-8-5-加载所有的资源"><a href="#3-8-5-加载所有的资源" class="headerlink" title="3.8.5 加载所有的资源"></a>3.8.5 加载所有的资源</h4><h3 id="3-9-刷新应用上下文"><a href="#3-9-刷新应用上下文" class="headerlink" title="3.9 刷新应用上下文"></a>3.9 刷新应用上下文</h3><h3 id="3-10-应用上下文刷新后置处理"><a href="#3-10-应用上下文刷新后置处理" class="headerlink" title="3.10 应用上下文刷新后置处理"></a>3.10 应用上下文刷新后置处理</h3><h3 id="3-11-停止计时监控类"><a href="#3-11-停止计时监控类" class="headerlink" title="3.11 停止计时监控类"></a>3.11 停止计时监控类</h3><h3 id="3-12-输出日志记录执行主类名、时间信息"><a href="#3-12-输出日志记录执行主类名、时间信息" class="headerlink" title="3.12 输出日志记录执行主类名、时间信息"></a>3.12 输出日志记录执行主类名、时间信息</h3><h3 id="3-13-发布应用上下文启动完成事件"><a href="#3-13-发布应用上下文启动完成事件" class="headerlink" title="3.13 发布应用上下文启动完成事件"></a>3.13 发布应用上下文启动完成事件</h3><h3 id="3-14-执行所有-Runner-运行器"><a href="#3-14-执行所有-Runner-运行器" class="headerlink" title="3.14 执行所有 Runner 运行器"></a>3.14 执行所有 Runner 运行器</h3><h3 id="3-15-发布应用上下文就绪事件"><a href="#3-15-发布应用上下文就绪事件" class="headerlink" title="3.15 发布应用上下文就绪事件"></a>3.15 发布应用上下文就绪事件</h3><h3 id="3-16-处理运行异常"><a href="#3-16-处理运行异常" class="headerlink" title="3.16 处理运行异常"></a>3.16 处理运行异常</h3><h1 id="Spring-mvc-响应请求过程"><a href="#Spring-mvc-响应请求过程" class="headerlink" title="Spring mvc 响应请求过程"></a>Spring mvc 响应请求过程</h1><h1 id="Spring-boot-打包流程"><a href="#Spring-boot-打包流程" class="headerlink" title="Spring boot 打包流程"></a>Spring boot 打包流程</h1></center></center>	  
+<h4 id="3-8-3-记录启动日志"><a href="#3-8-3-记录启动日志" class="headerlink" title="3.8.3 记录启动日志"></a>3.8.3 记录启动日志</h4><p>创建了一个日志类，将日志打出</p>
+<pre><code class="java">new StartupInfoLogger(this.mainApplicationClass)
+      .logStarting(getApplicationLog());
+</code></pre>
+<pre><code class="java">public void logStarting(Log log) {
+   Assert.notNull(log, &quot;Log must not be null&quot;);
+   if (log.isInfoEnabled()) {
+      log.info(getStartupMessage());
+   }
+   if (log.isDebugEnabled()) {
+      log.debug(getRunningMessage());
+   }
+}
+</code></pre>
+<p> 先判断日志是否开启 <code>log.isInfoEnabled</code>() 是为了提高性能，如果开启 info 会打出启动信息。只有开启 debug 级别的日志，才会打出运行时信息。</p>
+<pre><code>logStartupProfileInfo(context);
+</code></pre><p>接下来打印 profile 的日志信息，如果没有设置 profile，也就是会显示我们平时看到的 </p>
+<blockquote>
+<p>No active profile set, falling back to default profiles: default</p>
+</blockquote>
+<h4 id="3-8-4-注册两个特殊的-bean"><a href="#3-8-4-注册两个特殊的-bean" class="headerlink" title="3.8.4 注册两个特殊的 bean"></a>3.8.4 注册两个特殊的 bean</h4><pre><code class="java">ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+beanFactory.registerSingleton(&quot;springApplicationArguments&quot;, applicationArguments);
+if (printedBanner != null) {
+   beanFactory.registerSingleton(&quot;springBootBanner&quot;, printedBanner);
+}
+if (beanFactory instanceof DefaultListableBeanFactory) {
+   ((DefaultListableBeanFactory) beanFactory)
+         .setAllowBeanDefinitionOverriding(this.allowBeanDefinitionOverriding);
+}
+</code></pre>
+<p>这里将当前使用到的  <code>applicationArguments</code> 和 <code>springBootBanner</code>  注册成单例，用于后面需要的时候获取。通过这种方式附加到上下文中。</p>
+<h4 id="3-8-5-加载所有的资源-包扫描"><a href="#3-8-5-加载所有的资源-包扫描" class="headerlink" title="3.8.5 加载所有的资源 (包扫描)"></a>3.8.5 加载所有的资源 (包扫描)</h4><pre><code class="java">        // 3.8.5.1 加载包扫描资源类
+    Set&lt;Object&gt; sources = getAllSources();
+        Assert.notEmpty(sources, &quot;Sources must not be empty&quot;);
+    // 3.8.5.2 包扫描
+        load(context, sources.toArray(new Object[0]));
+        listeners.contextLoaded(context);
+</code></pre>
+<h5 id="3-8-5-1-加载包扫描资源类"><a href="#3-8-5-1-加载包扫描资源类" class="headerlink" title="3.8.5.1 加载包扫描资源类"></a>3.8.5.1 加载包扫描资源类</h5><pre><code class="java">public Set&lt;Object&gt; getAllSources() {
+   Set&lt;Object&gt; allSources = new LinkedHashSet&lt;&gt;();
+   if (!CollectionUtils.isEmpty(this.primarySources)) {
+      allSources.addAll(this.primarySources);
+   }
+   if (!CollectionUtils.isEmpty(this.sources)) {
+      allSources.addAll(this.sources);
+   }
+   return Collections.unmodifiableSet(allSources);
+}
+</code></pre>
+<p>˙这里的 primarySources 就是指的 run 方法传入的类，spring boot 会根据资源类所在的包进行扫描。加载各种业务对象。因此可以在入口类中，可以做一些拓展，主动加载其他资源，甚至远程资源。</p>
+<h5 id="3-8-5-2-包扫描"><a href="#3-8-5-2-包扫描" class="headerlink" title="3.8.5.2 包扫描"></a>3.8.5.2 包扫描</h5><pre><code class="java">protected void load(ApplicationContext context, Object[] sources) {
+   if (logger.isDebugEnabled()) {
+      logger.debug(
+            &quot;Loading source &quot; + StringUtils.arrayToCommaDelimitedString(sources));
+   }
+   // 初始化 bean 加载器
+   BeanDefinitionLoader loader = createBeanDefinitionLoader(
+         getBeanDefinitionRegistry(context), sources);
+   if (this.beanNameGenerator != null) {
+      loader.setBeanNameGenerator(this.beanNameGenerator);
+   }
+   if (this.resourceLoader != null) {
+      loader.setResourceLoader(this.resourceLoader);
+   }
+   if (this.environment != null) {
+      loader.setEnvironment(this.environment);
+   }
+   // 最终的初始化类的地方
+   loader.load();
+}
+
+// 下面调用了 BeanDefinitionLoader 的构造方法
+protected BeanDefinitionLoader createBeanDefinitionLoader(
+      BeanDefinitionRegistry registry, Object[] sources) {
+   return new BeanDefinitionLoader(registry, sources);
+}
+</code></pre>
+<pre><code class="java"> // BeanDefinitionLoader 实际上是一个简单的外观模式，包装了 Spring 中初始化 bean 的常用方法
+ BeanDefinitionLoader(BeanDefinitionRegistry registry, Object... sources) {
+        Assert.notNull(registry, &quot;Registry must not be null&quot;);
+        Assert.notEmpty(sources, &quot;Sources must not be empty&quot;);
+        this.sources = sources;
+    // 基于注解的 bean 阅读器
+        this.annotatedReader = new AnnotatedBeanDefinitionReader(registry);
+        this.xmlReader = new XmlBeanDefinitionReader(registry);
+        if (isGroovyPresent()) {
+            this.groovyReader = new GroovyBeanDefinitionReader(registry);
+        }
+    // 类扫描器
+        this.scanner = new ClassPathBeanDefinitionScanner(registry);
+        this.scanner.addExcludeFilter(new ClassExcludeFilter(sources));
+    }
+</code></pre>
+<p>这里就是 spring boot 利用 spring 初始化各种类的核心了。通过 BeanDefinitionLoader 包装 spring 中的 bean 实例化工具，初始化各种对象。</p>
+<p>当所有的准备工作做完后，通过调用 loader.load(); 初始化各种 bean 。</p>
+<pre><code class="java">// 多资源加载
+public int load() {
+   int count = 0;
+   for (Object source : this.sources) {
+      count += load(source);
+   }
+   return count;
+}
+
+// 某个资源，一般这个资源是根目录下的一个类，例如 Application.class 但是 Spring 也是支持各种加载方式。
+private int load(Object source) {
+   Assert.notNull(source, &quot;Source must not be null&quot;);
+   // 一般都会走这里
+   if (source instanceof Class&lt;?&gt;) {
+      return load((Class&lt;?&gt;) source);
+   }
+   if (source instanceof Resource) {
+      return load((Resource) source);
+   }
+   if (source instanceof Package) {
+      return load((Package) source);
+   }
+   if (source instanceof CharSequence) {
+      return load((CharSequence) source);
+   }
+   throw new IllegalArgumentException(&quot;Invalid source type &quot; + source.getClass());
+}
+
+
+private int load(Class&lt;?&gt; source) {
+        if (isGroovyPresent()
+                &amp;&amp; GroovyBeanDefinitionSource.class.isAssignableFrom(source)) {
+            // Any GroovyLoaders added in beans{} DSL can contribute beans here
+            GroovyBeanDefinitionSource loader = BeanUtils.instantiateClass(source,
+                    GroovyBeanDefinitionSource.class);
+            load(loader);
+        }
+        if (isComponent(source)) {
+            this.annotatedReader.register(source);
+            return 1;
+        }
+        return 0;
+}
+</code></pre>
+<p>isComponent 是用来排除匿名类等特殊情况，一般来说都会为 true，然后进入 </p>
+<pre><code class="java">this.annotatedReader.register(source);
+</code></pre>
+<p>到了这里就已经是 Spring 的地盘了，spring boot 的工作完成了，交给 spring 去初始化各种对象了。</p>
+<h3 id="3-9-刷新应用上下文-spring-核心"><a href="#3-9-刷新应用上下文-spring-核心" class="headerlink" title="3.9 刷新应用上下文 [spring 核心]"></a>3.9 刷新应用上下文 [spring 核心]</h3><pre><code class="java">protected void refresh(ApplicationContext applicationContext) {
+   Assert.isInstanceOf(AbstractApplicationContext.class, applicationContext);
+   ((AbstractApplicationContext) applicationContext).refresh();
+}
+</code></pre>
+<p>spring boot 把 context 作为 applicationContext 传入，然后转换成 AbstractApplicationContext 调用 spring 的refresh() 开启 bean 初始化的流程。</p>
+<p>spring 的 refresh 实际上就是初始化 bean，为什么是 refresh()，而不是 init()，这个名字非常奇怪。实际上，spring 的 refresh 不仅仅对新的 context 有用，对旧的 context 会销毁重建，因此 refresh 这个词更适中。</p>
+<pre><code class="java">@Override
+public void refresh() throws BeansException, IllegalStateException {
+   // 加锁，防止多次启动或者销毁操作造成混乱
+   synchronized (this.startupShutdownMonitor) {
+      // 3.9.1 准备刷新，记录启动时间、状态
+      prepareRefresh();
+
+      // 3.9.2 提取 bean 的配置
+      ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+
+      // 3.9.3 为当前 context 做准备
+      prepareBeanFactory(beanFactory);
+
+      try {
+         // 3.9.4 后置处理
+         postProcessBeanFactory(beanFactory);
+
+         // 3.9.5 调用 postProcessBeanFactory
+         invokeBeanFactoryPostProcessors(beanFactory);
+
+         // 3.9.6 注册 BeanPostProcessor 的实现类
+         registerBeanPostProcessors(beanFactory);
+
+         // 3.9.7 初始化国际化消息
+         initMessageSource();
+
+         // 3.9.8 初始化事件广播器
+         initApplicationEventMulticaster();
+
+         // 为子类设计的钩子方法
+         onRefresh();
+
+         // 注册监听器
+         registerListeners();
+
+         // 3.9.9 初始化所有的 singleton beans
+         finishBeanFactoryInitialization(beanFactory);
+
+         // 广播事件
+         finishRefresh();
+      }
+
+      catch (BeansException ex) {
+         if (logger.isWarnEnabled()) {
+            logger.warn(&quot;Exception encountered during context initialization - &quot; +
+                  &quot;cancelling refresh attempt: &quot; + ex);
+         }
+
+         // 3.9.10 销毁已经初始化的 singleton 的 Beans 
+         destroyBeans();
+
+         // 设置初始话状态
+         cancelRefresh(ex);
+
+         // 往外丢异常
+         throw ex;
+      }
+
+      finally {
+         // 3.9.11 清理构建过程中的对象缓存
+         resetCommonCaches();
+      }
+   }
+}
+</code></pre>
+<p>这部分就是 spring 容器初始化的核心逻辑了，spring 更多细节可以查看其他材料。</p>
+<p>推荐材料：<a href="https://www.javadoop.com/post/spring-ioc" target="_blank" rel="noopener">https://www.javadoop.com/post/spring-ioc</a></p>
+<h5 id="3-9-1-准备刷新，记录启动时间、状态"><a href="#3-9-1-准备刷新，记录启动时间、状态" class="headerlink" title="3.9.1 准备刷新，记录启动时间、状态"></a>3.9.1 准备刷新，记录启动时间、状态</h5><pre><code class="java">protected void prepareRefresh() {
+   // 设置状态和时间
+   this.startupDate = System.currentTimeMillis();
+   this.closed.set(false);
+   this.active.set(true);
+
+   if (logger.isDebugEnabled()) {
+      if (logger.isTraceEnabled()) {
+         logger.trace(&quot;Refreshing &quot; + this);
+      }
+      else {
+         logger.debug(&quot;Refreshing &quot; + getDisplayName());
+      }
+   }
+
+   // 空方法，留给子类初始化配置
+   initPropertySources();
+
+   // 验证必要的属性
+   getEnvironment().validateRequiredProperties();
+
+   // 将 applicationListeners 用 earlyApplicationListeners 包裹起来
+   if (this.earlyApplicationListeners == null) {
+      this.earlyApplicationListeners = new LinkedHashSet&lt;&gt;(this.applicationListeners);
+   }
+   else {
+      this.applicationListeners.clear();
+      this.applicationListeners.addAll(this.earlyApplicationListeners);
+   }
+   this.earlyApplicationEvents = new LinkedHashSet&lt;&gt;();
+</code></pre>
+<h5 id="3-9-2-提取-bean-的配置"><a href="#3-9-2-提取-bean-的配置" class="headerlink" title="3.9.2 提取 bean 的配置"></a>3.9.2 提取 bean 的配置</h5><pre><code class="java">protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
+   // 关闭旧的 BeanFactory 重新加载 bean 信息
+   refreshBeanFactory();
+
+   // 返回刚刚创建的 BeanFactory
+   ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+   if (logger.isDebugEnabled()) {
+      logger.debug(&quot;Bean factory for &quot; + getDisplayName() + &quot;: &quot; + beanFactory);
+   }
+   return beanFactory;
+}
+</code></pre>
+<h5 id="3-9-3-为当前-context-做准备"><a href="#3-9-3-为当前-context-做准备" class="headerlink" title="3.9.3 为当前 context 做准备"></a>3.9.3 为当前 context 做准备</h5><h5 id="3-9-4-后置处理"><a href="#3-9-4-后置处理" class="headerlink" title="3.9.4 后置处理"></a>3.9.4 后置处理</h5><h5 id="3-9-5-调用-postProcessBeanFactory"><a href="#3-9-5-调用-postProcessBeanFactory" class="headerlink" title="3.9.5 调用 postProcessBeanFactory"></a>3.9.5 调用 postProcessBeanFactory</h5><h5 id="3-9-6-注册-BeanPostProcessor-的实现类"><a href="#3-9-6-注册-BeanPostProcessor-的实现类" class="headerlink" title="3.9.6 注册 BeanPostProcessor 的实现类"></a>3.9.6 注册 BeanPostProcessor 的实现类</h5><h5 id="3-9-7-初始化国际化消息"><a href="#3-9-7-初始化国际化消息" class="headerlink" title="3.9.7 初始化国际化消息"></a>3.9.7 初始化国际化消息</h5><h5 id="3-9-8-初始化事件广播器"><a href="#3-9-8-初始化事件广播器" class="headerlink" title="3.9.8 初始化事件广播器"></a>3.9.8 初始化事件广播器</h5><h5 id="3-9-9-初始化所有的-singleton-beans"><a href="#3-9-9-初始化所有的-singleton-beans" class="headerlink" title="3.9.9 初始化所有的 singleton beans"></a>3.9.9 初始化所有的 singleton beans</h5><h5 id="3-9-10-销毁已经初始化的-singleton-的-Beans"><a href="#3-9-10-销毁已经初始化的-singleton-的-Beans" class="headerlink" title="3.9.10 销毁已经初始化的 singleton 的 Beans"></a>3.9.10 销毁已经初始化的 singleton 的 Beans</h5><h5 id="3-9-11-清理构建过程中的对象缓存"><a href="#3-9-11-清理构建过程中的对象缓存" class="headerlink" title="3.9.11 清理构建过程中的对象缓存"></a>3.9.11 清理构建过程中的对象缓存</h5><h3 id="3-10-应用上下文刷新后置处理"><a href="#3-10-应用上下文刷新后置处理" class="headerlink" title="3.10 应用上下文刷新后置处理"></a>3.10 应用上下文刷新后置处理</h3><h3 id="3-11-停止计时监控类"><a href="#3-11-停止计时监控类" class="headerlink" title="3.11 停止计时监控类"></a>3.11 停止计时监控类</h3><h3 id="3-12-输出日志记录执行主类名、时间信息"><a href="#3-12-输出日志记录执行主类名、时间信息" class="headerlink" title="3.12 输出日志记录执行主类名、时间信息"></a>3.12 输出日志记录执行主类名、时间信息</h3><h3 id="3-13-发布应用上下文启动完成事件"><a href="#3-13-发布应用上下文启动完成事件" class="headerlink" title="3.13 发布应用上下文启动完成事件"></a>3.13 发布应用上下文启动完成事件</h3><h3 id="3-14-执行所有-Runner-运行器"><a href="#3-14-执行所有-Runner-运行器" class="headerlink" title="3.14 执行所有 Runner 运行器"></a>3.14 执行所有 Runner 运行器</h3><h3 id="3-15-发布应用上下文就绪事件"><a href="#3-15-发布应用上下文就绪事件" class="headerlink" title="3.15 发布应用上下文就绪事件"></a>3.15 发布应用上下文就绪事件</h3><h3 id="3-16-处理运行异常"><a href="#3-16-处理运行异常" class="headerlink" title="3.16 处理运行异常"></a>3.16 处理运行异常</h3><h1 id="Spring-mvc-响应请求过程"><a href="#Spring-mvc-响应请求过程" class="headerlink" title="Spring mvc 响应请求过程"></a>Spring mvc 响应请求过程</h1><h1 id="Spring-boot-打包流程"><a href="#Spring-boot-打包流程" class="headerlink" title="Spring boot 打包流程"></a>Spring boot 打包流程</h1></center></center>	  
 
 	  <div>
   		<center>
