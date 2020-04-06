@@ -1707,7 +1707,371 @@ public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 }
 </code></pre>
 <p>启动过程中出现异常，会丢出异常。然后关闭上下文，context.close() 会做一些清理工作，和 bean 创建失败的操作差不太多。</p>
-<h2 id="补充点"><a href="#补充点" class="headerlink" title="补充点"></a>补充点</h2><h3 id="1-Tomcat-是怎么知道-Spring-mvc-的-Servlet-入口点的呢？"><a href="#1-Tomcat-是怎么知道-Spring-mvc-的-Servlet-入口点的呢？" class="headerlink" title="1 Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？"></a>1 Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？</h3><h3 id="2-大量的-Filter-是怎么注册给-Tomcat-的呢？"><a href="#2-大量的-Filter-是怎么注册给-Tomcat-的呢？" class="headerlink" title="2 大量的 Filter 是怎么注册给 Tomcat 的呢？"></a>2 大量的 Filter 是怎么注册给 Tomcat 的呢？</h3><h3 id="3-API-请求的-Mapping-关系什么时候映射的呢？"><a href="#3-API-请求的-Mapping-关系什么时候映射的呢？" class="headerlink" title="3 API 请求的 Mapping 关系什么时候映射的呢？"></a>3 API 请求的 Mapping 关系什么时候映射的呢？</h3><h3 id="4-自动配置的那些类是什么时候被加载的呢？"><a href="#4-自动配置的那些类是什么时候被加载的呢？" class="headerlink" title="4 自动配置的那些类是什么时候被加载的呢？"></a>4 自动配置的那些类是什么时候被加载的呢？</h3><h3 id="5-数据库连接是在什么时候建立的呢？"><a href="#5-数据库连接是在什么时候建立的呢？" class="headerlink" title="5 数据库连接是在什么时候建立的呢？"></a>5 数据库连接是在什么时候建立的呢？</h3><h1 id="Spring-mvc-响应请求过程"><a href="#Spring-mvc-响应请求过程" class="headerlink" title="Spring mvc 响应请求过程"></a>Spring mvc 响应请求过程</h1><h1 id="Spring-boot-打包流程"><a href="#Spring-boot-打包流程" class="headerlink" title="Spring boot 打包流程"></a>Spring boot 打包流程</h1></center></center>	  
+<h2 id="4-补充点"><a href="#4-补充点" class="headerlink" title="4 补充点"></a>4 补充点</h2><h3 id="1-自动配置的那些类是什么时候被加载的呢，包扫描的细节是什么？"><a href="#1-自动配置的那些类是什么时候被加载的呢，包扫描的细节是什么？" class="headerlink" title="1 自动配置的那些类是什么时候被加载的呢，包扫描的细节是什么？"></a>1 自动配置的那些类是什么时候被加载的呢，包扫描的细节是什么？</h3><h3 id="2-Tomcat-是怎么知道-Spring-mvc-的-Servlet-入口点的呢？"><a href="#2-Tomcat-是怎么知道-Spring-mvc-的-Servlet-入口点的呢？" class="headerlink" title="2 Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？"></a>2 Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？</h3><p>这个过程是异步的，也就是在另外一个线程被处理了，因此源码分析比较困难。关键点在 onRefresh 方法，这个方法中启动了一个  web server，同时注册了 Servlet。</p>
+<p>我们 在 SpringApplication 中有一句 refreshContext，然后交给 Spring 的上下文去初始化应用，然后调用了 onRefresh。</p>
+<p>我们回忆一下这个过程：</p>
+<ol>
+<li>SpringApplication.run</li>
+<li>SpringApplication.refresh</li>
+<li>ServletWebServerApplicationContext.onRefresh</li>
+<li>ServletWebServerApplicationContext.createWebServer</li>
+</ol>
+<p>现在我们从 ServletWebServerApplicationContext.createWebServer 开始分析。</p>
+<pre><code class="java">private void createWebServer() {
+   WebServer webServer = this.webServer;
+   ServletContext servletContext = getServletContext();
+   if (webServer == null &amp;&amp; servletContext == null) {
+      // 根据加载进来的类，决定使用哪种 web 服务器，默认是 TomcatReactiveWebServerFactory
+      // 4.2.1 获取 ServletWebServerFactory
+      ServletWebServerFactory factory = getWebServerFactory();
+      //  TomcatReactiveWebServerFactory 帮忙获取 web 服务器实例，以及在启动时候注册 servlet
+      // 4.2.2 获取获取初始化器
+      // 4.2.3 获取 web server
+      this.webServer = factory.getWebServer(getSelfInitializer());
+   }
+   else if (servletContext != null) {
+      try {
+         // 这一句代码非常误导，实际上 servletContext 都会为空，除非热加载，因此初始化的关键在 factory.getWebServer(getSelfInitializer());
+         getSelfInitializer().onStartup(servletContext);
+      }
+      catch (ServletException ex) {
+         throw new ApplicationContextException(&quot;Cannot initialize servlet context&quot;, ex);
+      }
+   }
+   initPropertySources();
+}
+</code></pre>
+<h4 id="4-2-1-获取-ServletWebServerFactory"><a href="#4-2-1-获取-ServletWebServerFactory" class="headerlink" title="4.2.1 获取 ServletWebServerFactory"></a>4.2.1 获取 ServletWebServerFactory</h4><pre><code class="java">protected ServletWebServerFactory getWebServerFactory() {
+   // Use bean names so that we don&#39;t consider the hierarchy
+   String[] beanNames = getBeanFactory().getBeanNamesForType(ServletWebServerFactory.class);
+   if (beanNames.length == 0) {
+      throw new ApplicationContextException(&quot;Unable to start ServletWebServerApplicationContext due to missing &quot;
+            + &quot;ServletWebServerFactory bean.&quot;);
+   }
+   if (beanNames.length &gt; 1) {
+      throw new ApplicationContextException(&quot;Unable to start ServletWebServerApplicationContext due to multiple &quot;
+            + &quot;ServletWebServerFactory beans : &quot; + StringUtils.arrayToCommaDelimitedString(beanNames));
+   }
+   return getBeanFactory().getBean(beanNames[0], ServletWebServerFactory.class);
+}
+</code></pre>
+<p>ServletWebServerFactory 用于初始化各种服务器，bean 工厂从根据类型找到它的实现类。这里默认得到的是 TomcatServletWebServerFactory。 </p>
+<pre><code class="java">String[] beanNames = getBeanFactory().getBeanNamesForType(ServletWebServerFactory.class);
+</code></pre>
+<p>它的实现类有好几个</p>
+<p><img src="/Spring/spring/spring-boot-workflow/image-20200406214422826.png" alt="image-20200406214422826"></p>
+<p>为什么这里就能得到 TomcatServletWebServerFactory  而不是其他的呢？</p>
+<p>奥秘就是自动化配置 ServletWebServerFactoryConfiguration 这类中，根据 ConditionalOnClass  进行定义了一个 Bean。</p>
+<pre><code class="java">@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass({ Servlet.class, Tomcat.class, UpgradeProtocol.class })
+@ConditionalOnMissingBean(value = ServletWebServerFactory.class, search = SearchStrategy.CURRENT)
+static class EmbeddedTomcat {
+
+   @Bean
+   TomcatServletWebServerFactory tomcatServletWebServerFactory(
+         ObjectProvider&lt;TomcatConnectorCustomizer&gt; connectorCustomizers,
+         ObjectProvider&lt;TomcatContextCustomizer&gt; contextCustomizers,
+         ObjectProvider&lt;TomcatProtocolHandlerCustomizer&lt;?&gt;&gt; protocolHandlerCustomizers) {
+      TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
+      factory.getTomcatConnectorCustomizers()
+            .addAll(connectorCustomizers.orderedStream().collect(Collectors.toList()));
+      factory.getTomcatContextCustomizers()
+            .addAll(contextCustomizers.orderedStream().collect(Collectors.toList()));
+      factory.getTomcatProtocolHandlerCustomizers()
+            .addAll(protocolHandlerCustomizers.orderedStream().collect(Collectors.toList()));
+      return factory;
+   }
+}
+</code></pre>
+<h4 id="4-2-2-获取获取初始化器"><a href="#4-2-2-获取获取初始化器" class="headerlink" title="4.2.2 获取获取初始化器"></a>4.2.2 获取获取初始化器</h4><pre><code class="java">private org.springframework.boot.web.servlet.ServletContextInitializer getSelfInitializer() {
+   return this::selfInitialize;
+}
+
+private void selfInitialize(ServletContext servletContext) throws ServletException {
+   prepareWebApplicationContext(servletContext);
+   registerApplicationScope(servletContext);
+   WebApplicationContextUtils.registerEnvironmentBeans(getBeanFactory(), servletContext);
+   for (ServletContextInitializer beans : getServletContextInitializerBeans()) {
+      beans.onStartup(servletContext);
+   }
+}
+</code></pre>
+<h4 id="4-2-3-获取-web-server"><a href="#4-2-3-获取-web-server" class="headerlink" title="4.2.3 获取 web server"></a>4.2.3 获取 web server</h4><pre><code class="java">@Override
+public WebServer getWebServer(ServletContextInitializer... initializers) {
+   if (this.disableMBeanRegistry) {
+      Registry.disableRegistry();
+   }
+   // Tomcat 的主类
+   Tomcat tomcat = new Tomcat();
+   File baseDir = (this.baseDirectory != null) ? this.baseDirectory : createTempDir(&quot;tomcat&quot;);
+   tomcat.setBaseDir(baseDir.getAbsolutePath());
+   // Connector 和协议有关，HTTP、HTTPS等
+   Connector connector = new Connector(this.protocol);
+   connector.setThrowOnFailure(true);
+   tomcat.getService().addConnector(connector);
+   customizeConnector(connector);
+   tomcat.setConnector(connector);
+   tomcat.getHost().setAutoDeploy(false);
+   configureEngine(tomcat.getEngine());
+   for (Connector additionalConnector : this.additionalTomcatConnectors) {
+      tomcat.getService().addConnector(additionalConnector);
+   }
+
+   // 很多自定义的逻辑都是在这个方法中，做了一些初始化，根据配置设置服务器（又利用到了自动配置中的东西）
+   // 4.2.4 自定义配置服务器 
+   prepareContext(tomcat.getHost(), initializers);
+
+   // 4.2.5 创建和启动抽象的服务，并触发 initializers
+   return getTomcatWebServer(tomcat);
+}
+</code></pre>
+<h4 id="4-2-4-自定义配置服务器"><a href="#4-2-4-自定义配置服务器" class="headerlink" title="4.2.4 自定义配置服务器"></a>4.2.4 自定义配置服务器</h4><pre><code class="java">protected void prepareContext(Host host, ServletContextInitializer[] initializers) {
+   File documentRoot = getValidDocumentRoot();
+   // 创建服务器的上下文
+   TomcatEmbeddedContext context = new TomcatEmbeddedContext();
+   if (documentRoot != null) {
+      context.setResources(new LoaderHidingResourceRoot(context));
+   }
+   context.setName(getContextPath());
+   context.setDisplayName(getDisplayName());
+   context.setPath(getContextPath());
+   File docBase = (documentRoot != null) ? documentRoot : createTempDir(&quot;tomcat-docbase&quot;);
+   context.setDocBase(docBase.getAbsolutePath());
+   context.addLifecycleListener(new FixContextListener());
+   context.setParentClassLoader((this.resourceLoader != null) ? this.resourceLoader.getClassLoader()
+         : ClassUtils.getDefaultClassLoader());
+   resetDefaultLocaleMapping(context);
+   addLocaleMappings(context);
+   context.setUseRelativeRedirects(false);
+   try {
+      context.setCreateUploadTargets(true);
+   }
+   catch (NoSuchMethodError ex) {
+      // Tomcat is &lt; 8.5.39. Continue.
+   }
+   configureTldSkipPatterns(context);
+   WebappLoader loader = new WebappLoader(context.getParentClassLoader());
+   loader.setLoaderClass(TomcatEmbeddedWebappClassLoader.class.getName());
+   loader.setDelegate(true);
+   context.setLoader(loader);
+   // 添加了一个默认 Servlet 实际上后面会被覆盖掉，配置到根目录的。
+   if (isRegisterDefaultServlet()) {
+      addDefaultServlet(context);
+   }
+   if (shouldRegisterJspServlet()) {
+      addJspServlet(context);
+      addJasperInitializer(context);
+   }
+   context.addLifecycleListener(new StaticResourceConfigurer(context));
+   ServletContextInitializer[] initializersToUse = mergeInitializers(initializers);
+   host.addChild(context);
+   // 这里非常关键，根据项目配置文件配置
+   configureContext(context, initializersToUse);
+   // 钩子函数，这里面没什么东西
+   postProcessContext(context);
+}
+</code></pre>
+<pre><code class="java">protected void configureContext(Context context, ServletContextInitializer[] initializers) {
+   // 创建了一个 starter 
+   TomcatStarter starter = new TomcatStarter(initializers);
+   if (context instanceof TomcatEmbeddedContext) {
+      TomcatEmbeddedContext embeddedContext = (TomcatEmbeddedContext) context;
+      embeddedContext.setStarter(starter);
+      embeddedContext.setFailCtxIfServletStartFails(true);
+   }
+   context.addServletContainerInitializer(starter, NO_CLASSES);
+   for (LifecycleListener lifecycleListener : this.contextLifecycleListeners) {
+      context.addLifecycleListener(lifecycleListener);
+   }
+   for (Valve valve : this.contextValves) {
+      context.getPipeline().addValve(valve);
+   }
+   // 配置一些默认的错误页面
+   for (ErrorPage errorPage : getErrorPages()) {
+      org.apache.tomcat.util.descriptor.web.ErrorPage tomcatErrorPage = new org.apache.tomcat.util.descriptor.web.ErrorPage();
+      tomcatErrorPage.setLocation(errorPage.getPath());
+      tomcatErrorPage.setErrorCode(errorPage.getStatusCode());
+      tomcatErrorPage.setExceptionType(errorPage.getExceptionName());
+      context.addErrorPage(tomcatErrorPage);
+   }
+   // 配置一些 MIME mapping 也就是文件头
+   for (MimeMappings.Mapping mapping : getMimeMappings()) {
+      context.addMimeMapping(mapping.getExtension(), mapping.getMimeType());
+   }
+   // 配置 session，主要是配置一个 Manager，如果引入了 spring-session 会提供额外的 Manager 例如存储到 redis
+   configureSession(context);
+   new DisableReferenceClearingContextCustomizer().customize(context);
+   // 这个比较重要，用于配置，TomcatContextCustomizer 就是在自动配置包中的一个类，在 EmbeddedWebServerFactoryCustomizerAutoConfiguration 中被定义，根据配置文件配置服务器。
+   for (TomcatContextCustomizer customizer : this.tomcatContextCustomizers) {
+      customizer.customize(context);
+   }
+}
+</code></pre>
+<pre><code class="java">@Configuration(proxyBeanMethods = false)
+@ConditionalOnWebApplication
+@EnableConfigurationProperties(ServerProperties.class)
+public class EmbeddedWebServerFactoryCustomizerAutoConfiguration {
+
+   /**
+    * Nested configuration if Tomcat is being used.
+    */
+   @Configuration(proxyBeanMethods = false)
+   @ConditionalOnClass({ Tomcat.class, UpgradeProtocol.class })
+   public static class TomcatWebServerFactoryCustomizerConfiguration {
+
+      @Bean
+      public TomcatWebServerFactoryCustomizer tomcatWebServerFactoryCustomizer(Environment environment,
+            ServerProperties serverProperties) {
+         return new TomcatWebServerFactoryCustomizer(environment, serverProperties);
+      }
+
+   }
+</code></pre>
+<h4 id="4-2-5-创建和启动抽象的服务，并触发-initializers"><a href="#4-2-5-创建和启动抽象的服务，并触发-initializers" class="headerlink" title="4.2.5 创建和启动抽象的服务，并触发 initializers"></a>4.2.5 创建和启动抽象的服务，并触发 initializers</h4><pre><code class="java">protected TomcatWebServer getTomcatWebServer(Tomcat tomcat) {
+   return new TomcatWebServer(tomcat, getPort() &gt;= 0);
+}
+</code></pre>
+<p>在构造函数中初始话</p>
+<pre><code class="java">// 这个类还在 Spring boot 中
+public TomcatWebServer(Tomcat tomcat, boolean autoStart) {
+   Assert.notNull(tomcat, &quot;Tomcat Server must not be null&quot;);
+   this.tomcat = tomcat;
+   this.autoStart = autoStart;
+   initialize();
+}
+</code></pre>
+<pre><code class="java">// 位于 TomecatWebServer,启停服都在这里
+private void initialize() throws WebServerException {
+   logger.info(&quot;Tomcat initialized with port(s): &quot; + getPortsDescription(false));
+   synchronized (this.monitor) {
+      try {
+         // 设置容器id，这个是为多容器设计的，实际上用不到
+         addInstanceIdToEngineName();
+           // 找到对应上下文
+         Context context = findContext();
+         context.addLifecycleListener((event) -&gt; {
+            if (context.equals(event.getSource()) &amp;&amp; Lifecycle.START_EVENT.equals(event.getType())) {
+               // Remove service connectors so that protocol binding doesn&#39;t
+               // happen when the service is started.
+               removeServiceConnectors();
+            }
+         });
+
+         // Start the server to trigger initialization 
+         // 启动服务，终于交出控制权到 Tomcat 了
+         this.tomcat.start();
+         ...
+   }
+}
+</code></pre>
+<pre><code class="java">public void start() throws LifecycleException {
+    getServer();
+    // StandardServer ,TomCat中的概念
+    server.start();
+}
+</code></pre>
+<p>这里的启动源码看起来比较头疼，需要对 Tomcat 内部机制有一些了解主要逻辑：</p>
+<ol>
+<li>Spring boot 的 TomcatWebServer.start</li>
+<li>Tomcat.start</li>
+<li>StandardServer.start</li>
+<li>NamingResources.start JEE 中的概念，命名上下文和 JNDI 上下文</li>
+<li>StandardService.start 有多个 Service </li>
+<li>StandardEngine.start </li>
+<li>Container.start</li>
+<li>StandardHost.start</li>
+<li>StandardContext.start</li>
+<li>StandardRoo.start </li>
+<li>DirResourceSet.start</li>
+<li>WebappLoader.start </li>
+</ol>
+<p>这里面具体的流程可以参考 Tomcat的源码分析, tomcat组成：SERVER（服务器）、service（服务）、connector（连接器）、engine（引擎）、host（主机）、context（应用服务）。</p>
+<p>最终 StandardContext.start 启动完成后，会触发初始化器,实际上 spring mvc 工作在 context这层。</p>
+<pre><code class="java">// Call ServletContainerInitializers
+for (Map.Entry&lt;ServletContainerInitializer, Set&lt;Class&lt;?&gt;&gt;&gt; entry :
+    initializers.entrySet()) {
+    try {
+       // onStartup 非常重要
+        entry.getKey().onStartup(entry.getValue(),
+                getServletContext());
+    } catch (ServletException e) {
+        log.error(sm.getString(&quot;standardContext.sciFail&quot;), e);
+        ok = false;
+        break;
+    }
+}
+</code></pre>
+<pre><code class="java">public void onStartup(Set&lt;Class&lt;?&gt;&gt; classes, ServletContext servletContext) throws ServletException {
+   try {
+      for (ServletContextInitializer initializer : this.initializers) {
+         initializer.onStartup(servletContext);
+      }
+   }
+</code></pre>
+<p>这个数组中有三个初始化器，其中两个是 TomCat 自己的，主要看 AnnotationConfigServletWebServerApplicationContext 这个。</p>
+<p>回调 AnnotationConfigServletWebServerApplicationContext.onStartup() 进入 selfInitialize方法。这里 spring boot 又自己循环了一次。</p>
+<pre><code class="java">private void selfInitialize(ServletContext servletContext) throws ServletException {
+   prepareWebApplicationContext(servletContext);
+   registerApplicationScope(servletContext);
+   WebApplicationContextUtils.registerEnvironmentBeans(getBeanFactory(), servletContext);
+   // getServletContextInitializerBeans() 获取核心 Servlet 以及一些 filter
+   for (ServletContextInitializer beans : getServletContextInitializerBeans()) {
+      beans.onStartup(servletContext);
+   }
+}
+</code></pre>
+<pre><code>DispatcherServletRegistrationBean
+FilterRegistrationBean
+FilterRegistrationBean
+FilterRegistrationBean
+</code></pre><p>回到  Spring boot 的地盘，DispatcherServlet 这个类非常重要，就是 Spring MVC 的入口，通过它初始化 MVC 相关的映射。</p>
+<p>主要看 DispatcherServletRegistrationBean 类，也是自动配置完成的。</p>
+<pre><code class="java">protected final void register(String description, ServletContext servletContext) {
+   // 注册 Servlet 到 servletContext，servletContext 是 Tomcat 提供的。
+   D registration = addRegistration(description, servletContext);
+   if (registration == null) {
+      logger.info(StringUtils.capitalize(description) + &quot; was not registered (possibly already registered?)&quot;);
+      return;
+   }
+   configure(registration);
+}
+</code></pre>
+<pre><code class="java">@Override
+protected ServletRegistration.Dynamic addRegistration(String description, ServletContext servletContext) {
+   String name = getServletName();
+   return servletContext.addServlet(name, this.servlet);
+}
+</code></pre>
+<pre><code class="java">@Override
+public ServletRegistration.Dynamic addServlet(String servletName,
+        Servlet servlet) {
+    if (SecurityUtil.isPackageProtectionEnabled()) {
+        return (ServletRegistration.Dynamic) doPrivileged(&quot;addServlet&quot;,
+                new Class[]{String.class, Servlet.class},
+                new Object[]{servletName, servlet});
+    } else {
+        return context.addServlet(servletName, servlet);
+    }
+}
+</code></pre>
+<p>context 是 TomCat 提供的，然后添加 dispatcherServlet。其他几个初始化器都是给 filter 使用的，不再展开了。</p>
+<h3 id="3-大量的-Filter-是怎么注册给-Tomcat-的呢？"><a href="#3-大量的-Filter-是怎么注册给-Tomcat-的呢？" class="headerlink" title="3 大量的 Filter 是怎么注册给 Tomcat 的呢？"></a>3 大量的 Filter 是怎么注册给 Tomcat 的呢？</h3><h3 id="4-API-请求的-Mapping-关系什么时候映射的呢？"><a href="#4-API-请求的-Mapping-关系什么时候映射的呢？" class="headerlink" title="4 API 请求的 Mapping 关系什么时候映射的呢？"></a>4 API 请求的 Mapping 关系什么时候映射的呢？</h3><pre><code class="java">/**
+ * Initialize the strategy objects that this servlet uses.
+ * &lt;p&gt;May be overridden in subclasses in order to initialize further strategy objects.
+ */
+protected void initStrategies(ApplicationContext context) {
+   initMultipartResolver(context);
+   initLocaleResolver(context);
+   initThemeResolver(context);
+   initHandlerMappings(context);
+   initHandlerAdapters(context);
+   initHandlerExceptionResolvers(context);
+   initRequestToViewNameTranslator(context);
+   initViewResolvers(context);
+   initFlashMapManager(context);
+}
+</code></pre>
+<h3 id="5-Bean-是怎么被初始化的呢？-getBean-细节"><a href="#5-Bean-是怎么被初始化的呢？-getBean-细节" class="headerlink" title="5  Bean 是怎么被初始化的呢？ getBean 细节"></a>5  Bean 是怎么被初始化的呢？ getBean 细节</h3><h3 id="6-数据库连接是在什么时候建立的呢？"><a href="#6-数据库连接是在什么时候建立的呢？" class="headerlink" title="6 数据库连接是在什么时候建立的呢？"></a>6 数据库连接是在什么时候建立的呢？</h3><h3 id="7-各种注解是在哪里被处理的？"><a href="#7-各种注解是在哪里被处理的？" class="headerlink" title="7 各种注解是在哪里被处理的？"></a>7 各种注解是在哪里被处理的？</h3><h1 id="Spring-mvc-响应请求过程"><a href="#Spring-mvc-响应请求过程" class="headerlink" title="Spring mvc 响应请求过程"></a>Spring mvc 响应请求过程</h1><h1 id="Spring-boot-打包流程"><a href="#Spring-boot-打包流程" class="headerlink" title="Spring boot 打包流程"></a>Spring boot 打包流程</h1></center></center>	  
 
 	  <div>
   		<center>
@@ -2191,15 +2555,15 @@ public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
 			
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
