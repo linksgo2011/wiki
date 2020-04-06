@@ -1,6 +1,6 @@
 ---
 title: Nginx 常用操作
-categories: linux
+categories: Nginx
 toc: true
 ---
 
@@ -44,58 +44,58 @@ server {
 	listen [::]:80 default_server ipv6only=on;
 
     # 资源根目录
-	root /var/www;
-	
-	# 主页
-	index index.html index.htm index.php ;
-
-	# Make site accessible from http://localhost/
-	server_name localhost;
-
-	location / {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
-		# Uncomment to enable naxsi on this location
-		# include /etc/nginx/naxsi.rules
-	}
-
+    root /var/www;
+    
+    # 主页
+    index index.html index.htm index.php ;
+    
+    # Make site accessible from http://localhost/
+    server_name localhost;
+    
+    location / {
+    	# First attempt to serve request as file, then
+    	# as directory, then fall back to displaying a 404.
+    	try_files $uri $uri/ =404;
+    	# Uncomment to enable naxsi on this location
+    	# include /etc/nginx/naxsi.rules
+    }
+    
     # 配置反向代理 例如 host/sub-path -> http://127.0.0.1:8080; 
-	# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
-	#location /RequestDenied {
-	#	proxy_pass http://127.0.0.1:8080;    
-	#}
-
-	#error_page 404 /404.html;
-
-	# redirect server error pages to the static page /50x.html
-	#
-	#error_page 500 502 503 504 /50x.html;
-	#location = /50x.html {
-	#	root /usr/share/nginx/html;
-	#}
-
+    # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
+    #location /RequestDenied {
+    #	proxy_pass http://127.0.0.1:8080;    
+    #}
+    
+    #error_page 404 /404.html;
+    
+    # redirect server error pages to the static page /50x.html
+    #
+    #error_page 500 502 503 504 /50x.html;
+    #location = /50x.html {
+    #	root /usr/share/nginx/html;
+    #}
+    
     # 开启PHP 解析
-	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-	#
-	location ~ \.php$ {
-		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
-	
-		# With php5-cgi alone:
-		fastcgi_pass 127.0.0.1:9000;
-		# With php5-fpm:
-		fastcgi_pass unix:/var/run/php5-fpm.sock;
-		fastcgi_index index.php;
-		include fastcgi_params;
-	}
-
-	# deny access to .htaccess files, if Apache's document root
-	# concurs with nginx's one
-	#
-	#location ~ /\.ht {
-	#	deny all;
-	#}
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    location ~ \.php$ {
+    	fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    	# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+    
+    	# With php5-cgi alone:
+    	fastcgi_pass 127.0.0.1:9000;
+    	# With php5-fpm:
+    	fastcgi_pass unix:/var/run/php5-fpm.sock;
+    	fastcgi_index index.php;
+    	include fastcgi_params;
+    }
+    
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #	deny all;
+    #}
 }
 
 ``

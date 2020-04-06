@@ -1,0 +1,688 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Nginx拦截指定国家的IP | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="一、下载GeoIP数据库wget http://geolite.maxmind.com/download/geoip/api/c/GeoIP.tar.gz
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Nginx拦截指定国家的IP">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Nginx拦截指定国家的IP</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-06</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="一、下载GeoIP数据库"><a href="#一、下载GeoIP数据库" class="headerlink" title="一、下载GeoIP数据库"></a>一、下载GeoIP数据库</h2><pre><code>wget http://geolite.maxmind.com/download/geoip/api/c/GeoIP.tar.gz
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+</code></pre><h2 id="二、安装GeoIP"><a href="#二、安装GeoIP" class="headerlink" title="二、安装GeoIP"></a>二、安装GeoIP</h2><pre><code>tar -xzvf GeoIP.tar.gz
+cd GeoIP
+./configure
+make &amp;&amp; make install
+</code></pre><h2 id="三、解压GeoLiteCity-dat-gz和GeoIP-dat-gz"><a href="#三、解压GeoLiteCity-dat-gz和GeoIP-dat-gz" class="headerlink" title="三、解压GeoLiteCity.dat.gz和GeoIP.dat.gz"></a>三、解压GeoLiteCity.dat.gz和GeoIP.dat.gz</h2><pre><code>gunzip GeoIP.dat.gz
+gunzip GeoLiteCity.dat.gz 
+</code></pre><h2 id="四、将上面两个文件夹移动到自定义目录，我这儿是-etc-nginx-geoip"><a href="#四、将上面两个文件夹移动到自定义目录，我这儿是-etc-nginx-geoip" class="headerlink" title="四、将上面两个文件夹移动到自定义目录，我这儿是/etc/nginx/geoip"></a>四、将上面两个文件夹移动到自定义目录，我这儿是/etc/nginx/geoip</h2><pre><code>mv GeoIP.dat /opt/nginx/geoip/
+mv GeoLiteCity.dat /opt/nginx/geoip/
+</code></pre><h2 id="五、修改nginx的配置文件nginx-conf"><a href="#五、修改nginx的配置文件nginx-conf" class="headerlink" title="五、修改nginx的配置文件nginx.conf"></a>五、修改nginx的配置文件nginx.conf</h2><h3 id="5-1在http模块加入GeoIP库的路径（注意要换成你自己的路径）"><a href="#5-1在http模块加入GeoIP库的路径（注意要换成你自己的路径）" class="headerlink" title="5.1在http模块加入GeoIP库的路径（注意要换成你自己的路径）"></a>5.1在http模块加入GeoIP库的路径（注意要换成你自己的路径）</h3><pre><code>geoip_country  /etc/nginx/geoip/GeoIP.dat;
+geoip_city     /etc/nginx/geoip/GeoLiteCity.dat;
+</code></pre><h3 id="5-2在server模块拦截指定国家IP（这里以中国CN为例，其他国家的代码可以自己问问度娘或者谷歌）"><a href="#5-2在server模块拦截指定国家IP（这里以中国CN为例，其他国家的代码可以自己问问度娘或者谷歌）" class="headerlink" title="5.2在server模块拦截指定国家IP（这里以中国CN为例，其他国家的代码可以自己问问度娘或者谷歌）"></a>5.2在server模块拦截指定国家IP（这里以中国CN为例，其他国家的代码可以自己问问度娘或者谷歌）</h3><pre><code>if ($geoip_country_code = CN) {
+    return 403;
+}
+</code></pre><p>这里返回403在页面上来看就是nginx的403默认页面</p>
+<p>如果要跳转到自定义页面，第一步再定义一个server模块用于访问自定义页面</p>
+<pre><code>server {
+    listen 81;    #可以自定义端口（注意不要被占用了）
+    server_name your_server_name;     #这里填写你的ip或域名
+    root /usr/local/nginx/html/;      # 存放自定义页面的根目录
+    index index.html;     #自定义页面
+}
+</code></pre><p>第二步将“return 403”修改为重定向</p>
+<pre><code>if ($geoip_country_code = CN) {
+    rewrite ^/(.*) http://your_server_name:81/ break;
+}
+your_server_name就是第一步中定义的server模块中的ip或域名，端口也要加上
+</code></pre><p>ps：我看网上说可以自定义403页面然后直接“return 403”就可以跳转到自定义页面了，</p>
+<p>我试过好像不行，在if语句里面无法直接return到自定义页面，</p>
+<p>但是在if块外面是可以自定义403页面的。</p>
+<p>有没有大神有更简单的方法跳转到自定义页面，欢迎评论O(∩_∩)O哈哈~</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/Nginx/nginx/nginx-rewrite-one-page/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/Nginx/nginx/ngnix-conf/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

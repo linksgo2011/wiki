@@ -811,7 +811,7 @@ private Banner printBanner(ConfigurableEnvironment environment) {
 
 打印一个 banner 信息，基本的逻辑就是 SpringApplicationBannerPrinter 类根据配置文件在指定的位置打印出 banner，根据 banner 输出的模式分为日志、控制台、不打印。
 
-### 3.7 创建应用上下文[核心点]
+### 3.7 创建应用上下文 [核心点]
 
 ```java
 protected ConfigurableApplicationContext createApplicationContext() {
@@ -1016,7 +1016,7 @@ if (beanFactory instanceof DefaultListableBeanFactory) {
 
 这里将当前使用到的  `applicationArguments` 和 `springBootBanner`  注册成单例，用于后面需要的时候获取。通过这种方式附加到上下文中。
 
-#### 3.8.5 加载所有的资源 (包扫描)
+#### 3.8.5 加载所有的资源 (包扫描) [补充点]
 
 ```java
 		// 3.8.5.1 加载包扫描资源类
@@ -1153,7 +1153,7 @@ this.annotatedReader.register(source);
 
 到了这里就已经是 Spring 的地盘了，spring boot 的工作完成了，交给 spring 去初始化各种对象了。
 
-### 3.9 刷新应用上下文 [spring 核心]
+### 3.9 刷新(初始化)应用上下文 [spring 核心]
 
 ```java
 protected void refresh(ApplicationContext applicationContext) {
@@ -1177,17 +1177,17 @@ public void refresh() throws BeansException, IllegalStateException {
       // 3.9.2 提取 bean 的配置
       ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
-      // 3.9.3 为当前 context 做准备
+      // 3.9.3 准备 Bean 容器
       prepareBeanFactory(beanFactory);
 
       try {
-         // 3.9.4 后置处理
+         // 3.9.4 后置处理 bean 工厂
          postProcessBeanFactory(beanFactory);
 
-         // 3.9.5 调用 postProcessBeanFactory
+         // 3.9.5 调用工厂后置处理器
          invokeBeanFactoryPostProcessors(beanFactory);
 
-         // 3.9.6 注册 BeanPostProcessor 的实现类
+         // 3.9.6 注册 bean 后置处理器
          registerBeanPostProcessors(beanFactory);
 
          // 3.9.7 初始化国际化消息
@@ -1196,16 +1196,16 @@ public void refresh() throws BeansException, IllegalStateException {
          // 3.9.8 初始化事件广播器
          initApplicationEventMulticaster();
 
-         // 为子类设计的钩子方法
+         // 3.9.9 onRefresh 钩子
          onRefresh();
 
          // 注册监听器
          registerListeners();
 
-         // 3.9.9 初始化所有的 singleton beans
+         // 3.9.10 初始化所有的 singleton beans
          finishBeanFactoryInitialization(beanFactory);
 
-         // 广播事件
+         // 广播事件，启动 web 服务器
          finishRefresh();
       }
 
@@ -1215,7 +1215,7 @@ public void refresh() throws BeansException, IllegalStateException {
                   "cancelling refresh attempt: " + ex);
          }
 
-         // 3.9.10 销毁已经初始化的 singleton 的 Beans 
+         // 3.9.11 销毁已经初始化的 singleton 的 Beans 
          destroyBeans();
 
          // 设置初始话状态
@@ -1226,7 +1226,7 @@ public void refresh() throws BeansException, IllegalStateException {
       }
 
       finally {
-         // 3.9.11 清理构建过程中的对象缓存
+         // 3.9.12 清理构建过程中的对象缓存
          resetCommonCaches();
       }
    }
@@ -1278,7 +1278,7 @@ protected void prepareRefresh() {
 
 ```java
 protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
-   // 关闭旧的 BeanFactory 重新加载 bean 信息
+   // 关闭旧的 BeanFactory 重新加载 bean 信息。
    refreshBeanFactory();
 
    // 返回刚刚创建的 BeanFactory
@@ -1288,33 +1288,847 @@ protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
    }
    return beanFactory;
 }
+
+
 ```
 
-##### 3.9.3 为当前 context 做准备
-##### 3.9.4 后置处理
-##### 3.9.5 调用 postProcessBeanFactory
-##### 3.9.6 注册 BeanPostProcessor 的实现类
+需要特别注意这句代码，refreshBeanFactory 是 ConfigurableApplicationContext 的接口，最终实现主要是两个类： GenericApplicationContext、AbstractRefreshableApplicationContext。
+
+我们使用 Spring boot 走注解方式配置，使用的是 GenericApplicationContext ，而 xml 相关使用的是 AbstractRefreshableApplicationContext。他们在 refreshBeanFactory 方法实现上差异较大。
+
+需要注意，我们现在通过 spring boot 分析，走的是注解这边。
+
+![image-20200406094251066](spring-boot-workflow/image-20200406094251066.png)
+
+
+
+##### 3.9.3 准备 Bean 容器
+
+这里为 bean 工厂准备一些必要的组件，例如加载后置处理器、类加载器、依赖处理器（spring 支持双向依赖）等。 这里的 bean 工厂一般是 DefaultListableBeanFactory，DefaultListableBeanFactory 是在前面创建应用上下文就创建好了的。基本上在 Spring 中最牛的就是 DefaultListableBeanFactory 了。
+
+```java
+protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+		// Tell the internal bean factory to use the context's class loader etc.
+    // 设置 BeanFactory 的类加载器
+		beanFactory.setBeanClassLoader(getClassLoader());
+    // 设置 EL 表达式处理器
+		beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver(beanFactory.getBeanClassLoader()));
+    // 设置属性编辑器
+		beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
+
+		// 设置后置处理器, ApplicationContextAwareProcessor 可以自定定义，也可以使用注解，又属于 spring 拓展点之一。我们可以通过 ApplicationContextAware 获取 ApplicationContext。
+		beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(th	is));
+    
+    // 自动装配的时候忽略,这几个类比较特殊
+		beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
+		beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);
+		beanFactory.ignoreDependencyInterface(ResourceLoaderAware.class);
+		beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class);
+		beanFactory.ignoreDependencyInterface(MessageSourceAware.class);
+		beanFactory.ignoreDependencyInterface(ApplicationContextAware.class);
+
+		// 特殊的依赖注入，因为这几个 bean 是作为 spring 关键组件，就是容器本身。用 registerResolvableDependency 这种方式注入。MessageSource 作为普通的 bean 被注入到容器中。
+		// MessageSource registered (and found for autowiring) as a bean.
+		beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);
+		beanFactory.registerResolvableDependency(ResourceLoader.class, this);
+		beanFactory.registerResolvableDependency(ApplicationEventPublisher.class, this);
+		beanFactory.registerResolvableDependency(ApplicationContext.class, this);
+
+		// 在 bean 实例化后，如果是 ApplicationListener 的子类，会被注册到监听器中。细节有 ApplicationListenerDetector 处理。
+		beanFactory.addBeanPostProcessor(new ApplicationListenerDetector(this));
+
+		// 如果存在 AOP 的bean，在运行期织入。任务由 LoadTimeWeaverAwareProcessor 完成。
+		if (beanFactory.containsBean(LOAD_TIME_WEAVER_BEAN_NAME)) {
+			beanFactory.addBeanPostProcessor(new LoadTimeWeaverAwareProcessor(beanFactory));
+			// Set a temporary ClassLoader for type matching.
+			beanFactory.setTempClassLoader(new ContextTypeMatchClassLoader(beanFactory.getBeanClassLoader()));
+		}
+
+		// 注册默认的环境相关的 bean，的 bean 被直接注入到容器中。
+    // environment 
+		if (!beanFactory.containsLocalBean(ENVIRONMENT_BEAN_NAME)) {
+			beanFactory.registerSingleton(ENVIRONMENT_BEAN_NAME, getEnvironment());
+		}
+    // systemProperties
+		if (!beanFactory.containsLocalBean(SYSTEM_PROPERTIES_BEAN_NAME)) {
+			beanFactory.registerSingleton(SYSTEM_PROPERTIES_BEAN_NAME, getEnvironment().getSystemProperties());
+		}
+    // systemEnvironment
+		if (!beanFactory.containsLocalBean(SYSTEM_ENVIRONMENT_BEAN_NAME)) {
+			beanFactory.registerSingleton(SYSTEM_ENVIRONMENT_BEAN_NAME, getEnvironment().getSystemEnvironment());
+		}
+	}
+```
+
+##### 3.9.4 后置处理 bean 工厂
+
+对我们的 bean 工厂后置处理，也就是 AnnotationConfigServletWebServerApplicationContext 中的 postProcessBeanFactory 方法。这个是前面检测应用类型决定的。
+
+```java
+@Override
+protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+   super.postProcessBeanFactory(beanFactory);
+   if (this.basePackages != null && this.basePackages.length > 0) {
+      this.scanner.scan(this.basePackages);
+   }
+   if (!this.annotatedClasses.isEmpty()) {
+      this.reader.register(ClassUtils.toClassArray(this.annotatedClasses));
+   }
+}
+```
+
+如果没有包扫描，会再去进行包扫描。从批判的眼光来看，spring 有很多重复代码，前面实际上完成了 包扫描的任务的。
+
+##### 3.9.5 调用工厂后置处理器 [补充点]
+
+这里是真正的调用后置处理器，也就是业务中自定义的处理器，在这里完成。注意，这里实在最终 bean 实例化完成之前调用的，另外需要注意后置处理器会按照顺序调用 。
+
+```java
+protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+   PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
+
+   // Detect a LoadTimeWeaver and prepare for weaving, if found in the meantime
+   // (e.g. through an @Bean method registered by ConfigurationClassPostProcessor)
+   if (beanFactory.getTempClassLoader() == null && beanFactory.containsBean(LOAD_TIME_WEAVER_BEAN_NAME)) {
+      beanFactory.addBeanPostProcessor(new LoadTimeWeaverAwareProcessor(beanFactory));
+      beanFactory.setTempClassLoader(new ContextTypeMatchClassLoader(beanFactory.getBeanClassLoader()));
+   }
+}
+```
+
+最为关键的方法是 PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors ，基本原理就是拿到所有的后置处理器，然后在这里循环执行。
+
+为了不打乱主线思路，这里在 Spring IOC 的地方拆开讨论。
+
+##### 3.9.6 注册 Bean 后置处理器
+
+这里有一连串的后置处理，实际上都不一样：
+
+```java
+			// 后置处理 bean 工厂，这里是子类钩子方法
+			postProcessBeanFactory(beanFactory);
+
+			// 调用 bean 工厂后置处理器,这里是一个工厂处理器的责任链循环调用
+			invokeBeanFactoryPostProcessors(beanFactory);
+ 
+			// 调用 bean 自身的后置处理器,这里是一个 bean 后置处理器的责任链循环调用
+			registerBeanPostProcessors(beanFactory);
+```
+```java
+protected void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+   PostProcessorRegistrationDelegate.registerBeanPostProcessors(beanFactory, this);
+}
+```
+
+这里又到了复杂的 IOC 逻辑，这里只是注册，后面才会调用。registerBeanPostProcessors 的主要职责就是
+
+1. 获取 bean name 
+2. 排序
+3. 添加到一个数组中
+
 ##### 3.9.7 初始化国际化消息
-##### 3.9.8 初始化事件广播器
-##### 3.9.9 初始化所有的 singleton beans
-##### 3.9.10 销毁已经初始化的 singleton 的 Beans 
-##### 3.9.11 清理构建过程中的对象缓存
+
+​	
+
+```java
+protected void initMessageSource() {
+   ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+   if (beanFactory.containsLocalBean(MESSAGE_SOURCE_BEAN_NAME)) {
+      this.messageSource = beanFactory.getBean(MESSAGE_SOURCE_BEAN_NAME, MessageSource.class);
+      // Make MessageSource aware of parent MessageSource.
+      if (this.parent != null && this.messageSource instanceof HierarchicalMessageSource) {
+         HierarchicalMessageSource hms = (HierarchicalMessageSource) this.messageSource;
+         if (hms.getParentMessageSource() == null) {
+            // Only set parent context as parent MessageSource if no parent MessageSource
+            // registered already.
+            hms.setParentMessageSource(getInternalParentMessageSource());
+         }
+      }
+      if (logger.isTraceEnabled()) {
+         logger.trace("Using MessageSource [" + this.messageSource + "]");
+      }
+   }
+   else {
+      // Use empty MessageSource to be able to accept getMessage calls.
+      DelegatingMessageSource dms = new DelegatingMessageSource();
+      dms.setParentMessageSource(getInternalParentMessageSource());
+      this.messageSource = dms;
+      beanFactory.registerSingleton(MESSAGE_SOURCE_BEAN_NAME, this.messageSource);
+      if (logger.isTraceEnabled()) {
+         logger.trace("No '" + MESSAGE_SOURCE_BEAN_NAME + "' bean, using [" + this.messageSource + "]");
+      }
+   }
+}
+```
+
+这部分逻辑比较简单，如果有注册 messageSource 就设置 messageSource ，没有就设置一个空的，防止方法调用失败，以及打出日志。
+
+##### 3.9.8 onRefresh 钩子,启动 web 服务 [补充点]
+
+这个方法对于非 web 项目无所谓，但是对于 web 项目非常重要，因为在 ServletWebServerApplicationContext 中，会在这个时候启动 web 服务器，默认是内置的 Tomecat。
+
+```java 
+@Override
+protected void onRefresh() {
+   // 父类会初始话一个 themeSource 
+   super.onRefresh();
+   try {
+      createWebServer();
+   }
+   catch (Throwable ex) {
+      throw new ApplicationContextException("Unable to start web server", ex);
+   }
+}
+```
+
+```java
+private void createWebServer() {
+   WebServer webServer = this.webServer;
+   // 获取 servlet 上下文
+   ServletContext servletContext = getServletContext();
+   if (webServer == null && servletContext == null) {
+      // 根据注册的 bean 获取 web server 工厂，实际上这里偷偷提前初始化了一个 bean 就是factory。因为 getWebServerFactory 是通过 beanFactory.getBean 和 名字获取的。beanFactory.getBean 实际上就是在初始化 bean。
+      ServletWebServerFactory factory = getWebServerFactory();
+      this.webServer = factory.getWebServer(getSelfInitializer());
+   }
+   else if (servletContext != null) {
+      try {
+         // 启动 web server，只是针对 servletContext 存在的情况，新建的 context不需要监听
+         getSelfInitializer().onStartup(servletContext);
+      }
+      catch (ServletException ex) {
+         throw new ApplicationContextException("Cannot initialize servlet context", ex);
+      }
+   }
+   // 初始化 servletContext 中的配置信息 
+   initPropertySources();
+}
+```
+
+这里面涉及内置 web 服务器如果被创建出来，非常有趣，但是范围太大了，在后面展开。基本的逻辑就是根据工厂调用 Tomcat 的入口方法然后写入一些配置。
+
+```java
+public WebServer getWebServer(ServletContextInitializer... initializers) {
+   if (this.disableMBeanRegistry) {
+      Registry.disableRegistry();
+   }
+   // 构造 Tomecat 实例
+   Tomcat tomcat = new Tomcat();
+   File baseDir = (this.baseDirectory != null) ? this.baseDirectory : createTempDir("tomcat");
+   tomcat.setBaseDir(baseDir.getAbsolutePath());
+   Connector connector = new Connector(this.protocol);
+   connector.setThrowOnFailure(true);
+   tomcat.getService().addConnector(connector);
+   customizeConnector(connector);
+   tomcat.setConnector(connector);
+   tomcat.getHost().setAutoDeploy(false);
+   configureEngine(tomcat.getEngine());
+   for (Connector additionalConnector : this.additionalTomcatConnectors) {
+      tomcat.getService().addConnector(additionalConnector);
+   }
+   prepareContext(tomcat.getHost(), initializers);
+   return getTomcatWebServer(tomcat);
+}
+```
+
+到目前为止，web 服务已经启动成功了从日志中能看到端口、服务器等信息。
+
+留一个问题，Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？
+
+##### 3.9.9 初始化事件广播器 [补充点]
+
+```java
+protected void registerListeners() {
+   // 获取事件通道并添加监听器，这里只是注册静态监听器，不需要 bean 初始化
+   for (ApplicationListener<?> listener : getApplicationListeners()) {
+      getApplicationEventMulticaster().addApplicationListener(listener);
+   }
+
+   // 将对象监听器添加到列表中，但是不初始化，留给后面的 post-processors 处理
+   String[] listenerBeanNames = getBeanNamesForType(ApplicationListener.class, true, false);
+   for (String listenerBeanName : listenerBeanNames) {
+      getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
+   }
+
+   // 现在有事件通道了，将早期的应用事件发送出去
+   Set<ApplicationEvent> earlyEventsToProcess = this.earlyApplicationEvents;
+   this.earlyApplicationEvents = null;
+   if (earlyEventsToProcess != null) {
+      for (ApplicationEvent earlyEvent : earlyEventsToProcess) {
+         getApplicationEventMulticaster().multicastEvent(earlyEvent);
+      }
+   }
+}
+```
+
+这个方法的主要作用是讲上下文中的监听器，添加到 applicationEventMulticaster 上，applicationEventMulticaster 是一个消息通道，用于实现监听者模式的关键角色。
+
+##### 3.9.10 初始化所有的 singleton beans [核心点]
+
+这一步就是初始化所有的单例 bean 了，懒加载的 bean 和其他 scope 的初始化过程并不在这里。
+
+到目前为止：
+
+- bean 信息已经注册完成
+- postProcessBeanFactory 已经完成
+- environment、systemProperties 已经被手动初始话
+- 服务器已经启动 ，同时初始化了一个 servletFactory 的bean
+- 主题已经加载
+- 国际化已经初始话
+- 事件通道已经就绪
+
+接下来就是完成最终的 bean 初始化。
+
+```java
+protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory) {
+   // beanFactory.getBean 就是在初始化，这里优先初始化 ConversionService 前面提到了，这个是用来做类型转换的。
+   if (beanFactory.containsBean(CONVERSION_SERVICE_BEAN_NAME) &&
+         beanFactory.isTypeMatch(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class)) {
+      beanFactory.setConversionService(
+            beanFactory.getBean(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class));
+   }
+
+   // 如果没有 EmbeddedValueResolver 就配置一个默认的 EmbeddedValueResolver，这个 resolver 的目的是处理 ${}这样的属性，通过内置的 EL 上下文处理完成。
+   if (!beanFactory.hasEmbeddedValueResolver()) {
+      beanFactory.addEmbeddedValueResolver(strVal -> getEnvironment().resolvePlaceholders(strVal));
+   }
+
+   // 初始化切面相关的 bean，LoadTimeWeaverAware  类型
+   String[] weaverAwareNames = beanFactory.getBeanNamesForType(LoadTimeWeaverAware.class, false, false);
+   for (String weaverAwareName : weaverAwareNames) {
+      getBean(weaverAwareName);
+   }
+
+   // 停用 TempClassLoader，这个时候类已经全部加载完成了
+   beanFactory.setTempClassLoader(null);
+
+   // 冻结掉所有的读取配置行为，不希望在这个过程中发生变化
+   beanFactory.freezeConfiguration();
+
+   // 初始化所有的剩下的非懒加载的 bean，根据 bean 定义数组中的类名，循环调用 getBean 初始化
+   beanFactory.preInstantiateSingletons();
+}
+```
+
+**TempClassLoader 说明**
+
+TempClassLoader 的用处是 匹配类型，默认是空，简单的使用标准的类加载器。临时类加载器只是检查是不是一个运行时切面被应用了，然后尽可能的延迟初始化。临时类加载器在启动过程完成后，会被移除。
+
+```java
+/**
+ * Specify a temporary ClassLoader to use for type matching purposes.
+ * Default is none, simply using the standard bean ClassLoader.
+ * <p>A temporary ClassLoader is usually just specified if
+ * <i>load-time weaving</i> is involved, to make sure that actual bean
+ * classes are loaded as lazily as possible. The temporary loader is
+ * then removed once the BeanFactory completes its bootstrap phase.
+ * @since 2.5
+ */
+```
 
 
+
+然后就是 spring 中最难的 preInstantiateSingletons  方法了。
+
+```java 
+//代码位于 DefaultListableBeanFactory.java 
+
+@Override
+public void preInstantiateSingletons() throws BeansException {
+   if (logger.isTraceEnabled()) {
+      logger.trace("Pre-instantiating singletons in " + this);
+   }
+
+   // 遍历一遍 beanDefinitionNames，在这个过程中还会向 beanDefinitionNames 中添加新的内容
+   List<String> beanNames = new ArrayList<>(this.beanDefinitionNames);
+
+   // 触发非懒加载的 bean 创建
+   for (String beanName : beanNames) {
+      // 合并父 Bean 中的配置，父 bean 的配置并不像 java 的继承那样，而是给一个公共的配置参数而已，这一步相当于将公共的配置参数内联到当前的 bean 定义上。
+      RootBeanDefinition bd = getMergedLocalBeanDefinition(beanName);
+      // 只有非抽象类、单例、非懒加载才需要在这个时候初始化
+      if (!bd.isAbstract() && bd.isSingleton() && !bd.isLazyInit()) {
+         // factoryBean 就是通过工厂方法声明的 bean，例如我们在配置数据库连接的时候 通过 @Bean 加上方法实现。factoryBean 会带上一个 '&' 符号标明。注意 factoryBean 和 beanFactory 完全是两回事，不要搞乱了。
+         // 2.9.10.1 factorybean
+         if (isFactoryBean(beanName)) {
+            // 2.9.10.2 bean 初始化 getBean
+            Object bean = getBean(FACTORY_BEAN_PREFIX + beanName);
+            if (bean instanceof FactoryBean) {
+               final FactoryBean<?> factory = (FactoryBean<?>) bean;
+               boolean isEagerInit;
+               // 2.9.10.3 java 安全管理器
+               if (System.getSecurityManager() != null && factory instanceof SmartFactoryBean) {
+                  isEagerInit = AccessController.doPrivileged((PrivilegedAction<Boolean>)
+                              ((SmartFactoryBean<?>) factory)::isEagerInit,
+                        getAccessControlContext());
+               }
+               else {
+                  isEagerInit = (factory instanceof SmartFactoryBean &&
+                        ((SmartFactoryBean<?>) factory).isEagerInit());
+               }
+               if (isEagerInit) {
+                  getBean(beanName);
+               }
+            }
+         }
+         else {
+            getBean(beanName);
+         }
+      }
+   }
+
+   // 2.9.10.4 smartSingleton
+   for (String beanName : beanNames) {
+      Object singletonInstance = getSingleton(beanName);
+      if (singletonInstance instanceof SmartInitializingSingleton) {
+         final SmartInitializingSingleton smartSingleton = (SmartInitializingSingleton) singletonInstance;
+         if (System.getSecurityManager() != null) {
+            AccessController.doPrivileged((PrivilegedAction<Object>) () -> {
+               smartSingleton.afterSingletonsInstantiated();
+               return null;
+            }, getAccessControlContext());
+         }
+         else {
+            smartSingleton.afterSingletonsInstantiated();
+         }
+      }
+   }
+}
+```
+
+###### 2.9.10.1 factorybean [补充点]
+
+工厂就是为复杂的对象构造准备的，简单的构造通过构造函数完成，复杂的构造通过工厂完成，工厂提供一个构造方法。
+
+在  Spring 中也可以提供一个构造方法，然后 spring 构造 bean 时调用方法而不是构造函数。
+
+```java
+public interface FactoryBean<T> {
+    T getObject() throws Exception;
+    Class<T> getObjectType();
+    boolean isSingleton();
+}
+
+@Component
+public class PersonFactoryBean implements FactoryBean<Person>{
+    private String agender; 
+    private int age ;
+
+    public Person getObject(){ 
+      // 执行 bean 的构造,例如 new Person 等复
+    }
+
+    public Class<Person> getObjectType() { return Person.class ; } 
+
+    public boolean isSingleton() { return false; }
+}
+```
+
+
+
+这样可以提供更好地灵活性，可以获取 isSingleton、getObjectType 等额外信息。
+
+```java
+@Configuration 
+public class DBConfiguration { 
+
+    @Bean
+    public DataSource dataBea(){ 
+      // 构造 DataSource
+    } 
+}
+```
+
+实际上这种也是 factoryBean。isFactoryBean 的逻辑比较复杂，在后面 spring 中可以单独处理。
+
+###### 2.9.10.2 bean 初始化 getBean [补充点]
+
+getBean 是 Spring 中最重要的一个方法，承担了初始化 bean 的职责。 getBean 最终调用的是 doGetBean，这个方法非常长，包含了 Spring 核心逻辑，需要一定 IOC 理论知识，这里不展开。
+
+说下初始化的 bean 的过程主要有：
+
+1. 根据别名获取 beanName transformedBeanName
+2. 尝试获取实例 getSingleton
+3. 如果存在
+   1. 返回存在的 bean
+4. 如果不存在
+   1.  检查 BeanDefinition
+   2. 获取依赖项
+   3. 注册依赖项
+   4. 递归调用 getBean 创建被依赖项
+   5. 创建 bean createBean
+      1. 创建 bean 实例 createBeanInstance
+         1. 使用依赖注入构造
+         2. 使用无参构造
+         3. 最终使用 BeanUtils 或者 instantiateWithMethodInjection 初始化
+      2. 应用 PostProcessor，回调方法
+      3. 为 bean 赋值 populateBean 给一些简单参数赋值
+      4. 初始化创建的 bean initializeBean ，各种回调
+      5. 处理循环依赖
+   6. 获取创建完成的 bean
+   7. 如果不是单例，需要根据对应的 scope 处理
+   8. 检查类型
+
+这部分可以参考 https://www.javadoop.com/post/spring-ioc#toc_7
+
+###### 2.9.10.3 java 安全管理器
+
+```java
+           if (System.getSecurityManager() != null && factory instanceof SmartFactoryBean) {
+              isEagerInit = AccessController.doPrivileged((PrivilegedAction<Boolean>)
+                          ((SmartFactoryBean<?>) factory)::isEagerInit,
+                    getAccessControlContext());
+           }
+```
+
+
+安全管理器在Java语言中的作用就是检查操作是否有权限执行。`-Djava.security.manager` 开启后，可以配置一个 policy 给予应用一些权限。例如 jstatd 远程内存调试就需要配置 *java*.policy 然后开启网络访问。
+
+SecurityManager 提供如下访问权限检查，包括文件的读写删除和执行、网络的连接和监听、线程的访问、以及其他包括打印机剪贴板等系统功能。
+
+```
+checkAccept(String, int)
+checkAccess(Thread)
+checkAccess(ThreadGroup)
+checkAwtEventQueueAccess()
+checkConnect(String, int)
+checkConnect(String, int, Object)
+checkCreateClassLoader()
+checkDelete(String)
+checkExec(String)
+checkExit(int)
+checkLink(String)
+checkListen(int)
+checkMemberAccess(Class<?>, int)
+checkMulticast(InetAddress)
+checkMulticast(InetAddress, byte)
+checkPackageAccess(String)
+checkPackageDefinition(String)
+checkPermission(Permission)
+checkPermission(Permission, Object)
+checkPrintJobAccess()
+checkPropertiesAccess()
+checkPropertyAccess(String)
+checkRead(FileDescriptor)
+checkRead(String)
+checkRead(String, Object)
+checkSecurityAccess(String)
+checkSetFactory()
+checkSystemClipboardAccess()
+checkTopLevelWindow(Object)
+checkWrite(FileDescriptor)
+checkWrite(String)
+```
+
+SecurityManager 中的几个关键概念
+
+**AccessController**
+
+其实就是暴露给应用的一个 API  checkPermission，提供权限检查使用。
+
+**CodeSource**
+
+用来声明从哪里加载类，其实就是包装了 URL。
+
+**Permission**
+
+权限的抽象，用来表示那些资源可以被访问。
+
+**策略Policy**
+
+一组权限规则，在JVM中，任何情况下只能安装一个策略类的实例。可以通过  Policy.setPolicy() 动态设置，也可以使用 policy.provider=sun.security.provider.PolicyFile 指定。
+
+**ProtectionDomain**
+
+保护域是一个代码源的一组权限，每一个类都属于一个保护域，这个是 ClassLoader 决定了的。
+
+**ClassLoader**
+
+权限与类对象之间的映射，提供权限来源，类加载器根据双亲委派模型。最基础的是系统类加载器，有很多子类比如 URLClassLoader。
+
+加载一个类时，以委托的形式逐层询问，父亲优先。一旦为一个域的类定义类加载器，其他类加载器不能再定义，防止冲突。另外也是类加载器来进行检查安全。
+
+##### 3.9.11 销毁已经初始化的 singleton 的 Beans 
+
+如果构造过程中出错，需要把已经成功构建的 bean是销毁。
+
+```java
+protected void destroyBeans() {
+   getBeanFactory().destroySingletons();
+}
+```
+
+```java
+// 位于 DefaultListableBeanFactory.java 
+
+@Override
+public void destroySingletons() {
+   super.destroySingletons();
+   updateManualSingletonNames(Set::clear, set -> !set.isEmpty());
+   clearByTypeCache();
+}
+```
+
+```java
+@Override
+public void destroySingletons() {
+   super.destroySingletons();
+   updateManualSingletonNames(Set::clear, set -> !set.isEmpty());
+   clearByTypeCache();
+}
+
+// 父类的销毁方法
+public void destroySingletons() {
+		if (logger.isTraceEnabled()) {
+			logger.trace("Destroying singletons in " + this);
+		}
+		synchronized (this.singletonObjects) {
+			this.singletonsCurrentlyInDestruction = true;
+		}
+
+		String[] disposableBeanNames;
+		synchronized (this.disposableBeans) {
+			disposableBeanNames = StringUtils.toStringArray(this.disposableBeans.keySet());
+		}
+		for (int i = disposableBeanNames.length - 1; i >= 0; i--) {
+			destroySingleton(disposableBeanNames[i]);
+		}
+
+		this.containedBeanMap.clear();
+		this.dependentBeanMap.clear();
+		this.dependenciesForBeanMap.clear();
+
+		clearSingletonCache();
+	}
+```
+
+销毁掉列表中所有的记录，然后递归销毁
+
+```java
+// 位于 DefaultSingletonBeanRegistry
+	public void destroySingleton(String beanName) {
+		// Remove a registered singleton of the given name, if any.
+		removeSingleton(beanName);
+
+		// Destroy the corresponding DisposableBean instance.
+		DisposableBean disposableBean;
+		synchronized (this.disposableBeans) {
+			disposableBean = (DisposableBean) this.disposableBeans.remove(beanName);
+		}
+		destroyBean(beanName, disposableBean);
+	}
+  protected void destroyBean(String beanName, @Nullable DisposableBean bean) {
+		// Trigger destruction of dependent beans first...
+		Set<String> dependencies;
+		synchronized (this.dependentBeanMap) {
+			// Within full synchronization in order to guarantee a disconnected Set
+			dependencies = this.dependentBeanMap.remove(beanName);
+		}
+		if (dependencies != null) {
+			if (logger.isTraceEnabled()) {
+				logger.trace("Retrieved dependent beans for bean '" + beanName + "': " + dependencies);
+			}
+			for (String dependentBeanName : dependencies) {
+				destroySingleton(dependentBeanName);
+			}
+		}
+
+		// Actually destroy the bean now...
+		if (bean != null) {
+			try {
+				bean.destroy();
+			}
+			catch (Throwable ex) {
+				if (logger.isWarnEnabled()) {
+					logger.warn("Destruction of bean with name '" + beanName + "' threw an exception", ex);
+				}
+			}
+		}
+
+		// Trigger destruction of contained beans...
+		Set<String> containedBeans;
+		synchronized (this.containedBeanMap) {
+			// Within full synchronization in order to guarantee a disconnected Set
+			containedBeans = this.containedBeanMap.remove(beanName);
+		}
+		if (containedBeans != null) {
+			for (String containedBeanName : containedBeans) {
+				destroySingleton(containedBeanName);
+			}
+		}
+
+		// Remove destroyed bean from other beans' dependencies.
+		synchronized (this.dependentBeanMap) {
+			for (Iterator<Map.Entry<String, Set<String>>> it = this.dependentBeanMap.entrySet().iterator(); it.hasNext();) {
+				Map.Entry<String, Set<String>> entry = it.next();
+				Set<String> dependenciesToClean = entry.getValue();
+				dependenciesToClean.remove(beanName);
+				if (dependenciesToClean.isEmpty()) {
+					it.remove();
+				}
+			}
+		}
+
+		// Remove destroyed bean's prepared dependency information.
+		this.dependenciesForBeanMap.remove(beanName);
+	}
+```
+
+因为存在循环引用，Spring 不得不手动的清理掉所有的依赖关系，否则 GC 无法释放资源。
+
+##### 3.9.12 清理构建过程中的对象缓存
+
+```java
+protected void resetCommonCaches() {
+   // 反射缓存
+   ReflectionUtils.clearCache();
+   // 注解缓存
+   AnnotationUtils.clearCache();
+   // IOC 缓存
+   ResolvableType.clearCache();
+  // 清理类加载器
+   CachedIntrospectionResults.clearClassLoader(getClassLoader());
+}
+```
 
 ### 3.10 应用上下文刷新后置处理
 
+回调钩子函数，没有内容
+
 ### 3.11 停止计时监控类
+
+```java
+if (this.currentTaskName == null) {
+   throw new IllegalStateException("Can't stop StopWatch: it's not running");
+}
+long lastTime = System.nanoTime() - this.startTimeNanos;
+this.totalTimeNanos += lastTime;
+this.lastTaskInfo = new TaskInfo(this.currentTaskName, lastTime);
+if (this.keepTaskList) {
+   this.taskList.add(this.lastTaskInfo);
+}
+++this.taskCount;
+this.currentTaskName = null;
+
+```
+
+停止计时，计算启动花费的时间。
 
 ### 3.12 输出日志记录执行主类名、时间信息
 
+```java
+if (this.logStartupInfo) {
+   new StartupInfoLogger(this.mainApplicationClass).logStarted(getApplicationLog(), stopWatch);
+}
+```
+
 ### 3.13 发布应用上下文启动完成事件
+
+```java
+void started(ConfigurableApplicationContext context) {
+   for (SpringApplicationRunListener listener : this.listeners) {
+      listener.started(context);
+   }
+}
+
+```
+
+给所有的监听器，发布启动完成的事件。
 
 ### 3.14 执行所有 Runner 运行器
 
+SpringBoot 的 ApplicationRunner 接口可以让项目在启动时候初始化一些信息 ，比如数据库连接等。
+
+```java
+private void callRunners(ApplicationContext context, ApplicationArguments args) {
+   List<Object> runners = new ArrayList<>();
+   runners.addAll(context.getBeansOfType(ApplicationRunner.class).values());
+   runners.addAll(context.getBeansOfType(CommandLineRunner.class).values());
+   AnnotationAwareOrderComparator.sort(runners);
+   for (Object runner : new LinkedHashSet<>(runners)) {
+      if (runner instanceof ApplicationRunner) {
+         callRunner((ApplicationRunner) runner, args);
+      }
+      if (runner instanceof CommandLineRunner) {
+         callRunner((CommandLineRunner) runner, args);
+      }
+   }
+}
+```
+
+Spring boot 官方例子中，定义了一个 CommandRunder，可以打出定义的所有的 bean，这个方法会在这个时机被运行。
+
+```java
+@Bean
+public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+    return args -> {
+
+        System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+        String[] beanNames = ctx.getBeanDefinitionNames();
+        Arrays.sort(beanNames);
+        for (String beanName : beanNames) {
+            System.out.println(beanName);
+        }
+    };
+}
+```
+
 ### 3.15 发布应用上下文就绪事件
 
+```
+void running(ConfigurableApplicationContext context) {
+   for (SpringApplicationRunListener listener : this.listeners) {
+      listener.running(context);
+   }
+}
+```
+
 ### 3.16 处理运行异常
+
+```java
+private void handleRunFailure(ConfigurableApplicationContext context, Throwable exception,
+      Collection<SpringBootExceptionReporter> exceptionReporters, SpringApplicationRunListeners listeners) {
+   try {
+      try {
+         handleExitCode(context, exception);
+         if (listeners != null) {
+            listeners.failed(context, exception);
+         }
+      }
+      finally {
+         reportFailure(exceptionReporters, exception);
+         if (context != null) {
+            context.close();
+         }
+      }
+   }
+   catch (Exception ex) {
+      logger.warn("Unable to close ApplicationContext", ex);
+   }
+   ReflectionUtils.rethrowRuntimeException(exception);
+}
+```
+
+启动过程中出现异常，会丢出异常。然后关闭上下文，context.close() 会做一些清理工作，和 bean 创建失败的操作差不太多。
+
+
+
+## 补充点
+
+
+
+### 1 Tomcat 是怎么知道 Spring mvc 的 Servlet 入口点的呢？
+
+
+
+### 2 大量的 Filter 是怎么注册给 Tomcat 的呢？
+
+### 3 API 请求的 Mapping 关系什么时候映射的呢？ 
+
+### 4 自动配置的那些类是什么时候被加载的呢？
+
+###  5 数据库连接是在什么时候建立的呢？
 
 
 

@@ -17,3 +17,10 @@ toc: true
 使用工具 Intellij IDEA，打开任意类（有复杂继承关系的类或者接口），在文件上右击，选择 show diagrams，可以看到类的关系层次。这里以 CurdRepository 为例，显示类图如下。
 
 ![类图](./idea-skills/idea-diagram.png)
+
+
+
+## 查看子类（实现类）类图
+
+![image-20200406094512355](idea-skills/image-20200406094512355.png)
+

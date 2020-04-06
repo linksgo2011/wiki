@@ -1,13 +1,79 @@
----
-title: Nginx 配置参数说明
-categories: linux
-toc: true
----
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Nginx 配置参数说明 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="一份基本的 ngnix.conf#定义Nginx运行的用户和用户组
+user www www;
+#
+#nginx进程数,建议设置为等于CPU总核心数.
+worker_processes 8;
+#
+#全局错误日志定义类型,[ debug | info | notice | warn | error |">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-## 一份基本的 ngnix.conf 
+  <meta property="og:title" content="Nginx 配置参数说明">
+  <meta property="og:site_name" content="web 工程师知识系统">
 
-```
-#定义Nginx运行的用户和用户组
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Nginx 配置参数说明</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-16</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="一份基本的-ngnix-conf"><a href="#一份基本的-ngnix-conf" class="headerlink" title="一份基本的 ngnix.conf"></a>一份基本的 ngnix.conf</h2><pre><code>#定义Nginx运行的用户和用户组
 user www www;
 #
 #nginx进程数,建议设置为等于CPU总核心数.
@@ -41,18 +107,18 @@ http
     client_header_buffer_size 32k; #上传文件大小限制
     large_client_header_buffers 4 64k; #设定请求缓
     client_max_body_size 8m; #设定请求缓
-    
+
     # 开启目录列表访问,合适下载服务器,默认关闭.
     autoindex on;                   # 显示目录
     autoindex_exact_size on;        # 显示文件大小 默认为on,显示出文件的确切大小,单位是bytes 改为off后,显示出文件的大概大小,单位是kB或者MB或者GB
     autoindex_localtime on;         # 显示文件时间 默认为off,显示的文件时间为GMT时间 改为on后,显示的文件时间为文件的服务器时间
-    
+
     sendfile on; # 开启高效文件传输模式,sendfile指令指定nginx是否调用sendfile函数来输出文件,对于普通应用设为 on,如果用来进行下载等应用磁盘IO重负载应用,可设置为off,以平衡磁盘与网络I/O处理速度,降低系统的负载.注意：如果图片显示不正常把这个改成off.
     tcp_nopush on; # 防止网络阻塞
     tcp_nodelay on; # 防止网络阻塞
-    
+
     keepalive_timeout 120; # (单位s)设置客户端连接保持活动的超时时间,在超过这个时间后服务器会关闭该链接
-    
+
     # FastCGI相关参数是为了改善网站的性能：减少资源占用,提高访问速度.下面参数看字面意思都能理解.
     fastcgi_connect_timeout 300;
     fastcgi_send_timeout 300;
@@ -61,7 +127,7 @@ http
     fastcgi_buffers 4 64k;
     fastcgi_busy_buffers_size 128k;
     fastcgi_temp_file_write_size 128k;
-    
+
     # gzip模块设置
     gzip on; #开启gzip压缩输出
     gzip_min_length 1k; #允许压缩的页面的最小字节数,页面字节数从header偷得content-length中获取.默认是0,不管页面多大都进行压缩.建议设置成大于1k的字节数,小于1k可能会越压越大
@@ -71,12 +137,12 @@ http
     gzip_types text/plain application/x-javascript text/css application/xml;
     #压缩类型,默认就已经包含text/html,所以下面就不用再写了,写上去也不会有问题,但是会有一个warn.
     gzip_vary on;#选项可以让前端的缓存服务器缓存经过gzip压缩的页面.例如:用squid缓存经过nginx压缩的数据
-    
+
     #开启限制IP连接数的时候需要使用
     #limit_zone crawler $binary_remote_addr 10m;
-    
+
     ##upstream的负载均衡,四种调度算法(下例主讲)##
-    
+
     #虚拟主机的配置
     server
     {
@@ -87,13 +153,13 @@ http
         # HTTP 自动跳转 HTTPS
         rewrite ^(.*) https://$server_name$1 permanent;
     }
-    
+
     server
     {
         # 监听端口 HTTPS
         listen 443 ssl;
         server_name ably.com;
-        
+
         # 配置域名证书
         ssl_certificate      C:\WebServer\Certs\certificate.crt;
         ssl_certificate_key  C:\WebServer\Certs\private.key;
@@ -102,7 +168,7 @@ http
         ssl_protocols SSLv2 SSLv3 TLSv1;
         ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
         ssl_prefer_server_ciphers  on;
-    
+
         index index.html index.htm index.php;
         root /data/www/;
         location ~ .*\.(php|php5)?$
@@ -111,7 +177,7 @@ http
             fastcgi_index index.php;
             include fastcgi.conf;
         }
-        
+
         # 配置地址拦截转发，解决跨域验证问题
         location /oauth/{
             proxy_pass https://localhost:13580/oauth/;
@@ -119,41 +185,36 @@ http
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
-        
+
         # 图片缓存时间设置
         location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
             expires 10d;
         }
-        
+
         # JS和CSS缓存时间设置
         location ~ .*\.(js|css)?$ {
             expires 1h;
         }
 
         # 日志格式设定
-        log_format access '$remote_addr - $remote_user [$time_local] "$request" '
-        '$status $body_bytes_sent "$http_referer" '
-        '"$http_user_agent" $http_x_forwarded_for';
+        log_format access &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+        &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+        &#39;&quot;$http_user_agent&quot; $http_x_forwarded_for&#39;;
         # 定义本虚拟主机的访问日志
         access_log /var/log/nginx/access.log access;
-        
+
         # 设定查看Nginx状态的地址.StubStatus模块能够获取Nginx自上次启动以来的工作状态，此模块非核心模块，需要在Nginx编译安装时手工指定才能使用
         location /NginxStatus {
             stub_status on;
             access_log on;
-            auth_basic "NginxStatus";
+            auth_basic &quot;NginxStatus&quot;;
             auth_basic_user_file conf/htpasswd;
             #htpasswd文件的内容可以用apache提供的htpasswd工具来产生.
         }
     }
 }
 
-```
-
-## 负载均衡配置
-
-```
-events
+</code></pre><h2 id="负载均衡配置"><a href="#负载均衡配置" class="headerlink" title="负载均衡配置"></a>负载均衡配置</h2><pre><code>events
 {
     use epoll;
     worker_connections 65535;
@@ -190,7 +251,7 @@ http
     {
         listen  80;
         server_name  mongo.demo.com;
-        #对 "/" 启用反向代理
+        #对 &quot;/&quot; 启用反向代理
         location / {
             proxy_pass http://webhost;
             proxy_redirect off;
@@ -212,12 +273,8 @@ http
         }
     }
 }
-```
-
-一份 ip_hash 的配置文件
-
-```
-# 创建文件夹准备存放配置文件
+</code></pre><p>一份 ip_hash 的配置文件</p>
+<pre><code># 创建文件夹准备存放配置文件
 $ mkdir -p /opt/confs
 $ vim /opt/confs/nginx.conf
 
@@ -235,7 +292,7 @@ http
         server 192.168.0.5:6666 ;
         server 192.168.0.7:6666 ;
     }
-    
+
     server
     {
         listen  80;
@@ -263,12 +320,595 @@ http
 # 启动负载均衡服务器192.168.0.4（Nginx-Server）
 docker run -d -p 8888:80 --name nginx-server -v /opt/confs/nginx.conf:/etc/nginx/nginx.conf --restart always nginx
 
-```
+</code></pre><blockquote>
+<p>动态更新 upstream 需要配合 Consul 作为服务注册和发现系统完成。</p>
+</blockquote>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
+<li><a href="https://blog.csdn.net/jek123456/article/details/68059358" target="_blank" rel="noopener">https://blog.csdn.net/jek123456/article/details/68059358</a></li>
+<li><a href="https://segmentfault.com/a/1190000005789137" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005789137</a></li>
+</ul>
+	  
 
-> 动态更新 upstream 需要配合 Consul 作为服务注册和发现系统完成。
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/Nginx/nginx/nginx-block-via-ip/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/Nginx/nginx/nginx-usful-command/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
 
 
-## 相关资料
 
-- https://blog.csdn.net/jek123456/article/details/68059358
-- https://segmentfault.com/a/1190000005789137
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
