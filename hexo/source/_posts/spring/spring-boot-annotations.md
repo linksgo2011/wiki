@@ -1,9 +1,10 @@
 ---
 title: Spring boot 常用注解
 categories: Spring
+from: https://blog.csdn.net/yitian_66/article/details/80866571
 ---
 
-## 常用配置讲解
+## 常用配置注解
 
 ### @SpringBootApplication
 这是 Spring Boot 最最最核心的注解，用在 Spring Boot 主类上，标识这是一个 Spring Boot 应用，用来开启 Spring Boot 的各项能力。
@@ -110,3 +111,8 @@ REACTIVE
 
 ### @ImportResource
 这是 Spring 3.0 添加的新注解，用来导入一个或者多个 Spring 配置文件，这对 Spring Boot 兼容老项目非常有用，因为有些配置无法通过 Java Config 的形式来配置就只能用这个注解来导入。
+
+
+
+## SpringMVC 注解
+
