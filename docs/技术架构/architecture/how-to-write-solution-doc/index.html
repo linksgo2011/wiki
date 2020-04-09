@@ -3,16 +3,21 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Spring boot API 文档方案 | web 工程师知识系统</title>
+  <title>如何编写清晰的架构方案 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="Swagger + restdocs 方案参考资源
-restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
+  <meta name="description" content="技术攻关的步骤
+需求和问题澄清
+现状分析
+技术方案初稿
+DEMO
+方案评审
+实施">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring boot API 文档方案">
+  <meta property="og:title" content="如何编写清晰的架构方案">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -46,7 +51,7 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Spring boot API 文档方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-03-01</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">如何编写清晰的架构方案</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-09</span></h1>
 </div>		
 
 <div class="row page">
@@ -68,9 +73,14 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 	
 
 	  <!-- content -->
-	  <h2 id="Swagger-restdocs-方案"><a href="#Swagger-restdocs-方案" class="headerlink" title="Swagger + restdocs 方案"></a>Swagger + restdocs 方案</h2><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li>restdocs 方案<a href="https://www.jianshu.com/p/d2e19861f1b2" target="_blank" rel="noopener">https://www.jianshu.com/p/d2e19861f1b2</a></li>
-</ul>
+	  <h3 id="技术攻关的步骤"><a href="#技术攻关的步骤" class="headerlink" title="技术攻关的步骤"></a>技术攻关的步骤</h3><ol>
+<li>需求和问题澄清</li>
+<li>现状分析</li>
+<li>技术方案初稿</li>
+<li>DEMO</li>
+<li>方案评审</li>
+<li>实施</li>
+</ol>
 	  
 
 	  <div>
@@ -84,81 +94,14 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 	
 	
 		
-	
-		
-	
-		
+			
 			
 		
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -195,59 +138,18 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 	
 		
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
 	
 		
 			
-			
-			
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -299,22 +201,6 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 		
 	
 		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
 			
 		
 	
@@ -328,60 +214,6 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 	
 		
 	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -441,7 +273,105 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
 		
 	
 		
@@ -453,11 +383,75 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 		
 	
 		
-			
+	
 		
 	
 		
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -583,7 +577,15 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 		
 	
 		
+			
+		
 	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -628,13 +630,19 @@ restdocs 方案https://www.jianshu.com/p/d2e19861f1b2">
 	
 		
 	
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/Spring/spring/spring-boot-workflow/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/Spring/spring/springboot-credential/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/技术架构/architecture/batch/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
