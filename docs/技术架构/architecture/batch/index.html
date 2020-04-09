@@ -3,22 +3,28 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>服务器跑批任务平台 | web 工程师知识系统</title>
+  <title>批量任务执行 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="痛点
+  <meta name="description" content="toA
+痛点
 能分片跑
 能看到进度
 中途失败能重启
 能手动干预启停
 
-解决方案参考资料
-Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index-single.html#spring-batch">
+解决方案批量任务核心概念其他方案
+kettle
+sqoop
+datax
+
+参考资料
+Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referenc">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="服务器跑批任务平台">
+  <meta property="og:title" content="批量任务执行">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -52,7 +58,7 @@ Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referen
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">服务器跑批任务平台</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-08</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">批量任务执行</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-08</span></h1>
 </div>		
 
 <div class="row page">
@@ -74,14 +80,22 @@ Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referen
 	
 
 	  <!-- content -->
-	  <h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><ul>
+	  <p><a href="#参考资料">toA</a></p>
+<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><ul>
 <li>能分片跑</li>
 <li>能看到进度</li>
 <li>中途失败能重启</li>
 <li>能手动干预启停</li>
 </ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="批量任务核心概念"><a href="#批量任务核心概念" class="headerlink" title="批量任务核心概念"></a>批量任务核心概念</h3><h3 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h3><ul>
+<li>kettle</li>
+<li>sqoop</li>
+<li>datax</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li>Spring batch 官方文档 <a href="https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index-single.html#spring-batch-intro" target="_blank" rel="noopener">https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index-single.html#spring-batch-intro</a></li>
+<li>批处理框架spring batch基础知识介绍<a href="https://blog.csdn.net/topdeveloperr/article/details/84337956#如何默认不启动job" target="_blank" rel="noopener">https://blog.csdn.net/topdeveloperr/article/details/84337956#%E5%A6%82%E4%BD%95%E9%BB%98%E8%AE%A4%E4%B8%8D%E5%90%AF%E5%8A%A8job</a></li>
+<li>大数据批处理框架Spring Batch 的全面解析 <a href="https://blog.csdn.net/weixin_44233163/article/details/85992105" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44233163/article/details/85992105</a></li>
 </ul>
 	  
 
@@ -561,8 +575,6 @@ Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referen
 		
 	
 		
-	
-		
 			
 		
 	
@@ -573,8 +585,6 @@ Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referen
 		
 	
 		
-			
-		
 	
 		
 			
@@ -583,9 +593,13 @@ Spring batch 官方文档 https://docs.spring.io/spring-batch/docs/4.2.x/referen
 		
 	
 		
+			
+		
 	
 		
 			
+		
+	
 		
 	
 		
