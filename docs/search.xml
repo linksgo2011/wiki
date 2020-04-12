@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title>【转载】从单机到2000万QPS并发的Redis高性能缓存实践之路</title>
+      <link href="/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0/case-study/zhihu-redis-cluster/"/>
+      <url>/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0/case-study/zhihu-redis-cluster/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、引言"><a href="#1、引言" class="headerlink" title="1、引言"></a>1、引言</h2><p>知乎存储平台团队基于开源Redis 组件打造的知乎 Redis 平台，经过不断的研发迭代，目前已经形成了一整套完整自动化运维服务体系，提供很多强大的功能。本文作者陈鹏是该系统的负责人，本次文章深入介绍了该系统的方方面面，值得互联网后端程序员仔细研究。</p><p><img src="/案例学习/case-study/zhihu-redis-cluster/112115tbpgmohsebm2o3mh.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_v2-98aa01df20134d401607137eecb11d98_r-2.jpg"></p><h2 id="2、关于作者"><a href="#2、关于作者" class="headerlink" title="2、关于作者"></a>2、关于作者</h2><p><strong>陈鹏：</strong>现任知乎存储平台组 Redis 平台技术负责人，2014 年加入知乎技术平台组从事基础架构相关系统的开发与运维，从无到有建立了知乎 Redis 平台，承载了知乎高速增长的业务流量。</p><h2 id="3、技术背景"><a href="#3、技术背景" class="headerlink" title="3、技术背景"></a>3、技术背景</h2><p>知乎作为知名中文知识内容平台，每日处理的访问量巨大 ，如何更好的承载这样巨大的访问量，同时提供稳定低时延的服务保证，是知乎技术平台同学需要面对的一大挑战。</p><p>知乎存储平台团队基于开源 Redis 组件打造的 Redis 平台管理系统，经过不断的研发迭代，目前已经形成了一整套完整自动化运维服务体系，提供一键部署集群，一键自动扩缩容, Redis 超细粒度监控，旁路流量分析等辅助功能。</p><p><strong>目前，Redis 在知乎的应用规模如下：</strong></p><ul><li>1）机器内存总量约 70TB，实际使用内存约 40TB；</li><li>2）平均每秒处理约 1500 万次请求，峰值每秒约 2000 万次请求；</li><li>3）每天处理约 1 万亿余次请求；</li><li>4）单集群每秒处理最高每秒约 400 万次请求；</li><li>5）集群实例与单机实例总共约 800 个；</li><li>6）实际运行约 16000 个 Redis 实例；</li><li>7）Redis 使用官方 3.0.7 版本，少部分实例采用 4.0.11 版本。</li></ul><h2 id="4、知乎的Redis应用类型"><a href="#4、知乎的Redis应用类型" class="headerlink" title="4、知乎的Redis应用类型"></a>4、知乎的Redis应用类型</h2><p>根据业务的需求，我们将Redis实例区分为单机（Standalone）和集群（Cluster）两种类型，单机实例通常用于容量与性能要求不高的小型存储，而集群则用来应对对性能和容量要求较高的场景。</p><p>而在集群（Cluster）实例类型中，当实例需要的容量超过 20G 或要求的吞吐量超过 20万请求每秒时，我们会使用集群（Cluster）实例来承担流量。集群是通过中间件（客户端或中间代理等）将流量分散到多个 Redis 实例上的解决方案。知乎的 Redis 集群方案经历了两个阶段：客户端分片（2015年前使用的方案）与 Twemproxy 代理（2015年至今使用的方案）。</p><p>下面将分别来介绍这两个类型的Redis实例在知乎的应用实践情况。</p><h2 id="5、知乎的Redis实例应用类型1：单机（Standalone）"><a href="#5、知乎的Redis实例应用类型1：单机（Standalone）" class="headerlink" title="5、知乎的Redis实例应用类型1：单机（Standalone）"></a>5、知乎的Redis实例应用类型1：单机（Standalone）</h2><p>对于单机实例，我们采用原生主从（Master-Slave）模式实现高可用，常规模式下对外仅暴露 Master 节点。由于使用原生 Redis，所以单机实例支持所有 Redis 指令。</p><p>对于单机实例，我们使用 Redis 自带的哨兵（Sentinel）集群对实例进行状态监控与 Failover。Sentinel 是 Redis 自带的高可用组件，将 Redis 注册到由多个 Sentinel 组成的 Sentinel 集群后，Sentinel 会对 Redis 实例进行健康检查，当 Redis 发生故障后，Sentinel 会通过 Gossip 协议进行故障检测，确认宕机后会通过一个简化的 Raft 协议来提升 Slave 成为新的 Master。</p><p>通常情况我们仅使用 1 个 Slave 节点进行冷备，如果有读写分离请求，可以建立多个 Read only slave 来进行读写分离。</p><p><img src="/案例学习/case-study/zhihu-redis-cluster/112140o5xhaia5t56x40nk.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_2.jpg"></p><p>如上图所示，通过向 Sentinel 集群注册 Master 节点实现实例的高可用，当提交 Master 实例的连接信息后，Sentinel 会主动探测所有的 Slave 实例并建立连接，定期检查健康状态。客户端通过多种资源发现策略如简单的 DNS 发现 Master 节点，将来有计划迁移到如 Consul 或 etcd 等资源发现组件 。</p><p>当 Master 节点发生宕机时，Sentinel 集群会提升 Slave 节点为新的 Master，同时在自身的 pubsub channel +switch-master 广播切换的消息，具体消息格式为：</p><p>switch-master <master name=""> <oldip> <oldport> <newip> <newport></newport></newip></oldport></oldip></master></p><p>watcher 监听到消息后，会去主动更新资源发现策略，将客户端连接指向新的 Master 节点，完成 Failover，具体 Failover 切换过程详见 Redis 官方文档（<a href="https://redis.io/topics/sentinel" target="_blank" rel="noopener">Redis Sentinel Documentation - Redis</a>）。</p><p><strong>实际使用中需要注意以下几点：</strong></p><ul><li>1）只读 Slave 节点可以按照需求设置 slave-priority 参数为 0，防止故障切换时选择了只读节点而不是热备 Slave 节点；</li><li>2）Sentinel 进行故障切换后会执行 CONFIG REWRITE 命令将 SLAVEOF 配置落地，如果 Redis 配置中禁用了 CONFIG 命令，切换时会发生错误，可以通过修改 Sentinel 代码来替换 CONFIG 命令；</li><li>3）Sentinel Group 监控的节点不宜过多，实测超过 500 个切换过程偶尔会进入 TILT 模式，导致 Sentinel 工作不正常，推荐部署多个 Sentinel 集群并保证每个集群监控的实例数量小于 300 个；</li><li>4）Master 节点应与 Slave 节点跨机器部署，有能力的使用方可以跨机架部署，不推荐跨机房部署 Redis 主从实例；</li><li>5）Sentinel 切换功能主要依赖 down-after-milliseconds 和 failover-timeout 两个参数，down-after-milliseconds 决定了 Sentinel 判断 Redis 节点宕机的超时，知乎使用 30000 作为阈值。而 failover-timeout 则决定了两次切换之间的最短等待时间，如果对于切换成功率要求较高，可以适当缩短 failover-timeout 到秒级保证切换成功，具体详见 Redis 官方文档；</li><li>6）单机网络故障等同于机器宕机，但如果机房全网发生大规模故障会造成主从多次切换，此时资源发现服务可能更新不够及时，需要人工介入。</li></ul><h2 id="6、知乎的Redis实例应用类型2：集群之客户端分片方案（2015以前使用）"><a href="#6、知乎的Redis实例应用类型2：集群之客户端分片方案（2015以前使用）" class="headerlink" title="6、知乎的Redis实例应用类型2：集群之客户端分片方案（2015以前使用）"></a>6、知乎的Redis实例应用类型2：集群之客户端分片方案（2015以前使用）</h2><p>早期知乎使用 redis-shard 进行客户端分片，redis-shard 库内部实现了 CRC32、MD5、SHA1 三种哈希算法 ，支持绝大部分 Redis 命令。使用者只需把 redis-shard 当成原生客户端使用即可，无需关注底层分片。</p><p><img src="/案例学习/case-study/zhihu-redis-cluster/112703a3f8gmiizmqi80dt.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_3.jpg"></p><p><strong>基于客户端的分片模式具有如下优点：</strong></p><ul><li>1）基于客户端分片的方案是集群方案中最快的，没有中间件，仅需要客户端进行一次哈希计算，不需要经过代理，没有官方集群方案的 MOVED/ASK 转向；</li><li>2）不需要多余的 Proxy 机器，不用考虑 Proxy 部署与维护；</li><li>3）可以自定义更适合生产环境的哈希算法。</li></ul><p><strong>但是也存在如下问题：</strong></p><ul><li>1）需要每种语言都实现一遍客户端逻辑，早期知乎全站使用 Python 进行开发，但是后来业务线增多，使用的语言增加至 Python，Golang，Lua，C/C++，JVM 系（Java，Scala，Kotlin）等，维护成本过高；</li><li>2）无法正常使用 MSET、MGET 等多种同时操作多个 Key 的命令，需要使用 Hash tag 来保证多个 Key 在同一个分片上；</li><li>3）升级麻烦，升级客户端需要所有业务升级更新重启，业务规模变大后无法推动；</li><li>4）扩容困难，存储需要停机使用脚本 Scan 所有的 Key 进行迁移，缓存只能通过传统的翻倍取模方式进行扩容；</li><li>5）由于每个客户端都要与所有的分片建立池化连接，客户端基数过大时会造成 Redis 端连接数过多，Redis 分片过多时会造成 Python 客户端负载升高。</li></ul><p>具体特点详见：<a href="https://github.com/zhihu/redis-shard" target="_blank" rel="noopener">https://github.com/zhihu/redis-shard</a></p><p>早期知乎大部分业务由 Python 构建，Redis 使用的容量波动较小， redis-shard 很好地应对了这个时期的业务需求，在当时是一个较为不错解决方案。</p><h2 id="7、知乎的Redis实例应用类型2：集群之Twemproxy-集群方案（2015之今在用）"><a href="#7、知乎的Redis实例应用类型2：集群之Twemproxy-集群方案（2015之今在用）" class="headerlink" title="7、知乎的Redis实例应用类型2：集群之Twemproxy 集群方案（2015之今在用）"></a>7、知乎的Redis实例应用类型2：集群之Twemproxy 集群方案（2015之今在用）</h2><p>2015 年开始，业务上涨迅猛，Redis 需求暴增，原有的 redis-shard 模式已经无法满足日益增长的扩容需求，我们开始调研多种集群方案，最终选择了简单高效的 Twemproxy 作为我们的集群方案。</p><p><strong>由 Twitter 开源的 Twemproxy 具有如下优点：</strong></p><ul><li>1）性能很好且足够稳定，自建内存池实现 Buffer 复用，代码质量很高；</li><li>2）支持 fnv1a_64、murmur、md5 等多种哈希算法；</li><li>3）支持一致性哈希（ketama），取模哈希（modula）和随机（random）三种分布式算法。</li></ul><p>具体特点详见：<a href="https://github.com/twitter/twemproxy" target="_blank" rel="noopener">https://github.com/twitter/twemproxy</a></p><p><strong>但是缺点也很明显：</strong></p><ul><li>1）单核模型造成性能瓶颈；</li><li>2）传统扩容模式仅支持停机扩容。</li></ul><p>对此，我们将集群实例分成两种模式，即缓存（Cache）和存储（Storage）：</p><p>如果使用方可以接收通过损失一部分少量数据来保证可用性，或使用方可以从其余存储恢复实例中的数据，这种实例即为缓存，其余情况均为存储。</p><p>我们对缓存和存储采用了不同的策略，请继续往下读。</p><h3 id="7-1存储"><a href="#7-1存储" class="headerlink" title="7.1存储"></a>7.1存储</h3><p><img src="/案例学习/case-study/zhihu-redis-cluster/114018nggotarwm3qa9kbk.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_4.jpg"></p><p>对于存储我们使用 fnv1a_64 算法结合 modula 模式即取模哈希对 Key 进行分片，底层 Redis 使用单机模式结合 Sentinel 集群实现高可用，默认使用 1 个 Master 节点和 1 个 Slave 节点提供服务，如果业务有更高的可用性要求，可以拓展 Slave 节点。</p><p>当集群中 Master 节点宕机，按照单机模式下的高可用流程进行切换，Twemproxy 在连接断开后会进行重连，对于存储模式下的集群，我们不会设置 auto_eject_hosts, 不会剔除节点。</p><p>同时，对于存储实例，我们默认使用 noeviction 策略，在内存使用超过规定的额度时直接返回 OOM 错误，不会主动进行 Key 的删除，保证数据的完整性。</p><p>由于 Twemproxy 仅进行高性能的命令转发，不进行读写分离，所以默认没有读写分离功能，而在实际使用过程中，我们也没有遇到集群读写分离的需求，如果要进行读写分离，可以使用资源发现策略在 Slave 节点上架设 Twemproxy 集群，由客户端进行读写分离的路由。</p><h3 id="7-2缓存"><a href="#7-2缓存" class="headerlink" title="7.2缓存"></a>7.2缓存</h3><p>考虑到对于后端（MySQL/HBase/RPC 等）的压力，知乎绝大部分业务都没有针对缓存进行降级，这种情况下对缓存的可用性要求较数据的一致性要求更高，但是如果按照存储的主从模式实现高可用，1 个 Slave 节点的部署策略在线上环境只能容忍 1 台物理节点宕机，N 台物理节点宕机高可用就需要至少 N 个 Slave 节点，这无疑是种资源的浪费。</p><p><img src="/案例学习/case-study/zhihu-redis-cluster/114121ihhvve56ihjzh6rj.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_5.jpg"></p><p>所以我们采用了 Twemproxy 一致性哈希（Consistent Hashing）策略来配合 auto_eject_hosts 自动弹出策略组建 Redis 缓存集群。</p><p>对于缓存我们仍然使用使用 fnv1a_64 算法进行哈希计算，但是分布算法我们使用了 ketama 即一致性哈希进行 Key 分布。缓存节点没有主从，每个分片仅有 1 个 Master 节点承载流量。</p><p>Twemproxy 配置 auto_eject_hosts 会在实例连接失败超过 server_failure_limit 次的情况下剔除节点，并在 server_retry_timeout 超时之后进行重试，剔除后配合 ketama 一致性哈希算法重新计算哈希环，恢复正常使用，这样即使一次宕机多个物理节点仍然能保持服务。</p><p><img src="/案例学习/case-study/zhihu-redis-cluster/114150jrsz42mlm41i29r5.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_6.jpg"></p><p><strong>在实际的生产环境中需要注意以下几点：</strong></p><ul><li>1）剔除节点后，会造成短时间的命中率下降，后端存储如 MySQL、HBase 等需要做好流量监测；</li><li>2）线上环境缓存后端分片不宜过大，建议维持在 20G 以内，同时分片调度应尽可能分散，这样即使宕机一部分节点，对后端造成的额外的压力也不会太多；</li><li>3）机器宕机重启后，缓存实例需要清空数据之后启动，否则原有的缓存数据和新建立的缓存数据会冲突导致脏缓存。直接不启动缓存也是一种方法，但是在分片宕机期间会导致周期性 server_failure_limit 次数的连接失败；</li><li>4）server_retry_timeout 和 server_failure_limit 需要仔细敲定确认，知乎使用 10min 和 3 次作为配置，即连接失败 3 次后剔除节点，10 分钟后重新进行连接。</li></ul><h3 id="7-3Twemproxy-部署"><a href="#7-3Twemproxy-部署" class="headerlink" title="7.3Twemproxy 部署"></a>7.3Twemproxy 部署</h3><p>在方案早期我们使用数量固定的物理机部署 Twemproxy，通过物理机上的 Agent 启动实例，Agent 在运行期间会对 Twemproxy 进行健康检查与故障恢复，由于 Twemproxy 仅提供全量的使用计数，所以 Agent 运行时还会进行定时的差值计算来计算 Twemproxy 的 requests_per_second 等指标。</p><p>后来为了更好地故障检测和资源调度，我们引入了 Kubernetes，将 Twemproxy 和 Agent 放入同一个 Pod 的两个容器内，底层 Docker 网段的配置使每个 Pod 都能获得独立的 IP，方便管理。</p><p>最开始，本着简单易用的原则，我们使用 DNS A Record 来进行客户端的资源发现，每个 Twemproxy 采用相同的端口号，一个 DNS A Record 后面挂接多个 IP 地址对应多个 Twemproxy 实例。</p><p>初期，这种方案简单易用，但是到了后期流量日益上涨，单集群 Twemproxy 实例个数很快就超过了 20 个。由于 DNS 采用的 UDP 协议有 512 字节的包大小限制，单个 A Record 只能挂接 20 个左右的 IP 地址，超过这个数字就会转换为 TCP 协议，客户端不做处理就会报错，导致客户端启动失败。</p><p>当时由于情况紧急，只能建立多个 Twemproxy Group，提供多个 DNS A Record 给客户端，客户端进行轮询或者随机选择，该方案可用，但是不够优雅。</p><h3 id="7-4如何解决-Twemproxy-单-CPU-计算能力的限制"><a href="#7-4如何解决-Twemproxy-单-CPU-计算能力的限制" class="headerlink" title="7.4如何解决 Twemproxy 单 CPU 计算能力的限制"></a>7.4如何解决 Twemproxy 单 CPU 计算能力的限制</h3><p>之后我们修改了 Twemproxy 源码， 加入 SO_REUSEPORT 支持。</p><p><strong>Twemproxy with SO_REUSEPORT on Kubernetes：</strong></p><p><img src="/案例学习/case-study/zhihu-redis-cluster/114332gge97h1k01gggkhz.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_7.jpg"></p><p>同一个容器内由 Starter 启动多个 Twemproxy 实例并绑定到同一个端口，由操作系统进行负载均衡，对外仍然暴露一个端口，但是内部已经由系统均摊到了多个 Twemproxy 上。</p><p>同时 Starter 会定时去每个 Twemproxy 的 stats 端口获取 Twemproxy 运行状态进行聚合，此外 Starter 还承载了信号转发的职责。</p><p>原有的 Agent 不需要用来启动 Twemproxy 实例，所以 Monitor 调用 Starter 获取聚合后的 stats 信息进行差值计算，最终对外界暴露出实时的运行状态信息。</p><h3 id="7-5为什么没有使用官方-Redis-集群方案"><a href="#7-5为什么没有使用官方-Redis-集群方案" class="headerlink" title="7.5为什么没有使用官方 Redis 集群方案"></a>7.5为什么没有使用官方 Redis 集群方案</h3><p>我们在 2015 年调研过多种集群方案，综合评估多种方案后，最终选择了看起来较为陈旧的 Twemproxy 而不是官方 Redis 集群方案与 Codis，具体原因如下：</p><p><strong><em>1）MIGRATE 造成的阻塞问题：\</em></strong></p><p>Redis 官方集群方案使用 CRC16 算法计算哈希值并将 Key 分散到 16384 个 Slot 中，由使用方自行分配 Slot 对应到每个分片中，扩容时由使用方自行选择 Slot 并对其进行遍历，对 Slot 中每一个 Key 执行 <a href="https://redis.io/commands/migrate" target="_blank" rel="noopener">MIGRATE</a> 命令进行迁移。</p><p>调研后发现，MIGRATE 命令实现分为三个阶段：</p><ul><li>a）DUMP 阶段：由源实例遍历对应 Key 的内存空间，将 Key 对应的 Redis Object 序列化，序列化协议跟 Redis RDB 过程一致；</li><li>b）RESTORE 阶段：由源实例建立 TCP 连接到对端实例，并将 DUMP 出来的内容使用 RESTORE 命令到对端进行重建，新版本的 Redis 会缓存对端实例的连接；</li><li>c）DEL 阶段（可选）：如果发生迁移失败，可能会造成同名的 Key 同时存在于两个节点，此时 MIGRATE 的 REPLACE 参数决定是是否覆盖对端的同名 Key，如果覆盖，对端的 Key 会进行一次删除操作，4.0 版本之后删除可以异步进行，不会阻塞主进程。</li></ul><p>经过调研，我们认为这种模式并不适合知乎的生产环境。Redis 为了保证迁移的一致性， MIGRATE 所有操作都是同步操作，执行 MIGRATE 时，两端的 Redis 均会进入时长不等的 BLOCK 状态。</p><p>对于小 Key，该时间可以忽略不计，但如果一旦 Key 的内存使用过大，一个 MIGRATE 命令轻则导致 P95 尖刺，重则直接触发集群内的 Failover，造成不必要的切换</p><p>同时，迁移过程中访问到处于迁移中间状态的 Slot 的 Key 时，根据进度可能会产生 ASK 转向，此时需要客户端发送 ASKING 命令到 Slot 所在的另一个分片重新请求，请求时延则会变为原来的两倍。</p><p>同样，方案初期时的 Codis 采用的是相同的 MIGRATE 方案，但是使用 Proxy 控制 Redis 进行迁移操作而非第三方脚本（如 redis-trib.rb），基于同步的类似 MIGRATE 的命令，实际跟 Redis 官方集群方案存在同样的问题。</p><p>对于这种 Huge Key 问题决定权完全在于业务方，有时业务需要不得不产生 Huge Key 时会十分尴尬，如关注列表。一旦业务使用不当出现超过 1MB 以上的大 Key 便会导致数十毫秒的延迟，远高于平时 Redis 亚毫秒级的延迟。有时，在 slot 迁移过程中业务不慎同时写入了多个巨大的 Key 到 slot 迁移的源节点和目标节点，除非写脚本删除这些 Key ，否则迁移会进入进退两难的地步。</p><p>对此，Redis 作者在 Redis 4.2 的 <a href="https://gist.github.com/antirez/a3787d538eec3db381a41654e214b31d" target="_blank" rel="noopener">roadmap</a> 中提到了 Non blocking MIGRATE 但是截至目前，Redis 5.0 即将正式发布，仍未看到有关改动，社区中已经有相关的 <a href="https://github.com/antirez/redis/pull/3997" target="_blank" rel="noopener">Pull Request</a> ，该功能可能会在 5.2 或者 6.0 之后并入 master 分支，对此我们将持续观望。</p><p><strong><em>2）缓存模式下高可用方案不够灵活：\</em></strong></p><p>还有，官方集群方案的高可用策略仅有主从一种，高可用级别跟 Slave 的数量成正相关，如果只有一个 Slave，则只能允许一台物理机器宕机， Redis 4.2 roadmap 提到了 cache-only mode，提供类似于 Twemproxy 的自动剔除后重分片策略，但是截至目前仍未实现。</p><p><strong><em>3）内置 Sentinel 造成额外流量负载：\</em></strong></p><p>另外，官方 Redis 集群方案将 Sentinel 功能内置到 Redis 内，这导致在节点数较多（大于 100）时在 Gossip 阶段会产生大量的 PING/INFO/CLUSTER INFO 流量，根据 issue 中提到的情况，200 个使用 3.2.8 版本节点搭建的 Redis 集群，在没有任何客户端请求的情况下，每个节点仍然会产生 40Mb/s 的流量，虽然到后期 Redis 官方尝试对其进行压缩修复，但按照 Redis 集群机制，节点较多的情况下无论如何都会产生这部分流量，对于使用大内存机器但是使用千兆网卡的用户这是一个值得注意的地方。</p><p><strong><em>4）slot 存储开销：\</em></strong></p><p>最后，每个 Key 对应的 Slot 的存储开销，在规模较大的时候会占用较多内存，4.x 版本以前甚至会达到实际使用内存的数倍，虽然 4.x 版本使用 rax 结构进行存储，但是仍然占据了大量内存，从非官方集群方案迁移到官方集群方案时，需要注意这部分多出来的内存。</p><p>总之，官方 Redis 集群方案与 Codis 方案对于绝大多数场景来说都是非常优秀的解决方案，但是我们仔细调研发现并不是很适合集群数量较多且使用方式多样化的我们，场景不同侧重点也会不一样，但在此仍然要感谢开发这些组件的开发者们，感谢你们对 Redis 社区的贡献。</p><h2 id="8、知乎Redis实例的扩容实践"><a href="#8、知乎Redis实例的扩容实践" class="headerlink" title="8、知乎Redis实例的扩容实践"></a>8、知乎Redis实例的扩容实践</h2><h3 id="8-1静态扩容"><a href="#8-1静态扩容" class="headerlink" title="8.1静态扩容"></a>8.1静态扩容</h3><p>对于单机实例，如果通过调度器观察到对应的机器仍然有空闲的内存，我们仅需直接调整实例的 maxmemory 配置与报警即可。同样，对于集群实例，我们通过调度器观察每个节点所在的机器，如果所有节点所在机器均有空闲内存，我们会像扩容单机实例一样直接更新 maxmemory 与报警。</p><h3 id="8-2动态扩容"><a href="#8-2动态扩容" class="headerlink" title="8.2动态扩容"></a>8.2动态扩容</h3><p><strong>但是当机器空闲内存不够，或单机实例与集群的后端实例过大时，无法直接扩容，需要进行动态扩容：</strong></p><ul><li>1）对于单机实例，如果单实例超过 30GB 且没有如 sinterstore 之类的多 Key 操作我们会将其扩容为集群实例；</li><li>2）对于集群实例，我们会进行横向的重分片，我们称之为 Resharding 过程。</li></ul><p><strong>Resharding 过程：</strong></p><p><img src="/案例学习/case-study/zhihu-redis-cluster/114953wmhqq70txgtkbtqy.jpg" alt="知乎技术分享：从单机到2000万QPS并发的Redis高性能缓存实践之路_8.jpg"></p><p>原生 Twemproxy 集群方案并不支持扩容，我们开发了数据迁移工具来进行 Twemproxy 的扩容，迁移工具本质上是一个上下游之间的代理，将数据从上游按照新的分片方式搬运到下游。</p><p>原生 Redis 主从同步使用 SYNC/PSYNC 命令建立主从连接，收到 SYNC 命令的 Master 会 fork 出一个进程遍历内存空间生成 RDB 文件并发送给 Slave，期间所有发送至 Master 的写命令在执行的同时都会被缓存到内存的缓冲区内，当 RDB 发送完成后，Master 会将缓冲区内的命令及之后的写命令转发给 Slave 节点。</p><p>我们开发的迁移代理会向上游发送 SYNC 命令模拟上游实例的 Slave，代理收到 RDB 后进行解析，由于 RDB 中每个 Key 的格式与 RESTORE 命令的格式相同，所以我们使用生成 RESTORE 命令按照下游的 Key 重新计算哈希并使用 Pipeline 批量发送给下游。</p><p>等待 RDB 转发完成后，我们按照新的后端生成新的 Twemproxy 配置，并按照新的 Twemproxy 配置建立 Canary 实例，从上游的 Redis 后端中取 Key 进行测试，测试 Resharding 过程是否正确，测试过程中的 Key 按照大小，类型，TTL 进行比较。</p><p>测试通过后，对于集群实例，我们使用生成好的配置替代原有 Twemproxy 配置并 restart/reload Twemproxy 代理，我们修改了 Twemproxy 代码，加入了 config reload 功能，但是实际使用中发现直接重启实例更加可控。而对于单机实例，由于单机实例和集群实例对于命令的支持不同，通常需要和业务方确定后手动重启切换。</p><p>由于 Twemproxy 部署于 Kubernetes ，我们可以实现细粒度的灰度，如果客户端接入了读写分离，我们可以先将读流量接入新集群，最终接入全部流量。</p><p>这样相对于 Redis 官方集群方案，除在上游进行 BGSAVE 时的 fork 复制页表时造成的尖刺以及重启时造成的连接闪断，其余对于 Redis 上游造成的影响微乎其微。</p><p><strong>这样扩容存在的问题：</strong></p><p><em>1）对上游发送 SYNC 后，上游 fork 时会造成尖刺：</em></p><ul><li>- 对于存储实例，我们使用 Slave 进行数据同步，不会影响到接收请求的 Master 节点；</li><li>- 对于缓存实例，由于没有 Slave 实例，该尖刺无法避免，如果对于尖刺过于敏感，我们可以跳过 RDB 阶段，直接通过 PSYNC 使用最新的 SET 消息建立下游的缓存。</li></ul><p><em>2）切换过程中有可能写到下游，而读在上游：</em></p><ul><li>- 对于接入了读写分离的客户端，我们会先切换读流量到下游实例，再切换写流量。</li></ul><p><em>3）一致性问题，两条具有先后顺序的写同一个 Key 命令在切换代理后端时会通过 1）写上游同步到下游 2）直接写到下游两种方式写到下游，此时，可能存在应先执行的命令却通过 1）执行落后于通过 2）执行，导致命令先后顺序倒置：</em></p><ul><li>- 这个问题在切换过程中无法避免，好在绝大部分应用没有这种问题，如果无法接受，只能通过上游停写排空 Resharding 代理保证先后顺序；</li><li>- 官方 Redis 集群方案和 Codis 会通过 blocking 的 migrate 命令来保证一致性，不存在这种问题。</li></ul><p>实际使用过程中，如果上游分片安排合理，可实现数千万次每秒的迁移速度，1TB 的实例 Resharding 只需要半小时左右。另外，对于实际生产环境来说，提前做好预期规划比遇到问题紧急扩容要快且安全得多。</p><h2 id="9、旁路分析实践"><a href="#9、旁路分析实践" class="headerlink" title="9、旁路分析实践"></a>9、旁路分析实践</h2><p>由于生产环境调试需要，有时会需要监控线上 Redis 实例的访问情况，Redis 提供了多种监控手段，如 MONITOR 命令。</p><p>但由于 Redis 单线程的限制，导致自带的 MONITOR 命令在负载过高的情况下会再次跑高 CPU，对于生产环境来说过于危险，而其余方式如 <a href="https://redis.io/topics/notifications" target="_blank" rel="noopener">Keyspace Notify</a> 只有写事件，没有读事件，无法做到细致的观察。</p><p>对此我们开发了基于 libpcap 的旁路分析工具，系统层面复制流量，对应用层流量进行协议分析，实现旁路 MONITOR，实测对于运行中的实例影响微乎其微。</p><p>同时对于没有 MONITOR 命令的 Twemproxy，旁路分析工具仍能进行分析，由于生产环境中绝大部分业务都使用 Kubernetes 部署于 Docker 内 ，每个容器都有对应的独立 IP，所以可以使用旁路分析工具反向解析找出客户端所在的应用，分析业务方的使用模式，防止不正常的使用。</p><h2 id="10、将来的工作"><a href="#10、将来的工作" class="headerlink" title="10、将来的工作"></a>10、将来的工作</h2><p>由于 Redis 5.0 发布在即，4.0 版本趋于稳定，我们将逐步升级实例到 4.0 版本，由此带来的如 MEMORY 命令、Redis Module 、新的 LFU 算法等特性无论对运维方还是业务方都有极大的帮助。</p><h2 id="11、写在最后"><a href="#11、写在最后" class="headerlink" title="11、写在最后"></a>11、写在最后</h2><p>知乎架构平台团队是支撑整个知乎业务的基础技术团队，开发和维护着知乎几乎全量的核心基础组件，包括容器、Redis、MySQL、Kafka、LB、HBase 等核心基础设施，团队小而精，每个同学都独当一面负责上面提到的某个核心系统。</p><p>随着知乎业务规模的快速增长，以及业务复杂度的持续增加，我们团队面临的技术挑战也越来越大，欢迎对技术感兴趣、渴望技术挑战的小伙伴加入我们，一起建设稳定高效的知乎云平台。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 案例学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>【转载】亿级用户下的新浪微博平台架构</title>
+      <link href="/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0/case-study/sina-weibo/"/>
+      <url>/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0/case-study/sina-weibo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>新浪微博在 2014 年 3 月公布的月活跃用户（MAU）已经达到 1.43 亿，2014 年新年第一分钟发送的微博达 808298 条，如此巨大的用户规模和业务量，需要高可用（HA）、高并发访问、低延时的强大后台系统支撑。</p><p>微博平台第一代架构为 LAMP 架构，数据库使用的是 MyIsam，后台用的是 php，缓存为 Memcache。</p><p>随着应用规模的增长，衍生出的第二代架构对业务功能进行了模块化、服务化和组件化，后台系统从 php 替换为 Java，逐渐形成 SOA 架构，在很长一段时间支撑了微博平台的业务发展。</p><p>在此基础上又经过长时间的重构、线上运行、思索与沉淀，平台形成了第三代架构体系。</p><p>我们先看一张微博的核心业务图（如下），是不是非常复杂？但这已经是一个简化的不能再简化的业务图了，第三代技术体系就是为了保障在微博核心业务上快速、高效、可靠地发布新产品新功能。</p><p><img src="/案例学习/case-study/sina-weibo/eaede3ca4a378072c41bc84afa549b76.png" alt="亿级用户下的新浪微博平台架构"></p><h2 id="第三代技术体系"><a href="#第三代技术体系" class="headerlink" title="第三代技术体系"></a>第三代技术体系</h2><p>微博平台的第三代技术体系，使用正交分解法建立模型：在水平方向，采用典型的三级分层模型，即接口层、服务层与资源层；在垂直方向，进一步细分为业务架构、技术架构、监控平台与服务治理平台。下面是平台的整体架构图：</p><p><img src="/案例学习/case-study/sina-weibo/9806c57d77da35fe0d5c1c3cc06e6178.png" alt="亿级用户下的新浪微博平台架构"></p><p>如上图所示，正交分解法将整个图分解为 3*4=12 个区域，每个区域代表一个水平维度与一个垂直维度的交点，相应的定义这个区域的核心功能点，比如区域 5 主要完成服务层的技术架构。</p><p>下面详细介绍水平方向与垂直方向的设计原则，尤其会重点介绍 4、5、6 中的技术组件及其在整个架构体系中的作用。</p><h2 id="水平分层"><a href="#水平分层" class="headerlink" title="水平分层"></a>水平分层</h2><p>水平维度的划分，在大中型互联网后台业务系统的设计中非常基础，在平台的每一代技术体系中都有体现。这里还是简单介绍一下，为后续垂直维度的延伸讲解做铺垫：</p><ol><li>接口层主要实现与 Web 页面、移动客户端的接口交互，定义统一的接口规范，平台最核心的三个接口服务分别是内容（Feed）服务、用户关系服务及通讯服务（单发私信、群发、群聊）。</li><li>服务层主要把核心业务模块化、服务化，这里又分为两类服务，一类为原子服务，其定义是不依赖任何其他服务的服务模块，比如常用的短链服务、发号器服务都属于这一类。图中使用泳道隔离，表示它们的独立性。另外一类为组合服务，通过各种原子服务和业务逻辑的组合来完成服务，比如 Feed 服务、通讯服务，它们除了本身的业务逻辑，还依赖短链、用户及发号器服务。</li><li>资源层主要是数据模型的存储，包含通用的缓存资源 Redis 和 Memcached，以及持久化数据库存储 MySQL、HBase，或者分布式文件系统 TFS 以及 Sina S3 服务。</li></ol><p>水平分层有一个特点，依赖关系都是从上往下，上层的服务依赖下层，下层的服务不会依赖上层，构建了一种简单直接的依赖关系。</p><p>与分层模型相对应，微博系统中的服务器主要包括三种类型：前端机（提供 API 接口服务）、队列机（处理上行业务逻辑，主要是数据写入）和存储（mc、mysql、mcq、redis 、HBase 等）。</p><h2 id="垂直延伸技术架构"><a href="#垂直延伸技术架构" class="headerlink" title="垂直延伸技术架构"></a>垂直延伸技术架构</h2><p>随着业务架构的发展和优化，平台研发实现了许多卓越的中间件产品，用来支撑核心业务，这些中间件由业务驱动产生，随着技术组件越来越丰富，形成完备的平台技术框架，大大提升了平台的产品研发效率和业务运行稳定性。</p><p>区别于水平方向上层依赖下层的关系，垂直方向以技术框架为地基支撑点，向两侧驱动影响业务架构、监控平台、服务治理平台，下面介绍一下其中的核心组件。</p><h2 id="接口层-Web-V4-框架"><a href="#接口层-Web-V4-框架" class="headerlink" title="接口层 Web V4 框架"></a>接口层 Web V4 框架</h2><p>接口框架简化和规范了业务接口开发工作，将通用的接口层功能打包到框架中，采用了 Spring 的面向切面（AOP）设计理念。接口框架基于 Jersey 进行二次开发，基于 annotation 定义接口 (url, 参数)，内置 Auth、频次控制、访问日志、降级功能，支撑接口层监控平台与服务治理，同时还有自动化的 Bean-json/xml 序列化。</p><h2 id="服务层框架"><a href="#服务层框架" class="headerlink" title="服务层框架"></a>服务层框架</h2><p>服务层主要涉及 RPC 远程调用框架以及消息队列框架，这是微博平台在服务层使用最为广泛的两个框架。</p><h3 id="MCQ-消息队列"><a href="#MCQ-消息队列" class="headerlink" title="MCQ 消息队列"></a>MCQ 消息队列</h3><p>消息队列提供一种先入先出的通讯机制，在平台内部，最常见的场景是将数据的落地操作异步写入队列，队列处理程序批量读取并写入 DB，消息队列提供的异步机制加快了前端机的响应时间，其次，批量的 DB 操作也间接提高了 DB 操作性能，另外一个应用场景，平台通过消息队列，向搜索、大数据、商业运营部门提供实时数据。</p><p>微博平台内部大量使用的 MCQ(SimpleQueue Service Over Memcache) 消息队列服务，基于 MemCache 协议，消息数据持久化写入 BerkeleyDB，只有 get/set 两个命令，同时也非常容易做监控（stats queue），有丰富的 client library，线上运行多年，性能比通用的 MQ 高很多倍。</p><h3 id="Motan-RPC-框架"><a href="#Motan-RPC-框架" class="headerlink" title="Motan RPC 框架"></a>Motan RPC 框架</h3><p>微博的 Motan RPC 服务，底层通讯引擎采用了 Netty 网络框架，序列化协议支持 Hessian 和 Java 序列化，通讯协议支持 Motan、http、tcp、mc 等，Motan 框架在内部大量使用，在系统的健壮性和服务治理方面，有较为成熟的技术解决方案，健壮性上，基于 Config 配置管理服务实现了 High Availability 与 Load Balance 策略（支持灵活的 FailOver 和 FailFast HA 策略，以及 Round Robin、LRU、Consistent Hash 等 Load Balance 策略），服务治理方面，生成完整的服务调用链数据，服务请求性能数据，响应时间（Response Time）、QPS 以及标准化 Error、Exception 日志信息。</p><h2 id="资源层框架"><a href="#资源层框架" class="headerlink" title="资源层框架"></a>资源层框架</h2><p>资源层的框架非常多，有封装 MySQL 与 HBase 的 Key-List DAL 中间件、有定制化的计数组件，有支持分布式 MC 与 Redis 的 Proxy，在这些方面业界有较多的经验分享，我在这里分享一下平台架构的对象库与 SSD Cache 组件。</p><h3 id="对象库"><a href="#对象库" class="headerlink" title="对象库"></a>对象库</h3><p>对象库支持便捷的序列化与反序列化微博中的对象数据：序列化时，将 JVM 内存中的对象序列化写入在 HBase 中并生成唯一的 ObjectID，当需要访问该对象时，通过 ObjectID 读取，对象库支持任意类型的对象，支持 PB、JSON、二进制序列化协议，微博中最大的应用场景将微博中引用的视频、图片、文章统一定义为对象，一共定义了几十种对象类型，并抽象出标准的对象元数据 Schema，对象的内容上传到对象存储系统（Sina S3）中，对象元数据中保存 Sina S3 的下载地址。</p><h3 id="SSDCache"><a href="#SSDCache" class="headerlink" title="SSDCache"></a>SSDCache</h3><p>随着 SSD 硬盘的普及，优越的 IO 性能使其被越来越多地用于替换传统的 SATA 和 SAS 磁盘，常见的应用场景有三种：1）替换 MySQL 数据库的硬盘，目前社区还没有针对 SSD 优化的 MySQL 版本，即使这样，直接升级 SSD 硬盘也能带来 8 倍左右的 IOPS 提升；2）替换 Redis 的硬盘，提升其性能；3）用在 CDN 中，加快静态资源加载速度。</p><p>微博平台将 SSD 应用在分布式缓存场景中，将传统的 Redis/MC + Mysql 方式，扩展为 Redis/MC + SSD Cache + Mysql 方式，SSD Cache 作为 L2 缓存使用，第一降低了 MC/Redis 成本过高，容量小的问题，也解决了穿透 DB 带来的数据库访问压力。</p><h2 id="垂直的监控与服务治理"><a href="#垂直的监控与服务治理" class="headerlink" title="垂直的监控与服务治理"></a>垂直的监控与服务治理</h2><p>随着服务规模和业务变得越来越复杂，即使业务架构师也很难准确地描述服务之间的依赖关系，服务的管理运维变得越来难，在这个背景下，参考 google 的 dapper 和 twitter 的 zipkin，平台实现了自己的大型分布式追踪系统 WatchMan。</p><h3 id="WatchMan-大型分布式追踪系统"><a href="#WatchMan-大型分布式追踪系统" class="headerlink" title="WatchMan 大型分布式追踪系统"></a>WatchMan 大型分布式追踪系统</h3><p>如其他大中型互联网应用一样，微博平台由众多的分布式组件构成，用户通过浏览器或移动客户端的每一个 HTTP 请求到达应用服务器后，会经过很多个业务系统或系统组件，并留下足迹（footprint）。但是这些分散的数据对于问题排查，或是流程优化都帮助有限。对于这样一种典型的跨进程 / 跨线程的场景，汇总收集并分析这类日志就显得尤为重要。另一方面，收集每一处足迹的性能数据，并根据策略对各子系统做流控或降级，也是确保微博平台高可用的重要因素。要能做到追踪每个请求的完整调用链路；收集调用链路上每个服务的性能数据；能追踪系统中所有的 Error 和 Exception；通过计算性能数据和比对性能指标（SLA）再回馈到控制流程（control flow）中，基于这些目标就诞生了微博的 Watchman 系统。</p><p>该系统设计的一个核心原则就是低侵入性（non-invasivenss）：作为非业务组件，应当尽可能少侵入或者不侵入其他业务系统，保持对使用方的透明性，可以大大减少开发人员的负担和接入门槛。基于此考虑，所有的日志采集点都分布在技术框架中间件中，包括接口框架、RPC 框架以及其他资源中间件。</p><p>WatchMan 由技术团队搭建框架，应用在所有业务场景中，运维基于此系统完善监控平台，业务和运维共同使用此系统，完成分布式服务治理，包括服务扩容与缩容、服务降级、流量切换、服务发布与灰度。</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>现在，技术框架在平台发挥着越来越重要的作用，驱动着平台的技术升级、业务开发、系统运维服务，本文限于篇幅限制，没有展开介绍，后续会不断地介绍核心中间件的设计原则和系统架构。</p><p>本文<a href="http://mp.weixin.qq.com/s?__biz=MzA4ODAyOTI4Ng==&amp;mid=201317014&amp;idx=1&amp;sn=51d985f13d2d22f7c49654ef7cda0167#rd" target="_blank" rel="noopener">首发</a>于“微博平台架构”微信公众号，发布时有少量的文字润色和调整。</p><h2 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h2><p>卫向军（<a href="http://weibo.com/xiangjunwei" target="_blank" rel="noopener"> @卫向军 _ 微博</a>），毕业于北京邮电大学，现任微博平台架构师，先后在微软、金山云、新浪微博从事技术研发工作，专注于系统架构设计、音视频通讯系统、分布式文件系统和数据挖掘等领域。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 案例学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Spring batch</title>
       <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/spring-batch/"/>
       <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/spring-batch/</url>
@@ -5006,23 +5040,6 @@
     </entry>
     
     <entry>
-      <title>英文邮件写作</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/</url>
-      
-        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>前端项目安全扫描</title>
       <link href="/%E5%AE%89%E5%85%A8/security/security-in-frontend/"/>
       <url>/%E5%AE%89%E5%85%A8/security/security-in-frontend/</url>
@@ -5040,16 +5057,16 @@
     </entry>
     
     <entry>
-      <title>微软SDL( Security Development Lifecycle)流程</title>
-      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
-      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
+      <title>英文邮件写作</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/write-better-email/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="邮件标题"><a href="#邮件标题" class="headerlink" title="邮件标题"></a>邮件标题</h1><p>推荐使用动词、正面的词语</p><p>Not good:</p><blockquote><p>Could you review the pull request?</p></blockquote><p>Bat good:</p><blockquote><p>Approval for pull request</p></blockquote><h1 id="Greeting"><a href="#Greeting" class="headerlink" title="Greeting"></a>Greeting</h1><h2 id="称呼"><a href="#称呼" class="headerlink" title="称呼"></a>称呼</h2><p>称呼使用’Dear’ or ‘Hi’？Dear 比 Hi 正式</p><h2 id="称谓"><a href="#称谓" class="headerlink" title="称谓"></a>称谓</h2><p>姓、名不能混，如果不能分清楚称呼，使用 ‘please correct me if I was wrong’<br>如果对方有头衔，比如doctor，应该使用 doctor xxx</p><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>TIPS</p><ol><li>开始直接表明来意， I am writing to xxx</li><li>意图明显，比如是为了report或者寻求帮助</li><li>结束方法：<ol><li>寻求更多communication</li><li>寻求Feedback</li><li>感谢</li><li>offer potential help</li></ol></li></ol><h1 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h1><p>1.使用Best regards<br>2.thanks</p><h1 id="summary-of-learn-points"><a href="#summary-of-learn-points" class="headerlink" title="summary of learn points"></a>summary of learn points</h1><p>the fundamentals of Email</p><ul><li>Subject - catching attention in a positive way</li><li>Greeting - appropriate</li><li>Purpose - state it at the beginning </li><li>Request - Be noticeable,clear and flexible</li><li>Ending - invite communication and off help </li><li>Sign-off - professional</li></ul><h1 id="something-is-suitable-via-email"><a href="#something-is-suitable-via-email" class="headerlink" title="something is suitable via email"></a>something is suitable via email</h1><ul><li>Need to record for future reference</li><li>Communication to multiple </li><li>The different time zone </li><li>Need someone take time to deal with</li><li>Report</li></ul><h1 id="something-is-not-suitable-via-email"><a href="#something-is-not-suitable-via-email" class="headerlink" title="something is not suitable via email"></a>something is not suitable via email</h1><ul><li>Urgent things </li><li>negative staff</li><li>complicated situation</li></ul><h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul><li>mark text as bold?</li><li>directly or indirectly</li><li>how to make a appropriate appreciation</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 安全 </category>
+          <category> 职业素质 </category>
           
       </categories>
       
@@ -5091,6 +5108,23 @@
     </entry>
     
     <entry>
+      <title>微软SDL( Security Development Lifecycle)流程</title>
+      <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
+      <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微软SDL( Security Development Lifecycle)流程，是一种专注于软件开发安全保障的流程，为了实现保证最终的用户安全，在软件开发各阶段中引入安全和隐私问题。</p><h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><p>在项目中使用微软提供的工具，绘制威胁建模图表，用于分析和分享安全建模</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官网 <a href="http://www.microsoft.com/security/sdl/default.aspx" target="_blank" rel="noopener">http://www.microsoft.com/security/sdl/default.aspx</a> </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>DDD (Domain-Driven Design) 领域驱动设计</title>
       <link href="/%E7%90%86%E8%AE%BA%E6%96%B9%E6%B3%95/methodology/Domain%20Driven%20Design/"/>
       <url>/%E7%90%86%E8%AE%BA%E6%96%B9%E6%B3%95/methodology/Domain%20Driven%20Design/</url>
@@ -5108,11 +5142,11 @@
     </entry>
     
     <entry>
-      <title>API RESTful 风格</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
+      <title>API 文档和契约</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -5125,11 +5159,11 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
+      <title>API RESTful 风格</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
       
       
       <categories>
@@ -5346,6 +5380,40 @@
     </entry>
     
     <entry>
+      <title>PostgreSQL 入门使用</title>
+      <link href="/postgreSQL/postgreSQL/get%20start/"/>
+      <url>/postgreSQL/postgreSQL/get%20start/</url>
+      
+        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> postgreSQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
@@ -5356,6 +5424,40 @@
       <categories>
           
           <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
           
       </categories>
       
@@ -5397,16 +5499,16 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
+      <title>PHP环境 in Mac</title>
+      <link href="/php/php/php-environment-in-mac/"/>
+      <url>/php/php/php-environment-in-mac/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
       
       
       <categories>
           
-          <category> python </category>
+          <category> php </category>
           
       </categories>
       
@@ -5414,45 +5516,11 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
+      <title>PHP 包管理工具</title>
+      <link href="/php/php/PHP-package%20manager/"/>
+      <url>/php/php/PHP-package%20manager/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PostgreSQL 入门使用</title>
-      <link href="/postgreSQL/postgreSQL/get%20start/"/>
-      <url>/postgreSQL/postgreSQL/get%20start/</url>
-      
-        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> postgreSQL </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
       
       
       <categories>
@@ -5470,6 +5538,23 @@
       <url>/php/php/php-mamp/</url>
       
         <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
+      
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
       
       
       <categories>
@@ -5516,45 +5601,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>一段简单的PHP 日志代码</title>
+      <link href="/php/php/simple-log-feature/"/>
+      <url>/php/php/simple-log-feature/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP环境 in Mac</title>
-      <link href="/php/php/php-environment-in-mac/"/>
-      <url>/php/php/php-environment-in-mac/</url>
-      
-        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP 包管理工具</title>
-      <link href="/php/php/PHP-package%20manager/"/>
-      <url>/php/php/PHP-package%20manager/</url>
-      
-        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
       
       
       <categories>
@@ -5584,23 +5635,6 @@
     </entry>
     
     <entry>
-      <title>一段简单的PHP 日志代码</title>
-      <link href="/php/php/simple-log-feature/"/>
-      <url>/php/php/simple-log-feature/</url>
-      
-        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>PHP拓展Linux/unix 下的编译安装</title>
       <link href="/php/php/PHP-extension/"/>
       <url>/php/php/PHP-extension/</url>
@@ -5611,57 +5645,6 @@
       <categories>
           
           <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>DDI管理培训总结</title>
-      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
-      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
-      
-        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 团队管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java web project 概览</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>Java 基础重点回顾</p><ul><li>注解</li><li>异常</li></ul></li><li><p>J2EE 开发常用版本</p><ul><li>Jar 引入Tomcat的J2EE的实现</li><li>J2EE 1.7</li><li>JDK 8</li><li>Tomcat 1.7</li></ul></li><li><p>Spring framework</p><ul><li>Beans</li><li>周边生态</li><li>项目配置 web.xml</li><li>页面渲染<ul><li>JSP</li><li>Velocity</li><li>FreeMaker</li><li>themleaf</li></ul></li></ul></li><li><p>ORM</p><ul><li>Mybatis<ul><li>DAO 接口<ol><li>DTO</li><li>PO</li></ol></li><li>Domain 或者 Model  实体类和数据库对应</li><li>Mapper 使用xml实现和数据库</li></ul></li><li>Hibernate</li><li>Querydsl ORM增强查询工具</li></ul></li><li><p>Validation</p><ul><li>Hibernate Validation 实现</li><li>Java EE Validation 实现</li></ul></li><li><p>授权验证/登录</p><ol><li>intercept 实现</li><li>sharon</li><li>Spring security</li></ol></li><li><p>部署</p><ol><li>tomcat 1.7</li></ol></li><li><p>日志</p><ol><li>log4J</li><li>self4J</li></ol></li><li><p>构建工具</p><ol><li>Maven</li><li>Gradle</li></ol></li><li><p>mapping 工具</p><ol><li>orika</li><li>object mapper</li></ol></li><li><p>其他工具库</p><ol><li>poi 微软文档API</li><li>guava Google工具库</li><li>commons-lang apache 字符串工具</li><li>quartz 计划任务</li></ol></li><li><p>Restful</p><ol><li>hateoas</li><li>jersey </li></ol></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java 对象克隆</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
-      
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
           
       </categories>
       
@@ -5696,6 +5679,74 @@
       <categories>
           
           <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>DDI管理培训总结</title>
+      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
+      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
+      
+        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 团队管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 对象克隆</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
+      
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java web project 概览</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>Java 基础重点回顾</p><ul><li>注解</li><li>异常</li></ul></li><li><p>J2EE 开发常用版本</p><ul><li>Jar 引入Tomcat的J2EE的实现</li><li>J2EE 1.7</li><li>JDK 8</li><li>Tomcat 1.7</li></ul></li><li><p>Spring framework</p><ul><li>Beans</li><li>周边生态</li><li>项目配置 web.xml</li><li>页面渲染<ul><li>JSP</li><li>Velocity</li><li>FreeMaker</li><li>themleaf</li></ul></li></ul></li><li><p>ORM</p><ul><li>Mybatis<ul><li>DAO 接口<ol><li>DTO</li><li>PO</li></ol></li><li>Domain 或者 Model  实体类和数据库对应</li><li>Mapper 使用xml实现和数据库</li></ul></li><li>Hibernate</li><li>Querydsl ORM增强查询工具</li></ul></li><li><p>Validation</p><ul><li>Hibernate Validation 实现</li><li>Java EE Validation 实现</li></ul></li><li><p>授权验证/登录</p><ol><li>intercept 实现</li><li>sharon</li><li>Spring security</li></ol></li><li><p>部署</p><ol><li>tomcat 1.7</li></ol></li><li><p>日志</p><ol><li>log4J</li><li>self4J</li></ol></li><li><p>构建工具</p><ol><li>Maven</li><li>Gradle</li></ol></li><li><p>mapping 工具</p><ol><li>orika</li><li>object mapper</li></ol></li><li><p>其他工具库</p><ol><li>poi 微软文档API</li><li>guava Google工具库</li><li>commons-lang apache 字符串工具</li><li>quartz 计划任务</li></ol></li><li><p>Restful</p><ol><li>hateoas</li><li>jersey </li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Spring boot 学习指南</title>
+      <link href="/Spring/spring/Spring%20boot%20Basic/"/>
+      <url>/Spring/spring/Spring%20boot%20Basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
           
       </categories>
       
@@ -5771,23 +5822,6 @@
     </entry>
     
     <entry>
-      <title>Spring boot 学习指南</title>
-      <link href="/Spring/spring/Spring%20boot%20Basic/"/>
-      <url>/Spring/spring/Spring%20boot%20Basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>使用Java构建API的知识体系</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
@@ -5805,11 +5839,11 @@
     </entry>
     
     <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -5822,11 +5856,11 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -5856,11 +5890,11 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
+      <title>H5 Cordova打包方案</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
       
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
       
       
       <categories>
@@ -5873,11 +5907,11 @@
     </entry>
     
     <entry>
-      <title>H5 Cordova打包方案</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -6162,16 +6196,16 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      <title>项目移交检查清单</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 敏捷开发 </category>
+          <category> 职业素质 </category>
           
       </categories>
       
@@ -6196,11 +6230,28 @@
     </entry>
     
     <entry>
-      <title>项目移交检查清单</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/wa-of-working-for-handover/</url>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
       
-        <content type="html"><![CDATA[<h4 id="What-we-can-do-fo-that"><a href="#What-we-can-do-fo-that" class="headerlink" title="What we can do fo that?"></a>What we can do fo that?</h4><ul><li>整理一个清单</li><li>建立一个文档去跟踪</li><li>安排一些conversation去移交</li><li>review 那些东西已经被确认接受</li><li>角色对角色, QA、DEV、BA分别处理</li><li>定义移交scope</li><li>定义deadline</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 敏捷开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>How to end a meeting?</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
+      
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
       
       
       <categories>
@@ -6223,23 +6274,6 @@
       <categories>
           
           <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>How to end a meeting?</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
-      
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
           
       </categories>
       
