@@ -3,9 +3,11 @@ title: 一段简单的PHP 日志代码
 categories: php
 ---
 
+
+
+
+
 ```php
-
-
 <?php
 
 define("SEPARATOR"," | ");

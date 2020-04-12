@@ -1,0 +1,959 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Retro | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="Retro 是敏捷软件开发方法中的一种会议形式，Retro 这个单词的全称是 Retrospective，意为回顾、审查。Retro 这种会议形式适用于某个项目完成后，或任务进展到某一个阶段时对之前的工作进行复盘、检查。
+这种会议形式在海外的公司中非常流行，可能发生在某一次培训完成后，发现培训中的问">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Retro">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Retro</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <p>Retro 是敏捷软件开发方法中的一种会议形式，Retro 这个单词的全称是 Retrospective，意为回顾、审查。Retro 这种会议形式适用于某个项目完成后，或任务进展到某一个阶段时对之前的工作进行复盘、检查。</p>
+<p>这种会议形式在海外的公司中非常流行，可能发生在某一次培训完成后，发现培训中的问题进行改进；那些做的好的实践，以便于继续坚持；或者挖掘团队中的金点子和建议。</p>
+<p>所以在会议中，要求全员积极参与，一般来说聚焦于3个问题：</p>
+<ol>
+<li>那些实践对我们非常有帮助？</li>
+<li>那些事例对团队或项目造成不良影响？</li>
+<li>在工作期间有什么疑惑或者问题？</li>
+</ol>
+<p>举例来说，在一个培训项目完成后的 Retro 会议可能会收集到如下的清单：</p>
+<p>Well：</p>
+<ol>
+<li>记住每个学员的名字</li>
+<li>持续和学员沟通</li>
+<li>在每次课程前强调纪律（Ground Rule）</li>
+<li>PPT上的字足够大</li>
+</ol>
+<p>Less Well：</p>
+<ol>
+<li>每天结束前没有及时总结</li>
+<li>没有足够的答疑时间</li>
+<li>没有布置作业</li>
+</ol>
+<p>于是，根据 Less well 中的条目，制定改进行动：</p>
+<ol>
+<li>在课程计划中添加每日总结的内容</li>
+<li>使用Parking Lot（停车场，一张大白纸放置学生疑问的便利贴）收集没有及时回复的问题，在其余时间回复</li>
+<li>设计作业和批改作业</li>
+</ol>
+<p>因此只要坚持，使用 Retro 这种会议形式，随着项目的进行，就会有足够多的培训经验被积累下来。这就是 Retro 的魅力， Retro 本身只是一种形式，但是提供了一种持续改进的方法。</p>
+<p>当然，Retro 也不一定限于这三个方面，也有一些其他的 Retro 形式。例如从项目的风险角度出发，一种有趣的 Retro形式 《Anchors and Engine》：</p>
+<ol>
+<li>有那些风险或者阻碍项目进行的事情（Anchors）?</li>
+<li>有哪些在促使项目往好的方向发展的（Engine）？</li>
+</ol>
+<p>你可以在 <a href="http://www.funretrospectives.com/anchors-and-engine/" target="_blank" rel="noopener">funretrospectives.com</a> 的网站上找到类似更多的Retro形式。</p>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>常用的 Retro 具体的操作方法有两种，一种是主持人白板上画出制定区域，参与者通过报事贴发布自己的想法；另一种是通过一些在线工具让参与者更为方便的参与Retro。</p>
+<p>这里给出便利贴的操作方法，在线工具的方法大同小异，并使用最基本的回顾模型（Well、Less well、Puzzle）。一般 Retro 的时间在30-60分钟，需要相关的人员全部都参与，其中需要一个主持者全程引导。</p>
+<p>下面是具体的操作步骤：</p>
+<ol>
+<li>主持人在白板上书写 Well、Less well、Puzzle 三列。</li>
+<li>主持人回顾上次 Retro 的行动执行情况。</li>
+<li>所有参与者在5分钟内书写报事贴，并贴到白板上，每个报事贴只书写一项内容。</li>
+<li>主持人对所有报事贴分类，把相同和类似的内容贴到一起。</li>
+<li>所有人员需要讨论 Less well 的内容，得出行动，但限于时间原因主持人决定讨论的数量，一般 3 - 5项。</li>
+<li>所有人员使用“正”字计数法，对分组后的内容进行投票。</li>
+<li>团队逐个讨论 Less well，找到可以采取的行动。例如在某次教学活动中，物料准备不够充分，我们可以采取的行动应该是，每一次教学应该有专人根据物料清单检查物料情况。</li>
+<li>得出的行动应该指派到专人负责，否则没有意义。</li>
+</ol>
+<p><img src="/理论方法/methodology/retro/26731.png" alt="img"></p>
+<p>（一个最普通的 Retro 模式）</p>
+<p>在线的操作流程类似，可以使用 <a href="https://ideaboardz.com/" target="_blank" rel="noopener">https://ideaboardz.com/</a> 等相关工具用用电子话的方式进行 Retro。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>在 Retro 开始前，如果是新组建的团队，有可能有团队成员处于某些原因，不放心说出自己真实感受和问题，可以进行安全度检查。具体操作方法是进行匿名投票，使用便利贴书写 “安全” “不安全” 然后由主持人统计查看。如果团队中存在感受到不安全的成员出现，让参与者中职级最高的参与者离开，然后再次投票，直到安全为止。</li>
+<li>如果有参与者认为团队环境不安全，无法畅所欲言，不去解决不安全因素而直接开始，Retro 的效果会只能是形式化的，对项目的推动没有意义。</li>
+<li>Retro 很重要的一个点是持续坚持，如果只做一次 Retro 实际上意义不大。如果一个团队定期都会举行 Retro，那么团队成员就会时刻准备下一次 Retro 可以讨论的问题。</li>
+<li>Retro 中产出的行动需要有专人负责，即使有些行动是针对团队所有人，但需要有专人负责提醒、检查。</li>
+</ol>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/理论方法/methodology/project-work-flow/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/理论方法/methodology/cloud-native/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 title: PDF 导出
-categories: 方案
+categories: 技术方案
 toc: true
 ---
 

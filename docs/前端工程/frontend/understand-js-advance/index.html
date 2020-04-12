@@ -1,0 +1,1040 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>理解js 的作用域链 原型链 闭包 词法分析 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="1、作用域链　　
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+        //作用域链
+        b = &amp;#39;没有使用var 声明，因此是一个全局变量。&amp;#39;;
+        var a = &amp;quot;使用了var声">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="理解js 的作用域链 原型链 闭包 词法分析">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">理解js 的作用域链 原型链 闭包 词法分析</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>1、作用域链　　</p>
+<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
+        //作用域链
+        b = &#39;没有使用var 声明，因此是一个全局变量。&#39;;
+        var a = &quot;使用了var声明，声明在最顶级的部分，属于window对象下的，一个变量，我们所有的程序都在window下运行，因此也是一个全局变量&quot;;
+        function fa(){
+            fa_b  = &quot;虽然在fa下面，但是我没有进行使用var 声明，所以我还是一个全局变量;&quot;;
+            var fa_a = &quot;我使用了var 声明，变量的作用域在方法 fa下面&quot;;
+            alert(&#39;这是 window下面的一个方法&#39;);    
+            function fa_fa(){
+                alert(&#39;这是 fa_fa下面的一个方法,只能在fa方法下面调用。&#39;);
+　　　　　　　　　alert(b);//寻找变量b的步骤为  fa_fa &gt; fa &gt; Window &gt; 全局。    
+            }
+        }
+        /*
+            总结:
+                1、js里面一切都是对象    
+                2、js里面一切对象都是引用
+                3、作用域链说白了就是从内到外寻找变量而已;    
+        */
+    &lt;/script&gt;
+</code></pre><p> 预编译和词法分析</p>
+<p>先来一个典型的例子</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function fa(age){
+        // var age = 10;
+        var age;
+        function age(){
+            alert(age);
+        }
+        alert(age);
+        // var age;
+        age= 12;
+        alert(age);
+    }
+    fa(&#39;11&#39;);
+    //结果  10 12
+&lt;/script&gt;
+</code></pre><p>js,执行的内部顺序，</p>
+<p>　　1、词法分析或者又称为预编译，就是先对代码进行检查，检查变量的声明，具体赋值操作，在具体运行的时候，</p>
+<p>　　　　词法分析分为3个阶段和优先级，优先级低的最先被分析，然后出现优先级高的情况就会被，优先级高的覆盖。</p>
+<p>　　　　1、分析参数里面的变量，如果方法中出现了形参，相当于把变量 var 定义了一次，</p>
+<p>　　　　2、分析局部变量的定义</p>
+<p>　　　　3、分析方法的定义，如果开始被定义了为变量，然后被定义了为方法，会按照方法解释。</p>
+<p>　　总结：方法的优先级 》  var声明的变量 》 传过来的参数 ，在JS 中不仅一切都是对象，连方法都是属性，可以给方法赋值一个普通数据。</p>
+<p>2、闭包</p>
+<p>　　　所谓闭包，就是一个方法里面可以定义局部变量和局部方法，一旦这个方法被调用，方法内部就会形成一个活动域，方法内部的变量互相调用不受影响。</p>
+<pre><code>    &lt;!-- 闭包 --&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function fa(){
+            function fa_fa(){
+                alert(b);
+            }();
+            var b = &quot;注意这是一个局部变量;&quot;;
+        }
+        /*
+            总结：
+                1、变量b外部是无法获取到的,方法fa 被调用时，fa_fa被声明，并立即执行（）为立即执行,
+                此时，fa中间的所有资源被激活，fa_fa 能访问到变量b,但是由于b 在fa 里面，fa构成了一个闭包;
+        */
+    &lt;/script&gt;
+</code></pre><p>3、原型链</p>
+<pre><code class="javascript">    &lt;!-- //原型链 --&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var orgen = new Object({&quot;id&quot;:&#39;haha&#39;});
+        function Person(age,color){
+            var word = &#39;hello&#39;;
+            this.age = age;
+            this.color = color;
+            this.speak = function (){
+                _speak();
+            }();
+
+            function _speak(){
+                alert(age);
+            }
+            this.prototype = orgen;
+        }    
+
+        var me = new Person(1,&#39;red&#39;);
+        me.money = 12;
+
+        me.prototype.getMoney = function(){
+            orgen.money = 12;
+            console.log(this);
+        }();
+
+        alert(me.prototype.money);
+        console.log(me);
+        console.log(me.prototype);    
+
+        /*
+            说明：
+                1、一个对象由一个构造方法实例化而来,但是构造方法是一个Function对象。
+                2、一个构造方法需要继承，是根据一个对象来继承的，注意不是构造方法、
+                3、prototype 指向的是，原型对象，注意不是原型对象的方法
+                4、如果对象本身没有属性，系统会向对象的原型继续寻找，一直循着这个链条寻找，这就是原型链
+        */
+    &lt;/script&gt;
+</code></pre>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/前端工程/frontend/jquery-plugin-collections/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/前端工程/frontend/jquery-plugin-develop/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

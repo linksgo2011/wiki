@@ -1,6 +1,6 @@
 ---
 title: Yaml 解析
-categories: 方案
+categories: 技术方案
 toc: true
 
 ---
@@ -14,4 +14,3 @@ toc: true
         Map<String, Object> object = yamlMapFactoryBean.getObject();
         Object nameUrl = object.get("pnameUrl");
 ```
-

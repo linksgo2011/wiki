@@ -1,6 +1,6 @@
 ---
 title: 文件上传
-categories: 方案
+categories: 技术方案
 toc: true
 ---
 

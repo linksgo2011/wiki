@@ -1,6 +1,6 @@
 ---
 title: 对象转换
-categories: 方案
+categories: 技术方案
 toc: true
 ---
 

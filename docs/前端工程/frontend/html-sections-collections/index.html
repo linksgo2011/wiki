@@ -1,0 +1,1031 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>html 常用代码块 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="html申明
+对ie6-8在html中添加no-css3这个class和各个版本的class，对ie7以下添加lte7这个class，然后根据我们目前使用浏览器的比例，把第一的ie6放在判断第一位。
+
+&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;!--[if IE 6]&amp;gt;&amp;lt;htm">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="html 常用代码块">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">html 常用代码块</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <pre><code>html申明
+对ie6-8在html中添加no-css3这个class和各个版本的class，对ie7以下添加lte7这个class，然后根据我们目前使用浏览器的比例，把第一的ie6放在判断第一位。
+
+&lt;!DOCTYPE HTML&gt;
+&lt;!--[if IE 6]&gt;&lt;html class=&quot;ie6 lte9 lte7 no-css3&quot; lang=&quot;zh-cn&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;&lt;html class=&quot;ie8 lte9 no-css3&quot; lang=&quot;zh-cn&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 9]&gt;&lt;html class=&quot;ie9 lte9 no-css3&quot; lang=&quot;zh-cn&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;&lt;html class=&quot;ie7 lte9 lte7 no-css3&quot; lang=&quot;zh-cn&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if !(IE 6) | !(IE 7) | !(IE 8) | !(IE 9)  ]&gt;&lt;!--&gt;&lt;html lang=&quot;zh-cn&quot;&gt;&lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre><code>判断浏览器，添加所需文件
+//为ie6-8添加一个ie.css文件
+&lt;!--[if lte IE 8]&gt;&lt;link href=&quot;css/ie.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; media=&quot;all&quot;&gt;&lt;![endif]--&gt;
+//为ie6添加处理png的js文件
+&lt;!--[if IE 6]&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;js/DD_belatedPNG_0.0.8a-min.js?_v=&lt;%=JS_VERSION%&gt;&quot;&gt;&lt;/script&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+          //给所有需要处理的png图片加上dd-pngifx这个class，就可以处理了
+          DD_belatedPNG.fix(&quot;.dd-pngfix&quot;);
+      &lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre><pre><code>常规布局
+这个布局的特点是border，margin，padding由里面的inner部分来完成，所以左中右三个加起来就是总的宽度，而不用考虑左中右的margin，border，padding之类的，当然之所有选择这个布局，还有其他的一些变化，详细请参看布局。这里列出左右边栏布局的代码以供参考。
+
+&lt;div class=&quot;page asides-two&quot;&gt;
+    &lt;div class=&quot;wrap-header&quot;&gt;
+        &lt;div id=&quot;header&quot;&gt;
+            &lt;div class=&quot;inner clearfix&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrap-header--&gt;
+    &lt;div class=&quot;wrap-container&quot;&gt;
+        &lt;div id=&quot;container&quot; class=&quot;clearfix&quot;&gt;
+            &lt;div id=&quot;aside_left&quot; class=&quot;aside&quot;&gt;
+                &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;&lt;!--aside_left--&gt;
+
+            &lt;div id=&quot;main&quot;&gt;
+                &lt;div class=&quot;inner clearfix&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;&lt;!--main--&gt;
+
+            &lt;div id=&quot;aside_right&quot; class=&quot;aside&quot;&gt;
+                &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;&lt;!--aside_right--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrap-container--&gt;
+    &lt;div class=&quot;wrap-footer&quot;&gt;
+        &lt;div id=&quot;footer&quot;&gt;
+            &lt;div class=&quot;inner clearfix&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrap-footer--&gt;
+&lt;/div&gt;
+</code></pre><pre><code>边栏区块
+边栏一般加有aside-block这个class，然后每个区块有一个属于自己的id，以方便协作查阅及日后修改。内容由block-content这个class包括起来，如果标题右侧有更多等信息，使用head-title结构。当然如果边栏区块足够简单如就一张图片，那就根本就不需要这个结构了。
+
+&lt;div id=&quot;&quot; class=&quot;aside-block&quot;&gt;
+  &lt;h2&gt;&lt;/h2&gt;
+  &lt;div class=&quot;block-content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 标题右侧有更多等文字信息 --&gt;
+&lt;div id=&quot;&quot; class=&quot;aside-block&quot;&gt;
+  &lt;div class=&quot;head-title clearfix&quot;&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;a href=&quot;#&quot; class=&quot;more&quot;&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;block-content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><pre><code>关于H1
+在首页的时候，网站的h1标题为站点名字，当网站在内页的时候，内页标题为h1。所以对站点名字输出进行判断，以jsp为例：
+
+&lt;% if(isFront) { %&gt;
+  &lt;h1 class=&quot;ele-invisible&quot;&gt;天涯游戏&lt;/h1&gt;
+&lt;% }else { %&gt;
+  &lt;strong class=&quot;ele-invisible&quot;&gt;天涯游戏&lt;/strong&gt;
+&lt;% } %&gt;
+当然大多数时候其实我们一般是显示logo，而网站名称我们也许是需要隐藏的，那样我们添加了个ele-invisible的class，这个class的样式为：
+
+/*ele-invisible  */
+.ele-invisible{
+    position: absolute;
+    clip:rect(1px 1px 1px 1px);/* ie6,7*/
+    clip: rect(1px, 1px, 1px, 1px);
+}
+</code></pre>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/前端工程/frontend/css-pre/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/前端工程/frontend/jquery-plugin-collections/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

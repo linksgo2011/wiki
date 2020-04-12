@@ -1,0 +1,936 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>vc驿站视频教程笔记4 Cstring 讲解 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="-————————————————————————–VC 驿站WwW.CcTry.CoM多抽出一分钟时间来学习，让你的生命更加精彩！C、C++、VC++ 各种学习资源，免费教程，期待您的加入！动画教程只是起到技术交流的作用，请大家不用利用此方法做非法用途.由此动画造成的任何后果和动画作者及本站无关.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="vc驿站视频教程笔记4 Cstring 讲解">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">vc驿站视频教程笔记4 Cstring 讲解</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>-————————————————————————–<br>VC 驿站<br>WwW.CcTry.CoM<br>多抽出一分钟时间来学习，让你的生命更加精彩！<br>C、C++、VC++ 各种学习资源，免费教程，期待您的加入！<br>动画教程只是起到技术交流的作用，请大家不用利用此方法做非法用途.<br>由此动画造成的任何后果和动画作者及本站无关.<br>-—————————————————————————————<br>大家好，我是Syc<br>今天给大家做的教程是：<br>vc++基础班[4]—CString常用操作讲解<br>—————————————— Begin ———————————————-<br>①、CString 类对象的初始化：<br>CString str;<br>CString str1(_T(“abc”));<br>CString str2 = _T(“defg”);</p>
+<p>TCHAR szBuf[] = _T(“kkk”);<br>CString str3(szBuf);<br>CString str4 = szBuf;</p>
+<p>TCHAR <em>p = _T(“1k2”);<br>//TCHAR </em> 转换为 CString<br>CString str5(p);<br>CString str6 = p;</p>
+<p>CString str7(str1);<br>CString str8 = str7;</p>
+<p>②、字符串基本操作：<br>● 长度：GetLength();<br>CString str(_T(“abc”));<br>int len = str.GetLength(); //len == 3</p>
+<p>● 是否为空，即不含字符：IsEmpty();<br>● 清空字符串：Empty();<br>CString str(_T(“abc”));<br>BOOL mEmpty = str.IsEmpty(); //mEmpty == FALSE<br>str.Empty();<br>mEmpty = str.IsEmpty(); //mEmpty == TRUE</p>
+<p>● 转换大小写：MakeUpper、MakeLower<br>● 转换顺序：MakeReverse<br>CString str(_T(“Abc”));<br>str.MakeUpper(); //str == ABC<br>str.MakeLower(); //str == abc<br>str.MakeReverse(); //str == cba</p>
+<p>● 字符串的连接：+、+=<br>CString str(_T(“abc”));<br>str = _T(“de”) + str + _T(“kp”); //str == deabckp<br>str += _T(“123”); //str == deabckp123<br>TCHAR szBuf[] = _T(“789”);<br>str += szBuf; //str == deabckp123789</p>
+<p>● 字符串的比较：==、!=、(&lt;、&gt;、&lt;=、&gt;= 不常用)、Compare(区分大小写)、CompareNoCase(不区分大小写)<br>CString str1(_T(“abc”));<br>CString str2 = _T(“aBc”);<br>if (str1 == str2){<br>MessageBox(_T(“str1 等于 str2”));<br>}else{<br>MessageBox(_T(“str1 不等于 str2”));<br>}</p>
+<p>③、字符串的查找：<br>Find、ReverseFind、FindOneOf 三个函数可以实现字符串的查找操作<br>Find 从指定位置开始查找指定的字符或者字符串，返回其位置，找不到返回 -1；<br>举例：<br>CString str(_T(“abcdefg”));<br>int idx = str.Find(_T(“cde”), 0); //idx 的值为2;</p>
+<p>ReverseFind 从字符串末尾开始查找指定的字符，返回其位置，找不到返回 -1，虽然是从后向前查找，但是位置为从开始算起；<br>CString str(_T(“abcdefg”));<br>int idx = str.ReverseFind(‘e’); //idx 的值为4;</p>
+<p>FindOneOf 查找参数中给定字符串中的任意字符，返回第一次出现的位置，找不到返回 -1；<br>CString str(_T(“abcabcd”));<br>int idx = str.FindOneOf(_T(“cbd”)); //idx 的值为1;</p>
+<p>④、字符串的替换与删除：<br>Replace 替换 CString 对象中的指定的字符或者字符串，返回替换的个数，无匹配字符返回 0；<br>CString str(_T(“abcdabc”));<br>int num = str.Replace(‘b’, ‘k’); //str == akcdakc, num == 2</p>
+<p>CString str(_T(“abcdabc”));<br>int num = str.Replace(_T(“bc”), _T(“kw”)); //str == akwdakw, num == 2</p>
+<p>Remove 删除 CString 对象中的指定字符，返回删除字符的个数，有多个时都会删除；<br>CString str(_T(“abcdabcb”));<br>int num = str.Remove(‘b’); //str == acdac, num == 3</p>
+<p>Delete 删除 CString 对象中的指定位置的字符，返回处理后的字符串长度；<br>CString str(_T(“abcd”));<br>int num = str.Delete(1, 3); //str == a, num == 1</p>
+<p>⑤、字符串的提取：<br>Left、Mid、Right 三个函数分别实现从 CString 对象的 左、中、右 进行字符串的提取操作；<br>CString str(_T(“abcd”));<br>CString strResult = str.Left(2); //strResult == ab<br>strResult = str.Mid(1); //strResult == bcd<br>strResult = str.Mid(0, 2); //strResult == ab<br>strResult = str.Right(2); //strResult == cd</p>
+<p>⑥、单个字符的修改：<br>GetAt、SetAt 可以获取与修改 CString 对象中的单个 TCHAR 类型字符；<br>[] 操作符也可以获取 CString 对象中的单个字符，但为只读的，不能进行修改；<br>CString str(_T(“abcd”));<br>str.SetAt(0, ‘k’); //str == kbck<br>TCHAR ch = str.GetAt(2); //ch == c</p>
+<p>⑦、其他类型与 CString 对象类型的转换：<br>● 格式化字符串：Format 方法，实现从 int、long 等数值类型、TCHAR、TCHAR * 等类型向 CString 类型的转换；<br>int num = 6;<br>CString str;<br>str.Format(_T(“%d”), num);</p>
+<p>● CString 类型向 int 等数值类型、TCHAR <em> 类型的转换：<br>TCHAR </em>pszBuf = str.GetBuffer();<br>str.ReleaseBuffer();</p>
+<p>TCHAR *p = (LPTSTR)(LPCTSTR)str;</p>
+<p>CString str1(_T(“123”));<br>int num = _ttoi(str1);</p>
+<p>⑧、CString 对象的 Ansi 与 Unicode 转换：<br>大家可以直接使用上节课给大家讲解的方法，此外这里给大家介绍一种从 Ansi 转换到 Unicode 的隐含方法：<br>//当前工程环境为Unicode<br>CString str;<br>str = “abc”;<br>char *p = “defg”;<br>str = p;</p>
+<p>⑨、※※※ CString 对象字符串所占用的字节数：<br>CString str = _T(“abc”);<br>错误的求法：sizeof(CString)、sizeof(str)<br>正确的求法：str.GetLength()*sizeof(TCHAR)</p>
+<p>⑩、※※※ 当作为 TCHAR * 类型传参时，确保申请了足够用的空间，比如使用 GetModuleFileName 函数；</p>
+<p>————————————- End ——————————————-</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/c-c/c&c++/cctry-note-5/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/c-c/c&c++/cctry-note2/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

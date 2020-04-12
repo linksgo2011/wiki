@@ -1,6 +1,6 @@
 ---
 title: Retro
-categories: 思维工具
+categories: 理论方法
 recommend: true
 ---
 
