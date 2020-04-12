@@ -1,0 +1,961 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>前端的编程思维 | web 工程师知识系统</title>
+  <meta name="author" content="少个分号">
+  
+  <meta name="description" content="良好的代码设计可以大大减少维护的成本和潜在的bug，甚至由于积累效应会决定一个项目能否成功。在常年的codereview和查看面试作业你中发现，良好的设计和糟糕的代码设计的区别十分明显。
+总结了几条实用的经验，希望对后面的项目有所帮助。文中例子使用 JavaScript 和 Java，示例仅做演示使">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="前端的编程思维">
+  <meta property="og:site_name" content="web 工程师知识系统">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="web 工程师知识系统" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+</html>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">前端的编程思维</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>良好的代码设计可以大大减少维护的成本和潜在的bug，甚至由于积累效应会决定一个项目能否成功。在常年的codereview和查看面试作业你中发现，良好的设计和糟糕的代码设计的区别十分明显。</p>
+<p>总结了几条实用的经验，希望对后面的项目有所帮助。文中例子使用 JavaScript 和 Java，示例仅做演示使用，这些例子都是实际遇到过的，做了一些简化。</p>
+<p><img src="/thinking/thinking/10-good-design-experence/2054618301.png" alt="software-design.png"></p>
+<h2 id="快速退出"><a href="#快速退出" class="headerlink" title="快速退出"></a>快速退出</h2><p>如果在一个方法中遇到大量的条件判断，正常的情况下都会想到使用嵌套if 语句或者使用 else if，但是这样一来就会出现非常复杂的嵌套。这在维护上带来了很大的麻烦。</p>
+<pre><code>function getRecommendedProductCover(user){
+    const defaultCover = &#39;http://xxxx.jpg&#39;
+    if(user.type === &#39;merchant&#39;){
+        let product = getRecommendedProductByUser(user.id)
+        if(product &amp;&amp; product.picture){
+            if(product.picture.src){
+                return product.picture.src
+            }
+        }
+    }
+    return defaultCover
+}
+</code></pre><p>我们可以使用逆向思维来解决这个问题，如果条件满足就是用 return 快速退出。</p>
+<pre><code>function getRecommendedProductCover(user){
+    const defaultCover = &#39;http://xxxx.jpg&#39;
+
+    if(user.type !== &#39;merchant&#39;){
+        return defaultCover
+    }
+
+    let product = getRecommendedProductByUser(user.id)
+    if(!product || !product.picture){
+        return defaultCover
+    }
+
+    if(product.picture.src){
+        return product.picture.src
+    }else{
+        return defaultCover
+    }
+}
+</code></pre><p>当然还可以使用一些中间变量等方法解决嵌套的问题，这种方式可以让代码看起来更加直观、简洁，有时候也可以避免无意义的数据获取。</p>
+<h2 id="消除-if-和-else-if"><a href="#消除-if-和-else-if" class="headerlink" title="消除 if 和 else if"></a>消除 if 和 else if</h2><p>我们看一个前端模板中非常常见的一种写法，我在大量的面试作业中出现。</p>
+<pre><code>state = {index: 1};
+
+render() {
+    const {index} = this.state;
+    return (
+        &lt;div className=&quot;tab-list&quot;&gt;
+            &lt;Navigation index={index} onChange={index =&gt; this.setState({index})}/&gt;
+            {index === 0 &amp;&amp; &lt;div&gt;Tab1 content&lt;/div&gt;}
+            {index === 1 &amp;&amp; &lt;div&gt;Tab2 content&lt;/div&gt;}
+            {index === 2 &amp;&amp; &lt;div&gt;Tab3 content&lt;/div&gt;}
+            {index === 3 &amp;&amp; &lt;div&gt;Tab4 content&lt;/div&gt;}
+        &lt;/div&gt;
+    );
+}
+</code></pre><p>这是我在一份前端作业中遇到的一个标签页切换的例子，短路运算符相当于 if 语句，显然作者把这个列表中每一个元素拿出来做了一次判断。这个逻辑显然使用循环就可以简单优雅的实现。</p>
+<p>我们再来看另外一个常见的例子。</p>
+<pre><code>function handleErrorMessage(response){
+    if(response.status === &#39;401&#39;){
+        alert(&#39;没有登录&#39;)
+    }else if(response.status === &#39;403&#39;){
+        alert(&#39;没有权限&#39;)
+    }else if(response.status === &#39;500&#39;){
+        alert(&#39;内部错误&#39;)
+    }else{
+        alert(&#39;未知错误&#39;)
+    }
+}
+</code></pre><p>这个例子在前端的项目中非常常见，但不一定是处理错误消息，处理这种场景也非常简单，使用一个Map对象来做一个映射即可大大提高程序的维护性。</p>
+<p>下面一个例子更加具有代表性，如果我们需要在页面上预览不同的媒体格式，在 mediaPreview 方法中可能会写的非常复杂。</p>
+<pre><code>function mediaPreview(object){
+    if(object.type === &#39;video&#39;){
+        ...
+    }
+    if(object.type === &#39;picture&#39;){
+        ...
+    }
+    ...
+}
+</code></pre><p>这个时候我们可以借助更为高级的设计模式，将不同类型的处理逻辑隔离在单独的模块中，同样可以使用一个Map对象来维护一个具体实现逻辑的列表。</p>
+<pre><code>const previewMethods{
+    video: function(){
+      ...
+    },
+    picture: function(){
+      ...
+    }
+}
+function mediaPreview(object){
+    previewMethods[object.type]()
+}
+</code></pre><p>是不是看起来像某种设计模式了呢。</p>
+<h2 id="分层设计"><a href="#分层设计" class="headerlink" title="分层设计"></a>分层设计</h2><p>分层设计是一种经典的程序设计，Java 服务器编程中往往有 presentation、service和dao层，现代前端也会用redux等框架来对数据和视图进行分层。</p>
+<p>那什么样的设计是易于维护的分层设计呢？我们先看一个反面的例子。</p>
+<pre><code>public class ProductService {
+    public void updateProduct(HttpServletRequest httpServletRequest) {
+        String queryString = httpServletRequest.getQueryString();
+        ...
+    }
+}
+</code></pre><p>在一次 codereview 中看到这样一段代码，逻辑是需要在service中根据条件更新商品，作者可能为了省事儿，直接把 HttpServletRequest 这个对象在各个参数中直接传递，虽然这样看起来避免了冗余的value object定义，以及减少了参数的数量。但这样做的后果是 ProductService 和 ServletRequest 耦合了，从而造成这个service失去了复用的能力。</p>
+<p><img src="/thinking/thinking/10-good-design-experence/3856113184.png" alt="layers.png"></p>
+<p>正确的做法是自定义一个条件类，或者直接把查询条件放到，参数列表上。</p>
+<pre><code>public class ProductService {
+    public void updateProduct(String productId, String userId) {
+        ...
+    }
+}
+</code></pre><p>回到我们的问题，什么是好的分层设计呢？答案是每个层能被无痛的替换。以在Java 后端中的presentation层为例，一套使用表单和JSP 模板的presentation层，如果具有良好的设计可以容易的被替换成RESTful的API 而不用对service层做任何修改。</p>
+<p>软件设计领域，最好的分层设计应该像 TCP/IP 协议族那样，每层都可以有不同的实现，所以我们才能做到WIFI和4G网络都能访问Google。</p>
+<p><img src="/thinking/thinking/10-good-design-experence/330607470.png" alt="tcp-ip.png"></p>
+<h2 id="作用域隔离"><a href="#作用域隔离" class="headerlink" title="作用域隔离"></a>作用域隔离</h2><p>前端开发，或者其他弱类型语言如PHP，在模块和包管理上没有语言层面足够的支持。需要特别注意作用域的暴露，先给一个前不久维护一个遗留项目中的一个例子。</p>
+<p>其中一个 js 文件中有一个变量</p>
+<pre><code>// a.js
+var isWebview = (window.navigator.userAgent.indexOf(&#39;_APP&#39;) !== -1)
+if(isWebview){
+    ...
+}
+</code></pre><p>后来在另外一个 js文件中也定义了isWebview方法，造成冲突。</p>
+<pre><code>// b.js
+function isWebview(){ 
+    return (window.navigator.userAgent.indexOf(&#39;_APP&#39;) !== -1)
+}
+</code></pre><p>由于JavaScript的类型转换 a.js 中的条件判断，就会一直当做 true。</p>
+<p>在JavaScript中解决的方法其实很简单，可以使用function创建一个局部作用域空间，这也是前端包管理的基本原理。</p>
+<pre><code>!(function(){
+    var isWebviewg = (window.navigator.userAgent.indexOf(&#39;_APP&#39;) !== -1)
+    console.log(isWebviewg)
+
+    //  创建一个局部作用域，使用 window 向外部暴露接口
+    window.xxx = ...
+})
+</code></pre><p>实际上前端开发中尽量应避免使用window对象。</p>
+<h2 id="编写一个合格函数"><a href="#编写一个合格函数" class="headerlink" title="编写一个合格函数"></a>编写一个合格函数</h2><p>编写函数谁不会，然而我在面试作业中碰到了这样的例子。</p>
+<pre><code>public class Utils {
+    public void modifyScore(Answer answer) {
+        answer.setScore(answer.getScore() + 10)
+        ...
+    }
+}
+</code></pre><p>这是一份 Java 作业，作者编写了一个Util 方法来修改答案的分数，但是这个方不是静态方法，甚至没有返回值，直接对传入的对象进行修改。</p>
+<pre><code>var formData = {
+    phone:&#39;123456&#39;,
+    ...
+}
+
+function validateForm(){
+    var phoneRegx = /xxxx/
+    var valid = honeRegx.test(ormData.phone)
+    ...
+    return valid
+}
+</code></pre><p>这是一份 JavaScript 作业，作者拆分了验证表单的方法，但是这个方法访问了外部变量，让这个方法的拆分变得毫无意义。</p>
+<p>好的函数或者方法，一定是通过参数获取输入，通过返回值输出数据，函数体内部不应该和外部有任何联系。</p>
+<h2 id="程序上下文"><a href="#程序上下文" class="headerlink" title="程序上下文"></a>程序上下文</h2><p>在软件开发领域，有一个概念一直没有得到重视，那就是我们编写应用程序就像撰写文章，是有一个上下文存在的。</p>
+<p>使用了Spring boot 会产生一个Spring 上下文来管理Beans并提供了其他特性。使用了 Redux 也会存在Redux这样一个上下文。</p>
+<p>我们再编写代码时，始终需要意识到这个上下文的存在。才能最大的利用框架和库提供的特性，但是也需要时刻警惕这个上下文中的一些限制。</p>
+<p>例如在前端开发中，很多UI框架提供了组件的两种引用方式。一种是全局的载入和配置，第二种是可以局部单独引入构建更为复杂的应用。</p>
+<p>在一些遗留的项目中，需要注意多套技术栈共同的存在，项目中往往多个上下文存在。编写一些公用的代码时，尽量剥离上下文的依赖和使用函数式编程，这样可以做到跨上下文复用，也可以未来跨项目使用。</p>
+<p>我们一个项目因为历史遗留的问题一些JavaScript使用的ES5编写的，另外一些使用了ES6和打包工具编写的。在一些公共模块就难以做到复用，于是我们只能将ES6的代码从上下文中剥离（例如重新引入依赖库）打包成独立的JS UMD包文件供ES5通过scripts引入。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>在项目中大量拼接字符串，会造成代码的可读性可维护性降低。</p>
+<p>例如前端在处理URL时的问题：</p>
+<pre><code>const urls = {
+    PRODUCTS:&#39;/products/&#39;  
+}
+function fetchProductDetail(productID){
+    return fetch(urls.PRODUCTS+productID)
+}
+</code></pre><p>上面的例子中需要拼接详情的URL地址，且无法体现detail资源中的path参数。字符串的处理应该尽量避免使用+操作符链接字符串，而是使用模板来处理，模板可以用任何地方而不只是输出。</p>
+<p>这里编写了一个处理URL path 参数的小方法。</p>
+<pre><code>const urls = {
+    PRODUCTS:&#39;/products/&#39;，
+    PRODUCTS_DETAIL:&#39;/products/:id&#39;  
+}
+function fetchProductDetail(productID){
+    return fetch(paramsPath(urls.PRODUCTS_DETAIL,productID))
+}
+
+function paramsPath(pathString, ...params) {
+  let result = pathString
+  params.forEach((value) =&gt; {
+    result = result.replace(/\:\w+/, value)
+  })
+  return result
+}
+</code></pre><p>JavaScript 成熟的模板库非常多，例如Ejs、Handlebars、underscore中template.不要仅仅在视图中使用模板，而是需要处理字符串的地方都可以使用。</p>
+<h2 id="理解接口"><a href="#理解接口" class="headerlink" title="理解接口"></a>理解接口</h2><p>在项目中我们容易走进一个误区，看到一个场景觉得挺适合一种设计模式的，于是就引入一种设计模式。</p>
+<p>首先，很多设计模式之间的区别非常微妙，同一种场景可以使用不同的设计模式实现。例如策略模式和门面模式某些时候很难区分。</p>
+<p>其次，有时候我们不需要一个设计模式完整的实现，可以参考这种设计模式的思想做一些定制。</p>
+<p>在使用模式之前需要彻底理解的是面向对象，特别是继承和接口。由于JavaScript没有语言层面的的 interface，但实际山接口无处不在。</p>
+<p>比如，如果一组信息需要渲染给显示器和打印机等不同的设备，我们可能这样写。</p>
+<pre><code>const PrintViewer = {
+  render(){
+    ...
+  }
+}
+
+const BrowserViewer = {
+  render(){
+    ...
+  }
+}
+
+function render(){
+  // 使用工厂方法获取不同的渲染对象
+  const reviewer =  this.getViewer()
+  reviewer.render(this.data)
+}
+</code></pre><p>在前端开发中，如果不使用TypeScript 等类型工具，我们无法做到在语法层面上检查每个 viewer 都有render方法。但是如果想让程序正确运行，我们不得不在团队中约定，viewer 比如提供一个render 方法。</p>
+<p><strong>在软件开发中，接口实际上是一种约定。</strong></p>
+<p><img src="http://www.printf.cn/usr/uploads/2019/02/4033133885.png" alt="interface.png"></p>
+<p>在现实世界中接口是通信设备和零件之间的契约</p>
+<h2 id="复用的陷阱"><a href="#复用的陷阱" class="headerlink" title="复用的陷阱"></a>复用的陷阱</h2><p>在做前端开发的时候非常容易陷入一个误区，就是把视图拆分成独立的组件，拆分代码这个实践没有问题，但是应该注意为何而拆。</p>
+<p>比如我们有一个数据列表页面，这个页面上大致有筛选部分、内容部分、分页部分，在codereview 中看到过一个 vue 的案例，有人把一个也买的呢头部、中部、底部拆分成不同的组件，但是这些组件是当前页面内部和业务相关的，只是不同的部分而已。</p>
+<p>拆分之后各个组件的数据又需要通过props和event来传递，带来了额外的负担。</p>
+<p>因此我们在组件拆分的时候，需要考虑以下几点：</p>
+<ol>
+<li>拆分出的组件是否和业务有关联，如果和业务关联需要进行剥离</li>
+<li>从业务代码中抽离组件，而不是提前设计组件</li>
+<li>考虑组件拆分的成本和收益，组件拆分后会带来组件之间通信、可读性下降等潜在成本</li>
+</ol>
+<p><img src="/thinking/thinking/10-good-design-experence/889408754.png" alt="components.png"></p>
+<h2 id="起一个好名字"><a href="#起一个好名字" class="headerlink" title="起一个好名字"></a>起一个好名字</h2><p>曾经接手过一个遗留项目，这个项目的原作者我猜测应该是广东人，因为变量命名的风格太过于清奇。变量名中不仅有英文简写（不完整的单词例如 btn ）、数字和拼音，更为恐怖的是驼峰和下划线混用，甚至拼音都不是普通话。</p>
+<pre><code>$sqlus = &quot;xxx&quot;;
+$rsus = mysql_query($sqlus);
+$countus = mysql_fetch_assoc($rsus);
+$usercxpass = $countus[&quot;cx_pass&quot;] . &#39;,&#39; . $pa_cjh;//车架A
+$arr = array($countus[&quot;cx_pass&quot;]);//编码数组
+$arrsl = explode(&quot;,&quot;,$countus[&quot;cx_shul&quot;]);//品牌查询次数数组
+/////////////////pdcxsz////////////////////////
+$arrnull = array();//空数组
+foreach ($arrsl as $key =&gt; $values) {//查询并写入新
+    if (strstr($values, $pa_pingp) !== false) {
+        array_push($arrnull, $values);
+    }
+}
+if ($arrnull[0] == &quot;&quot; and $countus[&quot;cx_date&quot;] == $l_date1) {//日期当前不存在就写入
+    $arrsl[] = $pa_pingp . &#39;1&#39;;//写入新查询
+//  print_r($arrsl);
+} elseif ($countus[&quot;cx_date&quot;] &lt;&gt; $l_date1) {//日期之前不存在就写入
+    $arrsl = array($pa_pingp . &#39;1&#39;);//写入新查询
+} elseif ($arrnull[0] &lt;&gt; &quot;&quot; and $countus[&quot;cx_date&quot;] == $l_date1) {//存在就修改
+    $czxincs = substr($arrnull[0], -1);//实已查
+    $dqppkey = array_search($arrnull[0], $arrsl);//已查当前分健值
+//  echo $czxincs.&#39;&lt;br /&gt;&#39;;
+    $arrsl[$dqppkey] = $pa_pingp . ($czxincs + 1);//更新数组
+}
+</code></pre><p>我想上面这段代码几乎没人看懂，所以起一个好的名字对维护性非常重要，所以在变量命名时最好遵循下面的规则：</p>
+<ol>
+<li>使用一种命名风格，驼峰或者下划线</li>
+<li>避免使用拼音和数字</li>
+<li>避免使用缩略词</li>
+<li>注意单词错误、时态和大小写</li>
+</ol>
+<p>另外有的时候实在想不出变量名，可以借助一些工具，例如 <a href="https://unbug.github.io/codelf/" target="_blank" rel="noopener">https://unbug.github.io/codelf/</a> 提供了浏览器和编辑器插件，可以从开源代码库中搜索一些有用的代码作为参考。</p>
+<p>另外一种我比较喜欢的命名方式是参考一些标准写法。“微格式”是一种互联网“潜规则”，用于赋予HTML元素有意义的名字便于第三方应用程序或搜索引擎抓取。所以我在编写前端代码时，参考微格式不用费脑筋设计HTML结构和命名，同时也有让HTML足够语义化。</p>
+<p><img src="/thinking/thinking/10-good-design-experence/739818415.png" alt="namming.png"></p>
+<p>图片来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/microformats" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/microformats</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/thinking/thinking/software-standars/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/thinking/thinking/no-feature-requirement/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  
+  &copy; 2020 少个分号
+  
+  <a href="/about" target="_blank">关于本站</a> |
+  <a href="https://github.com/linksgo2011/wiki" target="_blank">github |</a>
+  <a href="http://www.printf.cn" target="_blank">我的博客</a>
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>

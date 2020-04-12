@@ -14,6 +14,7 @@ toc: true
 - 易于版本管理，最好是文本格式
 - 方便生成 pdf、word、html 等多种格式
   
+
 探索出来对于互联网写作者来说，可以采用 markdown 作为写作格式，Git 或者 SVN 作为版本管理，使用一系列工具生成各种格式发布。
 
 我收集和整理了一些工具，用于不同的写作场景。
@@ -146,3 +147,32 @@ http://www.sphinx-doc.org/en/stable/examples.html
 ### 字体
 
 - 推荐使用思源黑体,Google 开源的免费中文简体字体 https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese
+
+
+
+### Markdown+Pandoc+Sphinx+Git
+
+参考 Cakephp 文档 https://github.com/cakephp/docs
+
+使用Sphinx的文档列表
+http://www.sphinx-doc.org/en/stable/examples.html
+
+### HEXO 静态网站生成
+官网：https://hexo.io 
+模板根据有定制性，图片问题不好处理
+
+### Markdown+GitBook+Git
+Gitbook使用教程：https://segmentfault.com/a/1190000005859901
+
+以后如果需要编辑产品文档优先使用这种方法
+
+### Markdown+Pandoc+Git 
+这个方法更加灵活
+参考这个项目的 Makefile
+
+
+
+### 写书
+
+简单可以使用 markdown 分章节，Spring 和各种框架文档都是通过 adoc 写的，非常容易编排一本书，以及进行章节跳转。
+
