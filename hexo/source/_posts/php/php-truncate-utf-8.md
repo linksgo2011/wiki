@@ -1,6 +1,6 @@
 ---
 title: 截取utf-8字符串原理
-categories: 前端工程
+categories: php
 toc: true
 ---
 

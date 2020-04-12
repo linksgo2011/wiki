@@ -1,5 +1,5 @@
 ---
-title: extern
+title: 内存分配
 categories: c&c++
 toc: true
 ---

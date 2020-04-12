@@ -3,26 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Spring cloud 生态概览 | web 工程师知识系统</title>
+  <title>Vue 中拖拽的方法 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="WEB present 层
-Spring HATEOAS
-Spring Mobile
-Spring Web Flow
-Spring Session
-Spring Web Services
-Spring Social
-Spring for Android
-Spring Security
+  <meta name="description" content="// (function () {
+  var vueDragDrag = {}
 
-通用层
-Sp">
+  vueDragDrag.install = function (Vue) {
+    Vue.directive(&amp;#39;drag&amp;#39;, {
+      inserted: function (el, b">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring cloud 生态概览">
+  <meta property="og:title" content="Vue 中拖拽的方法">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -56,7 +50,7 @@ Sp">
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Spring cloud 生态概览</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-03-07</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Vue 中拖拽的方法</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-04-12</span></h1>
 </div>		
 
 <div class="row page">
@@ -78,34 +72,102 @@ Sp">
 	
 
 	  <!-- content -->
-	  <h2 id="WEB-present-层"><a href="#WEB-present-层" class="headerlink" title="WEB present 层"></a>WEB present 层</h2><ul>
-<li>Spring HATEOAS</li>
-<li>Spring Mobile</li>
-<li>Spring Web Flow</li>
-<li>Spring Session</li>
-<li>Spring Web Services</li>
-<li>Spring Social</li>
-<li>Spring for Android</li>
-<li>Spring Security</li>
-</ul>
-<h2 id="通用层"><a href="#通用层" class="headerlink" title="通用层"></a>通用层</h2><ul>
-<li>Spring Web</li>
-<li>Spring Test</li>
-<li>Spring Data Access/Integration</li>
-<li>Spring AOP and Instrumentation</li>
-<li>Spring Messaging</li>
-<li>Spring Core Container</li>
-</ul>
-<h2 id="数据访问层"><a href="#数据访问层" class="headerlink" title="数据访问层"></a>数据访问层</h2><ul>
-<li>Spring AMQP</li>
-<li>Spring LDAP</li>
-<li>Spring Data</li>
-<li>Spring Batch</li>
-</ul>
-<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>TODO</p>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li>spring-ecosystem/ <a href="http://springtutorials.com/spring-ecosystem/" target="_blank" rel="noopener">http://springtutorials.com/spring-ecosystem/</a></li>
-</ul>
+	  <pre><code class="javascript">// (function () {
+  var vueDragDrag = {}
+
+  vueDragDrag.install = function (Vue) {
+    Vue.directive(&#39;drag&#39;, {
+      inserted: function (el, binding) {
+        // 如果拖动元素非元素本身（el），传入id
+        var moveEl = binding.value &amp;&amp; binding.value.moveElId ? document.getElementById(binding.value.moveElId) : el
+        // 为拖动元素添加绝对定位
+        moveEl.style.position = &#39;absolute&#39;
+        // 如果容器为设置position属性，默认为 position = &#39;relative&#39;
+        if (getComputedStyle(moveEl.parentNode, null).position === &#39;static&#39;) {
+          moveEl.parentNode.style.position = &#39;relative&#39;
+        }
+
+        var mouseDownFn = function (e) {
+          if(e.target != el) return false;
+          // 拖拽时的手势
+          // el.style.cursor = binding.value &amp;&amp; binding.value.cursor ? binding.value.cursor : &#39;move&#39;
+          //.shaow---------- 复制节点，并且插入容器中原来位置
+          if (binding.modifiers.shaow) {
+            var newNode = moveEl.cloneNode(true)
+            moveEl.style.opacity = &#39;0.5&#39;
+            moveEl.parentNode.appendChild(newNode)
+          }
+
+          var disX, disY
+          if (!binding.modifiers.dragY) disX = e.clientX - moveEl.offsetLeft
+          if (!binding.modifiers.dragX) disY = e.clientY - moveEl.offsetTop
+          var mouseMoveFn = function (e) {
+            e.preventDefault()
+            var left = e.clientX - disX
+            var top = e.clientY - disY
+
+            // 可以拖出去的元素的剩余宽度
+            // dragOutX
+            var limitWidth = binding.value &amp;&amp; binding.value.dragOutX ? moveEl.offsetWidth - binding.value.dragOutX : 0
+            // dragOutY
+            if (binding.value &amp;&amp; binding.value.dragOutY) {
+              var limitHeigth = moveEl.offsetHeight - binding.value.dragOutY
+              // 防止可拖拽区域被拖出容器区域
+              // 拖拽元素在顶部
+              var limitHeigthTop = el.offsetHeight - binding.value.dragOutY
+            } else {
+              var limitHeigth = 0
+              var limitHeigthTop = 0
+            }
+
+
+            if (left &lt; 0 - limitWidth) {
+              left = 0 - limitWidth
+            }
+            else if (left &gt; moveEl.parentNode.clientWidth - moveEl.offsetWidth + limitWidth) {
+              left = moveEl.parentNode.clientWidth - moveEl.offsetWidth + limitWidth
+            }
+
+            if (top &lt; 0 - limitHeigthTop) {
+              top = 0 - limitHeigthTop
+            }
+            else if (top &gt; moveEl.parentNode.clientHeight - moveEl.offsetHeight + limitHeigth) {
+              top = moveEl.parentNode.clientHeight - moveEl.offsetHeight + limitHeigth;
+            }
+            moveEl.style.left = left + &#39;px&#39;
+            moveEl.style.top = top + &#39;px&#39;
+            // 拖拽事件
+            if (binding.value &amp;&amp; binding.value.ondrag) {
+              if (typeof binding.value.ondrag != &#39;function&#39;) throw &#39;ondrag: should be a function&#39;
+              binding.value.ondrag(e, { left: left, top: top })
+            }
+
+          }
+          // mousemove
+          document.addEventListener(&#39;mousemove&#39;, mouseMoveFn)
+
+          var mouseUpFn = function () {
+
+            // 移除临时shaow节点
+            if (newNode) {
+              moveEl.style.opacity = &#39;1&#39;
+              newNode.parentNode.removeChild(newNode)
+            }
+            document.removeEventListener(&#39;mousemove&#39;, mouseMoveFn)
+            document.removeEventListener(&#39;mouseup&#39;, mouseUpFn)
+          }
+          //  mouseup
+          document.addEventListener(&#39;mouseup&#39;, mouseUpFn)
+        }
+
+        // mousedown
+        el.addEventListener(&#39;mousedown&#39;, mouseDownFn)
+
+      }
+    })
+  }
+  export default vueDragDrag
+</code></pre>
 	  
 
 	  <div>
@@ -119,29 +181,8 @@ Sp">
 	
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
+			
 		
 	
 		
@@ -711,6 +752,17 @@ Sp">
 		
 			
 			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
 		
 	
 		
@@ -731,6 +783,14 @@ Sp">
 	
 		
 	
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -867,7 +927,7 @@ Sp">
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/Javascript/javascript/copy-to-clipboard/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

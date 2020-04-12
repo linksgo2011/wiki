@@ -1,6 +1,7 @@
 ---
 title: 使用 k6 进行压力测试
 categories: 质量保证
+Recommend: true
 ---
 
 ## 简介
