@@ -1,7 +1,7 @@
 ---
 title: Retro
 categories: 思维工具
-Recommend:true
+recommend: true
 ---
 
 Retro 是敏捷软件开发方法中的一种会议形式，Retro 这个单词的全称是 Retrospective，意为回顾、审查。Retro 这种会议形式适用于某个项目完成后，或任务进展到某一个阶段时对之前的工作进行复盘、检查。
