@@ -94,6 +94,7 @@ toc: true
 
 ## 参考其他大神博客
 
+- kailing  Java/PHP/前端，他是走实用路线的，创办了自己的技术公司 http://www.kailing.pub/index/index.html
 - 分析了 Spring、NIO 等很多源码 https://www.javadoop.com/
 - 擅长 Java 和大数据相关的博主 https://blog.csdn.net/vbirdbest
 - 擅长 java、运维、大数据的博主，非常擅长收藏 https://www.cnblogs.com/jpfss/
@@ -104,4 +105,3 @@ toc: true
 - 一位大数据相关的博主，对 linux 研究非常到位 https://www.cnblogs.com/felixzh/
 - 一位硕士学历的博主，对计算机科学很有研究 https://nezha.github.io/
 - 使用 java 完成的各种 demo https://github.com/nezha/java-learning-demo
-

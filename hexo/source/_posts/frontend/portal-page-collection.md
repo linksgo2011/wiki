@@ -10,3 +10,13 @@ toc: true
 
 https://vpush.pro/
 
+
+
+## Seata
+
+http://seata.io/en-us/index.html
+
+阿里开源的 seata 
+
+DDD 项目可以参考这个站点 
+

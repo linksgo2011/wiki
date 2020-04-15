@@ -2,7 +2,6 @@
 title: Yaml 解析
 categories: 技术方案
 toc: true
-
 ---
 
 ## 使用 spring 自带功能
