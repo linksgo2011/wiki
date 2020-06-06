@@ -81,4 +81,22 @@ categories: 写作技巧
 - 普通文体写作不是写论文，一定要自己的新研究和发现，可以是从其他地方汇集素材而成。
 - 写作的本质是资料的索引，因此切忌独自战斗，尽量从多个途径汇集资料素材。
 
+
+
+## 模仿文章
+
+- 社论文章
+
+  - 《实践论》 - 毛泽东[https://baike.baidu.com/item/%E5%AE%9E%E8%B7%B5%E8%AE%BA/4651899?fr=aladdin](https://baike.baidu.com/item/实践论/4651899?fr=aladdin)
+
+- 技术文章
+
+  - 阮一峰
+
+  - 老钱的掘金小册 https://juejin.im/book/5afc2e5f6fb9a07a9b362527/section/5b336601f265da598e13f917
+
+    
+
+    
+
  
