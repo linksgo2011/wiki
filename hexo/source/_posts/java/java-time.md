@@ -321,8 +321,6 @@ LocalDateTime dateTime1 = LocalDateTime.parse(strDate7, DateTimeFormatter.ofPatt
 
 总结：
 
-
-
 ```dart
 Instant：时间戳
 Duration：持续时间，时间差
@@ -333,10 +331,3 @@ Period：时间段
 ZoneOffset：时区偏移量，比如：+8:00
 ZonedDateTime/OffsetDateTime：带时区的时间
 ```
-
-
-
-作者：xqqlv
-链接：https://www.jianshu.com/p/41a62f442325
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

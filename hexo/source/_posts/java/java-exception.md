@@ -20,7 +20,7 @@ categories: java
 
 异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。
 
-#### Java中的Exception
+#### Java 中的 Exception
 
 Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。
 
