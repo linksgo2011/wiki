@@ -3,10 +3,6 @@ title: Java 高级工程师面试合集
 categories: java
 ---
 
-
-
-
-
 这套资料只是整理了这些考点，和简单的解释，更为深入的细节，限于篇幅不可能包含，请参考相关资料学习。
 
 本材料可以作为：
@@ -20,41 +16,279 @@ categories: java
 - 计算机复习
 
 
+## 计算机通识
 
+### 计算机基础
 
-## 计算机基础
-
-
-
-### 十进制的数在内存中是怎么存的？
+#### 十进制的数在内存中是怎么存的？
 补码的形式。
 
 计算机中的有符号数有三种表示方法，即原码、反码和补码。三种表示方法均有符号位和数值位两部分，符号位都是用0表示“正”，用1表示“负”，而数值位，三种表示方法各不相同 。在计算机系统中，数值一律用补码来表示和存储。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理 。
 
 补码的本质：解决了符号的表示的问题，可以将减法运算转化为补码的加法运算来实现，克服了原码加减法运算繁杂的弊端，可有效简化运算器的设计。补码表示统一了符号位和数值位，使得符号位可以和数值位一起直接参与运算，这也为后面设计乘法器除法器等运算器件提供了极大的方便。
 
-
-
-
-
-
-
-## 计算机通识
-
 ### 计算机语言和编译原理
 ### 操作系统理论
+
+
+#### 64位和32位的区别？
+
+操作系统只是硬件和应用软件中间的一个平台。32位操作系统针对的32位的CPU设计。64位操作系统针对的64位的CPU设计。
+
+64 比 32 位的寻址空间更大，也就意味着可以使用更多的内存。
+
+#### CentOS 和 Linux的关系？
+
+CentOS是Linux众多得发行版本之一，linux有三大发行版本（：Slackware、debian、redhat）,而Redhat有收费的商业版和免费的开源版,商业版的业内称之为RHEL系列，CentOS是来自于依照开放源代码规定而公布的源代码重新编译而成。可以用CentOS替代商业版的RHEL使用。两者的不同，CentOS不包含封闭源代码软件，是免费的。
+
+#### 请解释一下，LINUX下的线程，GDI类
+
+
+LINUX实现的就是基于核心轻量级进程的”一对一”线程模型，一个线程实体对应一个核心轻量级进程，而线程之间的管理在核外函数库中实现。
+
+
+GDI类为图像设备编程接口类库。
+
+#### 进程和线程的区别是什么？
+
+进程是执行着的应用程序，而线程是进程内部的一个执行序列。一个进程可以有多个线程。线程又叫做轻量级进程。
+
+#### 谈一谈，系统线程数量上限是多少？
+
+Linux 系统中单个进程的最大线程数有其最大的限制 PTHREAD_THREADS_MAX。
+
+这个限制可以在/usr/include/bits/local_lim.h中查看 ，对 linuxthreads 这个值一般是 1024，对于 nptl 则没有硬性的限制，仅仅受限于系统的资源。
+
+这个系统的资源主要就是线程的 stack 所占用的内存，用 ulimit -s 可以查看默认的线程栈大小，一般情况下，这个值是8M=8192KB。
+
+#### 讲一讲，线程与进程的区别
+
+进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。
+
+1. 简而言之,一个程序至少有一个进程,一个进程至少有一个线程.
+2. 线程的划分尺度小于进程，使得多线程程序的并发性高。
+3. 另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。
+4. 线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。
+5. 从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。
+
+#### 如何杀死一个进程？
+
+1. kill pid；系统发送一个signal,程序收到信号后，会先释放资源，再关闭程序。
+2. kill -9 pid；-9表示强制执行
+
+
+#### 你怎么理解操作系统里的内存碎片，有什么解决办法？
+
+内存碎片分为：内部碎片和外部碎片。
+
+内部碎片就是已经被分配出去（能明确指出属于哪个进程）却不能被利用的内存空间；
+
+内部碎片是处于区域内部或页面内部的存储块。占有这些区域或页面的进程并不使用这个存储块。而在进程占有这块存储块时，系统无法利用它。直到进程释放它，或进程结束时，系统才有可能利用这个存储块。
+
+单道连续分配只有内部碎片。多道固定连续分配既有内部碎片，又有外部碎片。
+
+外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域。
+
+外部碎片是出于任何已分配区域或页面外部的空闲存储块。这些存储块的总和可以满足当前申请的长度要求，但是由于它们的地址不连续或其他原因，使得系统无法满足当前申请。
+
+使用伙伴系统算法。
+
+
+#### 介绍一下，什么是页式存储？
+
+主存被等分成大小相等的片，称为主存块，又称为实页。
+
+当一个用户程序装入内存时，以页面为单位进行分配。页面的大小是为2n ,通常为1KB、2KB、2n KB等
+
+
+#### 系统如何提高并发性？
+
+1. 提高CPU并发计算能力 
+2. 改进I/O模型
+
+#### 追踪 CPU 过高的方法
+
+1. 首先查看是哪些进程的CPU占用率最高（如下可以看到详细的路径）
+
+> ps -aux --sort -pcpu | more
+
+2. 查看JAVA进程的每个线程的CPU占用率
+
+> ps -Lp 5798 cu | more        # 5798是查出来进程PID
+
+3. 追踪线程，查看负载过高的原因，使用JDK下的一个工具
+
+> jstack 5798  
+
+
+jstack 查出来的线程ID是16进制，可以把输出追加到文件，导出用记事本打开，再根据系统中的线程ID去搜索查看该ID的线程运行内容，可以和开发一起排查。
 
 ### Linux
 
 ### 计算机网络
 
+#### 说一说计算机网络的分层模型。
+
+
+
+![img](java-interview-questions/980266035_1565787665824_1ABB2DC3D76311944FFDBE9980FBAADD.jpeg)
+
+#### 路由器和交换机的区别？
+
+交换机用于同一网络内部数据的快速传输转发决策通过查看二层头部完成转发不需要修改数据帧工作在 TCP/IP 协议的二层 —— 数据链路层工作简单，直接使用硬件处理路由器用于不同网络间数据的跨网络传输转发决策通过查看三层头部完成转发需要修改 TTL ，IP 头部校验和需要重新计算，数据帧需要重新封装工作在 TCP/IP 协议的三层 —— 网络层工作复杂，使用软件处理。
+
+三层交换机也能作为路由器使用。
+
+
+
+#### 请简单解释一下，arp协议和arp攻击。
+
+地址解析协议。ARP攻击的第一步就是ARP欺骗。由上述“ARP协议的工作过程”我们知道，ARP协议基本没有对网络的安全性做任何思考，当时人们考虑的重点是如何保证网络通信能够正确和快速的完成——ARP协议工作的前提是默认了其所在的网络是一个善良的网络，每台主机在向网络中发送应答信号时都是使用的真实身份。不过后来，人们发现ARP应答中的IP地址和MAC地址中的信息是可以伪造的，并不一定是自己的真实IP地址和MAC地址，由此，ARP欺骗就产生了。
+
+
+
+####  IP 层是 TCP/IP 模型下那一层？
+
+网络层。
+
+
+
+#### 为什么有了 MAC 地址还需要 IP 地址？
+
+Mac 地址用于网络层以下的连接建立。IP 用于网络层连接建立，意义不同。
+
+
+
+#### 请说一说 TCP 协议的 4 次握手
+
+由于TCP连接是全双工的，因此每个方向都必须单独进行关闭。这个原则是当一方完成它的数据发送任务后就能发送一个FIN来终止这个方向的连接。收到一个 FIN只意味着这一方向上没有数据流动，一个TCP连接在收到一个FIN后仍能发送数据。首先进行关闭的一方将执行主动关闭，而另一方执行被动关闭。
+
+TCP的连接的拆除需要发送四个包，因此称为四次挥手(four-way handshake)。客户端或服务器均可主动发起挥手动作，在socket编程中，任何一方执行close()操作即可产生挥手操作。
+
+
+
+1. 客户端A发送一个FIN，用来关闭客户A到服务器B的数据传送。
+2. 服务器B收到这个FIN，它发回一个ACK，确认序号为收到的序号加1。和SYN一样，一个FIN将占用一个序号
+3. 服务器B关闭与客户端A的连接，发送一个FIN给客户端A。
+4. 客户端A发回ACK报文确认，并将确认序号设置为收到序号加1。
+
+
+
+![img](java-interview-questions/308572_1538028144543_FCAC824D9C1E4301A60CF7D48A85E1C1.png)
+
+
+#### TCP 为什么可靠一些
+
+三次握手，超时重传，滑动窗口，拥塞控制。
+
+#### 哪种应用场景会使用TCP协议，使用它的意义
+
+当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议
+
+
+
+#### icmp协议，它的作用是什么？
+
+
+
+它是TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。
+
+
+
+ICMP 服务可以被主机关闭， ping 不可达，但是应用可以连接。
+
+
+
+
+
+#### 请你讲讲http1.1和1.0的区别
+
+
+
+主要区别主要体现在：
+
+缓存处理，在HTTP1.0中主要使用header里的If-Modified-Since,Expires来做为缓存判断的标准，HTTP1.1则引入了更多的缓存控制策略例如Entity tag，If-Unmodified-Since, If-Match, If-None-Match等更多可供选择的缓存头来控制缓存策略。
+
+带宽优化及网络连接的使用，HTTP1.0中，存在一些浪费带宽的现象，例如客户端只是需要某个对象的一部分，而服务器却将整个对象送过来了，并且不支持断点续传功能，HTTP1.1则在请求头引入了range头域，它允许只请求资源的某个部分，即返回码是206（Partial Content），这样就方便了开发者自由的选择以便于充分利用带宽和连接。
+
+错误通知的管理，在HTTP1.1中新增了24个错误状态响应码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。
+
+Host头处理，在HTTP1.0中认为每台服务器都绑定一个唯一的IP地址，因此，请求消息中的URL并没有传递主机名（hostname）。但随着虚拟主机技术的发展，在一台物理服务器上可以存在多个虚拟主机（Multi-homed Web Servers），并且它们共享一个IP地址。HTTP1.1的请求消息和响应消息都应支持Host头域，且请求消息中如果没有Host头域会报告一个错误（400 Bad Request）。
+
+长连接，HTTP 1.1支持长连接（PersistentConnection）和请求的流水线（Pipelining）处理，在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启Connection： keep-alive，一定程度上弥补了HTTP1.0每次请求都要创建连接的缺点。
+
+
+
+目前应用都是用 1.1 的协议。
+
+#### 请说明一下http和https的区别
+
+
+
+1. https协议要申请证书到ca，需要一定经济成本；
+2. http是明文传输，https是加密的安全传输；
+3. 连接的端口不一样，http是80，https是443；
+4. http连接很简单，没有状态；https是ssl加密的传输，身份认证的网络协议，相对http传输比较安全
+
+
+
+#### 浏览器从接收到一个URL，到最后展示出页面，经历了哪些过程。
+
+
+
+1. DNS解析 
+2. TCP连接
+3. 发送HTTP请求
+4. 服务器处理请求并返回HTTP报文
+5. 浏览器解析渲染页面
+
+
+
+#### http请求中的304状态码的含义
+
+
+
+304(未修改)自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。如果网页自请求者上次请求后再也没有更改过，您应将服务器配置为返回此响应(称为 If-Modified-Since HTTP 标头)。服务器可以告诉 Googlebot 自从上次抓取后网页没有变更，进而节省带宽和开销。
+
+
+
+
+
+#### 请谈一下，你知道的http请求
+
+
+
+- OPTIONS：返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送'*'的请求来测试服务器的功能性。
+- HEAD：向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。
+- GET：向特定的资源发出请求。
+- POST：向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的创建和/或已有资源的修改。
+- PUT：向指定资源位置上传其最新内容。
+- DELETE：请求服务器删除Request-URI所标识的资源。
+- TRACE：回显服务器收到的请求，主要用于测试或诊断。
+- CONNECT：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。
+
+
+
+#### 请谈一下，你知道的 HTTP 常用的状态码
+
+
+
+| | 类别 | 原因短语 |
+| -|-------| -------------|
+| 1XX|	Informational| （信息性状态码）	接受的请求正在处理|
+| 2XX|	Success| （成功状态码）| 	请求正常处理完毕|
+| 3XX|	Redirection| （重定向状态码）| 	需要进行附加操作以完成请求|
+| 4XX|	Client Error| （客户端错误状态码）	| 服务器无法处理请求|
+| 5XX|	Server Error| （服务器错误状态码）| 	服务器处理请求出错|
+
+
 ### 数据库原理
 
-### 算法基础
+## 数据结构和算法
+
+### 算法通识
 
 #### 常见的算法复杂度有哪些？
-
-
 
 在计算机科学中，时间复杂性，又称时间复杂度，算法的时间复杂度是一个函数，它定性描述该算法的运行时间。这是一个代表算法输入值的字符串的长度的函数。时间复杂度常用大O符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。
 
@@ -65,9 +299,165 @@ categories: java
 - O(m(n)) 呈指数上升，输入数据的数量依线性成长，所花的时间将会以指数成长。指数时间负载度会造成系统基本不可用。
 
 
+### 数组
 
-### 数据结构
+#### 将一个二维数组顺时针旋转90度
 
+```java
+public void rotate(int[][] matrix) {
+  int n = matrix.length;
+  for (int i = 0; i < n / 2; i++) {
+    for (int j = i; j < n - 1 - i; j++) {
+      int temp = matrix[i][j];
+      matrix[i][j] = matrix[n - 1 - j][i];
+      matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j];
+      matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i];
+      matrix[j][n - 1 - i] = temp;
+    }
+  }
+}
+```
+
+
+
+#### 一个数组，除一个元素外其它都是两两相等，求那个元素?
+
+```java 
+public static int find1From2(int[] a){
+        int len = a.length, res = 0;
+        for(int i = 0; i < len; i++){
+            res= res ^ a[i];
+        }
+        return res;
+}
+```
+
+#### 找出数组中和为S的一对组合，找出一组就行
+
+```
+public int[]
+twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map =new HashMap<Integer, Integer>();
+        int[] a = new int[2];
+        map.put(nums[0], 0);
+        for (int i = 1; i < nums.length;i++) {
+            if (map.containsKey(target - nums[i])) {
+                a[0] = map.get(target -nums[i]);
+                a[1] = i;
+                return a;
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        return a;
+}
+```
+
+#### 求一个数组中连续子向量的最大和
+
+```
+public int
+maxSubArray(int[] nums) {
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        if (nums == null || nums.length == 0) {
+            return sum;
+        }
+        for(int i = 0; i < nums.length;i++) {
+            sum += nums[i];
+            maxSum = Math.max(maxSum, sum);
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        return maxSum;
+}
+```
+
+#### 寻找一数组中前K个最大的数
+
+```
+public int findKthLargest(int[] nums, int k) {
+    if (k < 1 || nums == null) {
+        return 0;
+    }
+    return getKth(nums.length - k + 1, nums, 0, nums.length - 1);
+}
+public int getKth(int k, int[] nums, int start, int end) {
+    int pivot = nums[end];
+    int left = start;
+    int right = end;
+    while (true) {
+        while (nums[left] < pivot && left < right) {
+            left++;
+        }
+        while (nums[right] >= pivot && right > left) {
+            right--;
+        }
+        if (left == right) {
+            break;
+        }
+        swap(nums, left, right);
+    }
+    swap(nums, left, end);
+    if (k == left + 1) {
+        return pivot;
+    } else if (k < left + 1) {
+        return getKth(k, nums, start, left - 1);
+    } else {
+        return getKth(k, nums, left + 1, end);
+    }
+}
+public void swap(int[] nums, int n1, int n2) {
+    int tmp = nums[n1];
+    nums[n1] = nums[n2];
+    nums[n2] = tmp;
+}
+```
+
+
+
+### HASH 
+
+
+
+
+
+
+### 应用算法
+
+#### LRU算法是什么？
+
+LRU（Least recently used，最近最少使用）算法根据数据的历史访问记录来进行淘汰数据，其核心思想是“如果数据最近被访问过，那么将来被访问的几率也很高”，反过来说“如果数据最近这段时间一直都没有访问,那么将来被访问的概率也会很低”，两种理解是一样的；常用于页面置换算法，为虚拟页式存储管理服务。
+
+LRU 算法被用于 Redis 中作为淘汰策略。
+
+
+#### LFU 的原理是什么？
+
+LRU 根据最近最少使用来作为淘汰策略，LFU 根据访问频率来作为淘汰策略。
+
+#### HMAC 的用处是什么？
+
+带密码的 HASH 算法，可以用来做签名。具体的实现有：
+
+- hmac-md5
+- hmac-sha1 
+
+
+
+
+#### id全局唯一且自增，如何实现？
+
+- UUID
+- snowFlake
+
+
+#### 什么是布隆过滤器？
+
+布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。
+
+布隆过滤器可以返回元素在集合中可能存在或者一定不存在，布隆过滤器可以用于高效的判断一个元素在集合中是否存在。
 
 
 ## Java 基础
@@ -811,14 +1201,108 @@ AQS其实就是一个可以给我们实现锁的框架
 
 
 
-### 
+
+
+### IO 模型
 
 
 
-## JVM 常见问题
+#### IO 模型参考资料
+
+
+
+https://zhuanlan.zhihu.com/p/103493558
+
+
+
+#### BIO、 NIO、AIO 的区别是什么？
+
+- BIO Blocking IO（同步阻塞 IO）可以用 Socket socket = serverSocket.accept(); 
+- Non-Blocking IO（同步非阻塞 IO）可以使用 NIO 相关的类，并开启 serverSocketChannel.configureBlocking(false) 代码会变得复杂，使用的是操作系统 epoll 技术。netty 使用的是 NIO
+- Async Non-Blocking IO（异步非阻塞 IO）Java 1.7 时代推出了异步非阻塞的 IO 模型
+
+
+
+#### 使用 BIO 编写服务器的方法是什么？
+
+
+
+```java
+try (ServerSocket serverSocket = new ServerSocket(8888)) {
+  while (true) {
+    Socket socket = serverSocket.accept();
+    // 提交到线程池处理后续的任务
+    executorService.submit(new ProcessRequest(socket));
+  }
+} catch (Exception e) {
+  e.printStackTrace();
+}
+```
+
+
+
+#### 使用 NIO 编写服务器方法是什么？
+
+
+
+```java
+try {
+  ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+  serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", 8888));
+  while (true) {
+    SocketChannel socketChannel = serverSocketChannel.accept();
+    executorService.execute(new ProcessChannel(socketChannel));
+  }
+} catch (Exception e) {
+  e.printStackTrace();
+}
+```
+
+
+
+#### 使用 AIO 编写服务器的方法是什么？
+
+
+
+```java
+AsynchronousServerSocketChannel serverChannel = AsynchronousServerSocketChannel
+                .open()
+                .bind(new InetSocketAddress(8888));
+
+serverChannel.accept(serverChannel, new CompletionHandler<AsynchronousSocketChannel, AsynchronousServerSocketChannel>() {
+  @Override
+  public void completed(AsynchronousSocketChannel result, AsynchronousServerSocketChannel attachment) {
+    serverChannel.accept(serverChannel, this);
+    ByteBuffer buffer = ByteBuffer.allocate(1024);
+    /**连接客户端成功后注册 read 事件**/
+    result.read(buffer, buffer, new CompletionHandler<Integer, ByteBuffer>() {
+      @Override
+      public void completed(Integer result, ByteBuffer attachment) {
+        /**IO 可读事件出现的时候，读取客户端发送过来的内容**/
+        attachment.flip();
+        System.out.println(Charset.forName("utf-8").decode(attachment));
+      }
+            /**省略无关紧要的方法**/
+    });
+  }
+  /**省略无关紧要的方法**/
+});
+```
+
+
+
+#### Netty 是基于那种 IO 模型？
+
+Netty 基于 NIO 但是一个异步非阻塞的 IO 模型。
 
 
 ### JDK
+
+JVM 内存可以看相关材料：
+
+https://blog.csdn.net/l1394049664/article/details/81486470
+
+
 
 #### JDK和JRE的区别是什么？
 
@@ -999,23 +1483,9 @@ JVM通过双亲委派模型进行类的加载，当然我们也可以通过继�
 1. 调高堆内存
 2. 调低大对象进入老年代的阈值
 
-
-
-
-### 内存分布
-
-内存相关可以看材料：
-
-https://blog.csdn.net/l1394049664/article/details/81486470
-
-
-
 #### 静态变量存在内存什么位置?
 
 方法区
-
-
-### 类加载
 
 #### 类加载机制，双亲委派模型，好处是什么？
 
@@ -1025,15 +1495,754 @@ https://blog.csdn.net/l1394049664/article/details/81486470
 
 
 
+
+
+## Java Web 相关问题
+
+
+
+### Spring
+
+
+#### Spring中自动装配的方式有哪些？
+
+- no：不进行自动装配，手动设置Bean的依赖关系。
+- byName：根据Bean的名字进行自动装配。
+- byType：根据Bean的类型进行自动装配。
+- constructor：类似于byType，不过是应用于构造器的参数，如果正好有一个Bean与构造器的参数类型相同则可以自动装配，否则会导致错误。
+- autodetect：如果有默认的构造器，则通过constructor的方式进行自动装配，否则使用byType的方式进行自动装配。
+
+
+#### Spring中Bean的作用域有哪些？
+
+
+在Spring的早期版本中，仅有两个作用域：singleton和prototype，前者表示Bean以单例的方式存在；后者表示每次从容器中调用Bean时，都会返回一个新的实例，prototype通常翻译为原型。
+
+设计模式中的创建型模式中也有一个原型模式，原型模式也是一个常用的模式，例如做一个室内设计软件，所有的素材都在工具箱中，而每次从工具箱中取出的都是素材对象的一个原型，可以通过对象克隆来实现原型模式。Spring 2.x中针对WebApplicationContext新增了3个作用域，分别是：request（每次HTTP请求都会创建一个新的Bean）、session（同一个HttpSession共享同一个Bean，不同的HttpSession使用不同的Bean）和globalSession（同一个全局Session共享一个Bean）。
+
+单例模式和原型模式都是重要的设计模式。一般情况下，无状态或状态不可变的类适合使用单例模式。在传统开发中，由于DAO持有Connection这个非线程安全对象因而没有使用单例模式；但在Spring环境下，所有DAO类对可以采用单例模式，因为Spring利用AOP和Java API中的ThreadLocal对非线程安全的对象进行了特殊处理。
+
+
+#### 什么是IoC和DI？并且简要说明一下DI是如何实现的？
+
+IoC叫控制反转，是Inversion of Control的缩写，DI（Dependency Injection）叫依赖注入，是对IoC更简单的诠释。控制反转是把传统上由程序代码直接操控的对象的调用权交给容器，通过容器来实现对象组件的装配和管理。所谓的"控制反转"就是对组件对象控制权的转移，从程序代码本身转移到了外部容器，由容器来创建对象并管理对象之间的依赖关系。IoC体现了好莱坞原则 - "Don’t call me, we will call you"。依赖注入的基本原则是应用组件不应该负责查找资源或者其他依赖的协作对象。配置对象的工作应该由容器负责，查找资源的逻辑应该从应用组件的代码中抽取出来，交给容器来完成。DI是对IoC更准确的描述，即组件之间的依赖关系由容器在运行期决定，形象的来说，即由容器动态的将某种依赖关系注入到组件之中。
+
+一个类A需要用到接口B中的方法，那么就需要为类A和接口B建立关联或依赖关系，最原始的方法是在类A中创建一个接口B的实现类C的实例，但这种方法需要开发人员自行维护二者的依赖关系，也就是说当依赖关系发生变动的时候需要修改代码并重新构建整个系统。如果通过一个容器来管理这些对象以及对象的依赖关系，则只需要在类A中定义好用于关联接口B的方法（构造器或setter方法），将类A和接口B的实现类C放入容器中，通过对容器的配置来实现二者的关联。
+依赖注入可以通过setter方法注入（设值注入）、构造器注入和接口注入三种方式来实现，Spring支持setter注入和构造器注入，通常使用构造器注入来注入必须的依赖关系，对于可选的依赖关系，则setter注入是更好的选择，setter注入需要类提供无参构造器或者无参的静态工厂方法来创建对象。
+
+
+#### Spring中BeanFactory和ApplicationContext的区别是什么？
+
+
+BeanFactory是spring中比较原始，比较古老的Factory。因为比较古老，所以BeanFactory无法支持spring插件，例如：AOP、Web应用等功能。
+
+ApplicationContext是BeanFactory的子类，因为古老的BeanFactory无法满足不断更新的spring的需求，于是ApplicationContext就基本上代替了BeanFactory的工作，以一种更面向框架的工作方式以及对上下文进行分层和实现继承，并在这个基础上对功能进行扩展：
+1. MessageSource, 提供国际化的消息访问
+2. 资源访问（如URL和文件）
+3. 事件传递
+4. Bean的自动装配
+5. 各种不同应用层的Context实现
+
+
+#### springIOC原理是什么？
+
+
+IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。
+
+#### 如果你要实现IOC需要怎么做？请简单描述一下实现步骤？
+
+
+定义用来描述bean的配置的Java类
+
+解析bean的配置，將bean的配置信息转换为上面的BeanDefinition对象保存在内存中，spring中采用HashMap进行对象存储，其中会用到一些xml解析技术
+
+遍历存放BeanDefinition的HashMap对象，逐条取出BeanDefinition对象，获取bean的配置信息，利用Java的反射机制实例化对象，將实例化后的对象保存在另外一个Map中即可。
+
+#### 依赖注入的方式有哪几种？
+
+1. Set注入 
+2. 构造器注入 
+3. 接口注入
+
+#### @Controller和@RestController的区别是什么？
+
+@RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用
+
+
+#### autowired 和resource区别是什么？
+
+@Autowired
+
+@Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired;只按照byType注入。
+
+@Autowired注解是按照类型（byType）装配依赖对象，默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用。
+
+
+@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource。@Resource有两个重要的属性：name和type，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以，如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不制定name也不制定type属性，这时将通过反射机制使用byName自动注入策略。
+
+#### 请介绍一下bean的生命周期
+
+<img src="java-interview-questions/308572_1537967995043_4D7CF33471A392D943F00167D1C86C10.png" alt="img" style="zoom:33%;" />
+
+
+
+#### Spring支持的事务管理类型有哪些？
+
+Spring支持编程式事务管理和声明式事务管理。许多Spring框架的用户选择声明式事务管理，因为这种方式和应用程序的关联较少，因此更加符合轻量级容器的概念。声明式事务管理要优于编程式事务管理，尽管在灵活性方面它弱于编程式事务管理，因为编程式事务允许你通过代码控制业务。
+
+事务分为全局事务和局部事务。全局事务由应用服务器管理，需要底层服务器JTA支持（如WebLogic、WildFly等）。局部事务和底层采用的持久化方案有关，例如使用JDBC进行持久化时，需要使用Connetion对象来操作事务；而采用Hibernate进行持久化时，需要使用Session对象来操作事务。
+
+这些事务的父接口都是PlatformTransactionManager。Spring的事务管理机制是一种典型的策略模式，PlatformTransactionManager代表事务管理接口，该接口定义了三个方法，该接口并不知道底层如何管理事务，但是它的实现类必须提供getTransaction()方法（开启事务）、commit()方法（提交事务）、rollback()方法（回滚事务）的多态实现，这样就可以用不同的实现类代表不同的事务管理策略。使用JTA全局事务策略时，需要底层应用服务器支持，而不同的应用服务器所提供的JTA全局事务可能存在细节上的差异，因此实际配置全局事务管理器是可能需要使用JtaTransactionManager的子类，如：WebLogicJtaTransactionManager（Oracle的WebLogic服务器提供）、UowJtaTransactionManager（IBM的WebSphere服务器提供）等。
+
+
+#### AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？
+
+1. 连接点（Joinpoint）：程序执行的某个特定位置（如：某个方法调用前、调用后，方法抛出异常后）。一个类或一段程序代码拥有一些具有边界性质的特定点，这些代码中的特定点就是连接点。Spring仅支持方法的连接点。
+2. 切点（Pointcut）：如果连接点相当于数据中的记录，那么切点相当于查询条件，一个切点可以匹配多个连接点。Spring AOP的规则解析引擎负责解析切点所设定的查询条件，找到对应的连接点。
+3. 增强（Advice）：增强是织入到目标类连接点上的一段程序代码。Spring提供的增强接口都是带方位名的，如：BeforeAdvice、AfterReturningAdvice、ThrowsAdvice等。
+
+4. 引介（Introduction）：引介是一种特殊的增强，它为类添加一些属性和方法。这样，即使一个业务类原本没有实现某个接口，通过引介功能，可以动态的未该业务类添加接口的实现逻辑，让业务类成为这个接口的实现类。
+5. 织入（Weaving）：织入是将增强添加到目标类具体连接点上的过程，AOP有三种织入方式：①编译期织入：需要特殊的Java编译期（例如AspectJ的ajc）；②装载期织入：要求使用特殊的类加载器，在装载类的时候对类进行增强；③运行时织入：在运行时为目标类生成代理实现增强。Spring采用了动态代理的方式实现了运行时织入，而AspectJ采用了编译期织入和装载期织入的方式。
+6. 切面（Aspect）：切面是由切点和增强（引介）组成的，它包括了对横切关注功能的定义，也包括了对连接点的定义。
+
+
+#### 持久层设计要考虑的问题有哪些？请谈一下你用过的持久层框架都有哪些？
+
+
+- Hibernate
+- MyBatis
+- jOOQ
+- Spring data JDBC
+
+
+### Hibernate
+
+#### 实体对象的三种状态是什么？以及对应的转换关系是什么？
+
+最新的Hibernate文档中为Hibernate对象定义了四种状态（原来是三种状态，面试的时候基本上问的也是三种状态），分别是：瞬时态（new, or transient）、持久态（managed, or persistent）、游状态（detached）和移除态（removed，以前Hibernate文档中定义的三种状态中没有移除态），如下图所示，就以前的Hibernate文档中移除态被视为是瞬时态。
+
+1. 瞬时态：当new一个实体对象后，这个对象处于瞬时态，即这个对象只是一个保存临时数据的内存区域，如果没有变量引用这个对象，则会被JVM的垃圾回收机制回收。这个对象所保存的数据与数据库没有任何关系，除非通过Session的save()、saveOrUpdate()、persist()、merge()方法把瞬时态对象与数据库关联，并把数据插入或者更新到数据库，这个对象才转换为持久态对象。
+2. 持久态：持久态对象的实例在数据库中有对应的记录，并拥有一个持久化标识（ID）。对持久态对象进行delete操作后，数据库中对应的记录将被删除，那么持久态对象与数据库记录不再存在对应关系，持久态对象变成移除态（可以视为瞬时态）。持久态对象被修改变更后，不会马上同步到数据库，直到数据库事务提交。
+3. 游离态：当Session进行了close()、clear()、evict()或flush()后，实体对象从持久态变成游离态，对象虽然拥有持久和与数据库对应记录一致的标识值，但是因为对象已经从会话中清除掉，对象不在持久化管理之内，所以处于游离态（也叫脱管态）。游离态的对象与临时状态对象是十分相似的，只是它还含有持久化标识。
+
+
+#### Hibernate的悲观锁和乐观锁机制是什么？
+
+
+Hibernate支持悲观锁和乐观锁两种锁机制。悲观锁，顾名思义悲观的认为在数据处理过程中极有可能存在修改数据的并发事务（包括本系统的其他事务或来自外部系统的事务），于是将处理的数据设置为锁定状态。悲观锁必须依赖数据库本身的锁机制才能真正保证数据访问的排他性，乐观锁，顾名思义，对并发事务持乐观态度（认为对数据的并发操作不会经常性的发生），通过更加宽松的锁机制来解决由于悲观锁排他性的数据访问对系统性能造成的严重影响。最常见的乐观锁是通过数据版本标识来实现的，读取数据时获得数据的版本号，更新数据时将此版本号加1，然后和数据库表对应记录的当前版本号进行比较，如果提交的数据版本号大于数据库中此记录的当前版本号则更新数据，否则认为是过期数据无法更新。Hibernate中通过Session的get()和load()方法从数据库中加载对象时可以通过参数指定使用悲观锁；而乐观锁可以通过给实体类加整型的版本字段再通过XML或@Version注解进行配置。
+
+使用乐观锁会增加了一个版本字段，很明显这需要额外的空间来存储这个版本字段，浪费了空间，但是乐观锁会让系统具有更好的并发性，这是对时间的节省。因此乐观锁也是典型的空间换时间的策略。
+
+
+#### Hibernate常见优化策略。
+
+1. 制定合理的缓存策略（二级缓存、查询缓存）。
+2. 采用合理的Session管理机制。
+3. 尽量使用延迟加载特性。
+4. 设定合理的批处理参数。
+5. 如果可以，选用UUID作为主键生成器。
+6. 如果可以，选用基于版本号的乐观锁替代悲观锁。
+7. 在开发过程中, 开启hibernate.show_sql选项查看生成的SQL，从而了解底层的状况；开发完成后关闭此选项。
+8. 考虑数据库本身的优化，合理的索引、恰当的数据分区策略等都会对持久层的性能带来可观的提升，但这些需要专业的DBA（数据库管理员）提供支持。
+
+
+### Mybatis
+
+#### MyBatis中的动态SQL是什么意思？
+
+
+对于一些复杂的查询，我们可能会指定多个查询条件，但是这些条件可能存在也可能不存在，需要根据用户指定的条件动态生成SQL语句。如果不使用持久层框架我们可能需要自己拼装SQL语句，还好MyBatis提供了动态SQL的功能来解决这个问题。MyBatis中用于实现动态SQL的元素主要有：
+
+
+- if
+- choose / when / otherwise
+- trim
+- where
+- set
+- foreach
+
+#### MyBatis中命名空间（namespace）的作用是什么？
+
+在大型项目中，可能存在大量的SQL语句，这时候为每个SQL语句起一个唯一的标识（ID）就变得并不容易了。为了解决这个问题，在MyBatis中，可以为每个映射文件起一个唯一的命名空间，这样定义在这个映射文件中的每个SQL语句就成了定义在这个命名空间中的一个ID。只要我们能够保证每个命名空间中这个ID是唯一的，即使在不同映射文件中的语句ID相同，也不会再产生冲突了。
+
+#### #{}和${}的区别是什么？
+
+
+#{}是预编译处理，${}是字符串替换。
+
+Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；
+
+Mybatis在处理${}时，就是把${}替换成变量的值。
+
+使用#{}可以有效的防止SQL注入，提高系统安全性。
+
+
+#### 模糊查询like语句该怎么写?
+
+
+定义一个变量
+
+```
+<select id="selectBlogsLike" resultType="Blog">
+  <bind name="pattern" value="'%' + _parameter.getTitle() + '%'" />
+  SELECT * FROM BLOG
+  WHERE title LIKE #{pattern}
+</select>
+```
+
+#### MyBatis 实现一对一有几种方式?具体怎么操作的？
+
+```
+有联合查询和嵌套查询,联合查询是几个表联合查询,只查询一次,通过在 resultMap 里面
+配置 association 节点配置一对一的类就可以完成;嵌套查询是先查一个表,根据这个表里面
+的结果的外键 id,去再另外一个表里面查询数据,也是通过 association 配置,但另外一个表的
+查询通过 select 属性配置。
+
+```
+
+
+### Spring MVC
+
+#### Spring MVC的工作原理是怎样的？ 
+
+- 客户端的所有请求都交给前端控制器DispatcherServlet来处理，它会负责调用系统的其他模块来真正处理用户的请求。
+- DispatcherServlet收到请求后，将根据请求的信息（包括URL、HTTP协议方法、请求头、请求参数、Cookie等）以及HandlerMapping的配置找到处理该请求的Handler（任何一个对象都可以作为请求的Handler）。
+- 在这个地方Spring会通过HandlerAdapter对该处理器进行封装。
+- HandlerAdapter是一个适配器，它用统一的接口对各种Handler中的方法进行调用。
+- Handler完成对用户请求的处理后，会返回一个ModelAndView对象给DispatcherServlet，ModelAndView顾名思义，包含了数据模型以及相应的视图的信息。
+- ModelAndView的视图是逻辑视图，DispatcherServlet还要借助ViewResolver完成从逻辑视图到真实视图对象的解析工作。
+- 当得到真正的视图对象后，DispatcherServlet会利用视图对象对模型数据进行渲染。
+- 客户端得到响应，可能是一个普通的HTML页面，也可以是XML或JSON字符串，还可以是一张图片或者一个PDF文件。
+
+#### SpringMVC 的运行机制？以及运行机制的流程是什么？
+
+1. 用户发送请求时会先从DispathcherServler的doService方法开始，在该方法中会将ApplicationContext、localeResolver、themeResolver等对象添加到request中，紧接着就是调用doDispatch方法。
+
+2. 进入该方法后首先会检查该请求是否是文件上传的请求(校验的规则是是否是post并且contenttType是否为multipart/为前缀)即调用的是checkMultipart方法；如果是的将request包装成MultipartHttpServletRequest。
+
+3. 然后调用getHandler方法来匹配每个HandlerMapping对象，如果匹配成功会返回这个Handle的处理链HandlerExecutionChain对象，在获取该对象的内部其实也获取我们自定定义的拦截器，并执行了其中的方法。
+
+4. 执行拦截器的preHandle方法，如果返回false执行afterCompletion方法并理解返回
+
+5. 通过上述获取到了HandlerExecutionChain对象，通过该对象的getHandler()方法获得一个object通过HandlerAdapter进行封装得到HandlerAdapter对象。
+
+6. 该对象调用handle方法来执行Controller中的方法，该对象如果返回一个ModelAndView给DispatcherServlet。
+
+7. DispatcherServlet借助ViewResolver完成逻辑试图名到真实视图对象的解析，得到View后DispatcherServlet使用这个View对ModelAndView中的模型数据进行视图渲染。
+
+
+### WEB 通用编程
+
+#### 怎么实现一个节流算法？
+
+1. 计数器
+2. 滑动窗口
+3. 漏桶法
+4. 令牌桶
+
+一般都不会在应用层面做这个事情，一般在网关完成。
+
+#### 使用Servlet如何获取用户配置的初始化参数以及服务器上下文参数？
+
+可以通过重写Servlet接口的init(ServletConfig)方法并通过ServletConfig对象的getInitParameter()方法来获取Servlet的初始化参数。可以通过ServletConfig对象的getServletContext()方法获取ServletContext对象，并通过该对象的getInitParameter()方法来获取服务器上下文参数。当然，ServletContext对象也在处理用户请求的方法（如doGet()方法）中通过请求对象的getServletContext()方法来获得。
+
+
+#### 请问使用Servlet如何获取用户提交的查询参数以及表单数据？
+
+
+可以通过请求对象（HttpServletRequest）的getParameter()方法通过参数名获得参数值。如果有包含多个值的参数（例如复选框），可以通过请求对象的getParameterValues()方法获得。当然也可以通过请求对象的getParameterMap()获得一个参数名和参数值的映射（Map）。
+
+
+#### 如何在基于Java的Web项目中实现文件上传和下载？
+
+
+在Sevlet 3 以前，Servlet API中没有支持上传功能的API，因此要实现上传功能需要引入第三方工具从POST请求中获得上传的附件或者通过自行处理输入流来获得上传的文件，我们推荐使用Apache的commons-fileupload。
+
+
+#### Servlet接口中有哪些方法？
+
+
+Servlet接口定义了5个方法，其中前三个方法与Servlet生命周期相关：
+- void init(ServletConfig config) throws ServletException
+- void service(ServletRequest req, ServletResponse resp) throws ServletException, java.io.IOException
+- void destory()
+- java.lang.String getServletInfo()
+- ServletConfig getServletConfig()
+
+Web容器加载Servlet并将其实例化后，Servlet生命周期开始，容器运行其init()方法进行Servlet的初始化；请求到达时调用Servlet的service()方法，service()方法会根据需要调用与请求对应的doGet或doPost等方法；当服务器关闭或项目被卸载时服务
+
+器会将Servlet实例销毁，此时会调用Servlet的destroy()方法。
+
+
+#### Servlet和CGI的区别?
+
+Servlet与CGI的区别在于Servlet处于服务器进程中，它通过多线程方式运行其service()方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于Servlet。
+
+
+#### servlet的生命周期是什么。servlet是否为单例以及原因是什么？
+
+
+Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：
+
+1. Servlet 通过调用 init () 方法进行初始化。
+
+2. Servlet 调用 service() 方法来处理客户端的请求。
+
+3. Servlet 通过调用 destroy() 方法终止（结束）。
+
+4. 最后，Servlet 是由 JVM 的垃圾回收器进行垃圾回收的。
+
+Servlet单实例，减少了产生servlet的开销；
+
+
+#### 请你说说，cookie 和 session 的区别？
+
+
+1. cookie数据存放在客户的浏览器上，session数据放在服务器上。
+2. cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗
+
+考虑到安全应当使用session。
+
+3. session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用COOKIE。
+4. 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
+
 ## 数据库相关问题
 
 
 
-## Redis 相关问题
+
+
+#### 连接池
+
+#### 请你讲解一下数据连接池的工作机制?
 
 
 
-## 分布式系统架构问题
+J2EE 服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并将其表记为忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量由配置参数决定。当使用的池连接调用完成后，池驱动程序将此连接表记为空闲，其他调用就可以使用这个连接。
 
 
 
+#### 有哪些常用的连接池？
+
+
+
+- c3p0
+- dbcp 是一个依赖commons-pool对象池机制的数据库连接池.
+- druid 阿里出品，淘宝和支付宝专用数据库连接池，但它不仅仅是一个数据库连接池，它还包含一个ProxyDriver，一系列内置的JDBC组件库，可以用来分析慢 SQL
+- Hikari Spring boot 默认的连接池
+
+
+#### Hikari连接池配多大合适
+
+通常，MySQL数据库的默认最大连接数是100。Hikari 的默认值是 10 最好配置到 20。连接过多不利于性能的优化，这个也和数据库的 CPU 有关系，MySQL 的连接数一般配置为 CPU 核心数的两倍。
+
+
+### 数据库常见问题
+
+#### 数据库常见优化方法
+
+1. 合理设计数据库表结构
+
+MySQL可以很好的支持大数据量的存取，但是一般说来，数据库中的表越小，在它上面执行的查询也就会越快。因此，在创建表的时候，为了获得更好的性能，我们可以将表中字段的宽度设得尽可能小。
+
+例如，在定义邮政编码这个字段时，如果将其设置为CHAR(255),显然给数据库增加了不必要的空间，甚至使用VARCHAR这种类型也是多余的，因为CHAR(6)就可以很好的完成任务了。同样的，如果可以的话，我们应该使用MEDIUMINT而不是BIGIN来定义整型字段。
+
+另外一个提高效率的方法是在可能的情况下，应该尽量把字段设置为NOTNULL，这样在将来执行查询的时候，数据库不用去比较NULL值。
+对于某些文本字段，例如“省份”或者“性别”，我们可以将它们定义为ENUM类型。因为在MySQL中，ENUM类型被当作数值型数据来处理，而数值型数据被处理起来的速度要比文本类型快得多。这样，我们又可以提高数据库的性能。
+
+2. 使用连接（JOIN）来代替子查询(Sub-Queries)
+
+MySQL从4.1开始支持SQL的子查询。这个技术可以使用SELECT语句来创建一个单列的查询结果，然后把这个结果作为过滤条件用在另一个查询中。例如，我们要将客户基本信息表中没有任何订单的客户删除掉，就可以利用子查询先从销售信息表中将所有发出订单的客户ID取出来，然后将结果传递给主查询
+
+3. 使用联合(UNION)来代替手动创建的临时表
+
+MySQL从4.0的版本开始支持union查询，它可以把需要使用临时表的两条或更多的select查询合并的一个查询中。在客户端的查询会话结束的时候，临时表会被自动删除，从而保证数据库整齐、高效。使用union来创建查询的时候，我们只需要用UNION作为关键字把多个select语句连接起来就可以了，要注意的是所有select语句中的字段数目要想同。下面的例子就演示了一个使用UNION的查询。
+
+
+4. 合理创建索引
+
+在频繁查询的字段上才需要创建索引，反之不需要。
+
+5. 避免使用大事务
+
+尽管我们可以使用子查询（Sub-Queries）、连接（JOIN）和联合（UNION）来创建各种各样的查询，但不是所有的数据库操作都可以只用一条或少数几条SQL语句就可以完成的。更多的时候是需要用到一系列的语句来完成某种工作。但是在这种情况下，当这个语句块中的某一条语句运行出错的时候，整个语句块的操作就会变得不确定起来。设想一下，要把某个数据同时插入两个相关联的表中，可能会出现这样的情况：第一个表中成功更新后，数据库突然出现意外状况，造成第二个表中的操作没有完成，这样，就会造成数据的不完整，甚至会破坏数据库中的数据。要避免这种情况，就应该使用事务，它的作用是：要么语句块中每条语句都操作成功，要么都失败。换句话说，就是可以保持数据库中数据的一致性和完整性。事物以BEGIN关键字开始，COMMIT关键字结束。在这之间的一条SQL操作失败，那么，ROLLBACK命令就可以把数据库恢复到BEGIN开始之前的状态。
+
+
+
+#### 介绍一下 mysql的主从复制？
+
+MySQL主从复制是其最重要的功能之一。主从复制是指一台服务器充当主数据库服务器，另一台或多台服务器充当从数据库服务器，主服务器中的数据自动复制到从服务器之中。对于多级复制，数据库服务器即可充当主机，也可充当从机。MySQL主从复制的基础是主服务器对数据库修改记录二进制日志，从服务器通过主服务器的二进制日志自动执行更新。
+
+MySQL主从复制的两种情况：同步复制和异步复制，实际复制架构中大部分为异步复制。
+
+复制的基本过程如下：
+
+Slave上面的IO进程连接上Master，并请求从指定日志文件的指定位置（或者从最开始的日志）之后的日志内容。
+
+Master接收到来自Slave的IO进程的请求后，负责复制的IO进程会根据请求信息读取日志指定位置之后的日志信息，返回给Slave的IO进程。返回信息中除了日志所包含的信息之外，还包括本次返回的信息已经到Master端的bin-log文件的名称以及bin-log的位置。
+
+Slave的IO进程接收到信息后，将接收到的日志内容依次添加到Slave端的relay-log文件的最末端，并将读取到的Master端的 bin-log的文件名和位置记录到master-info文件中，以便在下一次读取的时候能够清楚的告诉Master“我需要从某个bin-log的哪个位置开始往后的日志内容，请发给我”。
+
+Slave的Sql进程检测到relay-log中新增加了内容后，会马上解析relay-log的内容成为在Master端真实执行时候的那些可执行的内容，并在自身执行。
+
+#### 介绍一下 数据库的三个范式？
+
+1. 第一范式（1NF）强调的是列的原子性，即列不能够再分成其他几列。
+2. 第二范式（2NF）首先是 1NF，另外包含两部分内容，一是表必须有一个主键；二是没有包含在主键中的列必须完全依赖于主键，而不能只依赖于主键的一部分。
+在1NF基础上，任何非主属性不依赖于其它非主属性[在2NF基础上消除传递依赖]。
+3. 第三范式（3NF）第三范式（3NF）是第二范式（2NF）的一个子集，即满足第三范式（3NF）必须满足第二范式（2NF）。首先是 2NF，另外非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列 A 依赖于非主键列 B，非主键列 B 依赖于主键的情况。
+
+
+
+#### 介绍一下，数据库乐观锁和悲观锁
+
+1. 悲观锁，锁定某行或者表，其他人无法操作，适用于冲突不频繁的情况
+2. 乐观锁，假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。
+
+乐观锁有两种常见实现：
+
+1. 使用数据版本（Version）记录机制实现，这是乐观锁最常用的一种实现方式。何谓数据版本？即为数据增加一个版本标识，一般是通过为数据库表增加一个数字类型的 “version” 字段来实现。当读取数据时，将version字段的值一同读出，数据每更新一次，对此version值加一。当我们提交更新的时候，判断数据库表对应记录的当前版本信息与第一次取出来的version值进行比对，如果数据库表当前版本号与第一次取出来的version值相等，则予以更新，否则认为是过期数据。
+2. 使用时间戳（timestamp）。乐观锁定的第二种实现方式和第一种差不多，同样是在需要乐观锁控制的table中增加一个字段，名称无所谓，字段类型使用时间戳（timestamp）, 和上面的version类似，也是在更新提交的时候检查当前数据库中数据的时间戳和自己更新前取到的时间戳进行对比，如果一致则OK，否则就是版本冲突。
+
+#### 介绍一下数据库的隔离级别 
+
+
+
+| 隔离级别                     | 脏读（Dirty Read） | 不可重复读（NonRepeatable Read） | 幻读（Phantom Read） |
+| ---------------------------- | ------------------ | -------------------------------- | -------------------- |
+| 未提交读（Read uncommitted） | 可能               | 可能                             | 可能                 |
+| 已提交读（Read committed）   | 不可能             | 可能                             | 可能                 |
+| 可重复读（Repeatable read）  | 不可能             | 不可能                           | 可能                 |
+| 可串行化（Serializable ）    | 不可能             | 不可能                           | 不可能               |
+
+未提交读(Read Uncommitted)：允许脏读，也就是可能读取到其他会话中未提交事务修改的数据。
+
+提交读(Read Committed)：只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别 (不重复读)。
+
+可重复读(Repeated Read)：可重复读。在同一个事务内的查询都是事务开始时刻一致的，InnoDB默认级别。在SQL标准中，该隔离级别消除了不可重复读，但是还存在幻象读。
+
+串行读(Serializable)：完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞，一般会使用分布式锁代替串行化。
+
+
+
+不可重复读的和幻读很容易混淆，不可重复读侧重于**修改**，幻读侧重于**新增或删除**。解决不可重复读的问题只**需锁住满足条件的行**，**解决幻读需要锁表** 锁表就是串行化了。重复读指的是对某条记录而言，幻读是指对整个表而言。
+
+
+
+
+
+#### 介绍下 B 树索引和 B+ 树索引的区别 
+
+B+树是为磁盘或其他直接存取辅助设备而设计的一种平衡查找树，在B+树中，所有记录节点都是按键值的大小顺序存放在同一层的叶节点中，各叶节点指针进行连接。
+
+B+树的特征：
+1. 有k个子树的中间节点包含有k个元素（B树中是k-1个元素），每个元素不保存数据，只用来索引，所有数据都保存在叶子节点。
+
+2. 所有的叶子结点中包含了全部元素的信息，及指向含这些元素记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接。（链表）
+3. 所有的中间节点元素都同时存在于子节点，在子节点元素中是最大（或最小）元素。
+4. B+树查找时是从上到下查找；B-树则是从下往上查找（中序遍历）
+
+B+树的优势：
+1. 单一节点存储更多的元素（这样该节点下分支变多了，树变矮胖了），使得查询的IO次数更少。
+2. 所有查询都要查找到叶子节点，查询性能稳定。
+3. 所有叶子节点形成有序链表，便于范围查询。
+
+
+B+树的核心点：
+
+1. 非叶子节点不存放数据
+2. 叶子数据有全量数据
+3. 叶子节点构成链表，用于范围查询
+
+
+#### mysql数据库的两种引擎区别
+
+InnoDB 是聚集索引，支持事务，支持行级锁；
+MyISAM是非聚集索引，不支持事务，只支持表级锁。
+
+基本都用 InnoDB。
+
+
+
+#### 什么时候用Innodb什么时候用MyISAM?
+
+索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。如果想按特定职员的姓来查找他或她，则与在表中搜索所有的行相比，索引有助于更快地获取信息。索引的一个主要目的就是加快检索表中数据的方法，亦即能协助信息搜索者尽快的找到符合限制条件的记录ID的辅助数据结构。InnoDB主要面向在线事务处理（OLTP）的应用。MyISAM主要面向一些OLAP的应用。
+
+
+#### JDBC中如何进行事务处理？
+
+Connection提供了事务处理的方法，通过调用setAutoCommit(false)可以设置手动提交事务；当事务完成后用commit()显式提交事务；如果在事务处理过程中发生异常则通过rollback()进行事务回滚。除此之外，从JDBC 3.0中还引入了Savepoint（保存点）的概念，允许通过代码设置保存点并让事务回滚到指定的保存点。
+
+
+#### Statement 和 PreparedStatement 的区别？哪个性能更好？
+
+与Statement相比，①PreparedStatement接口代表预编译的语句，它主要的优势在于可以减少SQL的编译错误并增加SQL的安全性（减少SQL注射攻击的可能性）；②PreparedStatement中的SQL语句是可以带参数的，避免了用字符串连接拼接SQL语句的麻烦和不安全；③当批量处理SQL或频繁执行相同的查询时，PreparedStatement有明显的性能上的优势，由于数据库可以将编译优化后的SQL语句缓存起来，下次执行相同结构的语句时就会很快（不用再次编译和生成执行计划）。
+
+为了提供对存储过程的调用，JDBC API中还提供了CallableStatement接口。存储过程（Stored Procedure）是数据库中一组为了完成特定功能的SQL语句的集合，经编译后存储在数据库中，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。虽然调用存储过程会在网络开销、安全性、性能上获得很多好处，但是存在如果底层数据库发生迁移时就会有很多麻烦，因为每种数据库的存储过程在书写上存在不少的差别。
+
+
+#### 请你谈谈JDBC的反射，以及它的作用？
+
+通过反射com.mysql.jdbc.Driver类，实例化该类的时候会执行该类内部的静态代码块，该代码块会在Java实现的DriverManager类中注册自己,DriverManager管理所有已经注册的驱动类，当调用DriverManager.geConnection方法时会遍历这些驱动类，并尝试去连接数据库，只要有一个能连接成功，就返回Connection对象，否则则报异常。
+
+## 架构设计
+
+
+
+### 设计模式
+
+
+
+#### 有哪些常见的设计模式？
+
+
+
+1. 单例模式
+
+整个生命周期只需要一个实例，可以设计为单例节省系统资源。
+
+2. 工厂模式
+
+使用工厂可以屏蔽构造出来的类的差异，适配不同的实现。
+
+Spring boot 源码中启动 webserver 就是通过工厂构建出：Tomcat、Undertow、Jetty 等
+
+RedisTemplate 连接的Redis 实例也是通过工厂构建的
+
+3. 策略模式
+
+定义了算法族，分别封装起来，让它们之间可以互相替换。此模式让算法的变化独立于使用算法的客户。
+
+例如 AES 加密算法可以有不同种策略。
+
+系统的操作都要有日志记录，通常会把日志记录在数据库里面，方便后续的管理，但是在记录日志到数据库的时候，可能会发生错误，比如暂时连不上数据库了，那就先记录在文件里面。日志写到数据库与文件中是两种算法，但调用方不关心，只负责写就是。
+
+4. 观察者模式，发布/订阅模式
+
+应用场景如下：
+
+1. 对一个对象状态的更新，需要其他对象同步更新，而且其他对象的数量动态可变。
+2. 对象仅需要将自己的更新通知给其他对象而不需要知道其他对象的细节。
+
+
+后端用的不多，前端天生就是观察者模式
+
+5. 迭代器模式
+
+迭代器模式提供一种方法顺序访问一个聚合对象中各个元素，而又不暴露该对象的内部表示。
+
+应用场景如下：
+
+当你需要访问一个聚集对象，而且不管这些对象是什么都需要遍 历的时候，就应该考虑用迭代器模式。其实stl容器就是很好的迭代器模式的例子。
+
+
+List 相关实现，Map 相关实现，以及 JDBC 的结果集。
+
+6. 构造者模式 Builder
+
+构造者模式，可以简化对象的赋值。
+
+```
+public class Purchase {
+private final String shipNo;
+private final String menuId;
+private final String menuName;
+private final Double price;
+
+public static class Builder {
+    private final String shipNo;
+    private String menuId;
+    private String menuName;
+    private final Double price = 0.0;
+
+    public Builder(String shipNo) {
+        this.shipNo = shipNo;
+    }
+
+    public Builder menuId(String val) {
+        menuId = val;
+        return this;
+    }
+
+    public Builder menuName(String val){
+        menuName=val;
+        return this;
+    }
+
+    public Purchase build() {
+        return new Purchase(this);
+    }
+}
+
+private Purchase(Builder builder) {
+    shipNo = builder.shipNo;
+    menuId = builder.menuId;
+    menuName = builder.menuName;
+    price = builder.price;
+}
+}
+```
+
+7. Prototype 原型模式
+
+JS 就是基于原型链的实现模式，用原型创建目标对象的方法，不常用。
+
+8. Facade 门面模式
+
+9. 适配器模式
+
+
+适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。
+
+这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。
+
+10. 过滤器模式
+
+过滤器模式（Filter Pattern）或标准模式（Criteria Pattern）是一种设计模式，这种模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。这种类型的设计模式属于结构型模式，它结合多个标准来获得单一标准。
+
+过滤器模式在 Spring MVC 中非常常见。
+
+11. 装饰器模式
+
+装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能，例如增加日志等功能。
+
+12. 享元模式
+
+享元模式（Flyweight Pattern）主要用于减少创建对象的数量，以减少内存占用和提高性能。这种类型的设计模式属于结构型模式，它提供了减少对象数量从而改善应用所需的对象结构的方式。
+
+享元模式可以提高性能。
+
+13. 责任链模式
+
+顾名思义，责任链模式（Chain of Responsibility Pattern）为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。
+
+在这种模式中，通常每个接收者都包含对另一个接收者的引用。如果一个对象不能处理该请求，那么它会把相同的请求传给下一个接收者，依此类推。
+
+
+14. 命令模式
+
+命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。
+
+
+15. MVC 模式
+
+MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。
+
+实际上大部分情况下是 MVCS（Model-View-Controller-Service） 模式。
+
+16. 前端控制器模式
+
+前端控制器模式（Front Controller Pattern）是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。该处理程序可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。
+
+- 前端控制器（Front Controller） - 处理应用程序所有类型请求的单个处理程序，应用程序可以是基于 web 的应用程序，也可以是基于桌面的应用程序。
+- 调度器（Dispatcher） - 前端控制器可能使用一个调度器对象来调度请求到相应的具体处理程序。
+- 视图（View） - 视图是为请求而创建的对象。
+
+例如 Spring MVC 中的前端控制器。
+
+
+17. MVVM 模式
+
+MVVM是Model-View-ViewModel的简写。它本质上就是MVC 的改进版。MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。
+
+
+18. Flux 模式
+
+Flux的核心思想就是数据和逻辑永远单向流动，保持整个应用的数据一致性。
+
+<img src="java-interview-questions/image-20200607180425228.png" alt="image-20200607180425228" style="zoom:50%;" />
+
+
+
+
+### UML
+
+
+
+#### 常见的 UML 图例有哪些？
+
+- 用例图（use case diagram）
+
+- 类图（class diagram）
+- 时序图（sequence diagram）
+- 协作图（collaboration diagram）
+- 状态图（statechart diagram）
+- 活动图（activity diagram）
+- 构件图（component diagram）
+- 部署图（deployment diagram）
+
+
+
+#### 类图中元素有哪些关系？
+
+类图中元素的关系主要有:
+
+
+
+1. 继承，对类而言
+
+![img](java-interview-questions/082337119585644.png)
+
+2. 实现，对接口而言
+
+![img](java-interview-questions/082337272699031.png)
+
+3. 聚合，A 中拥有一个 B，但 B 脱离于 A 仍然可以独立存活。
+
+![img](java-interview-questions/082338012654178-20200607181538580.png)
+
+4. 组合，A 中拥有一个 B，B 脱离 A 后在系统中没有任何存活的意义。
+
+![img](java-interview-questions/082338094143285.png)
+
+5. 依赖，B 的变化会影响 A，则 A 依赖于 B。
+
+![img](java-interview-questions/082339218484060.png)
+
+
+
+### 性能设计
+
+#### MySQL 单机并发多高？
+
+#### Nginx 单机并发多高？
+
+#### Spring boot的项目单机并发多高？
+
+#### Nodejs 单机并发多高？
+
+#### Redis 单机并发多高？
+
+#### 如何计算系统容量？
+
+
+
+### 场景问题
+
+#### 现在有十万个单词，请你找出重复次数最多的十个。
+
+可以通过 hash 进行分流到不同的机器槽位上，然后分布式并行运算。
+
+#### 这里有10万个数，请你按照从小到大的顺序，将他们输出
+
+先划分成多个小文件，送进内存排序，然后再采用多路归并排序。
+
+#### 处理海量数据 的问题，怎样在10亿个数中，找出最大的10个数，谈谈思路
+
+建立一个大小为10的小根堆。
+
+#### 请你设计一种方案，给每个组分配不同的IP段，并且可以快速得知某个IP是哪个组的?
+
+1. 通过子网掩码
+2. 创建一个二叉查找树
+
+
+#### 这里有1000个任务，分给10个人做，你会怎样分配，先在纸上写个最简单的版本，然后优化。
+
+1. 全局队列，把1000任务放在一个队列里面，然后每个人都是取，完成任务。
+2. 分为10个队列，每个人分别到自己对应的队列中去取务。
+3. 通过取模分片计算
+
+## 更多笔试材料

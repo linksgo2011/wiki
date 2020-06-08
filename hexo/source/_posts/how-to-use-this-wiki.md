@@ -105,3 +105,13 @@ toc: true
 - 一位大数据相关的博主，对 linux 研究非常到位 https://www.cnblogs.com/felixzh/
 - 一位硕士学历的博主，对计算机科学很有研究 https://nezha.github.io/
 - 使用 java 完成的各种 demo https://github.com/nezha/java-learning-demo
+- Rogn 计算机基础知识非常扎实，对数据结构和算法有深入研究 https://www.cnblogs.com/lfri/p/9991925.html
+
+
+
+## 写作计划
+
+- 《DDD 小书》 接近完成
+- 《Java 单元测试入门小书》 进行中
+- 《按下回车的那一刻》 网络和计算机原理的科普小书籍
+
