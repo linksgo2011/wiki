@@ -3,11 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>和生产环境相关的注意事项 | web 工程师知识系统</title>
+  <title>Java web 项目线上环境配置清单 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
-  <meta name="description" content="线上配置
-每个应用使用自己的用户
+  <meta name="description" content="Linux VM 配置
+用户配置
+数据库
+应用
+
+
 开启防火墙
 开启服务器监控
 确保开启日志
@@ -16,19 +20,18 @@ iptables 设置
 firewall 设置
 
 
-设置合理的 jvm 参数
-设置合理的线程数
-设置合理的数据库连接数
 设置合理的时区
-合理的日志输出
-数据库日志
-错误信息日志
-第三方API">
+常见异常的处理
+系统监控
+密匙管理
+
+docker file 配置
+使用合理的基础镜像，减少大小 （al">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="和生产环境相关的注意事项">
+  <meta property="og:title" content="Java web 项目线上环境配置清单">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -62,7 +65,7 @@ firewall 设置
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">和生产环境相关的注意事项</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-24</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Java web 项目线上环境配置清单</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2019-11-24</span></h1>
 </div>		
 
 <div class="row page">
@@ -84,8 +87,12 @@ firewall 设置
 	
 
 	  <!-- content -->
-	  <h2 id="线上配置"><a href="#线上配置" class="headerlink" title="线上配置"></a>线上配置</h2><ul>
-<li>每个应用使用自己的用户</li>
+	  <h2 id="Linux-VM-配置"><a href="#Linux-VM-配置" class="headerlink" title="Linux VM 配置"></a>Linux VM 配置</h2><ul>
+<li>用户配置<ul>
+<li>数据库</li>
+<li>应用</li>
+</ul>
+</li>
 <li>开启防火墙</li>
 <li>开启服务器监控</li>
 <li>确保开启日志</li>
@@ -94,37 +101,107 @@ firewall 设置
 <li>firewall 设置</li>
 </ul>
 </li>
-<li>设置合理的 jvm 参数</li>
-<li>设置合理的线程数</li>
-<li>设置合理的数据库连接数</li>
 <li>设置合理的时区</li>
-<li>合理的日志输出<ul>
-<li>数据库日志</li>
-<li>错误信息日志</li>
-<li>第三方API调用日志</li>
-</ul>
-</li>
 <li>常见异常的处理</li>
 <li>系统监控</li>
 <li>密匙管理</li>
 </ul>
-<h2 id="前端产品注意事项"><a href="#前端产品注意事项" class="headerlink" title="前端产品注意事项"></a>前端产品注意事项</h2><ul>
+<h2 id="docker-file-配置"><a href="#docker-file-配置" class="headerlink" title="docker file 配置"></a>docker file 配置</h2><ul>
+<li>使用合理的基础镜像，减少大小 （alphine）</li>
+</ul>
+<h2 id="Mysql-配置"><a href="#Mysql-配置" class="headerlink" title="Mysql 配置"></a>Mysql 配置</h2><ul>
+<li><p>开启 bin-log 复制</p>
+</li>
+<li><p>设置合理的时区</p>
+</li>
+<li><p>设置合理的字符集</p>
+</li>
+<li><p>设置合理的存储引擎</p>
+</li>
+<li><p>有合理的唯一健和索引</p>
+</li>
+<li><p>视情况使用的外键，高并发的场景不建议使用外键</p>
+</li>
+<li><p>对 UUID 采用合理的索引</p>
+</li>
+<li><p>考虑数据迁移的便利性</p>
+</li>
+</ul>
+<h2 id="JVM-配置"><a href="#JVM-配置" class="headerlink" title="JVM 配置"></a>JVM 配置</h2><h2 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h2><ul>
 <li>gzip</li>
 <li>js 压缩和混淆</li>
 </ul>
-<h2 id="使用-docker"><a href="#使用-docker" class="headerlink" title="使用 docker"></a>使用 docker</h2><ul>
-<li>使用合理的基础镜像，减少大小 （shim alphine）</li>
+<h2 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h2><h3 id="Java-应用-线程池配置"><a href="#Java-应用-线程池配置" class="headerlink" title="Java 应用 线程池配置"></a>Java 应用 线程池配置</h3><p>Spring boot项目中一般会配置一个全局线程池，我们一般会使用  Executor 类型作为各种多线程的场景。</p>
+<p>一个典型的配置如下，如果需要精细的调优，需要结合CPU数量、内存、网络 IO、应用类型等实际情况优化。</p>
+<pre><code class="java">
+@Bean(&quot;taskExecutor&quot;)
+ThreadPoolTaskExecutor createTaskExecutor(){
+  ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+  // 核心线程数量为线程常驻数量，一般和 CPU 数量保持一致
+  threadPoolTaskExecutor.setCorePoolSize(8);
+  // 最大的线程数量为弹性值，往往和应用是否为计算密集还是 IO 密集有关系，可以一般设置为 CPU 数量的两倍
+  threadPoolTaskExecutor.setMaxPoolSize(16);
+  // 等待队列的大小和业务处理能力有关，根据实际情况调整
+  threadPoolTaskExecutor.setQueueCapacity(200);
+  // 说明该线程池的用途，用于日志中输出
+  threadPoolTaskExecutor.setThreadNamePrefix(&quot;async-task-executor&quot;);
+    //当线程队列满了时候的拒绝策略，这里设置为直接调用执行，也就是阻塞模式
+threadPoolTaskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+  threadPoolTaskExecutor.initialize();
+  return threadPoolTaskExecutor;
+}
+</code></pre>
+<h3 id="Jedis-Pool-配置"><a href="#Jedis-Pool-配置" class="headerlink" title="Jedis Pool 配置"></a>Jedis Pool 配置</h3><p>Jedis 是一个 Redis 连接客户端，在主动和哨兵模式下需要使用连接池来提高性能，Jedis 的性能受制于单次 Redis 存取的效率、并发连接数等，下面是一个典型的配置。</p>
+<pre><code class="java">public JedisPoolConfig() {
+        // 最大连接数，一般取决于并发量，大多数网站来说几百的连接数已经够用
+         setMaxTotal(500);
+    // 最大空闲连接数，一定的空闲有利于性能，否则会反复创建和释放连接，如果并发量比较均匀可以设置小一点
+    setMaxIdle(100);
+    // 默认是 0 可以不设置，一般设置为 0，当没有请求时，释放全部连接
+    setMinIdle(0);
+    // 当资源池用尽后，调用者是否要等待。一般建议开启，否则会抛出错误，有回退策略的情况下可以关闭，防止雪崩效应
+    setBlockWhenExhausted(true);
+    //BlockWhenExhausted 开启后才有效，设置最大的等待时间，超出最大的时间会报错
+    setMaxWaitMillis(1000*60*1000);
+    // 向资源池借用连接时是否做连接有效性检测，无效连接会被移除，建议开启。并发量大可以关闭，会增加一次 ping
+    setTestOnBorrow(true);
+    // 向资源池归还连接时是否做连接有效性检测,无效连接会被移除，建议开启。一个机房内一般不会出现无效连接
+    testOnReturn(true);
+    // 下面几个是空闲资源监测的配置，一般可以不用配置，采用默认配置即可
+    // 是否开启空闲资源监测
+    setTestWhileIdle(true);
+    // 资源池中资源最小空闲时间
+    setMinEvictableIdleTimeMillis(60000);
+    // 空闲资源的检测周期
+    setTimeBetweenEvictionRunsMillis(30000);
+    // 空闲资源检测的连接数， -1 是所有连接
+    setNumTestsPerEvictionRun(5);
+}
+</code></pre>
+<h3 id="Elastic-Search-配置"><a href="#Elastic-Search-配置" class="headerlink" title="Elastic Search 配置"></a>Elastic Search 配置</h3><p>ES 使用 HTTP Client  通信，因此配置比较简单。</p>
+<pre><code class="yml">spring:
+  data:
+    elasticsearch:
+      # 地址相关略过
+      # 连接超时时间
+      connection-timeout: 5000
+      # socket 连接超时时间
+      socket-timeout: 5000
+      # 请求的的链接超时时间
+      connection-request-timeout: 200
+
+      # 最大连接数
+      max-connect-num: 200
+      # 最大连接数对于某个 url 或者端口
+      max-connect-per-route: 200
+
+</code></pre>
+<h3 id="日志配置"><a href="#日志配置" class="headerlink" title="日志配置"></a>日志配置</h3><ul>
+<li>数据库日志</li>
+<li>错误信息日志</li>
+<li>第三方API调用日志</li>
 </ul>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
-<li>开启 bin-log 复制</li>
-<li>设置合理的时区</li>
-<li>设置合理的字符集</li>
-<li>设置合理的存储引擎</li>
-<li>有合理的唯一健和索引</li>
-<li>视情况使用的外键，高并发的场景不建议使用外键</li>
-<li>对 UUID 采用合理的索引</li>
-<li>考虑数据迁移的便利性</li>
-</ul>
+<p>参考文章 <a href="https://www.iteye.com/blog/aub-1101260" target="_blank" rel="noopener">https://www.iteye.com/blog/aub-1101260</a></p>
 	  
 
 	  <div>
@@ -184,480 +261,9 @@ firewall 设置
 		
 	
 		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
@@ -773,6 +379,479 @@ firewall 设置
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
@@ -873,6 +952,10 @@ firewall 设置
 		
 	
 		
+			
+		
+	
+		
 	
 		
 	
@@ -892,10 +975,6 @@ firewall 设置
 			
 		
 	
-		
-	
-		
-			
 		
 	
 		
