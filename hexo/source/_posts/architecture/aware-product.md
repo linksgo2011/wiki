@@ -5,6 +5,8 @@ toc: true
 from: self
 ---
 
+[toc]
+
 ## Linux VM 配置
 
 - 用户配置
