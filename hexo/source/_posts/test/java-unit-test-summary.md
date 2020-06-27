@@ -914,7 +914,74 @@ public void should_be_true_if_value_is_eight() {
 
 
 
+| 边界值            | 用例输入          | 期望结果 |
+| ----------------- | ----------------- | -------- |
+| Integer.MIN_VALUE | Integer.MIN_VALUE | False    |
+| 0                 | 0                 | True     |
+| 5                 | 5                 | True     |
+| 10                | 10                | False    |
+| 11                | 11                | True     |
+| Integer.MAX_VALUE | Integer.MAX_VALUE | False    |
 
+
+
+上面表格一共 6 个用例，能比较充足的考虑到各种情况。写完 6 个用例需要占用大量篇幅，就不再给出示例。实际工作中，遇到这种有固定输入模式的用例，可以想办法减少样板代码，我们在后面 junit 另外一个特性中介绍。
+
+
+
+#### 根据可达路径设计用例
+
+
+
+另外一种更常用的用例设计方法是可达路径，可达路径是指根据代码中分支语句的数量，程序具有不同的数据流动路径。单元测试应该保证，每条路径都能达到。
+
+
+
+我用简化版的 Fizz Buzz  问题说明，Fizz Buzz 是一个常见的编程练习题，主要考察代码设计。
+
+
+
+> 给你一个整数 n。如果这个数被3整除，返回 fizz。如果这个数被5整除，返回 buzz。如果这个数能同时被3和5整除，返回 fizz buzz。如果都不满足，返回 null。
+
+
+
+这里是一个最简单的实现：
+
+
+
+```java
+public static String simpleFizzBuzz(int n) {
+    if (n % 3 == 0 && n % 5 == 0) {
+        return "fizz buzz";
+    } else if (n % 3 == 0) {
+        return "fizz";
+    } else if (n % 5 == 0) {
+        return "buzz";
+    }
+    return null;
+}
+```
+
+
+
+simpleFizzBuzz 方法的路径有 4 条，分别是满足各个条件返回单词，不满足则返回 null。
+
+
+
+| 路径                     | 用例输入 | 期望结果  |
+| ------------------------ | -------- | --------- |
+| n % 3 == 0 && n % 5 == 0 | 15       | fizz buzz |
+| n % 3 == 0               | 3        | fizz      |
+| n % 5 == 0               | 5        | buzz      |
+| 其他                     | 10       | Null      |
+
+
+
+一个方法可达路径的数量还可以衡量一段代码的复杂度，如果可达数量非常多，说明了这个方法非常复杂，需要相应的增加用例数量保证它的可靠性。这种复杂度被叫做圈复杂度。
+
+
+
+如果一个方法非常大，圈复杂度则相对高，随着各种条件语句的组合，复杂度会呈指数上升。圈复杂度一般在 20 内为比较合适，超出 40，测试的代价非常高昂。这也是为什么单元测试的成本要远远低于，集成测试和 UI 测试。
 
 
 
@@ -922,17 +989,209 @@ public void should_be_true_if_value_is_eight() {
 
 
 
+### 参数化用例
+
+如果按照前面的用例设计方法，往往设计出的用例会非常多。按照回文数的表为例，我们共有 6 中输入数据。每一个行对应一个单元测试，会非常冗长。
+
+
+
+我们可以使用 Parameterized 的风格输入一组二位数组。
+
+
+
+```java
+@RunWith(Parameterized.class)
+public class ParameterizedPractiseTest {
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {Integer.MIN_VALUE, false},
+                {0, true},
+                {5, true},
+                {10, false},
+                {11, true},
+                {Integer.MAX_VALUE, false}
+        });
+    }
+
+    private int input;
+
+    private boolean expected;
+
+    public ParameterizedPractiseTest(int input, boolean expected) {
+        this.input = input;
+        this.expected = expected;
+    }
+
+    @Test
+    public void test() {
+        assertEquals(expected, isPalindrome(input));
+    }
+}
+```
+
+
+
+实际上这只是一种语法糖，通过 @Runwith 注解输入了 Parameterized Runner 帮助生成了6 个独立的测试。
+
+@Parameterized.Parameters 定义了 6 条数据作为输入输出。这个注解允许传入一个模板，给6个独立的测试输出一个名称，便于识别。
+
+
+
+```java
+@Parameterized.Parameters(name = "{index}_input_({0})_should_be_{1}")
+```
+
+
+
+我们在控制台就可以看到 6 个独立的测试。
+
+<img src="java-unit-test-summary/image-20200627153205083.png" alt="image-20200627153205083" style="zoom:50%;" />
+
+
+
+Runner 是 junit 比较高级的技术。另外一个第三方 JUnitParamsRunner，可以运行直接将 Parameters 注解组合应用于测试方法上，显得更为简洁。
+
+JUnitParamsRunner 需要自行通过 maven 导入。
+
+```java
+@RunWith(JUnitParamsRunner.class)
+public class PersonTest {
+
+  @Test
+  @Parameters({"17, false", 
+               "22, true" })
+  public void person_is_adult(int age, boolean valid) throws Exception {
+    assertThat(new Person(age).isAdult(), is(valid));
+  }
+ 
+}
+```
+
+  
+
 ### 测试覆盖率
 
 
 
+如果我们的用例设计的不好，或者不够多，必然很多分支和情况没有考虑到。我们可以通过统计测试覆盖率和覆盖情况检查我们用例设计，从而改善用例设计。
+
+使用 IDE 内置的测试覆盖率统计统计，即可满足我们大部分需求。只需要使用 Run xx with Coverage 即可。Intellij Idea 不仅可以针对类统计覆盖率，还可以选中一个包统计单元测试覆盖率。
+
+<img src="java-unit-test-summary/image-20200627153540758.png" alt="image-20200627153540758" style="zoom:50%;" />
 
 
-### Java 单元测试约定和原则
+
+运行完测试覆盖率后，IDE 会弹出一个统计窗口，同时代码编辑器会显示出那些代码被覆盖。
+
+<img src="java-unit-test-summary/image-20200627153914675.png" alt="image-20200627153914675" style="zoom:50%;" />
+
+
+
+覆盖率分为，类、方法、分支覆盖率、行覆盖率，一般项目会要求将类、方法覆盖率达到 100%，行和分支覆盖率到 80%。其实主要指标覆盖率应该看分支覆盖率，通过分支覆盖率进一步完善我们的测试用例。
+
+
+
+在工程化方面，我们可以使用 surefire 和 jcoco 来运行测试并获取测试覆盖率，同时上传 report，这个在工程化部分说明。
 
 
 
 
+
+
+
+### Junit Rule  使用
+
+
+
+
+
+### 其他技巧
+
+
+
+#### 忽略测试 
+
+如果因为某些原因（可能是快速修复 CI，避免影响队友工作），你需要快速忽略测试。尽量不要使用大面积注释代码的方法，请使用 @Ignore 注解，并加上原因，并随后修复。
+
+
+
+和删除/注释代码相比， @Ignore  会被测试框架统计进去，显示为已经忽略的测试数量。
+
+
+
+```java
+@Ignore("Test is ignored as a demonstration")
+@Test
+public void assert_same() {
+    assertThat(1, is(1));
+}
+```
+
+
+
+#### 测试超时
+
+如果一个测试运行时间很长，往往意味着测试失败。junit 提供了一种方式结束它，使用 @Test 注解的 timeout 参数可以传入一个毫秒数。
+
+
+
+如果这个测试的运行时间，超过了 timeout 允许的时间，junit 会中断测试线程，标记测试失败，并丢出异常。需要注意的是，junit 启动了另外一个线程并发出中断信号，如果测试代码无法被中断。
+
+
+
+```java
+	@Test（timeout = 1000）
+  public  void test_with_timeout（）{
+   	... 
+  }
+```
+
+
+
+timeout 参数只是针对单个测试的超时时间，如果想要一次性对所有的测试都应用这个规则，可以使用 rule。
+
+```java
+public class GlobalTimeoutPractiseTest {
+    @Rule
+    public Timeout globalTimeout = Timeout.seconds(10);
+
+    @Test
+    public void test_sleep_11_seconds() throws Exception {
+        Thread.sleep(11000);
+    }
+
+    @Test
+    public void test_sleep_12_seconds() throws Exception {
+        Thread.sleep(12000);
+    }
+}
+```
+
+
+
+Timeout Rule 定义了一个全局的 Rule，在当前的类下奇效。同时会计算上 @Before、@After 方法的时间。但是如果，被中断的方法是因为死循环造成的，Junit 会直接停掉，@After 方法可能不会被执行。
+
+
+
+#### 聚合测试套件
+
+
+
+有时候需要将一组测试用例一起作为一个测试套件运行。可以使用 Suite 作为 Runner 实现，通过 @Suite.SuiteClasses  传入需要组合的测试类即可实现单元测试套件。
+
+
+
+```java
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        HelloWorldTest.class,
+        AssertPractiseTest.class
+})
+public class SuitesPractiseTest {
+    
+}
+```
 
 
 
@@ -947,6 +1206,10 @@ public void should_be_true_if_value_is_eight() {
 #### IDEA 不出现执行按钮
 
 
+
+
+
+### Java 单元测试约定和原则
 
 
 
