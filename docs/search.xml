@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title>提高工时估计准确性，减少开发成本</title>
+      <link href="/team/team/better-estimation/"/>
+      <url>/team/team/better-estimation/</url>
+      
+        <content type="html"><![CDATA[<h2 id="估时不准是很正常的事情"><a href="#估时不准是很正常的事情" class="headerlink" title="估时不准是很正常的事情"></a>估时不准是很正常的事情</h2><p>“如果一个程序员告诉你他已经完成了 90% 的工作量，那么他还需要同样的时间完成剩下的 10%”。</p><p>软件项目延期和跳票是众所周知的事情，其中不乏知名项目。</p><p>刚毕业的时候，我在一家做系统集成的公司工作，我们定制了一套售票软件，为景区接入互联网售票方案。供应该软件的软件公司非常自信的说，这东西非常简单，最多 2 个月就能搞出来。这家公司小有名气，我老板对 2 个月交付深信不疑，于是张罗了接入的客户、市场的物料等。</p><p>不过还是没能逃过 90% 定律，2 个月交付的东西只能算作一个 Demo。于是花了另外一个月测试，修复问题和完善业务逻辑，又花了另外几个月时间响应对接客户的条件，才逐渐稳定下来。</p><p>行百里者半九十，软件开发也大体如此。开发者估不准工时常有，估准了才奇怪呢。</p><p>后来自己也做了软件工程师，参与 it 项目开发，项目延期也是非常常见的事情。</p><h2 id="工时估算的前提是质量"><a href="#工时估算的前提是质量" class="headerlink" title="工时估算的前提是质量"></a>工时估算的前提是质量</h2><p>IT 团队能准时交付是一项非常有价值的能力，哪怕交付时间长一点。计划两周交付，最后能准时完成，比承诺 1 周时间，但是花了三周才交付重要得多。</p><p>越是大项目，越是重要。大项目的各个组件可能会发生相互依赖。如果不能准时交付，就会付出团队等待的情况，那可是真金白银。</p><p>做过项目管理的都知道甘特图，甘特图的每个泳道表达了项目各项资源的进展和计划。然而，软件项目不确定性非常多，各种突发事件。如果能提高准时按质量交付，各个单位的等待成本会小很多。</p><p>关键的是，衡量是否准时交付的关键是质量，其次才是交付。先给一个 demo，然后再慢慢改 bug。这种 “准时” 的交付，还不如有一个明确的延期时间，本质上还是 “猛糙快”。</p><p><strong>谈项目工时估算，前提是在满足质量要求的前提下，否则估时没有意义。</strong></p><h2 id="估算准确依赖工程能力"><a href="#估算准确依赖工程能力" class="headerlink" title="估算准确依赖工程能力"></a>估算准确依赖工程能力</h2><p>那么能不能提高软件工程工时的估算的准确性呢？其实是可以的，刚到 ThoughtWorks 的时候，参与了一个交付项目。在一个项目开始前就计划了项目结束的时间，以及下一个项目的计划和安排。结果让我非常吃惊，那个项目的结束时间，和预期只有 2 周左右。并且这两周是逐步减少开发人员，最后只有 1-2 个人负责最后一周的交接期。</p><p>这就是专业软件团队和小作坊的差别，在专业项目经理带领下能把 3 个月的项目估算，精确到 20 - 30 个人天。能把项目工时估算到这种程度，体现了 PM 的内功。</p><p>在一个敏捷团队，需要把工时估准，不在于 “估” ， 而在于团队执行项目的稳定性。<strong>一般来说，准确估算工时需要考虑需求分析程度、任务拆分的合理性、技术方案的可靠性、团队成员的能力、外部依赖和环境，如果这个项目不是新项目，还需要考虑遗留系统改造的成本和数据迁移的成本。</strong></p><h3 id="需求和任务分析"><a href="#需求和任务分析" class="headerlink" title="需求和任务分析"></a>需求和任务分析</h3><p>只有需求分析非常彻底才能保证估算的输入条件。非专业的业务分析师，只能看到需求冰山水面上的部分。软件的特性、功能的复杂性等。</p><p>专业的业务分析师，不仅需要看待功能需求，并对功能需求的逻辑性考虑完备。比如用户需要一个 APP，他实际上还需要一个后台，对应这个后台会有不同的用户、角色等。</p><p>根据这些业务输出，拆分出任务，敏捷开发中我们叫做用户故事，一个用户故事代表一个合理拆分的业务逻辑。能被评估工作量，然后根据这个工作量来评估工时。</p><p>除了这些功能需求之外，还有非功能需求。客户不仅仅需要一个 APP，还可能需要的是一个安全的、高性能的、国际化的 APP，而这些往往被客户当做默认选项。</p><p>一些性能优化的指标需要分析，并考虑性能优化的任务工时；安全需求可能有 HTTPS 配置，防病毒扫描等，都需要考虑；国际化也是额外的工作量。</p><p>挖掘用户真实需求的目的是定义怎么才算完成（Define of done），如果没人说得清楚满足什么条件这个项目才算完，那么估算工时根本无从谈起。</p><p><strong>彻底挖掘客户的真实需求是评估项目工时的首要条件。</strong></p><h3 id="技术方案和团队能力"><a href="#技术方案和团队能力" class="headerlink" title="技术方案和团队能力"></a>技术方案和团队能力</h3><p>技术方案和团队能力和项目时间估算很大关系。很多项目的时间估算都是技术经理或者 Teach lead 来完成，往往是他们按照自己的经验和能力进行计算。光是这样，很难算的准的。</p><p>团队有多少人？对这套技术方案的熟悉程度如何？方案是否会发生较大的调整。人越多，人员水平差距都为工时估计带来了不确定性。经验多的人来做方案，如果是他做过的相似方案，自然会估的稍准一点。但大多数情况下没有这么理想的场景。</p><p>要做好工时估算，需要结合技术方案和团队成员能力，而不是自己能干多少活儿，多快干完来算。</p><p>一方面，技术负责人需要安排相应的技术预研，走在实际编码的开发人员前面，探探路，验证方案的可行性、实施难度、风险。就像作战的侦查人员一样，我们把预研叫做 spike。 spike 需要输出一些结论、demo，支持项目的时间估算。</p><p>另外一方面，考察团队真实运作效率很好地方式是根据迭代做工时统计。按照两周为例，10 个人的团队是 100 个工时。如果按照之前的估算，2 周内需要完成的 100 个工时的任务，实际上只完成了 50 个工时。也就是进度只有 50%。</p><p>我这个算法比较粗糙，敏捷项目管理中还有更准确的速率计算方式。通过速率，就能对下一阶段的工时估算做出调整，并在工作量、人员上做出调整。</p><p><strong>通过方案预研和速率计算是提高项目工时估算准确率的良好方法。</strong></p><h3 id="遗留系统和外部依赖"><a href="#遗留系统和外部依赖" class="headerlink" title="遗留系统和外部依赖"></a>遗留系统和外部依赖</h3><p>我常常花了一下午时间完成了某个特性升级的编码，但是花了一个月的时间才完成了线上平滑升级、数据迁移。</p><p>真正有经验的工程师都知道，方案设计的难点往往不在设计一个新东西，而在于演进一个老系统。遗留系统演进是不可避免的，这种历史包袱是造成工时估算不准的一个重要因素。</p><p>遗留系统演进带来的估算困难来源下面几个方面：</p><ul><li>前置条件不满足或者很困难。客户可能觉得只是添加一个小功能，但是涉及数据库变更、API 升级。软件项目往往牵一发而动全身。</li><li>遗留系统代码难以理解，没有人说得清楚原委。这种系统往往伴随着重构，否则难以进行。</li><li>数据迁移的成本。例如，需求只是简单要求对用户的某些数据加密，实际工作包括了对存量数据的迁移。</li><li>临时代码的清理。遗留系统往往为三个状态，原始态-过渡态-最终态，很多人估算工时要么忘记了过渡态，就是忘记了最终态的时间成本。</li></ul><p>不负责的猜想，有一些客户就是遗留系统演进不下去了，然后招标做新功能，实际意图是想乙方顺便消化重构的成本。总之基于遗留系统的二次开发都是一件困难的事情，能不接就不接吧。</p><p>另外，社会分工意味着一个人干不完所有的事情，IT 项目往往一个项目也不是独立的。大多数情况下需要和外部条件进行集成，这部分时间超出我们的掌控。</p><p>集成这件事的成本需要试主动集成还是被动集成来说：</p><ol><li>需要等待别人提供服务，我们去集成。在估计工时的时候，一定要把对方的交付时间考虑进去，提前沟通，并建立契约。</li><li>提供给别人服务，被别人集成。这种情况估计工时，往往只是计算到 API 上线，实际上还需要考虑一定的支持、文档工作量。很少有一次到位的情况，大多要磨合一段时间。</li></ol><p><strong>集成充满了不确定性，估算工时时需要预留足够的集成空间，才能让工时估算更准确。</strong></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>项目工时估算是一个系统性工作，基本上很难有一个万能的方法。因此大多数情况下都是玄学，但是毕竟是 “估” ，也不能要求 100% 精确。</p><p>软件工程的估时更具有弹性，相对供应链管理的交付时间估算成本更低。做好估时，对减少项目运行成本和风险有巨大意义，工时估算的准确性也往往体现了一个 IT 团队工程能力。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> team </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>修行人执着起来，比俗人还可怕</title>
+      <link href="/thinking/thinking/zhihzuo/"/>
+      <url>/thinking/thinking/zhihzuo/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> thinking </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>真人，首先是一个真实的人</title>
+      <link href="/thinking/thinking/dao-thinking/"/>
+      <url>/thinking/thinking/dao-thinking/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实事求是，道即规律"><a href="#实事求是，道即规律" class="headerlink" title="实事求是，道即规律"></a>实事求是，道即规律</h2><p>如果有人问我，祖师爷老君是神仙吗？</p><p>如果我说不是，请先别反对我。老君不仅是三清之一，拥有太上老君的名号。更重要的，老君还是周朝守藏史，一个博学、智慧的老者。</p><p>十几年初次接触到道德经，觉得祖师爷一定是一个全能的神仙，只有神仙才能写出这样的经书。被生活毒打的越厉害，从道德经中得到的越多。随着生活阅历的增加，道德经给我们的，远远比我们期望的多。</p><p>越经历生活的挫折，越发体会道德经的智慧。</p><p>“天下皆知美之为美，斯恶已；皆知善之为善，斯不善已。” 的辩证方法，让很多问题考虑的更为周到；“宠辱若惊，贵大患若身。”让人成熟稳重，不再患得患失；“故飘风不终朝，骤雨不终日。” 让人学会克制和细水长流。</p><p>老君一定是得到了宇宙的终极奥秘，没有什么事情他无法做到。正因如此，老君作为神，被世人膜拜。</p><p>求道者多如牛毛，谈玄者浩瀚如繁星。老君的学说被用在各个地方，有正道，有旁门左道。可以卖保健品、可以提高性能力、还可以解释量子力学，甚至可以预测彩票。</p><p>俗人迷，修道人也迷。</p><p>有幸听到张至顺道爷说，古时候的真人，首先是一个真实的人，其次才是神仙。十几年后，对道德经了解的越来越多，通过道德经和清静经的这句话，认识到老君的另一面。</p><blockquote><p>“大道无形，生育天地；大道无情，运行日月；大道无名，长养万物。吾不知其名，强名曰道。”</p></blockquote><p>理解了这句话，忽然拉近了老君之间的距离。也许几千年前的老君对着天空发呆，刹那间认识到了事物的规律。这些规律也许来自于丰富的阅历，或者来自整个国家的藏书，经过时间的发酵，最终清晰起来。</p><p>但老君也不知道如何形容它，不知道叫什么名字，无奈只能暂时起一个名字叫做道。这一刻老君也只是一个普通人，是一个敢于承认自己不知道的事实，是一个真实的人。</p><p>承认自己知识也有局限的老君，更值得人尊敬。道，是客观存在的规律，是实事求是的。对普通人来说，远离神神叨叨的言论，从小处学习，并加以实践，也许这是最能接近老君的路吧。</p><p>希望所有了解道家思想的人，都能学而不迷。老君曰：“不贵其师，不爱其资，虽智大迷，是谓要妙”，与君共勉。</p><h2 id="自律修行，知晓因果"><a href="#自律修行，知晓因果" class="headerlink" title="自律修行，知晓因果"></a>自律修行，知晓因果</h2><p>道家认识到了一个规律。</p><p>人世间的事物发展，人生的境况，大都受到三个方面的影响。</p><ul><li>先天的资质和时运，出身的条件。像富贵、美丑、聪慧等，几乎是不可变的，就像天难以被改变。</li><li>身边的环境。像处在市井、玄门、烟花柳巷等地方，人会受到这些环境的影响，但是可以付出努力改变。</li><li>自身的意志。自己的想法，个人的意志。</li></ul><p>学习数术的人，把这三个条件叫做：天、地、人，掌握了天地人的格局对事物的关系，就能预测事物的发展。</p><p>现实世界中，个人的意志实际上很弱，大多数人不足以改变环境。你以为有自己的意志，实际上是先天、环境在影响你。</p><p>感觉一个食物好吃，是因为饿了，并不是你自己觉得好吃；找到一个好工作，也许是行业的风口，并不是你能力多强；找到了一个好的对象，也许只是因为你家庭条件好，并不是你有多大魅力；你决定考研，也许并不是真的想要做研究，而是周围的舍友都在考研影响了你。</p><p>那些修行的人，把自己的真正意志，叫做元神，把先天、环境的影响叫做识神。</p><p>元神被识神淹没，人的想法、决定和事物的发展，都是由先天和环境决定了，人便动弹不得。家境优渥，顺风顺水，以为是自己的能力；行业蓬勃，得名得利，以为是自己的努力。等到家境破败、行业不景气时，又觉得自己运气不佳，常沉苦海。</p><p>我们极易犯得一个错误是把老天爷赏的饭吃，当做自己的本事。大多数情况下，我们都是靠天吃饭，个人意志起不了多大作用。由此，我们也困在这里面动弹不得，只能听天由命。</p><p>克服“天”已经很难了，贫寒的家境，无常的世事；克服 “地” 也不容易，身边的狐朋狗友，洗脑式的工作环境。我们做出的选择无时不刻被影响着，世俗的观念，被媒体绑架的价值观，我们几乎没有自己清醒的思想。</p><p>因此南华真人说，你以为有自由意志吗？钱财是上天给我们的，身体是上天给我们的，连意识和精神都是。这就是命由天定的由来。</p><p>命运不是被出生的生辰算定，而是被出身和环境算定。</p><p>道家的祖师们用行动告诉我们可以 “我命由我不由天”，前提是磨炼自己的意志，训练自己的心性，清醒的做出选择和行动。不受先天、环境的影响，才能改变自己，突破环境、先天的影响。</p><p>“酒色财气” 再加上名利、贪求、执着，任何一样都让本来的一点元神消失的一干二净。在这些东西下，做出的任何决策都是危险的。</p><p>外在的物质不能让我们内心安定， “五色令人目盲，五音令人耳聋，五味令人口爽，驰骋畋猎令人心发狂，难得之货令人行妨。” 。外在的评价也会动摇我们的意识，“宠辱若惊，贵大患若身。”。</p><p>当修行到自我的意识不因外物扰动的时候，元神就会出现，像一个旁观者，真正掌控自己的人生。</p><h2 id="通达自然，顺势而为"><a href="#通达自然，顺势而为" class="headerlink" title="通达自然，顺势而为"></a>通达自然，顺势而为</h2><p>内心不够安定的时候精通奇门、六壬的人也看不清局势，内心安定平和的人，一花一草都可以取象起卦，通晓因果。</p><p>而刚刚具备独立思考的人，元神只有一点，这个时候最为危险。以为自己有能力对抗环境、对抗先天的资质和时运。</p><p>我们刚刚学会游泳的时候总觉得用力蹬水，就不会沉下去，然而却越发不得要领。当我们选择不去对抗的时候，却发现想沉都沉不下去，因为人体的浮力总会让你浮起来。不去对抗之后，忘记技巧之后，才真正的算学会了游泳，这就是 “后天意识，返还先天自然” 的说法。</p><p>道德经就是一本教怎么在人生这个泳池游泳的书。那些我执的人，掉进了个人意志的陷阱，处处和人对抗、和事对抗，和生活对抗。</p><p>有些修行的人，我执起来比普通人还要严重。</p><p>煮过肉的锅不能用，算破戒，要坚持别人换锅重新煮；无视生态环境，不顾劝告也要放生，为求功德；自己对经文的解读，容不得其他人反驳。</p><p>事物的发展，都需要天时、地利、人和。我们唯一能力做的是做好自己，然后顺应自然。天上有阴晴云雨，地上有起伏坎坷。</p><p>南华真人说，古代的圣人，做好了事成事败的两方面打算就没有忧虑。鱼离开水面与其相若以沫，不如忘记曾经在水里的生活。当天时、环境发生变化的时候，而我们能做的就是，顺应变化的规律，积极应对，不怠慢，也不对抗。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> thinking </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Maven 父子项目配置</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/maven-parent-project/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/maven-parent-project/</url>
@@ -5641,11 +5692,11 @@
     </entry>
     
     <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/react-recource/"/>
-      <url>/React/react/react-recource/</url>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
       
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
       
       
       <categories>
@@ -5658,16 +5709,16 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
+      <title>PostgreSQL 入门使用</title>
+      <link href="/postgreSQL/postgreSQL/get%20start/"/>
+      <url>/postgreSQL/postgreSQL/get%20start/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> python </category>
+          <category> postgreSQL </category>
           
       </categories>
       
@@ -5709,6 +5760,23 @@
     </entry>
     
     <entry>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP拓展和使用C编写自定义拓展</title>
       <link href="/php/php/php-plugin-c/"/>
       <url>/php/php/php-plugin-c/</url>
@@ -5726,28 +5794,11 @@
     </entry>
     
     <entry>
-      <title>PostgreSQL 入门使用</title>
-      <link href="/postgreSQL/postgreSQL/get%20start/"/>
-      <url>/postgreSQL/postgreSQL/get%20start/</url>
+      <title>React 资源收集</title>
+      <link href="/React/react/react-recource/"/>
+      <url>/React/react/react-recource/</url>
       
-        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> postgreSQL </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
@@ -5760,11 +5811,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
+      <title>PHP环境 in Mac</title>
+      <link href="/php/php/php-environment-in-mac/"/>
+      <url>/php/php/php-environment-in-mac/</url>
       
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
       
       
       <categories>
@@ -5794,11 +5845,11 @@
     </entry>
     
     <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
       
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -5828,11 +5879,11 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -5845,11 +5896,28 @@
     </entry>
     
     <entry>
-      <title>PHP环境 in Mac</title>
-      <link href="/php/php/php-environment-in-mac/"/>
-      <url>/php/php/php-environment-in-mac/</url>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
       
-        <content type="html"><![CDATA[<p>实际上Mac系统自带了PHP和Apache的开发环境</p><p>1、Apache相关</p><p>Mac系统自带apache服务器，我们只需要配置相关信息并进行开启服务即可</p><p>sudo vim /etc/apache2/httpd.conf</p><p>打开对PHP的支持,第169行左右</p><p>LoadModule php5_module libexec/apache2/libphp5.so</p><p>2、测试</p><p>系统默认会访问／Library/WebServer/Document/index.html.en文件</p><p>为了方便测试，在此目录下新建一个test.php文件，并输入</p><pre><code class="php">&lt;?phpphpinfo(); ?&gt;</code></pre><p>然后访问localhost/test.php，会直接打印出phpinfo中的各种信息</p><p>3、PHP配置</p><p>在做第二步测试的时候，扩展里面date会出现错误，原因是默认php.ini没有对date.timezone进行设置，系统默认UTC的时区，所以我们要开启对php.ini的设置</p><p>sudo cp /etc/php.ini.default php.ini</p><p>先把默认配置文件复制一份，然后给复制好的配置文件增加写的权限</p><p>sudo chmod +w php.ini</p><p>找到date.timezone，先把默认的注释给删除掉，然后直接后面配置成PRC即可</p><p>4、测试</p><p>再次访问localhost/test.php，date扩展就OK了！</p><p>使用自带的Apache</p><p>sudo apachectl start</p><p>sudo apachectl stop</p><p>sudo apachectl restart</p>]]></content>
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>一段简单的PHP 日志代码</title>
+      <link href="/php/php/simple-log-feature/"/>
+      <url>/php/php/simple-log-feature/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
       
       
       <categories>
@@ -5896,50 +5964,16 @@
     </entry>
     
     <entry>
-      <title>一段简单的PHP 日志代码</title>
-      <link href="/php/php/simple-log-feature/"/>
-      <url>/php/php/simple-log-feature/</url>
+      <title>DDI管理培训总结</title>
+      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
+      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
       
-        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Team leader 能力模型案例解读</title>
-      <link href="/management/management/Team%20leader%20checklist/"/>
-      <url>/management/management/Team%20leader%20checklist/</url>
-      
-        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
       
       
       <categories>
           
-          <category> management </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mysql 基本管理命令</title>
-      <link href="/mysql/mysql/mysql-baisc-operation/"/>
-      <url>/mysql/mysql/mysql-baisc-operation/</url>
-      
-        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
+          <category> 团队管理 </category>
           
       </categories>
       
@@ -5964,6 +5998,40 @@
     </entry>
     
     <entry>
+      <title>Mysql 基本管理命令</title>
+      <link href="/mysql/mysql/mysql-baisc-operation/"/>
+      <url>/mysql/mysql/mysql-baisc-operation/</url>
+      
+        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Team leader 能力模型案例解读</title>
+      <link href="/management/management/Team%20leader%20checklist/"/>
+      <url>/management/management/Team%20leader%20checklist/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Java web project 概览</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
@@ -5981,33 +6049,16 @@
     </entry>
     
     <entry>
-      <title>DDI管理培训总结</title>
-      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
-      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
+      <title>Java CMS 选型</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/</url>
       
-        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 团队管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -6025,23 +6076,6 @@
       <categories>
           
           <category> 质量保证 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java CMS 选型</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/cms%20in%20java/</url>
-      
-        <content type="html"><![CDATA[<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><p>SpringMVC+Mybatis+freemarker/JSP</p><h2 id="通用后台快速开发方案"><a href="#通用后台快速开发方案" class="headerlink" title="通用后台快速开发方案"></a>通用后台快速开发方案</h2><ul><li><a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></li><li><a href="https://github.com/kanwangzjm/funiture" target="_blank" rel="noopener">https://github.com/kanwangzjm/funiture</a></li></ul><h2 id="成品CMS方案"><a href="#成品CMS方案" class="headerlink" title="成品CMS方案"></a>成品CMS方案</h2><ul><li><a href="http://www.tjpcms.com" target="_blank" rel="noopener">http://www.tjpcms.com</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
           
       </categories>
       
@@ -6083,6 +6117,23 @@
     </entry>
     
     <entry>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
+      
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>使用Java构建API的知识体系</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/simple-api-archtecture/</url>
@@ -6100,11 +6151,11 @@
     </entry>
     
     <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -6117,11 +6168,11 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -6236,23 +6287,6 @@
     </entry>
     
     <entry>
-      <title>最实用的Linux命令</title>
-      <link href="/linux/linux/common-useful-commands/"/>
-      <url>/linux/linux/common-useful-commands/</url>
-      
-        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>免费的CI/CD 工具</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
@@ -6263,6 +6297,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>最实用的Linux命令</title>
+      <link href="/linux/linux/common-useful-commands/"/>
+      <url>/linux/linux/common-useful-commands/</url>
+      
+        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -6338,11 +6389,11 @@
     </entry>
     
     <entry>
-      <title>Lambda 入门</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
       
       
       <categories>
@@ -6372,11 +6423,11 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      <title>Lambda 入门</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
       
       
       <categories>
@@ -6406,23 +6457,6 @@
     </entry>
     
     <entry>
-      <title>常用开源项目收集</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>VIM 简明命令</title>
       <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
       <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
@@ -6433,6 +6467,23 @@
       <categories>
           
           <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>常用开源项目收集</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自我管理 </category>
           
       </categories>
       
