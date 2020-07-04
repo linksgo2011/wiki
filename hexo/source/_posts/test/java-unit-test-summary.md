@@ -1261,11 +1261,40 @@ public class SuitesPractiseTest {
 
 #### No tests found  找不到单元测试
 
-#### initialization error 初始话失败
+
+
+遇到这种情况有可能是以下原因。
+
+
+
+1. 单元测试的方法被设置为了 private ,修改为 public 即可。junit5 不会存在这个问题。
+2. classpath 中存在多个版本的 junit 包。
+
+
+
+#### initialization error 初始化失败
+
+
+
+这种情况可能是把 @Test 注解注释了，IDEA 存在问题识别了是一个测试，但是启动器没有识别。另外遇到这类问题，也可以检查下 @Test 的注解引入的包路径是否正确。是否为 Junit 包下面的注解。
+
+
 
 #### IDEA 不出现执行按钮
 
 
+
+Junit 没有被 IDEA 识别，检查右侧的 Maven 是否拉取了正确的依赖。尝试重新加载 maven 依赖，然后重启 Idea。
+
+
+
+#### 明明加载 Junit 的依赖，但是 @Test 还是爆红
+
+
+
+如果你的依赖是使用 test 的 scope 加载，但是把测试类创建到了源代码目录，Junit 的相关类和注解是无法使用的。
+
+继续保持 scope 为 test，并把测试类移动到 test 模块下。
 
 
 
