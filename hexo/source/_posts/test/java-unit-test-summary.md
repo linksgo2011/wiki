@@ -1104,6 +1104,66 @@ public class PersonTest {
 
 
 
+Junit Rule 提供了一种类似拦截器的机制，用于拓展 junit 的各种行为，给每个测试添加一些通用的行为。常见的用途有全局设置超时时间、获取当前的测试名称、打印日志等。
+
+
+
+官方网站上给的一些例子不是很常用，例如 TemporaryFolder 这个 rule 提供了一个文件的模拟机制，但是更好的做法是使用 mock 工具。还有一个例子就是前面提到过的通过 rule 来完成的异常测试，后面也会讲到一个通过 rule 实现超时的技巧。
+
+
+
+我们来看一个最简单使用 rule 的例子，TestName 会被每个测试在运行期执行，并将当前的信息传递给 rule，通过这种方式获得测试名称。
+
+
+
+```java
+public class NameRuleTest {
+  @Rule
+  public final TestName name = new TestName();
+  
+  @Test
+  public void testA() {
+    assertEquals("testA", name.getMethodName());
+  }
+  
+  @Test
+  public void testB() {
+    assertEquals("testB", name.getMethodName());
+  }
+}
+```
+
+
+
+
+
+一般我们用到 rule 的地方不多，但是需要知道这种机制的存在，便于在需要的时候实现一些全局的逻辑，提高效率。
+
+例如，我们可以给每个测试生成一个专用的日志对象，用于记录测试过程中的信息。
+
+
+
+```java
+public class TestLogger implements TestRule {
+  private Logger logger;
+
+  public Logger getLogger() {
+    return this.logger;
+  }
+
+  @Override
+  public Statement apply(final Statement base, final Description description) {
+    return new Statement() {
+      @Override
+      public void evaluate() throws Throwable {
+        logger = Logger.getLogger(description.getTestClass().getName() + '.' + description.getDisplayName());
+        base.evaluate();
+      }
+    };
+  }
+}
+```
+
 
 
 ### 其他技巧
