@@ -1383,11 +1383,13 @@ Junit 没有被 IDEA 识别，检查右侧的 Maven 是否拉取了正确的依�
 ## 为 Spring 应用编写测试
 
 
+
 ### 认识 Runner
+
 ### SpringJUnit4ClassRunner
 ### Mock
 ### verify
-### 加载 classpath 文件
+### 加载 classpath 中的资源 
 
 
 

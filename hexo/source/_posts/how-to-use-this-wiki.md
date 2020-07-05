@@ -106,6 +106,9 @@ toc: true
 - 一位硕士学历的博主，对计算机科学很有研究 https://nezha.github.io/
 - 使用 java 完成的各种 demo https://github.com/nezha/java-learning-demo
 - Rogn 计算机基础知识非常扎实，对数据结构和算法有深入研究 https://www.cnblogs.com/lfri/p/9991925.html
+- 程序员吴师兄，博客的 UI 非常值得参考 https://www.cxyxiaowu.com/10830.html
+- 3y 大神的文章 https://github.com/ZhongFuCheng3y/3y
+- Java 全栈知识体系的作者 https://www.pdai.tech/
 
 
 
@@ -114,4 +117,14 @@ toc: true
 - 《DDD 小书》 接近完成
 - 《Java 单元测试入门小书》 进行中
 - 《按下回车的那一刻》 网络和计算机原理的科普小书籍
+
+
+
+## 我的策略
+
+
+
+统一 IP，单点突破，体系化。先从小册写起，不要被信息淹没。
+
+
 
