@@ -1,5 +1,5 @@
 ---
-title: 真人，首先是一个真实的人
+title: 道家的世界观
 categories: thinking
 toc: true
 recommend: true
