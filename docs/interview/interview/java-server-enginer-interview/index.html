@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Java 高级工程师面试合集 | web 工程师知识系统</title>
+  <title>Java 服务端高级工程师面试合集 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
   <meta name="description" content="这套资料只是整理了这些考点，和简单的解释，更为深入的细节，限于篇幅不可能包含，请参考相关资料学习。
@@ -22,7 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Java 高级工程师面试合集">
+  <meta property="og:title" content="Java 服务端高级工程师面试合集">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -56,7 +56,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Java 高级工程师面试合集</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-06-06</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">Java 服务端高级工程师面试合集</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-06-06</span></h1>
 </div>		
 
 <div class="row page">
@@ -135,7 +135,7 @@
 <p>jstack 5798  </p>
 </blockquote>
 <p>jstack 查出来的线程ID是16进制，可以把输出追加到文件，导出用记事本打开，再根据系统中的线程ID去搜索查看该ID的线程运行内容，可以和开发一起排查。</p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><h4 id="说一说计算机网络的分层模型。"><a href="#说一说计算机网络的分层模型。" class="headerlink" title="说一说计算机网络的分层模型。"></a>说一说计算机网络的分层模型。</h4><p><img src="/java/java/java-interview-questions/980266035_1565787665824_1ABB2DC3D76311944FFDBE9980FBAADD.jpeg" alt="img"></p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><h4 id="说一说计算机网络的分层模型。"><a href="#说一说计算机网络的分层模型。" class="headerlink" title="说一说计算机网络的分层模型。"></a>说一说计算机网络的分层模型。</h4><p><img src="/interview/interview/java-server-enginer-interview/980266035_1565787665824_1ABB2DC3D76311944FFDBE9980FBAADD.jpeg" alt="img"></p>
 <h4 id="路由器和交换机的区别？"><a href="#路由器和交换机的区别？" class="headerlink" title="路由器和交换机的区别？"></a>路由器和交换机的区别？</h4><p>交换机用于同一网络内部数据的快速传输转发决策通过查看二层头部完成转发不需要修改数据帧工作在 TCP/IP 协议的二层 —— 数据链路层工作简单，直接使用硬件处理路由器用于不同网络间数据的跨网络传输转发决策通过查看三层头部完成转发需要修改 TTL ，IP 头部校验和需要重新计算，数据帧需要重新封装工作在 TCP/IP 协议的三层 —— 网络层工作复杂，使用软件处理。</p>
 <p>三层交换机也能作为路由器使用。</p>
 <h4 id="请简单解释一下，arp协议和arp攻击。"><a href="#请简单解释一下，arp协议和arp攻击。" class="headerlink" title="请简单解释一下，arp协议和arp攻击。"></a>请简单解释一下，arp协议和arp攻击。</h4><p>地址解析协议。ARP攻击的第一步就是ARP欺骗。由上述“ARP协议的工作过程”我们知道，ARP协议基本没有对网络的安全性做任何思考，当时人们考虑的重点是如何保证网络通信能够正确和快速的完成——ARP协议工作的前提是默认了其所在的网络是一个善良的网络，每台主机在向网络中发送应答信号时都是使用的真实身份。不过后来，人们发现ARP应答中的IP地址和MAC地址中的信息是可以伪造的，并不一定是自己的真实IP地址和MAC地址，由此，ARP欺骗就产生了。</p>
@@ -149,7 +149,7 @@
 <li>服务器B关闭与客户端A的连接，发送一个FIN给客户端A。</li>
 <li>客户端A发回ACK报文确认，并将确认序号设置为收到序号加1。</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/308572_1538028144543_FCAC824D9C1E4301A60CF7D48A85E1C1.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/308572_1538028144543_FCAC824D9C1E4301A60CF7D48A85E1C1.png" alt="img"></p>
 <h4 id="TCP-为什么可靠一些"><a href="#TCP-为什么可靠一些" class="headerlink" title="TCP 为什么可靠一些"></a>TCP 为什么可靠一些</h4><p>三次握手，超时重传，滑动窗口，拥塞控制。</p>
 <h4 id="哪种应用场景会使用TCP协议，使用它的意义"><a href="#哪种应用场景会使用TCP协议，使用它的意义" class="headerlink" title="哪种应用场景会使用TCP协议，使用它的意义"></a>哪种应用场景会使用TCP协议，使用它的意义</h4><p>当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议</p>
 <h4 id="icmp协议，它的作用是什么？"><a href="#icmp协议，它的作用是什么？" class="headerlink" title="icmp协议，它的作用是什么？"></a>icmp协议，它的作用是什么？</h4><p>它是TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。</p>
@@ -672,7 +672,7 @@ class MethodInvokeTest {
 <p>这四个条件是死锁的必要条件，只要系统发生死锁，这些条件必然成立，而只要上述条件之一不满足，就不会发生死锁。</p>
 <h4 id="synchronized-可重入吗？怎么实现的？"><a href="#synchronized-可重入吗？怎么实现的？" class="headerlink" title="synchronized 可重入吗？怎么实现的？"></a>synchronized 可重入吗？怎么实现的？</h4><p>可重入。每个锁关联一个线程持有者和一个计数器。当计数器为0时表示该锁没有被任何线程持有，那么任何线程都都可能获得该锁而调用相应方法。当一个线程请求成功后，JVM会记下持有锁的线程，并将计数器计为1。此时其他线程请求该锁，则必须等待。而该持有锁的线程如果再次请求这个锁，就可以再次拿到这个锁，同时计数器会递增。当线程退出一个synchronized方法/块时，计数器会递减，如果计数器为0则释放该锁。</p>
 <h4 id="非公平锁和公平锁在-reetrantlock-里的实现过程是怎样的。"><a href="#非公平锁和公平锁在-reetrantlock-里的实现过程是怎样的。" class="headerlink" title="非公平锁和公平锁在 reetrantlock 里的实现过程是怎样的。"></a>非公平锁和公平锁在 reetrantlock 里的实现过程是怎样的。</h4><p>如果一个锁是公平的，那么锁的获取顺序就应该符合请求的绝对时间顺序，FIFO。对于非公平锁，只要CAS设置同步状态成功，则表示当前线程获取了锁，而公平锁还需要判断当前节点是否有前驱节点，如果有，则表示有线程比当前线程更早请求获取锁，因此需要等待前驱线程获取并释放锁之后才能继续获取锁。</p>
-<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><h4 id="Java-中异常的种类有哪些？"><a href="#Java-中异常的种类有哪些？" class="headerlink" title="Java 中异常的种类有哪些？"></a>Java 中异常的种类有哪些？</h4><p><img src="/java/java/java-interview-questions/exception.jpg" alt="img" style="zoom:67%;"></p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><h4 id="Java-中异常的种类有哪些？"><a href="#Java-中异常的种类有哪些？" class="headerlink" title="Java 中异常的种类有哪些？"></a>Java 中异常的种类有哪些？</h4><p><img src="/interview/interview/java-server-enginer-interview/exception.jpg" alt="img" style="zoom:67%;"></p>
 <h4 id="运行时异常与受检异常有什么区别？"><a href="#运行时异常与受检异常有什么区别？" class="headerlink" title="运行时异常与受检异常有什么区别？"></a>运行时异常与受检异常有什么区别？</h4><p>异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常操作中可能遇到的异常，是一种常见运行错误，只要程序设计得没有问题通常就不会发生。受检异常跟程序运行的上下文环境有关，即使程序设计无误，仍然可能因使用的问题而引发。Java编译器要求方法必须声明抛出可能发生的受检异常，但是并不要求必须声明抛出未被捕获的运行时异常。异常和继承一样，是面向对象程序设计中经常被滥用的东西，在Effective Java中对异常的使用给出了以下指导原则：</p>
 <ul>
 <li>不要将异常处理用于正常的控制流（设计良好的API不应该强迫它的调用者为了正常的控制流而使用异常）</li>
@@ -795,7 +795,7 @@ serverChannel.accept(serverChannel, new CompletionHandler&lt;AsynchronousSocketC
 <h4 id="eden区和survial区的含义以及工作原理？"><a href="#eden区和survial区的含义以及工作原理？" class="headerlink" title="eden区和survial区的含义以及工作原理？"></a>eden区和survial区的含义以及工作原理？</h4><p>目前主流的虚拟机实现都采用了分代收集的思想，把整个堆区划分为新生代和老年代；新生代又被划分成Eden 空间、 From Survivor 和 To Survivor 三块区域。</p>
 <p>我们把Eden : From Survivor : To Survivor 空间大小设成 8 : 1 : 1 ，对象总是在 Eden 区出生， From Survivor 保存当前的幸存对象， To Survivor 为空。一次 gc 发生后： 1）Eden 区活着的对象 ＋ From Survivor 存储的对象被复制到 To Survivor ；<br>2) 清空 Eden 和 From Survivor ； 3) 颠倒 From Survivor 和 To Survivor 的逻辑关系： From 变 To ， To 变 From 。可以看出，只有在 Eden 空间快满的时候才会触发 Minor GC 。而 Eden 空间占新生代的绝大部分，所以 Minor GC 的频率得以降低。当然，使用两个 Survivor 这种方式我们也付出了一定的代价，如 10% 的空间浪费、复制对象的开销等。</p>
 <h4 id="JVM分区都有哪些？"><a href="#JVM分区都有哪些？" class="headerlink" title="JVM分区都有哪些？"></a>JVM分区都有哪些？</h4><p>1.8 之前</p>
-<p><img src="/java/java/java-interview-questions/308572_1537962738034_560D4514BC25F890A38519E8A401BBF0.png" alt="img" style="zoom:60%;"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/308572_1537962738034_560D4514BC25F890A38519E8A401BBF0.png" alt="img" style="zoom:60%;"></p>
 <p>java 内存通常被划分为5个区域：</p>
 <ul>
 <li>程序计数器（Program Count Register）用于实现指令周期循环</li>
@@ -805,14 +805,14 @@ serverChannel.accept(serverChannel, new CompletionHandler&lt;AsynchronousSocketC
 <li>堆（Heap）</li>
 </ul>
 <p>1.8同1.7比，最大的差别就是：<strong>元数据区取代了永久代</strong>。元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：<strong>元数据空间并不在虚拟机中，而是使用本地内存</strong>。</p>
-<p><img src="/java/java/java-interview-questions/70.jpeg" alt="内存分布"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/70.jpeg" alt="内存分布"></p>
 <p>java 内存结构概念的区分：</p>
 <ul>
 <li>Java 内存模型（Java Memory Model（JMM）），用于多线程编程，例如 ThreadLocal 和 全局变量的区别。</li>
 <li>JVM 内存结构（JVM内存分区）Java虚拟机的运行时区域有关，用于内存调优。</li>
 <li>Java 对象结构，用于日常编码的优化。</li>
 </ul>
-<h4 id="类的加载过程有哪些？"><a href="#类的加载过程有哪些？" class="headerlink" title="类的加载过程有哪些？"></a>类的加载过程有哪些？</h4><p><img src="/java/java/java-interview-questions/308572_1537962641528_95106A90F455887E4A4B298735A4641B.png" alt="img" style="zoom:60%;"></p>
+<h4 id="类的加载过程有哪些？"><a href="#类的加载过程有哪些？" class="headerlink" title="类的加载过程有哪些？"></a>类的加载过程有哪些？</h4><p><img src="/interview/interview/java-server-enginer-interview/308572_1537962641528_95106A90F455887E4A4B298735A4641B.png" alt="img" style="zoom:60%;"></p>
 <p>JVM类加载机制分为五个部分：</p>
 <ol>
 <li>加载，加载是类加载过程中的一个阶段，这个阶段会在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的入口。注意这里不一定非得要从一个Class文件获取，这里既可以从ZIP包中读取（比如从jar包和war包中读取），也可以在运行时计算生成（动态代理），也可以由其它文件生成（比如将JSP文件转换成对应的Class类）。</li>
@@ -822,7 +822,7 @@ serverChannel.accept(serverChannel, new CompletionHandler&lt;AsynchronousSocketC
 <li>初始化。初始化阶段是类加载最后一个阶段，前面的类加载阶段之后，除了在加载阶段可以自定义类加载器以外，其它操作都由JVM主导。到了初始阶段，才开始真正执行类中定义的Java程序代码。</li>
 </ol>
 <p>JVM通过双亲委派模型进行类的加载，当然我们也可以通过继承java.lang.ClassLoader实现自定义的类加载器。</p>
-<p><img src="/java/java/java-interview-questions/308572_1537962385800_7142B8354CA8A352B2B805F997C71549.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/308572_1537962385800_7142B8354CA8A352B2B805F997C71549.png" alt="img"></p>
 <p>当一个类加载器收到类加载任务，会先交给其父类加载器去完成，因此最终加载任务都会传递到顶层的启动类加载器，只有当父类加载器无法完成加载任务时，才会尝试执行加载任务。采用双亲委派的一个好处是比如加载位于rt.jar包中的类java.lang.Object，不管是哪个加载器加载这个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了使用不同的类加载器最终得到的都是同样一个Object对象。</p>
 <p>例如 Spring boot项目加载过程：</p>
 <ul>
@@ -891,7 +891,7 @@ serverChannel.accept(serverChannel, new CompletionHandler&lt;AsynchronousSocketC
 <p>@Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired;只按照byType注入。</p>
 <p>@Autowired注解是按照类型（byType）装配依赖对象，默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用。</p>
 <p>@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource。@Resource有两个重要的属性：name和type，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以，如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不制定name也不制定type属性，这时将通过反射机制使用byName自动注入策略。</p>
-<h4 id="请介绍一下bean的生命周期"><a href="#请介绍一下bean的生命周期" class="headerlink" title="请介绍一下bean的生命周期"></a>请介绍一下bean的生命周期</h4><p><img src="/java/java/java-interview-questions/308572_1537967995043_4D7CF33471A392D943F00167D1C86C10.png" alt="img" style="zoom:33%;"></p>
+<h4 id="请介绍一下bean的生命周期"><a href="#请介绍一下bean的生命周期" class="headerlink" title="请介绍一下bean的生命周期"></a>请介绍一下bean的生命周期</h4><p><img src="/interview/interview/java-server-enginer-interview/308572_1537967995043_4D7CF33471A392D943F00167D1C86C10.png" alt="img" style="zoom:33%;"></p>
 <h4 id="Spring支持的事务管理类型有哪些？"><a href="#Spring支持的事务管理类型有哪些？" class="headerlink" title="Spring支持的事务管理类型有哪些？"></a>Spring支持的事务管理类型有哪些？</h4><p>Spring支持编程式事务管理和声明式事务管理。许多Spring框架的用户选择声明式事务管理，因为这种方式和应用程序的关联较少，因此更加符合轻量级容器的概念。声明式事务管理要优于编程式事务管理，尽管在灵活性方面它弱于编程式事务管理，因为编程式事务允许你通过代码控制业务。</p>
 <p>事务分为全局事务和局部事务。全局事务由应用服务器管理，需要底层服务器JTA支持（如WebLogic、WildFly等）。局部事务和底层采用的持久化方案有关，例如使用JDBC进行持久化时，需要使用Connetion对象来操作事务；而采用Hibernate进行持久化时，需要使用Session对象来操作事务。</p>
 <p>这些事务的父接口都是PlatformTransactionManager。Spring的事务管理机制是一种典型的策略模式，PlatformTransactionManager代表事务管理接口，该接口定义了三个方法，该接口并不知道底层如何管理事务，但是它的实现类必须提供getTransaction()方法（开启事务）、commit()方法（提交事务）、rollback()方法（回滚事务）的多态实现，这样就可以用不同的实现类代表不同的事务管理策略。使用JTA全局事务策略时，需要底层应用服务器支持，而不同的应用服务器所提供的JTA全局事务可能存在细节上的差异，因此实际配置全局事务管理器是可能需要使用JtaTransactionManager的子类，如：WebLogicJtaTransactionManager（Oracle的WebLogic服务器提供）、UowJtaTransactionManager（IBM的WebSphere服务器提供）等。</p>
@@ -1276,7 +1276,7 @@ private Purchase(Builder builder) {
 <li>Flux 模式</li>
 </ol>
 <p>Flux的核心思想就是数据和逻辑永远单向流动，保持整个应用的数据一致性。</p>
-<p><img src="/java/java/java-interview-questions/image-20200607180425228.png" alt="image-20200607180425228" style="zoom:50%;"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/image-20200607180425228.png" alt="image-20200607180425228" style="zoom:50%;"></p>
 <h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><h4 id="常见的-UML-图例有哪些？"><a href="#常见的-UML-图例有哪些？" class="headerlink" title="常见的 UML 图例有哪些？"></a>常见的 UML 图例有哪些？</h4><ul>
 <li><p>用例图（use case diagram）</p>
 </li>
@@ -1293,23 +1293,23 @@ private Purchase(Builder builder) {
 <ol>
 <li>继承，对类而言</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/082337119585644.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/082337119585644.png" alt="img"></p>
 <ol start="2">
 <li>实现，对接口而言</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/082337272699031.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/082337272699031.png" alt="img"></p>
 <ol start="3">
 <li>聚合，A 中拥有一个 B，但 B 脱离于 A 仍然可以独立存活。</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/082338012654178-20200607181538580.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/082338012654178-20200607181538580.png" alt="img"></p>
 <ol start="4">
 <li>组合，A 中拥有一个 B，B 脱离 A 后在系统中没有任何存活的意义。</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/082338094143285.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/082338094143285.png" alt="img"></p>
 <ol start="5">
 <li>依赖，B 的变化会影响 A，则 A 依赖于 B。</li>
 </ol>
-<p><img src="/java/java/java-interview-questions/082339218484060.png" alt="img"></p>
+<p><img src="/interview/interview/java-server-enginer-interview/082339218484060.png" alt="img"></p>
 <h3 id="性能设计"><a href="#性能设计" class="headerlink" title="性能设计"></a>性能设计</h3><h4 id="MySQL-单机并发多高？"><a href="#MySQL-单机并发多高？" class="headerlink" title="MySQL 单机并发多高？"></a>MySQL 单机并发多高？</h4><h4 id="Nginx-单机并发多高？"><a href="#Nginx-单机并发多高？" class="headerlink" title="Nginx 单机并发多高？"></a>Nginx 单机并发多高？</h4><h4 id="Spring-boot的项目单机并发多高？"><a href="#Spring-boot的项目单机并发多高？" class="headerlink" title="Spring boot的项目单机并发多高？"></a>Spring boot的项目单机并发多高？</h4><h4 id="Nodejs-单机并发多高？"><a href="#Nodejs-单机并发多高？" class="headerlink" title="Nodejs 单机并发多高？"></a>Nodejs 单机并发多高？</h4><h4 id="Redis-单机并发多高？"><a href="#Redis-单机并发多高？" class="headerlink" title="Redis 单机并发多高？"></a>Redis 单机并发多高？</h4><h4 id="如何计算系统容量？"><a href="#如何计算系统容量？" class="headerlink" title="如何计算系统容量？"></a>如何计算系统容量？</h4><h3 id="场景问题"><a href="#场景问题" class="headerlink" title="场景问题"></a>场景问题</h3><h4 id="现在有十万个单词，请你找出重复次数最多的十个。"><a href="#现在有十万个单词，请你找出重复次数最多的十个。" class="headerlink" title="现在有十万个单词，请你找出重复次数最多的十个。"></a>现在有十万个单词，请你找出重复次数最多的十个。</h4><p>可以通过 hash 进行分流到不同的机器槽位上，然后分布式并行运算。</p>
 <h4 id="这里有10万个数，请你按照从小到大的顺序，将他们输出"><a href="#这里有10万个数，请你按照从小到大的顺序，将他们输出" class="headerlink" title="这里有10万个数，请你按照从小到大的顺序，将他们输出"></a>这里有10万个数，请你按照从小到大的顺序，将他们输出</h4><p>先划分成多个小文件，送进内存排序，然后再采用多路归并排序。</p>
 <h4 id="处理海量数据-的问题，怎样在10亿个数中，找出最大的10个数，谈谈思路"><a href="#处理海量数据-的问题，怎样在10亿个数中，找出最大的10个数，谈谈思路" class="headerlink" title="处理海量数据 的问题，怎样在10亿个数中，找出最大的10个数，谈谈思路"></a>处理海量数据 的问题，怎样在10亿个数中，找出最大的10个数，谈谈思路</h4><p>建立一个大小为10的小根堆。</p>
@@ -1361,8 +1361,6 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1672,12 +1670,6 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-			
-			
-		
-			
-		
 	
 		
 	
@@ -1718,8 +1710,6 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1734,16 +1724,10 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
-		
-			
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1790,8 +1774,6 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1817,15 +1799,11 @@ private Purchase(Builder builder) {
 	
 		
 	
-		
-			
 		
 	
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1842,8 +1820,6 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1911,13 +1887,9 @@ private Purchase(Builder builder) {
 	
 		
 	
-		
-			
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1951,15 +1923,11 @@ private Purchase(Builder builder) {
 	
 		
 	
-		
-			
 		
 	
 		
 	
 		
-			
-		
 	
 		
 	
@@ -1982,11 +1950,7 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
-		
-			
 		
 	
 		
@@ -2034,12 +1998,8 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
-			
-		
 	
 		
 	
@@ -2097,8 +2057,6 @@ private Purchase(Builder builder) {
 	
 		
 	
-		
-			
 		
 	
 		
@@ -2110,19 +2068,15 @@ private Purchase(Builder builder) {
 		
 	
 		
-			
-		
 	
 		
 	
 		
 	
 		
-			
-		
 	
 		
-			
+	
 		
 	
 		
@@ -2175,11 +2129,11 @@ private Purchase(Builder builder) {
 	
 	
 	
-		<li class="prev"><a href="/java/java/java-debug/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/java/java/java-collections/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
