@@ -1,6 +1,6 @@
 ---
 title: Java web 方向技术核心
-categories: 面试
+categories: 自我管理
 toc: true
 ---
 

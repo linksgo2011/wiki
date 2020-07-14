@@ -1,8 +1,16 @@
 ---
-title: Java 技术栈面试问题
-categories: 面试
+title: Mysql 性能优化
+categories: mysql
 toc: true
 ---
+
+
+
+## Java 基础
+
+
+
+
 
 
 
@@ -57,6 +65,8 @@ toc: true
 24、如何输入字符为十六进制数字？
 
 25、如何显示前 50 行？
+
+
 
 ## MySQL 性能优化
 
