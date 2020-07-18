@@ -192,6 +192,18 @@ Vuepress 是一个功能比较强大的文档生成系统，同时可以使用 v
 
 
 
+## 微信排版
+
+https://mdnice.com/
+
+
+
+## 简历排版
+
+https://github.com/mdnice/markdown-resume
+
+
+
 ### 写书
 
 简单可以使用 markdown 分章节，Spring 和各种框架文档都是通过 adoc 写的，非常容易编排一本书，以及进行章节跳转。

@@ -110,8 +110,19 @@ toc: true
 - 3y 大神的文章 https://github.com/ZhongFuCheng3y/3y
 - Java 全栈知识体系的作者 https://www.pdai.tech/
 - 高中学历，计算机基础扎实 https://github.com/woai3c
+- 该作者的设计风格极好，适合模仿 https://drawcode.mdnice.com/
 
 
+
+## 优秀的人
+
+- http://zihua.li/pages/about
+
+- https://github.com/walkor
+
+- https://github.com/guanpengchn?tab=overview&from=2020-07-01&to=2020-07-17
+
+  
 
 ## 我的策略
 

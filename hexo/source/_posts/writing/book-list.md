@@ -60,8 +60,11 @@ toc: true
 
 
 
+
+
 ## 参考书单
 
 - https://github.com/keithnull/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md
 - https://github.com/woai3c/recommended-books
+- https://github.com/guanpengchn/awesome-books
 
