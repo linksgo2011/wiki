@@ -6,6 +6,14 @@ categories: 质量保证
 
 
 
+已经剥离为单独的仓库，并保持更新：
+
+https://github.com/linksgo2011/java-unit-testing-book
+
+----------------------
+
+
+
 [TOC]
 
 
