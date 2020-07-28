@@ -1,6 +1,6 @@
 ---
 title: 位运算
-categories: arithmetic
+categories: computer-science
 toc: true
 ---
 

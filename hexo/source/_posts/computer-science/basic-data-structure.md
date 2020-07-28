@@ -1,6 +1,6 @@
 ---
 title: 数据结构中的基本概念
-categories: arithmetic
+categories: computer-science
 toc: true
 ---
 
