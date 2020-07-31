@@ -3,11 +3,45 @@
   
     
     <entry>
+      <title>敏捷方法基线</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/0-agile-overview/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/0-agile-overview/</url>
+      
+        <content type="html"><![CDATA[<p>每一个软件公司都有一套独一无二的项目管理方法。现实中有很多敏捷方法，例如 Scrum 在每一个公司都不一样。在实践敏捷时往往需要修改和定制，一套大而全的方法论往往不能广泛适用，于是我们整理了一套敏捷实践的最小集。</p><p>本系列是一个敏捷管理方法基线，用于轻量级落地敏捷实践，并易于拓展和定制。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 敏捷开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>敏捷团队关键角色</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/team-role/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/team-role/</url>
+      
+        <content type="html"><![CDATA[<p>一个敏捷团队的关键角色可以分为核心层和能力层两层，拆分成两个层的原因是对他们的评价、考核目标不一样，期望也是不一样的。</p><p>两层的简介如下：</p><ol><li><p>核心层决定了团队的结构稳定，应该由固定的人员构成，包括 PO、PM、Techlead 构成，核心层表述了团队的责任划分，以及发展的方向。</p></li><li><p>能力层由各个BA、开发、测试、设计等角色组成。能力层表述了团队成员在某一项专业能力的方面的职责。</p></li></ol><p>能力层和核心层可能存在相互交叉，但是相关人员需要意识自身的多个角色。</p><h2 id="核心角色"><a href="#核心角色" class="headerlink" title="核心角色"></a>核心角色</h2><p>PO、PM、Techlead 相关的定位和职责。</p><h3 id="PO-Product-Owner"><a href="#PO-Product-Owner" class="headerlink" title="PO Product Owner"></a>PO Product Owner</h3><p>PO 的定位是响应来源于产品的各种需求，这些需求是零散、无序的。PO 需要决定那些需求是真实需求，并评估价值。PO 需要清楚的知道那些需求能落入开发的软件产品，并且 PO 有权利拒绝给产品带来伤害的需求，并甄别出高价值的需求。</p><p>PO 职责：</p><ul><li>负责产品的规划和体验改进</li><li>支持产品运营，以价值驱动产品演进</li><li>统筹团队的所有需求，进行优先级排序，计划迭代</li><li>跨产品团队进行业务方案与设计的协调与决策</li></ul><p>PO 拥有选择需求的权利，也应该承担相应的责任。PO 需要对市场负责，并梳理来自市场的需求。一些公司把类似的角色叫做 Product Manager，但是缩写也是 PM，会和 Project Manager 冲突，为了区分开来，叫做 PO。</p><h3 id="PM-Project-Manager"><a href="#PM-Project-Manager" class="headerlink" title="PM Project Manager"></a>PM Project Manager</h3><p>在敏捷项目中，按照项目或者迭代的方式计划任务。PM 的职责非常明确，就是项目管理。在敏捷项目中，一般按照迭代进行，一般以迭代为单位进行项目管理，因此有时候又叫 Iteration Manager。</p><p>PM 职责：</p><ul><li><p>负责和外部团队沟通</p></li><li><p>制定团队计划，规划里程碑等工作</p></li><li><p>负责促成各种活动/会议按时、高效的召开</p></li><li><p>保护团队免受干扰和威胁</p></li><li><p>保障流程，裁定团队协作规则</p></li><li><p>识别和消除团队的障碍，保证团队运作流畅</p></li></ul><p>PM 是一个服务型的管理者，负责将 PO 的需求装入迭代，并指导团队按照一定的方式运行。</p><h3 id="Tech-Lead"><a href="#Tech-Lead" class="headerlink" title="Tech Lead"></a>Tech Lead</h3><p>在软件开发团队中，技术人员的统筹工作也需要有人完成，例如负责技术选型、架构设计等工作。一般由一位技术经验丰富的开发人员担任。</p><p>Tech Lead 的职责：</p><ul><li>负责团队技术架构设计和技术选型</li><li>开发团队内部基础运维工作，例如 CI/CD 的维护</li><li>协调和支持各团队内技术负责人的迭代设计工作</li><li>推动团队的技术能力提升，质量内建，持续改进</li><li>制定代码风格、技术规范等一系列技术实践的规则</li><li>负责代码评审、团队技术能力建设、安全评估、风险控制、线上问题响应等技术管理工作</li><li>技术债务的识别、优先级排序、解决</li><li>和 PM、PO 对接</li></ul><p>Tech Lead 是软件开发团队中最难以被取代的角色，需要对技术决策有一定预判力的人员担任。除此之外 Tech Lead 往往还需要扮演管理者、技术专家、培训师相关的角色，任务拆解、解决疑难问题、带新人等相应职责都需要承担。</p><h2 id="能力层角色"><a href="#能力层角色" class="headerlink" title="能力层角色"></a>能力层角色</h2><p>能力层角色，是敏捷团队中能在专业领域持续、专注输出的角色。例如开发、BA、测试和 UI/UX 设计等人员。</p><h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><p>开发人员的职责：</p><ul><li>负责用户故事的需求澄清、设计、开发</li><li>单元测试编写、业务自测</li><li>修复各个环境出现的问题</li><li>编写技术文档</li><li>编写上线脚本、数据迁移脚本</li><li>技术方案的调研</li></ul><p>对于开发人员来说，高效率、高质量完成用户故事的设计和开发工作，是其主要任务。初次之外，编写文档、单元测试也是非常重要的任务。</p><h3 id="BA-Business-Analyst"><a href="#BA-Business-Analyst" class="headerlink" title="BA Business Analyst"></a>BA Business Analyst</h3><p>BA 的职责为对 PO 的需求进一步细化，编写出清晰、容易理解、满足系统一致性和完整性的用户故事。</p><p>BA 的职责：</p><ul><li>同 PO、UX 和 开发对齐业务需求，细化用户故事</li><li>整理用户故事中的业务逻辑</li><li>输出原型图，和 UI 对齐软件界面和业务逻辑的关系</li><li>分析非功能性需求，如用户的边界输入、性能、提示、多语言等</li><li>和测试对齐业务验收规则</li></ul><p>BA 需要了解技术，包括系统架构、技术选型，对系统的整体性认识要足够。能确定某些需求是否能在特定的技术和逻辑背景下能否被完成。</p><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>敏捷开发团队对测试的能力的要求一般超出了传统测试人员的范围，通常要求测试具备自动化测试的能力。</p><p>测试的职责：</p><ul><li>对用户故事进行功能测试</li><li>制定测试策略</li><li>编写自动化测试</li><li>搭建测试环境和准备测试数据</li><li>维护测试用例</li><li>度量团队质量指标，例如缺陷密度</li><li>分析和重现收到的缺陷</li></ul><p>保证产品的质量才是测试工程师的主要职责，功能测试只是其中非常小的一部分职责。</p><h3 id="UI-UX"><a href="#UI-UX" class="headerlink" title="UI/UX"></a>UI/UX</h3><p>设计人员的相关职责相对较少，但互联网产品注重用户体验，设计人员的要求被提高了。</p><p>设计人员的职责：</p><ul><li>输出软件产品的用户界面</li><li>持续以优化软件产品的交互设计</li><li>统一软件产品的风格，输出 VI 系统</li><li>维护设计系统，对常用组件进行规范化</li><li>对可用性进行分析，例如响应式布局下各种屏幕尺寸的设计</li></ul><p>设计人员的核心能力是设计系统的输出，对统一软件产品的交互和 UI 逻辑有非常大的必要。</p><h2 id="团队梯度"><a href="#团队梯度" class="headerlink" title="团队梯度"></a>团队梯度</h2><p>敏捷团队人数一般控制在点两个披萨就能吃饱的范围内。因此核心人员都是单个作战，这就需要必要时能力层角色能作为梯度能力存在，当 BA 或者 Tech Lead 离职、请假的情况下能及时替补相应的职责。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 敏捷开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>系统思考的方法</title>
       <link href="/computer-science/computer-science/systematic-thinking/"/>
       <url>/computer-science/computer-science/systematic-thinking/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>系统科学方法是指用系统的观点来认识和处理问题的各种方法的总称。</p><p>其中，系统科学方法中模型方法是最重要的方法。研究系统具体来说就是通过它的模型来研究，模型是对系统原型的某一个方面的抽象，是科学认识的基础和决定性环节。</p><p>模型和实现是认识与实践的一种具体体现，充分反应了抽象、理论和设计的三个过程中的基本内容系统设计就是各种模型的转换，例如对象模型和数据表模型的转换。</p><p><img src="/computer-science/computer-science/systematic-thinking/image-20200730072424945.png" alt="image-20200730072424945" style="zoom:50%;"></p><p>但是另外一方面，模型都是失真的，没有一个全能的模型能反映出系统的方方面面，否则这就是这个系统本身。系统本身要素过多，人脑的处理能力是有限的，难以对系统的逻辑全面的分析。</p><h2 id="系统科学的意义"><a href="#系统科学的意义" class="headerlink" title="系统科学的意义"></a>系统科学的意义</h2><h3 id="提高对复杂系统的理解能力"><a href="#提高对复杂系统的理解能力" class="headerlink" title="提高对复杂系统的理解能力"></a>提高对复杂系统的理解能力</h3><p>人的能力是有限的，对于一个复杂问题无法整体装入大脑完成处理。人的智力水平虽然有差距，但是没有数量级的差距，为什么人类在认知和改造客观世界中表现出巨大的差异呢？</p><p>答案取决于是否善于利用工具，和充分利用工具进行分析和实践。数学是一种工具，乘法可以对重复的加法进行化简，对数可以对重复的乘法运算进行化简。</p><h3 id="系统科学应对软件的复杂性"><a href="#系统科学应对软件的复杂性" class="headerlink" title="系统科学应对软件的复杂性"></a>系统科学应对软件的复杂性</h3><p>《人月神话》一书对软件系统的复杂性做了说明。包含复杂度、一致性、可变性、不可见性等方面。</p><ol><li>复杂度。软件开发面对的是客观世界模型的构建问题，相对于物理学等自然科学，可以忽略大量无关的元素和性质，软件工程师却不能简单地这样操作。构成软件复杂度的实体和关系对学习和理解造成负担，从而是软件开发逐渐的演变的难以控制。软件设计的关键在于能否控制和降低软件系统而复杂度。</li><li>一致性。大型软件开发过程中，为了保持各个子系统之间的逻辑一致性，软件必须随着时间的推移而修改，如果其中没有及时被抽象，软件的复杂性会随着时间的增加而增加。</li><li>可变性。软件相比硬件会持续面对变更的压力，这种变更又会造成一致性的破坏，这是软件开发面临的最大困难。</li><li>不可见性。软件即使通过图表来描述其结构也无法反应其复杂度和细节，除非深入查看代码。不可见性让软件开发的沟通成本增大。另外，往往图表、设计模型没有随着软件的更新而同步更新。未持续维护和更新的模型，是软件开发变成混沌系统的主要原因。</li></ol><p>软件设计是结构化的，描述的是系统如何组成的问题。这种系统很难形式化的描述，只能通过结构化的方式描述。</p><h2 id="系统科学的有用概念"><a href="#系统科学的有用概念" class="headerlink" title="系统科学的有用概念"></a>系统科学的有用概念</h2><p>系统科学中有一些概念对研究系统非常有帮助，可以为系统分析本身”统一语言“。</p><h3 id="系统和子系统"><a href="#系统和子系统" class="headerlink" title="系统和子系统"></a>系统和子系统</h3><p>系统是指由相互联系、相互作用的若干元素构成的、具有特定功能的统一整体。一个大的系统往往是复杂的，它通常可以划分为一系列较小的系统，这些系统称为子系统。</p><h3 id="结构和结构分析"><a href="#结构和结构分析" class="headerlink" title="结构和结构分析"></a>结构和结构分析</h3><p>结构是指系统内各个组成部分（元素和子系统）之间相互联系、相互作用的框架。结构分析的重要内容就是划分子系统，并研究各个子系统的结构和联系。</p><h3 id="层次和层次分析"><a href="#层次和层次分析" class="headerlink" title="层次和层次分析"></a>层次和层次分析</h3><p>层次是划分系统结构的一个重要工具，也是结构分析的主要方式。在系统分析中，明确层次关系可以避免对话时出现不对等，明确研究的问题在哪一个层次上可以避免因层次混淆而造成的概念混乱。</p><h3 id="环境、行为、功能"><a href="#环境、行为、功能" class="headerlink" title="环境、行为、功能"></a>环境、行为、功能</h3><p>系统的环境是指系统存在的背景，以及一个系统之外的额一切与它有联系的事物组成的集合。系统要发挥她应用的作用，一定要适应环境的要求。</p><p>系统的行为是指系统相对于它的环境所表现出来的一切变化，行为属于系统自身的变化，同时反映环境对系统的影响和作用。</p><p>系统的功能是指系统行为所引起的、有利于环境中某些事物的作用。</p><h3 id="状态、演化和过程"><a href="#状态、演化和过程" class="headerlink" title="状态、演化和过程"></a>状态、演化和过程</h3><p>状态是指系统有哪些可以观察和是别的形态特征，状态可以通过系统的一些定量特征来分析。</p><p>演化是指系统的结构、状态、特征、行为等随着时间的推移而发生的变化。系统的演化性是系统的基本特征。</p><p>过程是指系统的演化所经过的发展阶段，它由若干子过程组成。过程的基本元素是动作，动作不能再分。</p><h2 id="系统科学的原则"><a href="#系统科学的原则" class="headerlink" title="系统科学的原则"></a>系统科学的原则</h2><h3 id="整体性"><a href="#整体性" class="headerlink" title="整体性"></a>整体性</h3><p>量变引起质变。在分析系统时，一个显著的特征是整体的复杂性远远地大于局部。100 个子系统组成的系统，远远复杂于 3 个子系统组成的系统。</p><p>根据集合论的思想，多个子系统构成的系统复杂性为子系统的笛卡尔积。亚里士多德提到过，”整体大于部分之和“。同时有一些子系统的特性在大系统中会丢失，某些特殊情况下，当部分构成整体时，出现了部分所不具有的某些性质，同时也可能丢失了组成部分单独存在时具备的某些性质。</p><p>这个规律叫做 ”整体不等于部分之和“ 原理，也称为 ”贝塔朗菲定律“。系统的整体功能是否大于或者小于部分功能之和，关键是系统内部元素的相互联系和组合方式。</p><p>例如微服务系统的服务组织方式决定了系统的实际能力。</p><h3 id="动态原则"><a href="#动态原则" class="headerlink" title="动态原则"></a>动态原则</h3><p>动态原则是指系统总是动态的，永远处于运动变化之中。人们在科学研究中经常采用理想的 ”孤立系统“ 或者 ”闭合系统“ 的抽象。但是在实际中，需要考虑系统与系统之间，系统与外部环境之间的信息流动。</p><p>考虑系统与系统之间存在互相影响的关系就是动态原则。</p><h3 id="最优化原则"><a href="#最优化原则" class="headerlink" title="最优化原则"></a>最优化原则</h3><p>系统的运行应该处于一种稳定状态，这种状态由一些正反馈或者负反馈调节。</p><p>人体这个系统的 PH  往往受到多种调节渠道完成调节，让 PH 最优，并保持稳定。在运行良好的 IT 系统中，系统的容量应该由某种反馈机制调节，例如系统用户激增会触发限流机制，让系统持续运行。</p><p>最优化原则也是系统的平衡原则。</p><h3 id="模型化原则"><a href="#模型化原则" class="headerlink" title="模型化原则"></a>模型化原则</h3><p>模型化方法是系统科学的基本方法。模型可以通过符号、图表或者形式化的语言描述，用模型代替真实系统进行模拟实验，达到认识真实系统特征和规律的方法。</p><p>便于模型的分析和使用一般模型又分为以下几类：</p><ol><li>概念模型。概念模型指系统中元素的关系，一般以静态实体呈现，并具有层次化特征。可以通过概念图来表达概念的层次关系。</li><li>逻辑模型。逻辑模型代表这个系统中，各个概念模型具有的行为和相互影响。可以通过影响图、因果图来表达元素的逻辑关系。</li><li>数学模型。数学模型是更为抽象、定量的描述系统的根本规律，例如分布式系统中两军问题的证明。一般通过形式化的语言进行描述，例如布尔代数、形式逻辑等。</li></ol><h3 id="模型分析的基本原则"><a href="#模型分析的基本原则" class="headerlink" title="模型分析的基本原则"></a>模型分析的基本原则</h3><ol><li>抽象第一的原则。抽象，就是要对实际事物进行人为处理，抽取所关心的、共同的、本质特征的属性。抽象模型时候应该注意单一维度的抽象，例如软件逻辑的模型不需要关心界面如何展示， UI 的模型可以有设计系统、样式规则承担。</li><li>层次划分的原则。在子系统划分时，应该先按照层次结构请进行初步的拆分（水平划分），并在相同的层次进行划分（垂直划分）。系统划分需要满足等价关系的三个条件（自反性、对称性和传递性）。通过水平和垂直的划分可以逐步降低复杂性。</li></ol><h2 id="模型分析的操作方法"><a href="#模型分析的操作方法" class="headerlink" title="模型分析的操作方法"></a>模型分析的操作方法</h2><p>模型分析包括了建模、表达、验证和实现 4 个方面的内容。</p><ul><li>建模。建立模型的过程实际上是清洗、简化、抽象的过程。通过清洗这个系统无关紧要的分支，并加以简化，再通过抽象得到一个只具备核心特征的模型。这个过程就是建模的过程，抽象的过程就是找规律的过程。</li><li>表达。模型需要以一种特定的形式表达出来，软件行业使用的工具非常多，UML图、 ER图等各种可视化的图表都是模型的表达，但注意，这些不是模型本身。</li><li>验证。一个模型要有用，需要和系统中的场景进行拟合，如果不能拟合这个模型则无法被使用。同时模型也需要能做到对未来场景在一定场景做出预测。在物理学上，相对论模型是通过红移现象验证的，另外也预测了新的天体存在。</li><li>实现。和物理、数学模型不同。计算机系统模型，还需要进行实现，变成可工作的软件。模型的建立是认识的部分，模型的实现这是实践的部分。</li></ul><h2 id="模型分析方法的挑战"><a href="#模型分析方法的挑战" class="headerlink" title="模型分析方法的挑战"></a>模型分析方法的挑战</h2><ol><li>分布式软件系统的模型分析缺少标准的描述语言，UML 比较困难表达分布式系统中的模型</li><li>软件系统中代码、模型和文档之间的维护关系比较困难，往往处于割裂状态，容易造成误解。解决这个问题的关键在于，模型应该内置到代码中，而非单独使用图表工具进行描述。</li></ol>]]></content>
       
       
       <categories>
@@ -5743,23 +5777,6 @@
     </entry>
     
     <entry>
-      <title>FastDFS 分布式文件系统方案</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术组件 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>微软SDL( Security Development Lifecycle)流程</title>
       <link href="/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/"/>
       <url>/%E5%AE%89%E5%85%A8/security/security-sevelopment-lifecycle/</url>
@@ -5770,6 +5787,23 @@
       <categories>
           
           <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>FastDFS 分布式文件系统方案</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术组件 </category>
           
       </categories>
       
@@ -6049,40 +6083,6 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
@@ -6151,28 +6151,11 @@
     </entry>
     
     <entry>
-      <title>PHP 包管理工具</title>
-      <link href="/php/php/PHP-package%20manager/"/>
-      <url>/php/php/PHP-package%20manager/</url>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
       
-        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
-      
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
       
       
       <categories>
@@ -6185,16 +6168,16 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> python </category>
           
       </categories>
       
@@ -6236,11 +6219,62 @@
     </entry>
     
     <entry>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
+      
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP 不同场景下技术选型的讨论</title>
       <link href="/php/php/lightweight%20php%20api/"/>
       <url>/php/php/lightweight%20php%20api/</url>
       
         <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP 包管理工具</title>
+      <link href="/php/php/PHP-package%20manager/"/>
+      <url>/php/php/PHP-package%20manager/</url>
+      
+        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
       
       
       <categories>
@@ -6321,23 +6355,6 @@
     </entry>
     
     <entry>
-      <title>Mysql 基本管理命令</title>
-      <link href="/mysql/mysql/mysql-baisc-operation/"/>
-      <url>/mysql/mysql/mysql-baisc-operation/</url>
-      
-        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Java web project 概览</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
@@ -6348,6 +6365,23 @@
       <categories>
           
           <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Mysql 基本管理命令</title>
+      <link href="/mysql/mysql/mysql-baisc-operation/"/>
+      <url>/mysql/mysql/mysql-baisc-operation/</url>
+      
+        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
           
       </categories>
       
@@ -6389,6 +6423,23 @@
     </entry>
     
     <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Mock工具 wiremock</title>
       <link href="/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/"/>
       <url>/%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81/test/Wiremock%20for%20java/</url>
@@ -6423,16 +6474,16 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
       
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> java </category>
           
       </categories>
       
@@ -6450,23 +6501,6 @@
       <categories>
           
           <category> Spring </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
           
       </categories>
       
@@ -6542,6 +6576,23 @@
     </entry>
     
     <entry>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
+      
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工程 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>前端生态图谱</title>
       <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
@@ -6564,23 +6615,6 @@
       <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
       
         <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端工程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
-      
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -6661,6 +6695,23 @@
     </entry>
     
     <entry>
+      <title>Gradle 构建 Spring boot 项目</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Nginx 常用操作</title>
       <link href="/Nginx/nginx/nginx-usful-command/"/>
       <url>/Nginx/nginx/nginx-usful-command/</url>
@@ -6688,23 +6739,6 @@
       <categories>
           
           <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Gradle 构建 Spring boot 项目</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
-      
-        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
           
       </categories>
       
@@ -6899,23 +6933,6 @@
     </entry>
     
     <entry>
-      <title>How to end a meeting?</title>
-      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
-      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
-      
-        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 职业素质 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>我的学习方法</title>
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/</url>
@@ -6926,6 +6943,23 @@
       <categories>
           
           <category> 自我管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>How to end a meeting?</title>
+      <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
+      <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
+      
+        <content type="html"><![CDATA[<h2 id="some-of-usages"><a href="#some-of-usages" class="headerlink" title="some of usages"></a>some of usages</h2><ul><li>“any questions”</li><li>“any comments”</li><li>“any other updates”</li></ul><h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><ul><li>“Today we have covered”</li><li>“in this meeting we have discussed”</li><li>“The main points that I’d like to sum up are”</li><li>“To summarize today’s meeting”</li><li>“Let me summarize what we have talked about today before we finish”</li></ul><h2 id="重点单词"><a href="#重点单词" class="headerlink" title="重点单词"></a>重点单词</h2><ul><li>Sum up 口语上的summarize</li><li>Recap 复盘，重述</li></ul><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>express the time run out of time</p><ul><li>it seems as though we’ve run out of time for today</li><li>Unfortunately we are out of time </li></ul><p>express to close a meeting </p><ul><li>Let’s call a day</li><li>Let’s wrap up</li><li>that’s all for our meeting</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 职业素质 </category>
           
       </categories>
       
