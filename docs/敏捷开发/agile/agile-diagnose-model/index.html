@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>敏捷成熟度诊断模型 | web 工程师知识系统</title>
+  <title>敏捷时间模型 | web 工程师知识系统</title>
   <meta name="author" content="少个分号">
   
   <meta name="description" content="模型
@@ -17,23 +17,24 @@
 是否是特性团队
 团队人数
 团队不同角色人员职责是否清晰
+PM
+PO
+TL
 BA
 QA
 DEV
-PM
 UX
 
 
 
 
 考核目标
-团队成员的汇报路线是否一致
-">
+团队成员的汇报路">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="敏捷成熟度诊断模型">
+  <meta property="og:title" content="敏捷时间模型">
   <meta property="og:site_name" content="web 工程师知识系统">
 
   
@@ -67,7 +68,7 @@ UX
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">敏捷成熟度诊断模型</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-07-27</span></h1>
+  <h1><a class="brand" href="/">web 工程师知识系统</a><span class="split"></span><span class="title">敏捷时间模型</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-07-27</span></h1>
 </div>		
 
 <div class="row page">
@@ -100,10 +101,12 @@ UX
 <li>是否是特性团队</li>
 <li>团队人数</li>
 <li>团队不同角色人员职责是否清晰<ul>
+<li>PM</li>
+<li>PO</li>
+<li>TL</li>
 <li>BA</li>
 <li>QA</li>
 <li>DEV</li>
-<li>PM</li>
 <li>UX</li>
 </ul>
 </li>
@@ -115,8 +118,8 @@ UX
 <li>团队责任是否共通承担</li>
 </ul>
 </li>
-<li>人员梯队<ul>
-<li>人员建设是否具有梯队性，PM、Tech lead 调动是否有破坏性的影响</li>
+<li>人员梯队</li>
+<li>人员建设是否具有梯队性，PM、Tech lead 调动是否有破坏性的影响<ul>
 <li>团队成员是否有明确的发展方向和路线</li>
 </ul>
 </li>
@@ -168,7 +171,9 @@ UX
 <li>可视化<ul>
 <li>团队的工作目标，任务可视化，且在每个迭代更新</li>
 <li>迭代中的风险、依赖等问题和图表可视化，且经常更新</li>
-<li>迭代速率可视化</li>
+</ul>
+</li>
+<li>迭代速率可视化<ul>
 <li>工程实践结果通过可视化方式进行展现</li>
 </ul>
 </li>
@@ -183,10 +188,12 @@ UX
 <li>跨模块/团队开发时，有接口设计文档，并且有版本化管理</li>
 </ul>
 </li>
-<li><p>代码评审</p>
-<ul>
+<li>代码评审<ul>
 <li>有代码评审活动</li>
-<li>代码检查单，用于自查</li>
+</ul>
+</li>
+<li><p>代码检查单，用于自查</p>
+<ul>
 <li>代码评审结果中的问题能够被及时修复</li>
 </ul>
 </li>
@@ -212,7 +219,9 @@ UX
 <li>测试是否有用例产出</li>
 <li>单元测试</li>
 <li>API 测试</li>
-<li>自动 E2E 测试</li>
+</ul>
+</li>
+<li>自动 E2E 测试<ul>
 <li>性能测试</li>
 </ul>
 </li>
@@ -256,7 +265,9 @@ UX
 <li>知识传递<ul>
 <li>知识沉淀，通过 wiki 平台维护各种文档</li>
 <li>是否有 onboarding 培训</li>
-<li>测试用例是否能持续更新和维护</li>
+</ul>
+</li>
+<li>测试用例是否能持续更新和维护<ul>
 <li>项目 readme 是否详细</li>
 </ul>
 </li>
@@ -296,91 +307,6 @@ UX
 </ul>
 </li>
 </ul>
-<h2 id="操作手册"><a href="#操作手册" class="headerlink" title="操作手册"></a>操作手册</h2><p>对 AMM 该模型的具体的操作方法和注意事项。</p>
-<h3 id="确定访谈目标"><a href="#确定访谈目标" class="headerlink" title="确定访谈目标"></a>确定访谈目标</h3><p>需要为整体的访谈设立目标，另外为每个访谈对象设立目标，并围绕这些目标设计问题。</p>
-<h3 id="预约访谈日历"><a href="#预约访谈日历" class="headerlink" title="预约访谈日历"></a>预约访谈日历</h3><p>和客户约定访谈计划后，确定访谈日历和时间，确定每一个角色的访谈目标。对被访谈的职级有不同的诉求。</p>
-<ul>
-<li><p>高层</p>
-<ul>
-<li>介绍基本概念，对齐转型目标与期望，从高层能收集到的是产品价值、组织架构、团队文化。</li>
-</ul>
-</li>
-<li><p>中层</p>
-<ul>
-<li>了解其职责，诉求、痛点、挑战等。从中层能收集到工作方式、研发过程、效能分析。在访谈时，中层会关注那些实践是否被采用，并不经意中被美化。</li>
-</ul>
-</li>
-<li><p>团队</p>
-<ul>
-<li>了解其工作内容、分工、边界、遇到的问题。从基层能收集到的是落地实践、开发过程中的痛点，尤其是 tech lead。</li>
-</ul>
-</li>
-</ul>
-<p>访谈日历的设计需要根据成熟度模型的内容制定，下面是一个一周的访谈日历模板。</p>
-<p><img src="/敏捷开发/agile/agile-diagnose-model/image-20200727152310337.png" alt="image-20200727152310337"></p>
-<h3 id="设计访谈问题"><a href="#设计访谈问题" class="headerlink" title="设计访谈问题"></a>设计访谈问题</h3><ul>
-<li>根据访谈的目标人群设计问题，可以收集更多信息。</li>
-</ul>
-<h4 id="面向高层的问题设计"><a href="#面向高层的问题设计" class="headerlink" title="面向高层的问题设计"></a>面向高层的问题设计</h4><ol>
-<li>组织架构是怎么样的？<ol>
-<li>有多少团队？</li>
-<li>每个团队有多少人？</li>
-<li>每个团队有哪些角色，职责是什么？</li>
-</ol>
-</li>
-<li>有哪些产品线，产品线之间的关系是什么？</li>
-<li>未来的发展方向是什么？</li>
-<li>交付团队外有哪些角色，职责是什么？</li>
-</ol>
-<h4 id="面向中层的问题"><a href="#面向中层的问题" class="headerlink" title="面向中层的问题"></a>面向中层的问题</h4><ol>
-<li>需求提出到需求验收的过程是什么？<ol>
-<li>是否会使用迭代？</li>
-<li>是否有迭代会议？</li>
-</ol>
-</li>
-<li>有没有面对面工作?</li>
-<li>需求管理？<ol>
-<li>是否有清晰的用户故事，并有明确的验收标准，并且和测试衔接？</li>
-<li>是否有电子工具维护</li>
-</ol>
-</li>
-<li>迭代周期是多久？</li>
-<li>hotfix 的情况如何？</li>
-<li>发布上线有哪些流程？</li>
-<li>流水线有哪些阶段？</li>
-<li>流水线构有多久？</li>
-<li>团队的 product backlog 的内容可以支撑产品/活动的愿景、目标。内容颗粒度渐进明细</li>
-<li>需求是否会被评审？</li>
-<li>测试人员的比例</li>
-<li>自动化测试的比例</li>
-<li>单元测试的覆盖率</li>
-<li>代码 review 的情况</li>
-<li>有无测试用例输出？</li>
-<li>有自动化的 API 测试？</li>
-<li>是否有自动化的 E2E 测试？</li>
-<li>是否有性能测试？</li>
-<li>生产环境 BUG 有无测试用例覆盖？</li>
-</ol>
-<h4 id="面向团队的问题"><a href="#面向团队的问题" class="headerlink" title="面向团队的问题"></a>面向团队的问题</h4><h3 id="统一语言"><a href="#统一语言" class="headerlink" title="统一语言"></a>统一语言</h3><p>定义和拉通访谈和沟通过程中使用的专用术语，定义这些术语的内涵和外延，避免歧义。一些术语在各个地方由于上下文极其容易缠上上下文，不利于调研结果的产生。</p>
-<p>例如：</p>
-<ul>
-<li>业务需求方可能是市场人员、不具备业务分析能力的业务人员，和我们提的 BA、产品经理概念不一样。</li>
-<li>devops 的定义和范围</li>
-</ul>
-<h3 id="提炼访谈内容"><a href="#提炼访谈内容" class="headerlink" title="提炼访谈内容"></a>提炼访谈内容</h3><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>使用影响图构建各个元素之间的关系。例如业务无法消化会造成技术债务堆积，反过来又会造成效率降低，形成正反馈。</p>
-<p>陷入困境的项目往往是因为不合理的正反馈循环，需要找到关键点消除正反馈。</p>
-<h3 id="输出件注意事项"><a href="#输出件注意事项" class="headerlink" title="输出件注意事项"></a>输出件注意事项</h3><ol>
-<li>访谈日志应该包含为整理的原始信息</li>
-<li>每个维度打分表的事项需要在原始信息中有事实依据找到</li>
-<li>维度打分表中，未采集到的信息不应该靠猜测，没有足够的信息支持可以留白</li>
-<li>调研报告的输出<ol>
-<li>组织架构图</li>
-<li>被访谈人物和日志</li>
-<li>访谈数据统计</li>
-<li>每个维护的现状分析</li>
-</ol>
-</li>
-</ol>
 	  
 
 	  <div>
@@ -394,6 +320,10 @@ UX
 	
 	
 		
+			
+		
+	
+		
 	
 		
 			
@@ -1219,9 +1149,9 @@ UX
 		
 	
 		
-	
-		
 			
+		
+	
 		
 	
 		
