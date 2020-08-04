@@ -143,7 +143,7 @@
       <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-diagnose-model/"/>
       <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-diagnose-model/</url>
       
-        <content type="html"><![CDATA[<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><ul><li><p>解决的问题是对已经实施了敏捷的组织进行评估，并给出建议</p></li><li><p>每个维度具有 6 个级别，评估维度 5 个，以及参考基线，包括一些指标的最小集。</p><ul><li><p>组织架构</p></li><li><p>交付迭代管理</p></li><li><p>技术实践</p></li><li><p>团队文化</p></li><li><p>沟通和协作</p></li></ul></li><li><p>成熟度分级</p><ul><li>5 理想，团队已经能自主持续优化</li><li>4 成熟，团队运行的非常好</li><li>3 良好，团队能稳定运行，但是还有改进空间</li><li>2 一般，团队满足部分敏捷要求，依然需要改进</li><li>1 不足，团队已经有一些敏捷工作方式，存在较多问题</li><li>0 初始，没有任何敏捷实践</li></ul></li><li><p>诊断的方法</p><ul><li>定量<ul><li>人员访谈</li><li>实地实物考察</li></ul></li><li>定性<ul><li>问卷调查表</li><li>数据收集</li></ul></li></ul></li><li><p>输出件</p><ul><li>访谈日志</li><li>维度打分表</li><li>汇报 PPT</li></ul></li></ul><h2 id="维度的特征"><a href="#维度的特征" class="headerlink" title="维度的特征"></a>维度的特征</h2><p>通过一些具体特征，描述敏捷实践的成熟度。</p><h3 id="组织架构"><a href="#组织架构" class="headerlink" title="组织架构"></a>组织架构</h3><ul><li>团队<ul><li>是否是特性团队</li><li>团队人数</li><li>团队不同角色人员职责是否清晰<ul><li>PM</li><li>PO</li><li>TL</li><li>BA</li><li>QA</li><li>DEV</li><li>UX</li></ul></li></ul></li><li>考核目标<ul><li>团队成员的汇报路线是否一致</li><li>团队成员是否统一考核，有一致的目标</li><li>团队责任是否共通承担</li></ul></li><li>人员梯队<ul><li>人员建设是否具有梯队性，PM、Tech lead 调动是否有破坏性的影响</li><li>团队成员是否有明确的发展方向和路线</li></ul></li></ul><h3 id="产品需求分析"><a href="#产品需求分析" class="headerlink" title="产品需求分析"></a>产品需求分析</h3><ul><li>产品是否有明确的调研分析实践<ul><li>包括竞品分析</li><li>市场分析</li><li>客户群定位</li><li>痛点分析</li><li>用户画像</li><li>可量化和验证的目标</li><li>产品发展里程碑</li></ul></li><li>是否对产品有反馈机制<ul><li>用户测试</li><li>根据运营数据调整</li></ul></li><li>是否会以 MVP 快速验证产品</li><li>是否有度量，是否以度量驱动开发</li></ul><h3 id="交付迭代管理"><a href="#交付迭代管理" class="headerlink" title="交付迭代管理"></a>交付迭代管理</h3><ul><li>需求管理<ul><li>业务方是否参与迭代过程，并及时给出反馈</li><li>使用用户故事传递需求，并有明确的验收条件</li><li>验收条件和测试对齐</li><li>使用电子工具管理</li></ul></li><li>敏捷计划<ul><li>是否以迭代的形式交付</li><li>每个迭代有明确的交付计划和目标</li><li>所有的需求（变更）都是通过单一的Product Backlog来管理</li><li>需求/任务按照业务价值排序，并可动态调整</li></ul></li><li>迭代交付<ul><li>以何种频率进行产品发布</li><li>迭代过程中有明确的DoD，团队成员可以遵守DoD去协作</li><li>相对稳定的迭代速率</li></ul></li><li>可视化<ul><li>团队的工作目标，任务可视化，且在每个迭代更新</li><li>迭代中的风险、依赖等问题和图表可视化，且经常更新</li><li>迭代速率可视化</li><li>工程实践结果通过可视化方式进行展现</li></ul></li></ul><h3 id="技术实践"><a href="#技术实践" class="headerlink" title="技术实践"></a>技术实践</h3><ul><li>设计和开发<ul><li>团队已经制定了编码规范并且能够执行</li><li>定期列出技术债，并排优先级，在日常工作中偿还技术债</li><li>有明确的接口技术规范。例如RESTful</li><li>跨模块/团队开发时，有接口设计文档，并且有版本化管理</li></ul></li><li><p>代码评审</p><ul><li>有代码评审活动</li><li>代码检查单，用于自查</li><li>代码评审结果中的问题能够被及时修复</li></ul></li><li><p>持续集成</p><ul><li>代码静态分析工具是否整合在持续集成工具上</li><li>提交后进行自动的构建与测试</li><li>CI 构建失败问题，开发团队能够第一时间修复</li><li>配置、脚本、测试代码等代码是否全部代码化</li><li>基础设施是否足够自动化</li><li>基于主干的开发，并小步提交</li></ul></li><li>持续部署<ul><li>滚动发布</li><li>金丝雀发布（蓝绿部署）</li><li>每个环节有健康检查，健康检查不通过自动回滚，部署失败</li></ul></li><li>质量保证<ul><li>代码静态分析</li><li>测试参与整个迭代周期</li><li>测试是否有用例产出</li><li>单元测试</li><li>API 测试</li><li>自动 E2E 测试</li><li>性能测试</li></ul></li></ul><h3 id="团队文化"><a href="#团队文化" class="headerlink" title="团队文化"></a>团队文化</h3><ul><li>持续改进<ul><li>敏捷运作过程中有对浪费项的识别和分析</li><li>每个迭代执行回顾会，并识别改进措施</li><li>业务目标/研发效率/研发质量（JIT）度量并制定改进目标</li><li>进行周期性的目标设定和改进，例如缺陷密度值</li></ul></li><li>交流分享<ul><li>在部落内/小组内定期贡献话题分享</li></ul></li><li>职责共享<ul><li>成员明确自己和其他成员的任务瓶颈，并主动上报</li><li>团队成员主动参与各种日常活动，并积极提供建议</li><li>代码公有制，团队主动修复 CI</li></ul></li></ul><h3 id="沟通和协作"><a href="#沟通和协作" class="headerlink" title="沟通和协作"></a>沟通和协作</h3><ul><li>会议<ul><li>站会能否高效完成</li><li>回顾会议是否有明确改进项目，并被监督执行</li><li>计划会议是否提前准备</li><li>需求澄清会议是否关键角色都有参加</li></ul></li><li>沟通<ul><li>是否是以特性团队的方式沟通和协作，重沟通轻文档</li><li>面对面沟通，BA-DEV-QA 都坐在一起</li></ul></li><li>知识传递<ul><li>知识沉淀，通过 wiki 平台维护各种文档</li><li>是否有 onboarding 培训</li><li>测试用例是否能持续更新和维护</li><li>项目 readme 是否详细</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><ul><li><p>解决的问题是对已经实施了敏捷的组织进行评估，并给出建议</p></li><li><p>每个维度具有 6 个级别，评估维度 5 个，以及参考基线，包括一些指标的最小集。</p><ul><li><p>组织架构</p></li><li><p>交付迭代管理</p></li><li><p>技术实践</p></li><li><p>团队文化</p></li><li><p>沟通和协作</p></li></ul></li><li><p>成熟度分级</p><ul><li>5 理想，团队已经能自主持续优化</li><li>4 成熟，团队运行的非常好</li><li>3 良好，团队能稳定运行，但是还有改进空间</li><li>2 一般，团队满足部分敏捷要求，依然需要改进</li><li>1 不足，团队已经有一些敏捷工作方式，存在较多问题</li><li>0 初始，没有任何敏捷实践</li></ul></li><li><p>诊断的方法</p><ul><li>定量<ul><li>人员访谈</li><li>实地实物考察</li></ul></li><li>定性<ul><li>问卷调查表</li><li>数据收集</li></ul></li></ul></li><li><p>输出件</p><ul><li>访谈日志</li><li>维度打分表</li><li>汇报 PPT</li></ul></li></ul><h2 id="维度的特征"><a href="#维度的特征" class="headerlink" title="维度的特征"></a>维度的特征</h2><p>通过一些具体特征，描述敏捷实践的成熟度。</p><h3 id="组织架构"><a href="#组织架构" class="headerlink" title="组织架构"></a>组织架构</h3><ul><li>团队<ul><li>是否是特性团队</li><li>团队人数</li><li>团队不同角色人员职责是否清晰<ul><li>PM</li><li>PO</li><li>TL</li><li>BA</li><li>QA</li><li>DEV</li><li>UX</li></ul></li></ul></li><li>考核目标<ul><li>团队成员的汇报路线是否一致</li><li>团队成员是否统一考核，有一致的目标</li><li>团队责任是否共通承担</li></ul></li><li>人员梯队<ul><li>人员建设是否具有梯队性，PM、Tech lead 调动是否有破坏性的影响</li><li>团队成员是否有明确的发展方向和路线</li></ul></li></ul><h3 id="产品需求分析"><a href="#产品需求分析" class="headerlink" title="产品需求分析"></a>产品需求分析</h3><ul><li>产品是否有明确的调研分析实践<ul><li>包括竞品分析</li><li>市场分析</li><li>客户群定位</li><li>痛点分析</li><li>用户画像</li><li>可量化和验证的目标</li><li>产品发展里程碑</li></ul></li><li>是否对产品有反馈机制<ul><li>用户测试</li><li>根据运营数据调整</li></ul></li><li>是否会以 MVP 快速验证产品</li><li>是否有度量，是否以度量驱动开发</li></ul><h3 id="交付迭代管理"><a href="#交付迭代管理" class="headerlink" title="交付迭代管理"></a>交付迭代管理</h3><ul><li>需求管理<ul><li>业务方是否参与迭代过程，并及时给出反馈</li><li>使用用户故事传递需求，并有明确的验收条件</li><li>验收条件和测试对齐</li><li>使用电子工具管理</li></ul></li><li>敏捷计划<ul><li>是否以迭代的形式交付</li><li>每个迭代有明确的交付计划和目标</li><li>所有的需求（变更）都是通过单一的Product Backlog来管理</li><li>需求/任务按照业务价值排序，并可动态调整</li></ul></li><li>迭代交付<ul><li>以何种频率进行产品发布</li><li>迭代过程中有明确的 DoD，团队成员可以遵守 DoD 去协作</li><li>相对稳定的迭代速率</li></ul></li><li>可视化<ul><li>团队的工作目标，任务可视化，且在每个迭代更新</li><li>迭代中的风险、依赖等问题和图表可视化，且经常更新</li><li>迭代速率可视化</li><li>工程实践结果通过可视化方式进行展现</li></ul></li></ul><h3 id="技术实践"><a href="#技术实践" class="headerlink" title="技术实践"></a>技术实践</h3><ul><li>设计和开发<ul><li>团队已经制定了编码规范并且能够执行</li><li>定期列出技术债，并排优先级，在日常工作中偿还技术债</li><li>有明确的接口技术规范。例如RESTful</li><li>跨模块/团队开发时，有接口设计文档，并且有版本化管理</li></ul></li><li><p>代码评审</p><ul><li>有代码评审活动</li><li>代码检查单，用于自查</li><li>代码评审结果中的问题能够被及时修复</li></ul></li><li><p>持续集成</p><ul><li>代码静态分析工具是否整合在持续集成工具上</li><li>提交后进行自动的构建与测试</li><li>CI 构建失败问题，开发团队能够第一时间修复</li><li>配置、脚本、测试代码等代码是否全部代码化</li><li>基础设施是否足够自动化</li><li>基于主干的开发，并小步提交</li></ul></li><li>持续部署<ul><li>滚动发布</li><li>金丝雀发布（蓝绿部署）</li><li>每个环节有健康检查，健康检查不通过自动回滚，部署失败</li></ul></li><li>质量保证<ul><li>代码静态分析</li><li>测试参与整个迭代周期</li><li>测试是否有用例产出</li><li>单元测试</li><li>API 测试</li><li>自动 E2E 测试</li><li>性能测试</li></ul></li></ul><h3 id="团队文化"><a href="#团队文化" class="headerlink" title="团队文化"></a>团队文化</h3><ul><li>持续改进<ul><li>敏捷运作过程中有对浪费项的识别和分析</li><li>每个迭代执行回顾会，并识别改进措施</li><li>业务目标/研发效率/研发质量（JIT）度量并制定改进目标</li><li>进行周期性的目标设定和改进，例如缺陷密度值</li></ul></li><li>交流分享<ul><li>在部落内/小组内定期贡献话题分享</li></ul></li><li>职责共享<ul><li>成员明确自己和其他成员的任务瓶颈，并主动上报</li><li>团队成员主动参与各种日常活动，并积极提供建议</li><li>代码公有制，团队主动修复 CI</li></ul></li></ul><h3 id="沟通和协作"><a href="#沟通和协作" class="headerlink" title="沟通和协作"></a>沟通和协作</h3><ul><li>会议<ul><li>站会能否高效完成</li><li>回顾会议是否有明确改进项目，并被监督执行</li><li>计划会议是否提前准备</li><li>需求澄清会议是否关键角色都有参加</li></ul></li><li>沟通<ul><li>是否是以特性团队的方式沟通和协作，重沟通轻文档</li><li>面对面沟通，BA-DEV-QA 都坐在一起</li></ul></li><li>知识传递<ul><li>知识沉淀，通过 wiki 平台维护各种文档</li><li>是否有 onboarding 培训</li><li>测试用例是否能持续更新和维护</li><li>项目 readme 是否详细</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -1724,7 +1724,7 @@
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/</url>
       
-        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去做</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去</li></ul><h2 id="2020-08-03"><a href="#2020-08-03" class="headerlink" title="2020.08.03"></a>2020.08.03</h2><p>保持清醒需要花费很多能量，但是从小就没有这个力量，每次都是被节奏带来带去。</p><p>话还是太多了，需要改。</p><p>控心力强，则人强，随时保持清醒才能有所成就和输出。</p>]]></content>
       
       
       <categories>
@@ -5828,23 +5828,6 @@
     </entry>
     
     <entry>
-      <title>FastDFS 分布式文件系统方案</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术组件 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Circle CI 基本使用</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
@@ -5855,6 +5838,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>FastDFS 分布式文件系统方案</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术组件 </category>
           
       </categories>
       
@@ -5879,11 +5879,11 @@
     </entry>
     
     <entry>
-      <title>API RESTful 风格</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
+      <title>API 文档和契约</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -5896,11 +5896,11 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
+      <title>API RESTful 风格</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
       
       
       <categories>
@@ -6117,11 +6117,45 @@
     </entry>
     
     <entry>
-      <title>React Native 资源收集</title>
-      <link href="/React/react/react-native%20resource/"/>
-      <url>/React/react/react-native%20resource/</url>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
       
-        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React router 登录验证方案</title>
+      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
+      <url>/react/react/React+Redux+React%20router%20authentication/</url>
+      
+        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>React 资源收集</title>
+      <link href="/React/react/react-recource/"/>
+      <url>/React/react/react-recource/</url>
+      
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
@@ -6168,33 +6202,16 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
+      <title>React Native 资源收集</title>
+      <link href="/React/react/react-native%20resource/"/>
+      <url>/React/react/react-native%20resource/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React router 登录验证方案</title>
-      <link href="/react/react/React+Redux+React%20router%20authentication/"/>
-      <url>/react/react/React+Redux+React%20router%20authentication/</url>
-      
-        <content type="html"><![CDATA[<p>使用 react 高阶函数<br><a href="https://github.com/joshgeller/react-redux-jwt-auth-example" target="_blank" rel="noopener">https://github.com/joshgeller/react-redux-jwt-auth-example</a></p><pre><code>router.jsimport {HomeView, LoginView, ProtectedView} from &#39;../views&#39;;import {requireAuthentication} from &#39;../components/AuthenticatedComponent&#39;;export default(    &lt;Route path=&#39;/&#39; component={App}&gt;        &lt;IndexRoute component={HomeView}/&gt;        &lt;Route path=&quot;login&quot; component={LoginView}/&gt;        &lt;Route path=&quot;protected&quot; component={requireAuthentication(ProtectedView)}/&gt;    &lt;/Route&gt;);</code></pre><pre><code>import React from &#39;react&#39;;import {connect} from &#39;react-redux&#39;;import {pushState} from &#39;redux-router&#39;;export function requireAuthentication(Component) {    class AuthenticatedComponent extends React.Component {        componentWillMount() {            this.checkAuth();        }        componentWillReceiveProps(nextProps) {            this.checkAuth();        }        checkAuth() {            if (!this.props.isAuthenticated) {                let redirectAfterLogin = this.props.location.pathname;                this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));            }        }        render() {            return (                &lt;div&gt;                    {this.props.isAuthenticated === true                        ? &lt;Component {...this.props}/&gt;                        : null                    }                &lt;/div&gt;            )        }    }    const mapStateToProps = (state) =&gt; ({        token: state.auth.token,        userName: state.auth.userName,        isAuthenticated: state.auth.isAuthenticated    });    return connect(mapStateToProps)(AuthenticatedComponent);}</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>官网</p><p><a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">https://facebook.github.io/react-native/</a></p><p>React Native 开发工具</p><p><a href="https://expo.io/" target="_blank" rel="noopener">https://expo.io/</a></p><p>React Native 组件</p><p><a href="https://react-native-training.github.io/react-native-elements/" target="_blank" rel="noopener">https://react-native-training.github.io/react-native-elements/</a></p><p>React Native 脚手架</p><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">https://github.com/react-community/create-react-native-app</a></p><p>React Native 项目案例</p><ul><li>CNode,推荐学习 <a href="https://github.com/soliury/noder-react-native" target="_blank" rel="noopener">https://github.com/soliury/noder-react-native</a></li></ul><p>React Native boilerplate</p><p><a href="https://github.com/linksgo2011/react-native-ts-most" target="_blank" rel="noopener">https://github.com/linksgo2011/react-native-ts-most</a></p><p>React Native project deployment</p>]]></content>
       
       
       <categories>
           
-          <category> react </category>
+          <category> React </category>
           
       </categories>
       
@@ -6212,57 +6229,6 @@
       <categories>
           
           <category> react </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/react-recource/"/>
-      <url>/React/react/react-recource/</url>
-      
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
-      
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
-      
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
           
       </categories>
       
@@ -6321,6 +6287,23 @@
     </entry>
     
     <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PHP 包管理工具</title>
       <link href="/php/php/PHP-package%20manager/"/>
       <url>/php/php/PHP-package%20manager/</url>
@@ -6331,6 +6314,40 @@
       <categories>
           
           <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
+      
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Ubuntu上的MySQL安装</title>
+      <link href="/mysql/mysql/mysql-configuration/"/>
+      <url>/mysql/mysql/mysql-configuration/</url>
+      
+        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
           
       </categories>
       
@@ -6372,33 +6389,16 @@
     </entry>
     
     <entry>
-      <title>Ubuntu上的MySQL安装</title>
-      <link href="/mysql/mysql/mysql-configuration/"/>
-      <url>/mysql/mysql/mysql-configuration/</url>
+      <title>Team leader 能力模型案例解读</title>
+      <link href="/management/management/Team%20leader%20checklist/"/>
+      <url>/management/management/Team%20leader%20checklist/</url>
       
-        <content type="html"><![CDATA[<h2 id="首先检查系统中是否已经安装了MySQL"><a href="#首先检查系统中是否已经安装了MySQL" class="headerlink" title="首先检查系统中是否已经安装了MySQL"></a>首先检查系统中是否已经安装了MySQL</h2><p>在终端里面输入 sudo netstat -tap | grep mysql</p><p>若没有反映，没有显示已安装结果，则没有安装。若如下显示，则表示已经安装</p><h2 id="如果没有安装，则安装MySQL"><a href="#如果没有安装，则安装MySQL" class="headerlink" title="如果没有安装，则安装MySQL."></a>如果没有安装，则安装MySQL.</h2><p>在终端输入 sudo apt-get install mysql-server mysql-client</p><p>在此安装过程中会让你输入root用户(管理MySQL数据库用户，非Linux系统用户)密码，按照要求输入即可。如下所示：</p><h2 id="测试安装是否成功："><a href="#测试安装是否成功：" class="headerlink" title="测试安装是否成功："></a>测试安装是否成功：</h2><p>在终端输入 sudo netstat -tap | grep mysql</p><h2 id="也可通过登录MySQL测试"><a href="#也可通过登录MySQL测试" class="headerlink" title="也可通过登录MySQL测试"></a>也可通过登录MySQL测试</h2><p>在终端输入 mysql -uroot -p 接下来会提示你输入密码，输入正确密码，即可进入。如下所示：</p><h2 id="MySQL的一些简单管理："><a href="#MySQL的一些简单管理：" class="headerlink" title="MySQL的一些简单管理："></a>MySQL的一些简单管理：</h2><p>启动MySQL服务： ssudo /etc/init.d/mysql start</p><p>停止MySQL服务： sudo /etc/init.d/mysql stop</p><p>修改 MySQL 的管理员密码： sudo mysqladmin -u root password newpassword</p><p>设置远程访问(正常情况下，mysql占用的3306端口只是在IP 127.0.0.1上监听，拒绝了其他IP的访问（通过netstat可以查看到）。取消本地监</p><p>听需要修改 my.cnf 文件：)：</p><p>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</p><p>bind-address = 127.0.0.1 //找到此内容并且注释</p><h2 id="MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-："><a href="#MySQL安装后的目录结构分析-此结构只针对于使用apt-get-install-在线安装情况-：" class="headerlink" title="MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)："></a>MySQL安装后的目录结构分析(此结构只针对于使用apt-get install 在线安装情况)：</h2><p>数据库存放目录： /var/lib/mysql/</p><p>相关配置文件存放目录： /usr/share/mysql</p><p>相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)</p><p>启动脚步存放目录： /etc/rc.d/init.d/</p><h2 id="MySQL图形化管理软件"><a href="#MySQL图形化管理软件" class="headerlink" title="MySQL图形化管理软件"></a>MySQL图形化管理软件</h2><p>一般使用的有两个比较好，一个开源，一个商业收费：</p><p>开源：MySQL Workbench （具体使用介绍随着我的使用，我会慢慢总结）</p><p>商业：Navicat （收费的，有30天体验，之后我相信大家会有办法的）</p><h2 id="开启bin-log-日志"><a href="#开启bin-log-日志" class="headerlink" title="开启bin log 日志"></a>开启bin log 日志</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java web project 概览</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>Java 基础重点回顾</p><ul><li>注解</li><li>异常</li></ul></li><li><p>J2EE 开发常用版本</p><ul><li>Jar 引入Tomcat的J2EE的实现</li><li>J2EE 1.7</li><li>JDK 8</li><li>Tomcat 1.7</li></ul></li><li><p>Spring framework</p><ul><li>Beans</li><li>周边生态</li><li>项目配置 web.xml</li><li>页面渲染<ul><li>JSP</li><li>Velocity</li><li>FreeMaker</li><li>themleaf</li></ul></li></ul></li><li><p>ORM</p><ul><li>Mybatis<ul><li>DAO 接口<ol><li>DTO</li><li>PO</li></ol></li><li>Domain 或者 Model  实体类和数据库对应</li><li>Mapper 使用xml实现和数据库</li></ul></li><li>Hibernate</li><li>Querydsl ORM增强查询工具</li></ul></li><li><p>Validation</p><ul><li>Hibernate Validation 实现</li><li>Java EE Validation 实现</li></ul></li><li><p>授权验证/登录</p><ol><li>intercept 实现</li><li>sharon</li><li>Spring security</li></ol></li><li><p>部署</p><ol><li>tomcat 1.7</li></ol></li><li><p>日志</p><ol><li>log4J</li><li>self4J</li></ol></li><li><p>构建工具</p><ol><li>Maven</li><li>Gradle</li></ol></li><li><p>mapping 工具</p><ol><li>orika</li><li>object mapper</li></ol></li><li><p>其他工具库</p><ol><li>poi 微软文档API</li><li>guava Google工具库</li><li>commons-lang apache 字符串工具</li><li>quartz 计划任务</li></ol></li><li><p>Restful</p><ol><li>hateoas</li><li>jersey </li></ol></li></ol>]]></content>
+        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> management </category>
           
       </categories>
       
@@ -6423,16 +6423,16 @@
     </entry>
     
     <entry>
-      <title>Team leader 能力模型案例解读</title>
-      <link href="/management/management/Team%20leader%20checklist/"/>
-      <url>/management/management/Team%20leader%20checklist/</url>
+      <title>Java 对象克隆</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
       
-        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
       
       
       <categories>
           
-          <category> management </category>
+          <category> java </category>
           
       </categories>
       
@@ -6457,16 +6457,50 @@
     </entry>
     
     <entry>
-      <title>Java 对象克隆</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
+      <title>Java web project 概览</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/java-project-structure/</url>
       
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java 基础重点回顾</p><ul><li>注解</li><li>异常</li></ul></li><li><p>J2EE 开发常用版本</p><ul><li>Jar 引入Tomcat的J2EE的实现</li><li>J2EE 1.7</li><li>JDK 8</li><li>Tomcat 1.7</li></ul></li><li><p>Spring framework</p><ul><li>Beans</li><li>周边生态</li><li>项目配置 web.xml</li><li>页面渲染<ul><li>JSP</li><li>Velocity</li><li>FreeMaker</li><li>themleaf</li></ul></li></ul></li><li><p>ORM</p><ul><li>Mybatis<ul><li>DAO 接口<ol><li>DTO</li><li>PO</li></ol></li><li>Domain 或者 Model  实体类和数据库对应</li><li>Mapper 使用xml实现和数据库</li></ul></li><li>Hibernate</li><li>Querydsl ORM增强查询工具</li></ul></li><li><p>Validation</p><ul><li>Hibernate Validation 实现</li><li>Java EE Validation 实现</li></ul></li><li><p>授权验证/登录</p><ol><li>intercept 实现</li><li>sharon</li><li>Spring security</li></ol></li><li><p>部署</p><ol><li>tomcat 1.7</li></ol></li><li><p>日志</p><ol><li>log4J</li><li>self4J</li></ol></li><li><p>构建工具</p><ol><li>Maven</li><li>Gradle</li></ol></li><li><p>mapping 工具</p><ol><li>orika</li><li>object mapper</li></ol></li><li><p>其他工具库</p><ol><li>poi 微软文档API</li><li>guava Google工具库</li><li>commons-lang apache 字符串工具</li><li>quartz 计划任务</li></ol></li><li><p>Restful</p><ol><li>hateoas</li><li>jersey </li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
+      
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
       
       
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
           
       </categories>
       
@@ -6518,40 +6552,6 @@
       <categories>
           
           <category> 质量保证 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
-      
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
           
       </categories>
       
@@ -6644,11 +6644,11 @@
     </entry>
     
     <entry>
-      <title>H5 Cordova打包方案</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -6661,11 +6661,11 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
+      <title>H5 Cordova打包方案</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/build-package%20with-apache-cordova/</url>
       
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么需要H5打包？"><a href="#为什么需要H5打包？" class="headerlink" title="为什么需要H5打包？"></a>为什么需要H5打包？</h2><p>通过H5可以开发跨平台的APP，比如安卓、IOS.</p><h2 id="使用Cordova打包"><a href="#使用Cordova打包" class="headerlink" title="使用Cordova打包"></a>使用Cordova打包</h2><p>使用npm安装</p><blockquote><p>npm install -g cordova</p></blockquote><p>创建一个项目</p><blockquote><p>cordova create hello com.example.hello HelloWorld</p></blockquote><p>在这个项目下有一个www的目录，该目录就是放置我们的webapp的位置</p><p>然后我们可以添加需要编译的平台</p><blockquote><p>cordova platform add ios<br>cordova platform add android</p></blockquote><p>查看添加的平台</p><blockquote><p>cordova platform ls</p></blockquote><p>构建所有平台</p><blockquote><p>cordova build</p></blockquote><p>构建指定平台</p><blockquote><p>cordova build ios</p></blockquote><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://cordova.apache.org/docs/en/latest/guide/cli/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/cli/</a></li></ul>]]></content>
       
       
       <categories>
@@ -6712,23 +6712,6 @@
     </entry>
     
     <entry>
-      <title>最实用的Linux命令</title>
-      <link href="/linux/linux/common-useful-commands/"/>
-      <url>/linux/linux/common-useful-commands/</url>
-      
-        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>免费的CI/CD 工具</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
@@ -6739,6 +6722,23 @@
       <categories>
           
           <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>最实用的Linux命令</title>
+      <link href="/linux/linux/common-useful-commands/"/>
+      <url>/linux/linux/common-useful-commands/</url>
+      
+        <content type="html"><![CDATA[<p>查看操作系统信息</p><blockquote><p>head -n 1 /etc/issue</p></blockquote><p>install JDK8 in ubuntu 14.04</p><p>Add the webupd8 ppa, and install from that -</p><blockquote><p>sudo add-apt-repository ppa:webupd8team/java</p></blockquote><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install oracle-java8-installer</p></blockquote><p>Then</p><blockquote><p>java -version</p></blockquote><p>should show you using Oracle Java 8. If not, or if you want to use a different version - run update-java-alternatives with something like,</p><blockquote><p>sudo update-java-alternatives -s java-8-oracle</p></blockquote><p>or</p><blockquote><p>sudo update-java-alternatives -s java-7-oracle</p></blockquote><p>As appropriate.</p><p>Got the error: apt-get-repository Command is Missing</p><p>fixed by</p><blockquote><p>sudo apt-get update</p></blockquote><blockquote><p>sudo apt-get install software-properties-common</p></blockquote><p><a href="https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/25549492/install-jdk8-in-ubuntu-14-04</a></p><p>打包备份</p><blockquote><p>tar -zcvf “jiaonuobg_assets_$(date “+%Y%m%d”).tar.gz” jiaonuobg/assets</p></blockquote><p>备份nodejs+mysql项目</p><p>TBC</p><p>Maven wrapper 生成</p><blockquote><p>mvn -N io.takari:maven:wrapper</p></blockquote><p>根据端口查询Linux PID</p><blockquote><p>netstat -apn | grap $port</p></blockquote><p>从字符串中提取数字，例如PID</p><blockquote><p>output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ }<br>echo $num5</p></blockquote><p>让进程在后台执行</p><blockquote><p>java -jar package.jar &amp;</p></blockquote><p>执行一段Linux命令并给变量赋值</p><blockquote><p>output=$(netstat -apn | grep 8086 | sed ‘s/[0-9]*//g’)<br>echo $output</p></blockquote><p>查看服务器内存用量</p><blockquote><p>sudo free</p></blockquote><p>查看服务器磁盘用量</p><blockquote><p>sudo df -h</p></blockquote><p>Git 增加文件执行权限</p><blockquote><p>git update-index –chmod=+x $script</p></blockquote><p>查看sudo 环境下有哪些可用的权限</p><blockquote><p>sudo -l</p></blockquote><p>搜索文件相关</p><p>当前文件目录下搜索</p><blockquote><p>grep -RI ‘keyword’  .  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -6814,23 +6814,6 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
-      
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Lambda 入门</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
@@ -6865,6 +6848,23 @@
     </entry>
     
     <entry>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>桌面应用开发架构</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Desktopapp%20tech%20stack/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Desktopapp%20tech%20stack/</url>
@@ -6882,23 +6882,6 @@
     </entry>
     
     <entry>
-      <title>VIM 简明命令</title>
-      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
-      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
-      
-        <content type="html"><![CDATA[<p><img src="/开发工具/tool/vim-commands/vi-vim-cheat-sheet-sch.gif" alt=""></p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li>ESC 健进入命令模式</li><li>i/a 进入插入模式</li><li>:/ 进入退出模式</li></ul><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-vim.html</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 开发工具 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>常用开源项目收集</title>
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
@@ -6909,6 +6892,23 @@
       <categories>
           
           <category> 自我管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>VIM 简明命令</title>
+      <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
+      <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/开发工具/tool/vim-commands/vi-vim-cheat-sheet-sch.gif" alt=""></p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li>ESC 健进入命令模式</li><li>i/a 进入插入模式</li><li>:/ 进入退出模式</li></ul><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-vim.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -6950,11 +6950,11 @@
     </entry>
     
     <entry>
-      <title>一个敏捷项目需要的相关技术实践</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/</url>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
       
-        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
       
       
       <categories>
@@ -6967,11 +6967,11 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      <title>一个敏捷项目需要的相关技术实践</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
       
       
       <categories>
