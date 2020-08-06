@@ -141,8 +141,7 @@ https://haokan.baidu.com/v?vid=3812836309598569855&pd=bjh&fr=bjhauthor&type=vide
 
 话还是太多，明天再少一点。
 
+### 2020.08.04
 
-
-
-
-​	
+我的策略是生效的，工作 -> 总结 -> 小册
+小册包含 markdown - keynote - code
