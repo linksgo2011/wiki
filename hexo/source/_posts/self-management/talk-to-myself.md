@@ -200,6 +200,9 @@ https://haokan.baidu.com/v?vid=3812836309598569855&pd=bjh&fr=bjhauthor&type=vide
 做事情之前，通过写作来告诉自己那些需要做好。
 
 
+### 2020.08.11
+
+每天对收集到的信息进行整理
 
 
 
