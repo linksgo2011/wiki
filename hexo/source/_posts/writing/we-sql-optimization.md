@@ -4,8 +4,6 @@ categories: 写作技巧
 toc: true
 ---
 
-
-
 SQL，一些有意思的TIPS，希望大家有收获。
 
 ## 一些常见的SQL实践
