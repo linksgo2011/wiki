@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>我的分析模型</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-analyze-model/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-analyze-model/</url>
+      
+        <content type="html"><![CDATA[<p>提高分析能力，和深度思维的能力。背景是生活中太多各种各样的问题需要思考，比如出去游玩需要带哪些东西；工作中遇到问题该如何决策。</p><ul><li>目标驱动<ul><li>随时知道自己的目标是什么</li><li>对目标进行拆解进行验收驱动</li></ul></li><li>破坏性假设<ul><li>假设所有担心的事情都已经发生</li></ul></li><li>分析工具，一些有代表性的思维模型<ul><li>矛盾论</li><li>逻辑推演</li><li>影响图</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自我管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>我的形式分析模型</title>
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-situation-model/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-situation-model/</url>
@@ -262,7 +279,7 @@
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-sleep/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-sleep/</url>
       
-        <content type="html"><![CDATA[<ol><li>养成定时睡觉的习惯，11 点到 - 11 点半为进入睡眠状态区间，早上 7 点准时起床，如果睡眠时间不够，进行前移，而不是后移。</li><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li>养成定时睡觉的习惯，11 点到 - 11 点半为进入睡眠状态区间，早上 7 点准时起床，如果睡眠时间不够，进行前移，而不是后移。</li></ol>]]></content>
       
       
       <categories>
@@ -789,7 +806,7 @@
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-skill-map/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-skill-map/</url>
       
-        <content type="html"><![CDATA[<p>解决靠什么吃饭的额问题。</p><p>定位：分布式系统架构师和 java 中间件开发者</p><p>擅长：领域建模、IAM、API设计、性能优化</p><h2 id="知识树模型"><a href="#知识树模型" class="headerlink" title="知识树模型"></a>知识树模型</h2><ul><li>树根<ul><li>哲学和逻辑推理</li><li>计算机数学</li><li>计算机科学<ul><li>算法和数据结构</li><li>计算机网络</li><li>操作系统</li></ul></li></ul></li><li>树干<ul><li>分布式系统微服务知识</li><li>领域驱动设计知识</li></ul></li><li>树冠<ul><li>应用框架</li></ul></li></ul><h2 id="知识圈层模型"><a href="#知识圈层模型" class="headerlink" title="知识圈层模型"></a>知识圈层模型</h2><ul><li>核心层<ul><li>Java<ul><li>并发</li><li>JVM</li></ul></li><li>Spring 开发生态</li><li>Mysql </li><li>Redis</li><li>Rocketmq</li></ul></li><li>拓展层<ul><li>前端</li><li>Linux 操作系统</li><li>Devops</li><li>安全</li><li>算法</li></ul></li><li>战略层<ul><li>培训</li><li>写作</li><li>方法论 </li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>解决靠什么吃饭的额问题。</p><p>定位：分布式系统架构师和 java 中间件开发者，<strong>有能力编写技术框架和库</strong></p><p>擅长：领域建模、IAM、API设计、性能优化</p><h2 id="知识树模型"><a href="#知识树模型" class="headerlink" title="知识树模型"></a>知识树模型</h2><ul><li>树根<ul><li>哲学和逻辑推理</li><li>计算机数学</li><li>计算机科学<ul><li>算法和数据结构</li><li>计算机网络</li><li>操作系统</li></ul></li></ul></li><li>树干<ul><li>分布式系统微服务知识</li><li>领域驱动设计知识</li></ul></li><li>树冠<ul><li>应用框架</li></ul></li></ul><h2 id="知识圈层模型"><a href="#知识圈层模型" class="headerlink" title="知识圈层模型"></a>知识圈层模型</h2><ul><li>核心层<ul><li>Java<ul><li>并发</li><li>JVM</li></ul></li><li>Spring 开发生态</li><li>Mysql </li><li>Redis</li><li>Rocketmq</li></ul></li><li>拓展层<ul><li>前端</li><li>Linux 操作系统</li><li>Devops</li><li>安全</li><li>算法</li></ul></li><li>战略层<ul><li>培训</li><li>写作</li><li>方法论 </li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -1809,7 +1826,7 @@
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/</url>
       
-        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去</li></ul><h2 id="2020-08-03"><a href="#2020-08-03" class="headerlink" title="2020.08.03"></a>2020.08.03</h2><p>保持清醒需要花费很多能量，但是从小就没有这个力量，每次都是被节奏带来带去。</p><p>话还是太多了，需要改。</p><p>控心力强，则人强，随时保持清醒才能有所成就和输出。</p><h3 id="2020-08-03-1"><a href="#2020-08-03-1" class="headerlink" title="2020.08.03"></a>2020.08.03</h3><p>不能让它乱来，也不能让它饿着。</p><p>控心是一种随时需要修炼的能力，连早起都做不到，应该什么都做不到了。</p><p>连不过多说话都做不到，还能做到什么呢？</p><p>话还是太多，明天再少一点。</p><h3 id="2020-08-06"><a href="#2020-08-06" class="headerlink" title="2020.08.06"></a>2020.08.06</h3><p>我的策略是生效的，工作 -&gt; 总结 -&gt; 小册，小册包含 markdown - keynote - code。</p><p>咨询就是把零散的事情体系化。</p><p>能力和运气是成功的两个条件，缺一不可，但是往往强调其中一个。</p><p>任何一本书、一部电视剧、一套方法，都是一个模型，围绕这些模型分析问题，并实践。</p><p>做任何一个角色都要做到能独立去做，不做附庸。</p><p>健康是所有的事情的前提，因此晚上任何事情都不能影响睡眠时间，生死之外都是小事。</p><p>不要把自己的内心暴露给外界。</p><p>测试驱动开发不仅仅用于技术，还可以用于生活。验收驱动任务。</p><p>战略 -&gt; 模型 -&gt; 技巧，为善无近名，为恶无近刑。为自己打工，获得自由，自由的人一定是寂寞的，也更辛苦、风险、压力，但是我的性格一定要走这条路。方向就是自己的产品 + 外包，做一个非常小的领域。</p><p>人生如梦，如白驹过隙而已，不过就是演戏给这个世界看，谁演得好、演的不好而已。</p><h3 id="2020-08-07"><a href="#2020-08-07" class="headerlink" title="2020.08.07"></a>2020.08.07</h3><p>可以 L，但是不要 H<br>如果技术文章写不下去，写庄子调养身息。<br>修正奖赏回路</p><ul><li>修改到赚钱的奖赏回路，哪怕是赚一点点钱，再少的钱都是自己赚的。本质上一切商业行为都是利益流动。利益流动是一个很好的分析社会经济的方法。</li><li>修改xing 的奖赏回路，不能通过 seqing 来获得多巴胺。</li></ul><p>奖赏回路是多巴胺造成的，</p><p>个人形象占比比想象中的影响大得多，正式场合一定要注意个人形象的打理。</p><p>赚钱的过程就是寻找经济流动的过程。</p><p>不要和自己对抗，两周一次，是目前比较能接受的情况。</p><h3 id="2020-08-08"><a href="#2020-08-08" class="headerlink" title="2020.08.08"></a>2020.08.08</h3><p>悟到了目前的身体状态的原因，只不过像吃饭一样需求某种东西而已，这也解释了鹊桥在道家中真实的含义。<br>色都是表象，而且会惊扰影响元神。<br>不思女色是果，精气足是原因。精气足不能通过戒来完成，就像不能通过不吃饭来练习辟谷。</p><p>成为精神导师，通过哲学上的思辨提升影响力。</p><h3 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020.08.10"></a>2020.08.10</h3><p>认识自己的局限性，是内心安定的第一步。<br>很多事情做之前不知道怎么才能做好？<br>做事情之前，通过写作来告诉自己那些需要做好。</p><h3 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020.08.11"></a>2020.08.11</h3><p>每天对收集到的信息进行整理</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去</li></ul><h2 id="2020-08-03"><a href="#2020-08-03" class="headerlink" title="2020.08.03"></a>2020.08.03</h2><p>保持清醒需要花费很多能量，但是从小就没有这个力量，每次都是被节奏带来带去。</p><p>话还是太多了，需要改。</p><p>控心力强，则人强，随时保持清醒才能有所成就和输出。</p><h3 id="2020-08-03-1"><a href="#2020-08-03-1" class="headerlink" title="2020.08.03"></a>2020.08.03</h3><p>不能让它乱来，也不能让它饿着。</p><p>控心是一种随时需要修炼的能力，连早起都做不到，应该什么都做不到了。</p><p>连不过多说话都做不到，还能做到什么呢？</p><p>话还是太多，明天再少一点。</p><h3 id="2020-08-06"><a href="#2020-08-06" class="headerlink" title="2020.08.06"></a>2020.08.06</h3><p>我的策略是生效的，工作 -&gt; 总结 -&gt; 小册，小册包含 markdown - keynote - code。</p><p>咨询就是把零散的事情体系化。</p><p>能力和运气是成功的两个条件，缺一不可，但是往往强调其中一个。</p><p>任何一本书、一部电视剧、一套方法，都是一个模型，围绕这些模型分析问题，并实践。</p><p>做任何一个角色都要做到能独立去做，不做附庸。</p><p>健康是所有的事情的前提，因此晚上任何事情都不能影响睡眠时间，生死之外都是小事。</p><p>不要把自己的内心暴露给外界。</p><p>测试驱动开发不仅仅用于技术，还可以用于生活。验收驱动任务。</p><p>战略 -&gt; 模型 -&gt; 技巧，为善无近名，为恶无近刑。为自己打工，获得自由，自由的人一定是寂寞的，也更辛苦、风险、压力，但是我的性格一定要走这条路。方向就是自己的产品 + 外包，做一个非常小的领域。</p><p>人生如梦，如白驹过隙而已，不过就是演戏给这个世界看，谁演得好、演的不好而已。</p><h3 id="2020-08-07"><a href="#2020-08-07" class="headerlink" title="2020.08.07"></a>2020.08.07</h3><p>可以 L，但是不要 H<br>如果技术文章写不下去，写庄子调养身息。<br>修正奖赏回路</p><ul><li>修改到赚钱的奖赏回路，哪怕是赚一点点钱，再少的钱都是自己赚的。本质上一切商业行为都是利益流动。利益流动是一个很好的分析社会经济的方法。</li><li>修改xing 的奖赏回路，不能通过 seqing 来获得多巴胺。</li></ul><p>奖赏回路是多巴胺造成的，</p><p>个人形象占比比想象中的影响大得多，正式场合一定要注意个人形象的打理。</p><p>赚钱的过程就是寻找经济流动的过程。</p><p>不要和自己对抗，两周一次，是目前比较能接受的情况。</p><h3 id="2020-08-08"><a href="#2020-08-08" class="headerlink" title="2020.08.08"></a>2020.08.08</h3><p>悟到了目前的身体状态的原因，只不过像吃饭一样需求某种东西而已，这也解释了鹊桥在道家中真实的含义。<br>色都是表象，而且会惊扰影响元神。<br>不思女色是果，精气足是原因。精气足不能通过戒来完成，就像不能通过不吃饭来练习辟谷。</p><p>成为精神导师，通过哲学上的思辨提升影响力。</p><h3 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020.08.10"></a>2020.08.10</h3><p>认识自己的局限性，是内心安定的第一步。<br>很多事情做之前不知道怎么才能做好？<br>做事情之前，通过写作来告诉自己那些需要做好。</p><h3 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020.08.11"></a>2020.08.11</h3><p>每天对收集到的信息进行整理</p><h3 id="2020-08-12"><a href="#2020-08-12" class="headerlink" title="2020.08.12"></a>2020.08.12</h3><p>所有的问题都是健康问题，身体好的人什么都能扛得住。</p><p>多关心自己的事情，少关心别人的事情。</p>]]></content>
       
       
       <categories>
@@ -5964,11 +5981,11 @@
     </entry>
     
     <entry>
-      <title>API 文档和契约</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
+      <title>API RESTful 风格</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
       
-        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
       
       
       <categories>
@@ -5981,11 +5998,11 @@
     </entry>
     
     <entry>
-      <title>API RESTful 风格</title>
-      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/"/>
-      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-restful/</url>
+      <title>API 文档和契约</title>
+      <link href="/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/"/>
+      <url>/API%E8%AE%BE%E8%AE%A1/restful-api/api-document-and-contract/</url>
       
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>REST（英文：Representational State Transfer，简称REST），RESTful是一种对基于HTTP的应用设计风格，只是提供了一组设计原则和约束条件，而不是一种标准。网络上有大量对RESTful风格的解读，简单来说Restful定义URI和HTTP状态码，让你的API设计变得更简洁、清晰和富有层次，对缓存等实现更有帮助。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>个人博客 <a href="http://www.printf.cn/index.php/archives/api-design-restful.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-restful.html</a></li><li>JSON API 参考规范 <a href="http://jsonapi.org/format/" target="_blank" rel="noopener">http://jsonapi.org/format/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>实现API文档生成和前后端合作的几种方案。</p><ul><li><p>基于注释的 API 文档：这是一种通过代码中注释生成 API 文档的轻量级方案，它的好处是简单易用，基本与编程语言无关。因为基于注释，非常适合动态语言的文档输出，例如 Nodejs、PHP、Python。由于NPM包容易安装和使用，这里推荐 nodejs 平台下的 apidocjs。</p></li><li><p>基于反射的 API 文档：使用 swagger 这类通过反射来解析代码，只需要定义好 Model，可以实现自动输出 API 文档。这种方案适合强类型语言例如 Java、.Net，尤其是生成一份稳定、能在团队外使用的 API 文档。</p></li><li><p>使用契约进行前后端协作：在团队内部，前后端协作本质上需要的不是一份 API 文档，而是一个可以供前后端共同遵守的契约。前后端可以一起制定一份契约，使用这份契约共同开发，前端使用这份契约 mock API，后端则可以通过它简单的验证API是否正确输出。</p></li></ul><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>博客 <a href="http://www.printf.cn/index.php/archives/api-design-document-and-contract.html" target="_blank" rel="noopener">http://www.printf.cn/index.php/archives/api-design-document-and-contract.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -6202,23 +6219,6 @@
     </entry>
     
     <entry>
-      <title>PostgreSQL 入门使用</title>
-      <link href="/postgreSQL/postgreSQL/get%20start/"/>
-      <url>/postgreSQL/postgreSQL/get%20start/</url>
-      
-        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> postgreSQL </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React 资源收集</title>
       <link href="/React/react/react-recource/"/>
       <url>/React/react/react-recource/</url>
@@ -6270,23 +6270,6 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>React学习体系</title>
       <link href="/react/react/react-crouse%20map/"/>
       <url>/react/react/react-crouse%20map/</url>
@@ -6297,6 +6280,23 @@
       <categories>
           
           <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
           
       </categories>
       
@@ -6321,16 +6321,16 @@
     </entry>
     
     <entry>
-      <title>Mac 环境下使用MAMP安装PHP环境</title>
-      <link href="/php/php/php-mamp/"/>
-      <url>/php/php/php-mamp/</url>
+      <title>PostgreSQL 入门使用</title>
+      <link href="/postgreSQL/postgreSQL/get%20start/"/>
+      <url>/postgreSQL/postgreSQL/get%20start/</url>
       
-        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
+        <content type="html"><![CDATA[<p>Tutorial</p><p><a href="http://www.postgresqltutorial.com/" target="_blank" rel="noopener">http://www.postgresqltutorial.com/</a></p><h2 id="install-postgreSQL-via-homebrew-in-mac"><a href="#install-postgreSQL-via-homebrew-in-mac" class="headerlink" title="install postgreSQL via homebrew in mac"></a>install postgreSQL via homebrew in mac</h2><blockquote><p>brew install postgresql</p></blockquote><h2 id="connect-to-postgreSQL-via-psql"><a href="#connect-to-postgreSQL-via-psql" class="headerlink" title="connect to postgreSQL via psql"></a>connect to postgreSQL via psql</h2><p>psql 是一个命令行工具操作postgreSQL</p><blockquote><p>psql -h localhost -U freewheelers –password -d freewheelers</p></blockquote><p>and type your password.</p><h2 id="常用psql命令"><a href="#常用psql命令" class="headerlink" title="常用psql命令"></a>常用psql命令</h2><p>在psql中使用\l \dt 等命令用于管理数据库，一旦打开数据，所有功能都可以使用SQL的DML、DDL语言来操作。</p><p>列出所有的数据库</p><blockquote><p>\l </p></blockquote><p>列出当前数据库所有的表</p><blockquote><p>\dt </p></blockquote><p>列出所有的functions</p><blockquote><p>\df</p></blockquote><p>列出所有的user and roles</p><blockquote><p>\du</p></blockquote><p>获取version</p><blockquote><p>SELECT version</p></blockquote><p>重复最后一次命令</p><blockquote><p>\g</p></blockquote><p>命令历史</p><blockquote><p>\s</p></blockquote><p>获取帮助</p><blockquote><p>\?</p></blockquote><p>在编辑器中编辑命令然后执行</p><blockquote><p>\e</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> php </category>
+          <category> postgreSQL </category>
           
       </categories>
       
@@ -6355,11 +6355,11 @@
     </entry>
     
     <entry>
-      <title>PHP 包管理工具</title>
-      <link href="/php/php/PHP-package%20manager/"/>
-      <url>/php/php/PHP-package%20manager/</url>
+      <title>Mac 环境下使用MAMP安装PHP环境</title>
+      <link href="/php/php/php-mamp/"/>
+      <url>/php/php/php-mamp/</url>
       
-        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>下载安装MAMP</p><p><a href="https://www.mamp.info/en/mamp-pro/" target="_blank" rel="noopener">https://www.mamp.info/en/mamp-pro/</a></p><p>设置默认的PHP为MAMP</p><blockquote><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p></blockquote><p>另一种方法更为简便,为MAMP的PHP设置一个别名即可</p><blockquote><p>alias phpmamp=/Applications/MAMP/bin/php/php5.5.38/bin/php</p></blockquote><p>破解安装更多版本的PHP</p><p>MAMP PRO 提供了更多的PHP版本选择,但是MAMP只提供了2个,实际上在MAMP安装目录下有多个PHP版本我们可以删除一些无用的PHP版本即可。</p>]]></content>
       
       
       <categories>
@@ -6423,11 +6423,11 @@
     </entry>
     
     <entry>
-      <title>一段简单的PHP 日志代码</title>
-      <link href="/php/php/simple-log-feature/"/>
-      <url>/php/php/simple-log-feature/</url>
+      <title>PHP 包管理工具</title>
+      <link href="/php/php/PHP-package%20manager/"/>
+      <url>/php/php/PHP-package%20manager/</url>
       
-        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>PHP中可以使用的包管理工具为 composer<br>官网:<a href="https://getcomposer.org" target="_blank" rel="noopener">https://getcomposer.org</a></p><p>安装:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>安装composer</p><blockquote><p>php -r “copy(‘<a href="https://getcomposer.org/installer&#39;" target="_blank" rel="noopener">https://getcomposer.org/installer&#39;</a>, ‘composer-setup.php’);”</p></blockquote><blockquote><p>php -r “if (hash_file(‘SHA384’, ‘composer-setup.php’) === ‘669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;”</p></blockquote><blockquote><p>php composer-setup.php</p></blockquote><blockquote><p>php -r “unlink(‘composer-setup.php’);”</p></blockquote><p>浏览PHP包:</p><p><a href="http://packagist.org" target="_blank" rel="noopener">http://packagist.org</a></p><p>使用composer</p><p>在工作目录下添加composer.json</p><pre><code>{    &quot;name&quot;: &quot;cakephp-boilerplate&quot;,    &quot;require&quot;: {        &quot;cakephp/cakephp&quot;: &quot;2.9.*&quot;    },    &quot;config&quot;: {        &quot;vendor-dir&quot;: &quot;Vendor/&quot;    }}</code></pre><blockquote><p>php composer.phar install</p></blockquote>]]></content>
       
       
       <categories>
@@ -6457,6 +6457,23 @@
     </entry>
     
     <entry>
+      <title>一段简单的PHP 日志代码</title>
+      <link href="/php/php/simple-log-feature/"/>
+      <url>/php/php/simple-log-feature/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="php">&lt;?phpdefine(&quot;SEPARATOR&quot;,&quot; | &quot;);define(&quot;BASE_FILE_NAME&quot;,__DIR__.&quot;/../log/log.txt&quot;);file_put_contents(BASE_FILE_NAME,&quot;\n&quot;.date(&quot;Y-m-d h:i:s&quot;).    SEPARATOR.$_SERVER[&#39;PHP_SELF&#39;].SEPARATOR.    str_replace(&quot;\n&quot;,&quot;&quot;,json_encode($_POST) ),    FILE_APPEND);// 转存日志文件$currentDayFileName = __DIR__.&quot;/../log/&quot;.date(&quot;Y-m-d&quot;,time()-60*60*24).&quot;_log.txt&quot;;if(!file_exists($currentDayFileName)){    file_put_contents($currentDayFileName,file_get_contents(BASE_FILE_NAME));    file_put_contents(BASE_FILE_NAME,&quot;&quot;);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Ubuntu上的MySQL安装</title>
       <link href="/mysql/mysql/mysql-configuration/"/>
       <url>/mysql/mysql/mysql-configuration/</url>
@@ -6467,40 +6484,6 @@
       <categories>
           
           <category> mysql </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>DDI管理培训总结</title>
-      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
-      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
-      
-        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 团队管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Java 对象克隆</title>
-      <link href="/java/java/java-object-clone/"/>
-      <url>/java/java/java-object-clone/</url>
-      
-        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
           
       </categories>
       
@@ -6542,6 +6525,40 @@
     </entry>
     
     <entry>
+      <title>DDI管理培训总结</title>
+      <link href="/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/"/>
+      <url>/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/management/DDI%20training/</url>
+      
+        <content type="html"><![CDATA[<ul><li>角色认知<ul><li>角色认知模型</li><li>催化剂型的领导</li></ul></li><li><p>沟通</p><ul><li>常见沟通障碍<ul><li>认知偏差</li><li>听不到位</li><li>无效表达</li><li>缺乏参与</li></ul></li><li>破除沟通障碍<ul><li>听、说、问</li></ul></li><li>分派任务、获取承诺<ul><li>任务应该交给谁</li><li>分配任务时的挑战</li></ul></li></ul></li><li><p>辅导</p><ul><li>何为教练</li><li>诊断问题的四个阶段</li></ul></li><li>反馈<ul><li>高效发展</li><li>发展自我和他人</li><li>高效反馈</li></ul></li></ul><h2 id="管理者角色-沟通和任务分配"><a href="#管理者角色-沟通和任务分配" class="headerlink" title="管理者角色 - 沟通和任务分配"></a>管理者角色 - 沟通和任务分配</h2><ul><li><p>设定目标的SMART原则</p><ul><li>Specific 具体的</li><li>Measurable 可评估的</li><li>Attainable 可实现的</li><li>Relevant 相关联的</li><li>Time Bound 有时限的</li></ul></li><li><p>沟通的几个问题</p><ul><li>由于每个人的背景和环境差异，认知偏差是客观存在的，例如男、女基于性别的认知差异，不同职位的认知差异。</li><li>缺乏有效的聆听，不投入认真听，或者听得内容没有抓住重点</li><li>无效表达，内容啰嗦，没有说到重点</li><li>缺乏参与，不集中精神，不仅沟通无效而且非常不尊重人</li></ul></li><li><p>人际互动的两种需求</p><ul><li>个人需求，每个人需要在沟通中需要被理解、包容和支持，关注个人情绪而不是具体事务。</li><li>实际需求，希望通过沟通能解决的具体问题</li><li>寻求沟通的一方往往需求实际需求，而忽略了被沟通的一方首先需求的是个人需求和情感需要</li></ul></li><li><p>聆听的tips</p><ul><li>专注几种</li><li>理解确认</li><li>回应情绪</li></ul></li><li><p>同理心tips</p><ul><li><p>不该做的</p><ul><li>同理不是同意</li><li>同理不是给建议</li><li>不应该借此八卦、触及隐私</li><li>不应该比惨</li></ul></li><li><p>该做的</p><ul><li>回应</li><li>重述事实</li><li>表达感受</li></ul></li></ul></li><li><p>提问的技巧</p><ul><li>使用开放性问题收集信息</li><li>使用封闭性问题确认信息</li><li>一次一个问题</li><li>保持简单</li><li>更进问题</li><li>广泛到具体漏斗形提问</li></ul></li><li><p>说</p><ul><li>思考这件事对对方的好处</li><li>思考这件事是否损害对方利益</li><li>如果既没有好处，也没有利益损害，请使用请求的方式</li></ul></li><li><p>互动的流程</p><ul><li>定方向 - 表达目的和重要性</li><li>理情况 - 表达事实、数据、问题、疑惑</li><li>想方案 - 方向、资源、支持</li><li>明作法 - 提出Action</li><li><em>然后呢？</em> </li><li>做总结 - 重述要点、给予鼓励、支持和信心，比如随时欢迎来找我。</li></ul></li><li><p>分配任务</p><ul><li>考虑的维度<ul><li>成本</li><li>数量</li><li>时间</li><li>质量</li></ul></li><li>选择合适的人选<ul><li>客观条件</li><li>人员意愿</li></ul></li><li>人们只会做那些考察的而不是强调的</li></ul></li></ul><h2 id="辅导者的角色-高效辅导"><a href="#辅导者的角色-高效辅导" class="headerlink" title="辅导者的角色 - 高效辅导"></a>辅导者的角色 - 高效辅导</h2><ul><li><p>辅导之前准确发现问题</p><ul><li>评价一个人的陷阱<ul><li>过多假设</li><li>严苛效应</li><li>以偏概全</li><li>近期效应</li></ul></li></ul></li><li><p>观察的方法</p><ul><li>S/T Situation Task 情况、任务</li><li>行动 Action</li><li>结果 Results</li></ul></li><li><p>两种辅导</p><ul><li>改进型辅导，不好事情发生之后改进</li><li>发展型辅导，把做好的事情做得更好</li></ul></li></ul><h2 id="管理者的角色-发展和反馈"><a href="#管理者的角色-发展和反馈" class="headerlink" title="管理者的角色 - 发展和反馈"></a>管理者的角色 - 发展和反馈</h2><ul><li>怎样顺势而为<ul><li>个人目标</li><li>组织目标和需求</li><li>团队目标和需求</li></ul></li></ul><p>在这三种之间做出平衡，即可顺势而为g</p><ul><li>学习最有效的方式<ul><li>学习</li><li>评估和考核</li><li>应用</li></ul></li></ul><h2 id="其他启示"><a href="#其他启示" class="headerlink" title="其他启示"></a>其他启示</h2><ul><li>永远优先关注人的感受而不是工作的进展</li><li>做出选择的时候考虑失去什么，是否能承受的了。做出任何选择，得到的不一定能得到，失去的一定会失去。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 团队管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 对象克隆</title>
+      <link href="/java/java/java-object-clone/"/>
+      <url>/java/java/java-object-clone/</url>
+      
+        <content type="html"><![CDATA[<p>Java变量赋值对于简单变量来说没有什么特别的,对于对象来说有几种情况,</p><ul><li>shallow 赋值</li><li>深拷贝</li><li>克隆</li></ul><h4 id="shallow-赋值"><a href="#shallow-赋值" class="headerlink" title="shallow 赋值"></a>shallow 赋值</h4><p>这种赋值情况为共享内存空间,多个变量指向同一个地址空间</p><pre><code class="java">Object obj1 = new Object();Object obj2 = obj1;</code></pre><p>这里的obj1 和 obj2 共享内存空间, 修改其中一个会导致另外一个对象发生变化。</p><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>递归复制对象中所有的成员变量</p><pre><code class="java">Object obj1 = new Object();obj1.a = 1;Object obj2 = new Object();obj2.a = obj1.a;</code></pre><h4 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h4><p>使用对象的clone方法</p><pre><code class="Java">Person p = new Person(23, &quot;zhang&quot;);Person p1 = (Person) p.clone();System.out.println(p);System.out.println(p1);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Mysql 基本管理命令</title>
       <link href="/mysql/mysql/mysql-baisc-operation/"/>
       <url>/mysql/mysql/mysql-baisc-operation/</url>
@@ -6576,40 +6593,6 @@
     </entry>
     
     <entry>
-      <title>Spring boot 学习指南</title>
-      <link href="/Spring/spring/Spring%20boot%20Basic/"/>
-      <url>/Spring/spring/Spring%20boot%20Basic/</url>
-      
-        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>java 异常</title>
-      <link href="/java/java/java-exception/"/>
-      <url>/java/java/java-exception/</url>
-      
-        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
       <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
       <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
@@ -6620,6 +6603,23 @@
       <categories>
           
           <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Spring boot 学习指南</title>
+      <link href="/Spring/spring/Spring%20boot%20Basic/"/>
+      <url>/Spring/spring/Spring%20boot%20Basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是Spring-boot"><a href="#什么是Spring-boot" class="headerlink" title="什么是Spring boot"></a>什么是Spring boot</h2><p>Spring boot是一个基于Spring、Spring MVC的开发框架，特点是约定大于配置，使用Jar和内嵌容器的方式运行。</p><h2 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h2><ul><li>Spring boot原理：<a href="http://blog.csdn.net/liaokailin/article/category/5765237" target="_blank" rel="noopener">http://blog.csdn.net/liaokailin/article/category/5765237</a></li></ul><h2 id="Spring-boot原理的个人理解"><a href="#Spring-boot原理的个人理解" class="headerlink" title="Spring boot原理的个人理解"></a>Spring boot原理的个人理解</h2><ul><li>内嵌Tomcat，使用JAR包部署，和一般java应用一致，不再使用web容器的方式编写代码</li><li>在使用Spring boot中非常不解的一件事是为什么可以直接引入包就可以使用，因为Spring boot有自动化配置的方式，常用的配置被定义在在autoconfigure这个包下，可以使用@Config注解来覆盖</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
           
       </categories>
       
@@ -6644,11 +6644,28 @@
     </entry>
     
     <entry>
-      <title>Java web工程师知识图谱</title>
-      <link href="/java/java/Java%20kills%20map/"/>
-      <url>/java/java/Java%20kills%20map/</url>
+      <title>java 异常</title>
+      <link href="/java/java/java-exception/"/>
+      <url>/java/java/java-exception/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么是异常和错误"><a href="#什么是异常和错误" class="headerlink" title="什么是异常和错误"></a>什么是异常和错误</h4><p>异常和错误都会阻止当前方法或作用域继续执行,但是异常最大的特点是可以被handle,<br>这是异常和错误最大的区别。</p><p>异常(exception)的例子:</p><ul><li>数据库链接失败</li><li>网络中断</li></ul><p>错误(errors)的例子:</p><ul><li>内存溢出</li><li>CPU超时</li></ul><p>异常可以被捕获然后进行处理,比如渲染错误页面。错误会导致程序直接退出或崩溃。</p><h4 id="Java-中的-Exception"><a href="#Java-中的-Exception" class="headerlink" title="Java 中的 Exception"></a>Java 中的 Exception</h4><p>Throwable 类是 Java 语言中所有错误或异常的超类（这就是一切皆可抛的东西）。它有两个子类：Error和Exception。</p><p>Error：用于指示合理的应用程序不应该试图捕获的严重问题。这种情况是很大的问题，大到你不能处理了，所以听之任之就行了，你不用管它。比如说VirtualMachineError：当 Java 虚拟机崩溃或用尽了它继续操作所需的资源时，抛出该错误。好吧，就算这个异常的存在了，那么应该何时，如何处理它呢？？交给JVM吧，没有比它更专业的了。</p><p>Exception：它指出了合理的应用程序想要捕获的条件。Exception又分为两类：一种是CheckedException，一种是UncheckedException。这两种Exception的区别主要是CheckedException需要用try…catch…显示的捕获，而UncheckedException不需要捕获。通常UncheckedException又叫做RuntimeException。《effective java》指出：对于可恢复的条件使用被检查的异常（CheckedException），对于程序错误（言外之意不可恢复，大错已经酿成）使用运行时异常（RuntimeException）。</p><p>常见的RuntimeExcepiton有IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException</p><h4 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h4><p>一个数组越界的例子</p><pre><code class="java">    try {        System.out.println(ints[4]);        System.out.println(&quot;是否还能执行&quot;);// 发生异常以后，后面的代码不能被执行    } catch (IndexOutOfBoundsException e) {        System.out.println(&quot;数组越界错误&quot;);    }    System.out.println(&quot;异常出现后&quot;);</code></pre><p><strong>catch 规则: 可以使用多个catch 一旦捕获到的类型同样的或者它的父类就停止捕获。</strong><br>根据这个经验我们都需要把特定的一样类放到前面,最后一个catch用一个基本类型来捕获。</p><p>比如 IOException 是FileNotFoundException 的父类,如果FileNotFoundException产生但是产生了其他<br>IOException的异常</p><pre><code class="java">public void readFile() {    BufferedReader reader = null;    try {        try {            reader = new BufferedReader(new InputStreamReader(                    new FileInputStream(&quot;file&quot;)));            // do some other work            // close reader        } finally {            reader.close();        }    } catch (FileNotFoundException e) {        e.printStackTrace();    } catch (IOException e) {        e.printStackTrace();    }}</code></pre><h4 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h4><p>丢出新的异常时避免丢失旧的异常,需要把旧的异常放入新的异常链中</p><p>c.initCause(e);</p><pre><code class="java">public class NeverCaught {    static void f() throws ExceptionB{        throw new ExceptionB(&quot;exception b&quot;);    }    static void g() throws ExceptionC {        try {            f();        } catch (ExceptionB e) {            ExceptionC c = new ExceptionC(&quot;exception a&quot;);            //异常连            c.initCause(e);            throw c;        }    }    public static void main(String[] args) {            try {                g();            } catch (ExceptionC e) {                e.printStackTrace();            }    }}/*exception.ExceptionCat exception.NeverCaught.g(NeverCaught.java:12)at exception.NeverCaught.main(NeverCaught.java:21)Caused by: exception.ExceptionBat exception.NeverCaught.f(NeverCaught.java:5)at exception.NeverCaught.g(NeverCaught.java:10)... 1 more*/</code></pre><h4 id="运行时异常和检查异常"><a href="#运行时异常和检查异常" class="headerlink" title="运行时异常和检查异常"></a>运行时异常和检查异常</h4><p>检查异常:编译时期比如处理的异常,比如FileNotFoundException,<br>比如使用try catch捕获。</p><p>运行时异常:可以不用处理,最终jvm会处理的异常。比如NullPointerException</p><h4 id="throw、throws"><a href="#throw、throws" class="headerlink" title="throw、throws"></a>throw、throws</h4><p>throws: 当我们遇到检查异常时,如果不想在方法内处理,可以加上throws关键字,然上一级方法调用者<br>检查,throws会抛出所有检查异常。</p><p>throw:在方法内部抛出一个异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
+      
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
       
       
       <categories>
@@ -6678,11 +6695,11 @@
     </entry>
     
     <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
+      <title>Java web工程师知识图谱</title>
+      <link href="/java/java/Java%20kills%20map/"/>
+      <url>/java/java/Java%20kills%20map/</url>
       
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Java基础</p></li><li><p>Web开发基础知识</p><ul><li>浏览器工作原理</li><li>Servlet和JSP</li><li>HTTP协议</li><li>DNS解析原理</li><li>HTML、CSS、JS</li></ul></li><li><p>Java框架</p><ul><li>Spring、Spring MVC</li><li>Mybatis</li><li>Hibernate</li><li>Shiro\Spring security</li><li>Spring boot</li><li>JWT token认证方案</li></ul></li><li><p>常用library</p><ul><li>Google guava集合处理和常用工具</li><li>Apache commons api</li><li>Quartz计划任务处理</li><li>Jackson json处理</li><li>Selflog 日志生成</li><li>freemarker模板引擎</li><li>Apache httpcomponent HTTP client工具</li></ul></li><li><p>数据库</p><ul><li>Mysql</li><li>MongoDB</li><li>Redis</li></ul></li><li><p>架构设计</p><ul><li>OAuth</li><li>Restful API设计</li><li>SSO单点登录</li><li>分布式框架Dubbo</li><li>微服务框架Spring cloud</li></ul></li><li><p>工程化</p><ul><li>Gradle\Maven构建工具</li><li>Jenkins</li><li>Circleci PaaS平台的CI</li><li>Checkstyle代码质量检测</li><li>FindBugs代码检测</li><li>Swagger文档管理</li><li>Axway webgate网关方案</li></ul></li><li><p>测试</p><ul><li>Contract 测试Pact</li><li>Junit</li><li>Assertj断言库</li><li>mockito 单元测试Mock工具</li><li>WireMock数据拦截和模拟</li></ul></li><li><p>部署和监控</p><ul><li>Linux</li><li>Tomcat web服务器</li><li>Nginx负载均衡</li><li>Splunk日志管理</li><li>Dynatrace</li><li>ELK(ElasticSearch+Logstash+ Kibana)</li><li>Spring boot admin监控</li></ul></li><li><p>项目管理</p><ul><li>禅道管理平台</li><li>Trello看板管理</li><li>Confluence文档管理</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -6712,11 +6729,11 @@
     </entry>
     
     <entry>
-      <title>H5 webapp技术选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
+      <title>前端生态图谱</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
       
-        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -6729,11 +6746,11 @@
     </entry>
     
     <entry>
-      <title>前端生态图谱</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
+      <title>H5 webapp技术选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/H5-webapp-tech-stack/</url>
       
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案"><a href="#VUE-技术方案-如果需要嵌入微信等APP中，推荐该方案" class="headerlink" title="VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)"></a>VUE 技术方案 (如果需要嵌入微信等APP中，推荐该方案)</h3><ul><li>vuejs2.0</li><li>vue-router</li><li>vuex</li><li>mint-ui</li><li>Jest</li></ul><p>常用lib信息</p><table><thead><tr><th>包名</th><th style="text-align:center">用途</th></tr></thead><tbody><tr><td>Vue</td><td style="text-align:center">VUE视图</td></tr><tr><td>Vue-router</td><td style="text-align:center">路由</td></tr><tr><td>Typescript</td><td style="text-align:center">静态类型</td></tr><tr><td>vuex</td><td style="text-align:center">状态管理</td></tr><tr><td>mint-ui</td><td style="text-align:center">ui框架</td></tr><tr><td>Jest</td><td style="text-align:center">测试框架</td></tr><tr><td>axios</td><td style="text-align:center">HTTP库</td></tr><tr><td>immutable</td><td style="text-align:center">immutable 工具</td></tr><tr><td>moment</td><td style="text-align:center">时间处理库</td></tr><tr><td>vue-class-component</td><td style="text-align:center">vue 的面向对象形式</td></tr><tr><td>vue-property-decorator</td><td style="text-align:center">vue 装饰器</td></tr><tr><td>vuex-class</td><td style="text-align:center">vuex的面向对象形式</td></tr><tr><td>vconsole</td><td style="text-align:center">手机网页调试工具</td></tr></tbody></table><p>参考资料:</p><ul><li>vue官方脚手架 (支持 TS、Babel、Vuex、SASS): <a href="https://www.npmjs.com/package/vue-cli" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli</a></li><li><a href="https://segmentfault.com/a/1190000013676663" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013676663</a> VUE + TS的项目搭建</li></ul><h3 id="HBuilder方案"><a href="#HBuilder方案" class="headerlink" title="HBuilder方案"></a>HBuilder方案</h3><ul><li>mui</li><li>Hbuilder</li></ul><p>成本低廉，开发方面，原生的webview API和切换性能也可<br>参考案例：<a href="https://github.com/linksgo2011/tinda_app_cordova/" target="_blank" rel="noopener">https://github.com/linksgo2011/tinda_app_cordova/</a></p><p>注意事项</p><ul><li>每个页面为一个独立的窗口</li><li>返回会有数据刷新问题</li><li>窗口内如果发生页面跳转，会造成路由不一致</li><li>尽量使用页面 + API的方式快速开发</li></ul><h3 id="React技术选型"><a href="#React技术选型" class="headerlink" title="React技术选型"></a>React技术选型</h3><ul><li>React</li><li>Redux </li><li>webpack</li></ul><p>参考案例</p><ul><li>cnode 客户端方案可以构建出web、mobile各种平台</li></ul><h3 id="Jquery技术方案"><a href="#Jquery技术方案" class="headerlink" title="Jquery技术方案"></a>Jquery技术方案</h3><ul><li>mui</li><li>zepto.js or jquery.js</li></ul><p>参考案例</p><ul><li>vue购物车 <a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">https://github.com/liu-zhuang/Vue-Demo</a></li><li><a href="https://github.com/zoeminghong/shopping-cart-vue-project" target="_blank" rel="noopener">https://github.com/zoeminghong/shopping-cart-vue-project</a></li><li>音乐APP <a href="https://www.cnblogs.com/smartXiang/p/6055616.html" target="_blank" rel="noopener">https://www.cnblogs.com/smartXiang/p/6055616.html</a></li></ul><h2 id="打包方案"><a href="#打包方案" class="headerlink" title="打包方案"></a>打包方案</h2><p>使用cordova <a href="http://wiki.printf.cn/h5/h5/Build">http://wiki.printf.cn/h5/h5/Build</a> package with Apache Cordova</p>]]></content>
       
       
       <categories>
@@ -6763,11 +6780,11 @@
     </entry>
     
     <entry>
-      <title>前端面试tips</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
+      <title>CSS样式框架选型</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
       
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
       
       
       <categories>
@@ -6780,11 +6797,11 @@
     </entry>
     
     <entry>
-      <title>CSS样式框架选型</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20boilderplate/</url>
+      <title>前端面试tips</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<p>浏览器样式重置基本样式<br><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">http://necolas.github.io/normalize.css/</a></p><p>simple, responsive boilerplate.<br><a href="http://getskeleton.com/" target="_blank" rel="noopener">http://getskeleton.com/</a></p><p>推荐使用，简单纯净易于修改，适用于定制性更强的项目</p><p>frozenui 腾讯出品</p><p><a href="http://frozenui.github.io/" target="_blank" rel="noopener">http://frozenui.github.io/</a></p><p>妹子UI，中国版的bootstrap<br><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -6848,23 +6865,6 @@
     </entry>
     
     <entry>
-      <title>Gradle 构建 Spring boot 项目</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
-      
-        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Nginx 常用操作</title>
       <link href="/Nginx/nginx/nginx-usful-command/"/>
       <url>/Nginx/nginx/nginx-usful-command/</url>
@@ -6875,6 +6875,23 @@
       <categories>
           
           <category> Nginx </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Gradle 构建 Spring boot 项目</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/gradle-build-spring-boot/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Gradle JVM 的富有突破性构建工具，可以通过编程式的编写构建脚本，非 xml 的方式构建项目，适用于相对复杂 Java 项目构建。</p><p>特性：</p><ul><li>对已有的 maven 和 ivy 仓库的全面支持</li><li>支持传递性依赖管理，而不需要远程仓库或者 pom.xml 或者 ivy 配置文件</li><li>ant 式的任务和构建是 gradle 的第一公民</li><li>基于 groovy，其 build 脚本使用 groovy dsl 编写</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Gradle 需要依赖 Java，在 Mac 下可以使用 Homebrew 安装</p><blockquote><p>brew install gradle </p></blockquote><p>查看安装情况</p><blockquote><p>gradle -v </p></blockquote><p>Linux 下载解压后，添加 bin 目录到 path 路径下即可。</p><h2 id="常见概念"><a href="#常见概念" class="headerlink" title="常见概念"></a>常见概念</h2><h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>一个 project 或者 多个 project 是 gradle 的一个构建单位。每个 project 或许是一个 jar 包或者一个 web 应用，它也可以是一个由许多其他项目中产生的 jar 构成的 zip 压缩包。</p><p>一般默认 Java 项目以一个 project 构建，有时候也会有多模块（实际上就是多project）构建。project 可以存在父子关系。</p><h3 id="task"><a href="#task" class="headerlink" title="task"></a>task</h3><p>一个具体的构建任务，例如打包、测试、发布到仓库等。大部分情况下我们都是用插件提供的 task，不需要自己编写 task。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>我们看到的 java 项目中必定有一个插件</p><blockquote><p>apply plugin: ‘java’</p></blockquote><p>Gradle 不一定只是为 Java 使用的，因此大部分情况下我们通过 java 插件提供构建能力。基本上 java 构建的过程比较类似。</p><ul><li>编译</li><li>测试</li><li>打包</li><li>发布</li></ul><p>插件是 Gradle 比较重要而概念，很多有用的 task 都是它提供的。常见的插件有：</p><ul><li>java</li><li>idea</li><li>io.spring.dependency-management</li><li>spring-boot</li></ul><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>就是 java 项目需要用到的其他 jar 包。原始的 java 开发我们都是从网上手动下载，然后倒入项目，使用 gradle 可以自动帮我们导入。</p><h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>Gradle 是在一个被称之为仓库的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。</p><p>默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。</p><h2 id="java-插件基本使用"><a href="#java-插件基本使用" class="headerlink" title="java 插件基本使用"></a>java 插件基本使用</h2><p>引入 java 插件我们可以 通过 gradle tasks 查看该插件提供的 tasks。我们创建一个 build.gralde 然后引入  java 插件，再看看有什么任务。</p><blockquote><p>vim build.gradle </p></blockquote><pre><code>// 这个 build.gradle 只有一行代码apply plugin: &#39;java&#39;</code></pre><blockquote><p>gradle tasks</p></blockquote><pre><code>Build tasks-----------assemble - Assembles the outputs of this project.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.jar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.Build Setup tasks-----------------init - Initializes a new Gradle build.wrapper - Generates Gradle wrapper files.Documentation tasks-------------------javadoc - Generates Javadoc API documentation for the main source code.Help tasks----------buildEnvironment - Displays all buildscript dependencies declared in root project &#39;gradle-practise&#39;.components - Displays the components produced by root project &#39;gradle-practise&#39;. [incubating]dependencies - Displays all dependencies declared in root project &#39;gradle-practise&#39;.dependencyInsight - Displays the insight into a specific dependency in root project &#39;gradle-practise&#39;.dependentComponents - Displays the dependent components of components in root project &#39;gradle-practise&#39;. [incubating]help - Displays a help message.model - Displays the configuration model of root project &#39;gradle-practise&#39;. [incubating]projects - Displays the sub-projects of root project &#39;gradle-practise&#39;.properties - Displays the properties of root project &#39;gradle-practise&#39;.tasks - Displays the tasks runnable from root project &#39;gradle-practise&#39;.Verification tasks------------------check - Runs all checks.test - Runs the unit tests.</code></pre><p>使用 java 插件，我们需要按照规范设置目录，然后 gradle 会帮我们自动构建,这个目录不需要我们自己创建，按照 IDE 生成即可。</p><pre><code>project      +build      +src/main/java      +src/main/resources      +src/test/java      +src/test/resources  </code></pre><p>Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下</p><p>比较有用的几个命令</p><p>编译、打包、测试</p><blockquote><p>build</p></blockquote><p>编译，以及运行单元测试</p><blockquote><p>test </p></blockquote><p>清理项目</p><blockquote><p>clean </p></blockquote><h2 id="简单配置-java-项目"><a href="#简单配置-java-项目" class="headerlink" title="简单配置 java 项目"></a>简单配置 java 项目</h2><p>配置依赖仓库，也就是依赖寻找的位置，可以使用本地仓库（自动缓存）、mavenCentral、Jcenter、阿里云或者自己搭建的镜像。</p><pre><code>    repositories {        mavenLocal()        maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }        maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }        mavenCentral()    }</code></pre><p>配置依赖</p><pre><code>dependencies {    testCompile group: &#39;junit&#39;, name: &#39;junit&#39;, version: &#39;4.+&#39;}</code></pre><p>gralde 总依赖除了有很多种类型，目前Gradle版本支持的依赖配置有：implementation、api、compileOnly、runtimeOnly 和 annotationProcessor，已经废弃的配置有：compile、provided、apk、providedCompile。</p><ul><li>implementation 会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），但是在编译时不会将依赖的实现暴露给其他module，也就是只有在运行时其他module才能访问这个依赖中的实现。</li><li>api 与compile对应，功能完全一样，会添加依赖到编译路径，并且会将依赖打包到输出（aar或apk），与implementation不同，这个依赖可以传递，其他module无论在编译时和运行时都可以访问这个依赖的实现，也就是会泄漏一些不应该不使用的实现。举个例子，A依赖B，B依赖C，如果都是使用api配置的话，A可以直接使用C中的类（编译时和运行时），而如果是使用implementation配置的话，在编译时，A是无法访问C中的类的。</li><li>compileOnly 与provided对应，Gradle把依赖加到编译路径，编译时使用，不会打包到输出（aar或apk）。这可以减少输出的体积，在只在编译时需要，在运行时可选的情况，很有用。</li><li>runtimeOnly 与apk对应，gradle添加依赖只打包到APK，运行时使用，但不会添加到编译路径。这个没有使用过。</li><li>annotationProcessor。编译前处理注解，例如 lombok。</li></ul><p>一个最简单的 java 项目可以由这两部分构成即可完成。</p><h2 id="spring-boot-插件"><a href="#spring-boot-插件" class="headerlink" title="spring boot 插件"></a>spring boot 插件</h2><p>在使用 Spring Boot 时，bootrun 这个task就是 Spring boot 插件提供的。</p><p>使用这个插件需要先配置 buildScript 告诉 gradle 插件从哪里找，因为 spring boot 并不是 gradle 的核心插件。</p><pre><code>buildscript {    ext {        springBootVersion = &#39;2.1.4.RELEASE&#39;    }    repositories {        gradlePluginPortal()    }    dependencies {    classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}</code></pre><p>然后添加</p><pre><code>apply plugin: &#39;org.springframework.boot&#39;</code></pre><p>再查看 gradle tasks，就会多了一些 bootRun 等任务。</p><pre><code>Application tasks-----------------bootRun - Runs this project as a Spring Boot application.Build tasks-----------assemble - Assembles the outputs of this project.bootBuildInfo - Generates a META-INF/build-info.properties file.bootJar - Assembles an executable jar archive containing the main classes and their dependencies.build - Assembles and tests this project.buildDependents - Assembles and tests this project and all projects that depend on it.buildNeeded - Assembles and tests this project and all projects it depends on.classes - Assembles main classes.clean - Deletes the build directory.generateGitPropertiesjar - Assembles a jar archive containing the main classes.testClasses - Assembles test classes.</code></pre><h2 id="dependency-management-插件"><a href="#dependency-management-插件" class="headerlink" title="dependency-management 插件"></a>dependency-management 插件</h2><p>上面讲插件的依赖引入后，Spring boot 还提供了另外一个非常高级的插件。</p><p>引入</p><pre><code>apply plugin: &#39;io.spring.dependency-management&#39;</code></pre><p>Spring 版本火车中的子项目都可以不在需要指定版本号，版本号由 Spring boot 指定，从而解决 Spring 家族版本不一致的问题。</p><h2 id="wrapper"><a href="#wrapper" class="headerlink" title="wrapper"></a>wrapper</h2><p>wapper 是为了解决开发者拿到一个新项目没有本地安装的 gradle，或者版本不一致，导致非常不方便的问题。</p><p>配置项目时，需要用到 gradle 然后生成 gradle wrapper 文件（bat 或者 shell脚本）</p><ul><li>gradlew</li><li>gradlew.bat</li></ul><p>以及一些配置文件 .gradle</p><p>下一个开发者，运行项目时只需要有 java 不需要 gradle 即可使用 ./gradlew 运行即可。</p><p>首次生成 wrapper 的命令</p><blockquote><p>gradle wrapper </p></blockquote><h2 id="对-java-开发者需要注意的几个插件"><a href="#对-java-开发者需要注意的几个插件" class="headerlink" title="对 java 开发者需要注意的几个插件"></a>对 java 开发者需要注意的几个插件</h2><ul><li>java 插件</li><li>spring-boot 插件</li><li>dependency-management 插件</li></ul><h2 id="一份相对完整-spring-boot-配置清单"><a href="#一份相对完整-spring-boot-配置清单" class="headerlink" title="一份相对完整 spring boot 配置清单"></a>一份相对完整 spring boot 配置清单</h2><pre><code>// Gradle 构建本身需要的配置（例如插件仓库）buildscript {    // 配置变量    ext {        flywayVersion = &#39;3.2.1&#39;        hibernateVersion = &#39;5.3.7.Final&#39;    }    // 插件仓库    repositories {        gradlePluginPortal()    }    // 应用插件需要的依赖包    dependencies {        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&quot; as Object)    }}// idea 插件，用来生成 idea 工程目录apply plugin: &#39;idea&#39;// java 插件,提供 build、jar 等taskapply plugin: &#39;java&#39;// spring boot 插件提供 bootrun 等task，非必须apply plugin: &#39;org.springframework.boot&#39;// dependency-management 插件，为spring 版本火车项目提供一致的版本号apply plugin: &#39;io.spring.dependency-management&#39;// 指定构建输出目录buildDir = &#39;./out&#39;// 指定包信息group = &#39;cn.printf&#39;version = &#39;1.0.0&#39;// java 版本sourceCompatibility = 1.8targetCompatibility = 1.8// 编译字符集tasks.withType(JavaCompile) { options.encoding = &#39;utf-8&#39; }// 包依赖仓库repositories {    mavenLocal()    maven { url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39; }    maven { url &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39; }    mavenCentral()}// 依赖dependencies {    // 监控    compile &#39;org.springframework.boot:spring-boot-starter-actuator&#39;    compileOnly &quot;org.projectlombok:lombok&quot;    testCompileOnly &quot;org.projectlombok:lombok&quot;    // web     compile &#39;org.springframework.boot:spring-boot-starter-web&#39;    // Session    compile &#39;org.springframework.boot:spring-boot-starter-data-redis&#39;    compile &#39;org.springframework.session:spring-session-data-redis&#39;    // database    compile &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;    runtimeOnly &#39;mysql:mysql-connector-java&#39;    // 数据库迁移    compile &#39;org.flywaydb:flyway-core&#39;    // 对象转换    compile group: &#39;org.modelmapper&#39;, name: &#39;modelmapper&#39;, version: &#39;1.1.1&#39;    // 加密库    compile &#39;commons-codec:commons-codec:1.13&#39;    // 测试    testCompile(&quot;org.springframework.boot:spring-boot-starter-test&quot;)    // 开发热启动工具    runtime(&#39;org.springframework.boot:spring-boot-devtools&#39;)}</code></pre><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>教程 <a href="https://www.w3cschool.cn/gradle/6qo51htq.html" target="_blank" rel="noopener">https://www.w3cschool.cn/gradle/6qo51htq.html</a></li><li><a href="https://docs.gradle.org/current/userguide/command_line_interface.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/command_line_interface.html</a></li><li><a href="https://www.jianshu.com/p/59fd653a54d2" target="_blank" rel="noopener">https://www.jianshu.com/p/59fd653a54d2</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -7018,23 +7035,6 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 敏捷开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>一个敏捷项目需要的相关技术实践</title>
       <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/"/>
       <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/</url>
@@ -7062,6 +7062,23 @@
       <categories>
           
           <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 敏捷开发 </category>
           
       </categories>
       
