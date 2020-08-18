@@ -483,7 +483,7 @@
       <link href="/%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/writing/writing-list/"/>
       <url>/%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/writing/writing-list/</url>
       
-        <content type="html"><![CDATA[<p>想写但是没有时间写的清单：</p><h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul><li><p>《Java 单元测试入门小书》 进行中</p><ul><li>《Spring boot 的测试》</li></ul></li><li><p>《项目管理的教训》</p><ul><li>《要团队主动领取任务，不要分配任务》</li></ul></li><li><p>《DDD 事件风暴操作手册》</p></li><li><p>《线上数据修复技巧》</p></li><li><p>《互联网开发就是加机器的艺术》</p></li><li><p>《DDD 小书》 接近完成</p><ul><li>DDD 形式化描述</li><li>DDD 描述语言</li><li>DDD 指导下的 CQRS</li><li>DDD 指导下的数据库设计</li><li>DDD 指导下的缓存设计</li><li>DDD 工作坊，自上而下的架构规划</li><li>DDD 业务模型和业务逻辑</li><li>DDD 模型的验证</li><li>DDD 指导低代码开发</li><li>DDD 的最小集，轻量化落地</li><li>DDD 架构下的测试策略</li><li>DDD 准备业务输入</li><li>DDD 指导下的企业资源分配</li></ul></li><li><p>微服务团队中的项目管理</p></li><li><p>互联网应用开发的特点</p></li><li><p>《按下回车的那一刻》 网络和计算机原理的科普小书籍</p></li><li><p>团队管理者的 ”德“</p></li></ul><h2 id="生活类"><a href="#生活类" class="headerlink" title="生活类"></a>生活类</h2><p>《“德” 就是定力》</p><p>《执念的来源》</p><p>《抵抗焦虑的力量》</p><p>《思维的形状》</p>]]></content>
+        <content type="html"><![CDATA[<p>想写但是没有时间写的清单：</p><h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul><li><p>《Java 单元测试入门小书》 进行中</p><ul><li>《Spring boot 的测试》</li></ul></li><li><p>《项目管理的教训》</p><ul><li>《要团队主动领取任务，不要分配任务》</li></ul></li><li>《DDD 事件风暴操作手册》</li><li>《线上数据修复技巧》</li><li>《互联网开发就是加机器的艺术》</li><li>《DDD 小书》 接近完成<ul><li>DDD 形式化描述</li><li>DDD 描述语言</li><li>DDD 指导下的 CQRS</li><li>DDD 指导下的数据库设计</li><li>DDD 指导下的缓存设计</li><li>DDD 工作坊，自上而下的架构规划</li><li>DDD 业务模型和业务逻辑</li><li>DDD 模型的验证</li><li>DDD 指导低代码开发</li><li>DDD 的最小集，轻量化落地</li><li>DDD 架构下的测试策略</li><li>DDD 准备业务输入</li><li>DDD 指导下的企业资源分配</li></ul></li><li>微服务团队中的项目管理</li><li>互联网应用开发的特点</li><li>《按下回车的那一刻》 网络和计算机原理的科普小书籍</li><li>团队管理者的 ”德“</li><li>模型思维：编程之路上的一大步</li></ul><h2 id="生活类"><a href="#生活类" class="headerlink" title="生活类"></a>生活类</h2><p>《“德” 就是定力》</p><p>《执念的来源》</p><p>《抵抗焦虑的力量》</p><p>《思维的形状》</p>]]></content>
       
       
       <categories>
@@ -1826,7 +1826,7 @@
       <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/"/>
       <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/talk-to-myself/</url>
       
-        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去</li></ul><h2 id="2020-08-03"><a href="#2020-08-03" class="headerlink" title="2020.08.03"></a>2020.08.03</h2><p>保持清醒需要花费很多能量，但是从小就没有这个力量，每次都是被节奏带来带去。</p><p>话还是太多了，需要改。</p><p>控心力强，则人强，随时保持清醒才能有所成就和输出。</p><h3 id="2020-08-03-1"><a href="#2020-08-03-1" class="headerlink" title="2020.08.03"></a>2020.08.03</h3><p>不能让它乱来，也不能让它饿着。</p><p>控心是一种随时需要修炼的能力，连早起都做不到，应该什么都做不到了。</p><p>连不过多说话都做不到，还能做到什么呢？</p><p>话还是太多，明天再少一点。</p><h3 id="2020-08-06"><a href="#2020-08-06" class="headerlink" title="2020.08.06"></a>2020.08.06</h3><p>我的策略是生效的，工作 -&gt; 总结 -&gt; 小册，小册包含 markdown - keynote - code。</p><p>咨询就是把零散的事情体系化。</p><p>能力和运气是成功的两个条件，缺一不可，但是往往强调其中一个。</p><p>任何一本书、一部电视剧、一套方法，都是一个模型，围绕这些模型分析问题，并实践。</p><p>做任何一个角色都要做到能独立去做，不做附庸。</p><p>健康是所有的事情的前提，因此晚上任何事情都不能影响睡眠时间，生死之外都是小事。</p><p>不要把自己的内心暴露给外界。</p><p>测试驱动开发不仅仅用于技术，还可以用于生活。验收驱动任务。</p><p>战略 -&gt; 模型 -&gt; 技巧，为善无近名，为恶无近刑。为自己打工，获得自由，自由的人一定是寂寞的，也更辛苦、风险、压力，但是我的性格一定要走这条路。方向就是自己的产品 + 外包，做一个非常小的领域。</p><p>人生如梦，如白驹过隙而已，不过就是演戏给这个世界看，谁演得好、演的不好而已。</p><h3 id="2020-08-07"><a href="#2020-08-07" class="headerlink" title="2020.08.07"></a>2020.08.07</h3><p>可以 L，但是不要 H<br>如果技术文章写不下去，写庄子调养身息。<br>修正奖赏回路</p><ul><li>修改到赚钱的奖赏回路，哪怕是赚一点点钱，再少的钱都是自己赚的。本质上一切商业行为都是利益流动。利益流动是一个很好的分析社会经济的方法。</li><li>修改xing 的奖赏回路，不能通过 seqing 来获得多巴胺。</li></ul><p>奖赏回路是多巴胺造成的，</p><p>个人形象占比比想象中的影响大得多，正式场合一定要注意个人形象的打理。</p><p>赚钱的过程就是寻找经济流动的过程。</p><p>不要和自己对抗，两周一次，是目前比较能接受的情况。</p><h3 id="2020-08-08"><a href="#2020-08-08" class="headerlink" title="2020.08.08"></a>2020.08.08</h3><p>悟到了目前的身体状态的原因，只不过像吃饭一样需求某种东西而已，这也解释了鹊桥在道家中真实的含义。<br>色都是表象，而且会惊扰影响元神。<br>不思女色是果，精气足是原因。精气足不能通过戒来完成，就像不能通过不吃饭来练习辟谷。</p><p>成为精神导师，通过哲学上的思辨提升影响力。</p><h3 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020.08.10"></a>2020.08.10</h3><p>认识自己的局限性，是内心安定的第一步。<br>很多事情做之前不知道怎么才能做好？<br>做事情之前，通过写作来告诉自己那些需要做好。</p><h3 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020.08.11"></a>2020.08.11</h3><p>每天对收集到的信息进行整理</p><h3 id="2020-08-12"><a href="#2020-08-12" class="headerlink" title="2020.08.12"></a>2020.08.12</h3><p>所有的问题都是健康问题，身体好的人什么都能扛得住。</p><p><strong>反应力差，思维没有预见性。</strong></p><p>多关心自己的事情，少关心别人的事情。</p><p>我最大的问题是上了各个项目后，<strong>注意力丢失。</strong></p><p>学习个本质是<strong>把别人的内容变成自己的。</strong>抄袭、重构别人代码、写作就是一种很好的方式。</p><p>注意力流动和工作量低估是很多事情完不成的原因。</p><p>想要有所成就不仅需要能下棋，还要能劣势入场，扭转局势，否则大多数人连上桌子的机会都没有。救火是上桌子的唯一机会，<strong>所以看到很多地方起火就是好事。</strong>例如博古带领的红军第五次反围剿失败，才有毛泽东进入红军领导层的机会。</p><p>民主是领导者用来照顾个人的感受的，该麻利做出决定的时候还是该决定就好。</p><p>当看见一个级别很高的人做出一些很傻的决策时候，思考他的位置是否不同，毕竟当局者迷，旁观者清。</p><p>意见和建议并没有什么用，尤其是主动给别人的建议。</p><h3 id="2020-08-14"><a href="#2020-08-14" class="headerlink" title="2020.08.14"></a>2020.08.14</h3><p>两种人：找到生意的人，帮别人做的熟手。</p><p>普通人的心智就像三角形、正方形、圆形，性格是中二、刚正头铁的、圆滑世故的。得道的人心智就像水一样，水无常形，和所有的人都能处得来。</p><h3 id="2020-08-15"><a href="#2020-08-15" class="headerlink" title="2020.08.15"></a>2020.08.15</h3><p>看起来是选择重要，更重要的是提升自己的能力。做一个自由的接单人，比在大公司要快乐得多。</p><p>我感觉到了问题的关键就是鼻窦部分的气不能正常流转，做到这件事情。第一需要保持运动，比如跑步、颈椎活动，第二是保持足够的良好的睡眠。</p><p>”摇头摆尾去心火“ 的原理是上丹田的气息流动，可以心肾相交。之前的状态就是气无法下行（鹊桥无法建立），造成心火干烧，对人体有害。接吻可以获取阴气缓解症状。</p><h3 id="2020-08-16"><a href="#2020-08-16" class="headerlink" title="2020.08.16"></a>2020.08.16</h3><p>古代，皇帝头上都戴着顶特制的帽子，前面有冕旒，就是那个像门帘儿一样的小串珠，就是为了不轻易让别人看到脸部的神色。</p><p>我就是心火太旺。</p><p><a href="https://zhuanlan.zhihu.com/p/125593171" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/125593171</a></p><p>把庄周这个网站做成面向抑郁症的群体，读庄子最让人心神安定。</p><h3 id="2020-08-17"><a href="#2020-08-17" class="headerlink" title="2020.08.17"></a>2020.08.17</h3><p>我从来不会认为我会养成日记的习惯，我居然养成了，不过是以另外一种形式。</p><p>感觉已经对知乎上瘾了，大量的时间和精力都花费到知乎上了。</p><p>专注是最好的力量，为自己打造一两个 offering 是当务之急。</p><p>朴实是我目前的优势。</p><p>互联网公司目前的痛点是技术架构、人员架构、业务架构不匹配问题，我的书籍就是要解决分布式系统下这几个问题，并且这几个问题是一个系统性的问题，需要使用系统性思维。</p><p>保持清醒很重要，识别那些事情是重要的事情。</p><pre><code>- 写合同的时候- 工作上重大决策</code></pre><p>很少人意识到项目上很多技术决策是有成本的。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="2020-04-12"><a href="#2020-04-12" class="headerlink" title="2020.04.12"></a>2020.04.12</h2><p>自己一直都是一个想法很多的人，但这么多年很多东西都只是想法而已，没有把一个想法做到底，这是一件很悲哀的事情。</p><p>注意力是一件很贵的东西，每天的信息大量摄入，做了这么多年开发，越是热爱计算机，越是做不好。因为注意力被严重分散了。多么希望自己有一个能拿出得出手的作品，“善始者实繁 克终者盖寡”，其实很多东西还达不到选择这个层面，把手上的东西做透已经够吃了。</p><p>侯先生经常说“凡走过必留下足迹”，所谓“走弯路”，未必不是一件好事。<br>排队的时候，你会发现一个规律——另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。这就是神奇的墨菲定理。所以，不让自己后悔的最好办法，就是坚持你的人生梦想而不去张望别人。<br>要么旅行，要么读书，身体和灵魂必须有一个在路上。</p><p>专注就是凝神，把每一件小事做好，活在当下就是修行。</p><h2 id="2020-5-3"><a href="#2020-5-3" class="headerlink" title="2020.5.3"></a>2020.5.3</h2><p>写作的逻辑不是仅仅是写作本身。</p><p>写作应该是一个循环，学习 -&gt; 造轮子 -&gt; 写作-&gt;发现问题</p><p>有很多吓人的头衔，但是还需要出来讨生活的人，往往都不靠谱。</p><p>想要买一款生产力工具，先把这个工具的钱赚到再买。</p><h2 id="2020-5-4"><a href="#2020-5-4" class="headerlink" title="2020.5.4"></a>2020.5.4</h2><p>成为了一个孤独的人，于是写作水平就上去了。</p><p>写作的本质是发现问题、解决问题、整理问题。这样内容和素材源源不断。</p><p>应用系统的演化方向是业务复杂度自己消化，技术复杂度转移到云厂商，然后通过购买服务的方式解决。</p><h2 id="2020-7-5"><a href="#2020-7-5" class="headerlink" title="2020.7.5"></a>2020.7.5</h2><p>以前的学习方式太快了，快到什么都没有留下来。</p><p>除了自考之外，很久都没有长时间规划一次学习了。</p><p>最好的学习方式是练习，但是找不到练习的地方怎么办，那就是写作，并发表出去让别人指出你的错误。</p><p>使用写作驱动学习。</p><h2 id="2020-07-22"><a href="#2020-07-22" class="headerlink" title="2020.07.22"></a>2020.07.22</h2><p>模型思维很重要，任何做事情的方法都可以抽象成模型，例如如何设计一个软件，如何分析一个需求，都是在为这件事建模。当我意识到这个概念后，发现已经有人写过一本书《模型思维》</p><p>我们做 DDD 相关的工作，本质上也是模型思维。</p><p>很多时候感觉行动力不够，想玩手机、想玩知乎，本质上都是身体状况不太好，身体没有能量持续输出。所以不能把自己搞得太累，该休息的时候就休息，该工作的时候认真工作。懂得取舍和寻找自己有价值的东西</p><p>看到了一个很好的养生的视频：</p><p><a href="https://v.qq.com/x/page/m0379udbutu.html" target="_blank" rel="noopener">https://v.qq.com/x/page/m0379udbutu.html</a></p><p>“道法自然”的含义是尊重规律，不要和规律对抗，我们凡人心浮气躁，往往看不到规律，因此也一直在门外了。</p><p><a href="https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video" target="_blank" rel="noopener">https://haokan.baidu.com/v?vid=3812836309598569855&amp;pd=bjh&amp;fr=bjhauthor&amp;type=video</a></p><h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020.07.29"></a>2020.07.29</h2><p>时刻不要忘乎所以，无论是闲聊，谈事情。处下，看低自己</p><p>切记不要聊嗨了，然后狂说，”很懂“的样子</p><p><strong>随时保持清醒，心智不要受到其他人的影响。</strong></p><h2 id="2020-08-01"><a href="#2020-08-01" class="headerlink" title="2020.08.01"></a>2020.08.01</h2><p>做到保持清醒太难了。</p><p>世界上的各种宗派都只是掌握了通往道的法门，而道就在那里，我们普通人从来没得到过。</p><p>如果自己的行为都不能控制，还怎么能影响别人、影响事物的发展呢？</p><ul><li>和人交流保持谦逊，不装逼、少说话、不炫耀知识</li><li>克服拖延、不想做事，越是恶心的事情，越逼自己去</li></ul><h2 id="2020-08-03"><a href="#2020-08-03" class="headerlink" title="2020.08.03"></a>2020.08.03</h2><p>保持清醒需要花费很多能量，但是从小就没有这个力量，每次都是被节奏带来带去。</p><p>话还是太多了，需要改。</p><p>控心力强，则人强，随时保持清醒才能有所成就和输出。</p><h3 id="2020-08-03-1"><a href="#2020-08-03-1" class="headerlink" title="2020.08.03"></a>2020.08.03</h3><p>不能让它乱来，也不能让它饿着。</p><p>控心是一种随时需要修炼的能力，连早起都做不到，应该什么都做不到了。</p><p>连不过多说话都做不到，还能做到什么呢？</p><p>话还是太多，明天再少一点。</p><h3 id="2020-08-06"><a href="#2020-08-06" class="headerlink" title="2020.08.06"></a>2020.08.06</h3><p>我的策略是生效的，工作 -&gt; 总结 -&gt; 小册，小册包含 markdown - keynote - code。</p><p>咨询就是把零散的事情体系化。</p><p>能力和运气是成功的两个条件，缺一不可，但是往往强调其中一个。</p><p>任何一本书、一部电视剧、一套方法，都是一个模型，围绕这些模型分析问题，并实践。</p><p>做任何一个角色都要做到能独立去做，不做附庸。</p><p>健康是所有的事情的前提，因此晚上任何事情都不能影响睡眠时间，生死之外都是小事。</p><p>不要把自己的内心暴露给外界。</p><p>测试驱动开发不仅仅用于技术，还可以用于生活。验收驱动任务。</p><p>战略 -&gt; 模型 -&gt; 技巧，为善无近名，为恶无近刑。为自己打工，获得自由，自由的人一定是寂寞的，也更辛苦、风险、压力，但是我的性格一定要走这条路。方向就是自己的产品 + 外包，做一个非常小的领域。</p><p>人生如梦，如白驹过隙而已，不过就是演戏给这个世界看，谁演得好、演的不好而已。</p><h3 id="2020-08-07"><a href="#2020-08-07" class="headerlink" title="2020.08.07"></a>2020.08.07</h3><p>可以 L，但是不要 H<br>如果技术文章写不下去，写庄子调养身息。<br>修正奖赏回路</p><ul><li>修改到赚钱的奖赏回路，哪怕是赚一点点钱，再少的钱都是自己赚的。本质上一切商业行为都是利益流动。利益流动是一个很好的分析社会经济的方法。</li><li>修改xing 的奖赏回路，不能通过 seqing 来获得多巴胺。</li></ul><p>奖赏回路是多巴胺造成的，</p><p>个人形象占比比想象中的影响大得多，正式场合一定要注意个人形象的打理。</p><p>赚钱的过程就是寻找经济流动的过程。</p><p>不要和自己对抗，两周一次，是目前比较能接受的情况。</p><h3 id="2020-08-08"><a href="#2020-08-08" class="headerlink" title="2020.08.08"></a>2020.08.08</h3><p>悟到了目前的身体状态的原因，只不过像吃饭一样需求某种东西而已，这也解释了鹊桥在道家中真实的含义。<br>色都是表象，而且会惊扰影响元神。<br>不思女色是果，精气足是原因。精气足不能通过戒来完成，就像不能通过不吃饭来练习辟谷。</p><p>成为精神导师，通过哲学上的思辨提升影响力。</p><h3 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020.08.10"></a>2020.08.10</h3><p>认识自己的局限性，是内心安定的第一步。<br>很多事情做之前不知道怎么才能做好？<br>做事情之前，通过写作来告诉自己那些需要做好。</p><h3 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020.08.11"></a>2020.08.11</h3><p>每天对收集到的信息进行整理</p><h3 id="2020-08-12"><a href="#2020-08-12" class="headerlink" title="2020.08.12"></a>2020.08.12</h3><p>所有的问题都是健康问题，身体好的人什么都能扛得住。</p><p><strong>反应力差，思维没有预见性。</strong></p><p>多关心自己的事情，少关心别人的事情。</p><p>我最大的问题是上了各个项目后，<strong>注意力丢失。</strong></p><p>学习个本质是<strong>把别人的内容变成自己的。</strong>抄袭、重构别人代码、写作就是一种很好的方式。</p><p>注意力流动和工作量低估是很多事情完不成的原因。</p><p>想要有所成就不仅需要能下棋，还要能劣势入场，扭转局势，否则大多数人连上桌子的机会都没有。救火是上桌子的唯一机会，<strong>所以看到很多地方起火就是好事。</strong>例如博古带领的红军第五次反围剿失败，才有毛泽东进入红军领导层的机会。</p><p>民主是领导者用来照顾个人的感受的，该麻利做出决定的时候还是该决定就好。</p><p>当看见一个级别很高的人做出一些很傻的决策时候，思考他的位置是否不同，毕竟当局者迷，旁观者清。</p><p>意见和建议并没有什么用，尤其是主动给别人的建议。</p><h3 id="2020-08-14"><a href="#2020-08-14" class="headerlink" title="2020.08.14"></a>2020.08.14</h3><p>两种人：找到生意的人，帮别人做的熟手。</p><p>普通人的心智就像三角形、正方形、圆形，性格是中二、刚正头铁的、圆滑世故的。得道的人心智就像水一样，水无常形，和所有的人都能处得来。</p><h3 id="2020-08-15"><a href="#2020-08-15" class="headerlink" title="2020.08.15"></a>2020.08.15</h3><p>看起来是选择重要，更重要的是提升自己的能力。做一个自由的接单人，比在大公司要快乐得多。</p><p>我感觉到了问题的关键就是鼻窦部分的气不能正常流转，做到这件事情。第一需要保持运动，比如跑步、颈椎活动，第二是保持足够的良好的睡眠。</p><p>”摇头摆尾去心火“ 的原理是上丹田的气息流动，可以心肾相交。之前的状态就是气无法下行（鹊桥无法建立），造成心火干烧，对人体有害。接吻可以获取阴气缓解症状。</p><h3 id="2020-08-16"><a href="#2020-08-16" class="headerlink" title="2020.08.16"></a>2020.08.16</h3><p>古代，皇帝头上都戴着顶特制的帽子，前面有冕旒，就是那个像门帘儿一样的小串珠，就是为了不轻易让别人看到脸部的神色。</p><p>我就是心火太旺。</p><p><a href="https://zhuanlan.zhihu.com/p/125593171" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/125593171</a></p><p>把庄周这个网站做成面向抑郁症的群体，读庄子最让人心神安定。</p><h3 id="2020-08-17"><a href="#2020-08-17" class="headerlink" title="2020.08.17"></a>2020.08.17</h3><p>我从来不会认为我会养成日记的习惯，我居然养成了，不过是以另外一种形式。</p><p>感觉已经对知乎上瘾了，大量的时间和精力都花费到知乎上了。</p><p>专注是最好的力量，为自己打造一两个 offering 是当务之急。</p><p>朴实是我目前的优势。</p><p>互联网公司目前的痛点是技术架构、人员架构、业务架构不匹配问题，我的书籍就是要解决分布式系统下这几个问题，并且这几个问题是一个系统性的问题，需要使用系统性思维。</p><p>保持清醒很重要，识别那些事情是重要的事情。</p><pre><code>- 写合同的时候- 工作上重大决策</code></pre><p>很少人意识到项目上很多技术决策是有成本的。</p><p>做事情应该遵守中正之道，不占便宜，不吃亏为度。</p><h3 id="2020-08-18"><a href="#2020-08-18" class="headerlink" title="2020.08.18"></a>2020.08.18</h3><p>理性对大多数人而言是一件奢侈品，当环境影响下，很多人做出的选择相当诡异。所以人生如戏，看怎么演了，演得好就活的好。<br>演一个好学生、朋友和丈夫，有时候真性情或许也是验出来的。<br>静下心和专注是最好的良药，降心气。<br>无论多大的企业都是打工，不过大企业会给你一个招牌。找到自己的门路才是正道。<br>学习操作系统编程，成为一个真正的程序员。<br>不专注，是大多数人犯的同一个错误。<br>思考怎么做最关键的角色，而不是考虑什么都自己做，什么都想做这是这么多年来最失败的思维。</p><p>测试驱动做事情是一种思维习惯。<br>达成目的即可，很多真假有什么分别呢。</p><p>TW 的程序员不把心思放到业务上，在工程化上。很多事情的唯一出路深入浅出，是指自己思考的深入，然后把事情表达的简单。 </p><p>把精力集中到小书和中间件（jdorm）的编写，可以每天通过笔记提醒自己一遍。</p>]]></content>
       
       
       <categories>
@@ -5913,6 +5913,23 @@
     </entry>
     
     <entry>
+      <title>FastDFS 分布式文件系统方案</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术组件 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Circle CI 基本使用</title>
       <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/"/>
       <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/circleci%20basic/</url>
@@ -5940,23 +5957,6 @@
       <categories>
           
           <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>FastDFS 分布式文件系统方案</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6/tech-components/fastDFS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>上传</p><ol><li>client询问tracker上传到的storage，不需要附加参数；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件上传。</li></ol><p>下载</p><ol><li>client询问tracker下载文件的storage，参数为文件标识（卷名和文件名）；</li><li>tracker返回一台可用的storage；</li><li>client直接和storage通讯完成文件下载。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术组件 </category>
           
       </categories>
       
@@ -6219,6 +6219,23 @@
     </entry>
     
     <entry>
+      <title>Python 入门</title>
+      <link href="/python/python/python-basic/"/>
+      <url>/python/python/python-basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React router 登录验证方案</title>
       <link href="/react/react/React+Redux+React%20router%20authentication/"/>
       <url>/react/react/React+Redux+React%20router%20authentication/</url>
@@ -6236,6 +6253,23 @@
     </entry>
     
     <entry>
+      <title>PHP拓展和使用C编写自定义拓展</title>
+      <link href="/php/php/php-plugin-c/"/>
+      <url>/php/php/php-plugin-c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>PostgreSQL 入门使用</title>
       <link href="/postgreSQL/postgreSQL/get%20start/"/>
       <url>/postgreSQL/postgreSQL/get%20start/</url>
@@ -6246,23 +6280,6 @@
       <categories>
           
           <category> postgreSQL </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>React 资源收集</title>
-      <link href="/React/react/react-recource/"/>
-      <url>/React/react/react-recource/</url>
-      
-        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> React </category>
           
       </categories>
       
@@ -6304,16 +6321,16 @@
     </entry>
     
     <entry>
-      <title>Python 入门</title>
-      <link href="/python/python/python-basic/"/>
-      <url>/python/python/python-basic/</url>
+      <title>React 资源收集</title>
+      <link href="/React/react/react-recource/"/>
+      <url>/React/react/react-recource/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>入门教程： <a href="http://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-tutorial.html</a></p><h2 id="Python-是什么？"><a href="#Python-是什么？" class="headerlink" title="Python 是什么？"></a>Python 是什么？</h2><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p><ul><li>Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</li><li>Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。</li><li>Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</li><li>Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</li></ul><h2 id="安装-Python-in-Mac"><a href="#安装-Python-in-Mac" class="headerlink" title="安装 Python in Mac"></a>安装 Python in Mac</h2><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a><br>推荐使用版本为2.7</p><h2 id="进入交互模式"><a href="#进入交互模式" class="headerlink" title="进入交互模式"></a>进入交互模式</h2><p>linux上你只需要在命令行中输入 Python 命令即可启动交互式编程</p>]]></content>
+        <content type="html"><![CDATA[<p>React js 后端界面<br><a href="https://marmelab.com/admin-on-rest/Admin.html" target="_blank" rel="noopener">https://marmelab.com/admin-on-rest/Admin.html</a></p><p>React 测试工具</p><p><a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">https://github.com/airbnb/enzyme</a></p><p>React 状态管理库</p><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">https://github.com/reactjs/react-redux</a></p><p>React 脚手架</p><p><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">https://github.com/facebookincubator/create-react-app</a></p><p>React 组件库(无UI)</p><p>rc-*</p><p><a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>Here is a list of react-component: <a href="http://react-component.github.io/badgeboard/" target="_blank" rel="noopener">http://react-component.github.io/badgeboard/</a></p><p>React component documentation tool story book</p><p><a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">https://github.com/storybooks/storybook</a></p><p>React UI和组件库</p><ul><li><a href="https://ant.design/" target="_blank" rel="noopener">https://ant.design/</a></li><li><a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a></li><li><a href="https://onsen.io/react/" target="_blank" rel="noopener">https://onsen.io/react/</a></li></ul><p>React boilerplate</p>]]></content>
       
       
       <categories>
           
-          <category> python </category>
+          <category> React </category>
           
       </categories>
       
@@ -6321,28 +6338,11 @@
     </entry>
     
     <entry>
-      <title>PHP拓展和使用C编写自定义拓展</title>
-      <link href="/php/php/php-plugin-c/"/>
-      <url>/php/php/php-plugin-c/</url>
+      <title>PHP 不同场景下技术选型的讨论</title>
+      <link href="/php/php/lightweight%20php%20api/"/>
+      <url>/php/php/lightweight%20php%20api/</url>
       
-        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>PHP的一个拓展方法就是使用C来编写PHP插件,可以带来极大的性能提升和实现系统层面的拓展。推荐使用C来编写,但是C++特性更为丰富并且有大量的库来支持我们的任务,因此C++也是更好的选择。</p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul><li>PHP 源码解读和插件编写基本知识 <a href="http://www.php-internals.com/" target="_blank" rel="noopener">http://www.php-internals.com/</a></li><li>C++库用于简化插件编写 <a href="https://github.com/rioderelfte/php-cpp-extension" target="_blank" rel="noopener">https://github.com/rioderelfte/php-cpp-extension</a></li><li>V8引擎插件 <a href="https://github.com/phpv8/v8js" target="_blank" rel="noopener">https://github.com/phpv8/v8js</a></li><li>基于php-cpp的Qr code插件 <a href="https://github.com/Leon2012/phpqrencode" target="_blank" rel="noopener">https://github.com/Leon2012/phpqrencode</a></li><li>PHP MVC框架的拓展实现 <a href="https://github.com/phalcon/cphalcon" target="_blank" rel="noopener">https://github.com/phalcon/cphalcon</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>CakePHP 脚手架和命令行工具</title>
-      <link href="/php/php/cakephp%20scaffold/"/>
-      <url>/php/php/cakephp%20scaffold/</url>
-      
-        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
       
       
       <categories>
@@ -6372,23 +6372,6 @@
     </entry>
     
     <entry>
-      <title>CakePHP 资源收集</title>
-      <link href="/php/php/cakephp%20resource/"/>
-      <url>/php/php/cakephp%20resource/</url>
-      
-        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> php </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Mac 环境下使用MAMP安装PHP环境</title>
       <link href="/php/php/php-mamp/"/>
       <url>/php/php/php-mamp/</url>
@@ -6406,11 +6389,28 @@
     </entry>
     
     <entry>
-      <title>PHP 不同场景下技术选型的讨论</title>
-      <link href="/php/php/lightweight%20php%20api/"/>
-      <url>/php/php/lightweight%20php%20api/</url>
+      <title>CakePHP 资源收集</title>
+      <link href="/php/php/cakephp%20resource/"/>
+      <url>/php/php/cakephp%20resource/</url>
       
-        <content type="html"><![CDATA[<h2 id="构建独立的API应用"><a href="#构建独立的API应用" class="headerlink" title="构建独立的API应用"></a>构建独立的API应用</h2><p>不使用框架而搭建轻量级灵活的API接口，满足基本业务需求要求拓展性好。</p><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul><li>Composer 包管理工具</li><li>ToroPHP PHP路由框架</li><li>Medoo PHP数据库ORM框架</li><li>Monolog 日志框架</li><li>JWT token消费和验证</li></ul><h2 id="构建小型企业网站"><a href="#构建小型企业网站" class="headerlink" title="构建小型企业网站"></a>构建小型企业网站</h2><p>推荐使用 <a href="http://www.x6cms.com/" target="_blank" rel="noopener">x6cms</a> 这个cms的好处是构建了一个非常简单和完善的管理系统，该cms使用了CI框架开发</p><h2 id="构建微信应用"><a href="#构建微信应用" class="headerlink" title="构建微信应用"></a>构建微信应用</h2><p>推荐使用微擎，phpWechat</p>]]></content>
+        <content type="html"><![CDATA[<p>akePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.</p><p>The Cake Software Foundation - promoting development related to CakePHP<br><a href="http://cakefoundation.org/" target="_blank" rel="noopener">http://cakefoundation.org/</a></p><p>CakePHP - the rapid development PHP framework<br><a href="http://www.cakephp.org" target="_blank" rel="noopener">http://www.cakephp.org</a></p><p>Cookbook - user documentation for learning about CakePHP<br><a href="http://book.cakephp.org" target="_blank" rel="noopener">http://book.cakephp.org</a></p><p>API - quick reference to CakePHP<br><a href="http://api.cakephp.org" target="_blank" rel="noopener">http://api.cakephp.org</a></p><p>The Bakery - everything CakePHP<br><a href="http://bakery.cakephp.org" target="_blank" rel="noopener">http://bakery.cakephp.org</a></p><p>The Show - live and archived podcasts about CakePHP and more<br><a href="http://live.cakephp.org" target="_blank" rel="noopener">http://live.cakephp.org</a></p><p>CakePHP TV - screen casts from events and video tutorials<br><a href="http://tv.cakephp.org" target="_blank" rel="noopener">http://tv.cakephp.org</a></p><p>CakePHP Google Group - community mailing list and forum<br><a href="http://groups.google.com/group/cake-php" target="_blank" rel="noopener">http://groups.google.com/group/cake-php</a></p><p>#cakephp on irc.freenode.net - chat with CakePHP developers<br>irc://irc.freenode.net/cakephp</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>CakePHP 脚手架和命令行工具</title>
+      <link href="/php/php/cakephp%20scaffold/"/>
+      <url>/php/php/cakephp%20scaffold/</url>
+      
+        <content type="html"><![CDATA[<p>CakePHP提供了一个bake命令行工具,提供了一套代码创建命令行工具,可以根据数据库创建模型和控制器视图等。</p>]]></content>
       
       
       <categories>
@@ -6508,23 +6508,6 @@
     </entry>
     
     <entry>
-      <title>Team leader 能力模型案例解读</title>
-      <link href="/management/management/Team%20leader%20checklist/"/>
-      <url>/management/management/Team%20leader%20checklist/</url>
-      
-        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> management </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Java 对象克隆</title>
       <link href="/java/java/java-object-clone/"/>
       <url>/java/java/java-object-clone/</url>
@@ -6535,23 +6518,6 @@
       <categories>
           
           <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Mysql 基本管理命令</title>
-      <link href="/mysql/mysql/mysql-baisc-operation/"/>
-      <url>/mysql/mysql/mysql-baisc-operation/</url>
-      
-        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mysql </category>
           
       </categories>
       
@@ -6576,16 +6542,33 @@
     </entry>
     
     <entry>
-      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
-      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
-      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      <title>Mysql 基本管理命令</title>
+      <link href="/mysql/mysql/mysql-baisc-operation/"/>
+      <url>/mysql/mysql/mysql-baisc-operation/</url>
       
-        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>一、从命令行登录MySQL数据库服务器 1、登录使用默认3306端口的MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p</p><p>2、通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</p><p>/usr/local/mysql/bin/mysql -u root -p –protocol=tcp –host=localhost –port=3307</p><p>3、通过socket套接字管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p –socket=/tmp/mysql3307.sock</p><p>4、通过端口和IP管理不同端口的多个MySQL</p><p>/usr/local/mysql/bin/mysql -u root -p -P 3306 -h 127.0.0.1</p><hr><p>二、数据库操作SQL语句 1、显示服务器上当前存在什么数据库</p><p>SHOW DATABASES;</p><p>2、创建名称为rewin的数据库</p><p>CREATE DATABASE rewin DEFAULT CHARACTER SET utf8 ;</p><p>3、删除名称为rewin的数据库</p><p>DROP DATABASE rewin;</p><p>4、选择rewin数据库</p><p>USE rewin;</p><hr><p>三、表操作SQL语句（登录之后必须用以上的USE命令选择一个数据库，再进行表操作） 1、显示当前数据库中存在什么表</p><p>SHOW TABLES;</p><p>2、创建数据库表zhangyan：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引</p><p>。</p><p>CREATE TABLE <code>zhangyan</code> ( <code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT , <code>username</code> VARCHAR( 20 ) NOT NULL , <code>password</code> CHAR( 32 ) NOT NULL , <code>time</code> DATETIME NOT NULL , <code>number</code> FLOAT( 10 ) NOT NULL , <code>content</code> TEXT NOT NULL , PRIMARY KEY ( <code>id</code> ) ) ENGINE = MYISAM ;</p><p>3、查看zhangyan表结构</p><p>DESCRIBE zhangyan;</p><p>4、从表中检索信息 4.1、从zhangyan表中检索所有记录</p><p>SELECT * FROM zhangyan;</p><p>4.2、从zhangyan表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</p><p>SELECT * FROM zhangyan WHERE username = abc AND number=1 ORDER BY id DESC;</p><p>4.3、从zhangyan表中检索指定的字段：username和password</p><p>SELECT username, password FROM zhangyan;</p><p>4.4、从zhangyan表中检索出唯一的不重复记录：</p><p>SELECT DISTINCT username FROM zhangyan;</p><p>5、插入信息到zhangyan表</p><p>INSERT INTO zhangyan (id, username, password, time, number, content) VALUES (, abc, 123456,</p><p>2007-08-06 14:32:12, 23.41, hello world);</p><p>6、更新zhangyan表中的指定信息</p><p>UPDATE zhangyan SET content = hello china WHERE username = abc;</p><p>7、删除zhangyan表中的指定信息</p><p>DELETE FROM zhangyan WHERE id = 1;</p><p>8、清空zhangyan表</p><p>DELETE FROM zhangyan;</p><p>9、删除zhangyan表</p><p>DROP TABLE zhangyan;</p><p>10、更改表结构，将zhangyan表username字段的字段类型改为CHAR(25)</p><p>ALTER TABLE zhangyan CHANGE username username CHAR(25);</p><p>11、将当前目录下的mysql.sql导入数据库</p><p>SOURCE ./mysql.sql;</p><hr><p>四、数据库权限操作SQL语句 </p><p>1、创建一个具有root权限，可从任何IP登录的用户sina，密码为zhangyan</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO sina@% IDENTIFIED BY zhangyan;</p><p>2、创建一个具有”数据操作”、”结构操作”权限，只能从192.168.1.***登录的用户sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE</p><p>TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON</p><p><em>.</em> TO <a href="mailto:sina@192.168.1" target="_blank" rel="noopener">sina@192.168.1</a>.% IDENTIFIED BY zhangyan;</p><p>3、创建一个只拥有”数据操作”权限，只能从192.168.1.24登录，只能操作rewin数据库的zhangyan表的用户</p><p>sina，密码为zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE ON  rewin.zhangyan TO <a href="mailto:sina@192.168.1.24" target="_blank" rel="noopener">sina@192.168.1.24</a> IDENTIFIED BY</p><p>zhangyan;</p><p>4、创建一个拥有”数据操作”、”结构操作”权限，可从任何IP登录，只能操作rewin数据库的用户sina，密码为</p><p>zhangyan</p><p>GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY</p><p>TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON rewin.* TO</p><p>sina@% IDENTIFIED BY zhangyan;</p><p>5、删除用户</p><p>DROP USER sina@%;</p><p>6.MySQL中将字符串aaa批量替换为bbb的SQL语句</p><p>UPDATE 表名 SET 字段名 = REPLACE (字段名, aaa, bbb);</p><p>7.修复损坏的表       ①、用root帐号从命令行登录MySQL： 　　     mysql -u root -p</p><p>　　②、输入root帐号的密码。</p><p>　　③、选定数据库名（本例中的数据库名为student）： 　　use student;</p><p>　　④、修复损坏的表（本例中要修复的表为smis_user_student）： 　　repair table smis_user_student;udent;</p>]]></content>
       
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Team leader 能力模型案例解读</title>
+      <link href="/management/management/Team%20leader%20checklist/"/>
+      <url>/management/management/Team%20leader%20checklist/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Develop others<ul><li>主动提出Feedbacks  </li></ul></li><li>Staffing<ul><li>熟悉团队成员构成，如果人员变化及时报告和安排人员</li><li>如果有新人或者毕业生，需要权衡是否会影响团队</li></ul></li><li>Team building<ul><li>增加亲密关系，让团队更加和谐、融洽</li><li>团队成员情绪和压力</li><li>Team的人员成长，注意人员搭配</li><li>提醒Timecard</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> management </category>
           
       </categories>
       
@@ -6627,6 +6610,23 @@
     </entry>
     
     <entry>
+      <title>Jeeweb - SpringMVC+Spring+Hibernate 项目模板</title>
+      <link href="/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/"/>
+      <url>/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/architecture/Jeeweb%20-%20Java%20boilerplate/</url>
+      
+        <content type="html"><![CDATA[<p>JeeWeb是一款基于SpringMVC+Spring+Hibernate的敏捷开发系统, 实际上是一个种子项目,但是用来开发CRUD项目绰绰有余了。</p><p>项目地址:<a href="https://www.oschina.net/p/jeeweb" target="_blank" rel="noopener">https://www.oschina.net/p/jeeweb</a><br>github地址:<a href="https://github.com/white-cat/jeeweb" target="_blank" rel="noopener">https://github.com/white-cat/jeeweb</a></p><p>通过学习这个项目,可以学习Java基本的基本选型和配置。<br>技术选型参考如下:</p><h2 id="JeeWeb-功能特点"><a href="#JeeWeb-功能特点" class="headerlink" title="JeeWeb 功能特点"></a>JeeWeb 功能特点</h2><ul><li>采用SpringMVC+Spring+Hibernate+Shiro+ Ehcache+Disruptor+Jquery + Boostrap + Ztree等基础前后端架构架构</li><li>采用面向声明的开发模式， 基于泛型编写极少代码即可实现复杂的数据展示、数据编辑、表单处理等功能，在不使用代码生成器的情况下，也只需要很少的代码就能实现基础的CURD操作，再配合在线开发与代码生成器的使用，更加加快了开发的进度，将J2EE的开发效率成本提高，可以将代码减少60%以上。</li><li>在线开发(通过在线配置实现一个表模型的增删改查功能，无需一行代码，支持用户自定义表单布局)</li><li>代码生成器，支持多种数据模型,根据表生成对应的Entity,Service,Dao,Controller,JSP等,增删改查功能生成直接使用</li><li>UI标签开发库，针对前端UI进行标准封装表，页面统一采用UI标签实现功能：数据datagrid,treegrid,FileInput,Editor,GridSelect等，实现JSP页面零JS，开发维护简洁高效</li><li>查询过滤器：只需前端配置，后台动态拼SQL追加查询条件；支持多种匹配方式（全匹配/模糊查询/包含查询/不匹配查询）</li><li>移动平台支持，对Bootstrap(兼容Html5)进行标准封装</li><li>国际化（支持多语言，国际化的封装为多语言做了便捷支持）</li><li>多数据源（在线配置数据源，数据源工作类封装）</li><li>数据权限：整合Shiro权限</li><li>计划任务控制（在线配置计划任务、方便计划任务的时间调整规划）</li><li>邮件发送（配置邮件模版、邮件帐号的在线配置、邮件异步发送、邮件发送日志功能统计）</li><li>短信发送（配置短信模版、短信帐号的在线配置、短信异步发送、短信发送日志功能统计、支持短信发送平台动态切换）</li><li>多种首页风格切换,支持自定义首页风格。（Inspinia风格|ACE风格）</li><li>数据统计报表：丰富的报表统计功能</li><li>支持多种浏览器: Google, 火狐, IE,360 等</li><li>支持数据库: Mysql,Oracle10g,SqlServer等</li><li>基础权限: 用户，角色，菜单权限</li><li>Web容器测试通过的有Jetty和Tomcat,Weblogic</li><li>要求JDK1.7+</li></ul><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>1、后端</p><ul><li>核心框架：Spring Framework</li><li>安全框架：Apache Shiro</li><li>视图框架：Spring MVC</li><li>服务端验证：Hibernate Validator</li><li>布局框架：SiteMesh</li><li>任务调度：Quartz</li><li>持久层框架：Hibernate</li><li>数据库连接池：Alibaba Druid</li><li>缓存框架：Ehcache</li><li>并发框架：Disruptor</li><li>日志管理：SLF4J、Log4j</li><li>工具类：Apache Commons、Jackson、Xstream、</li></ul><p>2、前端</p><ul><li>JS框架：jQuery。</li><li>CSS框架：Twitter Bootstrap</li><li>客户端验证：Validform。</li><li>富文本在线编辑：markdown、simditor、Summernote、CodeMirror自由切换</li><li>文件上传工具:Bootstrap fileinput</li><li>数据表格：jqGrid</li><li>对话框：layer</li><li>树结构控件：jQuery zTree</li><li>日期控件： datepicker</li><li>代码高亮： syntaxhighlighter</li></ul><h2 id="简单使用说明"><a href="#简单使用说明" class="headerlink" title="简单使用说明"></a>简单使用说明</h2><ul><li>导入sql/jeeweb-mysql-v1.0.sql文件到mysql数据库</li><li>导入项目到Eclipse.</li><li>修改数据库配置文件dbconfig.properties中的账号密码.</li><li>启动项目,管理员账号admin/密码123456</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>java 异常</title>
       <link href="/java/java/java-exception/"/>
       <url>/java/java/java-exception/</url>
@@ -6654,6 +6654,23 @@
       <categories>
           
           <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Java 学习教程资源收集</title>
+      <link href="/java/java/Java%20tutorial%20collection/"/>
+      <url>/java/java/Java%20tutorial%20collection/</url>
+      
+        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
           
       </categories>
       
@@ -6695,23 +6712,6 @@
     </entry>
     
     <entry>
-      <title>Java 学习教程资源收集</title>
-      <link href="/java/java/Java%20tutorial%20collection/"/>
-      <url>/java/java/Java%20tutorial%20collection/</url>
-      
-        <content type="html"><![CDATA[<h3 id="教程列表"><a href="#教程列表" class="headerlink" title="教程列表"></a>教程列表</h3><p>下列顺序可以作为学习路线图</p><ul><li>入门教程 <a href="http://www.runoob.com/java/java-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-tutorial.html</a></li><li>Servlet <a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/servlet/servlet-tutorial.html</a></li><li>JSP <a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/jsp/jsp-tutorial.html</a></li><li>Spring mvc<ul><li>张开涛 <a href="http://jinnianshilongnian.iteye.com/category/231099" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/category/231099</a></li><li>传智播客视屏教程</li></ul></li><li><p>Maven <a href="https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Maven-tutorials/Multi-Module-Build-Automation-Maven/520530-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3amaven+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p></li><li><p>Mybatis</p></li><li>Hibernate</li></ul><h3 id="其他资料收集"><a href="#其他资料收集" class="headerlink" title="其他资料收集"></a>其他资料收集</h3><ul><li>一些Java基础例子 <a href="http://www.runoob.com/java/java-examples.html" target="_blank" rel="noopener">http://www.runoob.com/java/java-examples.html</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>wiki 使用方法</title>
       <link href="/help/how-to-use-this-wiki/"/>
       <url>/help/how-to-use-this-wiki/</url>
@@ -6722,6 +6722,23 @@
       <categories>
           
           <category> help </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>前端生态图谱</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
+      
+        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工程 </category>
           
       </categories>
       
@@ -6763,11 +6780,11 @@
     </entry>
     
     <entry>
-      <title>前端生态图谱</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/frontend%20ecologies/</url>
+      <title>前端面试tips</title>
+      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
+      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
       
-        <content type="html"><![CDATA[<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><ul><li>开发模式<ul><li>多页面开发 前端开发人员切页面然后和后端开发语言模板系统集成比如（PHP、JSP、EJS、JADE），后端进行渲染，前后端不分离，输出为JS、HTML、CSS等，前端开发可以对JS、CSS进行压缩或其他处理</li><li>单页面开发 使用富前端开发思想，后端只需要提供一个入口的页面和API，前端负责路由和渲染。前后端分离，前端一般会对资源进行打包，然后输出一个index.html 和 app.js,前端完成所有的业务逻辑和API调用。</li></ul></li></ul><ul><li><p>前端发展过程</p><ul><li>原生JS</li><li>JQuery + 插件开发模式，大规模的编写后台管理系统，easyUI</li><li>Backbone 的轻量级的MVC开发模式</li></ul></li><li><p>开发模式</p><ul><li><p>MVC 前端变成了一个application，index.html 入口启动, </p><ul><li>M model 一个可以操作的数据实体</li><li>V view 显示层，把数据渲染在页面上</li><li>C controller/collect 控制器</li><li>代表的框架：Backbone</li></ul></li><li><p>MVVM 解决了前端数据输入和输出映射问题</p><ul><li>M model</li><li>V 视图</li><li>MV-VM 意义是数据渲染到视图中，然后也可以从视图中获取数据，这就是双向绑定</li><li>代表框架：Angularjs </li></ul></li><li><p>单项数据流+渲染引擎</p><ul><li>React 是什么？React只是一个单项的高效的渲染引擎而已</li><li>我们讲React的时候往往在谈论React+Redux一套完整的开发生态</li><li>React/VUE</li></ul></li></ul></li><li><p>前端构建工具</p><ul><li>Node 前端开发为什么需要用Node？Node只是提供了一个JS的非浏览器运行环境（采用了chrome的V8引擎）。</li><li>Npm 一个nodejs 包管理工具和平台，NPM可以用来管理JS的依赖和包，NPM就可以安装大量的前端开发工具，NPM的描述文件为package.json<ul><li>npm install 安装当前目录下package.json 中所有的依赖</li></ul></li><li><p>构建工具</p><ul><li><p>grunt 提供了一个流处理工作环境，用来编写前端批处理任务，比如压缩JS、编译less、Sass等</p><ul><li>grunt的描述文件为Gruntfile.js</li><li>grunt的工作方式为通过编写gruntfile来组合grunt插件完成相应任务</li><li>grunt 常用插件<ul><li>requirejs 如果前端使用了模块化可以加载此类插件</li><li>uglify  </li><li>css_import 多个css组合成一个</li><li>cssmin 把css压缩成小文件</li><li>jshint 根据某种规则对JS代码检查</li></ul></li><li>一个例子项目 <a href="https://github.com/linksgo2011/backbone-weui" target="_blank" rel="noopener">https://github.com/linksgo2011/backbone-weui</a></li></ul></li><li><p>gulp 思路和grunt一致，但是gulp不仅提供了配置的方法，还可以交互式进行编程</p></li><li>webpack 资源的load和打包，webpack主要对单页面应用开发使用<ul><li>通过loader的思想，对前端资源进行管理和打包操作</li><li>Babel</li><li>Es6</li><li>Eslint</li></ul></li></ul></li></ul></li><li><p>React 生态</p><ul><li>Reactjs</li><li>React-router</li><li>Redux</li><li>React form </li><li>axios</li><li>工具<ul><li>lodash</li><li>moment</li></ul></li><li>webpack 配置</li><li>组件库 <a href="http://ant.design/" target="_blank" rel="noopener">http://ant.design/</a></li></ul></li><li><p>Vue 生态</p></li><li><p>前端的模块化历史</p><ul><li>没有模块化的时候<ul><li>命名空间放置变量作用于泄露 app.xx.fun1 = function(){}</li></ul></li><li>Requirejs</li><li>commonjs</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
       
       
       <categories>
@@ -6797,16 +6814,16 @@
     </entry>
     
     <entry>
-      <title>前端面试tips</title>
-      <link href="/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/"/>
-      <url>/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/frontend/Interview%20for%20frontend/</url>
+      <title>免费的CI/CD 工具</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
       
-        <content type="html"><![CDATA[<h2 id="面试考察目标"><a href="#面试考察目标" class="headerlink" title="面试考察目标"></a>面试考察目标</h2><ul><li>对于编程语言的掌握程度，比如基本语法，语言特性等等</li><li>实际动手写代码的速度，比如敲代码过程中是否流畅</li><li>Code Smell的识别与重构能力</li><li>对于软件设计的理解深度</li><li>对遇到问题的解决思路以及反应速度</li><li>对新需求的反应和理解速度</li><li>对新事物的态度和学习能力，比如新IDE，TDD等</li><li>沟通交流、协作能力</li><li>对待Feedback的态度</li></ul><h2 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h2><ol><li>作业查看</li><li>收集上一轮面试反馈</li><li>关键信息收集<ul><li>姓名</li><li>技术栈</li><li>工作年限</li><li>项目经历</li><li>毕业院校</li></ul></li></ol><h2 id="准备问题的几个维度"><a href="#准备问题的几个维度" class="headerlink" title="准备问题的几个维度"></a>准备问题的几个维度</h2><ol><li>理论基础</li><li>常用编程技巧是否熟练</li><li>接受Feedback和沟通是否顺畅</li><li>学习能力</li><li>发现问题能力</li><li>工程设计能力</li><li>细节和质量控制能力</li></ol><h2 id="几个可选的问题"><a href="#几个可选的问题" class="headerlink" title="几个可选的问题"></a>几个可选的问题</h2><ol><li>工作中是否使用了ES6那些语法特性?</li><li>了解哪些前端框架和库，他们的特点是什么？</li><li>你觉得这里用xxx是不是好一些？</li><li>如果你拿到一个新的框架，会怎么去快速上手？</li><li>对于你的代码，你觉得哪些点还可以提升？</li><li>这些逻辑是不是可以抽象出来？</li><li>怎么写单元测试？</li></ol>]]></content>
+        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 前端工程 </category>
+          <category> 运维开发 </category>
           
       </categories>
       
@@ -6824,23 +6841,6 @@
       <categories>
           
           <category> linux </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>免费的CI/CD 工具</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/CI-free-tools/</url>
-      
-        <content type="html"><![CDATA[<h3 id="为什么要使用CI"><a href="#为什么要使用CI" class="headerlink" title="为什么要使用CI?"></a>为什么要使用CI?</h3><p>方便集成发布和包管理,举个例子就是在Merge PR之前运行测试,如果测试没有通过,不允许合并代码。</p><h3 id="能和Github集成的CI工具"><a href="#能和Github集成的CI工具" class="headerlink" title="能和Github集成的CI工具"></a>能和Github集成的CI工具</h3><p><a href="https://github.com/marketplace/category/continuous-integration" target="_blank" rel="noopener">https://github.com/marketplace/category/continuous-integration</a></p><p>Travis CI<br>CircleCI 推荐使用</p><h3 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h3><p>关键点</p><ul><li>代码质量</li><li>代码安全扫描</li><li>报警</li><li>包管理</li><li>自动部署和发布</li><li>代码审查</li></ul><p><a href="https://help.github.com/articles/github-flow/" target="_blank" rel="noopener">https://help.github.com/articles/github-flow/</a></p><p>使用github开发步骤</p><ul><li>Create a branch from the repository.</li><li>Create, edit, rename, move, or delete files.</li><li>Send a pull request from your branch with your proposed changes to kick off a discussion.</li><li>Make changes on your branch as needed. Your pull request will update automatically.</li><li>Merge the pull request once the branch is ready to be merged.</li><li>Tidy up your branches using the delete button in the pull request or on the branches page.</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维开发 </category>
           
       </categories>
       
@@ -6933,11 +6933,11 @@
     </entry>
     
     <entry>
-      <title>使用SSH实现自动化部署</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
+      <title>Lambda 入门</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
       
       
       <categories>
@@ -6950,11 +6950,11 @@
     </entry>
     
     <entry>
-      <title>Lambda 入门</title>
-      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/"/>
-      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/aws%20lambda/</url>
+      <title>使用SSH实现自动化部署</title>
+      <link href="/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/"/>
+      <url>/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/devops/auto%20deployment%20with%20ssh/</url>
       
-        <content type="html"><![CDATA[<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>Official website:<br><a href="http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-app.html</a></p><p>A video tutorial:<br><a href="https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2" target="_blank" rel="noopener">https://www.lynda.com/Amazon-Web-Services-tutorials/Serverless-architectures-AWS-Lambda/569195/617984-4.html?srchtrk=index%3a3%0alinktypeid%3a2%0aq%3alambda+aws%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2</a></p><h2 id="什么是Lambda？"><a href="#什么是Lambda？" class="headerlink" title="什么是Lambda？"></a>什么是Lambda？</h2><p>AWS Lambda 是一项计算服务，可使您无需预配置或管理服务器即可运行代码。AWS Lambda 只在需要时执行您的代码并自动缩放，从每天几个请求到每秒数千个请求。您只需按消耗的计算时间付费 – 代码未运行时不产生费用。借助 AWS Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且无需执行任何管理。AWS Lambda 在可用性高的计算基础设施上运行您的代码，执行计算资源的所有管理工作，其中包括服务器和操作系统维护、容量预置和自动扩展、代码监控和记录。您只需要以 AWS Lambda 支持的一种语言 (目前为 Node.js、Java、C# 和 Python) 提供您的代码。</p><h2 id="为什么需要学习它？"><a href="#为什么需要学习它？" class="headerlink" title="为什么需要学习它？"></a>为什么需要学习它？</h2><p>Lambda 提供了一种与环境无关的代码执行平台，更加灵活去使用</p><h2 id="这项技术定位"><a href="#这项技术定位" class="headerlink" title="这项技术定位"></a>这项技术定位</h2><p>新技术可以用在私人或者试用项目中，产品环境暂时不推荐使用，类似于BAE等平台</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>实际上Lambda 包含了函数和事件系统。在AWS中可以设定各种不同的事件源来trigger我们的Lambda函数</p><h2 id="构建-Lambda-函数"><a href="#构建-Lambda-函数" class="headerlink" title="构建 Lambda 函数"></a>构建 Lambda 函数</h2><p>Lambda函数可以在本地开发环境中开发，然后上传到AWS平台上运行。目前AWS支持四种编程语言：</p><ul><li>Nodejs</li><li>Java</li><li>Python</li><li>C#</li></ul><p>编写相关的程序需要遵守一些基本程序结构，因此AWS能解析并执行。</p><p>## </p>]]></content>
+        <content type="html"><![CDATA[<h2 id="相关解决方案"><a href="#相关解决方案" class="headerlink" title="相关解决方案"></a>相关解决方案</h2><p>在web项目中有时候，需要部署代码上线，因此有一些问题在于怎么自动化部署。通常的做法是使用CI/CD平台配合自定义的脚本来实现。</p><ul><li>对于PHP可以使用git、SVN直接同步代码，配合Puppet使用</li><li>Java和前端等项目可以使用包管理来发布</li></ul><h2 id="小型SSH部署代码实现"><a href="#小型SSH部署代码实现" class="headerlink" title="小型SSH部署代码实现"></a>小型SSH部署代码实现</h2><p>对于小型团队和自己的项目贴一段用SSH实现的Spring boot部署方案</p><p>SCP jar文件到远程服务器</p><pre><code class="shell">scp -i &quot;./.circleci/aws.pem&quot; whoisspy-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/whoisspy-0.0.1-SNAPSHOT.jar</code></pre><p>kill原来的端口，然后启动新的进程</p><pre><code class="shell">ssh -i &quot;./.circleci/aws.pem&quot; ubuntu@ec2-18-217-113-62.us-east-2.compute.amazonaws.com &#39;ls            cd workspace            #kill old instance            output=$( netstat -apn | grep 8086 | grep LISTEN) &amp;&amp; read num1 num2 num3 num4 num5  &lt;&lt;&lt;${output//[^0-9]/ } &amp;&amp; kill -9 $num5 || pwd            # todo start new instance            java -jar whoisspy-0.0.1-SNAPSHOT.jar &gt; /dev/null 2&gt;&amp;1 &amp;            # test if it has been started            netstat -apn | grep 8086&#39;</code></pre><p>清理本地SSH链接</p><pre><code class="shell">pid=$( ps aux | grep amazonaws | awk &#39;{print $2}&#39; | sort -n | head -n 1 )leep 5 &amp;&amp; kill ${pid} &amp;&amp; echo &quot;ssh command is complete&quot;</code></pre><p>关于怎么远程执行命令并合理退出，参考了文章：<a href="http://blog.csdn.net/fdipzone/article/details/23000201" target="_blank" rel="noopener">http://blog.csdn.net/fdipzone/article/details/23000201</a></p>]]></content>
       
       
       <categories>
@@ -6984,23 +6984,6 @@
     </entry>
     
     <entry>
-      <title>常用开源项目收集</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>VIM 简明命令</title>
       <link href="/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/"/>
       <url>/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tool/vim-commands/</url>
@@ -7011,6 +6994,23 @@
       <categories>
           
           <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>常用开源项目收集</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/common-tools/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://veyon.io/#" target="_blank" rel="noopener">http://veyon.io/#</a></p><p>非常不错的开源教学软件</p><p><img src="http://veyon.io/img/veyon-features.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自我管理 </category>
           
       </categories>
       
@@ -7035,11 +7035,11 @@
     </entry>
     
     <entry>
-      <title>敏捷开发的基本流程</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
+      <title>一个敏捷项目需要的相关技术实践</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/</url>
       
-        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
+        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
       
       
       <categories>
@@ -7052,11 +7052,11 @@
     </entry>
     
     <entry>
-      <title>一个敏捷项目需要的相关技术实践</title>
-      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/"/>
-      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/ecosystem-for-project/</url>
+      <title>敏捷开发的基本流程</title>
+      <link href="/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/"/>
+      <url>/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/agile/agile-basic-work-flow/</url>
       
-        <content type="html"><![CDATA[<p>一个项目可以做的很完善,也可以做的很简单,这篇文章就是总结了一个清单,来讨论我们在一个敏捷项目中可以做的比较完善的东西,比如CI/CD</p><h2 id="质量内建"><a href="#质量内建" class="headerlink" title="质量内建"></a>质量内建</h2><ol><li>Check style - 代码风格检查</li><li>Test coverage - 测试覆盖率</li><li>fortify - Java代码静态分析</li><li>TDD - 测试驱动开发</li><li>Eslint - 前端代码检查</li></ol><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ol><li>Penetration - 渗透测试</li></ol><h2 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h2><ol><li>CI/CD 持续部署</li><li>Git Flow - 基于git的团队协作方式</li><li>Retro - 敏捷中反思项目的会议</li></ol><h2 id="监控恢复"><a href="#监控恢复" class="headerlink" title="监控恢复"></a>监控恢复</h2><ol><li>monitoring<ul><li>Ahportal - 一种监控的实现方式</li></ul></li><li>DR - 灾难恢复方案</li></ol><h2 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h2><ol><li>CPU、内存、磁盘使用率</li><li>Max request量</li><li>AB 测试</li></ol><h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><ol><li>infrastructure as code - 根据项目代码创建基础设施</li><li>immutable infrastructure - 每次部署创建新的服务器</li><li>DB migration</li></ol><h2 id="分布式解耦"><a href="#分布式解耦" class="headerlink" title="分布式解耦"></a>分布式解耦</h2><ol><li>micro-service 微服务</li><li>SPA Project - 前后端分离</li></ol><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><ol><li>Blue-Green - 蓝绿部署</li><li>Gray - 灰度发布</li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>敏捷开发流程中的一些很好的工作方式，本文中使用的敏捷方法为 Scrum</p><h2 id="建卡"><a href="#建卡" class="headerlink" title="建卡"></a>建卡</h2><p>BA 负责建 story 卡，如果其他人需要建立卡片，需要告知 BA</p><h2 id="需求澄清（three-amigos）"><a href="#需求澄清（three-amigos）" class="headerlink" title="需求澄清（three amigos）"></a>需求澄清（three amigos）</h2><p>BA DEV QA 三方 catchup ，澄清卡的需求，然后 BA 移动到当前迭代</p><h2 id="工作量估算（estimation）"><a href="#工作量估算（estimation）" class="headerlink" title="工作量估算（estimation）"></a>工作量估算（estimation）</h2><p>BA 发起全员来进行估算工作量，并澄清需求</p><p>估点数量按照斐波那契数列例如 1 2 3 5，超过 5 个点的卡需要被拆分</p><h2 id="移动任务到待开发-（ready-for-dev）"><a href="#移动任务到待开发-（ready-for-dev）" class="headerlink" title="移动任务到待开发 （ready for dev）"></a>移动任务到待开发 （ready for dev）</h2><p>BA 把卡移动到 ready for dev，然后开发就可以开始工作</p><h2 id="开发中-（development）"><a href="#开发中-（development）" class="headerlink" title="开发中 （development）"></a>开发中 （development）</h2><p>Dev 需要和 BA、QA 领卡，kick off 然后开始工作，每个卡需要建立一个branch，完成工作后需要检查 pipeline 是否通过然后，创建 Pull request，然后该卡可以移动到 review</p><h2 id="审查-（Review）"><a href="#审查-（Review）" class="headerlink" title="审查 （Review）"></a>审查 （Review）</h2><p>Review 环节需要找人 approve PR</p><h2 id="移动任务到待测试-（Ready-for-test）"><a href="#移动任务到待测试-（Ready-for-test）" class="headerlink" title="移动任务到待测试 （Ready for test）"></a>移动任务到待测试 （Ready for test）</h2><p>合并代码到 master，和 QA sign off 后移动故事卡到 Ready for test</p>]]></content>
       
       
       <categories>
@@ -7086,23 +7086,6 @@
     </entry>
     
     <entry>
-      <title>我的学习方法</title>
-      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/"/>
-      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/</url>
-      
-        <content type="html"><![CDATA[<h2 id="知识的分类"><a href="#知识的分类" class="headerlink" title="知识的分类"></a>知识的分类</h2><ol><li>一类是基本的知识和技能，例如算法、数据结构、英语</li><li>一类是开源技术的说明书，例如 spring cloud，需要学习使用方法、注意事项、原理</li></ol><h2 id="基础知识和技能的学习方法"><a href="#基础知识和技能的学习方法" class="headerlink" title="基础知识和技能的学习方法"></a>基础知识和技能的学习方法</h2><ol><li>识别是否有前置知识，先学习前置知识</li><li>获取相对较好的学习材料：书籍、在线课程</li><li>模仿式学习，例如做习题、通过分屏敲代码</li><li>实践</li><li>写作输出</li><li>形成培训输出</li></ol><h2 id="开源技术的学习方法"><a href="#开源技术的学习方法" class="headerlink" title="开源技术的学习方法"></a>开源技术的学习方法</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术?</li><li>这项技术学习完成带来的收益是什么？</li></ul></li><li>收集入门教程，模仿式学习</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技能的要点"><a href="#学习一门新技能的要点" class="headerlink" title="学习一门新技能的要点"></a>学习一门新技能的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>碎片化时间不可取，碎片化时间可以用于写作输出、练习，模仿式学习阶段不应该使用碎片化时间</li><li>一定要有产出</li><li>编写文档到知识系统中</li><li>知识应该随时花大量时间学习，甚至考证作为里程碑，说明书按照项目需要学习，平时只做了解即可</li><li>写作要在培训前面，否则没有沉淀无法输出培训</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 自我管理 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>How to end a meeting?</title>
       <link href="/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/"/>
       <url>/%E8%81%8C%E4%B8%9A%E7%B4%A0%E8%B4%A8/profession/how-to-wrap-up/</url>
@@ -7113,6 +7096,23 @@
       <categories>
           
           <category> 职业素质 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>我的学习方法</title>
+      <link href="/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/"/>
+      <url>/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/self-management/my-leaning-method/</url>
+      
+        <content type="html"><![CDATA[<h2 id="知识的分类"><a href="#知识的分类" class="headerlink" title="知识的分类"></a>知识的分类</h2><ol><li>一类是基本的知识和技能，例如算法、数据结构、英语</li><li>一类是开源技术的说明书，例如 spring cloud，需要学习使用方法、注意事项、原理</li></ol><h2 id="基础知识和技能的学习方法"><a href="#基础知识和技能的学习方法" class="headerlink" title="基础知识和技能的学习方法"></a>基础知识和技能的学习方法</h2><ol><li>识别是否有前置知识，先学习前置知识</li><li>获取相对较好的学习材料：书籍、在线课程</li><li>模仿式学习，例如做习题、通过分屏敲代码</li><li>实践</li><li>写作输出</li><li>形成培训输出</li></ol><h2 id="开源技术的学习方法"><a href="#开源技术的学习方法" class="headerlink" title="开源技术的学习方法"></a>开源技术的学习方法</h2><ol><li>回答几个问题<ul><li>这项技术是什么？</li><li>这项技术的意义？</li><li>这项技术的定位？</li><li>为什么需要学习这项技术?</li><li>这项技术学习完成带来的收益是什么？</li></ul></li><li>收集入门教程，模仿式学习</li><li>阅读入门教程产出笔记或者思维导图</li><li>使用小项目练习</li><li>阅读官方文档了解更多</li><li>搞懂原理（可选）</li></ol><h2 id="学习一门新技能的要点"><a href="#学习一门新技能的要点" class="headerlink" title="学习一门新技能的要点"></a>学习一门新技能的要点</h2><ul><li>咨询有经验的人，需要提前准备问题，寻求一些好的资料和书籍</li><li>阅读速度不宜过快，安排大块时间。step by step</li><li>碎片化时间不可取，碎片化时间可以用于写作输出、练习，模仿式学习阶段不应该使用碎片化时间</li><li>一定要有产出</li><li>编写文档到知识系统中</li><li>知识应该随时花大量时间学习，甚至考证作为里程碑，说明书按照项目需要学习，平时只做了解即可</li><li>写作要在培训前面，否则没有沉淀无法输出培训</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自我管理 </category>
           
       </categories>
       
