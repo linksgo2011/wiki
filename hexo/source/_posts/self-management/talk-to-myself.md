@@ -310,3 +310,17 @@ TW 的程序员不把心思放到业务上，在工程化上。很多事情的�
 
 
 
+Now, this note will be changed to English for practicesing and privacy. and I will turn to English in mind.
+
+Separation of Concerns is a big problem for some programmer.
+
+The best study way is imitation.	
+
+I konw you are the best, but you have to find a way to prove your ability.
+
+
+
+
+
+
+

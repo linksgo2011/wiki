@@ -92,6 +92,17 @@ toc: true
 
 
 
+
+
+## Meta 信息说明
+
+- title: 文章标题
+- categories：hexo 的分类
+- toc: 是否生成目录
+- recommend 是否推荐为发布状态，标注文档是否成熟可以发布到渠道
+
+
+
 ## 参考其他大神博客
 
 - kailing  Java/PHP/前端，他是走实用路线的，创办了自己的技术公司 http://www.kailing.pub/index/index.html
@@ -122,7 +133,8 @@ toc: true
 
 - https://github.com/guanpengchn?tab=overview&from=2020-07-01&to=2020-07-17
 
-  
+
+
 
 ## 我的策略
 
