@@ -318,6 +318,12 @@ The best study way is imitation.
 
 I konw you are the best, but you have to find a way to prove your ability.
 
+### 2020.08.20
+
+Listen is pretty important, don't interrupt other people.
+
+灵感来时挡也挡不住，灵感走时什么都没有了，所以有东西一定要第一时间记录下来。
+
 
 
 
