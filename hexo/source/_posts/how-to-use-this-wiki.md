@@ -122,7 +122,8 @@ toc: true
 - Java 全栈知识体系的作者 https://www.pdai.tech/
 - 高中学历，计算机基础扎实 https://github.com/woai3c
 - 该作者的设计风格极好，适合模仿 https://drawcode.mdnice.com/
-- 欧长坤 https://changkun.us/
+- 欧长坤，计算机博士 https://changkun.us/
+- 星朝，这个人记录了其他人的博客 https://www.cnblogs.com/jpfss/
 
 ## 优秀的人
 
