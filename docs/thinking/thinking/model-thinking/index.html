@@ -297,7 +297,7 @@ TCP/IP 模型 - 网络模型
 <h3 id="Servlet-模型"><a href="#Servlet-模型" class="headerlink" title="Servlet 模型"></a>Servlet 模型</h3><p>Servlet 模型虽然不复杂，但是对初学者理解有一定困难。我在刚开始学习 Java EE 时，非常困惑。为什么不能像其他应用程序一样直接运行启动，而是打成一个 war 包再放进一个容器。同样的困惑在培训毕业生时也遇到了。</p>
 <p>后来找到一个通俗的解释：war 包并不是一个完整的应用程序，Tomcat 等应用容器才是一个完整程序并在后台持续运行。编写 war 包应用时，需要遵守一个契约去响应用户发送的请求，并按照契约返回，剩下的事情 Tomcat 容器帮助完成即可，Servlet 就是这样一个契约。</p>
 <p>这里有一个我喜欢的比喻，小时候家里有一个粮食加工作坊，这套系统由柴油机、打米机、磨面机等组成。柴油机就像 Tomcat 持续运行，打米机和磨面机可以动态的通过皮带接入，类似于 war 上传到 Tomcat 中进行部署。</p>
-<p><img src="/thinking/thinking/model-thinking/image-20200824151647745.png" alt="image-20200824151647745" style="zoom:30%;"></p>
+<p><img src="/thinking/thinking/model-thinking/image-20200824152804076.png" alt="image-20200824152804076" style="zoom:30%;"></p>
 <p>Spring Boot 的出现打破了 war 这种规范，而使用 jar 包，这就是另外一种模型了。随着 Spring Boot 和 Webflux 的使用，未来可能 Servlet 模型会被淘汰。</p>
 <h3 id="前端开发的几个模型"><a href="#前端开发的几个模型" class="headerlink" title="前端开发的几个模型"></a>前端开发的几个模型</h3><p>前端开发其实也有一些典型的模型，通过这些模型可以容易理解整个前端框架目前的状态，以及为项目选出合适的模型。</p>
 <p>接触过的前端开发几个模型有：</p>

@@ -318,7 +318,7 @@ Servlet 模型虽然不复杂，但是对初学者理解有一定困难。我在
 
 
 
-<img src="model-thinking/image-20200824151647745.png" alt="image-20200824151647745" style="zoom:30%;" />
+<img src="model-thinking/image-20200824152804076.png" alt="image-20200824152804076" style="zoom:30%;" />
 
 Spring Boot 的出现打破了 war 这种规范，而使用 jar 包，这就是另外一种模型了。随着 Spring Boot 和 Webflux 的使用，未来可能 Servlet 模型会被淘汰。
 
