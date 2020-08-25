@@ -337,11 +337,7 @@ Listen is pretty important, don't interrupt other people.
 
 中庸就是合适，就是不偏不倚，掌握一个度就是中庸。水至清则无鱼，太浑浊也不行。
 
-
-
-
-
-
+想要赚钱的方法：能力培养以能独立做事为主，寻找自己的优势，积累资产。
 
 
 
