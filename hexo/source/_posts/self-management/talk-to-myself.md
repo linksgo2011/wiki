@@ -356,3 +356,7 @@ Listen is pretty important, don't interrupt other people.
 
 
 
+### 2020.08.27
+
+往自己身上弄事儿，是一件不好的事情。
+
