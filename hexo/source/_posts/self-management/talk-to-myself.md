@@ -360,3 +360,7 @@ Listen is pretty important, don't interrupt other people.
 
 往自己身上弄事儿，是一件不好的事情。
 
+要能接受失败才能有机会成功，否则机会都米有。
+
+
+
