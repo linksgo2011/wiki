@@ -374,3 +374,9 @@ Listen is pretty important, don't interrupt other people.
 
 按照随想写作吧，消除掉自己乱想的思想。
 
+
+
+### 2020.09.01
+
+不是要和别人比多厉害，而是比别人做出来的东西多。
+
