@@ -1,5 +1,5 @@
 ---
-title:  RUP，持续建模的敏捷过程
+title: 如何解决敏捷项目业务模型、架构碎片化问题？
 categories: computer-science
 toc: true
 recommend: true
@@ -15,6 +15,18 @@ recommend: true
 [TOC]
 
 -----------
+
+
+
+敏捷方法追求单件工作流，和响应变化，需求按照故事卡拆分，容易造成业务模型、架构设计碎片化。
+
+
+
+​	
+
+
+
+## Scrum 之痛
 
 
 
