@@ -1216,6 +1216,7 @@ debug 能力变弱，犯了两个错误：
 
 火炉清单
 
+- 梳理研发机制
 - archunit 的 demo
 - archunit 的文档
 
