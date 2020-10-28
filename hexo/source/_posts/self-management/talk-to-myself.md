@@ -1510,3 +1510,98 @@ unittest 还剩下 2-3 篇文章没写，写了就可以收工了，然后获得
 - ecs 3.x 不太能验证，可以先申请，如果不可用可以使用文件存储卷即可
 
   
+
+
+
+### 2020.10.25
+
+主要清单：
+
+- 整理 Intelilj 快捷键
+- unit 小书
+- 户口本 done
+- 修复 CI
+
+
+
+
+
+### 2020.10.26
+
+主要清单：
+
+- unit 小书: 契约测试
+
+火炉清单：
+
+- 洞见投稿
+- 修复 CI
+- kubeControl 配置
+- 配置中的 key 信息
+
+
+
+利用程序自动化创业，什么东西都能弄成自动化的。
+
+
+
+### 2020.10.27 
+
+主要清单：
+
+- key 信息
+- helm
+- 契约测试 & spring batch 测试
+- 启动方案设计
+
+
+
+key 信息：
+
+
+
+mysql:
+
+-   spring.datasource.url: jdbc:mysql://bees-mysql/bee_business?serverTimezone=UTC&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+-   spring.datasource.url: jdbc:mysql://bees-mysql/bee_auth?serverTimezone=UTC&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+-     spring.datasource.url: jdbc:mysql://bees-mysql/bee_collaborator?serverTimezone=UTC&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+
+redis：
+
+使用了自定义的 key 前缀
+
+oss：
+
+桶名可以配置，不受限制
+
+kafka:
+
+```
+  topics:
+    - name: prod_gaia_commands
+      partitions: 1
+      replicationFactor: 1
+    - name: prod_gaia_events
+      partitions: 1
+      replicationFactor: 1
+```
+
+​      
+
+### 2020.10.28
+
+主要清单：
+
+- helm 私有化部署脚本
+- 启动 devops 集成方案
+- unit 小书: 契约测试
+
+火炉清单：
+
+- 洞见投稿
+
+告诫清单：
+
+- 不要关心和自己无关的事情，比如昨下午浪费时间讨论问题
+- 不说硬话、不做软事。
+- 别人挑战你底线时，一边面带微笑，一边毫不退让，硬刚到底。
