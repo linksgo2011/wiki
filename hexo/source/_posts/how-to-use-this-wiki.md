@@ -124,14 +124,14 @@ toc: true
 - 该作者的设计风格极好，适合模仿 https://drawcode.mdnice.com/
 - 欧长坤，计算机博士 https://changkun.us/
 - 星朝，这个人记录了其他人的博客 https://www.cnblogs.com/jpfss/
+- cuba-platform 一套用于业务应用程序的全栈 Java 框架和组件 https://www.cuba-platform.cn/
 
 ## 优秀的人
 
 - http://zihua.li/pages/about
-
 - https://github.com/walkor
-
 - https://github.com/guanpengchn?tab=overview&from=2020-07-01&to=2020-07-17
+- 
 
 
 
