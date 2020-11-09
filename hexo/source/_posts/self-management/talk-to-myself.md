@@ -1837,3 +1837,15 @@ kafka:
 
 - https://www.jianshu.com/p/08862712b6ee
 
+### 2020.11.09
+
+主要清单
+
+- 发送书籍目录 done
+- 时区问题 done
+- 邀请空间脚本
+
+火炉清单
+
+- https://www.jianshu.com/p/08862712b6ee
+
