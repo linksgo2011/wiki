@@ -1849,3 +1849,13 @@ kafka:
 
 - https://www.jianshu.com/p/08862712b6ee
 
+### 2020.11.10
+
+主要清单
+
+- npm 项目订阅 nodejs
+
+火炉清单
+
+- https://www.jianshu.com/p/08862712b6ee
+
