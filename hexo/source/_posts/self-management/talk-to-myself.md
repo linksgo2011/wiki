@@ -1859,3 +1859,63 @@ kafka:
 
 - https://www.jianshu.com/p/08862712b6ee
 
+
+
+### 2020.11.11
+
+主要清单
+
+- 作者简介 done
+- npm mqtt done
+- 买书，发报销邮件 done
+- 域名备案 done 
+- 白板云网站生成
+
+火炉清单
+
+- 阅读文章 https://www.jianshu.com/p/08862712b6ee  done
+- 其他渠道专栏 
+- OKR 填写 doing
+
+告诫清单
+
+- 自我暗示很重要，保持目标感
+- 自我暗示词 “我是一名独立软件开发者，能做出用户有价值的软件，我生活高效、健康和自律”
+- 传销的思想真的很赚钱
+- 不要想太多
+- 不要过于有责任感，每天按时把工作做完即可
+- 做事情需要有优先级
+
+主题: BeeArt Always on
+
+日期: 2020年11月11日 03:45 下午 北京，上海
+
+
+
+会议记录：
+
+https://thoughtworks.zoom.us/rec/share/xmD26EsrTp4MXJwgf2vQ0dDZFz83r4DNSp1xLY5-mrO4FcBgMFDYRQMA3Lq9aFRc.F2oznhHNwSM_pKgR
+
+
+
+访问密码: h#=7AgFu
+
+
+
+
+
+### 2020.11.12
+
+主要清单
+
+- 和展文对技术方案 done
+- 技术卡
+- 博客大赛礼品
+- OKR 填写 done 
+- 复工申请
+
+火炉清单
+
+- 给TW China 所有员工开通 BeeArt 个人专业版，并加入团队空间
+- 学习离散数学
+
