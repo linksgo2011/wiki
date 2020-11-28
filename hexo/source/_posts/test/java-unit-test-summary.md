@@ -1,9 +1,7 @@
 ---
-	title: 一本小小的单元测试书
-
+title: 一本小小的单元测试书
 categories: 质量保证
 ---
-
 
 
 已经剥离为单独的仓库，并保持更新：
@@ -1527,4 +1525,3 @@ Junit 没有被 IDEA 识别，检查右侧的 Maven 是否拉取了正确的依�
 
 - 《写单元测试的价值》 https://toutiao.io/posts/f6xo0k/preview
 
-  

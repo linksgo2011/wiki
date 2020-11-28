@@ -1,5 +1,5 @@
 ---
-title 软件建模中常用图形 
+title: 软件建模中常用图形
 categories: 理论方法
 recommend: true
 ---

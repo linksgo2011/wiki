@@ -1,5 +1,5 @@
 ---
-title: [佳作赏析] 或许你不知道的12条SQL技巧
+title: 或许你不知道的12条SQL技巧
 categories: 写作技巧
 toc: true
 ---
