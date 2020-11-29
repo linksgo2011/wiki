@@ -1,5 +1,5 @@
 folder=source/team
-file=retro.md
+file=requirement-review.md
 imageHost=https://github.com/linksgo2011/wiki/raw/master/$folder/
 
 rm -rf build
