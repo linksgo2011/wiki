@@ -3,14 +3,11 @@ git status
 
 
 ## generate wiki
-cd hexo
-npm run clean
-npm run g
-
+rm -rf docs
+cp -r source/* docs/
 
 ## commit to git
 cd ..
-cp CNAME docs/CNAME
 git add -A
 git commit -m 'generate website on `date +%y%m%d`'
 git push
