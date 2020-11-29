@@ -5,10 +5,10 @@ def file_name(file_dir):
     output = ''
 
     for dir in os.listdir(root):
-        if os.path.isdir(dir) != True:
+        subDir = root + '/' + dir;
+        if os.path.isdir(subDir) != True:
             continue;
         output = output + '## ' + dir.strip() + '\r\n'
-        subDir = root + '/' + dir;
         for file in os.listdir(subDir):
             if file.endswith('.md') != True:
                 continue;

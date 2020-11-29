@@ -2,6 +2,7 @@
 git status
 
 ## generate wiki
+python3 scan.py
 cp -r source/* docs/
 
 ## commit to git

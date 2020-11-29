@@ -292,6 +292,7 @@
 - [用归零的心态，做好团队回顾](team/retro.md)
 - [codereview 清单](team/codereview.md)
 - [上线清单](team/release.md)
+- [怎样做好需求评审？](team/requirement-review.md)
 - [估点](team/estimation.md)
 - [项目交接](team/handover.md)
 - [新成员培训](team/on-boarding.md)
