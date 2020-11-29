@@ -1,9 +1,7 @@
 ## display status
 git status
 
-
 ## generate wiki
-rm -rf docs
 cp -r source/* docs/
 
 ## commit to git
