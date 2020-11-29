@@ -1,5 +1,5 @@
 import os
-root = os.getcwd()
+root = os.getcwd() + '/source'
 
 def file_name(file_dir):
     output = ''
@@ -19,6 +19,6 @@ def file_name(file_dir):
             file_object.close()
             path = dir + '/' + file
             output = output +  f'- [{title}]({path})' + '\r\n'
-    with open("README.md","w") as f:
+    with open('source/' + "README.md","w") as f:
             f.write(output)
 file_name(root)
