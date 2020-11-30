@@ -2294,11 +2294,31 @@ https://thoughtworks.zoom.us/rec/share/xmD26EsrTp4MXJwgf2vQ0dDZFz83r4DNSp1xLY5-m
 
 - 重置 wiki 系统 done
 - 完成邮件排版脚本 done
-- 《怎样评审需求》
-- 《从分布式系统说团队管理》
-- 《DDD 指导缓存设计》
+- 《怎样评审需求》 done
+- markdown to email《如何发一篇美观的邮件博客？》done 
+- 小尾巴
+  - TW 邮箱账号密码问题
+  - graph engine CI 问题 done
 
 火炉清单
 
 - 《软件特性预研策略：预研一代,实验一代,应用一代》
 - 《事件风暴操作手册》
+- 《从分布式系统说团队管理》
+- 《DDD 指导缓存设计》
+
+
+
+
+
+### 2020.11.30
+
+主要清单
+
+- 跑 dev 数据
+- 数据库索引
+- 同步修改 graph engine
+
+
+
+用脚本批量跑了大顾问给的名单，无法登陆的用户是因为导入的时候已经存在于系统，且登陆过，因此不会给他把密码修改为 ThoughtWorks2022，估计他们很久没问自己的原来密码记不得了。
