@@ -155,6 +155,7 @@
 - [Apache Mina ](network/mina.md)
 ## management
 - [软件特性预研策略：预研一代,实验一代,应用一代](management/software-spike-strategy.md)
+- [解读《EDGE》：产品型公司的宏观业务规划](management/edge-notes.md)
 - [敏捷过程中的软件持续建模](management/rational-unified-process.md)
 - [好领导，本来应是挖渠人](management/manage-method.md)
 - [Teach Leader check list](management/Tech-leader-check-list.md)
