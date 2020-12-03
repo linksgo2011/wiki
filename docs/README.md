@@ -75,6 +75,7 @@
 - [vc驿站视频教程笔记 对话框](c&c++/cctry-note-5.md)
 - [vc驿站视频教程笔记2 ansi 和 unicode](c&c++/cctry-note2.md)
 - [定时器](c&c++/vc-timer.md)
+- [Mac 上 QT 环境搭建](c&c++/qt-environment-setting.md)
 - [如何用qt实现学生信息管理系统](c&c++/qt-example.md)
 - [vc驿站视频教程笔记 vc++编程环境的介绍](c&c++/cctry-note1.md)
 - [对话框之间的数据传递](c&c++/cctry-note-6.md)
