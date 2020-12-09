@@ -2436,3 +2436,69 @@ https://thoughtworks.zoom.us/rec/share/xmD26EsrTp4MXJwgf2vQ0dDZFz83r4DNSp1xLY5-m
 告诫清单
 
 - 皮实，落地，现实很重要
+
+
+
+### 2020.12.05
+
+主要清单
+
+- 看完离散数学
+- 整理 DDD 的小书 
+
+
+
+### 2020.12.07
+
+主要清单
+
+- 保证注册、登录功能无误
+  - 注册报异常 done  
+  - 补充测试用例
+- 代码重构 doing
+  - 循环依赖 done
+  - usermapper 的侵入
+  - 去除 /auth/ 头部 晚上操作
+- 11 点睡觉
+- 看完离散数学
+
+
+
+可以清理的表
+
+feature_toggle like_module_log permission user_dynamic_attribute user_dynamic_attribute_configuration user_migration 确认： user_like 
+
+
+
+### 2020.12.08
+
+主要清单
+
+
+
+- 代码重构 doing
+  - 清理 protected List<RoleName> authorities; done
+  - usermapper 的侵入
+  - 清理 like done 
+- 15 分钟过期时间
+- 11 点睡觉
+- 看完离散数学
+
+
+
+
+
+### 2020.12.09
+
+主要清单
+
+- 技术卡
+- 11 点睡觉
+- 看完离散数学
+
+
+
+火炉清单
+
+- homeday  session 准备
+- annual review 准备
