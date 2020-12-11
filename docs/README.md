@@ -71,6 +71,7 @@
 - [如何阅读别人的C代码](c&c++/read-c-code.md)
 - [vc驿站视频教程笔记4 Cstring 讲解](c&c++/cctry-note-4.md)
 - [extern](c&c++/c++-extern.md)
+- [C++ linux服务器编程](c&c++/c++-linux.md)
 - [文件操作](c&c++/vc-file.md)
 - [vc驿站视频教程笔记 对话框](c&c++/cctry-note-5.md)
 - [vc驿站视频教程笔记2 ansi 和 unicode](c&c++/cctry-note2.md)
@@ -226,6 +227,8 @@
 - [$_POST $_GET $_COOKIE的递归转义](php/php-error-reporting.md)
 ## math
 - [数学对程序员有什么用](math/index.md)
+## speech
+- [【演讲稿】咨询游历记](speech/consulting-team-tour.md)
 ## mongodb
 - [mongodb 的数据导入\导出](mongodb/data-export-import.md)
 - [mongodb 中时间戳的问题](mongodb/bson-time-stamp.md)
@@ -326,6 +329,7 @@
 - [ nohup 后台运行Linux程序方法](linux/linux-nohup.md)
 - [linux 磁盘管理](linux/linux-disk.md)
 - [最实用的Linux命令](linux/common-useful-commands.md)
+- [linux 命令总览](linux/linux-command-overview.md)
 - [ linux 查看端口状态](linux/linux-port.md)
 - [安装 openJdk 到 ubuntu 14](linux/linux-ubuntu-java.md)
 - [系统服务管理 systemctl](linux/linux-systemctl.md)
