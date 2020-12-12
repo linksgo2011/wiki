@@ -2577,3 +2577,16 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 告诫清单
 
 - 迭代中无聊的会议时间，就可以编写项目管理相关的文档
+
+
+
+### 2020.12.12
+
+主要清单
+
+- 写书 第一章
+- 完成 homeday session PPT 
+
+告诫清单
+
+- 做事情要一件一件，做的赶紧利落
