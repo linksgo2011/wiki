@@ -2584,9 +2584,21 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 主要清单
 
-- 写书 第一章
+- 写书 第一章 done
 - 完成 homeday session PPT 
 
 告诫清单
 
-- 做事情要一件一件，做的赶紧利落
+- 做事情要一件一件，做的赶紧利落，做到事过则忘的境界
+- 尽可能的保存自己的精力
+- 培养不要脸的能力
+- 不要关心无意义的新闻
+
+
+
+### 2020.12.13
+
+主要清单
+
+- 写书 2.1
+- 完成 homeday session 
