@@ -112,6 +112,7 @@
 - [使用 Bcrypt 代替 md5/sha1](security/safe-hash.md)
 - [常用安全随机数发生器或者接口](security/sec-random.md)
 - [微软SDL( Security Development Lifecycle)流程](security/security-sevelopment-lifecycle.md)
+- [灰产](security/black-production.md)
 - [ldap](security/ldap.md)
 - [认证和授权的基本概念](security/iam.md)
 - [大型系统 IAM 机制](security/sso-oauth.md)
