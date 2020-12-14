@@ -1,5 +1,5 @@
-folder=source/team
-file=requirement-review.md
+folder=source/security
+file=black-production.md
 imageHost=https://github.com/linksgo2011/wiki/raw/master/$folder/
 
 rm -rf build
