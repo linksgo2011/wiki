@@ -2474,13 +2474,11 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 主要清单
 
-
-
 - 代码重构 doing
   - 清理 protected List<RoleName> authorities; done
   - usermapper 的侵入
   - 清理 like done 
-- 15 分钟过期时间
+- 处理 15 分钟过期时间
 - 11 点睡觉
 - 看完离散数学
 
