@@ -2640,3 +2640,30 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 - 拷贝代码比新写更容易出错
 
+### 2020.12.17
+
+主要清单
+
+- 1.2 章节
+- 招行存储问题 done
+- 验证协作通道问题
+- 太保 review done
+
+火炉清单
+
+- 技术方案 - CR 时候完成即可
+
+告诫清单
+
+- 一切皆有定数，心态平和
+- 控制世界，首先控制自己
+- 学习做一个精致的利己主义者 
+
+
+
+
+
+## 2020.12.18
+
+- 搭建庄子的网站，用最简单的方式
+- 调研 websocket 负载均衡

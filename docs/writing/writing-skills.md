@@ -70,6 +70,8 @@ categories: 写作技巧
 - 教程
     - 教授一个明确的内容, 例如《Java 8 中的 Streams API 详解》 https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/
 - 杂文
+- 信息图，比如一页纸笔记。这种操作可以设计一个统一的模板，把关键信息做上去，简洁有力，可以作为读书笔记使用。
+    - 《一页纸测试策略图解》参考文章 https://mp.weixin.qq.com/s/cEkI3Duyg-Jqk-TTFwKVqQ
 
 ## 写作手法
 
@@ -177,8 +179,6 @@ categories: 写作技巧
 句4自然主题，例如：草木枯荣
 
 滚滚星河,禅灯凡世,古今代谢,草木枯荣。奋斗是人世间亘古不变的规律。
-
-
 
 ### 排比模型
 
