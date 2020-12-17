@@ -2665,5 +2665,13 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 ## 2020.12.18
 
+主要清单
+
+- timecard done
+- 技术方案 done
+- 完成 1.2.2 章节
+
+火炉清单
+
 - 搭建庄子的网站，用最简单的方式
 - 调研 websocket 负载均衡
