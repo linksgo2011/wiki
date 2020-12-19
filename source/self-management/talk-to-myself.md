@@ -2694,10 +2694,22 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 主要清单
 
-- 练习打字 done，学习了双拼的输入法。
-- setup domain-driven-design.org 
-- 完成 1.2 1.3
+- 练习打字 done，学习了双拼的输入法。 done
+- 完成文章
+  - **1.3 设计测试用例** 
+  - 1.4
+- 杂事
+  - setup domain-driven-design.org  done
+  - 太保总结 done
+
+火炉清单
+
+- setup 我的公众号
+- 网络协作模型分析
 
 告诫清单
 
 - 不要对不熟悉和不了解的东西，固执己见，比如曾经就知道双拼，但是因为自己的打字速度感觉还可以就没有继续。其实自己的打字速度非常慢。
+- 使用双拼来打字，如果遇到困难就使用英语。这样就可以练习两种告诉的输入模式了。
+- 今天可以来练习打字输入了，感觉还不错，但是还需要一定时间来学习，需要时间来练习。
+
