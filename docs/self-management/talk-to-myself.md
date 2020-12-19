@@ -2694,5 +2694,10 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 主要清单
 
+- 练习打字 done，学习了双拼的输入法。
 - setup domain-driven-design.org 
-- 技术卡 
+- 完成 1.2 1.3
+
+告诫清单
+
+- 不要对不熟悉和不了解的东西，固执己见，比如曾经就知道双拼，但是因为自己的打字速度感觉还可以就没有继续。其实自己的打字速度非常慢。

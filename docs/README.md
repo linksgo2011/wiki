@@ -383,6 +383,7 @@
 - [怎样讲好一个故事 ](self-management/speaking-skills.md)
 - [我的健康状况和治理情况](self-management/my-health.md)
 - [我的个人思维模型](self-management/my-mental-models.md)
+- [我的快速输入方案(双拼)](self-management/my-typing-skill.md)
 - [35岁过后做什么呢（二）？](self-management/my-plan-for-after-35-years-old2.md)
 - [常用开源项目收集](self-management/common-tools.md)
 - [如何克服害怕失败的心理](self-management/face-failure-then-welcom-success.md)
