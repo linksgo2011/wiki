@@ -190,6 +190,7 @@
 - [Java 内存分析工具 VisualVM](java/java-visualVM.md)
 - [Java 并发和多线程](java/java-cocurrent.md)
 - [Java 集合](java/java-collections.md)
+- [ Java 日志级别](java/java-log.md)
 - [Java 注解基础](java/java-annotation.md)
 - [java 线上 debug](java/java-debug.md)
 ## solution
@@ -505,3 +506,4 @@
 - [写作清单](writing/writing-list.md)
 - [【佳作分析】 详解 Redis](writing/we-redis-summary.md)
 - [写小说怎么把脑海里的场景转化为文字？](writing/we-sceen-skills.md)
+- [写作的数据来源总结](writing/open-data-resource.md)
