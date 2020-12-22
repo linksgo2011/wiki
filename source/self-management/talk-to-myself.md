@@ -2755,8 +2755,8 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 - **1.3 设计测试用例** 
 - 杂事
-  - 报销
-  - setup 公众号
+  - 报销 doing
+  - setup 公众号 done 
 
 阅读清单
 
@@ -2765,8 +2765,15 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 告诫清单
 
 	- 学会关注社会和政策，而不是只是写代码
+	- 每天早上起来学习，成为一个软件工程师和培训师
+	- 做能赚钱的事情，读落地的事情
+	- 思考的东西要可以落地，比如买房、买车等
+	- 学会为自己工作，少操心老板的事情
+	- 每个阶段都有该做的事情，年轻要奋斗和总结，思考别人怎么认同你，名校？title?，年老要培训。
 
+### 2020.12.23
 
+火炉清单
 
-
+- setup markdown 公众号模板
 
