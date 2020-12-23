@@ -2773,6 +2773,11 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 ### 2020.12.23
 
+主要清单
+
+- 技术卡
+- 写书 1.3
+
 火炉清单
 
 - setup markdown 公众号模板
