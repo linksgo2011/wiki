@@ -13,3 +13,9 @@ https://download.csdn.net/download/it_create/10625713
 **以下是效果图**
 
 **![img](qt-example/70.png)**
+
+
+
+管理系统
+
+- https://github.com/yvettemuki/BookManage
