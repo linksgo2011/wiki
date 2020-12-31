@@ -254,6 +254,7 @@
 - [Java web 项目线上环境配置清单](architecture/aware-product.md)
 - [java 性能监控](architecture/java-apm.md)
 - [软件规范化指南](architecture/normalize-project.md)
+- [在线协作方案](architecture/online-collaboration.md)
 - [并发框架](architecture/Disruptor.md)
 - [Java web project 概览](architecture/java-project-structure.md)
 - [使用Java构建API的知识体系](architecture/simple-api-archtecture.md)

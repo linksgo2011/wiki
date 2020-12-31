@@ -2796,3 +2796,33 @@ feature_toggle like_module_log permission user_dynamic_attribute user_dy
 
 - 目标：做软件、开公司，自动运行
 
+
+
+### 2020.12.25
+
+主要清单
+
+- review
+- 写书
+- 徒步装备
+
+
+
+早起不是目的，而是手段。
+
+
+
+### 2020.12.30
+
+主要清单
+
+- 协作方案 overview
+
+
+
+### 2020.12.31
+
+主要清单
+
+- 协作方案 overview
+- 优化 graph-engine
