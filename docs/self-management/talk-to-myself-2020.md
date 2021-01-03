@@ -1,5 +1,5 @@
 ---
-title: 和自己对话【日常个人感悟】
+title: 和自己对话【日常个人感悟】2020 年 
 categories: 自我管理
 toc: true
 ---
