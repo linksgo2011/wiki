@@ -17,7 +17,9 @@ toc: true
 
 主要清单
 
-- 买游戏的书籍
-- 协作方案汇总
-- 阅读 https://docs.convergence.io/guide/
+- 买游戏的书籍 done
+- 协作方案汇总 done
+- 阅读 https://docs.convergence.io/guide/ 
 - 写书 1
+- 发出 TL model  done 
+- revert 代码 done
