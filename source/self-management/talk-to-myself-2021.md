@@ -60,3 +60,14 @@ toc: true
 4. 如果 POC 中 event 结构化和通信方式被优化，设计 BeeArt 的改造方案
 ```
 
+
+
+### 2021.01.07
+
+主要清单
+
+- 技术方案 done
+- POC 方案 done
+- MQTT 邮件 TODO
+- 周六 standby done 
+- 技术卡估点 done
