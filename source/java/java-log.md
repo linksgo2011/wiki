@@ -1,10 +1,13 @@
 ---
-title:  Java 日志级别
+title:  Java 日志
 categories: java
 toc: true
 from: https://www.cnblogs.com/zyybb/p/10535735.html
 ---
 
+
+
+## 日志级别
 
 log4j 定义了8个级别的log（除去OFF和ALL，可以说分为6个级别），优先级从高到低依次为：OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、 ALL。
 
@@ -20,3 +23,8 @@ INFO：  消息在粗粒度级别上突出强调应用程序的运行过程。�
 如果将log level设置在某一个级别上，那么比此级别优先级高的log都能打印出来。例如，如果设置优先级为WARN，那么OFF、FATAL、ERROR、WARN 4个级别的log能正常              输出，而INFO、DEBUG、TRACE、 ALL级别的log则会被忽略。Log4j建议只使用四个级别，优先级从高到低分别是ERROR、WARN、INFO、DEBUG。
 
 从我们实验的结果可以看出，log4j默认的优先级为ERROR或者WARN（实际上是ERROR）。
+
+
+
+## Spring boot 日志配置
+

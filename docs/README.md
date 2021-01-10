@@ -190,7 +190,7 @@
 - [Java 内存分析工具 VisualVM](java/java-visualVM.md)
 - [Java 并发和多线程](java/java-cocurrent.md)
 - [Java 集合](java/java-collections.md)
-- [ Java 日志级别](java/java-log.md)
+- [ Java 日志](java/java-log.md)
 - [Java 注解基础](java/java-annotation.md)
 - [java 线上 debug](java/java-debug.md)
 ## solution

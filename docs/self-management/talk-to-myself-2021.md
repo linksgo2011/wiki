@@ -67,7 +67,35 @@ toc: true
 主要清单
 
 - 技术方案 done
-- POC 方案 done
+- POC 方案 
 - MQTT 邮件 TODO
 - 周六 standby done 
 - 技术卡估点 done
+
+### 2021.01.08
+
+主要清单
+
+- POC 方案 done
+- 写书
+- Domain-driven-design
+
+告诫清单
+
+- 别做其他人的事情
+
+下周的工作
+
+- 交接 deveops 工作
+
+### 2021.01.10
+
+主要清单
+
+- 看房
+
+告诫清单
+
+- 健康很重要
+- 情商很重要
+
