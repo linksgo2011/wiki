@@ -245,7 +245,8 @@
 - [代码审查的注意事项 （英文版）](agile/code-review-tips.md)
 - [敏捷中的测试策略](agile/QA-in-agile.md)
 ## taoists
-- [记录修行相关的内容](taoists/index.md)
+- [打坐修行的方法](taoists/the-method-of-dazuo.md)
+- [什么是德](taoists/what-is-de.md)
 ## architecture
 - [常见线上调优参数和性能优化](architecture/system-parameters.md)
 - [一套分布式系统架构的技术集合](architecture/distributed-system-overview.md)
