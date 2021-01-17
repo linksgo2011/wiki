@@ -296,6 +296,7 @@
 ## team
 - [回答敏捷初学者的个7个问题](team/why-need-agile.md)
 - [代码风格清单](team/code-style.md)
+- [面试官指南](team/interviewer-guide.md)
 - [站会](team/standup.md)
 - [提高工时估计准确性，减少开发成本](team/better-estimation.md)
 - [用归零的心态，做好团队回顾](team/retro.md)
