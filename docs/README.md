@@ -294,7 +294,7 @@
 - [前端的编程思维](thinking/thinking-in-frontend.md)
 - [程序员的美德：克制、简单和笨拙](thinking/the-three-great-girtues-of-a-programmer.md)
 ## team
-- [ spike ](team/spike.md)
+- [ 如何做好敏捷技术预研（Spike） ？](team/spike.md)
 - [回答敏捷初学者的个7个问题](team/why-need-agile.md)
 - [代码风格清单](team/code-style.md)
 - [面试官指南](team/interviewer-guide.md)
