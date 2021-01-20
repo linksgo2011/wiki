@@ -7,4 +7,6 @@ mkdir build
 
 cat ${folder}/${file} > build/output.md
 sed -i "" "s@src=\"@src=\"$imageHost@g" build/output.md
-pandoc -s build/output.md -w html --template=template/email_template.html -o build/email.html --title-prefix email
+pandoc -s build/output.md -w html --template=template/wechat_template.html -o build/wechat.html  --title-prefix email
+
+juice build/wechat.html build/wechat.html
