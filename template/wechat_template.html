@@ -21,7 +21,7 @@
         p, li {
             text-align: left;
             color: #3f3f3f;
-            line-height: 1.8;
+            line-height: 1.6;
             font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 15px;
             margin: 10px 10px;
@@ -111,8 +111,23 @@
         }
 
         pre {
-            background: #efefef;
+            background: #efefefbf;
             padding: 1em;
+            overflow: scroll !important;
+            max-width: 100%;
+            font-size: 0.9em;
+        }
+
+        blockquote{
+            background-color: #efefefbf;
+            padding: 0.5em;
+            margin-inline-start: 1em;
+            margin-inline-end: 1em;
+            border-radius: 2px;
+        }
+
+        blockquote p {
+            margin: 0;
         }
 
         ul,ol{
