@@ -27,7 +27,7 @@ recommend: true
 
 现实是，我们往往马上关注到数据库的设计上，想当然的设计出一些数据库表，然后着手于界面、网络请求、如何操作数据库上，业务逻辑被封装到一个叫做 Service 对象上，这个对象不承载任何状态，业务逻辑通过修改数据库实现。
 
-[![面向数据库的编程方法](ddd-foundamental/face2database.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/face2database.png)
+<img src="ddd-foundamental/face2database.png" alt="面向数据库的编程方法" style="zoom:50%;" />
 
 一般来说这种方法也没有大的问题，甚至工作的很好，Fowler 将这种方法称作为 **事务脚本（Transaction Script）**。还有其他的设计模式，将用户界面、业务逻辑、数据存储作为一个“模块”，可以实现用户拖拽就可以实现简单的编程，.net、VF曾经提供过这种设计模式，这种设计模式叫做 SMART UI。
 
@@ -43,7 +43,7 @@ recommend: true
 
 不长眼的新手程序员擅自修改数据片段，整体业务逻辑被破坏。这是因为并没有真正的一个 “订单” 的对象负责执行相关的业务逻辑，`Sevice` 上的一个方法直接就对数据库修改了，保持业务逻辑的完整，完全凭程序员对系统的了解。
 
-[![业务逻辑一致性难以维护](ddd-foundamental/system-error-when-data-unconsistant.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/system-error-when-data-unconsistant.png)
+<img src="ddd-foundamental/system-error-when-data-unconsistant.png" alt="业务逻辑一致性难以维护" style="zoom:50%;" />
 
 我们在各个餐厅交流的时候，发现这并不是一个 IT 系统的问题。某些餐厅，所有的服务员都可以收银，即使用纸和笔，收营员划掉菜品没有更新小计，另外的服务员结账时会发生错误。于是餐厅，约定修改菜品必须更新订单总价。
 
@@ -58,7 +58,7 @@ recommend: true
 
 在接触 Eric Evans 的 DDD 概念之前，我们没有找到这种开发模式的名字，暂时称作为 **朴素模型驱动开发**。
 
-[![朴素模型驱动开发](ddd-foundamental/simple_ddd_patten.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/simple_ddd_patten.png)
+<img src="ddd-foundamental/simple_ddd_patten.png" alt="朴素模型驱动开发" style="zoom:50%;" />
 
 ### 模型和领域模型
 
@@ -93,7 +93,7 @@ recommend: true
 - 指导权限
 - 指导微服务划分（有必要的情况）
 
-[![领域驱动设计过程](ddd-foundamental/ddd-process.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-process.png)
+<img src="ddd-foundamental/ddd-process.png" alt="领域驱动设计过程" style="zoom:50%;" />
 
 在我们之前的例子中，收银员需要负责处理收银的操作，同时表达这个餐厅有收营员这样的一个状态。收营员收到钱并记录到账本中，账本负责处理记录钱的业务逻辑，同时表达系统中有多少钱的状态。
 
@@ -110,7 +110,7 @@ recommend: true
 - 业务复杂度
 - 技术复杂度
 
-[![技术复杂度和业务复杂度](ddd-foundamental/isolation.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/isolation.png)
+<img src="ddd-foundamental/isolation.png" alt="技术复杂度和业务复杂度" style="zoom:50%;" />
 
 **技术复杂度，软件设计中和技术实现相关的问题，例如处理用户输入，持久化模型，处理网络通信等。**
 
@@ -128,7 +128,7 @@ DDD 还强调，业务建模应该充分的和业务专家在一起，不应该�
 
 通过这个过程，我们得到了领域模型。
 
-[![领域模型v1](ddd-foundamental/ddd-v1.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v1.png)
+<img src="ddd-foundamental/ddd-v1.png" alt="领域模型v1" style="zoom:50%;" />
 
 上图使我们通过业务分析得到的一个非常基本的领域模型，我们的点餐系统中，会有座位、订单、菜品、评价�几个模型。一个座位可以由多个订单，每个订单可以有多个菜品和评价。
 
@@ -151,11 +151,11 @@ DDD 还强调，业务建模应该充分的和业务专家在一起，不应该�
 
 这个过程叫做 **统一语言**。
 
-[![领域模型v2](ddd-foundamental/ddd-v2.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v2.png)
+<img src="ddd-foundamental/ddd-v2.png" alt="领域模型v2" style="zoom:50%;" />
 
 和现实生活中一样，产生二义性的原因是因为我们的对话发生在不同的上下文中，我们在谈一个概念必须在确定的上下文中才有意义。在不同的场景下，即使使用的词汇相同，但是业务逻辑本质都是不同的。想象一下，发生在《武林外传》中同福客栈的几段对话。
 
-[![对话](ddd-foundamental/conversation.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/conversation.png)
+<img src="ddd-foundamental/conversation.png" alt="对话" style="zoom:50%;" />
 
 这段对话中实际上有三个上下文，这里的 ”菜“ 这个词出现了三次，但是实际上业务含义完全不同。
 
@@ -167,7 +167,7 @@ DDD 还强调，业务建模应该充分的和业务专家在一起，不应该�
 
 我们把语言再次统一，得到新的模型。
 
-[![DDD v3](ddd-foundamental/ddd-v3.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v3.png)
+<img src="ddd-foundamental/ddd-v3.png" alt="DDD v3" style="zoom:50%;" />
 
 4个被红色虚线框起来的区域中，我们都可以使用 ”菜品“ 这个词汇（尽量不要这么做），但大家都明确 ”菜品“ 具有不同的含义。这个区域被叫做 **上下文**。当然上下文不只是由二义性决定的，还有可能是完全不相干的概念产生，例如订单和座位实际概念上并没有强烈的关联关系，我们在谈座位的时候完全在谈别的东西，所以座位也应该是单独的上下文。
 
@@ -175,7 +175,7 @@ DDD 还强调，业务建模应该充分的和业务专家在一起，不应该�
 
 限界上下文的识别难以有一个明确的准则，上下文的边界非常模糊，需要有经验的工程师并充分讨论才能得到一个好的设计。同时需要注意，限界上下文的划分没有对错，只有是否合适。跨限界上下文之间模型的关联有本质的不同，我们用虚线标出，后面会聊到这种区别。
 
-[![DDD-v4](ddd-foundamental/ddd-v4.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v4.png)
+<img src="ddd-foundamental/ddd-v4.png" alt="DDD-v4" style="zoom:50%;" />
 
 使用上下文之后，带来另外一个收获。模型之间本质上没有多对多关系，如果有，说明存在一个隐含的成员关系，这个关系没有被充分的分析出来，对后期的开发会造成非常大的困扰。
 
@@ -191,7 +191,7 @@ DDD 还强调，业务建模应该充分的和业务专家在一起，不应该�
 
 相对于非聚合根的模型，我们叫做**实体**。
 
-[![DDD-v5](ddd-foundamental/ddd-v5.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v5.png)
+<img src="ddd-foundamental/ddd-v5.png" alt="DDD-v5" style="zoom:50%;" />
 
 我们把这个图完善一下，聚合之间也是用虚线链接，为聚合根标上橙色。识别聚合根需要一些技巧。
 
@@ -238,7 +238,7 @@ public clsss Price(){
 
 我们使用蓝色区别实体和聚合根，更新后的模型图如下：
 
-[![ddd-v6](ddd-foundamental/ddd-v6.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-v6.png)
+<img src="ddd-foundamental/ddd-v6.png" alt="ddd-v6" style="zoom:50%;" />
 
 虽然我们使用 E-R 的方式描述模型和模型之间的关系，但是这个 E-R 图使用了颜色、虚线，已经和传统的 E-R 图大不相同，把这种图暂时叫做 **CE-R** 图（Classified Entity Relationship）。DDD 没有规定如何画图，你可以使用其他任何画图的方法表达领域模型。
 
@@ -262,7 +262,7 @@ public clsss Price(){
 
 订单拥有多个订单项，每个订单项从菜品读入数据并拷贝，或者引用一个菜品的全局 ID （菜品在另外一个聚合）。这样在设计表结构时订单和订单项关联，订单项不关联菜品。订单项应该从程序读取菜品信息。看起来多对多的关系，被细致分析后，变成了一个一对多关系。
 
-[![数据库设计](ddd-foundamental/database-design.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/database-design.png)
+<img src="ddd-foundamental/database-design.png" alt="数据库设计" style="zoom:50%;" />
 
 在使用 ORM 时，良好的领域模型尤其有用。不合适的关联关系不仅让 ORM 关联变得混乱，还会让 ORM 的性能变差。
 
@@ -279,11 +279,11 @@ RESTful API 已经变成了主流 API 设计方式，当设计好领域对象后
 
 使用聚合根作为 URI 的根路径，使用实体作为子路径。通过 ID 作为 Path 参数。
 
-[![API 设计](ddd-foundamental/api-design.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/api-design.png)
+<img src="ddd-foundamental/api-design.png" alt="API 设计" style="zoom:50%;" />
 
 值对象没有 ID，应该只能依附于某个实体的路径下做更新操作。
 
-[![API 设计 v2](ddd-foundamental/api-design-v2.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/api-design-v2.png)
+<img src="ddd-foundamental/api-design-v2.png" alt="API 设计 v2" style="zoom:50%;" />
 
 另外根据这个关系，处理批量操作的时候应该在实体的上一级完成，例如批量添加订单的订单项，可以设计为：
 
@@ -305,7 +305,7 @@ POST /orders/{orderId}/items/batch
 
 因此 DDD 中，数据库各种对象的使用应该针对不同的场景设计。回到我们上面说的技术复杂度和业务复杂度中来。领域模型解决业务复杂度的问题，领域模型只应该被用作处理业务逻辑，存储、业务表现都应该和领域模型无关。
 
-[![对象设计](ddd-foundamental/objects-design.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/objects-design.png)
+<img src="ddd-foundamental/objects-design.png" alt="对象设计" style="zoom:50%;" />
 
 简单来说，可以把这些 `Plain Object` 分为三类:
 
@@ -348,15 +348,15 @@ POST /orders/{orderId}/items/batch
 
 如果我们将三层架构和 DDD 架构对比，DDD 架构如右图所示。
 
-[![三层架构对比](ddd-foundamental/ddd-vs.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-vs.png)
+<img src="ddd-foundamental/ddd-vs.png" alt="三层架构对比" style="zoom:50%;" />
 
 我们将 DDD 的代码架构展开，可以看到更为细节的内容。 DDD 代码实现上需要 `Repository`、`Factory` 等概念，但这些是可选的，我们在后面具体讲代码结构的部分再阐述。
 
-[![单体DDD架构](ddd-foundamental/ddd-mono.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/ddd-mono.png)
+<img src="ddd-foundamental/ddd-mono.png" alt="单体DDD架构" style="zoom:50%;" />
 
 我们再来看，DDD 的单体应用架构映射到微服务架构下会是怎么样的。
 
-[![单体到微服务](ddd-foundamental/mono-micro-service.png)](https://raw.githubusercontent.com/linksgo2011/dda-book/master/chapters/02-ddd-foundamental/mono-micro-service.png)
+<img src="ddd-foundamental/mono-micro-service.png" alt="单体到微服务" style="zoom:50%;" />
 
 微服务必须考虑到不再是一种服务器，`Domain` 层被抽离出来作为 `Domain Server` 存在，`Domain Server` 不关心业务场景，因此不需要 `application` 层。`Application Server` 需要 `Application` 层，`Domain` 层由后端的 `Domain Server` 提供。
 
