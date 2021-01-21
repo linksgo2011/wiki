@@ -109,7 +109,7 @@ class OrderRepository {
 
 大家在实际操作中发现，JPA 并不好用。
 
-其实这不是，JPA 的问题，是因为 JPA 做的太多了，JPA 不仅有各种状态转换，还有多对多关系。
+其实这不是 JPA 的问题，是因为 JPA 做的太多了，JPA 不仅有各种状态转换，还有多对多关系。
 
 如果保持克制就可以使用 JPA 实现 DDD，尝试遵守下面的规则：
 
@@ -119,6 +119,8 @@ class OrderRepository {
 4. 读写分离。关联等复杂查询，读写分离查询不要给 JPA 做，JPA 只做单个对象的查询
 
 
+
+在这些基本的规则下可以使用 @OneToMany  的 cascade 属性来自动保存、更新聚合。
 
 ```java
 class Order {    
@@ -142,15 +144,55 @@ class OrderItem {
 }
 ```
 
+OneToMany 中的 cascade 有不同的属性，如果需要让更新、删除都有效可以设置为 ALL。
 
+## 5. 使用 Spring Dat JDBC
 
-## 5. 使用 Spring Dat Jdbc
+Mybatis 就是一个 SQL 模板引擎，而 JPA 做的太多，有没有一个适中的 ORM 来持久化聚合呢？
 
+Spring Data JDBC 就是人们设计出来持久化聚合，从名字来看他不是 JDBC，而是使用 JDBC 实现了部分 JPA 的规范，让你可以继续使用 Spring Data 的编程习惯。
 
+Spring Dat JDBC 的一些特点：
+
+- 没有 Hibernate 中 session 的概念，没有对象的各种状态
+- 没有懒加载，保持对象的完整性
+- 除了 SPring Data 的基本功能，保持简单，只有保存方法、事务、审计注解、简单的查询方法等。
+- 可以搭配 JOOQ 或 Mybatis 实现复杂的查询能力。
+
+Spring Dat JDBC 的使用方式和 JPA 几乎没有区别，就不浪费时间贴代码了。
+
+如果你使用 Spring Boot，可以直接使用 spring-boot-starter-data-jdbc 完成配置：
+
+> spring-boot-starter-data-jdbc 
+
+不过需要注意的是，Spring Data JDBC 的逻辑：
+
+1. 如果聚合根是一个新的对象，Spring Data JDBC 会递归保存所有的关联对象。
+2. 如果聚合根是一个旧的对象，**Spring Data JDBC 会删除除了聚合根之外旧的对象再插入**，聚合根会被更新。因为没有之前对象的状态，这是一种不得不做的事情。也可以按照自己策略覆盖相关方法。
 
 ## 6. 使用 Domain Service 变通处理
 
+正是因为和 ORM 一起时候会有各种限制，而抽象一个 Repository 层会带来大的成本，所以有一种变通的方法。
 
+这种方法不使用充血模型、也不让 Repository 来保证聚合的一致性，而是使用领域服务来实现相关逻辑，但会被批评为 DDD lite 或不是 “纯正的 DDD”。
 
+这种编程范式有如下规则：
 
+- 按照 DDD 四层模型，Application Service 和 Domain Service 分开，Application Service 负责业务编排，不是必须的一层，可以由 UI 层兼任。
+- 一个聚合使用 DomainService 来保持业务的一致性，**一个聚合只有一个 Domain Service**。Domain Service 内使用 ORM 的各种持久化技术。
+- 除了 Domain Service  不允许其他地方之间使用 ORM 更新数据。
 
+当不被充血模型困住的时候，问题变得更清晰。
+
+DDD 只是手段不是目的，对一般业务系统而言，充血模型不是必要的，我们的目的是让编码和业务清晰。
+
+这里引入两个概念：
+
+1. **业务主体。**操作领域模型的拟人化对象，用来承载业务规则，也就是 Domain Service，比如订单聚合可以由一个服务来管理，保证业务的一致性。我们可以命名为：OrderManager.
+2. **业务客体。**聚合和领域对象，用来承载业务属性和数据。这些对象需要有状态和自己的生命周期，比如 Order、OrderItem。
+
+回归到原始的编程哲学：
+
+> 程序 = 数据结构 + 算法
+
+业务主体负责业务规则（算法），业务客体负责业务属性和数据（数据结构），那么用不用 DDD 都能让代码清晰、明白和容易处理了。
