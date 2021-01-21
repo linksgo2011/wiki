@@ -252,6 +252,7 @@
 - [一套分布式系统架构的技术集合](architecture/distributed-system-overview.md)
 - [如何编写清晰的架构方案](architecture/how-to-write-solution-doc.md)
 - [如何评估一个系统的容量](architecture/system-capacity.md)
+- [领域驱动设计(DDD)基础](architecture/ddd-foundamental.md)
 - [Java web 项目线上环境配置清单](architecture/aware-product.md)
 - [java 性能监控](architecture/java-apm.md)
 - [软件规范化指南](architecture/normalize-project.md)
