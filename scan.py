@@ -12,7 +12,7 @@ def file_name(file_dir):
         for file in os.listdir(subDir):
             if  os.path.isdir(subDir + '/' + file) == True:
                 for img in os.listdir(subDir + '/' + file):
-                    if img.endswith('.png')
+                    if img.endswith('.png') == True:
                         os.system('pngquant --ext .png --force ' + subDir + '/' + file + '/' + img)
 
             if file.endswith('.md') != True:
