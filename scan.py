@@ -10,8 +10,10 @@ def file_name(file_dir):
             continue;
         output = output + '## ' + dir.strip() + '\r\n'
         for file in os.listdir(subDir):
-            if file.endswith('.png') == True:
-                os.system('pngquant --ext .png --force ' + file)
+            if  os.path.isdir(subDir + '/' + file) == True:
+                for img in os.listdir(subDir + '/' + file):
+                    if img.endswith('.png')
+                        os.system('pngquant --ext .png --force ' + subDir + '/' + file + '/' + img)
 
             if file.endswith('.md') != True:
                 continue;

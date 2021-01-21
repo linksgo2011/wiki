@@ -5,9 +5,6 @@ git status
 python3 scan.py
 cp -r source/* docs/
 
-# 图片压缩
-
-
 
 ## commit to git
 git add -A
