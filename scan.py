@@ -10,8 +10,12 @@ def file_name(file_dir):
             continue;
         output = output + '## ' + dir.strip() + '\r\n'
         for file in os.listdir(subDir):
+            if file.endswith('.png') == True:
+                os.system('pngquant --ext .png --force ' + file)
+
             if file.endswith('.md') != True:
                 continue;
+
             fileName = subDir + '/' + file;
             file_object = open(fileName, 'r')
             lines = file_object.readlines()
@@ -22,3 +26,6 @@ def file_name(file_dir):
     with open('source/' + "README.md","w") as f:
             f.write(output)
 file_name(root)
+
+
+
