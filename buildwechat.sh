@@ -1,5 +1,5 @@
 folder=architecture
-file=ddd-foundamental.md
+file=ddd-distribution-architecture.md
 imageHost=http://cdn.printf.cn/$folder/
 
 rm -rf build

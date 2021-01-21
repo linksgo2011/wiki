@@ -259,6 +259,7 @@
 - [在线协作方案](architecture/online-collaboration.md)
 - [并发框架](architecture/Disruptor.md)
 - [Java web project 概览](architecture/java-project-structure.md)
+- [在分布式系统中使用 DDD](architecture/ddd-distribution-architecture.md)
 - [使用Java构建API的知识体系](architecture/simple-api-archtecture.md)
 - [接口访问限制方案](architecture/api-limitation.md)
 - [计算高可用方案](architecture/computed-architedture.md)
