@@ -255,6 +255,7 @@
 - [领域驱动设计(DDD)基础](architecture/ddd-foundamental.md)
 - [Java web 项目线上环境配置清单](architecture/aware-product.md)
 - [java 性能监控](architecture/java-apm.md)
+- [DDD 指导微服务联表和事务问题](architecture/ddd-micro-service-transaction-issue.md)
 - [软件规范化指南](architecture/normalize-project.md)
 - [在线协作方案](architecture/online-collaboration.md)
 - [并发框架](architecture/Disruptor.md)

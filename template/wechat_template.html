@@ -18,7 +18,7 @@
             padding: 0;
         }
 
-        p, li {
+        p, li, td, th {
             text-align: left;
             color: #3f3f3f;
             line-height: 1.6;
@@ -91,10 +91,16 @@
             color: purple !important;
         }
 
-        table td {
+        table td, table th {
             border-collapse: collapse;
-            border:1px solid #ececec;
+            border: 1px solid #ececec;
             padding: 0.4em;
+        }
+
+        table th {
+            font-weight: bolder;
+            color: #3f3f3f;
+            text-align: center;
         }
 
         table {
@@ -131,6 +137,10 @@
 
         blockquote p {
             margin: 0;
+        }
+
+        figcaption {
+            display: none;;
         }
 
         ul,ol{
