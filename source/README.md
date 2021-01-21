@@ -250,6 +250,7 @@
 ## architecture
 - [常见线上调优参数和性能优化](architecture/system-parameters.md)
 - [一套分布式系统架构的技术集合](architecture/distributed-system-overview.md)
+- [DDD 指导微服务联表查询问题](architecture/ddd-micro-service-query-issue.md)
 - [如何编写清晰的架构方案](architecture/how-to-write-solution-doc.md)
 - [如何评估一个系统的容量](architecture/system-capacity.md)
 - [领域驱动设计(DDD)基础](architecture/ddd-foundamental.md)
