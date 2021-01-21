@@ -248,6 +248,7 @@
 - [打坐修行的方法](taoists/the-method-of-dazuo.md)
 - [什么是德](taoists/what-is-de.md)
 ## architecture
+- [DDD 指导团队划分问题](architecture/ddd-guide-team.md)
 - [常见线上调优参数和性能优化](architecture/system-parameters.md)
 - [一套分布式系统架构的技术集合](architecture/distributed-system-overview.md)
 - [DDD 指导微服务联表查询问题](architecture/ddd-micro-service-query-issue.md)
@@ -276,6 +277,7 @@
 - [OAuth2 架构设计](architecture/OAuth2.md)
 - [单体应用 IAM 方案](architecture/stand-alone-iam-solution.md)
 - [Java 一些开源后台管理种子项目](architecture/java-admin-boilerplate.md)
+- [DDD 指导微服务分布式授权设计](architecture/ddd-micro-service-authorize-issue.md)
 - [批量任务执行](architecture/batch.md)
 - [Web网站的几个并发量级](architecture/qps-level.md)
 - [基于 DDD 理论基础的分层架构](architecture/ddd-layer.md)
