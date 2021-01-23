@@ -1,5 +1,5 @@
 ---
-title: DDD 指导微服务联表和事务问题
+title: DDD 指导微服务事务问题
 categories: 技术架构
 toc: true
 ---
