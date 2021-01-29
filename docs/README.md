@@ -426,6 +426,7 @@
 - [技能树和个人发展方向](self-management/my-skill-map.md)
 - [我的学习方法](self-management/my-leaning-method.md)
 - [我的读书策略](self-management/my-reading-strategy.md)
+- [海姆立克急救法](self-management/first-aid.md)
 - [模型学习法](self-management/study-with-model.md)
 ## javascript
 - [Javascript 复制到剪贴板](javascript/copy-to-clipboard.md)
