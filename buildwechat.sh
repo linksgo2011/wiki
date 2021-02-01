@@ -1,5 +1,5 @@
 folder=self-management
-fileName=first-aid
+fileName=control-emotions
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
