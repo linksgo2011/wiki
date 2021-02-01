@@ -1,5 +1,5 @@
-folder=team
-fileName=bugbush
+folder=self-management
+fileName=first-aid
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
