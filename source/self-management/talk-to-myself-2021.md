@@ -493,4 +493,13 @@ POC actions:
 主要清单
 
 - 开源表单
+- 发票寄出
+
+火炉清单
+
+- 《release、hotfix 和 oncall》
 - 《DDD的模型表达》
+- 《敏捷迭代日历》
+
+
+

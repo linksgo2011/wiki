@@ -317,6 +317,7 @@
 - [估点](team/estimation.md)
 - [如何进行技术例会？](team/tech-huddle.md)
 - [敏捷团队管理一览](team/01-agile-overview.md)
+- [团队琐事：release、hotfix 和 oncall](team/release-hotfix-oncall.md)
 - [项目交接](team/handover.md)
 - [新成员培训](team/on-boarding.md)
 - [安全](team/security.md)
