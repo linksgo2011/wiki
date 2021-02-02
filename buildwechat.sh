@@ -1,5 +1,5 @@
-folder=self-management
-fileName=control-emotions
+folder=team
+fileName=release-hotfix-oncall
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
