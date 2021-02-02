@@ -28,7 +28,7 @@ toc: true
 
 发布后的一个迭代内，这些人员需要继续负责 hotfix、oncall，直到下一次发布截止。这样计划的好处是，这些人有同样的上下文，也不不必为这些活动分开计划人员。
 
-### 3. release 注意事项
+## 3. release 注意事项
 
 - 建立完善的流程，比如分支策略，发布手册等，可以在之前的文章中找到相关内容
 - 发布当天时间最好不要太晚，预留时间给测试验收
@@ -41,7 +41,7 @@ toc: true
 
 - hotfix 使用 release 的 git 分支，必须使用 pull request 的方式提交到分支。同时cherrypick 到 master，负责审核的 pull request 需要检查，相同的 commit 是否在 master 已经存在。
 - hotfix 必须先通过预发环境测试验证
-- hotfix 依然要遵守 release 流程，比让测试人员验收合格
+- hotfix 依然要遵守 release 流程，比如让测试人员验收合格
 
 ## 5. oncall 注意事项
 

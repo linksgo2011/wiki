@@ -494,10 +494,12 @@ POC actions:
 
 - 开源表单 todo
 - 发票寄出 done
+- 邮件那个问题
 
 火炉清单
 
 - 《DDD的模型表达》 
+- 《EventStroming：DDD建模工作坊》
 - 《敏捷迭代日历》
 - 《团队琐事：release、hotfix 和 oncall》 done
 

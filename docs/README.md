@@ -260,6 +260,7 @@
 - [DDD 指导微服务事务问题](architecture/ddd-micro-service-transaction-issue.md)
 - [软件规范化指南](architecture/normalize-project.md)
 - [在线协作方案](architecture/online-collaboration.md)
+- [如何可视化的表达 DDD 的模型？](architecture/ddd-visualization.md)
 - [理解 DDD：编程中的模型思维](architecture/model-thinking.md)
 - [并发框架](architecture/Disruptor.md)
 - [Java web project 概览](architecture/java-project-structure.md)
