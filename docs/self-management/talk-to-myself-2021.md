@@ -496,12 +496,20 @@ POC actions:
 - 发票寄出 done
 - 邮件那个问题
 
-火炉清单
-
-- 《DDD的模型表达》 
 - 《EventStroming：DDD建模工作坊》
 - 《敏捷迭代日历》
 - 《团队琐事：release、hotfix 和 oncall》 done
 
 
+
+### 2021.02.03
+
+主要清单
+
+- 更新 POC 文档
+- 图数据库 spike 
+
+火炉清单
+
+- 《DDD的模型表达》 
 
