@@ -41,15 +41,89 @@ UML 是一个大的工具箱，如果我们想明白我们需要什么样信息�
 
 
 
-## 2. 模型维护和 plantuml 简介
+## 2. PlantUML 简介
 
-plantuml 是一个用代码驱动绘图的 UML 工具，就这一点就足以够用。
+代码的维护和持续演进比“完美”的初始设计更为重要。
+
+**将模型文件放入代码仓库，随代码维护，并每个迭代演进，有非常重要的意义。**但是需要让图形能用代码表示，做到 Diagram As Code，便于版本管理。
+
+PlantUML 是一个用代码驱动绘图的 UML 工具，就这一点就足以够让其他的 UML 工具相形见绌。
+
+PlantUML 使用 Java 编写， 可以通过命令行、Jar 包、插件等多种途径使用，不过一般常见的使用方式有两种：
+
+1. 使用在线绘图工具。用于临时和同事讨论问题，也可以把绘制好的内容通过链接发送给其他人。
+2. 使用 IDE 插件。直接将 UML 模型在 IDE 中渲染为图形。
+
+**使用在线绘图工具**
+
+使用官网的在线绘图工具 http://www.plantuml.com/plantuml/uml 
+
+编写 UML 表达式后点击 submit 即可生成 UML，并带有一个带有绘图信息的链接。
+
+**使用 IDE 插件**
+
+如果你使用的 IntelliJ IDEA，可以在 Preferences 菜单下的 Plugins 搜索 PlantUML integration，安装重启 IDE 即可。
+
+<img src="ddd-visualization/image-20210204232444997.png" alt="image-20210204232444997" style="zoom:50%;" />
+
+在项目中添加后缀为 puml 的文本文件即可使用。
 
 
 
-**将模型文件放入代码仓库，随代码维护，并每个迭代演进，有非常重要的意义。**
+## 3. 使用示例
 
-## 3. plantuml 使用入门
+一个 UCG 应用，设计好的模型大致为（进过简化）：
 
+- 用户上下文，包含用户聚合、角色聚合。
+- 内容上下文，包含专题、分类、文章聚合。
 
+可以如下表示上下文、聚合和实体的关系，得到一个非常简洁的模型图。
 
+```uml
+@startuml
+namespace UserContext {
+    package User <<Aggregate>> {
+        User  --> UserRole
+        User --> UserAttribute
+        User --> UserPreference
+    }
+namespace UserContext {
+    package Role <<Aggregate>> {
+        class Role
+    }
+
+namespace ContentContext{
+    package Category <<Aggregate>> {
+        Category  --> CategoryTag
+    }
+namespace ContentContext{
+    package Topic <<Aggregate>> {
+        Topic  --> TopicArticle
+    }
+namespace ContentContext{
+    package Article <<Aggregate>> {
+        Article --> ArticleMeta
+    }
+@enduml
+```
+
+渲染好的效果如下：
+
+![PlantUML diagram](ddd-visualization/bP9H2i8m38RVTufUO3SOOsFFWiWyGAon3Bjsf1aeujsromhkeJ3pbFAb_vT2cy10F8-sS31Yc42ZEWUapZl61wjNeRurWRw34QAggZM6q01ZNSj0B86gBEkbEtcBMvH8oqp3PUOCFXBUaD1fuUzTYqLRTZ5j8OGuaX9_8fSunslgDhG3HkFfcGrE0_BgTEh1Y6UdflVJeBCEeL4WRKiyQ8j_6TOxEKVYKPBw0pAiZWRTDNwG3m00.png)
+
+可以清晰的看明白模型、聚合，以及他们所处上下文的关系，也可以在代码仓库中被很好的管理。
+
+参考文档可以做出更多特性的图表来，比如增加模型之间的关系数量，是一对多还是多对多。
+
+```
+@startuml
+namespace UserContext {
+    package User <<Aggregate>> {
+        User "1" --> "*" UserRole
+        User --> UserAttribute
+        User --> UserPreference
+    }
+@enduml
+```
+
+![PlantUML diagram](ddd-visualization/SoWkIImgAStDuSfBp4qjBaXCJbK8BKujSixFAqcjA56evb800g1mTc8wH4R1niOnFRqeDJsn9DNE3gG00Y2IIePA2hgwTWfAMafWWQ3yd5GK5I1PCCEnfAGeCwcq18TqG55gMcfHQbuoHBwMoo4rBmNeJW00.png)
