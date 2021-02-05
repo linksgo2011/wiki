@@ -1,5 +1,5 @@
-folder=team
-fileName=release-hotfix-oncall
+folder=architecture
+fileName=ddd-visualization
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build

@@ -521,14 +521,28 @@ POC actions:
 
 主要清单
 
-- 更新 POC 文档
-- convergence spike
+- 更新 POC 文档 done
+- convergence spike 
 
 火炉清单
 
-- 《DDD的模型表达》
-- 《我这远程工作这一年》
+- 《DDD的模型表达》 done
 
 告诫清单
 
 - 有些东西需要永远记在脑子中
+
+### 2021.02.05
+
+主要清单
+
+- mergechanges spike 
+- 发送 docker 镜像
+- 优化 graph server 临时存储 done
+
+火炉清单
+
+- 《做软件为什么需要建模?》
+- 《DDD 概念梳理》
+- wiki 加公众号二维码
+- Timecard
