@@ -496,8 +496,6 @@ POC actions:
 - 发票寄出 done
 - 邮件那个问题
 
-- 《EventStroming：DDD建模工作坊》
-- 《敏捷迭代日历》
 - 《团队琐事：release、hotfix 和 oncall》 done
 
 
@@ -537,12 +535,28 @@ POC actions:
 主要清单
 
 - mergechanges spike 
-- 发送 docker 镜像
 - 优化 graph server 临时存储 done
 
 火炉清单
 
 - 《做软件为什么需要建模?》
 - 《DDD 概念梳理》
-- wiki 加公众号二维码
-- Timecard
+- wiki 加公众号二维码 done 
+- Timecard  done
+- 打理博客，使用博客的文章来发布（连接），开通少个分号的域名
+
+
+
+### 2021.02.06
+
+主要清单
+
+- 《敏捷迭代日历》
+- 《DDD 的基本概念和理解》
+- 《EventStroming：DDD建模工作坊》
+
+火炉清单
+
+- 打理博客，使用博客的文章来发布（连接），开通少个分号的域名
+- 发送 docker 镜像
+
