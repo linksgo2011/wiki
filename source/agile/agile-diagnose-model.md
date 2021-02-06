@@ -1,5 +1,5 @@
 ---
-title: 敏捷时间模型
+title: 敏捷实践的模型
 categories: 敏捷开发
 toc: true
 ---
