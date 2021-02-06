@@ -1,5 +1,5 @@
-folder=architecture
-fileName=ddd-visualization
+folder=team
+fileName=agile-calendar
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build

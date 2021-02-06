@@ -53,8 +53,11 @@ toc: true
 - 软件建模常用的 UML 图例 done
 - 那些必学的思维清单 done
 - RUP：在敏捷过程中持续建模 done
-- 架构守护测试： archunit
+- 架构守护测试： archunit done
 - 最小化的 DDD 
+- 《EventStroming：DDD建模工作坊》
+- 《敏捷团队的日常工作方式》
+- 《敏捷团队的人员组成》
 
 
 
@@ -67,3 +70,4 @@ toc: true
 《抵抗焦虑的力量》
 
 《思维的形状》
+
