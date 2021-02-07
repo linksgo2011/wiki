@@ -255,6 +255,7 @@
 - [如何编写清晰的架构方案](architecture/how-to-write-solution-doc.md)
 - [如何评估一个系统的容量](architecture/system-capacity.md)
 - [领域驱动设计(DDD)基础](architecture/ddd-foundamental.md)
+- [DDD 建模工作坊 Event Storming 指南](architecture/ddd-workshop-event-storming.md)
 - [Java web 项目线上环境配置清单](architecture/aware-product.md)
 - [java 性能监控](architecture/java-apm.md)
 - [DDD 指导微服务事务问题](architecture/ddd-micro-service-transaction-issue.md)
