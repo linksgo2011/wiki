@@ -1,5 +1,5 @@
-folder=architecture
-fileName=ddd-concepts
+folder=thinking
+fileName=mao-selected
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
