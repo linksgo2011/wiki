@@ -660,8 +660,8 @@ POC actions:
   - findbugs done
   - hivemq version done
   - swagger 问题 to test
+  - 输入校验问题 done
   - add some logs
-  - 输入校验问题
 - 精力问题分析
 
 
