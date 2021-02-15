@@ -621,7 +621,6 @@ POC actions:
 
 - Bee-design 修复  done
 - 安全自查建卡  done
-- 自测 POC 工作 
 
 
 
@@ -641,3 +640,45 @@ POC actions:
 
 - 姝姝的第二次 interview++ 
 - 《实践论和矛盾论》
+
+
+
+
+
+### 2021.02.14
+
+- 公号文章选择 done
+- 姝姝的第二次 interview++   done
+- 自测 POC 工作
+  - 图片空间问题处理 done
+  - 统一 Autowired 方式 done 
+  - appId 命名问题 done
+  - snapshot 问题，前端没有实现 Snapchat 问题
+  - 清理无用的代码  done
+  - clean prometheus done 
+  - 仓库路径 done
+  - findbugs done
+  - hivemq version done
+  - swagger 问题 to test
+  - add some logs
+  - 输入校验问题
+- 精力问题分析
+
+
+
+姝姝的第二次 interview++  
+
+
+
+Well
+
+- 工作积极认真，会按照 retro 的 action 认真执行，比如 retro 中建议给每个故事卡编写测试用例用于开发自测，确实有坚持在做。
+- 能力独立完成重要的测试任务。比如组织 UAT Bug Bash、上线后的验收测试等场景。
+
+suggestion
+
+- 希望更自信，来团队时间晚，不代表不能发出自己的声音，如果自己认为正确的事情应该坚持。
+
+告诫清单
+
+- 做形势分析，购买部分个股

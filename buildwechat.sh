@@ -1,5 +1,5 @@
-folder=thinking
-fileName=mao-selected
+folder=team
+fileName=release
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
