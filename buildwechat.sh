@@ -1,5 +1,5 @@
-folder=team
-fileName=release
+folder=self-management
+fileName=my-efficiency-strategy-2
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build

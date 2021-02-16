@@ -430,6 +430,7 @@
 - [我的点子，搞事情清单](self-management/my-ideas.md)
 - [开发者如何快速熟悉一个新项目](self-management/know-a-project-quickly.md)
 - [我的竞争力模型](self-management/competence-model.md)
+- [我的效率策略 2.0](self-management/my-efficiency-strategy-2.md)
 - [技能树和个人发展方向](self-management/my-skill-map.md)
 - [我的学习方法](self-management/my-leaning-method.md)
 - [我的读书策略](self-management/my-reading-strategy.md)
