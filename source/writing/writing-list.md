@@ -57,7 +57,14 @@ toc: true
 - 最小化的 DDD 
 - 《EventStroming：DDD建模工作坊》
 - 《敏捷团队的日常工作方式》
-- 《敏捷团队的人员组成》
+- 《敏捷团队的人员组成》 done 
+- 《Event Storming 操作指南》
+- 《有节奏感的工作》
+- 《复用有度》 
+- 《安全自查表》
+- 《Spring Boot 串讲》
+- 《OAuth2 串讲》
+- 《代码中的主谓宾》 
 
 
 

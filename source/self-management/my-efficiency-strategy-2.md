@@ -1,5 +1,5 @@
 ---
-title: 我的效率策略 2.0
+title: 高效工作的策略 2.0
 categories:  自我管理
 toc: true
 ---

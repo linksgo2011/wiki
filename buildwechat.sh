@@ -1,5 +1,5 @@
-folder=self-management
-fileName=my-efficiency-strategy-2
+folder=agile
+fileName=team-role
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
