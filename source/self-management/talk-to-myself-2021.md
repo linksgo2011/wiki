@@ -692,14 +692,21 @@ suggestion
 
 主要清单
 
-- 公号选题: DDD 工作坊
-
-- 文档 review 以及发布到 graph-server 中 
-- graph-server 问题自查
-- 锁定版本
+- 键盘托 done  没用
+- 文档 review 以及发布到 graph-server 中  done ，明早更新
+- graph-server 问题自查 done
+- 第三方依赖处理
+- 免疫力提高问题搜索  done
 
 告诫清单
 
 - 公号发之前，要先阅读一遍
 - 可以翻译 DDD 的一些文章，顺便学习英语
 
+
+
+### 2021.02.18 
+
+主要清单
+
+- 

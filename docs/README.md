@@ -371,7 +371,7 @@
 - [Mysql 性能优化](mysql/mysql-performance.md)
 - [Ubuntu上的MySQL安装](mysql/mysql-configuration.md)
 - [mysql 存储过程编写示例](mysql/mysql-stored-procedure.md)
-- [实用的SQL语句技巧](mysql/useful-mysql-statement.md)
+- [实用的 SQL 语句技巧](mysql/useful-mysql-statement.md)
 - [MySQL 根据时间段获取数据](mysql/mysql-by-time-range.md)
 - [Mysql 各种 join 的区别](mysql/mysql-join.md)
 - [Mysql 常见性能优化方法](mysql/mysql-optimization.md)
