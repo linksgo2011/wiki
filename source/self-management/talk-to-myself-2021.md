@@ -725,17 +725,25 @@ suggestion
 主要清单
 
 - rest化 event done
+- tool bar 问题
 - helm 部署脚本
+- 工作量评估 done
+- 错误信息被广播的问题 done
+- 断网后恢复重新获取数据 待验证
+- 回复 CMB 入场时间
+- mq 改为内存化，调低过期时间
 - 性能优化加载速度
-- 工作量评估
-- 错误信息被广播的问题
-- 断网后恢复重新获取数据
-- socket io 实验
 
 
 
 火炉清单
 
-- 技术雷达 https://docs.google.com/spreadsheets/d/1RetYSEQSSTldmkp9Pey-Ey1Jn-k0zXLKkNsJY5Hp0nQ/edit#gid=1777330470
-- 验证 tmp 目录大小是否够用，压测中的各种指标
-- helm 部署脚本
+- 技术雷达 https://docs.google.com/spreadsheets/d/1RetYSEQSSTldmkp9Pey-Ey1Jn-k0zXLKkNsJY5Hp0nQ/edit#gid=1777330470 done
+- 验证 tmp 目录大小是否够用，压测中的各种指标 done
+
+告诫清单
+
+- 任何时候保持冷静是最重要的事情
+- 休息的时候可以和朋友聊天
+- 目标感，2021 唯一一件事写书
+- nice to have: 学算法
