@@ -710,21 +710,32 @@ suggestion
 主要清单
 
 - 调整 pod 配置  done
-
 - 验证 tmp 目录大小是否够用，压测中的各种指标
-
 - 性能优化
-
 - helm 部署脚本
-
 - 填工作量估算 done 
-
   - https://docs.google.com/spreadsheets/d/1filyZZaBNUOH84mbh7bjCBXUGUnrI8m3SCg1Z_Mt24w/edit?usp=sharing
+- 给建伦反馈 2 个问题
+  - rest化 event
+  - 快照
+- Rest 化 load event
 
-  
+### 2021.02.19 
+
+主要清单
+
+- rest化 event done
+- helm 部署脚本
+- 性能优化加载速度
+- 工作量评估
+- 错误信息被广播的问题
+- 断网后恢复重新获取数据
+- socket io 实验
+
+
 
 火炉清单
 
-- 快递 done
 - 技术雷达 https://docs.google.com/spreadsheets/d/1RetYSEQSSTldmkp9Pey-Ey1Jn-k0zXLKkNsJY5Hp0nQ/edit#gid=1777330470
-
+- 验证 tmp 目录大小是否够用，压测中的各种指标
+- helm 部署脚本
