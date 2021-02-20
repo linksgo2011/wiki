@@ -271,6 +271,7 @@
 - [在分布式系统中使用 DDD](architecture/ddd-distribution-architecture.md)
 - [使用Java构建API的知识体系](architecture/simple-api-archtecture.md)
 - [接口访问限制方案](architecture/api-limitation.md)
+- [单体优先的架构策略](architecture/micro-service-monolith-first.md)
 - [计算高可用方案](architecture/computed-architedture.md)
 - [DDD落地，如何持久化聚合](architecture/ddd-implement-repository.md)
 - [基于服务端 store 模式的多用户实时协作方案](architecture/real-time.md)

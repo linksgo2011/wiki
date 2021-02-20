@@ -65,6 +65,7 @@ toc: true
 - 《Spring Boot 串讲》
 - 《OAuth2 串讲》
 - 《代码中的主谓宾》 
+- 《单体优先的架构策略》
 
 
 
