@@ -1,12 +1,12 @@
 ---
-title: 单体优先的架构策略
+title: 【翻译】单体优先的架构策略
 categories: 技术架构
 author: Martin Fowler
 ---
 
 
 
-> 译者：本来打算写一篇类似的文章，不过看到有同事有转发马丁·福勒的一篇博客，结合自己的项目经历，感同身受，就直接把这篇文章翻译过来了。
+> 本来打算写一篇类似的文章，不过看到有同事有转发马丁·福勒的一篇博客，结合自己的项目经历，感同身受，就直接把这篇文章翻译过来了。
 
 
 
@@ -51,4 +51,5 @@ author: Martin Fowler
 
 ## 文章来源
 
-- https://martinfowler.com/bliki/MonolithFirst.html
+- Martin Fowler [MonolithFirst](https://martinfowler.com/bliki/MonolithFirst.html)
+

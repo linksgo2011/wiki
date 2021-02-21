@@ -1,5 +1,5 @@
-folder=agile
-fileName=team-role
+folder=architecture
+fileName=micro-service-monolith-first
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build
