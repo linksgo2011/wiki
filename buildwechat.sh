@@ -1,5 +1,5 @@
 folder=architecture
-fileName=micro-service-monolith-first
+fileName=model-thinking
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build

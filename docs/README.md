@@ -455,6 +455,8 @@
 - [几种性能测试工具总结](performance/performance-test.md)
 - [Redis 性能优化](performance/redis-performance.md)
 - [性能优化](performance/performance-overview.md)
+## community
+- [【TW 社区】ThoughtWorks DDD 社区 KICK OFF](community/kick-off-news-letter.md)
 ## profession
 - [编程效率提升技巧](profession/effective.md)
 - [如何更好地阅读源代码](profession/how-to-read-source-code.md)

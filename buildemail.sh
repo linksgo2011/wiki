@@ -1,4 +1,4 @@
-folder=thinking
+folder=community
 fileName=mao-selected
 imageHost=http://cdn.printf.cn/$folder
 
