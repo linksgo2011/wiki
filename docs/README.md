@@ -434,6 +434,7 @@
 - [我的竞争力模型](self-management/competence-model.md)
 - [高效工作的策略 2.0](self-management/my-efficiency-strategy-2.md)
 - [技能树和个人发展方向](self-management/my-skill-map.md)
+- [买房注意事项和经验](self-management/purchase-a-house.md)
 - [我的学习方法](self-management/my-leaning-method.md)
 - [我的读书策略](self-management/my-reading-strategy.md)
 - [海姆立克急救法](self-management/first-aid.md)
