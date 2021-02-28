@@ -509,6 +509,7 @@
 - [Spring data JPA](spring/spring-data.md)
 - [Spring 中 Jackson 的常用技巧](spring/jackson.md)
 - [Spring boot 源码分析](spring/spring-boot-workflow.md)
+- [log4j 配置](spring/log4j.md)
 - [Spring boot API 文档方案](spring/spring-rest-doc.md)
 - [Spring boot 部署的几种方式](spring/spring-boot-deploy.md)
 - [获取 Spring 的 ApplicationContext](spring/spring-get-application-context.md)
