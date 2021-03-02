@@ -407,6 +407,7 @@
 - [我的个人思维模型](self-management/my-mental-models.md)
 - [我的快速输入方案(双拼)](self-management/my-typing-skill.md)
 - [35岁过后做什么呢（二）？](self-management/my-plan-for-after-35-years-old2.md)
+- [我的决策模型](self-management/my-decision.md)
 - [常用开源项目收集](self-management/common-tools.md)
 - [如何克服害怕失败的心理](self-management/face-failure-then-welcom-success.md)
 - [我的情商模型](self-management/my-eq-model.md)
