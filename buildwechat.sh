@@ -1,5 +1,5 @@
-folder=architecture
-fileName=model-thinking
+folder=team
+fileName=leaned-from-bees
 imageHost=http://cdn.printf.cn/$folder
 
 rm -rf build

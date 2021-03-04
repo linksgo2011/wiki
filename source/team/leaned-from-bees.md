@@ -49,7 +49,7 @@ recommened: true
 
 
 
-<img src="http://cdn.printf.cn/team/leaned-from-bees/image-20210304133938223.png" alt="image-20210304133938223" style="zoom:50%;" />
+<img src="leaned-from-bees/image-20210304133938223.png" alt="image-20210304133938223" style="zoom:50%;" />
 
 
 
