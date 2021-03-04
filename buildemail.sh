@@ -1,5 +1,5 @@
-folder=community
-fileName=kick-off-news-letter
+folder=team
+fileName=leaned-from-bees
 imageHost=https://github.com/linksgo2011/wiki/raw/master/source/$folder/
 
 rm -rf build

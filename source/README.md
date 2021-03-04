@@ -320,7 +320,7 @@
 - [codereview 清单](team/codereview.md)
 - [版本规则、代码冻结和上线事项](team/release.md)
 - [怎样做好需求评审？](team/requirement-review.md)
-- [我在 Bees 团队学到的](team/leaned-from-bees.md)
+- [那些我在 Bees 团队学到的](team/leaned-from-bees.md)
 - [ 如何做好敏捷 Bug 大扫除（Bug Bash）？](team/bugbush.md)
 - [估点](team/estimation.md)
 - [如何进行技术例会？](team/tech-huddle.md)
